@@ -1,0 +1,32 @@
+{
+  "name": "@studio/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node dev.cjs",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "node ../../scripts/test.cjs",
+    "test:e2e": "node ../../tests/browser/run.mjs",
+    "test:http": "node ../../tests/http/run.mjs",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy"
+  },
+  "dependencies": {
+    "next": "15.5.19",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "4.4.3",
+    "@prisma/client": "6.19.3",
+    "lucide-react": "0.468.0"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "playwright": "1.55.0",
+    "prisma": "6.19.3"
+  }
+}

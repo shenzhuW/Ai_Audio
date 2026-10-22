@@ -1,0 +1,100 @@
+:root {
+  --bg: #f4f7fc;
+  --panel: #fff;
+  --stroke: #e3e9f3;
+  --ink: #15233b;
+  --muted: #687991;
+  --blue: #216df5;
+  --light: #edf4ff;
+  --green: #15966a;
+  --orange: #b87816;
+  --red: #c34242;
+  --shadow: 0 8px 30px rgba(24, 56, 114, 0.045);
+  --radius: 14px;
+  --space: 8px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, 'Segoe UI', 'PingFang SC', 'Microsoft Yahei', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+input,
+select,
+textarea {
+  min-width: 0;
+}
+img {
+  max-width: 100%;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #83b1ff;
+  outline-offset: 3px;
+}
+::selection {
+  background: #d4e5ff;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+legend {
+  padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+button {
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+button:hover:not(:disabled) {
+  filter: brightness(0.97);
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

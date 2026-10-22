@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "at": "2026-10-22T12:00:39.796Z",
+  "base": "http://127.0.0.1:3002",
+  "runId": "mvjhoxlu",
+  "checks": [
+    "empty input",
+    "30s topic persistence",
+    "settings save",
+    "navigation across 10 pages",
+    "240s script / no narration",
+    "upload / imported voice selection",
+    "390px and 768px layout"
+  ],
+  "errors": []
+}

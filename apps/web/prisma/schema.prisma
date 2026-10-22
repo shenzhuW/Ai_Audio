@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+// Phase 00 stores a validated versioned Project aggregate, including ProjectInput.
+// Future artifact/revision tables must not overwrite this project's input history.
+model Project {
+  id        String @id @db.Uuid
+  ownerId   String @map("owner_id")
+  version   Int
+  updatedAt String @map("updated_at")
+  document  Json
+  @@index([ownerId, updatedAt])
+  @@map("projects")
+}

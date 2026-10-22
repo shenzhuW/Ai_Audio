@@ -1,0 +1,24 @@
+{
+  "name": "ai-code-video-studio",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.34.4",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6"
+  },
+  "scripts": {
+    "format": "prettier --write apps/web/src scripts tests/unit tests/http tests/browser",
+    "dev": "pnpm --filter @studio/web dev",
+    "build": "pnpm --filter @studio/web build",
+    "start": "pnpm --filter @studio/web start",
+    "typecheck": "pnpm --filter @studio/web typecheck",
+    "test": "pnpm --filter @studio/web test",
+    "test:e2e": "pnpm --filter @studio/web test:e2e",
+    "test:http": "pnpm --filter @studio/web test:http",
+    "db:generate": "pnpm --filter @studio/web db:generate",
+    "db:migrate": "pnpm --filter @studio/web db:migrate"
+  }
+}

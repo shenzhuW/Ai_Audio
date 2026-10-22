@@ -1,0 +1,28 @@
+# Phase 03 — 研究来源、Claim 与多模态内容索引
+
+**边界**：这是本阶段目标，Codex 不得一次性开发后续所有功能。见 `docs/DECISIONS.md`、`docs/ARCHITECTURE.md`、`docs/UI_SPEC.md`。
+
+## 参考仓库阅读与适配
+开工前阅读 wallstreet-explainer `references/sourcing.md` / `scripts/snap_news.mjs`，对照研究证据与素材授权的分界。 请将已核实结论、路径、日期与许可注意事项记录到 `docs/REFERENCE_REVIEW_LOG.md`。
+
+## 输入与前置条件
+- 已通过上一阶段的测试门禁；仓库 `AGENTS.md` 与原型资料可读。
+- 若使用外部 Provider，密钥与许可条件由用户提供；未具备时明确演示 Mock。
+
+## 本阶段开发任务
+- Source/Claim/ClaimEvidence/ResearchIndexEntry 实际存储和可编辑研究报告版本。
+- Search/Content/Vision Provider Adapter；真实 Provider 未配置可使用显著标 Mock 的替代实现。
+- 支持用户上传 PDF/图片/短视频并记录技术元数据；文本提取、图像说明和视频浅索引（字幕/抽帧/时间段）设计可替换。
+- 将内容事实的来源、日期、统计口径及冲突/未核实状态展示在第 03 页；研究阶段不进行正式片段剪辑。
+- 阶段产物支持提交/批准；来源链接真实存在时才能导航。
+
+## 可验收交付物
+- 上传一张图片、一段短视频后可看到对应资源及分析任务状态（Mock 清晰可见）。
+- Claim 可以关联两个 Source 及具体引用，能标记冲突并显示依据；没有 URL/证据不能被自动升级为已核实。
+- 研究报告 draft→approve 可持久化；无外部凭证时没有伪造的“真实文章已检索”。
+
+## Codex 必须报告
+1. 修改文件、数据迁移和关键设计取舍。
+2. 实际执行的安装/测试/类型检查/启动/媒体渲染命令及结果。
+3. 页面截图或媒体产物可验证路径；Mock/Real 区分。
+4. 遗留问题与下一阶段依赖；**完成本阶段后停止，不自动扩建下一阶段**。

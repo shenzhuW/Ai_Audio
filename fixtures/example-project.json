@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "fixture": true,
+  "fixtureNotice": "This is fictitious UI/E2E data; claims, licenses and AI runs are not verified.",
+  "projectId": "demo_gpu_explainer",
+  "title": "为什么 AI 大模型需要大量 GPU？",
+  "entryType": "topic",
+  "prompt": "用通俗易懂的方式解释 AI 大模型为何需要 GPU 并行计算，配合真实授权素材和代码动画。",
+  "targetDurationMs": 120000,
+  "fps": 30,
+  "canvas": { "width": 1080, "height": 1920 },
+  "voiceMode": "tts",
+  "shots": [
+    { "id": "shot_01", "name": "开场：为什么需要 GPU", "durationMs": 15000 },
+    { "id": "shot_02", "name": "算力任务与数据规模", "durationMs": 20000 },
+    { "id": "shot_03", "name": "GPU 并行计算", "durationMs": 25000 },
+    { "id": "shot_04", "name": "数据中心和训练", "durationMs": 25000 },
+    { "id": "shot_05", "name": "现实应用与案例", "durationMs": 20000 },
+    { "id": "shot_06", "name": "总结与展望", "durationMs": 15000 }
+  ],
+  "sources": [
+    { "id": "demo-source-01", "title": "GPU 并行计算原理（模拟资料）", "sourceType": "text", "verificationStatus": "unverified", "licenseStatus": "research_only", "mock": true },
+    { "id": "demo-source-02", "title": "数据中心内容索引（模拟资料）", "sourceType": "video", "verificationStatus": "unverified", "licenseStatus": "research_only", "mock": true }
+  ],
+  "completionState": "mock_only_not_completed",
+  "sourceVerification": "mock",
+  "licenseStatus": "research_only",
+  "approved": false
+}

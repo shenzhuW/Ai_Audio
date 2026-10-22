@@ -2,15 +2,16 @@
 
 **用途**：以用户确认的产品需求和 10 页面 v2 原型逐阶段开发。文档基线 v1.3，整理日期：2026-10-22。
 
-## 当前实现状态：Phase 00 待验收
+## 当前实现状态：Phase 00.5 待验收
 
-已加入 Next.js / TypeScript 应用、十个工作区路由、项目创建/列表/详情/设置保存、原始资料上传下载、最小本机会话保护。后续 AI、审核与渲染页面明确标注未接通。**Phase 00 本地验收已通过：7 项单元测试、15 项 HTTP 检查、浏览器验收、类型检查及生产构建；已保存实际截图。PostgreSQL 集成仍未验证。当前停止等待审核，未进入 Phase 01。**
+已加入 Next.js / TypeScript 应用、十个工作区路由、项目创建/列表/详情/设置保存、原始资料上传下载、最小本机会话保护。后续 AI、审核与渲染页面明确标注未接通。**Phase 00 已建立本地 Git 基线；Phase 00.5 已通过真实 PostgreSQL 迁移、CRUD、九种起点/配音组合、上传下载及应用/数据库重启验收。原 SQLite 数据保留。当前停止等待审核，未进入 Phase 01。**
 
-先阅读 [本地运行说明](docs/LOCAL_DEVELOPMENT.md)、[Phase 00 交付记录](docs/PHASE_00_DELIVERY.md) 和 [验收记录](tests/ACCEPTANCE.md)。以下交接包介绍保留作原始研发背景，实际开发进度以实施日志为准。
+先阅读 [本地运行说明](docs/LOCAL_DEVELOPMENT.md)、[PostgreSQL 说明](docs/POSTGRESQL_LOCAL.md)、[Phase 00.5 交付记录](docs/PHASE_00_5_DELIVERY.md) 和 [验收记录](tests/ACCEPTANCE.md)。[Phase 00 报告](docs/PHASE_00_DELIVERY.md) 保留为当时记录。以下交接包介绍保留作原始研发背景，实际开发进度以实施日志为准。
 
 ```powershell
 # Node.js >= 22.13（本次使用 24.15.0），pnpm 10.34.4
 pnpm install
+pnpm db:generate
 pnpm dev
 # 打开 http://127.0.0.1:3000/projects/new
 pnpm typecheck

@@ -1,4 +1,4 @@
-# 本地开发与验证 · Phase 00
+# 本地开发与验证 · Phase 00 / 00.5
 
 ## 运行
 
@@ -6,6 +6,7 @@
 
 ```powershell
 pnpm install
+pnpm db:generate
 pnpm dev
 ```
 
@@ -68,7 +69,7 @@ pnpm db:migrate
 pnpm dev
 ```
 
-Prisma CLI 从 `apps/web/.env` 或进程环境读取 DATABASE_URL；Next 从 `.env.local` 读取。建议在终端环境变量中统一设置。当前使用 PostgreSQL JSONB 聚合，SQLite 文件不会自动转换为 PostgreSQL；正式切换前需补迁移/导入与同仓储契约测试。本阶段没有执行破坏性迁移。
+Prisma CLI 从 `apps/web/.env` 或进程环境读取 DATABASE_URL；Next 从 `.env.local` 读取。建议在终端环境变量中统一设置。当前使用 PostgreSQL JSONB 聚合，SQLite 文件不会自动转换为 PostgreSQL。Phase 00.5 已验证同仓储文档兼容性、既有迁移和真实 PostgreSQL CRUD；未自动导入用户数据。独立测试库、启动停止命令及安全过渡方案见 [POSTGRESQL_LOCAL.md](POSTGRESQL_LOCAL.md)。本阶段没有执行破坏性迁移。
 
 ## 本次环境与验证记录
 
@@ -76,5 +77,5 @@ Prisma CLI 从 `apps/web/.env` 或进程环境读取 DATABASE_URL；Next 从 `.e
 - `pnpm` 未全局安装，本次从缓存解出到忽略目录 `.tools/`。在当前工作区可执行 `$env:Path=(Join-Path $PWD '.tools/bin')+';'+$env:Path` 后运行标准 `pnpm` 命令。这个临时缓存不作为可分发依赖，其他机器正常安装 pnpm。
 - Playwright 1.55.0 和 Prettier 已通过锁文件安装；浏览器验收使用本机 Chromium 1187。浏览器进程最初受到 EPERM 阻断，在获准的沙箱外执行后成功。
 - `pnpm build` 已完整通过编译、类型检查、页面数据采集、静态生成与构建跟踪。开发服务器和生产服务器均实际启动；最终 HTTP / 浏览器证据来自生产实例。
-- `prisma generate` 和 `prisma validate` 已通过；没有运行中的 PostgreSQL/Docker，PostgreSQL 连接、迁移应用与 CRUD 集成仍未运行。
+- `prisma generate` 和 `prisma validate` 已通过。Phase 00 时 PostgreSQL 未运行；Phase 00.5 使用独立 PostgreSQL 17.6 在 55432 端口完成实际迁移、CRUD、冲突、上传下载和重启测试；应用验收端口 3003，结果保存在 `docs/evidence/phase00-5/`。
 - 普通开发使用 3000；验收专用生产实例使用 3002 和 `.cache/acceptance-data`，与默认工作数据隔离。运行生产实例：`$env:PORT='3002'; $env:STUDIO_DATA_DIR='../../.cache/acceptance-data'; pnpm start`（从项目根目录）。

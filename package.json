@@ -10,7 +10,7 @@
     "prettier": "3.9.6"
   },
   "scripts": {
-    "format": "prettier --write apps/web/src scripts tests/unit tests/http tests/browser",
+    "format": "prettier --write apps/web/src scripts/*.cjs tests/unit tests/http tests/browser tests/postgres",
     "dev": "pnpm --filter @studio/web dev",
     "build": "pnpm --filter @studio/web build",
     "start": "pnpm --filter @studio/web start",
@@ -18,6 +18,9 @@
     "test": "pnpm --filter @studio/web test",
     "test:e2e": "pnpm --filter @studio/web test:e2e",
     "test:http": "pnpm --filter @studio/web test:http",
+    "test:postgres": "node tests/postgres/run.cjs",
+    "audit:staged": "node scripts/audit-staged.cjs",
+    "db:local": "pwsh -NoProfile -File scripts/postgres-local.ps1",
     "db:generate": "pnpm --filter @studio/web db:generate",
     "db:migrate": "pnpm --filter @studio/web db:migrate"
   }

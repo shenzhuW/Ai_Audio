@@ -7,6 +7,11 @@
 | A-001 | 00 | 10 路由均可直接访问，导航正常，不以 PNG 冒充真实页面 | PASS | `pnpm test:http` 及 `pnpm test:e2e`；[HTTP](../docs/evidence/http-results.json)、[浏览器](../docs/evidence/screenshots/result.json)、[截图](../docs/evidence/screenshots/) |
 | A-002 | 00 | 自定义 30 秒/240 秒保存并刷新仍在；无固定 90 秒限制 | PASS | `pnpm test` 实际 SQLite 关闭重开；HTTP 与浏览器创建/刷新/列表验证；未使用 Mock 仓储 |
 | A-003 | 00 | 项目非法输入校验，单用户最小访问保护 | PASS | 单元与 HTTP：非法需求/画幅/时长、会话伪造/过期、401/403、上传签名、409；浏览器错误提示 |
+| INF-001 | 00.5 | Git 基线、忽略规则、敏感文件检查 | PASS | 基线 `e53ab16`；131 文件扫描零发现，数据库/原件/凭据未入库；未推送 |
+| INF-002 | 00.5 | 真实 PostgreSQL 迁移初始化、重复执行及 schema 对照 | PASS | [PostgreSQL 结果](../docs/evidence/phase00-5/postgres-results.json)：17.6 实际服务，两个新库，迁移记录唯一且零漂移 |
+| INF-003 | 00.5 | PostgreSQL CRUD、时长、九模式组合、并发冲突 | PASS | 同上：30/240/90.5 秒，9 组合，竞争写入仅一次成功；[15 项 HTTP](../docs/evidence/phase00-5/http-results.json) |
+| INF-004 | 00.5 | PostgreSQL 上传、保护下载及应用/数据库重启持久化 | PASS | 重启后项目完整 JSON 不变，附件字节和 SHA256 相同；匿名 401、跨站 403 |
+| INF-005 | 00.5 | SQLite 兼容性和原数据保护，回归门禁 | PASS | 相同 9 份文档精确往返；旧数据目录前后散列相同；7 项单元/类型检查/生产构建通过 |
 | A-004 | 01 | 保存草稿/提交/批准/驳回均持久化，旧版可读 | NOT RUN | |
 | A-005 | 01 | 旧修订批准冲突 409、重复请求幂等 | NOT RUN | |
 | A-006 | 02 | 使用自有测试片+React SVG 层真实渲染 MP4，音/视元数据正确 | NOT RUN | |

@@ -1,23 +1,8 @@
-import { createRequire } from 'node:module';
+import { PrismaClient, type Prisma } from '@prisma/client';
 import { ProjectSchema, type Project } from '../../domain/project';
 import type { ProjectRepository } from './repository';
 
-// Explicit structural port allows typechecking local development before Prisma's
-// platform-specific client is generated. PostgreSQL integration requires db:generate.
-interface PrismaPort {
-  project: {
-    create(args: { data: Row }): Promise<unknown>;
-    findFirst(args: { where: { id: string; ownerId: string } }): Promise<Row | null>;
-    findMany(args: { where: { ownerId: string }; orderBy: { updatedAt: 'desc' } }): Promise<Row[]>;
-    updateMany(args: {
-      where: { id: string; ownerId: string; version: number };
-      data: Row;
-    }): Promise<{ count: number }>;
-  };
-  $disconnect(): Promise<void>;
-}
-type Row = { id: string; ownerId: string; version: number; updatedAt: string; document: unknown };
-const row = (p: Project): Row => ({
+const row = (p: Project): Prisma.ProjectUncheckedCreateInput => ({
   id: p.id,
   ownerId: p.ownerId,
   version: p.version,
@@ -25,10 +10,6 @@ const row = (p: Project): Row => ({
   document: p,
 });
 export async function openPostgresRepository(url: string): Promise<ProjectRepository> {
-  const require = createRequire(import.meta.url);
-  const { PrismaClient } = require('@prisma/client') as {
-    PrismaClient: new (config: unknown) => PrismaPort;
-  };
   const db = new PrismaClient({ datasources: { db: { url } } });
   return {
     async create(p) {

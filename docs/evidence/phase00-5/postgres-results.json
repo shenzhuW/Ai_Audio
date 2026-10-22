@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "at": "2026-10-22T13:10:55.050Z",
+  "database": "studio_phase005_mvjk7cjt",
+  "host": "127.0.0.1",
+  "port": 55432,
+  "backend": "real-postgresql",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL 服务器版本",
+      "status": "PASS",
+      "detail": "PostgreSQL 17.6 on x86_64-windows, compiled by msvc-19.44.35217, 64-bit"
+    },
+    {
+      "name": "原迁移首次部署、重复执行与第二空库初始化",
+      "status": "PASS",
+      "detail": {
+        "migration": "0001_project",
+        "freshDatabase": "studio_phase005_mvjk7cjt_fresh"
+      }
+    },
+    {
+      "name": "实际 PostgreSQL 与 Prisma schema 一致",
+      "status": "PASS",
+      "detail": {
+        "drift": false
+      }
+    },
+    {
+      "name": "应用使用非超级用户、无建库权限",
+      "status": "PASS",
+      "detail": {
+        "rolsuper": false,
+        "rolcreatedb": false
+      }
+    },
+    {
+      "name": "九组合、时长、并发锁、重连及 SQLite 协议对照",
+      "status": "PASS",
+      "detail": {
+        "combinations": 9,
+        "compatibleDocuments": 9,
+        "concurrentWinners": 1,
+        "reconnectPersistent": true
+      }
+    },
+    {
+      "name": "15 项 HTTP 验收且返回数据逐项对应 PostgreSQL 行",
+      "status": "PASS",
+      "detail": {
+        "projectIds": [
+          "b89ad5eb-2ee0-4211-b9be-314255285031",
+          "7ff88755-9875-4562-a6d9-f092c38b00db",
+          "fc907004-4945-43cf-bd25-b92b1241befa"
+        ]
+      }
+    },
+    {
+      "name": "上传原件与 PostgreSQL 附件元数据 SHA256 一致",
+      "status": "PASS",
+      "detail": {
+        "bytes": 24
+      }
+    },
+    {
+      "name": "应用进程重启后项目与设置持久化",
+      "status": "PASS",
+      "detail": {
+        "projects": 3
+      }
+    },
+    {
+      "name": "数据库与应用共同重启后持久化，原件可下载，迁移记录仍唯一",
+      "status": "PASS",
+      "detail": {
+        "migrations": 1,
+        "attachmentPersistent": true
+      }
+    },
+    {
+      "name": "原 SQLite 数据、附件和会话文件未被修改",
+      "status": "PASS",
+      "detail": {
+        "unchanged": true
+      }
+    }
+  ]
+}

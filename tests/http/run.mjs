@@ -256,7 +256,7 @@ await check('不存在的 API 项目返回 404，未知页面显示 not-found', 
 });
 // Next.js streams pages inside loading boundaries: notFound() can keep HTTP 200
 // after headers are sent; the missing-content UI and noindex must still be present.
-const evidence = resolve('../../docs/evidence');
+const evidence = resolve(process.env.STUDIO_TEST_EVIDENCE_DIR || '../../docs/evidence');
 await mkdir(evidence, { recursive: true });
 await writeFile(
   resolve(evidence, 'http-results.json'),
@@ -264,7 +264,7 @@ await writeFile(
     {
       at: new Date().toISOString(),
       base,
-      mode: 'Real HTTP + local SQLite; no external AI providers',
+      mode: `Real HTTP + ${process.env.STUDIO_TEST_BACKEND || 'sqlite'}; no external AI providers`,
       checks,
       projectIds: [first.id, second.id, uploaded.id],
     },

@@ -1,0 +1,31 @@
+
+> ai-code-video-studio@0.1.0 typecheck W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web typecheck
+
+
+> @studio/web@0.1.0 typecheck W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> tsc --noEmit
+
+
+> ai-code-video-studio@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web test
+
+
+> @studio/web@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> node ../../scripts/test.cjs
+
+✔ Signed local session rejects forged and expired cookies (1.3677ms)
+✔ Local-only host and origin checks reject remote host and CSRF (0.2754ms)
+✔ Real database: 30/240 seconds and all entry modes survive closing and reopening (29.7479ms)
+✔ Real database: atomic optimistic update permits only one writer (1.4227ms)
+✔ Reject blank prompt, zero/negative/nonfinite duration, invalid aspect, budget, unknown keys (2.1321ms)
+✔ Seconds and mm:ss are exact, invalid strings never silently normalize (0.4222ms)
+✔ Real upload validation checks extension, contents and byte limit (0.3987ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 167.8502

@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-23T01:37:15.990Z",
+  "commit": "530792c4d482287cb6abf76697d9b248a6fce1af",
+  "files": [
+    {
+      "file": "docs/PHASE_02_DELIVERY.md",
+      "url": "https://raw.githubusercontent.com/shenzhuW/Ai_Audio/530792c4d482287cb6abf76697d9b248a6fce1af/docs/PHASE_02_DELIVERY.md",
+      "status": 200,
+      "sizeBytes": 10590,
+      "sha256": "66b3b7f96d0b4dfd7d2a1565cdf3f03cc8f5e4a6a09bc4b65d102327ad5471d4"
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/ffprobe-independent.json",
+      "url": "https://raw.githubusercontent.com/shenzhuW/Ai_Audio/530792c4d482287cb6abf76697d9b248a6fce1af/docs/evidence/phase02/sqlite/ffprobe-independent.json",
+      "status": 200,
+      "sizeBytes": 2667,
+      "sha256": "2ff78f19101b6bd46dd092b90cf49e1e4ab7986809b001f36766f43c7d0b5ff1"
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/worker.log",
+      "url": "https://raw.githubusercontent.com/shenzhuW/Ai_Audio/530792c4d482287cb6abf76697d9b248a6fce1af/docs/evidence/phase02/sqlite/worker.log",
+      "status": 200,
+      "sizeBytes": 54,
+      "sha256": "1c44b688373799b17da83597649cf615fe384e75b6b2ee6739080b00772a4eb3"
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/frame-060.png",
+      "url": "https://raw.githubusercontent.com/shenzhuW/Ai_Audio/530792c4d482287cb6abf76697d9b248a6fce1af/docs/evidence/phase02/sqlite/frame-060.png",
+      "status": 200,
+      "sizeBytes": 697865,
+      "sha256": "60e4c52d64baf1563e583bcc893f58c986720d87868128ceb1553ddd13312a33"
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/frame-150.png",
+      "url": "https://raw.githubusercontent.com/shenzhuW/Ai_Audio/530792c4d482287cb6abf76697d9b248a6fce1af/docs/evidence/phase02/sqlite/frame-150.png",
+      "status": 200,
+      "sizeBytes": 554381,
+      "sha256": "f9c4a6bddf975312e8940be3173d4322f67ac8fb2089ab5c0f3847da481c6545"
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/frame-240.png",
+      "url": "https://raw.githubusercontent.com/shenzhuW/Ai_Audio/530792c4d482287cb6abf76697d9b248a6fce1af/docs/evidence/phase02/sqlite/frame-240.png",
+      "status": 200,
+      "sizeBytes": 703835,
+      "sha256": "f02ba6be19d538bdb5018ad86d5822274102de65c5c692530acb8dd61d16e9fe"
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/08-success.png",
+      "url": "https://raw.githubusercontent.com/shenzhuW/Ai_Audio/530792c4d482287cb6abf76697d9b248a6fce1af/docs/evidence/phase02/sqlite/08-success.png",
+      "status": 200,
+      "sizeBytes": 275971,
+      "sha256": "93d3c7099eef57fe437cb767ab32020ed80ef5ebcf9167d40bbacbd0217c5f82"
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/video.mp4",
+      "url": "https://raw.githubusercontent.com/shenzhuW/Ai_Audio/530792c4d482287cb6abf76697d9b248a6fce1af/docs/evidence/phase02/sqlite/video.mp4",
+      "status": 200,
+      "sizeBytes": 3207003,
+      "sha256": "56ebebe91856c23f6e7c3a591b90c6e99502e423d48daa4c48713e225322123e"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,40 @@
+{
+  "commit": "530792c4d482287cb6abf76697d9b248a6fce1af",
+  "scannedFiles": 286,
+  "totalBytes": 24629060,
+  "findings": [],
+  "largestFiles": [
+    {
+      "file": "docs/evidence/phase02/postgresql/video.mp4",
+      "sizeBytes": 3233246
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/video.mp4",
+      "sizeBytes": 3207003
+    },
+    {
+      "file": "apps/render/public/background.mp4",
+      "sizeBytes": 1026392
+    },
+    {
+      "file": "prototype/all-pages-overview.png",
+      "sizeBytes": 985631
+    },
+    {
+      "file": "docs/evidence/phase02/postgresql/frame-240.png",
+      "sizeBytes": 703835
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/frame-240.png",
+      "sizeBytes": 703835
+    },
+    {
+      "file": "docs/evidence/phase02/postgresql/frame-060.png",
+      "sizeBytes": 697865
+    },
+    {
+      "file": "docs/evidence/phase02/sqlite/frame-060.png",
+      "sizeBytes": 697865
+    }
+  ]
+}

@@ -1,5 +1,18 @@
 # HTTP API 契约 v1.2（建议草案）
 
+## Phase 04 已实现文稿 API
+
+| Method | Path | 实际行为 |
+|---|---|---|
+| GET | `/projects/:id/script?revisionId=&compareId=` | 当前/历史修订、结构化段落、固定研究的 Claim/Source/证据、时长、差异、影响、任务和 Provider 状态；对比版本限同一文稿 |
+| POST | `/projects/:id/script` | `{origin:"user_provided"|"research"|"legacy",text?,researchRevisionId?,unitsPerMinute?}` 建立结构化草稿；research 需有效批准输入，用户文稿无需研究；legacy 仅转换当前未结构化草稿 |
+| PATCH | `/projects/:id/script` | `{revisionId,expectedVersion,segments,unitsPerMinute}` 原子保存完整段落数组，支持增删/重排；并发 409、已审只读 422 |
+| POST | `/projects/:id/script-runs` | 新结构化 body `{revisionId,expectedVersion,segmentId?,instruction,mode:"mock"|"unconfigured"|"real"}`，返回 202/jobId；真实模型未配置时 real/unconfigured 失败，不返回假文稿。旧 `{inputRevisionIds}` Mock 文本调用保持兼容 |
+
+复用 `/artifacts/:artifactId/revisions` 的 fork、submit/approve/reject/history 和 jobs 的查询/取消/重试，不另建审批入口。上述写入需会话/同源/Idempotency-Key；同键同体重放，异体 409。结构化 PATCH body 上限 300000 bytes，最多 300 段、每段 10000 字符、全文 50000 字符；单次 UI 段落编辑使用稳定 UUID，不能重复段落 ID 或引用其他文稿 ID。
+
+段落字段与默认值以 `domain/script.ts` Zod 为准，factBindings 只能引用固定批准研究的 Claim 和实际相关、被采用 Source。估时按中文汉字+其他语言词数、60–600 单位/分钟、节奏因子与停顿计算，非实测音频。差异按逻辑 ID 区分新增/移除、正文、顺序、叙事目的、视觉/理解意图、引用和节奏。依赖创建/fork 可选 `inputSegmentIds`，须属于明确的唯一上游结构化文稿；未声明时沿用整个修订失效规则。
+
 > 使用 `/api/v1` 前缀，API 输入/输出 Zod，内部动作必须先在 service 层实现，再包薄 HTTP 接口；异步操作统一返回 202 + Job ID。首版单用户也需要受限 session；Cookie CSRF / API 认证方式由 Phase 00 文档记录后统一实施。
 
 ## 通用结构

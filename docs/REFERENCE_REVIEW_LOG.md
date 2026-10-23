@@ -9,11 +9,22 @@
 | 01 | Hypit 包与 Run 设计 | REVIEWED (static) | 2026-10-22 固定版本阅读见下方记录，未运行 | 修改版 Apache，不复制或依赖 |
 | 02 | Remotion Renderer/Player | REVIEWED；Renderer 实际通过，Player 仅研究 | 2026-10-23，固定 v4.0.538 / SHA 见下；[真实 MP4/双数据库/重复帧证据](PHASE_02_DELIVERY.md) | Remotion License，本地非商业技术评估；Player 不作任意代码入口 |
 | 03 | wallstreet sourcing/新闻截图 | REVIEWED（源码静态阅读，未运行第三方脚本） | 2026-10-23，固定 `920ed1d3b3ecb5997d861902e2719dda6688c0b1`，适配见下 | MIT；示例新闻/视频素材不受源码许可覆盖 |
+| 04 | wallstreet SKILL / thinking | REVIEWED（静态阅读，未执行第三方脚本） | 2026-10-23，固定同一 SHA；叙事目的、观众收获、视觉意图与事实引用见下 | MIT；不复制代码/样片，不采用外部技能的额外审批流程 |
 | 05 | wallstreet 语音对齐 | NOT REVIEWED | 待填写 | 待填写 |
 | 06 | wallstreet 导演/动画语法 | NOT REVIEWED | 待填写 | 待填写 |
 | 07 | wallstreet footage.py | NOT REVIEWED | 待填写 | 待填写 |
 | 08 | Remotion AI Starter / Hypit 组件 | NOT REVIEWED | 待填写 | 待填写 |
 | 09 | wallstreet Review/MotionCheck | NOT REVIEWED | 待填写 | 待填写 |
+
+## 2026-10-23 · Phase 04 / 文稿叙事
+
+通过 GitHub API 核实 main 仍为 `920ed1d3b3ecb5997d861902e2719dda6688c0b1`，全文读取固定版本 [SKILL.md](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/SKILL.md)、[references/thinking.md](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/references/thinking.md) 与 LICENSE。只研究设计，没有复制源码、样片或运行其工具。
+
+- SKILL 的文案/导演表区分台词、画面承担、观众理解和承接，一镜可包含多句话；thinking 第 1/3/10 节强调快速进入主题、沿同一对象解释因果，每段让观众获得具体新理解。适配为段落 purpose（钩子/背景/解释/证据/承接/总结）、viewerTakeaway 和非强制 visualIntent；段落与后续镜头保持多对多，不生成一行一句一镜的硬约束。
+- thinking 第 2/7/8 节强调承接和铺垫、原声背景及可读停留。当前只保存叙事/节奏说明和粗略停顿，不用估时冒充真实词级音频锚点，不提前建设导演表或配音。
+- thinking 第 4/5 节强调可质疑事实的原文与数字单位/年份。适配为固定批准 ResearchRevision 的 Claim/Source 引用和日期/口径/冲突提示；不因为画面效果改事实，不虚构来源，局部改写也校验引用范围。
+- SKILL 的固定 1–3 分钟、16:9、多个钩子粗剪和各站人工确认不是本产品的新要求；本产品自定义时长/画幅、已批准阶段范围和用户推迟人工体验的决定优先。实际视觉生成/镜头运动规则留后续阶段。
+- MIT 许可不覆盖 examples 中第三方新闻/照片/视频；本轮不新增外部源码依赖或第三方素材。参考思想重写本产品逻辑，未将命令行技能直接作为运行时 Agent。
 
 ## 2026-10-22 · Phase 00 / v1.3 上下文同步
 

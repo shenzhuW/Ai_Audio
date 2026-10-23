@@ -37,5 +37,7 @@ apps/web/generated/
 dist/
 out/
 coverage/
+# Preserve locally rendered regression MP4s without duplicating accepted Phase 02 videos in Git.
+docs/evidence/phase04/regression/phase02/*/video.mp4
 .DS_Store
 Thumbs.db

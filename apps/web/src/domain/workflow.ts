@@ -1,6 +1,13 @@
 import { z } from 'zod';
 import { RenderInputSchema, RenderResultSchema } from './motion';
 import {
+  scriptCommands,
+  ScriptDocumentSchema,
+  SegmentRecordSchema,
+  ScriptJobInputSchema,
+  ScriptResultSchema,
+} from './script';
+import {
   researchCommands,
   SourceSchema,
   ClaimSchema,
@@ -47,12 +54,14 @@ export const RevisionSchema = z.object({
   updatedAt: at,
   createdBy: z.string(),
   researchSchemaVersion: z.literal(1).optional(),
+  scriptSchemaVersion: z.literal(1).optional(),
 });
 export const DependencySchema = z.object({
   id,
   upstreamRevisionId: id,
   downstreamRevisionId: id,
   purpose: z.string(),
+  segmentIds: z.array(id).min(1).optional(),
 });
 export const ApprovalSchema = z.object({
   id,
@@ -74,7 +83,7 @@ export const WorkflowJobSchema = z.object({
   id,
   kind: ArtifactTypeSchema,
   version,
-  provider: z.enum(['mock', 'unconfigured', 'remotion', 'research']),
+  provider: z.enum(['mock', 'unconfigured', 'remotion', 'research', 'script']),
   state: z.enum(['queued', 'running', 'succeeded', 'failed', 'cancelled']),
   inputRevisionIds: z.array(id),
   idempotencyKey: z.string(),
@@ -92,6 +101,8 @@ export const WorkflowJobSchema = z.object({
   renderResult: RenderResultSchema.optional(),
   researchInput: ResearchJobInputSchema.optional(),
   researchResult: ResearchResultSchema.optional(),
+  scriptInput: ScriptJobInputSchema.optional(),
+  scriptResult: ScriptResultSchema.optional(),
   progress: z.number().min(0).max(1).optional(),
   heartbeatAt: at.optional(),
   logs: z
@@ -128,11 +139,14 @@ export const WorkflowStateSchema = z.object({
   researchClaims: z.array(ClaimSchema).default([]),
   researchEvidence: z.array(ClaimEvidenceSchema).default([]),
   researchIndexes: z.array(ResearchIndexEntrySchema).default([]),
+  scriptDocuments: z.array(ScriptDocumentSchema).default([]),
+  scriptSegments: z.array(SegmentRecordSchema).default([]),
 });
 const revisionAction = { revisionId: id, expectedVersion: version };
 const jobAction = { jobId: id, expectedVersion: version };
 export const WorkflowCommandSchema = z.discriminatedUnion('action', [
   ...researchCommands,
+  ...scriptCommands,
   z.object({ action: z.literal('render'), input: RenderInputSchema }).strict(),
   z
     .object({
@@ -149,6 +163,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       type: ArtifactTypeSchema,
       text,
       inputRevisionIds: z.array(id).max(50).default([]),
+      inputSegmentIds: z.array(id).min(1).max(300).optional(),
     })
     .strict(),
   z
@@ -156,6 +171,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       action: z.literal('fork'),
       ...revisionAction,
       inputRevisionIds: z.array(id).max(50).optional(),
+      inputSegmentIds: z.array(id).min(1).max(300).optional(),
     })
     .strict(),
   z.object({ action: z.literal('patch'), ...revisionAction, text }).strict(),
@@ -193,6 +209,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       errorCode: z.string().max(80).optional(),
       renderResult: RenderResultSchema.optional(),
       researchResult: ResearchResultSchema.optional(),
+      scriptResult: ScriptResultSchema.optional(),
     })
     .strict(),
   z.object({ action: z.literal('recover'), jobId: id }).strict(),

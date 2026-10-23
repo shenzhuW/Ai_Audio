@@ -2,9 +2,9 @@
 
 **用途**：以用户确认的产品需求和 10 页面 v2 原型逐阶段开发。文档基线 v1.3，整理日期：2026-10-22。
 
-## 当前实现状态：Phase 03 完成，等待验收
+## 当前实现状态：Phase 04 完成，等待验收
 
-已加入十页工作区、真实项目 CRUD/原件、修订审核、依赖失效、持久任务和真实 Remotion MP4。**Phase 02 已正式验收；Phase 03 新增来源、Claim、冲突证据、PDF/图片/视频内容索引及真实研究页面，等待用户审核。** [Phase 03 交付](docs/PHASE_03_DELIVERY.md)、[可复现资料](fixtures/research/README.md)。网络搜索、视觉/OCR/ASR 与真实配音未配置，不把本地技术提取或 Mock 当作事实核验。原项目 API、数据与可信组件限制保留，素材沿用 [内部测试优先策略](docs/INTERNAL_TEST_POLICY_UPDATE.md)；不进入 Phase 04。
+已加入十页工作区、真实项目 CRUD/原件、修订审核、依赖失效、持久任务、真实 Remotion MP4 和研究来源/Claim/内容索引。**Phase 00–03 已验收；Phase 04 实现结构化口播段落、固定研究引用、叙事/节奏、估时、版本差异、段落范围依赖及显式 Mock 写稿，等待用户审核。** [Phase 04 交付](docs/PHASE_04_DELIVERY.md)、[可复现文稿样例](fixtures/script/README.md)。真实写作模型、网络搜索、视觉/OCR/ASR 与真实配音未配置；不把 Mock、文件元数据或文字估时当作 AI 理解/事实核验/实测音频。原 API、数据与可信组件限制保留，[内部测试优先策略](docs/INTERNAL_TEST_POLICY_UPDATE.md) 有效。未进入 Phase 05；人工产品体验按用户决定延后。
 
 先阅读 [Phase 01 交付报告](docs/PHASE_01_DELIVERY.md)、[工作流运行说明](docs/WORKFLOW_IMPLEMENTATION.md)、[本地运行说明](docs/LOCAL_DEVELOPMENT.md)、[PostgreSQL 说明](docs/POSTGRESQL_LOCAL.md) 和 [验收记录](tests/ACCEPTANCE.md)。旧阶段报告保留为当时记录。以下交接包介绍保留作原始研发背景，实际开发进度以实施日志为准。
 

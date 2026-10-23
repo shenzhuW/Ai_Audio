@@ -1,0 +1,787 @@
+{
+  "projectId": "88a1c888-e27b-461d-97fa-b901d005e242",
+  "currentRevisionId": "d1947b4e-7957-46b0-9300-1910a76eaf52",
+  "revision": {
+    "id": "d1947b4e-7957-46b0-9300-1910a76eaf52",
+    "artifactId": "bd992f45-f0f6-4d4a-bfdd-cd1b66d8928f",
+    "revisionNumber": 2,
+    "schemaVersion": 1,
+    "version": 2,
+    "text": "为什么两份资料不一致？\n（Mock 整体改写演示，未调用真实模型）\n\n这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）\n（Mock 整体改写演示，未调用真实模型）",
+    "contentHash": "c041452feb06d534dc6672aef26c9bb7a469e19cf6f884bac084842bf48733f9",
+    "mock": true,
+    "status": "draft",
+    "parentRevisionId": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+    "createdAt": "2026-10-23T08:07:28.110Z",
+    "updatedAt": "2026-10-23T08:07:28.149Z",
+    "createdBy": "local-user",
+    "scriptSchemaVersion": 1
+  },
+  "document": {
+    "id": "db273e5a-b809-483f-9ea3-f8af6ac607dc",
+    "revisionId": "d1947b4e-7957-46b0-9300-1910a76eaf52",
+    "schemaVersion": 1,
+    "origin": "research",
+    "researchRevisionId": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+    "unitsPerMinute": 240,
+    "provenance": "mock"
+  },
+  "segments": [
+    {
+      "id": "9aa93cc7-08e7-43b8-8ce7-9e516fbb9772",
+      "order": 0,
+      "text": "为什么两份资料不一致？\n（Mock 整体改写演示，未调用真实模型）",
+      "purpose": "hook",
+      "viewerTakeaway": "",
+      "visualIntent": "",
+      "delivery": "normal",
+      "pauseMs": 300,
+      "factBindings": [],
+      "needsRebind": false
+    },
+    {
+      "id": "546304d2-2032-438b-b95e-d504add850cd",
+      "order": 1,
+      "text": "这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）\n（Mock 整体改写演示，未调用真实模型）",
+      "purpose": "conclusion",
+      "viewerTakeaway": "",
+      "visualIntent": "",
+      "delivery": "normal",
+      "pauseMs": 300,
+      "factBindings": [
+        {
+          "claimId": "46d4ed01-caaf-4448-a9be-4ab936259a56",
+          "sourceIds": [
+            "51df3ab5-046b-4dfa-b726-a0b27a1faa4c",
+            "5e00c372-b089-43d6-9f32-6e3386284d8d"
+          ]
+        }
+      ],
+      "needsRebind": false
+    }
+  ],
+  "revisions": [
+    {
+      "id": "d1947b4e-7957-46b0-9300-1910a76eaf52",
+      "artifactId": "bd992f45-f0f6-4d4a-bfdd-cd1b66d8928f",
+      "revisionNumber": 2,
+      "schemaVersion": 1,
+      "version": 2,
+      "text": "为什么两份资料不一致？\n（Mock 整体改写演示，未调用真实模型）\n\n这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）\n（Mock 整体改写演示，未调用真实模型）",
+      "contentHash": "c041452feb06d534dc6672aef26c9bb7a469e19cf6f884bac084842bf48733f9",
+      "mock": true,
+      "status": "draft",
+      "parentRevisionId": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+      "createdAt": "2026-10-23T08:07:28.110Z",
+      "updatedAt": "2026-10-23T08:07:28.149Z",
+      "createdBy": "local-user",
+      "scriptSchemaVersion": 1
+    },
+    {
+      "id": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+      "artifactId": "bd992f45-f0f6-4d4a-bfdd-cd1b66d8928f",
+      "revisionNumber": 1,
+      "schemaVersion": 1,
+      "version": 6,
+      "text": "为什么两份资料不一致？\n（Mock 整体改写演示，未调用真实模型）\n\n这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）\n（Mock 整体改写演示，未调用真实模型）",
+      "contentHash": "86e84bfc0a39bd9adae008887597713275c236680b8f2ad95b4873e6108bdcb8",
+      "mock": true,
+      "status": "approved",
+      "parentRevisionId": null,
+      "createdAt": "2026-10-23T08:07:24.879Z",
+      "updatedAt": "2026-10-23T08:07:27.795Z",
+      "createdBy": "local-user",
+      "scriptSchemaVersion": 1
+    }
+  ],
+  "brief": {
+    "targetDurationMs": 240000,
+    "language": "zh-CN",
+    "entryType": "topic",
+    "originalScript": ""
+  },
+  "timing": {
+    "estDurationMs": 20850,
+    "targetDurationMs": 240000,
+    "differenceMs": -219150,
+    "unitsPerMinute": 240,
+    "details": [
+      {
+        "segmentId": "9aa93cc7-08e7-43b8-8ce7-9e516fbb9772",
+        "units": 24,
+        "estDurationMs": 6300
+      },
+      {
+        "segmentId": "546304d2-2032-438b-b95e-d504add850cd",
+        "units": 57,
+        "estDurationMs": 14550
+      }
+    ],
+    "note": "中文按汉字、其他文字按词粗估，含段落停顿；不是实测配音，段落不等于镜头。"
+  },
+  "research": {
+    "boundRevision": {
+      "id": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+      "artifactId": "4a8ef659-4400-4275-92de-bb3f476ec54b",
+      "revisionNumber": 2,
+      "schemaVersion": 1,
+      "version": 4,
+      "text": "合成研究摘要：两份资料相互冲突，不是现实事实。",
+      "contentHash": "1cdc5cb05cab535cae79a0b77a597ce010d1a6e9cd74eb2cddb20968d3d4568f",
+      "mock": false,
+      "status": "approved",
+      "parentRevisionId": "389a6c0c-c2ac-47a1-af78-bdcd1f243530",
+      "createdAt": "2026-10-23T08:07:27.814Z",
+      "updatedAt": "2026-10-23T08:07:27.866Z",
+      "createdBy": "local-user",
+      "researchSchemaVersion": 1
+    },
+    "approvedRevision": {
+      "id": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+      "artifactId": "4a8ef659-4400-4275-92de-bb3f476ec54b",
+      "revisionNumber": 2,
+      "schemaVersion": 1,
+      "version": 4,
+      "text": "合成研究摘要：两份资料相互冲突，不是现实事实。",
+      "contentHash": "1cdc5cb05cab535cae79a0b77a597ce010d1a6e9cd74eb2cddb20968d3d4568f",
+      "mock": false,
+      "status": "approved",
+      "parentRevisionId": "389a6c0c-c2ac-47a1-af78-bdcd1f243530",
+      "createdAt": "2026-10-23T08:07:27.814Z",
+      "updatedAt": "2026-10-23T08:07:27.866Z",
+      "createdBy": "local-user",
+      "researchSchemaVersion": 1
+    },
+    "changed": false,
+    "claims": [
+      {
+        "text": "新版合成测试的描述已修改",
+        "asOf": "2026-10-23",
+        "scope": "仅自制合成夹具",
+        "unit": "units",
+        "verificationStatus": "conflicting",
+        "caveats": "不构成现实测量或核验",
+        "id": "46d4ed01-caaf-4448-a9be-4ab936259a56",
+        "revisionId": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+        "schemaVersion": 1
+      }
+    ],
+    "sources": [
+      {
+        "title": "合成来源A",
+        "sourceType": "text",
+        "publisher": "Self-authored synthetic fixture",
+        "creator": "",
+        "publishedAt": null,
+        "knownRestrictions": "内部合成验收；非真实研究事实",
+        "licenseStatus": "blocked",
+        "blob": {
+          "id": "a4679e4d-6c6c-498b-ad93-5ee178ad454d",
+          "name": "合成来源A.txt",
+          "mime": "text/plain",
+          "sizeBytes": 42,
+          "sha256": "360ff8f0629639ce7456604fb0079177899b58b9a7d3365a193aced9f7e0a397"
+        },
+        "id": "51df3ab5-046b-4dfa-b726-a0b27a1faa4c",
+        "projectId": "88a1c888-e27b-461d-97fa-b901d005e242",
+        "revisionId": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+        "schemaVersion": 1,
+        "retrievedAt": "2026-10-23T08:07:22.959Z",
+        "selected": true,
+        "provenance": "user-upload",
+        "urlStatus": "user_supplied",
+        "metadata": {
+          "mime": "text/plain",
+          "sizeBytes": 42,
+          "sha256": "360ff8f0629639ce7456604fb0079177899b58b9a7d3365a193aced9f7e0a397"
+        }
+      },
+      {
+        "title": "合成来源B",
+        "sourceType": "text",
+        "publisher": "Self-authored synthetic fixture",
+        "creator": "",
+        "publishedAt": null,
+        "knownRestrictions": "内部合成验收；非真实研究事实",
+        "licenseStatus": "blocked",
+        "blob": {
+          "id": "9327d74c-d4e7-4e23-a67b-3f9121f2e31c",
+          "name": "合成来源B.txt",
+          "mime": "text/plain",
+          "sizeBytes": 42,
+          "sha256": "40127eccc128073798880e91d2aa301b5366bc04ed82edc59cd82b5b1f4c9222"
+        },
+        "id": "5e00c372-b089-43d6-9f32-6e3386284d8d",
+        "projectId": "88a1c888-e27b-461d-97fa-b901d005e242",
+        "revisionId": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+        "schemaVersion": 1,
+        "retrievedAt": "2026-10-23T08:07:22.987Z",
+        "selected": true,
+        "provenance": "user-upload",
+        "urlStatus": "user_supplied",
+        "metadata": {
+          "mime": "text/plain",
+          "sizeBytes": 42,
+          "sha256": "40127eccc128073798880e91d2aa301b5366bc04ed82edc59cd82b5b1f4c9222"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "07e1f8e4-830a-4c3b-a2e8-60b6ebd4cee5",
+        "revisionId": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+        "claimId": "46d4ed01-caaf-4448-a9be-4ab936259a56",
+        "sourceId": "5e00c372-b089-43d6-9f32-6e3386284d8d",
+        "role": "refute",
+        "locator": {
+          "kind": "text",
+          "label": "合成资料B第1段"
+        },
+        "quote": "Capacity is 64 units.",
+        "validation": "matched",
+        "schemaVersion": 1
+      },
+      {
+        "id": "835c3a78-45db-4f37-ae47-687d24851c08",
+        "revisionId": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+        "claimId": "46d4ed01-caaf-4448-a9be-4ab936259a56",
+        "sourceId": "51df3ab5-046b-4dfa-b726-a0b27a1faa4c",
+        "role": "support",
+        "locator": {
+          "kind": "text",
+          "label": "合成资料A第1段"
+        },
+        "quote": "Capacity is 32 units.",
+        "validation": "matched",
+        "schemaVersion": 1
+      }
+    ]
+  },
+  "warnings": [
+    {
+      "segmentId": "9aa93cc7-08e7-43b8-8ce7-9e516fbb9772",
+      "notes": [
+        "未绑定研究事实；用户内容未独立核实。"
+      ]
+    },
+    {
+      "segmentId": "546304d2-2032-438b-b95e-d504add850cd",
+      "notes": [
+        "引用存在冲突证据，请保留双方说明。"
+      ]
+    }
+  ],
+  "comparisonRevisionId": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+  "diff": [
+    {
+      "segmentId": "546304d2-2032-438b-b95e-d504add850cd",
+      "changes": [
+        "factBindings"
+      ],
+      "before": {
+        "id": "546304d2-2032-438b-b95e-d504add850cd",
+        "order": 1,
+        "text": "这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）\n（Mock 整体改写演示，未调用真实模型）",
+        "purpose": "conclusion",
+        "viewerTakeaway": "",
+        "visualIntent": "",
+        "delivery": "normal",
+        "pauseMs": 300,
+        "factBindings": [
+          {
+            "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+            "sourceIds": [
+              "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+              "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+            ]
+          }
+        ],
+        "needsRebind": false
+      },
+      "after": {
+        "id": "546304d2-2032-438b-b95e-d504add850cd",
+        "order": 1,
+        "text": "这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）\n（Mock 整体改写演示，未调用真实模型）",
+        "purpose": "conclusion",
+        "viewerTakeaway": "",
+        "visualIntent": "",
+        "delivery": "normal",
+        "pauseMs": 300,
+        "factBindings": [
+          {
+            "claimId": "46d4ed01-caaf-4448-a9be-4ab936259a56",
+            "sourceIds": [
+              "51df3ab5-046b-4dfa-b726-a0b27a1faa4c",
+              "5e00c372-b089-43d6-9f32-6e3386284d8d"
+            ]
+          }
+        ],
+        "needsRebind": false
+      }
+    }
+  ],
+  "impact": {
+    "stale": false,
+    "researchAffectedSegmentIds": [],
+    "downstream": []
+  },
+  "jobs": [
+    {
+      "id": "1ff1b8ef-9892-4e87-a3ba-12837e5e284e",
+      "kind": "script",
+      "version": 1,
+      "provider": "mock",
+      "state": "queued",
+      "inputRevisionIds": [
+        "99a1ff22-7bf7-4507-af1a-0da51cf0970a"
+      ],
+      "idempotencyKey": "approval:99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+      "attempt": 0,
+      "maxAttempts": 3,
+      "attempts": [],
+      "targetVersion": 6,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": null,
+      "errorCode": null,
+      "createdAt": "2026-10-23T08:07:27.866Z",
+      "updatedAt": "2026-10-23T08:07:27.866Z"
+    },
+    {
+      "id": "2961701c-5106-43d9-ac11-cd231bafbe2b",
+      "kind": "script",
+      "version": 3,
+      "provider": "script",
+      "state": "failed",
+      "inputRevisionIds": [
+        "389a6c0c-c2ac-47a1-af78-bdcd1f243530"
+      ],
+      "idempotencyKey": "da4525bf-5f47-4260-a643-c15bb1dc60a0",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T08:07:27.399Z",
+          "finishedAt": "2026-10-23T08:07:27.436Z",
+          "state": "failed",
+          "errorCode": "PROVIDER_NOT_CONFIGURED"
+        }
+      ],
+      "targetVersion": 4,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": null,
+      "errorCode": "PROVIDER_NOT_CONFIGURED",
+      "createdAt": "2026-10-23T08:07:26.793Z",
+      "updatedAt": "2026-10-23T08:07:27.436Z",
+      "scriptInput": {
+        "schemaVersion": 1,
+        "revisionId": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+        "targetVersion": 4,
+        "researchRevisionId": "389a6c0c-c2ac-47a1-af78-bdcd1f243530",
+        "mode": "unconfigured",
+        "instruction": "尝试真实写稿，未配置不得生成",
+        "brief": {
+          "prompt": "为什么这个问题值得解释？\n\n第二段用户原文，只是合成测试。",
+          "targetDurationMs": 240000,
+          "language": "zh-CN",
+          "audience": "普通观众",
+          "style": "科技感 / 清晰克制"
+        },
+        "segments": [
+          {
+            "text": "为什么两份资料不一致？\n（Mock 整体改写演示，未调用真实模型）",
+            "purpose": "hook",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [],
+            "needsRebind": false,
+            "id": "9aa93cc7-08e7-43b8-8ce7-9e516fbb9772",
+            "order": 0
+          },
+          {
+            "text": "这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）\n（Mock 整体改写演示，未调用真实模型）",
+            "purpose": "conclusion",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [
+              {
+                "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+                "sourceIds": [
+                  "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+                  "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+                ]
+              }
+            ],
+            "needsRebind": false,
+            "id": "546304d2-2032-438b-b95e-d504add850cd",
+            "order": 1
+          }
+        ],
+        "facts": [
+          {
+            "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+            "text": "合成测试容量为32单位，资料存在冲突",
+            "status": "conflicting",
+            "sourceIds": [
+              "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+              "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+            ],
+            "caveats": "不构成现实测量或核验"
+          }
+        ]
+      },
+      "progress": 0.5,
+      "heartbeatAt": "2026-10-23T08:07:27.422Z",
+      "logs": [
+        {
+          "at": "2026-10-23T08:07:26.793Z",
+          "message": "unconfigured 文稿整体写稿已排队；目标版本已冻结。"
+        },
+        {
+          "at": "2026-10-23T08:07:27.399Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T08:07:27.422Z",
+          "message": "unconfigured 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T08:07:27.436Z",
+          "message": "finish: failed · PROVIDER_NOT_CONFIGURED"
+        }
+      ]
+    },
+    {
+      "id": "2e50d88e-e26c-4b1b-8d62-c47056d3eceb",
+      "kind": "script",
+      "version": 3,
+      "provider": "script",
+      "state": "succeeded",
+      "inputRevisionIds": [
+        "389a6c0c-c2ac-47a1-af78-bdcd1f243530"
+      ],
+      "idempotencyKey": "d05913fe-af58-4307-a413-6ec7f12c7133",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T08:07:25.989Z",
+          "finishedAt": "2026-10-23T08:07:26.004Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 2,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+      "errorCode": null,
+      "createdAt": "2026-10-23T08:07:25.209Z",
+      "updatedAt": "2026-10-23T08:07:26.004Z",
+      "scriptInput": {
+        "schemaVersion": 1,
+        "revisionId": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+        "targetVersion": 2,
+        "researchRevisionId": "389a6c0c-c2ac-47a1-af78-bdcd1f243530",
+        "mode": "mock",
+        "segmentId": "546304d2-2032-438b-b95e-d504add850cd",
+        "instruction": "让解释更清楚，不添加事实",
+        "brief": {
+          "prompt": "为什么这个问题值得解释？\n\n第二段用户原文，只是合成测试。",
+          "targetDurationMs": 240000,
+          "language": "zh-CN",
+          "audience": "普通观众",
+          "style": "科技感 / 清晰克制"
+        },
+        "segments": [
+          {
+            "text": "为什么两份资料不一致？",
+            "purpose": "hook",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [],
+            "needsRebind": false,
+            "id": "9aa93cc7-08e7-43b8-8ce7-9e516fbb9772",
+            "order": 0
+          },
+          {
+            "text": "这些数值来自合成验收，不能当作现实结论。",
+            "purpose": "conclusion",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [
+              {
+                "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+                "sourceIds": [
+                  "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+                  "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+                ]
+              }
+            ],
+            "needsRebind": false,
+            "id": "546304d2-2032-438b-b95e-d504add850cd",
+            "order": 1
+          }
+        ],
+        "facts": [
+          {
+            "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+            "text": "合成测试容量为32单位，资料存在冲突",
+            "status": "conflicting",
+            "sourceIds": [
+              "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+              "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+            ],
+            "caveats": "不构成现实测量或核验"
+          }
+        ]
+      },
+      "scriptResult": {
+        "mode": "mock",
+        "segments": [
+          {
+            "text": "这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）",
+            "purpose": "conclusion",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [
+              {
+                "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+                "sourceIds": [
+                  "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+                  "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+                ]
+              }
+            ],
+            "needsRebind": false,
+            "id": "546304d2-2032-438b-b95e-d504add850cd",
+            "order": 1
+          }
+        ],
+        "notes": "仅改写指定段落的 Mock 演示；不新增事实引用。"
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T08:07:25.996Z",
+      "logs": [
+        {
+          "at": "2026-10-23T08:07:25.209Z",
+          "message": "mock 文稿局部改写已排队；目标版本已冻结。"
+        },
+        {
+          "at": "2026-10-23T08:07:25.989Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T08:07:25.996Z",
+          "message": "mock 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T08:07:26.004Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "6020cf81-2678-47c8-a6aa-f53e050773bc",
+      "kind": "script",
+      "version": 3,
+      "provider": "mock",
+      "state": "failed",
+      "inputRevisionIds": [
+        "389a6c0c-c2ac-47a1-af78-bdcd1f243530"
+      ],
+      "idempotencyKey": "approval:389a6c0c-c2ac-47a1-af78-bdcd1f243530",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T08:07:26.013Z",
+          "finishedAt": "2026-10-23T08:07:26.022Z",
+          "state": "failed",
+          "errorCode": "TARGET_CHANGED"
+        }
+      ],
+      "targetVersion": 0,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": null,
+      "errorCode": "TARGET_CHANGED",
+      "createdAt": "2026-10-23T08:07:24.869Z",
+      "updatedAt": "2026-10-23T08:07:26.022Z"
+    },
+    {
+      "id": "d57f9f02-e843-4a98-ae1f-19a0b0f66bd4",
+      "kind": "script",
+      "version": 3,
+      "provider": "script",
+      "state": "succeeded",
+      "inputRevisionIds": [
+        "389a6c0c-c2ac-47a1-af78-bdcd1f243530"
+      ],
+      "idempotencyKey": "1148ef17-900f-4cf8-9dc3-c2974b101842",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T08:07:26.707Z",
+          "finishedAt": "2026-10-23T08:07:26.739Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 3,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+      "errorCode": null,
+      "createdAt": "2026-10-23T08:07:26.066Z",
+      "updatedAt": "2026-10-23T08:07:26.739Z",
+      "scriptInput": {
+        "schemaVersion": 1,
+        "revisionId": "c4fdb13e-09d2-46ca-8e6f-b83179333629",
+        "targetVersion": 3,
+        "researchRevisionId": "389a6c0c-c2ac-47a1-af78-bdcd1f243530",
+        "mode": "mock",
+        "instruction": "整体结构演示",
+        "brief": {
+          "prompt": "为什么这个问题值得解释？\n\n第二段用户原文，只是合成测试。",
+          "targetDurationMs": 240000,
+          "language": "zh-CN",
+          "audience": "普通观众",
+          "style": "科技感 / 清晰克制"
+        },
+        "segments": [
+          {
+            "text": "为什么两份资料不一致？",
+            "purpose": "hook",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [],
+            "needsRebind": false,
+            "id": "9aa93cc7-08e7-43b8-8ce7-9e516fbb9772",
+            "order": 0
+          },
+          {
+            "text": "这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）",
+            "purpose": "conclusion",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [
+              {
+                "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+                "sourceIds": [
+                  "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+                  "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+                ]
+              }
+            ],
+            "needsRebind": false,
+            "id": "546304d2-2032-438b-b95e-d504add850cd",
+            "order": 1
+          }
+        ],
+        "facts": [
+          {
+            "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+            "text": "合成测试容量为32单位，资料存在冲突",
+            "status": "conflicting",
+            "sourceIds": [
+              "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+              "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+            ],
+            "caveats": "不构成现实测量或核验"
+          }
+        ]
+      },
+      "scriptResult": {
+        "mode": "mock",
+        "segments": [
+          {
+            "text": "为什么两份资料不一致？\n（Mock 整体改写演示，未调用真实模型）",
+            "purpose": "hook",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [],
+            "needsRebind": false,
+            "id": "9aa93cc7-08e7-43b8-8ce7-9e516fbb9772",
+            "order": 0
+          },
+          {
+            "text": "这些数值来自合成验收，不能当作现实结论。\n（Mock 局部改写演示：让解释更清楚，不添加事实；未调用真实模型）\n（Mock 整体改写演示，未调用真实模型）",
+            "purpose": "conclusion",
+            "viewerTakeaway": "",
+            "visualIntent": "",
+            "delivery": "normal",
+            "pauseMs": 300,
+            "factBindings": [
+              {
+                "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+                "sourceIds": [
+                  "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+                  "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+                ]
+              }
+            ],
+            "needsRebind": false,
+            "id": "546304d2-2032-438b-b95e-d504add850cd",
+            "order": 1
+          }
+        ],
+        "notes": "显式 Mock 结构演示，未调用模型，不能作为真实 AI 或事实核验结果。"
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T08:07:26.728Z",
+      "logs": [
+        {
+          "at": "2026-10-23T08:07:26.066Z",
+          "message": "mock 文稿整体写稿已排队；目标版本已冻结。"
+        },
+        {
+          "at": "2026-10-23T08:07:26.707Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T08:07:26.728Z",
+          "message": "mock 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T08:07:26.739Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    }
+  ],
+  "providers": [
+    {
+      "id": "script-model",
+      "mode": "unconfigured",
+      "configured": false
+    },
+    {
+      "id": "explicit-script-fixture",
+      "mode": "mock",
+      "configured": true
+    }
+  ]
+}

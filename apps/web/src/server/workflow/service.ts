@@ -5,6 +5,7 @@ import { AppError } from '../errors';
 import { applyWorkflow, workflowSnapshot } from './engine';
 import type { WorkflowRepository, Collection } from './repository';
 import { MockWorkflowTextProvider } from './provider';
+import { scriptProvider } from '../script/providers';
 export function createWorkflowService(repo: WorkflowRepository) {
   return {
     async execute(projectId: string, owner: string, command: WorkflowCommand, key: string) {
@@ -56,6 +57,67 @@ export function createWorkflowService(repo: WorkflowRepository) {
             const inputTexts = claimed.inputRevisionIds.map(
               (id) => claim.state.revisions.find((r) => r.id === id)!.text,
             );
+            if (claimed.provider === 'script') {
+              let heartbeat: ReturnType<typeof setInterval> | undefined;
+              const controller = new AbortController();
+              let pending = Promise.resolve();
+              try {
+                const input = claimed.scriptInput!;
+                const beat = () =>
+                  (pending = pending
+                    .then(async () => {
+                      if (controller.signal.aborted) return;
+                      await this.execute(
+                        projectId,
+                        'local-user',
+                        {
+                          action: 'heartbeat',
+                          jobId: j.id,
+                          workerId,
+                          progress: 0.5,
+                          message: `${input.mode} 文稿任务处理中`,
+                        },
+                        randomUUID(),
+                      );
+                    })
+                    .catch(() => {
+                      controller.abort();
+                    }));
+                await beat();
+                heartbeat = setInterval(beat, 2000);
+                const provider = scriptProvider(input.mode);
+                const output = await (input.segmentId
+                  ? provider.rewrite(input)
+                  : provider.generate(input));
+                await pending;
+                if (controller.signal.aborted) continue;
+                await this.execute(
+                  projectId,
+                  'local-user',
+                  { action: 'finish', jobId: j.id, workerId, scriptResult: output },
+                  `finish:${j.id}:${claimed.attempt}`,
+                );
+              } catch (e) {
+                if (e instanceof AppError && ['JOB_CONFLICT', 'REVISION_CONFLICT'].includes(e.code))
+                  continue;
+                await this.execute(
+                  projectId,
+                  'local-user',
+                  {
+                    action: 'finish',
+                    jobId: j.id,
+                    workerId,
+                    errorCode: e instanceof AppError ? e.code : 'SCRIPT_PROVIDER_FAILED',
+                  },
+                  `finish:${j.id}:${claimed.attempt}`,
+                );
+              } finally {
+                if (heartbeat) clearInterval(heartbeat);
+                await pending;
+              }
+              processed++;
+              continue;
+            }
             // Only text fixtures execute in Phase 01. No media, network or untrusted code.
             const errorCode =
               claimed.provider === 'unconfigured' ? 'PROVIDER_NOT_CONFIGURED' : undefined;

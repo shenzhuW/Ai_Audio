@@ -7,6 +7,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model ScriptDocument {
+  id         String           @id @db.Uuid
+  projectId  String           @map("project_id") @db.Uuid
+  revisionId String           @unique @map("revision_id") @db.Uuid
+  document   Json
+  project    Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision   WorkflowRevision @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([projectId])
+  @@map("script_documents")
+}
+
+model ScriptSegmentVersion {
+  id         String           @id @db.Uuid
+  projectId  String           @map("project_id") @db.Uuid
+  revisionId String           @map("revision_id") @db.Uuid
+  segmentId  String           @map("segment_id") @db.Uuid
+  document   Json
+  project    Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision   WorkflowRevision @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@unique([revisionId, segmentId])
+  @@index([projectId])
+  @@map("script_segment_versions")
+}
+
 // Phase 00 stores a validated versioned Project aggregate, including ProjectInput.
 // Future artifact/revision tables must not overwrite this project's input history.
 model Project {
@@ -27,6 +53,8 @@ model Project {
   researchClaims          ResearchClaim[]
   researchEvidence        ResearchClaimEvidence[]
   researchIndexes         ResearchIndexEntry[]
+  scriptDocuments         ScriptDocument[]
+  scriptSegments          ScriptSegmentVersion[]
 
   @@index([ownerId, updatedAt])
   @@map("projects")
@@ -60,6 +88,8 @@ model WorkflowRevision {
   researchClaims   ResearchClaim[]
   researchEvidence ResearchClaimEvidence[]
   researchIndexes  ResearchIndexEntry[]
+  scriptDocuments  ScriptDocument[]
+  scriptSegments   ScriptSegmentVersion[]
 
   @@unique([artifactId, revisionNumber])
   @@index([projectId])

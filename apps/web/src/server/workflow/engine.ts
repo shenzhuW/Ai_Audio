@@ -12,6 +12,19 @@ import {
 import type { Project } from '../../domain/project';
 import { AppError } from '../errors';
 import { ResearchCommandSchema } from '../../domain/research';
+import { ScriptCommandSchema } from '../../domain/script';
+import {
+  initializeScript,
+  cloneScript,
+  saveScript,
+  scriptInput,
+  scriptDocument,
+  scriptSegments,
+  scriptContent,
+  finishScript,
+  sameScopedScript,
+  assertScriptSubmittable,
+} from '../script/engine';
 import {
   applyResearchCommand,
   researchContent,
@@ -33,6 +46,8 @@ export const emptyWorkflow = (): WorkflowState => ({
   researchClaims: [],
   researchEvidence: [],
   researchIndexes: [],
+  scriptDocuments: [],
+  scriptSegments: [],
 });
 function canonical(v: unknown): string {
   if (v === null || typeof v !== 'object') return JSON.stringify(v);
@@ -60,7 +75,13 @@ export function staleRevisions(s: WorkflowState): Set<string> {
       const up = s.revisions.find((r) => r.id === d.upstreamRevisionId);
       const a = s.artifacts.find((a) => a.id === up?.artifactId);
       if (
-        (a?.approvedRevisionId !== up?.id || stale.has(d.upstreamRevisionId)) &&
+        ((a?.approvedRevisionId !== up?.id &&
+          !(
+            d.segmentIds &&
+            a?.approvedRevisionId &&
+            sameScopedScript(s, d.upstreamRevisionId, a.approvedRevisionId, d.segmentIds)
+          )) ||
+          stale.has(d.upstreamRevisionId)) &&
         !stale.has(d.downstreamRevisionId)
       ) {
         stale.add(d.downstreamRevisionId);
@@ -233,7 +254,98 @@ export function applyWorkflow(
     return j;
   };
   let result: { id: string };
-  if (c.action.startsWith('research-')) {
+  const content = (r: WorkflowRevision) =>
+    r.scriptSchemaVersion ? scriptContent(s, r) : researchContent(s, r);
+  const scopeDependency = (r: WorkflowRevision, ids?: string[]) => {
+    if (!ids) return;
+    const deps = s.dependencies.filter(
+      (d) => d.downstreamRevisionId === r.id && revision(d.upstreamRevisionId).scriptSchemaVersion,
+    );
+    if (
+      deps.length !== 1 ||
+      ids.some((id) => !scriptSegments(s, deps[0].upstreamRevisionId).some((x) => x.id === id))
+    )
+      fail('INVALID_SEGMENT_REFERENCE', '段落依赖必须属于一个明确的上游文稿修订。');
+    deps[0].segmentIds = [...new Set(ids)];
+  };
+  if (c.action.startsWith('script-')) {
+    const command = ScriptCommandSchema.parse(c);
+    if (command.action === 'script-start') {
+      const inputs = command.researchRevisionId ? [command.researchRevisionId] : [];
+      if (command.origin === 'research' && !inputs.length)
+        fail('RESEARCH_REQUIRED', '请选择已批准的研究修订。');
+      if (command.origin !== 'research' && inputs.length)
+        fail('INVALID_SCRIPT_REFERENCE', '用户文稿入口不隐式绑定研究。');
+      requireInputs(inputs);
+      if (inputs.some((id) => artifact(revision(id).artifactId).type !== 'research'))
+        fail('INVALID_SCRIPT_REFERENCE', '输入必须为研究修订。');
+      const a = s.artifacts.find((a) => a.type === 'script'),
+        old = a?.currentRevisionId ? revision(a.currentRevisionId) : null;
+      if (old && (old.scriptSchemaVersion || old.status !== 'draft'))
+        fail('ARTIFACT_EXISTS', '已有文稿，请从当前版本创建新修订。', 409);
+      const r = old ?? createRevision('script', '空文稿草稿', inputs, false);
+      if (old) {
+        if (inputs.length)
+          fail('INVALID_SCRIPT_REFERENCE', '旧文稿转换请保留原输入，通过 fork 显式切换研究。');
+        r.version++;
+        artifact(r.artifactId).version++;
+      }
+      const researchId =
+        inputs[0] ??
+        s.dependencies.find(
+          (d) =>
+            d.downstreamRevisionId === r.id &&
+            artifact(revision(d.upstreamRevisionId).artifactId).type === 'research',
+        )?.upstreamRevisionId ??
+        null;
+      initializeScript(
+        s,
+        r,
+        researchId ? 'research' : command.origin,
+        researchId,
+        command.text || (old?.text ?? ''),
+        command.unitsPerMinute,
+      );
+      r.contentHash = fingerprint(content(r));
+      r.updatedAt = time;
+      result = r;
+    } else {
+      const r = revision(command.revisionId),
+        a = artifact(r.artifactId);
+      if (a.type !== 'script' || !scriptDocument(s, r.id))
+        fail('INVALID_STATE', '此操作仅适用于结构化文稿。');
+      if (r.status !== 'draft') fail('IMMUTABLE_REVISION', '文稿只读，请创建新修订。');
+      if (r.version !== command.expectedVersion || a.currentRevisionId !== r.id) conflict();
+      if (command.action === 'script-save') {
+        saveScript(s, r, command.segments, command.unitsPerMinute);
+        r.version++;
+        r.updatedAt = time;
+        a.version++;
+        r.contentHash = fingerprint(content(r));
+        result = r;
+      } else {
+        const doc = scriptDocument(s, r.id)!;
+        const j = enqueue('script', doc.researchRevisionId ? [doc.researchRevisionId] : [], key);
+        j.provider = 'script';
+        j.scriptInput = scriptInput(
+          s,
+          r,
+          project,
+          command.segmentId,
+          command.instruction,
+          command.mode,
+        );
+        j.progress = 0;
+        j.logs = [
+          {
+            at: time,
+            message: `${command.mode} 文稿${command.segmentId ? '局部改写' : '整体写稿'}已排队；目标版本已冻结。`,
+          },
+        ];
+        result = j;
+      }
+    }
+  } else if (c.action.startsWith('research-')) {
     const change = applyResearchCommand(s, project.id, ResearchCommandSchema.parse(c), time);
     if (change.input) {
       const j = enqueue('research', [], key);
@@ -257,6 +369,7 @@ export function applyWorkflow(
     const existing = s.artifacts.find((a) => a.type === c.type);
     if (existing) fail('ARTIFACT_EXISTS', '该产物已有候选，请从已有版本创建分支。', 409);
     result = createRevision(c.type, c.text, c.inputRevisionIds, false);
+    scopeDependency(result as WorkflowRevision, c.inputSegmentIds);
   } else if (c.action === 'fork') {
     const old = revision(c.revisionId);
     if (old.version !== c.expectedVersion) conflict();
@@ -272,9 +385,17 @@ export function applyWorkflow(
       c.inputRevisionIds !== undefined,
     );
     cloneResearch(s, old, result as WorkflowRevision);
-    (result as WorkflowRevision).contentHash = fingerprint(
-      researchContent(s, result as WorkflowRevision),
-    );
+    cloneScript(s, old, result as WorkflowRevision);
+    if (c.inputSegmentIds) scopeDependency(result as WorkflowRevision, c.inputSegmentIds);
+    else
+      for (const dep of s.dependencies.filter((d) => d.downstreamRevisionId === result.id)) {
+        const previous = s.dependencies.find(
+          (d) =>
+            d.downstreamRevisionId === old.id && d.upstreamRevisionId === dep.upstreamRevisionId,
+        );
+        if (previous?.segmentIds) dep.segmentIds = previous.segmentIds;
+      }
+    (result as WorkflowRevision).contentHash = fingerprint(content(result as WorkflowRevision));
   } else if (['patch', 'submit', 'approve', 'reject'].includes(c.action)) {
     if (!('revisionId' in c)) throw new Error('Invalid revision action');
     const r = revision(c.revisionId),
@@ -283,10 +404,13 @@ export function applyWorkflow(
       fail('IMMUTABLE_REVISION', '已批准内容只读，请创建新修订。');
     if (r.version !== c.expectedVersion || a.currentRevisionId !== r.id) conflict();
     if (c.action === 'patch') {
+      if (r.scriptSchemaVersion)
+        fail('STRUCTURED_SCRIPT_REQUIRED', '结构化文稿请通过段落保存接口修改。');
       if (r.status !== 'draft') fail('INVALID_STATE', '仅草稿可以保存，请创建新修订。');
       r.text = c.text;
       r.contentHash = fingerprint(researchContent(s, r));
     } else if (c.action === 'submit') {
+      assertScriptSubmittable(s, r);
       if (r.status !== 'draft') fail('INVALID_STATE', '仅草稿可以提交审核。');
       requireInputs(
         s.dependencies
@@ -399,7 +523,21 @@ export function applyWorkflow(
             : j.provider !== 'research' && currentVersion !== j.targetVersion
               ? 'TARGET_CHANGED'
               : null);
-        if (!j.errorCode && j.provider === 'research') {
+        if (!j.errorCode && j.provider === 'script') {
+          const input = j.scriptInput ?? fail('INVALID_SCRIPT_RESULT', '缺少固定写稿输入。'),
+            output = c.scriptResult ?? fail('INVALID_SCRIPT_RESULT', '缺少结构化写稿结果。');
+          j.errorCode = finishScript(s, input, output);
+          if (!j.errorCode) {
+            const r = revision(input.revisionId);
+            r.updatedAt = time;
+            r.contentHash = fingerprint(content(r));
+            artifact(r.artifactId).version++;
+            j.scriptResult = output;
+            j.resultRevisionId = r.id;
+            j.state = 'succeeded';
+            j.progress = 1;
+          } else j.state = 'failed';
+        } else if (!j.errorCode && j.provider === 'research') {
           const input = j.researchInput ?? fail('INVALID_RESULT', '研究任务缺少固定输入。');
           const output = c.researchResult ?? fail('INVALID_RESULT', '研究任务缺少结构化结果。');
           j.errorCode = finishResearch(s, input, output, time);
@@ -456,7 +594,7 @@ export function applyWorkflow(
     // Telemetry/lease updates do not invalidate a user action's state version.
     if (c.action !== 'heartbeat') j.version++;
     j.updatedAt = time;
-    if (j.provider === 'remotion' && c.action !== 'heartbeat')
+    if (['remotion', 'research', 'script'].includes(j.provider) && c.action !== 'heartbeat')
       j.logs = [
         ...(j.logs || []),
         { at: time, message: `${c.action}: ${j.state}${j.errorCode ? ' · ' + j.errorCode : ''}` },

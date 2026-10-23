@@ -26,10 +26,12 @@ export function workflowHttp(request: NextRequest, path: string[]) {
             return write(projectId, { ...(await body()), action: 'create' });
         }
         if (asyncRun) {
+          const input = await body();
           const j = (await write(projectId, {
-            ...(await body()),
-            action: 'enqueue',
-            kind: path[2] === 'research-runs' ? 'research' : 'script',
+            ...input,
+            ...(path[2] === 'script-runs' && input.revisionId
+              ? { action: 'script-generate' }
+              : { action: 'enqueue', kind: path[2] === 'research-runs' ? 'research' : 'script' }),
           })) as WorkflowJob;
           return { jobId: j.id, status: j.state };
         }

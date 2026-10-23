@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T08:07:15.769Z",
+  "backend": "sqlite",
+  "runId": "mvkosp4o",
+  "checks": [
+    {
+      "name": "Phase00/01 HTTP 与工作流回归",
+      "status": "PASS",
+      "detail": {
+        "http": 15,
+        "workflow": 8
+      }
+    },
+    {
+      "name": "用户文稿跳过研究、稳定段落ID、真实并发409与幂等",
+      "status": "PASS",
+      "detail": {
+        "segmentIds": [
+          "9802cb67-33d1-4b1f-ad39-5b56d43ecba5",
+          "f3b33e07-c756-4c9b-b913-0d6eb6958329"
+        ],
+        "statuses": [
+          200,
+          409
+        ]
+      }
+    },
+    {
+      "name": "真实浏览器第二段刷新、段落增删排序、批准/驳回/Fork/历史/差异与双表保护",
+      "status": "PASS",
+      "detail": {
+        "stableSegmentIds": [
+          "9802cb67-33d1-4b1f-ad39-5b56d43ecba5",
+          "f3b33e07-c756-4c9b-b913-0d6eb6958329"
+        ],
+        "approvedRevisionId": "b79fa47d-32dd-41d0-8012-1609eaad0043"
+      }
+    },
+    {
+      "name": "修改指定段落后依赖失效、未改段落依赖仍可复用",
+      "status": "PASS",
+      "detail": {
+        "changed": "7506c822-9fb4-451a-80ba-c3ee37b7a7d0",
+        "unchanged": "12b4aaba-b6e6-4ca8-97c4-3f659caebe82",
+        "syntheticConsumers": true
+      }
+    },
+    {
+      "name": "文稿固定批准研究、双来源引用一致、冲突和未核实提示",
+      "status": "PASS",
+      "detail": {
+        "researchRevisionId": "389a6c0c-c2ac-47a1-af78-bdcd1f243530",
+        "claimId": "2822fa70-5024-465a-817b-d13a46f67f0f",
+        "sourceIds": [
+          "a0688306-948e-4d70-b8e4-36bd5209f0ac",
+          "f3ff0a24-c1c2-4bd8-ab78-e1c1c399c5fa"
+        ],
+        "invalidReference": 422
+      }
+    },
+    {
+      "name": "整体/局部写稿 Adapter、真实Worker Mock标识及未配置失败",
+      "status": "PASS",
+      "detail": {
+        "partialJob": "2e50d88e-e26c-4b1b-8d62-c47056d3eceb",
+        "wholeJob": "d57f9f02-e843-4a98-ae1f-19a0b0f66bd4",
+        "unconfigured": "2961701c-5106-43d9-ac11-cd231bafbe2b",
+        "partialPreservedOtherSegment": true
+      }
+    },
+    {
+      "name": "研究替换定位绑定段落、旧批准文稿保留、Fork清空旧Claim并显式重绑",
+      "status": "PASS",
+      "detail": {
+        "oldResearch": "389a6c0c-c2ac-47a1-af78-bdcd1f243530",
+        "newResearch": "99a1ff22-7bf7-4507-af1a-0da51cf0970a",
+        "affectedSegmentIds": [
+          "546304d2-2032-438b-b95e-d504add850cd"
+        ],
+        "oldIdsRejected": 422
+      }
+    },
+    {
+      "name": "Phase01旧文本草稿可无损转换，不重新初始化项目",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启持久化、浏览器无错误及原数据保留",
+      "status": "PASS",
+      "detail": {
+        "originalDataHash": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54",
+        "unchanged": true,
+        "pageErrors": []
+      }
+    }
+  ],
+  "pageErrors": [],
+  "userProjectId": "7e1cf06a-9ea8-4ab3-92c0-14723fff4941",
+  "researchProjectId": "88a1c888-e27b-461d-97fa-b901d005e242",
+  "finishedAt": "2026-10-23T08:07:31.962Z"
+}

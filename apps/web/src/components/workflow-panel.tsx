@@ -206,12 +206,18 @@ export function WorkflowPanel({
   originalText = '',
   onRevisionChange,
   integratedResearch = false,
+  integratedScript = false,
+  externalDirty = false,
+  externalRevision,
 }: {
   projectId: string;
   type: ArtifactType;
   originalText?: string;
   onRevisionChange?: (id: string) => void;
   integratedResearch?: boolean;
+  integratedScript?: boolean;
+  externalDirty?: boolean;
+  externalRevision?: { id: string; version: number };
 }) {
   const { snapshot, error, busy, reload, send } = useWorkflow(projectId);
   const [selected, setSelected] = useState<string | null>(null);
@@ -228,6 +234,13 @@ export function WorkflowPanel({
   const revision = revisions.find((r) => r.id === selected);
   const isCurrent = artifact?.currentRevisionId === revision?.id;
   const stale = revision && snapshot?.staleRevisionIds.includes(revision.id);
+  const waitingForSavedRevision =
+    integratedScript &&
+    externalRevision?.id === revision?.id &&
+    externalRevision?.version !== revision?.version;
+  useEffect(() => {
+    if (integratedScript && externalRevision) reload().catch(() => {});
+  }, [integratedScript, externalRevision?.id, externalRevision?.version]);
   function select(r: typeof revision) {
     if (r) {
       setSelected(r.id);
@@ -242,11 +255,16 @@ export function WorkflowPanel({
       select(revisions.find((r) => r.id === artifact.currentRevisionId));
   }, [artifact?.currentRevisionId, selected]);
   useEffect(() => {
-    if (integratedResearch && !dirty && revision && revision.version !== editVersion) {
+    if (
+      (integratedResearch || integratedScript) &&
+      !dirty &&
+      revision &&
+      revision.version !== editVersion
+    ) {
       setText(revision.text);
       setEditVersion(revision.version);
     }
-  }, [integratedResearch, dirty, revision?.version, editVersion]);
+  }, [integratedResearch, integratedScript, dirty, revision?.version, editVersion]);
   const inputs = () => {
     if (revision)
       return (
@@ -290,7 +308,7 @@ export function WorkflowPanel({
         } else {
           url += '/' + action;
           body = {
-            expectedVersion: editVersion,
+            expectedVersion: integratedScript ? revision.version : editVersion,
             ...(action === 'approve' || action === 'reject' ? { comment } : {}),
           };
         }
@@ -370,26 +388,34 @@ export function WorkflowPanel({
             {revision && !isCurrent && (
               <Notice>正在查看历史修订。当前候选已变化；请选取当前修订或显式创建新修订。</Notice>
             )}
-            <label className={s.field}>
-              产物文本
-              <textarea
-                aria-label="产物文本"
-                className={s.textarea}
-                rows={12}
-                maxLength={50000}
-                value={text}
-                readOnly={!!revision && (revision.status !== 'draft' || !isCurrent)}
-                onChange={(e) => {
-                  setText(e.target.value);
-                  setDirty(true);
-                }}
-              />
-            </label>
+            {integratedScript && revision?.scriptSchemaVersion ? (
+              <p className={s.caption}>
+                正文与引用在上方按段保存；此处审核同一修订，不会重新生成文稿。
+              </p>
+            ) : (
+              <label className={s.field}>
+                产物文本
+                <textarea
+                  aria-label="产物文本"
+                  className={s.textarea}
+                  rows={12}
+                  maxLength={50000}
+                  value={text}
+                  readOnly={
+                    integratedScript || (!!revision && (revision.status !== 'draft' || !isCurrent))
+                  }
+                  onChange={(e) => {
+                    setText(e.target.value);
+                    setDirty(true);
+                  }}
+                />
+              </label>
+            )}
             <p className={s.caption}>
               无来源核验标记；批准内容仅确认此次创作修订，不授予素材商业许可。
             </p>
             <div className={s.actions}>
-              {(!revision || (revision.status === 'draft' && isCurrent)) && (
+              {!integratedScript && (!revision || (revision.status === 'draft' && isCurrent)) && (
                 <button
                   className={s.primary}
                   disabled={busy || !text.trim()}
@@ -401,20 +427,26 @@ export function WorkflowPanel({
               {revision?.status === 'draft' && isCurrent && (
                 <button
                   className={s.button}
-                  disabled={busy || dirty || stale}
+                  disabled={busy || dirty || externalDirty || waitingForSavedRevision || stale}
                   onClick={() => act('submit')}
                 >
                   提交审核
                 </button>
               )}
               {revision && (
-                <button className={s.button} disabled={busy || dirty} onClick={() => act('fork')}>
+                <button
+                  className={s.button}
+                  disabled={busy || dirty || externalDirty}
+                  onClick={() => act('fork')}
+                >
                   创建新修订
                 </button>
               )}
-              <button className={s.button} disabled={busy || dirty} onClick={() => act('mock')}>
-                生成模拟{type === 'research' ? '研究' : '文稿'}文本
-              </button>
+              {!integratedScript && (
+                <button className={s.button} disabled={busy || dirty} onClick={() => act('mock')}>
+                  生成模拟{type === 'research' ? '研究' : '文稿'}文本
+                </button>
+              )}
             </div>
             {dirty && <p className={s.caption}>有未保存修改，保存后再提交审核或切换版本。</p>}
             {revision?.status === 'in_review' && isCurrent && (
@@ -432,14 +464,14 @@ export function WorkflowPanel({
                 <div className={s.actions}>
                   <button
                     className={s.primary}
-                    disabled={busy || stale}
+                    disabled={busy || externalDirty || stale}
                     onClick={() => act('approve')}
                   >
                     批准当前修订
                   </button>
                   <button
                     className={s.button}
-                    disabled={busy || !comment.trim()}
+                    disabled={busy || externalDirty || !comment.trim()}
                     onClick={() => act('reject')}
                   >
                     驳回修改
@@ -484,7 +516,7 @@ export function WorkflowPanel({
               <button
                 key={r.id}
                 className={s.workflowVersion}
-                disabled={dirty || busy}
+                disabled={dirty || externalDirty || busy}
                 aria-pressed={selected === r.id}
                 onClick={() => select(r)}
               >
@@ -496,7 +528,7 @@ export function WorkflowPanel({
               <p className={s.caption}>尚无修订，原始需求和上传资料保留在项目总览。</p>
             )}
           </Card>
-          {!integratedResearch && (
+          {!integratedResearch && !integratedScript && (
             <Jobs jobs={snapshot.jobs} projectId={projectId} send={send} busy={busy} />
           )}
         </div>

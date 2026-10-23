@@ -1,0 +1,1441 @@
+{
+  "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+  "currentRevisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+  "revision": {
+    "id": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+    "artifactId": "1f57b775-dc70-42cb-bc52-3dba342a49d2",
+    "revisionNumber": 3,
+    "schemaVersion": 1,
+    "version": 2,
+    "text": "浏览器实际保存与审核的研究摘要。资料全部为合成验收夹具，存在冲突，不构成已核实事实。",
+    "contentHash": "825796d8f682305eee585743124cb50a9399c7134e4752f543c2eddda744e749",
+    "mock": false,
+    "status": "draft",
+    "parentRevisionId": "43c3ce04-2f48-44b1-935f-77ca40df2cff",
+    "createdAt": "2026-10-23T07:45:45.289Z",
+    "updatedAt": "2026-10-23T07:45:45.468Z",
+    "createdBy": "local-user",
+    "researchSchemaVersion": 1
+  },
+  "revisions": [
+    {
+      "id": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "artifactId": "1f57b775-dc70-42cb-bc52-3dba342a49d2",
+      "revisionNumber": 3,
+      "schemaVersion": 1,
+      "version": 2,
+      "text": "浏览器实际保存与审核的研究摘要。资料全部为合成验收夹具，存在冲突，不构成已核实事实。",
+      "contentHash": "825796d8f682305eee585743124cb50a9399c7134e4752f543c2eddda744e749",
+      "mock": false,
+      "status": "draft",
+      "parentRevisionId": "43c3ce04-2f48-44b1-935f-77ca40df2cff",
+      "createdAt": "2026-10-23T07:45:45.289Z",
+      "updatedAt": "2026-10-23T07:45:45.468Z",
+      "createdBy": "local-user",
+      "researchSchemaVersion": 1
+    },
+    {
+      "id": "43c3ce04-2f48-44b1-935f-77ca40df2cff",
+      "artifactId": "1f57b775-dc70-42cb-bc52-3dba342a49d2",
+      "revisionNumber": 2,
+      "schemaVersion": 1,
+      "version": 9,
+      "text": "浏览器实际保存与审核的研究摘要。资料全部为合成验收夹具，存在冲突，不构成已核实事实。",
+      "contentHash": "72deb334dc9510634c031b8b28338ee75128afc0beab838965102306c5d94d9f",
+      "mock": false,
+      "status": "approved",
+      "parentRevisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+      "createdAt": "2026-10-23T07:45:35.112Z",
+      "updatedAt": "2026-10-23T07:45:43.105Z",
+      "createdBy": "local-user",
+      "researchSchemaVersion": 1
+    },
+    {
+      "id": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+      "artifactId": "1f57b775-dc70-42cb-bc52-3dba342a49d2",
+      "revisionNumber": 1,
+      "schemaVersion": 1,
+      "version": 20,
+      "text": "仅用于验收的自制合成资料。所有数值不构成真实世界的事实或核验结论。",
+      "contentHash": "ba3066d106d8aee73c5d9998fff903108042d64994dac888d1cf21bc88325787",
+      "mock": false,
+      "status": "approved",
+      "parentRevisionId": null,
+      "createdAt": "2026-10-23T07:45:27.397Z",
+      "updatedAt": "2026-10-23T07:45:35.073Z",
+      "createdBy": "local-user",
+      "researchSchemaVersion": 1
+    }
+  ],
+  "sources": [
+    {
+      "title": "运行取消测试原件",
+      "sourceType": "video",
+      "publisher": "Self-authored synthetic test",
+      "creator": "Test fixture",
+      "publishedAt": null,
+      "knownRestrictions": "验收自制合成资料；仅内部测试",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "ae84fe02-e5c6-46f9-a641-b5e5810a529a",
+        "name": "background.mp4",
+        "mime": "video/mp4",
+        "sizeBytes": 1026392,
+        "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd"
+      },
+      "id": "2adc6539-1184-4711-a13c-863b6e8c6dfd",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:37.753Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied"
+    },
+    {
+      "title": "自制十秒测试视频",
+      "sourceType": "video",
+      "publisher": "Self-authored synthetic test",
+      "creator": "Test fixture",
+      "publishedAt": null,
+      "knownRestrictions": "验收自制合成资料；仅内部测试",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "1a0d5da3-c2d5-4da8-af4f-e33cfdd5bddc",
+        "name": "background.mp4",
+        "mime": "video/mp4",
+        "sizeBytes": 1026392,
+        "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd"
+      },
+      "id": "4bb0770a-45ff-4192-9dca-e0e442fbaefd",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:27.491Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied",
+      "metadata": {
+        "mime": "video/mp4",
+        "sizeBytes": 1026392,
+        "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+        "width": 1080,
+        "height": 1920,
+        "durationMs": 10000,
+        "fps": 30,
+        "codec": "h264"
+      }
+    },
+    {
+      "title": "Mock 视觉演示原件",
+      "sourceType": "image",
+      "publisher": "Self-authored synthetic test",
+      "creator": "Test fixture",
+      "publishedAt": null,
+      "knownRestrictions": "验收自制合成资料；仅内部测试",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "cb9dd7ce-d0e7-4916-aed8-8bebae522942",
+        "name": "diagram.png",
+        "mime": "image/png",
+        "sizeBytes": 1506,
+        "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf"
+      },
+      "id": "634a2959-1f0e-4164-b2f3-55867d2ac7a9",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:27.519Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied",
+      "metadata": {
+        "mime": "image/png",
+        "sizeBytes": 1506,
+        "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf",
+        "width": 640,
+        "height": 360,
+        "codec": "png"
+      }
+    },
+    {
+      "title": "合成文本资料 B",
+      "sourceType": "text",
+      "publisher": "Self-authored synthetic test",
+      "creator": "Test fixture",
+      "publishedAt": null,
+      "knownRestrictions": "验收自制合成资料；仅内部测试",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "2ba37dd3-239b-42ff-a9c3-ed323254e909",
+        "name": "source-b.txt",
+        "mime": "text/plain",
+        "sizeBytes": 70,
+        "sha256": "98fa1f19cd2afaf10154fe8729e84bfe39e9b2663e8d68db8e6ad671611eaed6"
+      },
+      "id": "851a933a-bb5b-487b-b0aa-13b99793cf3d",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:27.439Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied",
+      "metadata": {
+        "mime": "text/plain",
+        "sizeBytes": 70,
+        "sha256": "98fa1f19cd2afaf10154fe8729e84bfe39e9b2663e8d68db8e6ad671611eaed6"
+      }
+    },
+    {
+      "title": "损坏 PDF 测试",
+      "sourceType": "pdf",
+      "publisher": "Self-authored synthetic test",
+      "creator": "Test fixture",
+      "publishedAt": null,
+      "knownRestrictions": "验收自制合成资料；仅内部测试",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "dd0c48a0-1cae-470f-a3cc-ad4802dbe535",
+        "name": "broken.pdf",
+        "mime": "application/pdf",
+        "sizeBytes": 55,
+        "sha256": "ba766dde08a5308fe68dbe541ba21ef5357fd709cc77a9a214916a2f36cf09ea"
+      },
+      "id": "93aa5042-ba02-455d-83b2-5af33c0abc0e",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:27.543Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied"
+    },
+    {
+      "title": "自制图像资料",
+      "sourceType": "image",
+      "publisher": "Self-authored synthetic test",
+      "creator": "Test fixture",
+      "publishedAt": null,
+      "knownRestrictions": "验收自制合成资料；仅内部测试",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "e3cb38a0-0343-4e4f-a497-0fe7617a1f1d",
+        "name": "diagram.png",
+        "mime": "image/png",
+        "sizeBytes": 1506,
+        "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf"
+      },
+      "id": "b6aef5d0-1c51-4af2-a51c-7889cfabd28b",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:27.461Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied",
+      "metadata": {
+        "mime": "image/png",
+        "sizeBytes": 1506,
+        "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf",
+        "width": 640,
+        "height": 360,
+        "codec": "png"
+      }
+    },
+    {
+      "title": "合成 PDF 资料 A",
+      "sourceType": "pdf",
+      "sourceUrl": "https://example.invalid/user-supplied-not-fetched",
+      "publisher": "Self-authored synthetic test",
+      "creator": "Test fixture",
+      "publishedAt": null,
+      "knownRestrictions": "验收自制合成资料；仅内部测试",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "383b1bcb-2ea7-482e-a3b6-1e601cb0d34d",
+        "name": "source-a.pdf",
+        "mime": "application/pdf",
+        "sizeBytes": 617,
+        "sha256": "8e41bceefbb9bc896eb86ab6666b4410e03d346b19c37037a39b8799bf1f52f1"
+      },
+      "id": "ddddc347-2903-48f6-9358-8bdc0b9788bf",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:27.416Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied",
+      "metadata": {
+        "mime": "application/pdf",
+        "sizeBytes": 617,
+        "sha256": "8e41bceefbb9bc896eb86ab6666b4410e03d346b19c37037a39b8799bf1f52f1",
+        "pages": 1,
+        "truncated": false
+      }
+    },
+    {
+      "title": "浏览器上传图像 · 合成测试",
+      "sourceType": "image",
+      "publisher": "",
+      "creator": "",
+      "publishedAt": null,
+      "knownRestrictions": "未知",
+      "licenseStatus": "unknown",
+      "blob": {
+        "id": "5e8d075c-a3fc-4246-a17c-a8f246345abc",
+        "name": "diagram.png",
+        "mime": "image/png",
+        "sizeBytes": 1506,
+        "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf"
+      },
+      "id": "f7227fe0-eec3-49c8-99d1-5477e6ce7c37",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:42.339Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied"
+    },
+    {
+      "title": "工具失败重试测试",
+      "sourceType": "image",
+      "publisher": "Self-authored synthetic test",
+      "creator": "Test fixture",
+      "publishedAt": null,
+      "knownRestrictions": "验收自制合成资料；仅内部测试",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "760ad664-0259-4e84-abb9-c117784fbaf3",
+        "name": "diagram.png",
+        "mime": "image/png",
+        "sizeBytes": 1506,
+        "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf"
+      },
+      "id": "f8068267-a812-4e0b-bc20-b005d1c56eb0",
+      "projectId": "8fc59aae-9bfc-413f-9705-3a346c11138e",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-23T07:45:35.164Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied",
+      "metadata": {
+        "mime": "image/png",
+        "sizeBytes": 1506,
+        "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf",
+        "width": 640,
+        "height": 360,
+        "codec": "png"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "text": "浏览器验收声明：尚未独立核实",
+      "asOf": null,
+      "scope": "浏览器端到端测试",
+      "unit": "",
+      "verificationStatus": "unverified",
+      "caveats": "",
+      "id": "26a05ce4-c7be-4a56-9594-4d7eb67d33b8",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1
+    },
+    {
+      "text": "验收合成资料称容量为 32 单位（不是现实测量）",
+      "asOf": "2026-10-23",
+      "scope": "仅自制验收夹具",
+      "unit": "units",
+      "verificationStatus": "conflicting",
+      "caveats": "未独立核实，不得用于现实论断",
+      "id": "6648e054-15b9-4361-b0b6-e20ec9ca1cc1",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1
+    },
+    {
+      "text": "Mock 内容不能证明此声明",
+      "asOf": "2026-10-23",
+      "scope": "仅自制验收夹具",
+      "unit": "units",
+      "verificationStatus": "unverified",
+      "caveats": "未独立核实，不得用于现实论断",
+      "id": "f9a6ee8a-da15-4afc-9a7b-daec61d971b1",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "schemaVersion": 1
+    }
+  ],
+  "evidence": [
+    {
+      "id": "3e315ebf-b17c-4b14-9acf-5732f6511438",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "claimId": "6648e054-15b9-4361-b0b6-e20ec9ca1cc1",
+      "sourceId": "ddddc347-2903-48f6-9358-8bdc0b9788bf",
+      "role": "support",
+      "locator": {
+        "kind": "page",
+        "page": 1,
+        "label": "合成资料第1页"
+      },
+      "quote": "Capacity is 32 units.",
+      "validation": "matched",
+      "schemaVersion": 1
+    },
+    {
+      "id": "4a616d16-0a73-44dd-b5b3-6e42aa0f628b",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "claimId": "26a05ce4-c7be-4a56-9594-4d7eb67d33b8",
+      "sourceId": "ddddc347-2903-48f6-9358-8bdc0b9788bf",
+      "role": "context",
+      "locator": {
+        "kind": "page",
+        "page": 1,
+        "label": ""
+      },
+      "quote": "Capacity is 32 units.",
+      "validation": "matched",
+      "schemaVersion": 1
+    },
+    {
+      "id": "6d3816da-29a1-494e-b662-c002e919e1b6",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "claimId": "f9a6ee8a-da15-4afc-9a7b-daec61d971b1",
+      "sourceId": "634a2959-1f0e-4164-b2f3-55867d2ac7a9",
+      "role": "support",
+      "locator": {
+        "kind": "image",
+        "label": "未进行视觉识别"
+      },
+      "quote": "Mock 声明，仅演示",
+      "validation": "mock",
+      "schemaVersion": 1
+    },
+    {
+      "id": "db98495c-7b36-4fc7-ba1a-63a1faab182b",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "claimId": "6648e054-15b9-4361-b0b6-e20ec9ca1cc1",
+      "sourceId": "851a933a-bb5b-487b-b0aa-13b99793cf3d",
+      "role": "refute",
+      "locator": {
+        "kind": "text",
+        "label": "合成资料第1段"
+      },
+      "quote": "Capacity is 64 units.",
+      "validation": "matched",
+      "schemaVersion": 1
+    }
+  ],
+  "indexes": [
+    {
+      "contentType": "video_segment",
+      "summary": "技术时间索引 0–3333 ms；视觉/字幕识别未配置，未进行正式剪辑。",
+      "keywords": [],
+      "startMs": 0,
+      "endMs": 3333,
+      "frameRefs": [
+        {
+          "timeMs": 0,
+          "blob": {
+            "id": "c2cc092f-1166-42eb-9e74-77c7d3338d05",
+            "name": "frame-0.jpg",
+            "mime": "image/jpeg",
+            "sizeBytes": 18055,
+            "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133"
+          }
+        }
+      ],
+      "provenance": "real",
+      "id": "69ec917f-d455-40a3-8bcb-82cf0749792a",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "sourceId": "4bb0770a-45ff-4192-9dca-e0e442fbaefd",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "video_segment",
+      "summary": "技术时间索引 3333–6666 ms；视觉/字幕识别未配置，未进行正式剪辑。",
+      "keywords": [],
+      "startMs": 3333,
+      "endMs": 6666,
+      "frameRefs": [
+        {
+          "timeMs": 3333,
+          "blob": {
+            "id": "6aadd2e8-32f5-4c7a-8b15-dac7820dec56",
+            "name": "frame-1.jpg",
+            "mime": "image/jpeg",
+            "sizeBytes": 16252,
+            "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0"
+          }
+        }
+      ],
+      "provenance": "real",
+      "id": "40c60433-802d-440d-85c7-876150b61fc4",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "sourceId": "4bb0770a-45ff-4192-9dca-e0e442fbaefd",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "video_segment",
+      "summary": "技术时间索引 6666–10000 ms；视觉/字幕识别未配置，未进行正式剪辑。",
+      "keywords": [],
+      "startMs": 6666,
+      "endMs": 10000,
+      "frameRefs": [
+        {
+          "timeMs": 6666,
+          "blob": {
+            "id": "808b61e6-c158-4bc6-a07b-780c259bf669",
+            "name": "frame-2.jpg",
+            "mime": "image/jpeg",
+            "sizeBytes": 16151,
+            "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4"
+          }
+        }
+      ],
+      "provenance": "real",
+      "id": "50f44145-72dc-4342-9412-7418f8799711",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "sourceId": "4bb0770a-45ff-4192-9dca-e0e442fbaefd",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "image",
+      "summary": "Mock 视觉说明：仅演示内容索引结构，未识别画面，不构成事实证据。",
+      "keywords": [],
+      "provenance": "mock",
+      "id": "4c5ee945-1563-42ca-99e9-08c5a9fa7a6b",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "sourceId": "634a2959-1f0e-4164-b2f3-55867d2ac7a9",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "text",
+      "summary": "从用户上传原件实际提取的 UTF-8 文本；未核实内容事实。",
+      "keywords": [],
+      "extractedText": "SYNTHETIC TEST ONLY. Capacity is 64 units. This contradicts Source A.\n",
+      "provenance": "real",
+      "id": "b20eade1-61c5-478e-9329-686a16be4f11",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "sourceId": "851a933a-bb5b-487b-b0aa-13b99793cf3d",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "image",
+      "summary": "图片 640×360；视觉/OCR 未配置，未识别图像语义。",
+      "keywords": [],
+      "provenance": "real",
+      "id": "cd7b7b0d-4aea-45ce-8dd7-84bee54615b3",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "sourceId": "b6aef5d0-1c51-4af2-a51c-7889cfabd28b",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "pdf_page",
+      "summary": "PDF 第 1 页，612×792 pt；文本提取不等于事实核验。",
+      "keywords": [],
+      "extractedText": "SYNTHETIC TEST ONLY. Capacity is 32 units.",
+      "page": 1,
+      "provenance": "real",
+      "id": "76030c7b-2f79-4024-aea0-9ff29f965ed5",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "sourceId": "ddddc347-2903-48f6-9358-8bdc0b9788bf",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "image",
+      "summary": "图片 640×360；视觉/OCR 未配置，未识别图像语义。",
+      "keywords": [],
+      "provenance": "real",
+      "id": "3fdc63fc-cac1-4c98-bf2f-f3b52c5a01c9",
+      "revisionId": "4c69b2f4-2a7e-45d5-870e-633a323cf261",
+      "sourceId": "f8068267-a812-4e0b-bc20-b005d1c56eb0",
+      "schemaVersion": 1
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1677d209-ae33-4845-ba30-98e9ac88912f",
+      "kind": "research",
+      "version": 6,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "072e903f-73c8-49e7-a369-3f72daa487a4",
+      "attempt": 2,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:35.828Z",
+          "finishedAt": "2026-10-23T07:45:36.374Z",
+          "state": "failed",
+          "errorCode": "MEDIA_TOOL_NOT_CONFIGURED"
+        },
+        {
+          "number": 2,
+          "startedAt": "2026-10-23T07:45:37.017Z",
+          "finishedAt": "2026-10-23T07:45:37.670Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 22,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "43c3ce04-2f48-44b1-935f-77ca40df2cff",
+      "errorCode": null,
+      "createdAt": "2026-10-23T07:45:35.213Z",
+      "updatedAt": "2026-10-23T07:45:37.670Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "43c3ce04-2f48-44b1-935f-77ca40df2cff",
+        "sourceId": "37cadacc-178d-4dbd-9988-6c17e82be625",
+        "blob": {
+          "id": "760ad664-0259-4e84-abb9-c117784fbaf3",
+          "name": "diagram.png",
+          "mime": "image/png",
+          "sizeBytes": 1506,
+          "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf"
+        },
+        "mode": "real"
+      },
+      "researchResult": {
+        "kind": "analyze",
+        "mode": "real",
+        "metadata": {
+          "mime": "image/png",
+          "sizeBytes": 1506,
+          "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf",
+          "width": 640,
+          "height": 360,
+          "codec": "png"
+        },
+        "entries": [
+          {
+            "contentType": "image",
+            "summary": "图片 640×360；视觉/OCR 未配置，未识别图像语义。",
+            "keywords": [],
+            "provenance": "real"
+          }
+        ],
+        "warnings": [
+          "视觉/OCR/ASR 提供方未配置；仅真实技术元数据和时间索引，无语义结论。"
+        ]
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T07:45:37.656Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:35.213Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-23T07:45:35.828Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:35.914Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:36.360Z",
+          "message": "MEDIA_TOOL_NOT_CONFIGURED"
+        },
+        {
+          "at": "2026-10-23T07:45:36.374Z",
+          "message": "finish: failed · MEDIA_TOOL_NOT_CONFIGURED"
+        },
+        {
+          "at": "2026-10-23T07:45:36.413Z",
+          "message": "retry: queued"
+        },
+        {
+          "at": "2026-10-23T07:45:37.017Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:37.107Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:37.656Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-23T07:45:37.670Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "1ae7059e-a374-4dcd-b6f2-da2516f15fba",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "18f29b63-7be1-46a6-ab1b-0dff71694601",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:28.327Z",
+          "finishedAt": "2026-10-23T07:45:29.545Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 7,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+      "errorCode": null,
+      "createdAt": "2026-10-23T07:45:27.569Z",
+      "updatedAt": "2026-10-23T07:45:29.545Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+        "sourceId": "48050826-da66-497f-b899-705f0285582a",
+        "blob": {
+          "id": "383b1bcb-2ea7-482e-a3b6-1e601cb0d34d",
+          "name": "source-a.pdf",
+          "mime": "application/pdf",
+          "sizeBytes": 617,
+          "sha256": "8e41bceefbb9bc896eb86ab6666b4410e03d346b19c37037a39b8799bf1f52f1"
+        },
+        "mode": "real"
+      },
+      "researchResult": {
+        "kind": "analyze",
+        "mode": "real",
+        "metadata": {
+          "mime": "application/pdf",
+          "sizeBytes": 617,
+          "sha256": "8e41bceefbb9bc896eb86ab6666b4410e03d346b19c37037a39b8799bf1f52f1",
+          "pages": 1,
+          "truncated": false
+        },
+        "entries": [
+          {
+            "contentType": "pdf_page",
+            "summary": "PDF 第 1 页，612×792 pt；文本提取不等于事实核验。",
+            "keywords": [],
+            "extractedText": "SYNTHETIC TEST ONLY. Capacity is 32 units.",
+            "page": 1,
+            "provenance": "real"
+          }
+        ],
+        "warnings": []
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T07:45:29.538Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:27.569Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-23T07:45:28.327Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:28.421Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:29.538Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-23T07:45:29.545Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "2d91d543-4fd0-4397-93d4-1859c6701f00",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "failed",
+      "inputRevisionIds": [],
+      "idempotencyKey": "bb352d54-3de5-4505-aa92-4c0e3ba524c6",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:29.556Z",
+          "finishedAt": "2026-10-23T07:45:30.225Z",
+          "state": "failed",
+          "errorCode": "PDF_PARSE_FAILED"
+        }
+      ],
+      "targetVersion": 7,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": null,
+      "errorCode": "PDF_PARSE_FAILED",
+      "createdAt": "2026-10-23T07:45:27.626Z",
+      "updatedAt": "2026-10-23T07:45:30.225Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+        "sourceId": "b73684d8-c016-473d-9c9c-afdf6d1cc20f",
+        "blob": {
+          "id": "dd0c48a0-1cae-470f-a3cc-ad4802dbe535",
+          "name": "broken.pdf",
+          "mime": "application/pdf",
+          "sizeBytes": 55,
+          "sha256": "ba766dde08a5308fe68dbe541ba21ef5357fd709cc77a9a214916a2f36cf09ea"
+        },
+        "mode": "real"
+      },
+      "progress": 0.1,
+      "heartbeatAt": "2026-10-23T07:45:30.216Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:27.626Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-23T07:45:29.556Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:29.606Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:30.216Z",
+          "message": "PDF_PARSE_FAILED"
+        },
+        {
+          "at": "2026-10-23T07:45:30.225Z",
+          "message": "finish: failed · PDF_PARSE_FAILED"
+        }
+      ]
+    },
+    {
+      "id": "4e96ae77-6835-40ad-b95d-7795b407f819",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "21beb4d2-16e0-4478-aad9-5bcba98f00c4",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:30.231Z",
+          "finishedAt": "2026-10-23T07:45:30.765Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 7,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+      "errorCode": null,
+      "createdAt": "2026-10-23T07:45:27.654Z",
+      "updatedAt": "2026-10-23T07:45:30.765Z",
+      "researchInput": {
+        "kind": "search",
+        "revisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+        "query": "明确的合成检索演示",
+        "mode": "mock"
+      },
+      "researchResult": {
+        "kind": "search",
+        "mode": "mock",
+        "notes": "Mock 搜索流程演示：明确的合成检索演示。未请求网络，没有真实文章、来源 URL 或核验结论。",
+        "candidates": []
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T07:45:30.757Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:27.654Z",
+          "message": "研究 search 已排队 · mock"
+        },
+        {
+          "at": "2026-10-23T07:45:30.231Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:30.281Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:30.757Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-23T07:45:30.765Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "5494d697-1a40-4d24-90d9-6f8596dc9154",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "0d5b547a-685b-4ba2-a0b3-e6ef7d9ed3c8",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:30.773Z",
+          "finishedAt": "2026-10-23T07:45:31.564Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 7,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+      "errorCode": null,
+      "createdAt": "2026-10-23T07:45:27.598Z",
+      "updatedAt": "2026-10-23T07:45:31.564Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+        "sourceId": "0cb2ed5a-bb04-4a3b-9dda-83d730711493",
+        "blob": {
+          "id": "e3cb38a0-0343-4e4f-a497-0fe7617a1f1d",
+          "name": "diagram.png",
+          "mime": "image/png",
+          "sizeBytes": 1506,
+          "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf"
+        },
+        "mode": "real"
+      },
+      "researchResult": {
+        "kind": "analyze",
+        "mode": "real",
+        "metadata": {
+          "mime": "image/png",
+          "sizeBytes": 1506,
+          "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf",
+          "width": 640,
+          "height": 360,
+          "codec": "png"
+        },
+        "entries": [
+          {
+            "contentType": "image",
+            "summary": "图片 640×360；视觉/OCR 未配置，未识别图像语义。",
+            "keywords": [],
+            "provenance": "real"
+          }
+        ],
+        "warnings": [
+          "视觉/OCR/ASR 提供方未配置；仅真实技术元数据和时间索引，无语义结论。"
+        ]
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T07:45:31.555Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:27.598Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-23T07:45:30.773Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:30.818Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:31.555Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-23T07:45:31.564Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "73757352-c6d1-41a3-9123-d1168e5dff70",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "cancelled",
+      "inputRevisionIds": [],
+      "idempotencyKey": "3bf964cd-0894-4f3b-a18c-e4c6eb3325ad",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:38.470Z",
+          "finishedAt": "2026-10-23T07:45:38.916Z",
+          "state": "cancelled",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 24,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": null,
+      "errorCode": null,
+      "createdAt": "2026-10-23T07:45:37.829Z",
+      "updatedAt": "2026-10-23T07:45:38.916Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "43c3ce04-2f48-44b1-935f-77ca40df2cff",
+        "sourceId": "bb3bc5e7-c528-4ce3-ad4e-402345ebd28f",
+        "blob": {
+          "id": "ae84fe02-e5c6-46f9-a641-b5e5810a529a",
+          "name": "background.mp4",
+          "mime": "video/mp4",
+          "sizeBytes": 1026392,
+          "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd"
+        },
+        "mode": "real"
+      },
+      "progress": 0,
+      "heartbeatAt": "2026-10-23T07:45:38.556Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:37.829Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-23T07:45:38.470Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:38.556Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:38.916Z",
+          "message": "cancel: cancelled"
+        }
+      ]
+    },
+    {
+      "id": "9464c883-f971-4e84-86ae-17214ddeab4d",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "b2e16055-de3e-4bf6-8870-ae42ab479046",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:31.574Z",
+          "finishedAt": "2026-10-23T07:45:32.842Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 7,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+      "errorCode": null,
+      "createdAt": "2026-10-23T07:45:27.613Z",
+      "updatedAt": "2026-10-23T07:45:32.842Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+        "sourceId": "f5587dcc-280a-4bc3-997b-94e8fd7d1977",
+        "blob": {
+          "id": "1a0d5da3-c2d5-4da8-af4f-e33cfdd5bddc",
+          "name": "background.mp4",
+          "mime": "video/mp4",
+          "sizeBytes": 1026392,
+          "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd"
+        },
+        "mode": "real"
+      },
+      "researchResult": {
+        "kind": "analyze",
+        "mode": "real",
+        "metadata": {
+          "mime": "video/mp4",
+          "sizeBytes": 1026392,
+          "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+          "width": 1080,
+          "height": 1920,
+          "durationMs": 10000,
+          "fps": 30,
+          "codec": "h264"
+        },
+        "entries": [
+          {
+            "contentType": "video_segment",
+            "summary": "技术时间索引 0–3333 ms；视觉/字幕识别未配置，未进行正式剪辑。",
+            "keywords": [],
+            "startMs": 0,
+            "endMs": 3333,
+            "frameRefs": [
+              {
+                "timeMs": 0,
+                "blob": {
+                  "id": "c2cc092f-1166-42eb-9e74-77c7d3338d05",
+                  "name": "frame-0.jpg",
+                  "mime": "image/jpeg",
+                  "sizeBytes": 18055,
+                  "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133"
+                }
+              }
+            ],
+            "provenance": "real"
+          },
+          {
+            "contentType": "video_segment",
+            "summary": "技术时间索引 3333–6666 ms；视觉/字幕识别未配置，未进行正式剪辑。",
+            "keywords": [],
+            "startMs": 3333,
+            "endMs": 6666,
+            "frameRefs": [
+              {
+                "timeMs": 3333,
+                "blob": {
+                  "id": "6aadd2e8-32f5-4c7a-8b15-dac7820dec56",
+                  "name": "frame-1.jpg",
+                  "mime": "image/jpeg",
+                  "sizeBytes": 16252,
+                  "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0"
+                }
+              }
+            ],
+            "provenance": "real"
+          },
+          {
+            "contentType": "video_segment",
+            "summary": "技术时间索引 6666–10000 ms；视觉/字幕识别未配置，未进行正式剪辑。",
+            "keywords": [],
+            "startMs": 6666,
+            "endMs": 10000,
+            "frameRefs": [
+              {
+                "timeMs": 6666,
+                "blob": {
+                  "id": "808b61e6-c158-4bc6-a07b-780c259bf669",
+                  "name": "frame-2.jpg",
+                  "mime": "image/jpeg",
+                  "sizeBytes": 16151,
+                  "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4"
+                }
+              }
+            ],
+            "provenance": "real"
+          }
+        ],
+        "warnings": [
+          "视觉/OCR/ASR 提供方未配置；仅真实技术元数据和时间索引，无语义结论。"
+        ]
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T07:45:32.831Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:27.613Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-23T07:45:31.574Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:31.622Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:32.831Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-23T07:45:32.842Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "9eed9850-ac54-4dc3-abfb-4e1672e1938d",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "3e3aafbf-4a11-489c-aa86-edd1d889629a",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:32.853Z",
+          "finishedAt": "2026-10-23T07:45:33.396Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 7,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+      "errorCode": null,
+      "createdAt": "2026-10-23T07:45:27.582Z",
+      "updatedAt": "2026-10-23T07:45:33.396Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+        "sourceId": "a355d8fd-0be1-4cac-bb1c-9cccfe9f61ba",
+        "blob": {
+          "id": "2ba37dd3-239b-42ff-a9c3-ed323254e909",
+          "name": "source-b.txt",
+          "mime": "text/plain",
+          "sizeBytes": 70,
+          "sha256": "98fa1f19cd2afaf10154fe8729e84bfe39e9b2663e8d68db8e6ad671611eaed6"
+        },
+        "mode": "real"
+      },
+      "researchResult": {
+        "kind": "analyze",
+        "mode": "real",
+        "metadata": {
+          "mime": "text/plain",
+          "sizeBytes": 70,
+          "sha256": "98fa1f19cd2afaf10154fe8729e84bfe39e9b2663e8d68db8e6ad671611eaed6"
+        },
+        "entries": [
+          {
+            "contentType": "text",
+            "summary": "从用户上传原件实际提取的 UTF-8 文本；未核实内容事实。",
+            "keywords": [],
+            "extractedText": "SYNTHETIC TEST ONLY. Capacity is 64 units. This contradicts Source A.\n",
+            "provenance": "real"
+          }
+        ],
+        "warnings": []
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T07:45:33.388Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:27.582Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-23T07:45:32.853Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:32.905Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:33.388Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-23T07:45:33.396Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "c14cf8a0-0ad2-4474-9fc3-61879ee53e1c",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "5c013227-964b-43ea-b7e3-b1abbe52a333",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:33.407Z",
+          "finishedAt": "2026-10-23T07:45:34.059Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 7,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+      "errorCode": null,
+      "createdAt": "2026-10-23T07:45:27.640Z",
+      "updatedAt": "2026-10-23T07:45:34.059Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+        "sourceId": "c3a0196b-42ed-4a9f-873a-e4283ce8b818",
+        "blob": {
+          "id": "cb9dd7ce-d0e7-4916-aed8-8bebae522942",
+          "name": "diagram.png",
+          "mime": "image/png",
+          "sizeBytes": 1506,
+          "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf"
+        },
+        "mode": "mock"
+      },
+      "researchResult": {
+        "kind": "analyze",
+        "mode": "mock",
+        "metadata": {
+          "mime": "image/png",
+          "sizeBytes": 1506,
+          "sha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf",
+          "width": 640,
+          "height": 360,
+          "codec": "png"
+        },
+        "entries": [
+          {
+            "contentType": "image",
+            "summary": "Mock 视觉说明：仅演示内容索引结构，未识别画面，不构成事实证据。",
+            "keywords": [],
+            "provenance": "mock"
+          }
+        ],
+        "warnings": []
+      },
+      "progress": 1,
+      "heartbeatAt": "2026-10-23T07:45:34.049Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:27.640Z",
+          "message": "研究 analyze 已排队 · mock"
+        },
+        {
+          "at": "2026-10-23T07:45:33.407Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:33.474Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:34.049Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-23T07:45:34.059Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "e4d0d020-4703-4348-bf31-9d44a8af4092",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "failed",
+      "inputRevisionIds": [],
+      "idempotencyKey": "0ea19519-9bbb-445b-aa8f-b9140a8d2ad1",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "number": 1,
+          "startedAt": "2026-10-23T07:45:34.068Z",
+          "finishedAt": "2026-10-23T07:45:34.591Z",
+          "state": "failed",
+          "errorCode": "PROVIDER_NOT_CONFIGURED"
+        }
+      ],
+      "targetVersion": 7,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": null,
+      "errorCode": "PROVIDER_NOT_CONFIGURED",
+      "createdAt": "2026-10-23T07:45:27.667Z",
+      "updatedAt": "2026-10-23T07:45:34.591Z",
+      "researchInput": {
+        "kind": "search",
+        "revisionId": "1511319b-c17b-46c7-9cb3-fad1d4a8727c",
+        "query": "不应伪造任何文章",
+        "mode": "unconfigured"
+      },
+      "progress": 0.1,
+      "heartbeatAt": "2026-10-23T07:45:34.582Z",
+      "logs": [
+        {
+          "at": "2026-10-23T07:45:27.667Z",
+          "message": "研究 search 已排队 · unconfigured"
+        },
+        {
+          "at": "2026-10-23T07:45:34.068Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T07:45:34.117Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-23T07:45:34.582Z",
+          "message": "PROVIDER_NOT_CONFIGURED"
+        },
+        {
+          "at": "2026-10-23T07:45:34.591Z",
+          "message": "finish: failed · PROVIDER_NOT_CONFIGURED"
+        }
+      ]
+    }
+  ],
+  "providers": [
+    {
+      "id": "local-content",
+      "mode": "real",
+      "capabilities": [
+        "PDF文本与页数",
+        "图片尺寸",
+        "FFprobe",
+        "稀疏视频抽帧"
+      ],
+      "configured": true
+    },
+    {
+      "id": "web-search",
+      "mode": "unconfigured",
+      "capabilities": [
+        "网络文章搜索"
+      ],
+      "configured": false
+    },
+    {
+      "id": "vision-asr",
+      "mode": "unconfigured",
+      "capabilities": [
+        "视觉语义",
+        "OCR",
+        "ASR"
+      ],
+      "configured": false
+    },
+    {
+      "id": "explicit-fixture",
+      "mode": "mock",
+      "capabilities": [
+        "显式 Mock 演示，无真实文章"
+      ],
+      "configured": true
+    }
+  ],
+  "initialAttachments": []
+}

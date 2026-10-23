@@ -77,7 +77,34 @@ Prisma CLI 从 `apps/web/.env` 或进程环境读取 DATABASE_URL；Next 从 `.e
 
 ## 本次环境与验证记录
 
-### Phase 03 研究资料
+### Phase 04 结构化口播文稿
+
+第 04 页支持导入已有文稿（不要求研究），或从当前有效批准研究建立草稿。已有旧文本修订仍可查看；未结构化草稿可显式转换，批准/驳回版本先 fork 再转换。正文按段编辑、增删/上下移动，段落 ID 保持稳定；purpose、观众收获和画面意图用于后续叙事，不自动等同镜头。
+
+```powershell
+pnpm db:generate
+# PostgreSQL 只在已备份、明确配置目标库后执行，增量为 0004；不对用户库自动运行
+pnpm db:migrate
+pnpm dev
+# 另一终端同样 DATABASE_URL / STUDIO_DATA_DIR
+pnpm worker
+```
+
+Workflow Worker 继续处理旧文本任务，并消费新的结构化文稿任务；本轮没有真实 Script 模型配置。页面显式选择 Mock 才能演示整体/局部改写；“真实模型 · 未配置”只生成明确失败任务，不返回假 AI 内容。不需要增加或分享 API Key 即可测试用户编辑、引用、版本和 Mock 流程；以后通过 `ScriptProvider` 接入真实模型。
+
+估时为中文汉字+其他语言词数，单位/分钟可调 60–600（中文默认 240），另加 slow/brisk 因子及停顿。它不等于真实音频时长。保存最多 300 段、每段 10000 字符、总正文 50000 字符；接口请求上限 300000 bytes。上游研究替换时会显示绑定段落和旧依据；显式 fork 至新研究后需重新绑定，不能悄悄沿用旧 Claim ID。
+
+```powershell
+pnpm build
+$env:STUDIO_UI_BROWSER_PATH='C:/path/to/h264-capable-chrome.exe'
+pnpm test:script
+# 专用 PostgreSQL 测试集群启动后
+node tests/script/run.cjs --postgres
+```
+
+自动验收使用端口 3010、`.cache/phase04/<runId>`，PG 只新建 `studio_phase04_*`。不会使用/迁移用户数据库。Phase 02/03 回归可设置 `STUDIO_TEST_PHASE_EVIDENCE_ROOT` 指向新的绝对证据目录，保留旧材料；修改迁移数量断言后仍验证每条迁移唯一且对照当前 schema。[样例操作](../fixtures/script/README.md)、[交付报告](PHASE_04_DELIVERY.md)。
+
+### Phase 03 研究资料运行说明
 
 ```powershell
 pnpm install --frozen-lockfile

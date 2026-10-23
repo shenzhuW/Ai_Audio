@@ -16,7 +16,10 @@ const postgres = process.argv.includes('--postgres');
 const backend = postgres ? 'postgresql' : 'sqlite';
 const runId = Date.now().toString(36);
 const data = path.join(root, '.cache/phase03', runId);
-const evidenceDir = path.join(root, 'docs/evidence/phase03', backend);
+const evidenceDir = path.join(
+  process.env.STUDIO_TEST_PHASE_EVIDENCE_ROOT || path.join(root, 'docs/evidence/phase03'),
+  backend,
+);
 fs.mkdirSync(data, { recursive: true });
 fs.mkdirSync(evidenceDir, { recursive: true });
 const base = 'http://127.0.0.1:3008';
@@ -329,7 +332,12 @@ async function initializePostgres() {
   const migrationRows = await db.$queryRawUnsafe(
     'SELECT migration_name, count(*)::int AS count FROM _prisma_migrations WHERE finished_at IS NOT NULL GROUP BY migration_name ORDER BY migration_name',
   );
-  assert.equal(migrationRows.length, 3);
+  assert.equal(
+    migrationRows.length,
+    fs
+      .readdirSync(path.join(appDir, 'prisma/migrations'), { withFileTypes: true })
+      .filter((x) => x.isDirectory()).length,
+  );
   assert.ok(migrationRows.every((r) => r.count === 1));
   const roles = await db.$queryRawUnsafe(
     'SELECT rolsuper,rolcreatedb FROM pg_roles WHERE rolname=current_user',

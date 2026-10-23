@@ -16,7 +16,10 @@ const postgres = process.argv.includes('--postgres');
 const backend = postgres ? 'postgresql' : 'sqlite';
 const runId = Date.now().toString(36);
 const data = path.join(root, '.cache/phase02', runId);
-const evidenceDir = path.join(root, 'docs/evidence/phase02', backend);
+const evidenceDir = path.join(
+  process.env.STUDIO_TEST_PHASE_EVIDENCE_ROOT || path.join(root, 'docs/evidence/phase02'),
+  backend,
+);
 fs.mkdirSync(data, { recursive: true });
 fs.mkdirSync(evidenceDir, { recursive: true });
 const base = 'http://127.0.0.1:3006';

@@ -18,8 +18,8 @@
 | A-007 | 02 | Worker 失败产生可见错误日志，不在主站直接执行不可信 TSX | PASS | [完整异常测试](../docs/evidence/phase02/sqlite/full-results.json)、[真实失败 UI](../docs/evidence/phase02/sqlite/08-failed.png)：缺少 Chromium 的真实子进程失败、重试成功、运行取消；仅可信固定入口，OS 级沙箱 NOT RUN |
 | A-008 | 03 | Source/Claim 带来源与状态，未核实不显示已核实 | PASS | [交付报告](../docs/PHASE_03_DELIVERY.md)、[SQLite](../docs/evidence/phase03/sqlite/results.json)、[真实 PostgreSQL](../docs/evidence/phase03/postgresql/results.json)：双来源页码/文本引用、冲突、无证据 422、verified 400、Mock 不能升级、批准只读/fork、真实浏览器 |
 | A-009 | 03 | 图片/视频内容基础索引可保存，研究阶段无正式大规模裁剪 | PASS | 同上：真实 PDF/图片/10 秒视频元数据、3 段时间码与抽帧、没有正式 MP4 裁剪；独立 Worker 异常/取消/重试、两库重启持久化；搜索/视觉/OCR/ASR 未配置明确标识 |
-| A-010 | 04 | 文稿片段编辑/来源引用/历史修订/批准可恢复 | NOT RUN | |
-| A-011 | 04 | Claim 变化能识别相关文稿/镜头受影响 | NOT RUN | |
+| A-010 | 04 | 文稿片段编辑/来源引用/历史修订/批准可恢复 | PASS | [交付](../docs/PHASE_04_DELIVERY.md)、[SQLite](../docs/evidence/phase04/sqlite/results.json)、[真实 PG](../docs/evidence/phase04/postgresql/results.json)：第二段浏览器编辑刷新、增删排序、稳定 ID、固定引用、批准/驳回/fork/历史/差异、409/幂等、双表保护和重启；Mock 显式标识，真实模型 NOT RUN |
+| A-011 | 04 | Claim 变化能识别相关文稿/镜头受影响 | PASS（当前阶段子集） | 同上：研究批准版替换定位绑定段落、旧文稿保留/新稿清空旧 Claim 并显式重绑；历史下游消费者及草稿预计失效、指定段落变化失效/其他范围复用。Cue/Shot 模块尚未实现，使用明确的合成依赖记录验证，不宣称已生成真实镜头 |
 | A-012 | 05 | TTS/导入/无口播三模式均可产生可验证的时间轴结构 | NOT RUN | |
 | A-013 | 05 | Cue 与字幕时间边界校验，用户可修改并保存 | NOT RUN | |
 | A-014 | 06 | 镜头有 narrativeGoal/viewerTakeaway/Script/Cue 关联 | NOT RUN | |

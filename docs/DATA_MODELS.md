@@ -1,5 +1,19 @@
 # 核心数据模型与版本协议 v1.2
 
+## Phase 04 已实现文稿子集
+
+ScriptRevision 继续使用唯一的 WorkflowRevision（可选 `scriptSchemaVersion=1`），不另建审批系统。`script_documents` 保存一修订一份文稿配置（origin、固定 researchRevisionId、unitsPerMinute、user/mock/real provenance）；`script_segment_versions` 保存该修订的段落快照，数据库行 `id` 为物理 UUID，`segmentId` 为跨修订稳定逻辑 UUID。API `segments[].id` 返回逻辑 ID；微调、重排与 fork 不改变它，新增段落生成新 ID。移除的草稿段落记 removed，不物理删历史；新 fork 只复制活跃段落。
+
+段落正文及 purpose、viewerTakeaway、visualIntent、delivery、pauseMs、factBindings、needsRebind 实际持久化；order 由提交数组顺序生成。purpose 为 hook/context/explanation/evidence/transition/conclusion。画面意图仅供后续导演参考，不是一句/一段一个镜头。预计 estDurationMs 根据正文、节奏、停顿和文稿单位/分钟派生，在 API timing.details 返回，不冗余存储或伪装实测音频。
+
+factBindings 为 `{claimId,sourceIds[]}`，Claim/Source 必须属于文稿固定的已批准研究，Source 还须出现在该 Claim 的 ClaimEvidence 中且被采用。没有研究的用户文稿可保存，但不能附加伪造引用；未核实/冲突/作废状态沿用研究，批准文稿不升级事实真实性。对旧研究的引用保留完整快照；研究批准版本替换时，按绑定定位相关段落并保守显示影响。
+
+结构化内容和配置共同参与 contentHash。提交/批准/驳回继续用原 Workflow；已批准修订和两类 Script 行有数据库保护。旧文本修订继续读取；当前旧文本草稿可显式转结构化，已审版本需 fork 后转换。旧 PATCH 不可绕过结构化段落保存。选择新研究输入 fork 时保留段落 ID，清空旧 factBindings 并标 needsRebind，重新确认后方可提交。
+
+Dependency 可选 `segmentIds` 表示只消费指定段落内容。新的批准文稿替换旧版时，只有声明范围的内容/引用/节奏或全局朗读速度变化才使该范围失效；无范围或无法证明一致时按整个修订保守失效。段落顺序变化在差异中单独显示；单段内容缓存可复用不等于整个音轨/时间轴可复用，后者应使用完整修订依赖。本阶段只验证依赖元数据，不声称已创建真实 VoiceCue/DirectorShot。
+
+Script Job 追加 provider=script、冻结 scriptInput 与校验后的 scriptResult，固定当前 draft version、目标段落/全文、CreativeBrief 和批准研究摘要/Claim 允许集。局部结果只能修改目标逻辑 ID；保存、批准、取消或目标切换后迟到结果不能覆盖。Mock 显式标识，真实 Provider 未配置时任务失败；PostgreSQL 仅追加 0004，SQLite 增量建表，旧数据不自动迁移。
+
 > 供 Codex 按 PostgreSQL + ORM + Zod 落地。以下是**逻辑模型**，不是可以直接执行的 SQL。一个概念分配一位数据拥有者，不重复维护同一字段的事实来源。
 
 ## 1. 主键和基本规范

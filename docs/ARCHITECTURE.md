@@ -1,5 +1,13 @@
 # 系统技术架构 v1.3
 
+## Phase 04 文稿模块
+
+`domain/script.ts` 与 `server/script/` 负责结构化段落、引用校验、估时、差异和 Provider 契约。Workflow Engine 只增量接入初始化/保存/异步任务、fork 快照及段落范围依赖，原项目/审批/队列/媒体 Worker 不重写；新增 0004 的文稿配置和段落版本表。旧文本修订可读，转换显式进行。
+
+已有 Workflow Worker 消费 provider=script，输入冻结在 Job 中，使用 Mock 或明确未配置 Provider，2 秒心跳沿用 30 秒租约；用户保存导致目标版本变化时不写入迟到结果。未来真实模型实现应通过同一 ScriptProvider 接口，验证输出 schema、引用允许集、超时/取消、使用量与费用，不能将开发会话当作运行时模型。当前没有新的网络调用或 AI 代码执行。
+
+第 04 页采用段落编辑器与原 WorkflowPanel 集成；保存后刷新审核版本，未保存修改阻止审核/切换版本，409 保留编辑缓冲区并允许显式重新载入。来源查看使用固定研究快照和受保护原件，估时/画面意图仅是规划信息；Voice/Director 在后续阶段消费稳定段落 ID。
+
 ## 1. 核心选型
 - **界面**：Next.js + React + TypeScript；样式从 `prototype/index.html` 的蓝白设计 Tokens 抽取，推荐 Tailwind 或 CSS Modules 二选一，团队全局保持一致；富文本可选 Tiptap。
 - **API**：Next.js Route Handlers 或独立 Fastify（MVP 优先同仓模块化服务，避免重复 HTTP 层），输入输出 Zod。

@@ -16,6 +16,7 @@ import { Card, Badge, PageHead, Empty, Notice, s } from './ui';
 import { WorkflowPanel } from './workflow-panel';
 import { RenderPanel } from './render-panel';
 import { ResearchPanel } from './research-panel';
+import { ScriptPanel } from './script-panel';
 
 export function StageWorkspace({
   stage,
@@ -28,6 +29,17 @@ export function StageWorkspace({
 }) {
   const index = pages.findIndex((p) => p.key === stage);
   const page = pages[index];
+  if (!demo && project && stage === 'script')
+    return (
+      <>
+        <PageHead
+          number="04"
+          title={page.label}
+          description="组织叙事主线，绑定事实依据，按段编辑并审核精确修订。"
+        />
+        <ScriptPanel projectId={project.id} />
+      </>
+    );
   if (!demo && project && stage === 'research')
     return (
       <>

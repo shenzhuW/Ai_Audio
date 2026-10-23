@@ -1,0 +1,784 @@
+{
+  "at": "2026-10-23T08:41:34.339Z",
+  "commit": "94189c817393e6a374b395969b66e373c9bfe1c6",
+  "scannedFiles": 155,
+  "maxFileBytes": 697163,
+  "findings": [],
+  "files": [
+    {
+      "file": ".gitignore",
+      "bytes": 556,
+      "blob": "f46abdcd0eb886dad358935bfafc1e9a0a2767bf"
+    },
+    {
+      "file": "README.md",
+      "bytes": 8434,
+      "blob": "064a938b19af2595fd730844e1aa02363ffbd0d7"
+    },
+    {
+      "file": "apps/web/prisma/migrations/0004_script/migration.sql",
+      "bytes": 2668,
+      "blob": "aed5f1e38568e985bba096d54a840cccd0a6bf2a"
+    },
+    {
+      "file": "apps/web/prisma/schema.prisma",
+      "bytes": 9564,
+      "blob": "773bd235e1cf9202d9aa2bf03fcb8eaeadb31d0c"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/script/route.ts",
+      "bytes": 477,
+      "blob": "232b1035e43b020e8bd6bc4bb4d3db004ef91f27"
+    },
+    {
+      "file": "apps/web/src/components/script-panel.tsx",
+      "bytes": 32706,
+      "blob": "3b6e668eedfcf7df47349c5676e214cab81b3289"
+    },
+    {
+      "file": "apps/web/src/components/stage-workspace.tsx",
+      "bytes": 18817,
+      "blob": "ac9c8cef7eb40a83996eb974359f52dda4605a3b"
+    },
+    {
+      "file": "apps/web/src/components/studio.module.css",
+      "bytes": 28639,
+      "blob": "70a7be9e3da19f09d3dccae4b049634816a5cead"
+    },
+    {
+      "file": "apps/web/src/components/workflow-panel.tsx",
+      "bytes": 19655,
+      "blob": "cbc152c051ee9060b43ab26f6c54ab02bb667df0"
+    },
+    {
+      "file": "apps/web/src/domain/script.ts",
+      "bytes": 5838,
+      "blob": "c7cd91802c5faeaee009a430bb25eeaf4095fe53"
+    },
+    {
+      "file": "apps/web/src/domain/workflow.ts",
+      "bytes": 7408,
+      "blob": "57a4c54f1098a0ea2bd01df63f54f055011bff2f"
+    },
+    {
+      "file": "apps/web/src/server/script/engine.ts",
+      "bytes": 8653,
+      "blob": "f3ca8d13730832723415a721caa4f1cdb2dd86ac"
+    },
+    {
+      "file": "apps/web/src/server/script/http.ts",
+      "bytes": 1403,
+      "blob": "c8bb86da307a287194403446f6f346d6f5517c18"
+    },
+    {
+      "file": "apps/web/src/server/script/providers.ts",
+      "bytes": 3249,
+      "blob": "cb5c9d1894d94cd0be075ada9edc97faa4ecffc0"
+    },
+    {
+      "file": "apps/web/src/server/script/service.ts",
+      "bytes": 5747,
+      "blob": "ae507db5a2827800c7816cecc76be7cb7fa1d067"
+    },
+    {
+      "file": "apps/web/src/server/script/tables.ts",
+      "bytes": 1524,
+      "blob": "add7ccac823b4861c859359d355577d7ff2eb9a4"
+    },
+    {
+      "file": "apps/web/src/server/workflow/engine.ts",
+      "bytes": 23186,
+      "blob": "1d8af5f2aa8fe0a8065dc4df02592e636f857c17"
+    },
+    {
+      "file": "apps/web/src/server/workflow/http.ts",
+      "bytes": 5031,
+      "blob": "fd6c4183c62f92695efaa0d92f48c26729c5419a"
+    },
+    {
+      "file": "apps/web/src/server/workflow/service.ts",
+      "bytes": 6216,
+      "blob": "7fb1be9371495d125f87fad5c65dab2661badb1a"
+    },
+    {
+      "file": "apps/web/src/server/workflow/tables.ts",
+      "bytes": 3679,
+      "blob": "cc485a76810c2f516759fbeef37a3ca4bc41554a"
+    },
+    {
+      "file": "docs/API_SPEC.md",
+      "bytes": 15755,
+      "blob": "d663b3495f038dbbef63e131c6f185625964af65"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "bytes": 8700,
+      "blob": "283fd099ded2211353b8239ba3c359b553142085"
+    },
+    {
+      "file": "docs/CHANGELOG_IMPLEMENTATION.md",
+      "bytes": 11281,
+      "blob": "1c2da09ceffcef13d460a0569db96bd34be69f72"
+    },
+    {
+      "file": "docs/DATA_MODELS.md",
+      "bytes": 13529,
+      "blob": "41b49b4aa40729f551bdd3ecabc6d984951592fb"
+    },
+    {
+      "file": "docs/LOCAL_DEVELOPMENT.md",
+      "bytes": 13841,
+      "blob": "d7ef8d1823fafaaa36497e2f1339f00a6bb2e81f"
+    },
+    {
+      "file": "docs/PHASE_04_DELIVERY.md",
+      "bytes": 14100,
+      "blob": "607a680c8baa6db38d73c51964d7e31e976fe547"
+    },
+    {
+      "file": "docs/PHASE_04_IMPLEMENTATION.md",
+      "bytes": 2542,
+      "blob": "23cb24aa48d1bab88527d83f33712705ca491c36"
+    },
+    {
+      "file": "docs/REFERENCE_REVIEW_LOG.md",
+      "bytes": 15459,
+      "blob": "44056e96edae1e2984a88021b529725294cb100b"
+    },
+    {
+      "file": "docs/TECHNICAL_TODO.md",
+      "bytes": 1590,
+      "blob": "ffe348a64e5dd5a30205f20e671f8a4d37ef519f"
+    },
+    {
+      "file": "docs/UI_SPEC.md",
+      "bytes": 10352,
+      "blob": "d83263f1470bcba4183e0e4cea95ebcaa3809f95"
+    },
+    {
+      "file": "docs/evidence/phase04/build.log",
+      "bytes": 4480,
+      "blob": "d2cab4de452d61381146df0372ecd63569e806a7"
+    },
+    {
+      "file": "docs/evidence/phase04/local-services.log",
+      "bytes": 240,
+      "blob": "05cc5dbef0f5792ed48829e14398824318dca660"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-approved.png",
+      "bytes": 240085,
+      "blob": "f11f936841c0cc1caa0091b07dcaaf68dd2d936b"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-claims-conflict.png",
+      "bytes": 256380,
+      "blob": "553fe4ed692c180aa8ff7284294ed21f7c4ad17c"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-diff.png",
+      "bytes": 228033,
+      "blob": "ed3810b522e7d8c27e160613cfbb33a3643c9e65"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-downstream-impact.png",
+      "bytes": 205691,
+      "blob": "ffb79cac6d7d33f1622d0a38534125b7dd0d47a1"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-history.png",
+      "bytes": 245273,
+      "blob": "5944208ed7ec4c947ac376cbdbf70a4a60c33893"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-mobile.png",
+      "bytes": 202270,
+      "blob": "29377303f509edb53be1f8eb28441e47fe1b31ed"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-mock-unconfigured.png",
+      "bytes": 318837,
+      "blob": "44cdc4a08a00f115c75504e0316fb6beba66e0ba"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-rejected.png",
+      "bytes": 236502,
+      "blob": "ea5afbf009735db70b9426c609953ed7719be9a6"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-research-impact.png",
+      "bytes": 238748,
+      "blob": "48d1da0a7a46b17423b17aae82229057efe48f26"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/04-user-script.png",
+      "bytes": 228215,
+      "blob": "34973224e9954d5ce98a538614912627ea2b2823"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/http-results.json",
+      "bytes": 1807,
+      "blob": "d58f1b72d10f917c0de9050e8f7e6c72cd0142de"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/http.log",
+      "bytes": 814,
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/integration.log",
+      "bytes": 1377,
+      "blob": "06e42d5bb1559d66d0f820c0a874164ae083e686"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/migrations.log",
+      "bytes": 1188,
+      "blob": "3cef31855c06ade8d101d629e2640234a2bdd21c"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/results.json",
+      "bytes": 3984,
+      "blob": "945909a354caafeffb3aa48af12eb4dce417bd9e"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/schema-drift.log",
+      "bytes": 31,
+      "blob": "235370d9742ffa1d8a321d08c66438619e04578c"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/script-snapshot.json",
+      "bytes": 27281,
+      "blob": "2d3e4ac80b75c32f6ae192065a0d2f7ea75b78ec"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/workers.log",
+      "bytes": 1112,
+      "blob": "53a5ee519cbac97107f952f72fe615204c9be971"
+    },
+    {
+      "file": "docs/evidence/phase04/postgresql/workflow-http-postgresql.json",
+      "bytes": 1235,
+      "blob": "2b81963b5b3633b45a6e986de1748fc62773322a"
+    },
+    {
+      "file": "docs/evidence/phase04/prisma-generate.log",
+      "bytes": 734,
+      "blob": "293e1396f0e01eeedfaa34ee769bcd78be7f50c9"
+    },
+    {
+      "file": "docs/evidence/phase04/prisma-validate.log",
+      "bytes": 96,
+      "blob": "244a60c99682cebf6c1a2714b6bb2eb9581f95a5"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/08-mobile.png",
+      "bytes": 172575,
+      "blob": "a9e0eafae71b469fedb73f552082c26d45dbb2b2"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/08-queued.png",
+      "bytes": 111849,
+      "blob": "df982808dace64164f1a41c628619b2402775643"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/08-running.png",
+      "bytes": 117833,
+      "blob": "a74f10ad3881396216289d3ee33bdb4cc5a71320"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/08-success.png",
+      "bytes": 278279,
+      "blob": "0e3a4f680f06bc63b4469166595e3ec1edb480ad"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/decoded-150.png",
+      "bytes": 465020,
+      "blob": "c2f39375aa17f680fe508d490f95f9537ea1a443"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/ffprobe-independent.json",
+      "bytes": 2692,
+      "blob": "3f17d758d9cb3da8a2a3bcf41cc241ca23ca9832"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/ffprobe.json",
+      "bytes": 2246,
+      "blob": "5c1ad2ea2c15ccd6d0d6c3892caaec03707958ff"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/frame-060.png",
+      "bytes": 691544,
+      "blob": "9e9ca076e6d16b9e0535d586bb5e0c2be9616c64"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/frame-150.png",
+      "bytes": 550159,
+      "blob": "f798956da73db36d30cda9d1f7966d58ecb7fcaf"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/frame-240.png",
+      "bytes": 697163,
+      "blob": "3fcdab4e46ae3aaf318d06245cc228f82ad6d778"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/frame-match.log",
+      "bytes": 1316,
+      "blob": "0cb124dcb53d7c0319273e066b3a159a69e7207f"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/http-results.json",
+      "bytes": 1807,
+      "blob": "fec4634da3856557b40f464e2ba20ad1ea8aab1a"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/integration.log",
+      "bytes": 1148,
+      "blob": "ff5b8c9f65a382026232f919d680bb5531fb5e27"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/legacy-http.log",
+      "bytes": 814,
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/manifest.json",
+      "bytes": 3019,
+      "blob": "b6510115567d2153c7d3a81acea4e40bad295111"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/migrations.log",
+      "bytes": 628,
+      "blob": "7088edd79036589e8e5dabf8d811f65e6d767354"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/results.json",
+      "bytes": 3488,
+      "blob": "38d3e1082783484014b6934e9a32980d6759c62e"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/worker.log",
+      "bytes": 54,
+      "blob": "f7527be9a47032a136af409e31165e0bade03cd2"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/postgresql/workflow-http-postgresql.json",
+      "bytes": 1235,
+      "blob": "5a59288f1dc00e3bf8855b8fc2e4f591976281d1"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/08-mobile.png",
+      "bytes": 190799,
+      "blob": "b09b9002def4445de5580d090bdd7c19f0a4a38c"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/08-queued.png",
+      "bytes": 111650,
+      "blob": "41a7d62d18d1efb92715c4955f3aca01f5f3ae32"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/08-running.png",
+      "bytes": 117340,
+      "blob": "f9bcd6dcd7c261d0e70c4c053dff0129b3e83719"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/08-success.png",
+      "bytes": 276329,
+      "blob": "c9db7ac6b7b1d7422d675d7c5afd72fedef99602"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/decoded-150.png",
+      "bytes": 465020,
+      "blob": "c2f39375aa17f680fe508d490f95f9537ea1a443"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/ffprobe-independent.json",
+      "bytes": 2688,
+      "blob": "8e8d91ed06d462483401853e152cc351fb4f5ba4"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/ffprobe.json",
+      "bytes": 2246,
+      "blob": "25f7ab80bddd8576dfecbd32846f00e9242ffc40"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/frame-060.png",
+      "bytes": 691544,
+      "blob": "9e9ca076e6d16b9e0535d586bb5e0c2be9616c64"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/frame-150.png",
+      "bytes": 550159,
+      "blob": "f798956da73db36d30cda9d1f7966d58ecb7fcaf"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/frame-240.png",
+      "bytes": 697163,
+      "blob": "3fcdab4e46ae3aaf318d06245cc228f82ad6d778"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/frame-match.log",
+      "bytes": 1309,
+      "blob": "7ce2ba5f93cb4045461d6ed00d8bfce410c8acad"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/http-results.json",
+      "bytes": 1803,
+      "blob": "6228a43c0378a72e6efca48cbb8c6a29aca36845"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/integration.log",
+      "bytes": 1049,
+      "blob": "fb8e171be343ffb6884f5d9393c61a2ef970f342"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/legacy-http.log",
+      "bytes": 814,
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/manifest.json",
+      "bytes": 3019,
+      "blob": "b6510115567d2153c7d3a81acea4e40bad295111"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/results.json",
+      "bytes": 2988,
+      "blob": "adcecf6f7160e7abad646646860eac414026b853"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/worker.log",
+      "bytes": 54,
+      "blob": "017e52e8b4a6943df1aa678026d8f1972694a107"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase02/sqlite/workflow-http-sqlite.json",
+      "bytes": 1231,
+      "blob": "0998446e851210922cb56b9806cc378d1811d6d9"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/03-approved.png",
+      "bytes": 325985,
+      "blob": "24a5039e84c00bb4e23faf0c062cf9673a40093a"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/03-history.png",
+      "bytes": 323409,
+      "blob": "6615dd1b47bf368befd2343ef698468aa95da0d9"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/03-mobile.png",
+      "bytes": 268144,
+      "blob": "6d7f3ce276bb257dc1134973080314292cc315d6"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/03-mock-and-failure.png",
+      "bytes": 370936,
+      "blob": "bf6439a29c4b2a95f9220085877386777ed92a74"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/03-overview-viewport.png",
+      "bytes": 203330,
+      "blob": "cc101d2c37e3b38f125e012e6a734e8ccc21c7fe"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/03-pdf-conflict.png",
+      "bytes": 311628,
+      "blob": "e374a54f8de7c21c91859b95ee144f4a07ed93b2"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/03-video-index.png",
+      "bytes": 402497,
+      "blob": "b075ef4b69f9ad55b1c7337ebb8dd3807892e73d"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/frame-0.jpg",
+      "bytes": 18055,
+      "blob": "1e55442387ed7df919941163339b1866606b2811"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/frame-3333.jpg",
+      "bytes": 16252,
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/frame-6666.jpg",
+      "bytes": 16151,
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/http-results.json",
+      "bytes": 1807,
+      "blob": "8275747eb73597fad751b500ce00bb5df96fb91f"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/integration.log",
+      "bytes": 1675,
+      "blob": "d107ed385822dbcf59ae03eed86755d61759806d"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/legacy-http.log",
+      "bytes": 814,
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/migrations.log",
+      "bytes": 1186,
+      "blob": "d4b8684e8080109dccc7bbabec3bd24fc07d43f0"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/research-snapshot.json",
+      "bytes": 39310,
+      "blob": "42ca6fc122f13c83e3286dc129df2951f927a978"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/research-worker.log",
+      "bytes": 517,
+      "blob": "430ba4ee97fdd2bc5e07fde17a6cda10705a327f"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/results.json",
+      "bytes": 5485,
+      "blob": "a37a8e6fd4f0cbbc292b660eb832937af6b06bcd"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/schema-drift.log",
+      "bytes": 31,
+      "blob": "235370d9742ffa1d8a321d08c66438619e04578c"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/postgresql/workflow-http-postgresql.json",
+      "bytes": 1235,
+      "blob": "c9af0a4f278e3fee415f33aea1e0a2392f70859e"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/03-approved.png",
+      "bytes": 332017,
+      "blob": "040c54c628b9558d7c6696dd3a810084eca0eda2"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/03-history.png",
+      "bytes": 319440,
+      "blob": "cb3f2916979c3fbbeac96ea73f79e70a3d9afb7e"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/03-mobile.png",
+      "bytes": 265138,
+      "blob": "63b76bdb1363200894b401ecab671614281f4517"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/03-mock-and-failure.png",
+      "bytes": 397041,
+      "blob": "5852c9901544ed003001bc4c84f3b92df41c7f6c"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/03-overview-viewport.png",
+      "bytes": 206646,
+      "blob": "6bebf8a50caa405395a43928d7dc118e385ce58f"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/03-pdf-conflict.png",
+      "bytes": 318525,
+      "blob": "627bc14c6f737c71d52d6e180e53cbc0694641e0"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/03-video-index.png",
+      "bytes": 409812,
+      "blob": "65c3f25ac358c7ad092a59decc52032398fb0f7c"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/frame-0.jpg",
+      "bytes": 18055,
+      "blob": "1e55442387ed7df919941163339b1866606b2811"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/frame-3333.jpg",
+      "bytes": 16252,
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/frame-6666.jpg",
+      "bytes": 16151,
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/http-results.json",
+      "bytes": 1803,
+      "blob": "2db3bce04ddce8df787bfd2be5a20ea7478aa1dd"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/integration.log",
+      "bytes": 1593,
+      "blob": "8ea0d3bccf3e86bde6c8d695d78f78748644aab5"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/legacy-http.log",
+      "bytes": 814,
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/research-snapshot.json",
+      "bytes": 47017,
+      "blob": "a3ec4db10aa327b886283d9b0d7cfa437919dbfb"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/research-worker.log",
+      "bytes": 517,
+      "blob": "afeb0e6979c27f9c6769f5261eec1becf24d9424"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/results.json",
+      "bytes": 5125,
+      "blob": "d8b1d55ac0bbfa140591c600a5a02b74599b1997"
+    },
+    {
+      "file": "docs/evidence/phase04/regression/phase03/sqlite/workflow-http-sqlite.json",
+      "bytes": 1231,
+      "blob": "ca631eee253cff399ba59054f9e228fee422225b"
+    },
+    {
+      "file": "docs/evidence/phase04/render-typecheck.log",
+      "bytes": 182,
+      "blob": "280fb2c50d1515ad6532d33cf33f912fb6569705"
+    },
+    {
+      "file": "docs/evidence/phase04/security-audit.json",
+      "bytes": 66,
+      "blob": "0d8f0eb2178c226d65744da585dc1b47cca48302"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-approved.png",
+      "bytes": 239958,
+      "blob": "689360e8ab96d98fc5e1285f227ad2215f054247"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-claims-conflict.png",
+      "bytes": 256157,
+      "blob": "b310f49113e14b5f8a023387e1e053bd8c13a353"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-diff.png",
+      "bytes": 228145,
+      "blob": "c1d56ec346587f818f388747fee73ccf2e9eb650"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-downstream-impact.png",
+      "bytes": 237592,
+      "blob": "4317cf28c16ae39cb339e7cc80d01e85b72150a2"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-history.png",
+      "bytes": 245193,
+      "blob": "0d7c28c0b6deccdea87d0ff2068e9a6be2344d87"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-mobile.png",
+      "bytes": 202067,
+      "blob": "83b68d5e7cf78b8568470b767e552553fa365da6"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-mock-unconfigured.png",
+      "bytes": 317932,
+      "blob": "7fa4c54b84c7794b07842550079f236a853b43ff"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-rejected.png",
+      "bytes": 236387,
+      "blob": "652c671383f57c9c33269aba1bd8f8db1061d015"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-research-impact.png",
+      "bytes": 275404,
+      "blob": "5246020734e58ab40a7b96c784a0d1645c41316e"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/04-user-script.png",
+      "bytes": 228094,
+      "blob": "6577e6ce9e4466bc613e92ca7a95b1ef3b870305"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/http-results.json",
+      "bytes": 1803,
+      "blob": "b94903255828011fc11f927b7d4164e9e0e75a74"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/http.log",
+      "bytes": 814,
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/integration.log",
+      "bytes": 1262,
+      "blob": "61dc21afadce50dadb26ef0cba219668e9e6d34b"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/results.json",
+      "bytes": 3182,
+      "blob": "543f6abccf8e57bcabd00c7d669a6f6c6abd3468"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/script-snapshot.json",
+      "bytes": 27281,
+      "blob": "71ea2afc08301abf7511a7976164184da8a1ef99"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/workers.log",
+      "bytes": 1112,
+      "blob": "7162e4ed34cf350262dcb511f3e933da33597001"
+    },
+    {
+      "file": "docs/evidence/phase04/sqlite/workflow-http-sqlite.json",
+      "bytes": 1231,
+      "blob": "7223f5a595f074ed345dd826e64c3b26f0295366"
+    },
+    {
+      "file": "docs/evidence/phase04/typecheck.log",
+      "bytes": 306,
+      "blob": "44abd43bb908f9fabda8a15befa9b8430f742bb4"
+    },
+    {
+      "file": "docs/evidence/phase04/unit-tests.log",
+      "bytes": 3508,
+      "blob": "d0282d3e1d8362d2c8b26ce6833f84481c073ddf"
+    },
+    {
+      "file": "fixtures/script/README.md",
+      "bytes": 2701,
+      "blob": "bdfc7d031b0081ac049c599705d1d83e639d47a3"
+    },
+    {
+      "file": "package.json",
+      "bytes": 1508,
+      "blob": "4fcdc64c9efcdc28832f541d1e05bfa1c6afa618"
+    },
+    {
+      "file": "plans/04-script.md",
+      "bytes": 2932,
+      "blob": "55fc883880025ce5f0e1db933b1e93b79cf70311"
+    },
+    {
+      "file": "tests/ACCEPTANCE.md",
+      "bytes": 8417,
+      "blob": "b114ed1ca251e8d003f77a87d959707e2d4ed8e6"
+    },
+    {
+      "file": "tests/render/run.cjs",
+      "bytes": 20224,
+      "blob": "bdd6a55cc1cf9f1c65ede3c5f6ead98edd38f217"
+    },
+    {
+      "file": "tests/research/run.cjs",
+      "bytes": 37654,
+      "blob": "d5e081f54c1551df43e48c3d2a2b4daabead8ef7"
+    },
+    {
+      "file": "tests/script/run.cjs",
+      "bytes": 30599,
+      "blob": "3dbebefb87f6dcbc9e7ce57b007fa3ca4511aa9f"
+    },
+    {
+      "file": "tests/unit/script.test.ts",
+      "bytes": 11171,
+      "blob": "cf8a89e5f67f7d4118b61b38d97e73e577fbc73a"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "at": "2026-10-23T08:48:19.520Z",
+  "codeCommit": "94189c817393e6a374b395969b66e373c9bfe1c6",
+  "status": "PASS",
+  "backends": [
+    {
+      "backend": "sqlite",
+      "status": "PASS",
+      "runId": "mvkq2o6z",
+      "integrationGroups": 9,
+      "refreshedBoundSecond": {
+        "text": "带双来源引用的第二段：这些数值仅用于合成测试，刷新后仍须保留引用。",
+        "segmentId": "8aff0bbc-8b92-459b-a359-e82c71a77a36",
+        "factBindings": [
+          {
+            "claimId": "6d793f66-f12e-475d-9909-0ab763ad5155",
+            "sourceIds": [
+              "79e2b2cd-35fe-4089-8d64-405ce33d22bc",
+              "7421a50d-c9ab-4230-a9f2-8fe11a57f805"
+            ]
+          }
+        ]
+      },
+      "sameResearchFork": {
+        "revisionId": "b1acd8a5-06e9-4ac2-8e5b-8333d2ed6e50",
+        "researchRevisionId": "7fce6e7e-d45f-48ba-a0f3-dfcab037c8c1",
+        "referencesPreserved": true
+      },
+      "currentResearchRevisionId": "95648901-2e2e-49bc-a29b-e6282d5d8efd",
+      "claimSourceRevisionConsistency": true,
+      "conflictingAndUnverifiedRetained": true,
+      "mockAndUnconfiguredSeparated": true,
+      "screenshots": [
+        {
+          "file": "sqlite/04-user-script.png",
+          "sha256": "6c46182156f7a09de196f7d67feb04caf86c91aa23b204212eb64ef04ceb4d8d",
+          "bytes": 227968
+        },
+        {
+          "file": "sqlite/04-claims-conflict.png",
+          "sha256": "b1e97d04cf489ac971ae486ef5342bd2caa79f549f80d41306605618333b4d9e",
+          "bytes": 269689
+        },
+        {
+          "file": "sqlite/04-diff.png",
+          "sha256": "13c6502b6967532120802d6497afae7edeae80cbd960a204aacf253fe246599b",
+          "bytes": 227776
+        },
+        {
+          "file": "sqlite/04-approved.png",
+          "sha256": "7c6028edf56cf9ecfec770a3ac17796becd9715a0594b0e7338daaaa5a1ff36f",
+          "bytes": 239974
+        },
+        {
+          "file": "sqlite/04-mobile.png",
+          "sha256": "b0d3fd6940007ba0e2379564fe15f0886d37001ecb43b19fa2a37d6ffdfaad44",
+          "bytes": 212676
+        },
+        {
+          "file": "sqlite/04-history.png",
+          "sha256": "2749026f9748fdc32fc124e43c3b0a5e8aa8e0c74912f246c5c094861fce1ab7",
+          "bytes": 245210
+        },
+        {
+          "file": "sqlite/04-rejected.png",
+          "sha256": "5efa7ec1b2f316c5437e0e14af4bc076eeb83bb1d5a029c796d9b372e6bc23a2",
+          "bytes": 236289
+        },
+        {
+          "file": "sqlite/04-downstream-impact.png",
+          "sha256": "8c58b10d963a6bfdeeede7e5d14c4b9e28ac953127d88e82367cb71610fe2106",
+          "bytes": 237595
+        },
+        {
+          "file": "sqlite/04-mock-unconfigured.png",
+          "sha256": "4b6e86b76df635cdd908a1a52881cb5a83d2f543a6ed9f815b226caf3f3a2f84",
+          "bytes": 326243
+        },
+        {
+          "file": "sqlite/04-research-impact.png",
+          "sha256": "c54cc68cf9df367f287092d1fc5990a2a422c51395ae9d81c87f3c6f88ed7d55",
+          "bytes": 287464
+        }
+      ]
+    },
+    {
+      "backend": "postgresql",
+      "status": "PASS",
+      "runId": "mvkq3160",
+      "integrationGroups": 11,
+      "refreshedBoundSecond": {
+        "text": "带双来源引用的第二段：这些数值仅用于合成测试，刷新后仍须保留引用。",
+        "segmentId": "74e00d5d-01de-40fc-a22c-1599bdb3eb24",
+        "factBindings": [
+          {
+            "claimId": "4c55b16a-af7d-4d63-bc02-2b29228887b9",
+            "sourceIds": [
+              "f6d3cd98-a561-4e11-bd25-fa1fcb1d1a71",
+              "841670a7-949b-4e0c-b843-210796387214"
+            ]
+          }
+        ]
+      },
+      "sameResearchFork": {
+        "revisionId": "e499e9bf-5f29-4b16-b04b-c7ab4aecaafc",
+        "researchRevisionId": "6d627184-25c3-471c-bea2-b6eccca28970",
+        "referencesPreserved": true
+      },
+      "currentResearchRevisionId": "e0c19095-dddf-40b5-b058-558a08746333",
+      "claimSourceRevisionConsistency": true,
+      "conflictingAndUnverifiedRetained": true,
+      "mockAndUnconfiguredSeparated": true,
+      "screenshots": [
+        {
+          "file": "postgresql/04-user-script.png",
+          "sha256": "00b91a23762bbc72a270353ce5b4f7352ec4669b34e9668e802d3e9733680c00",
+          "bytes": 228165
+        },
+        {
+          "file": "postgresql/04-claims-conflict.png",
+          "sha256": "43ca650ed602a3aa4c554419747c9f51f7173c039f246fee99c3b75716f092e8",
+          "bytes": 270134
+        },
+        {
+          "file": "postgresql/04-diff.png",
+          "sha256": "61d4782f21d2f2d14208257920838c83044f05f38647a337afb51a927e04dd4f",
+          "bytes": 227917
+        },
+        {
+          "file": "postgresql/04-approved.png",
+          "sha256": "29bb2105fa0ef9a3dffb6a11a4b5db496e1762146028d224804aaf3f7cf78cde",
+          "bytes": 239835
+        },
+        {
+          "file": "postgresql/04-mobile.png",
+          "sha256": "97a326a3008d60986dd09d37bfcbb7b19183bd726d5b5238407bfb97d4d6df22",
+          "bytes": 212360
+        },
+        {
+          "file": "postgresql/04-history.png",
+          "sha256": "3c0b13c4bb13900bcb7d11d809467f409da29ec62ddb7034836ca6ccbe94439c",
+          "bytes": 245087
+        },
+        {
+          "file": "postgresql/04-rejected.png",
+          "sha256": "6b0092ef5440630e225d7737eb123c16af4737e9947699c73f6f8f2c44d643de",
+          "bytes": 236339
+        },
+        {
+          "file": "postgresql/04-downstream-impact.png",
+          "sha256": "3ffef286df323fe20c458194afc9471c66f8cc46c0d7c0c790e6c5b9bf6b1fbd",
+          "bytes": 237717
+        },
+        {
+          "file": "postgresql/04-mock-unconfigured.png",
+          "sha256": "b1c89f7259838866ace046d5e33127949193fa01fd6b4ddc23abd96d2535e05a",
+          "bytes": 327241
+        },
+        {
+          "file": "postgresql/04-research-impact.png",
+          "sha256": "ae4b37c3906324458e75ef1e0a17442005ffefdc5c9eb8ba197458559204ab9c",
+          "bytes": 248068
+        }
+      ]
+    }
+  ],
+  "evidenceLinksExist": true,
+  "applicationUnchanged": true,
+  "unitTests": {
+    "pass": 29,
+    "fail": 0
+  }
+}

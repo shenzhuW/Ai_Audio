@@ -13,7 +13,7 @@ require('../../scripts/register-typescript.cjs');
 const backend = process.argv.includes('--postgres') ? 'postgresql' : 'sqlite',
   runId = Date.now().toString(36);
 const dataDir = path.join(root, '.cache/phase04', runId),
-  evidence = path.join(root, 'docs/evidence/phase04', backend),
+  evidence = path.join(root, process.env.STUDIO_TEST_PHASE_EVIDENCE_ROOT || 'docs/evidence/phase04', backend),
   base = 'http://127.0.0.1:3010';
 fs.mkdirSync(dataDir, { recursive: true });
 fs.mkdirSync(evidence, { recursive: true });
@@ -566,6 +566,16 @@ async function main() {
     quote: 'Capacity is 64 units.',
     locator: { kind: 'text', label: '合成资料B第1段' },
   });
+  const unverifiedClaim = await researchEdit(q, 'claims', {
+    claim: {
+      text: '待核实的合成 Claim，没有任何证据',
+      asOf: null,
+      scope: '仅自制合成夹具',
+      unit: '',
+      caveats: '没有证据，不得自动核实',
+      verificationStatus: 'unverified',
+    },
+  });
   let researchW = await api(`/projects/${q.id}/research`);
   research = await approve(q, researchW.revision);
   r = await api(
@@ -599,14 +609,36 @@ async function main() {
     422,
   );
   await page.goto(base + `/projects/${q.id}/script`);
+  const boundSecondBefore = structuredClone(w.segments[1]);
+  const editedBoundText = '带双来源引用的第二段：这些数值仅用于合成测试，刷新后仍须保留引用。';
+  await page.getByRole('textbox', { name: '第2段正文', exact: true }).fill(editedBoundText);
+  await page.getByRole('button', { name: '保存段落草稿', exact: true }).click();
+  await page.getByText('段落草稿已保存', { exact: true }).waitFor();
+  await page.reload();
+  assert.equal(await page.getByRole('textbox', { name: '第2段正文', exact: true }).inputValue(), editedBoundText);
+  w = await workspace(q);
+  assert.equal(w.segments[1].id, boundSecondBefore.id);
+  assert.equal(w.segments[1].text, editedBoundText);
+  assert.deepEqual(w.segments[1].factBindings, boundSecondBefore.factBindings);
+  assert.equal(w.document.researchRevisionId, research.id);
   await page.getByRole('button', { name: '段落 2 · 总结', exact: true }).click();
-  await page.getByText('查看 Claim 来源与引用位置', { exact: true }).click();
+  for (const summary of await page.getByText('查看 Claim 来源与引用位置', { exact: true }).all())
+    await summary.click();
+  await page.getByText('待核实的合成 Claim，没有任何证据', { exact: true }).waitFor();
+  await page.getByText('没有证据，不得自动核实', { exact: true }).waitFor();
+  await page.getByText('未核实', { exact: true }).waitFor();
+  await page.getByText('引用存在冲突证据，请保留双方说明。', { exact: true }).waitFor();
+  await page.getByText('“Capacity is 32 units.”', { exact: true }).waitFor();
+  await page.getByText('“Capacity is 64 units.”', { exact: true }).waitFor();
+  assert.equal(w.research.claims.find((x) => x.id === unverifiedClaim.id).verificationStatus, 'unverified');
   await capture(page, '04-claims-conflict.png');
   record('文稿固定批准研究、双来源引用一致、冲突和未核实提示', {
     researchRevisionId: research.id,
     claimId: c.id,
     sourceIds: [a.id, b.id],
     invalidReference: 422,
+    refreshedBoundSecond: { text: editedBoundText, segmentId: boundSecondBefore.id, factBindings: w.segments[1].factBindings },
+    unverifiedClaimId: unverifiedClaim.id,
   });
   const firstText = w.segments[0].text,
     secondId = w.segments[1].id;
@@ -673,11 +705,20 @@ async function main() {
     partialPreservedOtherSegment: true,
   });
   w = await workspace(q);
+  const firstScriptApproved = await approve(q, w.revision),
+    firstScriptSnapshot = await workspace(q, firstScriptApproved.id);
+  await fork(q, firstScriptApproved);
+  w = await workspace(q);
+  assert.equal(w.document.researchRevisionId, research.id);
+  assert.deepEqual(w.segments, firstScriptSnapshot.segments);
+  assert.deepEqual((await workspace(q, firstScriptApproved.id)).segments, firstScriptSnapshot.segments);
+  const sameResearchForkId = w.revision.id;
   const scriptApproved = await approve(q, w.revision),
     snapshot = await workspace(q, scriptApproved.id);
   const newResearch = await fork(q, research);
   researchW = await api(`/projects/${q.id}/research`);
-  const newClaim = researchW.claims[0];
+  const newClaim = researchW.claims.find((x) => x.text === c.text);
+  assert.ok(newClaim);
   await api(`/projects/${q.id}/claims/${newClaim.id}`, 'PATCH', {
     revisionId: newResearch.id,
     expectedVersion: researchW.revision.version,
@@ -730,6 +771,7 @@ async function main() {
     newResearch: researchApproved2.id,
     affectedSegmentIds: [secondId],
     oldIdsRejected: 422,
+    sameResearchFork: { revisionId: sameResearchForkId, researchRevisionId: research.id, referencesPreserved: true },
   });
   // Legacy Phase01 documents remain readable and can convert only in draft.
   const legacyProject = await project(),

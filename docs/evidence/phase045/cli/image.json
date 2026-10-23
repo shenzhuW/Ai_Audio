@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "fixtureOnly": true,
+  "value": {
+    "summary": "画面为横向矩形，整体由均匀的鲜蓝色填满。未见可辨识的物体、其他形状、文字或标签。仅依据该静态图像进行视觉描述，无法判断声音或运动。",
+    "keywords": [
+      "鲜蓝色",
+      "纯色背景",
+      "横向矩形",
+      "无可见文字"
+    ],
+    "limitations": "这是对所附单帧图像的视觉描述，非经核实的事实；无法从中确定声音、运动或画面之外的信息。"
+  },
+  "runId": "01a16810-3a1a-7213-9f0e-3895ae58a2cd",
+  "usage": {
+    "input_tokens": 9167,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 125,
+    "reasoning_output_tokens": 0
+  },
+  "searches": [],
+  "audit": {
+    "provider": "codex-cli",
+    "cliVersion": "codex-cli 0.163.0",
+    "model": "gpt-6.1-sol",
+    "runId": "01a16810-3a1a-7213-9f0e-3895ae58a2cd",
+    "searchMode": "disabled",
+    "startedAt": "2026-10-23T09:20:55.706Z",
+    "durationMs": 15752,
+    "usage": {
+      "input_tokens": 9167,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 125,
+      "reasoning_output_tokens": 0
+    },
+    "quota": null,
+    "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+    "failureReason": null,
+    "policy": "data-only-v1",
+    "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a"
+  }
+}

@@ -1,0 +1,1016 @@
+{
+  "projectId": "c0375e63-cfca-43ac-ae85-730a9831cec5",
+  "currentRevisionId": "ddde505d-59f7-4112-9657-d279a28d1fea",
+  "revision": {
+    "id": "ddde505d-59f7-4112-9657-d279a28d1fea",
+    "mock": false,
+    "text": "看到了信息，就等于拿到了证据吗？要回答这个问题，先分清三件事：观察到了什么，由此推断了什么，以及这些信息究竟能支持什么结论。\n\n观察，描述直接看到的信息；推断，是根据这些信息作出的判断；把信息作为证据，还要说明它能支持哪个判断、支持到什么程度。以现有材料为例：内部测试说法称，存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”；即使经过审批，也不代表事实已经核实。现有材料不足以说明 ffprobe 官方文档的具体内容。我们能做的，是分清信息与判断，保留未核实的限制；相关内容仍需人工审核。",
+    "status": "draft",
+    "version": 1,
+    "createdAt": "2026-10-23T10:04:29.536Z",
+    "createdBy": "local-user",
+    "updatedAt": "2026-10-23T10:04:29.536Z",
+    "artifactId": "597e749e-d044-4d17-b09c-278edbb93c3a",
+    "contentHash": "e439c8fd7cc21ece9c8a156ee4e61832193cf5259f2fa2deebd7dfabe1e65c7f",
+    "schemaVersion": 1,
+    "revisionNumber": 2,
+    "parentRevisionId": "bd907dbc-18b3-4e58-9869-da0431e8dd5e",
+    "scriptSchemaVersion": 1
+  },
+  "document": {
+    "id": "89418417-15e9-4a8c-96a0-4846c7f43d1b",
+    "origin": "research",
+    "provenance": "real",
+    "revisionId": "ddde505d-59f7-4112-9657-d279a28d1fea",
+    "schemaVersion": 1,
+    "unitsPerMinute": 240,
+    "researchRevisionId": "d43d217e-8a4d-4051-9814-3c762c141fea"
+  },
+  "segments": [
+    {
+      "id": "82822cf1-f4a5-47e4-8507-c86854f1beb1",
+      "text": "看到了信息，就等于拿到了证据吗？要回答这个问题，先分清三件事：观察到了什么，由此推断了什么，以及这些信息究竟能支持什么结论。",
+      "order": 0,
+      "pauseMs": 300,
+      "purpose": "hook",
+      "delivery": "normal",
+      "needsRebind": false,
+      "factBindings": [],
+      "visualIntent": "依次呈现“观察到了什么”“推断了什么”“能支持什么结论”三个问题。",
+      "viewerTakeaway": "区分观察、推断与证据对结论的支持程度。"
+    },
+    {
+      "id": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+      "text": "观察，描述直接看到的信息；推断，是根据这些信息作出的判断；把信息作为证据，还要说明它能支持哪个判断、支持到什么程度。以现有材料为例：内部测试说法称，存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”；即使经过审批，也不代表事实已经核实。现有材料不足以说明 ffprobe 官方文档的具体内容。我们能做的，是分清信息与判断，保留未核实的限制；相关内容仍需人工审核。",
+      "order": 1,
+      "pauseMs": 300,
+      "purpose": "conclusion",
+      "delivery": "normal",
+      "needsRebind": false,
+      "factBindings": [
+        {
+          "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+          "sourceIds": [
+            "070685b2-7568-4315-bff2-22ba404f9812"
+          ]
+        }
+      ],
+      "visualIntent": "呈现“观察—推断—证据”的关系，再标注“内部测试说法：未核实”“不构成独立验证”“仍需人工审核”。",
+      "viewerTakeaway": "文档存在的内部测试说法尚未核实，不能据此确认官方文档内容或相关结论；审批不等于事实核实，仍需人工审核。"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "ddde505d-59f7-4112-9657-d279a28d1fea",
+      "mock": false,
+      "text": "看到了信息，就等于拿到了证据吗？要回答这个问题，先分清三件事：观察到了什么，由此推断了什么，以及这些信息究竟能支持什么结论。\n\n观察，描述直接看到的信息；推断，是根据这些信息作出的判断；把信息作为证据，还要说明它能支持哪个判断、支持到什么程度。以现有材料为例：内部测试说法称，存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”；即使经过审批，也不代表事实已经核实。现有材料不足以说明 ffprobe 官方文档的具体内容。我们能做的，是分清信息与判断，保留未核实的限制；相关内容仍需人工审核。",
+      "status": "draft",
+      "version": 1,
+      "createdAt": "2026-10-23T10:04:29.536Z",
+      "createdBy": "local-user",
+      "updatedAt": "2026-10-23T10:04:29.536Z",
+      "artifactId": "597e749e-d044-4d17-b09c-278edbb93c3a",
+      "contentHash": "e439c8fd7cc21ece9c8a156ee4e61832193cf5259f2fa2deebd7dfabe1e65c7f",
+      "schemaVersion": 1,
+      "revisionNumber": 2,
+      "parentRevisionId": "bd907dbc-18b3-4e58-9869-da0431e8dd5e",
+      "scriptSchemaVersion": 1
+    },
+    {
+      "id": "bd907dbc-18b3-4e58-9869-da0431e8dd5e",
+      "mock": false,
+      "text": "看到了信息，就等于拿到了证据吗？要回答这个问题，先分清三件事：观察到了什么，由此推断了什么，以及这些信息究竟能支持什么结论。\n\n观察，描述直接看到的信息；推断，是根据这些信息作出的判断；把信息作为证据，还要说明它能支持哪个判断、支持到什么程度。以现有材料为例：内部测试说法称，存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”；即使经过审批，也不代表事实已经核实。现有材料不足以说明 ffprobe 官方文档的具体内容。我们能做的，是分清信息与判断，保留未核实的限制；相关内容仍需人工审核。",
+      "status": "approved",
+      "version": 6,
+      "createdAt": "2026-10-23T10:03:21.713Z",
+      "createdBy": "local-user",
+      "updatedAt": "2026-10-23T10:04:29.441Z",
+      "artifactId": "597e749e-d044-4d17-b09c-278edbb93c3a",
+      "contentHash": "f2f6ef79bbadec5182a39264fdd09ed96c1e0e5425a11655320696dc65e08c89",
+      "schemaVersion": 1,
+      "revisionNumber": 1,
+      "parentRevisionId": null,
+      "scriptSchemaVersion": 1
+    }
+  ],
+  "brief": {
+    "targetDurationMs": 60000,
+    "language": "zh-CN",
+    "entryType": "topic",
+    "originalScript": ""
+  },
+  "timing": {
+    "estDurationMs": 58600,
+    "targetDurationMs": 60000,
+    "differenceMs": -1400,
+    "unitsPerMinute": 240,
+    "details": [
+      {
+        "segmentId": "82822cf1-f4a5-47e4-8507-c86854f1beb1",
+        "units": 55,
+        "estDurationMs": 14050
+      },
+      {
+        "segmentId": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+        "units": 177,
+        "estDurationMs": 44550
+      }
+    ],
+    "note": "中文按汉字、其他文字按词粗估，含段落停顿；不是实测配音，段落不等于镜头。"
+  },
+  "research": {
+    "boundRevision": {
+      "id": "d43d217e-8a4d-4051-9814-3c762c141fea",
+      "mock": false,
+      "text": "Internal research: fetched page text and model analysis remain separate; not verified facts.",
+      "status": "approved",
+      "version": 10,
+      "createdAt": "2026-10-23T10:01:37.605Z",
+      "createdBy": "local-user",
+      "updatedAt": "2026-10-23T10:03:21.679Z",
+      "artifactId": "c23291c3-7ad8-4bdd-a678-fdef8cc0f27e",
+      "contentHash": "39d58d6f7ac16805d8aece31979aba5004a463704d4d003178077a399eba3bd8",
+      "schemaVersion": 1,
+      "revisionNumber": 1,
+      "parentRevisionId": null,
+      "researchSchemaVersion": 1
+    },
+    "approvedRevision": {
+      "id": "d43d217e-8a4d-4051-9814-3c762c141fea",
+      "mock": false,
+      "text": "Internal research: fetched page text and model analysis remain separate; not verified facts.",
+      "status": "approved",
+      "version": 10,
+      "createdAt": "2026-10-23T10:01:37.605Z",
+      "createdBy": "local-user",
+      "updatedAt": "2026-10-23T10:03:21.679Z",
+      "artifactId": "c23291c3-7ad8-4bdd-a678-fdef8cc0f27e",
+      "contentHash": "39d58d6f7ac16805d8aece31979aba5004a463704d4d003178077a399eba3bd8",
+      "schemaVersion": 1,
+      "revisionNumber": 1,
+      "parentRevisionId": null,
+      "researchSchemaVersion": 1
+    },
+    "changed": false,
+    "claims": [
+      {
+        "id": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+        "asOf": null,
+        "text": "Internal test claim: a fetched ffprobe document exists; not independent verification.",
+        "unit": "",
+        "scope": "synthetic acceptance only",
+        "caveats": "Approval does not verify factual truth",
+        "revisionId": "d43d217e-8a4d-4051-9814-3c762c141fea",
+        "schemaVersion": 1,
+        "verificationStatus": "unverified"
+      }
+    ],
+    "sources": [
+      {
+        "id": "070685b2-7568-4315-bff2-22ba404f9812",
+        "blob": {
+          "id": "1eec239d-c143-442c-98e9-ffdad7df1ecf",
+          "mime": "text/plain",
+          "name": "web-extracted.txt",
+          "sha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+          "sizeBytes": 34267
+        },
+        "title": "ffprobe Documentation",
+        "creator": "",
+        "selected": true,
+        "projectId": "c0375e63-cfca-43ac-ae85-730a9831cec5",
+        "publisher": "ffmpeg.org",
+        "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+        "urlStatus": "fetched",
+        "provenance": "web-fetch",
+        "revisionId": "d43d217e-8a4d-4051-9814-3c762c141fea",
+        "sourceType": "text",
+        "webCapture": {
+          "runId": "01a16835-8337-7021-acda-c8adbbafd116",
+          "rawBlob": {
+            "id": "98b7ec16-77ac-44db-b292-59a941aca913",
+            "mime": "text/plain",
+            "name": "web-raw.html.txt",
+            "sha256": "75dd3d482461e4b453510ec9fc87076a95f2eb0698d211784e1eabaabc82eeb6",
+            "sizeBytes": 62129
+          },
+          "finalUrl": "https://ffmpeg.org/ffprobe.html",
+          "fetchedAt": "2026-10-23T10:02:00.386Z",
+          "rawSha256": "75dd3d482461e4b453510ec9fc87076a95f2eb0698d211784e1eabaabc82eeb6",
+          "extraction": "static-html-basic",
+          "modelSummary": "Official ffprobe reference covering multimedia inspection, command-line options, stream selection, output formats, and timecode extraction.",
+          "searchSnippet": "Note that the term ’codec’ is used throughout this documentation as a shortcut for what is more correctly called a media bitstream format. ... `ffprobe`"
+        },
+        "publishedAt": null,
+        "retrievedAt": "2026-10-23T10:02:00.436Z",
+        "licenseStatus": "unknown",
+        "schemaVersion": 1,
+        "knownRestrictions": "公开网页；其他使用限制未知。内部研究，不自动发布。"
+      },
+      {
+        "id": "4a5016d4-8239-4799-8a56-ac37daa188eb",
+        "blob": {
+          "id": "2ef5ced1-7ce6-4a57-a754-25f2ba9cbfd0",
+          "mime": "video/mp4",
+          "name": "self-authored-background.mp4",
+          "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+          "sizeBytes": 1026392
+        },
+        "title": "self-authored-background.mp4",
+        "creator": "",
+        "metadata": {
+          "fps": 30,
+          "mime": "video/mp4",
+          "codec": "h264",
+          "width": 1080,
+          "height": 1920,
+          "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+          "sizeBytes": 1026392,
+          "durationMs": 10000
+        },
+        "selected": true,
+        "projectId": "c0375e63-cfca-43ac-ae85-730a9831cec5",
+        "publisher": "",
+        "urlStatus": "user_supplied",
+        "provenance": "user-upload",
+        "revisionId": "d43d217e-8a4d-4051-9814-3c762c141fea",
+        "sourceType": "video",
+        "publishedAt": null,
+        "retrievedAt": "2026-10-23T10:02:20.109Z",
+        "licenseStatus": "blocked",
+        "schemaVersion": 1,
+        "knownRestrictions": "Self-authored internal visual test only"
+      },
+      {
+        "id": "f16e05e1-ca94-4026-a3b7-204f61c57165",
+        "blob": {
+          "id": "223b7e3f-674a-428a-a769-e84764347b64",
+          "mime": "image/png",
+          "name": "self-authored-chart.png",
+          "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165",
+          "sizeBytes": 9170
+        },
+        "title": "self-authored-chart.png",
+        "creator": "",
+        "metadata": {
+          "mime": "image/png",
+          "codec": "png",
+          "width": 640,
+          "height": 360,
+          "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165",
+          "sizeBytes": 9170
+        },
+        "selected": true,
+        "projectId": "c0375e63-cfca-43ac-ae85-730a9831cec5",
+        "publisher": "",
+        "urlStatus": "user_supplied",
+        "provenance": "user-upload",
+        "revisionId": "d43d217e-8a4d-4051-9814-3c762c141fea",
+        "sourceType": "image",
+        "publishedAt": null,
+        "retrievedAt": "2026-10-23T10:02:00.604Z",
+        "licenseStatus": "blocked",
+        "schemaVersion": 1,
+        "knownRestrictions": "Self-authored internal visual test only"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "5c162b4d-011f-41ef-aa9c-39a4ba7186d5",
+        "role": "support",
+        "quote": "ffprobe Documentation FFmpeg About News Download Documentation Community Code of Conduct Mailing Lis",
+        "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+        "locator": {
+          "kind": "text",
+          "label": "Independent static page snapshot, first 100 characters"
+        },
+        "sourceId": "070685b2-7568-4315-bff2-22ba404f9812",
+        "revisionId": "d43d217e-8a4d-4051-9814-3c762c141fea",
+        "validation": "matched",
+        "schemaVersion": 1
+      }
+    ]
+  },
+  "warnings": [
+    {
+      "segmentId": "82822cf1-f4a5-47e4-8507-c86854f1beb1",
+      "notes": [
+        "未绑定研究事实；用户内容未独立核实。"
+      ]
+    },
+    {
+      "segmentId": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+      "notes": [
+        "引用的 Claim 未核实。"
+      ]
+    }
+  ],
+  "comparisonRevisionId": "bd907dbc-18b3-4e58-9869-da0431e8dd5e",
+  "diff": [],
+  "impact": {
+    "stale": false,
+    "researchAffectedSegmentIds": [],
+    "downstream": []
+  },
+  "jobs": [
+    {
+      "id": "3477d889-c917-42a1-bff9-42f44310c3a9",
+      "kind": "script",
+      "logs": [
+        {
+          "at": "2026-10-23T10:04:21.130Z",
+          "message": "real 文稿局部改写已排队；目标版本已冻结。"
+        },
+        {
+          "at": "2026-10-23T10:04:21.986Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T10:04:22.062Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:24.127Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:26.125Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:26.458Z",
+          "message": "cancel: cancelled"
+        },
+        {
+          "at": "2026-10-23T10:04:29.207Z",
+          "message": "record-ai-run: cancelled"
+        }
+      ],
+      "state": "cancelled",
+      "aiRuns": [
+        {
+          "model": "gpt-6.1-sol",
+          "quota": null,
+          "runId": "01a16838-009b-7020-a397-31682b3da738",
+          "usage": null,
+          "policy": "data-only-v1",
+          "provider": "codex-cli",
+          "isolation": {
+            "ephemeral": true,
+            "modelPatch": "disabled",
+            "modelShell": "disabled",
+            "codeModeHost": "v8-data-only",
+            "enabledMcpServers": 0,
+            "userConfigIgnored": true
+          },
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "startedAt": "2026-10-23T10:04:22.730Z",
+          "cliVersion": "codex-cli 0.163.0",
+          "durationMs": 6422,
+          "jobAttempt": 1,
+          "searchMode": "disabled",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "failureReason": "CODEX_CANCELLED"
+        }
+      ],
+      "attempt": 1,
+      "version": 3,
+      "attempts": [
+        {
+          "state": "cancelled",
+          "number": 1,
+          "workerId": "2c644a4c-f4c5-446a-a020-34782d06b4e6",
+          "errorCode": null,
+          "startedAt": "2026-10-23T10:04:21.986Z",
+          "finishedAt": "2026-10-23T10:04:26.458Z"
+        }
+      ],
+      "progress": 0.5,
+      "provider": "script",
+      "createdAt": "2026-10-23T10:04:21.130Z",
+      "errorCode": null,
+      "updatedAt": "2026-10-23T10:04:29.207Z",
+      "leaseOwner": null,
+      "heartbeatAt": "2026-10-23T10:04:26.125Z",
+      "maxAttempts": 3,
+      "scriptInput": {
+        "mode": "real",
+        "brief": {
+          "style": "科技感 / 清晰克制",
+          "prompt": "Explain the distinction between observations and evidence using official ffprobe documentation. Do not invent facts.",
+          "audience": "普通观众",
+          "language": "zh-CN",
+          "targetDurationMs": 60000
+        },
+        "facts": [
+          {
+            "text": "Internal test claim: a fetched ffprobe document exists; not independent verification.",
+            "status": "unverified",
+            "caveats": "Approval does not verify factual truth",
+            "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+            "sourceIds": [
+              "070685b2-7568-4315-bff2-22ba404f9812"
+            ]
+          }
+        ],
+        "segments": [
+          {
+            "id": "82822cf1-f4a5-47e4-8507-c86854f1beb1",
+            "text": "看到了信息，就等于拿到了证据吗？要回答这个问题，先分清三件事：观察到了什么，由此推断了什么，以及这些信息究竟能支持什么结论。",
+            "order": 0,
+            "pauseMs": 300,
+            "purpose": "hook",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [],
+            "visualIntent": "依次呈现“观察到了什么”“推断了什么”“能支持什么结论”三个问题。",
+            "viewerTakeaway": "区分观察、推断与证据对结论的支持程度。"
+          },
+          {
+            "id": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+            "text": "观察，描述直接看到的信息；推断，是根据这些信息作出的判断；把信息作为证据，还要说明它能支持哪个判断、支持到什么程度。以现有材料为例：内部测试说法称，存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”；即使经过审批，也不代表事实已经核实。现有材料不足以说明 ffprobe 官方文档的具体内容。我们能做的，是分清信息与判断，保留未核实的限制；相关内容仍需人工审核。",
+            "order": 1,
+            "pauseMs": 300,
+            "purpose": "conclusion",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [
+              {
+                "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+                "sourceIds": [
+                  "070685b2-7568-4315-bff2-22ba404f9812"
+                ]
+              }
+            ],
+            "visualIntent": "呈现“观察—推断—证据”的关系，再标注“内部测试说法：未核实”“不构成独立验证”“仍需人工审核”。",
+            "viewerTakeaway": "文档存在的内部测试说法尚未核实，不能据此确认官方文档内容或相关结论；审批不等于事实核实，仍需人工审核。"
+          }
+        ],
+        "segmentId": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+        "revisionId": "bd907dbc-18b3-4e58-9869-da0431e8dd5e",
+        "instruction": "在保持来源和稳定ID前提下更清楚地解释证据。",
+        "schemaVersion": 1,
+        "targetVersion": 4,
+        "researchRevisionId": "d43d217e-8a4d-4051-9814-3c762c141fea"
+      },
+      "targetVersion": 4,
+      "idempotencyKey": "ae6bd77a-39e2-4748-b751-7a34ff9076e0",
+      "leaseExpiresAt": null,
+      "inputRevisionIds": [
+        "d43d217e-8a4d-4051-9814-3c762c141fea"
+      ],
+      "resultRevisionId": null
+    },
+    {
+      "id": "8a5444bc-b683-4ee1-9224-2628bd25fad1",
+      "kind": "script",
+      "logs": [
+        {
+          "at": "2026-10-23T10:03:21.836Z",
+          "message": "real 文稿局部改写已排队；目标版本已冻结。"
+        },
+        {
+          "at": "2026-10-23T10:03:22.603Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T10:03:22.652Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:24.686Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:26.694Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:28.698Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:30.707Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:32.739Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:34.731Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:36.746Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:38.745Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:40.765Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:42.771Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:44.788Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:46.786Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:48.795Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:50.799Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:51.557Z",
+          "message": "finish: succeeded"
+        }
+      ],
+      "state": "succeeded",
+      "aiRuns": [
+        {
+          "model": "gpt-6.1-sol",
+          "quota": null,
+          "runId": "01a16837-1852-75d2-b2df-5410beade2ca",
+          "usage": {
+            "input_tokens": 9520,
+            "output_tokens": 349,
+            "cached_input_tokens": 0,
+            "reasoning_output_tokens": 0,
+            "cache_write_input_tokens": 0
+          },
+          "policy": "data-only-v1",
+          "provider": "codex-cli",
+          "isolation": {
+            "ephemeral": true,
+            "modelPatch": "disabled",
+            "modelShell": "disabled",
+            "codeModeHost": "v8-data-only",
+            "enabledMcpServers": 0,
+            "userConfigIgnored": true
+          },
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "startedAt": "2026-10-23T10:03:23.268Z",
+          "cliVersion": "codex-cli 0.163.0",
+          "durationMs": 28265,
+          "jobAttempt": 1,
+          "searchMode": "disabled",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "failureReason": null
+        }
+      ],
+      "attempt": 1,
+      "version": 3,
+      "attempts": [
+        {
+          "state": "succeeded",
+          "number": 1,
+          "workerId": "1fdf6567-f3d0-4d10-bac6-69ac1ee1fc20",
+          "errorCode": null,
+          "startedAt": "2026-10-23T10:03:22.603Z",
+          "finishedAt": "2026-10-23T10:03:51.557Z"
+        }
+      ],
+      "progress": 1,
+      "provider": "script",
+      "createdAt": "2026-10-23T10:03:21.836Z",
+      "errorCode": null,
+      "updatedAt": "2026-10-23T10:03:51.557Z",
+      "leaseOwner": null,
+      "heartbeatAt": "2026-10-23T10:03:50.799Z",
+      "maxAttempts": 3,
+      "scriptInput": {
+        "mode": "real",
+        "brief": {
+          "style": "科技感 / 清晰克制",
+          "prompt": "Explain the distinction between observations and evidence using official ffprobe documentation. Do not invent facts.",
+          "audience": "普通观众",
+          "language": "zh-CN",
+          "targetDurationMs": 60000
+        },
+        "facts": [
+          {
+            "text": "Internal test claim: a fetched ffprobe document exists; not independent verification.",
+            "status": "unverified",
+            "caveats": "Approval does not verify factual truth",
+            "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+            "sourceIds": [
+              "070685b2-7568-4315-bff2-22ba404f9812"
+            ]
+          }
+        ],
+        "segments": [
+          {
+            "id": "82822cf1-f4a5-47e4-8507-c86854f1beb1",
+            "text": "为什么要区分观察和推断？",
+            "order": 0,
+            "pauseMs": 300,
+            "purpose": "hook",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [],
+            "visualIntent": "",
+            "viewerTakeaway": ""
+          },
+          {
+            "id": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+            "text": "解释信息来源与证据边界。",
+            "order": 1,
+            "pauseMs": 300,
+            "purpose": "conclusion",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [
+              {
+                "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+                "sourceIds": [
+                  "070685b2-7568-4315-bff2-22ba404f9812"
+                ]
+              }
+            ],
+            "visualIntent": "",
+            "viewerTakeaway": ""
+          }
+        ],
+        "segmentId": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+        "revisionId": "bd907dbc-18b3-4e58-9869-da0431e8dd5e",
+        "instruction": "仅改写第二段，通俗解释观察、推断与证据的区别；必须保留已有 Claim/Source 绑定，不新增数据或来源。",
+        "schemaVersion": 1,
+        "targetVersion": 2,
+        "researchRevisionId": "d43d217e-8a4d-4051-9814-3c762c141fea"
+      },
+      "scriptResult": {
+        "mode": "real",
+        "aiRun": {
+          "model": "gpt-6.1-sol",
+          "quota": null,
+          "runId": "01a16837-1852-75d2-b2df-5410beade2ca",
+          "usage": {
+            "input_tokens": 9520,
+            "output_tokens": 349,
+            "cached_input_tokens": 0,
+            "reasoning_output_tokens": 0,
+            "cache_write_input_tokens": 0
+          },
+          "policy": "data-only-v1",
+          "provider": "codex-cli",
+          "isolation": {
+            "ephemeral": true,
+            "modelPatch": "disabled",
+            "modelShell": "disabled",
+            "codeModeHost": "v8-data-only",
+            "enabledMcpServers": 0,
+            "userConfigIgnored": true
+          },
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "startedAt": "2026-10-23T10:03:23.268Z",
+          "cliVersion": "codex-cli 0.163.0",
+          "durationMs": 28265,
+          "searchMode": "disabled",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "failureReason": null
+        },
+        "notes": "仅改写第二段，保留原 Claim/Source 绑定。未提供官方文档正文，仅作解释性写作，仍需人工审核。",
+        "segments": [
+          {
+            "id": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+            "text": "观察，是直接看到了什么；推断，是根据看到的信息作出的判断；证据，则要看这些信息能支持哪个判断、支持到什么程度。这里提供的内部测试说法是：存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”。即使经过审批，也不代表事实已经核实。现有材料不足以据此说明官方文档的具体内容，仍需人工审核。",
+            "pauseMs": 300,
+            "purpose": "conclusion",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [
+              {
+                "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+                "sourceIds": [
+                  "070685b2-7568-4315-bff2-22ba404f9812"
+                ]
+              }
+            ],
+            "visualIntent": "依次呈现“观察—推断—证据”，再标注“内部测试说法：未核实”“审批不等于事实核实”。",
+            "viewerTakeaway": "区分直接观察、据此作出的推断，以及材料实际能够支持的结论；保留未核实限制。"
+          }
+        ]
+      },
+      "targetVersion": 2,
+      "idempotencyKey": "90e0a9f0-dae6-4457-8527-b3b4d9a42a0e",
+      "leaseExpiresAt": null,
+      "inputRevisionIds": [
+        "d43d217e-8a4d-4051-9814-3c762c141fea"
+      ],
+      "resultRevisionId": "bd907dbc-18b3-4e58-9869-da0431e8dd5e"
+    },
+    {
+      "id": "a82e5248-217b-4f4c-8544-8704cc89a66c",
+      "kind": "script",
+      "logs": [
+        {
+          "at": "2026-10-23T10:03:51.789Z",
+          "message": "real 文稿整体写稿已排队；目标版本已冻结。"
+        },
+        {
+          "at": "2026-10-23T10:03:52.658Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-23T10:03:52.719Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:54.776Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:56.802Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:03:58.785Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:00.788Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:02.799Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:04.810Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:06.807Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:08.816Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:10.826Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:12.826Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:14.825Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:16.851Z",
+          "message": "real 文稿任务处理中"
+        },
+        {
+          "at": "2026-10-23T10:04:18.784Z",
+          "message": "finish: succeeded"
+        }
+      ],
+      "state": "succeeded",
+      "aiRuns": [
+        {
+          "model": "gpt-6.1-sol",
+          "quota": null,
+          "runId": "01a16837-8e0d-76f1-83ce-3f940fa0e97b",
+          "usage": {
+            "input_tokens": 9965,
+            "output_tokens": 541,
+            "cached_input_tokens": 0,
+            "reasoning_output_tokens": 0,
+            "cache_write_input_tokens": 0
+          },
+          "policy": "data-only-v1",
+          "provider": "codex-cli",
+          "isolation": {
+            "ephemeral": true,
+            "modelPatch": "disabled",
+            "modelShell": "disabled",
+            "codeModeHost": "v8-data-only",
+            "enabledMcpServers": 0,
+            "userConfigIgnored": true
+          },
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "startedAt": "2026-10-23T10:03:53.355Z",
+          "cliVersion": "codex-cli 0.163.0",
+          "durationMs": 25410,
+          "jobAttempt": 1,
+          "searchMode": "disabled",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "failureReason": null
+        }
+      ],
+      "attempt": 1,
+      "version": 3,
+      "attempts": [
+        {
+          "state": "succeeded",
+          "number": 1,
+          "workerId": "d347f309-5bc3-4939-b042-d82b09656bef",
+          "errorCode": null,
+          "startedAt": "2026-10-23T10:03:52.658Z",
+          "finishedAt": "2026-10-23T10:04:18.784Z"
+        }
+      ],
+      "progress": 1,
+      "provider": "script",
+      "createdAt": "2026-10-23T10:03:51.789Z",
+      "errorCode": null,
+      "updatedAt": "2026-10-23T10:04:18.784Z",
+      "leaseOwner": null,
+      "heartbeatAt": "2026-10-23T10:04:16.851Z",
+      "maxAttempts": 3,
+      "scriptInput": {
+        "mode": "real",
+        "brief": {
+          "style": "科技感 / 清晰克制",
+          "prompt": "Explain the distinction between observations and evidence using official ffprobe documentation. Do not invent facts.",
+          "audience": "普通观众",
+          "language": "zh-CN",
+          "targetDurationMs": 60000
+        },
+        "facts": [
+          {
+            "text": "Internal test claim: a fetched ffprobe document exists; not independent verification.",
+            "status": "unverified",
+            "caveats": "Approval does not verify factual truth",
+            "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+            "sourceIds": [
+              "070685b2-7568-4315-bff2-22ba404f9812"
+            ]
+          }
+        ],
+        "segments": [
+          {
+            "id": "82822cf1-f4a5-47e4-8507-c86854f1beb1",
+            "text": "为什么要区分观察和推断？",
+            "order": 0,
+            "pauseMs": 300,
+            "purpose": "hook",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [],
+            "visualIntent": "",
+            "viewerTakeaway": ""
+          },
+          {
+            "id": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+            "text": "观察，是直接看到了什么；推断，是根据看到的信息作出的判断；证据，则要看这些信息能支持哪个判断、支持到什么程度。这里提供的内部测试说法是：存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”。即使经过审批，也不代表事实已经核实。现有材料不足以据此说明官方文档的具体内容，仍需人工审核。",
+            "order": 1,
+            "pauseMs": 300,
+            "purpose": "conclusion",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [
+              {
+                "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+                "sourceIds": [
+                  "070685b2-7568-4315-bff2-22ba404f9812"
+                ]
+              }
+            ],
+            "visualIntent": "依次呈现“观察—推断—证据”，再标注“内部测试说法：未核实”“审批不等于事实核实”。",
+            "viewerTakeaway": "区分直接观察、据此作出的推断，以及材料实际能够支持的结论；保留未核实限制。"
+          }
+        ],
+        "revisionId": "bd907dbc-18b3-4e58-9869-da0431e8dd5e",
+        "instruction": "整体润色叙事逻辑：保留全部段落ID、顺序与已有Claim/Source引用，保持两段，避免新增事实。",
+        "schemaVersion": 1,
+        "targetVersion": 3,
+        "researchRevisionId": "d43d217e-8a4d-4051-9814-3c762c141fea"
+      },
+      "scriptResult": {
+        "mode": "real",
+        "aiRun": {
+          "model": "gpt-6.1-sol",
+          "quota": null,
+          "runId": "01a16837-8e0d-76f1-83ce-3f940fa0e97b",
+          "usage": {
+            "input_tokens": 9965,
+            "output_tokens": 541,
+            "cached_input_tokens": 0,
+            "reasoning_output_tokens": 0,
+            "cache_write_input_tokens": 0
+          },
+          "policy": "data-only-v1",
+          "provider": "codex-cli",
+          "isolation": {
+            "ephemeral": true,
+            "modelPatch": "disabled",
+            "modelShell": "disabled",
+            "codeModeHost": "v8-data-only",
+            "enabledMcpServers": 0,
+            "userConfigIgnored": true
+          },
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "startedAt": "2026-10-23T10:03:53.355Z",
+          "cliVersion": "codex-cli 0.163.0",
+          "durationMs": 25410,
+          "searchMode": "disabled",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "failureReason": null
+        },
+        "notes": "保留两段顺序、全部稳定 ID 及已有 Claim/Source 引用。仅依据所供材料润色，未补充官方文档事实；仍需人工审核。",
+        "segments": [
+          {
+            "id": "82822cf1-f4a5-47e4-8507-c86854f1beb1",
+            "text": "看到了信息，就等于拿到了证据吗？要回答这个问题，先分清三件事：观察到了什么，由此推断了什么，以及这些信息究竟能支持什么结论。",
+            "pauseMs": 300,
+            "purpose": "hook",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [],
+            "visualIntent": "依次呈现“观察到了什么”“推断了什么”“能支持什么结论”三个问题。",
+            "viewerTakeaway": "区分观察、推断与证据对结论的支持程度。"
+          },
+          {
+            "id": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+            "text": "观察，描述直接看到的信息；推断，是根据这些信息作出的判断；把信息作为证据，还要说明它能支持哪个判断、支持到什么程度。以现有材料为例：内部测试说法称，存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”；即使经过审批，也不代表事实已经核实。现有材料不足以说明 ffprobe 官方文档的具体内容。我们能做的，是分清信息与判断，保留未核实的限制；相关内容仍需人工审核。",
+            "pauseMs": 300,
+            "purpose": "conclusion",
+            "delivery": "normal",
+            "needsRebind": false,
+            "factBindings": [
+              {
+                "claimId": "7f1d3cc5-1291-460a-bbbb-bc6895f96f6e",
+                "sourceIds": [
+                  "070685b2-7568-4315-bff2-22ba404f9812"
+                ]
+              }
+            ],
+            "visualIntent": "呈现“观察—推断—证据”的关系，再标注“内部测试说法：未核实”“不构成独立验证”“仍需人工审核”。",
+            "viewerTakeaway": "文档存在的内部测试说法尚未核实，不能据此确认官方文档内容或相关结论；审批不等于事实核实，仍需人工审核。"
+          }
+        ]
+      },
+      "targetVersion": 3,
+      "idempotencyKey": "a3d5b178-7f7e-43ca-93fd-b5f510424875",
+      "leaseExpiresAt": null,
+      "inputRevisionIds": [
+        "d43d217e-8a4d-4051-9814-3c762c141fea"
+      ],
+      "resultRevisionId": "bd907dbc-18b3-4e58-9869-da0431e8dd5e"
+    },
+    {
+      "id": "b9f962d3-b188-4c3b-9a36-ef86a006d520",
+      "kind": "script",
+      "state": "failed",
+      "attempt": 1,
+      "version": 3,
+      "attempts": [
+        {
+          "state": "failed",
+          "number": 1,
+          "workerId": "1fdf6567-f3d0-4d10-bac6-69ac1ee1fc20",
+          "errorCode": "TARGET_CHANGED",
+          "startedAt": "2026-10-23T10:03:51.609Z",
+          "finishedAt": "2026-10-23T10:03:51.647Z"
+        }
+      ],
+      "provider": "mock",
+      "createdAt": "2026-10-23T10:03:21.679Z",
+      "errorCode": "TARGET_CHANGED",
+      "updatedAt": "2026-10-23T10:03:51.647Z",
+      "leaseOwner": null,
+      "maxAttempts": 3,
+      "targetVersion": 0,
+      "idempotencyKey": "approval:d43d217e-8a4d-4051-9814-3c762c141fea",
+      "leaseExpiresAt": null,
+      "inputRevisionIds": [
+        "d43d217e-8a4d-4051-9814-3c762c141fea"
+      ],
+      "resultRevisionId": null
+    }
+  ],
+  "providers": [
+    {
+      "id": "codex-cli",
+      "mode": "real",
+      "configured": true
+    },
+    {
+      "id": "script-model",
+      "mode": "unconfigured",
+      "configured": false
+    },
+    {
+      "id": "explicit-script-fixture",
+      "mode": "mock",
+      "configured": true
+    }
+  ]
+}

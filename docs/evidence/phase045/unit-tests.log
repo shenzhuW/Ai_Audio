@@ -1,0 +1,52 @@
+
+> ai-code-video-studio@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web test
+
+
+> @studio/web@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> node ../../scripts/test.cjs
+
+✔ Signed local session rejects forged and expired cookies (1.5006ms)
+✔ Local-only host and origin checks reject remote host and CSRF (0.3007ms)
+✔ Workflow persists approval truth: draft/edit/submit/approve/fork, immutable old content and history (21.1449ms)
+✔ Workflow rejects stale approvals; identical retries reuse exact response and one durable downstream job (2.2248ms)
+✔ Rejected revisions fork for editing; upstream replacement derives transitive stale without rewriting approved status (6.7286ms)
+✔ Mock jobs have durable claim/finish, cancellation fencing, bounded retries and expired lease recovery (7.887ms)
+✔ Codex data-only policy removes all filesystem and executable model capabilities (1.269ms)
+✔ Codex output needs a completed turn and search trace; commands and file changes fail closed (0.4131ms)
+✔ Codex child receives no application database, provider tokens or Git credentials (0.1608ms)
+✔ Native worker bridge loads without bundling a CLI and propagates pre-cancelled audit (1.2014ms)
+✔ Public fetch rejects local/reserved addresses before connecting and excludes executable HTML (52.897ms)
+✔ Real search persists independent fetched text, never model summaries as matched evidence (7.8466ms)
+✔ Cancelled Codex attempt can save audit without regaining a lease; old owners cannot alter later attempts (15.8792ms)
+✔ Real database: 30/240 seconds and all entry modes survive closing and reopening (23.4389ms)
+✔ Real database: atomic optimistic update permits only one writer (1.8928ms)
+✔ Reject blank prompt, zero/negative/nonfinite duration, invalid aspect, budget, unknown keys (2.0111ms)
+✔ Seconds and mm:ss are exact, invalid strings never silently normalize (0.2983ms)
+✔ Render child environment never inherits database, user session, token, proxy or Node injection variables (0.1375ms)
+✔ Protected video byte ranges support seeking and reject invalid, excessive and multiple ranges (0.5361ms)
+✔ SceneSpec freezes frame timeline and declared editable props, rejects unsafe/invalid inputs (5.1859ms)
+✔ FFprobe gate rejects incorrect encoding, frame rate, frame count and dimensions (4.1388ms)
+✔ Render jobs reuse workflow idempotency, heartbeat lease fencing, cancellation and failure attempts (5.8592ms)
+✔ Research upload accepts actual MP4 brand but rejects disguised executable, bad extensions and byte overflow (6.3665ms)
+✔ Local PDF parser loads standard fonts and extracts real pages/text with Windows-compatible paths (227.9509ms)
+✔ Research records are revision-bound; missing evidence and Mock cannot become verified facts (8.4044ms)
+✔ Research approval freezes source/claim/evidence/index and fork copies a coherent snapshot (6.4247ms)
+✔ Research analysis uses durable jobs, idempotent enqueue and fences approval/cancelled results (3.5327ms)
+✔ Script timing is a transparent mixed-language estimate and diff follows stable IDs (1.4933ms)
+✔ Empty scripts cannot submit; partial AI output cannot overwrite another segment (4.8017ms)
+✔ Current script workspace reports consumers of earlier approved versions and predicts draft impact (3.8135ms)
+✔ Structured script imports without research, keeps logical IDs through edit/order/delete and protects 409/idempotency (1.7595ms)
+✔ Script binds only approved research and coherent Claim/Source; warnings never assert verified facts (3.2047ms)
+✔ Approved script forks stable segments, computes diff and invalidates only declared changed segment dependencies (14.5017ms)
+✔ Script generation freezes whole/partial inputs, records explicit Mock and fences late results (3.7572ms)
+✔ Real upload validation checks extension, contents and byte limit (0.3296ms)
+✔ SQLite workflow transactions survive reopening, roll back failures and preserve legacy project JSON (63.6302ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 927.7982

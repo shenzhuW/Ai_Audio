@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "backend": "postgresql",
+  "at": "2026-10-23T10:39:26.516Z",
+  "pageErrors": [],
+  "images": [
+    {
+      "file": "03-real-search.png",
+      "sha256": "c103863fcaa90d974d09ce021cedbe5c3f67ee2fbd050ea6bafcfda59dff8272",
+      "bytes": 331214
+    },
+    {
+      "file": "03-real-vision.png",
+      "sha256": "471228f299b8053da80a880c11950a2b61c043c4da5650a2a8ed2d597acae2f1",
+      "bytes": 322280
+    },
+    {
+      "file": "03-real-video.png",
+      "sha256": "4ff235a52313ea0cb7e879387fede292edcdb1e0040d523289278fdda57af2cc",
+      "bytes": 396873
+    },
+    {
+      "file": "03-real-audit.png",
+      "sha256": "cb1f5806bb34657f7f9c765e382a7fbbb0a6dad538f8ceadb8abfc95d8819132",
+      "bytes": 483022
+    },
+    {
+      "file": "04-real-script.png",
+      "sha256": "f9a648209aa56b22dc9c0d3f7ccdab084c1d8c0e4736ca81f490c7ab490e7af4",
+      "bytes": 456781
+    },
+    {
+      "file": "04-mobile.png",
+      "sha256": "f4244909c07d616a8aeb728abf716589b87db6d4fb41831c02386cc57f161427",
+      "bytes": 366875
+    }
+  ]
+}

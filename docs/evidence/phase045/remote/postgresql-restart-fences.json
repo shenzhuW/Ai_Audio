@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T11:12:06.455Z",
+  "backend": "postgresql",
+  "mode": "actual-database-app-restart-and-recorded-real-response-fences",
+  "checks": [
+    {
+      "name": "Full Research + Script + Source + index + evidence + AI audits unchanged after app restart",
+      "status": "PASS",
+      "detail": {
+        "projectId": "c0375e63-cfca-43ac-ae85-730a9831cec5",
+        "beforeSha256": "59df293490756a144fe8f569b0d9219d71659244083dc5fc1f2bdbe7a0dd349f",
+        "afterSha256": "59df293490756a144fe8f569b0d9219d71659244083dc5fc1f2bdbe7a0dd349f",
+        "sources": 3,
+        "indexes": 5,
+        "evidence": 1,
+        "researchRevisionId": "d43d217e-8a4d-4051-9814-3c762c141fea"
+      }
+    },
+    {
+      "name": "Approved research rejects replay of its recorded real AI response without any content mutation",
+      "status": "PASS",
+      "detail": {
+        "mode": "recorded-real-response-replay-not-new-model-call",
+        "jobId": "4e0e90df-96db-4df7-8a0b-d3d6e70a626b",
+        "result": "TARGET_CHANGED",
+        "beforeSha256": "4d7ac1eb0c8a400ab490213113c34234debc69955d93231e09348d7d6e970a9e",
+        "afterSha256": "4d7ac1eb0c8a400ab490213113c34234debc69955d93231e09348d7d6e970a9e"
+      }
+    },
+    {
+      "name": "Approved script rejects replay of its recorded real AI response without any content mutation",
+      "status": "PASS",
+      "detail": {
+        "mode": "recorded-real-response-replay-not-new-model-call",
+        "jobId": "8a5444bc-b683-4ee1-9224-2628bd25fad1",
+        "result": "TARGET_CHANGED",
+        "beforeSha256": "4d7ac1eb0c8a400ab490213113c34234debc69955d93231e09348d7d6e970a9e",
+        "afterSha256": "4d7ac1eb0c8a400ab490213113c34234debc69955d93231e09348d7d6e970a9e"
+      }
+    },
+    {
+      "name": "Separate actual whole-writing and partial-rewrite job screenshots",
+      "status": "PASS",
+      "detail": [
+        {
+          "file": "postgresql-04-real-whole.png",
+          "jobId": "a82e5248-217b-4f4c-8544-8704cc89a66c",
+          "sha256": "39501aae6dc1d70525994c1bc140fbff63ff9b7076174979376e23a58b2c504e",
+          "bytes": 65680,
+          "scope": "Actual saved job card and run audit. Current editor contains final whole-script output; earlier partial text is in the persisted job result."
+        },
+        {
+          "file": "postgresql-04-real-partial.png",
+          "jobId": "8a5444bc-b683-4ee1-9224-2628bd25fad1",
+          "sha256": "728d591714abc8d52fbc283010f4f4976a36b87be710aa9b114b3a6dfb88a546",
+          "bytes": 68295,
+          "scope": "Actual saved job card and run audit. Current editor contains final whole-script output; earlier partial text is in the persisted job result."
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-10-23T11:12:12.222Z"
+}

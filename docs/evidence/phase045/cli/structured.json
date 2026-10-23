@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "fixtureOnly": true,
+  "value": {
+    "segments": [
+      {
+        "purpose": "hook",
+        "text": "测试时，看到页面卡住，就能断定服务器出了问题吗？眼前的现象和背后的原因，之间还隔着一步推断。",
+        "viewerTakeaway": "看到现象，不等于知道原因。",
+        "visualIntent": "页面停在加载状态，旁边浮现“服务器故障？”的疑问。"
+      },
+      {
+        "purpose": "explanation",
+        "text": "观察记录发生了什么：点击按钮后，页面没有跳转。推断解释为什么：也许请求失败，也许按钮没有响应。把两者分开，才能保留其他可能，让后续排查有清楚的起点。",
+        "viewerTakeaway": "明确记录事实，把原因作为待检查的解释。",
+        "visualIntent": "将“点击后未跳转”与几种可能原因分栏呈现，用虚线连接。"
+      },
+      {
+        "purpose": "conclusion",
+        "text": "所以，测试记录里先写看到了什么，再写怀疑什么、还需要检查什么。让结论跟着线索走，才不会把猜测当成事实传下去。",
+        "viewerTakeaway": "区分观察与推断，让排查和沟通更清楚。",
+        "visualIntent": "依次呈现观察记录、可能原因和下一步检查，形成清晰路径。"
+      }
+    ]
+  },
+  "runId": "01a1680f-9166-7880-b534-f9275d62c02f",
+  "usage": {
+    "input_tokens": 8818,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 290,
+    "reasoning_output_tokens": 0
+  },
+  "searches": [],
+  "audit": {
+    "provider": "codex-cli",
+    "cliVersion": "codex-cli 0.163.0",
+    "model": "gpt-6.1-sol",
+    "runId": "01a1680f-9166-7880-b534-f9275d62c02f",
+    "searchMode": "disabled",
+    "startedAt": "2026-10-23T09:20:12.506Z",
+    "durationMs": 21196,
+    "usage": {
+      "input_tokens": 8818,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 290,
+      "reasoning_output_tokens": 0
+    },
+    "quota": null,
+    "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+    "failureReason": null,
+    "policy": "data-only-v1",
+    "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a"
+  }
+}

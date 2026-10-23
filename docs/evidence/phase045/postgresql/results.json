@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "backend": "postgresql",
+  "runId": "mvksvnji",
+  "at": "2026-10-23T10:01:32.145Z",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL 初始化/重复迁移：沿用0001–0004，无本阶段DDL",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载",
+      "status": "PASS",
+      "detail": {
+        "jobId": "98b3459e-e1af-46dd-a2ce-7759ec9a63c7",
+        "candidates": 1,
+        "sourceId": "070685b2-7568-4315-bff2-22ba404f9812",
+        "runId": "01a16835-8337-7021-acda-c8adbbafd116"
+      }
+    },
+    {
+      "name": "真实图片理解绑定原件SHA；视觉输出不作为原文匹配",
+      "status": "PASS",
+      "detail": {
+        "jobId": "4e0e90df-96db-4df7-8a0b-d3d6e70a626b",
+        "summary": "图片为白底柱状图，黑色横轴与纵轴呈直角相接，无可见刻度或网格。三根等宽竖柱从左到右依次为红色、绿色、蓝色，高度递增；下方分别标有“A”“B”“C”，上方分别标有“10”“20”“30”。顶部可辨认黑色文字“SELF-AUTHORED VISUAL TEST ONLY”，其中右端与“30”较接近。图中未见图例、单位或数据来源，无法确定这些数值的实际含义。\n模型分析边界：仅描述所附图片中可见的静态内容；无法从图中确定数据背景、单位或来源。",
+        "runId": "01a16835-dd3e-7bf2-9810-901abc4e7daf"
+      }
+    },
+    {
+      "name": "真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称",
+      "status": "PASS",
+      "detail": {
+        "jobId": "e405791f-2db0-430a-b840-001ba20ceb01",
+        "timestamps": [
+          0,
+          3333,
+          6666
+        ],
+        "runIds": [
+          "01a16836-2ca2-7740-92c3-275f01f6d5c6",
+          "01a16836-6baf-7ec2-b694-9d90b3e09a39",
+          "01a16836-c5c1-78f2-9ba9-2595e49fa654"
+        ]
+      }
+    },
+    {
+      "name": "真实AI局部文稿转换ScriptSegment，稳定ID/允许集引用/未改段落保持",
+      "status": "PASS",
+      "detail": {
+        "jobId": "8a5444bc-b683-4ee1-9224-2628bd25fad1",
+        "runId": "01a16837-1852-75d2-b2df-5410beade2ca",
+        "segmentId": "cfd081ea-6420-4922-bd6d-f6eefc6fe64b",
+        "text": "观察，是直接看到了什么；推断，是根据看到的信息作出的判断；证据，则要看这些信息能支持哪个判断、支持到什么程度。这里提供的内部测试说法是：存在一份已抓取的 ffprobe 文档。但这条说法尚未核实，也不构成独立验证。因此，不能从“有文档”直接跳到“结论已被证实”。即使经过审批，也不代表事实已经核实。现有材料不足以据此说明官方文档的具体内容，仍需人工审核。"
+      }
+    },
+    {
+      "name": "真实整体文稿生成沿用全部稳定ID与引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "a82e5248-217b-4f4c-8544-8704cc89a66c",
+        "runId": "01a16837-8e0d-76f1-83ce-3f940fa0e97b"
+      }
+    },
+    {
+      "name": "真实浏览器来源/视觉/写稿/使用量可见，刷新持久化",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "运行中真实Codex取消终止进程树、审计保留、迟到文稿不写入",
+      "status": "PASS",
+      "detail": {
+        "jobId": "3477d889-c917-42a1-bff9-42f44310c3a9",
+        "aiRuns": [
+          {
+            "model": "gpt-6.1-sol",
+            "quota": null,
+            "runId": "01a16838-009b-7020-a397-31682b3da738",
+            "usage": null,
+            "policy": "data-only-v1",
+            "provider": "codex-cli",
+            "isolation": {
+              "ephemeral": true,
+              "modelPatch": "disabled",
+              "modelShell": "disabled",
+              "codeModeHost": "v8-data-only",
+              "enabledMcpServers": 0,
+              "userConfigIgnored": true
+            },
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "startedAt": "2026-10-23T10:04:22.730Z",
+            "cliVersion": "codex-cli 0.163.0",
+            "durationMs": 6422,
+            "jobAttempt": 1,
+            "searchMode": "disabled",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "failureReason": "CODEX_CANCELLED"
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实生成沿用审批只读和Fork，研究引用归属不变",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "重启保持真实结果与审计；原用户数据不变",
+      "status": "PASS",
+      "detail": {
+        "originalBefore": "fafaedf6913bd7e296c986e449576be553cb920aae308cf00ff96345c895ac89",
+        "unchanged": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase045_mvksvnji",
+  "projectId": "c0375e63-cfca-43ac-ae85-730a9831cec5",
+  "finishedAt": "2026-10-23T10:04:31.486Z"
+}

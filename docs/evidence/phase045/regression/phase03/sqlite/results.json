@@ -1,0 +1,186 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T10:06:26.786Z",
+  "backend": "sqlite",
+  "runId": "mvkt1yw1",
+  "checks": [
+    {
+      "name": "原 HTTP CRUD、上传和十路由回归",
+      "status": "PASS",
+      "detail": {
+        "checks": 15
+      }
+    },
+    {
+      "name": "Phase 01 原工作流回归",
+      "status": "PASS",
+      "detail": {
+        "checks": 8
+      }
+    },
+    {
+      "name": "PDF/图片/视频/文本真实上传、幂等、来源限制保存",
+      "status": "PASS",
+      "detail": {
+        "sources": 6,
+        "noncommercialAllowed": true,
+        "unfetchedUrlNotConfirmed": "user_supplied"
+      }
+    },
+    {
+      "name": "真实 PDF 文本/页数、图片宽高、视频三段时间码及抽帧",
+      "status": "PASS",
+      "detail": {
+        "pdfPages": 1,
+        "image": {
+          "width": 640,
+          "height": 360
+        },
+        "videoSegments": [
+          {
+            "startMs": 0,
+            "endMs": 3333
+          },
+          {
+            "startMs": 3333,
+            "endMs": 6666
+          },
+          {
+            "startMs": 6666,
+            "endMs": 10000
+          }
+        ],
+        "semanticProvider": "unconfigured",
+        "formalClipsCreated": 0
+      }
+    },
+    {
+      "name": "Mock、未配置、损坏原件失败及任务异常隔离",
+      "status": "PASS",
+      "detail": {
+        "mockJobId": "f1796582-5429-4676-83d2-d54436ed8f6b",
+        "unconfiguredError": "PROVIDER_NOT_CONFIGURED",
+        "parserError": "PDF_PARSE_FAILED",
+        "realApiStillHealthy": true
+      }
+    },
+    {
+      "name": "Claim 双来源、页码引用、支持/冲突、无证据与跨项目阻断",
+      "status": "PASS",
+      "detail": {
+        "claimId": "75d74d65-9467-4a16-a63b-ac2bed1bee89",
+        "sources": [
+          "26fe8bfc-2c88-4323-80f5-fa03b448a633",
+          "734f9c05-af57-4554-8e9c-5322c65dc97c"
+        ],
+        "evidence": [
+          "34734e1f-867d-4923-9c99-ea6795423d1b",
+          "5cabaf2a-bc1f-433b-9c01-9cba8ebd6e46"
+        ],
+        "status": "conflicting",
+        "verifiedWrite": 400,
+        "missingEvidence": 422,
+        "invalidPage": 422,
+        "crossProject": 404,
+        "staleVersion": 409
+      }
+    },
+    {
+      "name": "Mock 引用不能升级支持/核验状态",
+      "status": "PASS",
+      "detail": {
+        "evidenceValidation": "mock",
+        "supportedRejected": 422
+      }
+    },
+    {
+      "name": "来源详情及原件/帧保护、Range、HEAD 与跨来源文件拒绝",
+      "status": "PASS",
+      "detail": {
+        "anonymous": 401,
+        "range": 206,
+        "invalidRange": 416,
+        "wrongSourceBlob": 404
+      }
+    },
+    {
+      "name": "Phase 00 已有上传原件可加入研究，原项目 JSON/文件不变",
+      "status": "PASS",
+      "detail": {
+        "sha256": "98fa1f19cd2afaf10154fe8729e84bfe39e9b2663e8d68db8e6ad671611eaed6",
+        "unchanged": true
+      }
+    },
+    {
+      "name": "研究 draft→approve、实体只读、fork 快照及固定依赖",
+      "status": "PASS",
+      "detail": {
+        "approved": "66e59839-6f4a-489c-9f4c-49f7860e7485",
+        "fork": "6b268925-030b-43be-8dc7-5f88ded3f634",
+        "oldSnapshotUnchanged": true
+      }
+    },
+    {
+      "name": "实际媒体工具失败、同输入第二次尝试恢复成功",
+      "status": "PASS",
+      "detail": {
+        "jobId": "5e7c1947-4a98-4994-ad96-b9ab482ae5e9",
+        "attempts": [
+          {
+            "workerId": "58f3ed78-3c79-4cfe-8010-1703c2fdcc56",
+            "number": 1,
+            "startedAt": "2026-10-23T10:06:37.195Z",
+            "finishedAt": "2026-10-23T10:06:37.719Z",
+            "state": "failed",
+            "errorCode": "MEDIA_TOOL_NOT_CONFIGURED"
+          },
+          {
+            "workerId": "d72a911f-17a0-40f4-895d-cd1c8c549962",
+            "number": 2,
+            "startedAt": "2026-10-23T10:06:38.390Z",
+            "finishedAt": "2026-10-23T10:06:38.993Z",
+            "state": "succeeded",
+            "errorCode": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "实际运行取消阻断迟到分析写入",
+      "status": "PASS",
+      "detail": {
+        "jobId": "2eeacf1d-52ec-4355-a270-208d42b31773",
+        "state": "cancelled"
+      }
+    },
+    {
+      "name": "浏览器 fork 后引用绑定当前修订，旧批准版保持只读",
+      "status": "PASS",
+      "detail": {
+        "oldRevisionId": "6b268925-030b-43be-8dc7-5f88ded3f634",
+        "newRevisionId": "4d4d53e0-c4d0-4586-9ab6-193d2a230235",
+        "evidenceStatus": 201
+      }
+    },
+    {
+      "name": "真实浏览器：来源/引用/索引、视频定位、上传、Claim、保存审核、历史与移动端",
+      "status": "PASS",
+      "detail": {
+        "screenshots": 6,
+        "videoSeekMs": 3333,
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "应用重启后持久化、旧数据目录完全保留",
+      "status": "PASS",
+      "detail": {
+        "originalDataHash": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54",
+        "unchanged": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "10554602-51c3-4561-b2e9-eee3fcc2ce74",
+  "finishedAt": "2026-10-23T10:06:49.224Z"
+}

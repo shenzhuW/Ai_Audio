@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T11:02:43.767Z",
+  "backend": "sqlite",
+  "mode": "actual-database-app-restart-and-recorded-real-response-fences",
+  "checks": [
+    {
+      "name": "Full Research + Script + Source + index + evidence + AI audits unchanged after app restart",
+      "status": "PASS",
+      "detail": {
+        "projectId": "1a157644-0693-4234-80c0-a77181fa6b00",
+        "beforeSha256": "3c567e9b1568c6c16b98cb923c4fae220ea3d2082922c8bc928fd9237ff78fe3",
+        "afterSha256": "3c567e9b1568c6c16b98cb923c4fae220ea3d2082922c8bc928fd9237ff78fe3",
+        "sources": 3,
+        "indexes": 5,
+        "evidence": 1,
+        "researchRevisionId": "54c899af-66c5-49ba-8855-a89e94ab253f"
+      }
+    },
+    {
+      "name": "Approved research rejects replay of its recorded real AI response without any content mutation",
+      "status": "PASS",
+      "detail": {
+        "mode": "recorded-real-response-replay-not-new-model-call",
+        "jobId": "38a08545-8649-46bb-93da-6edd1d79cf85",
+        "result": "TARGET_CHANGED",
+        "beforeSha256": "0e85ffc81fc305f922c2031a9dc6d5ea891cdab972832d6f79ecd7a4493c12db",
+        "afterSha256": "0e85ffc81fc305f922c2031a9dc6d5ea891cdab972832d6f79ecd7a4493c12db"
+      }
+    },
+    {
+      "name": "Approved script rejects replay of its recorded real AI response without any content mutation",
+      "status": "PASS",
+      "detail": {
+        "mode": "recorded-real-response-replay-not-new-model-call",
+        "jobId": "0df1035e-fdcd-452c-ab97-7bb02c975a10",
+        "result": "TARGET_CHANGED",
+        "beforeSha256": "0e85ffc81fc305f922c2031a9dc6d5ea891cdab972832d6f79ecd7a4493c12db",
+        "afterSha256": "0e85ffc81fc305f922c2031a9dc6d5ea891cdab972832d6f79ecd7a4493c12db"
+      }
+    },
+    {
+      "name": "Separate actual whole-writing and partial-rewrite job screenshots",
+      "status": "PASS",
+      "detail": [
+        {
+          "file": "sqlite-04-real-whole.png",
+          "jobId": "0df1035e-fdcd-452c-ab97-7bb02c975a10",
+          "sha256": "9c856213f0e7b4474f604491470a3f3afb902853691cff4fddc7c6bf00d94bb8",
+          "bytes": 64454,
+          "scope": "Actual saved job card and run audit. Current editor contains final whole-script output; earlier partial text is in the persisted job result."
+        },
+        {
+          "file": "sqlite-04-real-partial.png",
+          "jobId": "8d3b1559-0f42-4e97-a2f0-d7cdad9997e8",
+          "sha256": "705e132903dfbee9cf7e000e00e51669aa8264ba4d891a5598d4e706f24bc40d",
+          "bytes": 59834,
+          "scope": "Actual saved job card and run audit. Current editor contains final whole-script output; earlier partial text is in the persisted job result."
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-10-23T11:02:50.190Z"
+}

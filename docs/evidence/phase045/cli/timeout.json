@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "expected": "CODEX_TIMEOUT",
+  "actual": "CODEX_TIMEOUT",
+  "elapsedMs": 2372,
+  "audit": {
+    "provider": "codex-cli",
+    "cliVersion": "codex-cli 0.163.0",
+    "model": "gpt-6.1-sol",
+    "runId": "01a16836-9223-7b62-987f-b8bac74f47f0",
+    "searchMode": "disabled",
+    "startedAt": "2026-10-23T10:02:48.897Z",
+    "durationMs": 1606,
+    "usage": null,
+    "quota": null,
+    "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+    "failureReason": "CODEX_TIMEOUT",
+    "policy": "data-only-v1",
+    "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+    "isolation": {
+      "modelShell": "disabled",
+      "modelPatch": "disabled",
+      "enabledMcpServers": 0,
+      "codeModeHost": "v8-data-only",
+      "userConfigIgnored": true,
+      "ephemeral": true
+    }
+  }
+}

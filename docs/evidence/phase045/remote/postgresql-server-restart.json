@@ -1,0 +1,8 @@
+{
+  "initialTranscriptAttempt": "PowerShell Tee-Object batch stalled after startup; only exact acceptance shell PID 32004 was stopped. Independent commands completed; this batch is not counted as a native application crash.",
+  "afterSha256": "59df293490756a144fe8f569b0d9219d71659244083dc5fc1f2bdbe7a0dd349f",
+  "scope": "Controlled PostgreSQL server stop/start across actual full Research and Script reads, not crash recovery",
+  "status": "PASS",
+  "beforeSha256": "59df293490756a144fe8f569b0d9219d71659244083dc5fc1f2bdbe7a0dd349f",
+  "at": "2026-10-23T11:12:12.3768069Z"
+}

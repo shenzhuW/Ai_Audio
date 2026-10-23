@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-23T11:13:11.466Z",
+  "status": "PASS",
+  "mode": "saved-real-evidence-cross-check",
+  "checks": [
+    {
+      "backend": "sqlite",
+      "status": "PASS",
+      "partialJobId": "8d3b1559-0f42-4e97-a2f0-d7cdad9997e8",
+      "wholeJobId": "0df1035e-fdcd-452c-ab97-7bb02c975a10",
+      "untouchedSegmentsExactlyEqual": true,
+      "partialBindingsExactlyEqual": true,
+      "fixedResearchRevisionId": "54c899af-66c5-49ba-8855-a89e94ab253f",
+      "realAttachedImageHashesMatched": true,
+      "claimNote": "No AI Claim extractor is implemented. Search/vision do not create verified Claims; the manually created synthetic Claim remains unverified.",
+      "restartAndRecordedRealResponseFences": true
+    },
+    {
+      "backend": "postgresql",
+      "status": "PASS",
+      "partialJobId": "8a5444bc-b683-4ee1-9224-2628bd25fad1",
+      "wholeJobId": "a82e5248-217b-4f4c-8544-8704cc89a66c",
+      "untouchedSegmentsExactlyEqual": true,
+      "partialBindingsExactlyEqual": true,
+      "fixedResearchRevisionId": "d43d217e-8a4d-4051-9814-3c762c141fea",
+      "realAttachedImageHashesMatched": true,
+      "claimNote": "No AI Claim extractor is implemented. Search/vision do not create verified Claims; the manually created synthetic Claim remains unverified.",
+      "restartAndRecordedRealResponseFences": true
+    }
+  ],
+  "realModelRunsProjected": 19,
+  "actualAbnormalExitAndRetry": true,
+  "actualInjectionCanary": true,
+  "nativeWindowsRootCauseKnown": false
+}

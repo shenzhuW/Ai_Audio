@@ -1,0 +1,14 @@
+PASS 真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载
+PASS 真实图片理解绑定原件SHA；视觉输出不作为原文匹配
+PASS 真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称
+PASS 真实AI局部文稿转换ScriptSegment，稳定ID/允许集引用/未改段落保持
+PASS 真实整体文稿生成沿用全部稳定ID与引用
+PASS 真实浏览器来源/视觉/写稿/使用量可见，刷新持久化
+PASS 运行中真实Codex取消终止进程树、审计保留、迟到文稿不写入
+AssertionError [ERR_ASSERTION]: {"data":{"id":"c9da9138-8d76-4a8e-8d17-3f46fb485b55","artifactId":"8e142808-035e-46f9-b1f7-ff02619773a9","revisionNumber":2,"schemaVersion":1,"version":1,"text":"拿到一份文档，就能说某个结论已经得到证实吗？要回答这个问题，先要分清观察、推断和证据。\n\n可以这样理解：观察，记录看到了什么；推断，根据记录作出判断；证据，则是用来支持或质疑判断的材料。材料能否支持判断，还要看它是否相关、是否可靠。回到这次提供的材料：内部测试声明称，已获取一份 ffprobe 文档，但这一声明尚未经过独立核实。“取得文档”，不能直接等同于“文档内容已证实某个结论”；审批通过，也不代表事实已经核验。因此，目前只能解释这些概念之间的区别，不能据此声称已依据 ffprobe 官方文档确认具体说法。相关内容仍需人工审核。","contentHash":"b308fc89d75f999cf9bc51b9deca1b1ff402fbcc74dba35218bd85b6ad6f463a","mock":false,"status":"draft","parentRevisionId":"3ca139bb-ab4e-4946-abc7-9a66dfa7daa2","createdAt":"2026-10-23T09:57:52.927Z","updatedAt":"2026-10-23T09:57:52.927Z","createdBy":"local-user","scriptSchemaVersion":1},"meta":{"requestId":"367563cb-505d-48a6-8bcf-409541276a2b"}}
+
+200 !== 201
+
+    at api (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\real-ai\run.cjs:37:290)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\real-ai\run.cjs:94:3)

@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T11:13:11.131Z",
+  "mode": "saved-real-evidence-cross-check",
+  "backends": [
+    {
+      "backend": "sqlite",
+      "status": "PASS",
+      "runId": "mvksngfr",
+      "groups": 9,
+      "actualModelRuns": 8,
+      "successfulRuns": 7,
+      "cancelledAudit": [
+        {
+          "provider": "codex-cli",
+          "cliVersion": "codex-cli 0.163.0",
+          "model": "gpt-6.1-sol",
+          "runId": "01a16831-f510-7761-8ea8-3c855d945755",
+          "searchMode": "disabled",
+          "startedAt": "2026-10-23T09:57:46.559Z",
+          "durationMs": 6194,
+          "usage": null,
+          "quota": null,
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "failureReason": "CODEX_CANCELLED",
+          "policy": "data-only-v1",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "jobAttempt": 1,
+          "isolation": {
+            "modelShell": "disabled",
+            "modelPatch": "disabled",
+            "enabledMcpServers": 0,
+            "codeModeHost": "v8-data-only",
+            "userConfigIgnored": true,
+            "ephemeral": true
+          }
+        }
+      ],
+      "fullOriginalsKeptPrivate": true,
+      "screenshotCount": 6,
+      "tokenUsage": 85224,
+      "remainingQuota": "unknown"
+    },
+    {
+      "backend": "postgresql",
+      "status": "PASS",
+      "runId": "mvksvnji",
+      "groups": 10,
+      "actualModelRuns": 8,
+      "successfulRuns": 7,
+      "cancelledAudit": [
+        {
+          "model": "gpt-6.1-sol",
+          "quota": null,
+          "runId": "01a16838-009b-7020-a397-31682b3da738",
+          "usage": null,
+          "policy": "data-only-v1",
+          "provider": "codex-cli",
+          "isolation": {
+            "ephemeral": true,
+            "modelPatch": "disabled",
+            "modelShell": "disabled",
+            "codeModeHost": "v8-data-only",
+            "enabledMcpServers": 0,
+            "userConfigIgnored": true
+          },
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "startedAt": "2026-10-23T10:04:22.730Z",
+          "cliVersion": "codex-cli 0.163.0",
+          "durationMs": 6422,
+          "jobAttempt": 1,
+          "searchMode": "disabled",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "failureReason": "CODEX_CANCELLED"
+        }
+      ],
+      "fullOriginalsKeptPrivate": true,
+      "screenshotCount": 6,
+      "tokenUsage": 85294,
+      "remainingQuota": "unknown"
+    }
+  ],
+  "failures": [],
+  "unitTests": 36,
+  "prismaRenderAndLockUnchanged": true
+}

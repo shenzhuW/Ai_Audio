@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "backend": "sqlite",
+  "runId": "mvksngfr",
+  "at": "2026-10-23T09:55:09.689Z",
+  "checks": [
+    {
+      "name": "真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载",
+      "status": "PASS",
+      "detail": {
+        "jobId": "6878b3d1-cd69-4bce-a6c9-40147e4964e2",
+        "candidates": 1,
+        "sourceId": "70b8253e-daec-4cce-8520-ccb2a52c64e5",
+        "runId": "01a1682f-a406-74c2-9ef0-0beccf103ea8"
+      }
+    },
+    {
+      "name": "真实图片理解绑定原件SHA；视觉输出不作为原文匹配",
+      "status": "PASS",
+      "detail": {
+        "jobId": "c4a28f13-2666-42e0-8c06-eead862ed58c",
+        "summary": "图片为白底柱状图，左侧和底部是黑色坐标轴，无可见刻度。三根竖直矩形柱从左到右分别为红色、绿色、蓝色，高度依次增加；柱顶分别标有“10”“20”“30”，底部分别标有“A”“B”“C”。顶部可辨认黑色文字“SELF-AUTHORED VISUAL TEST ONLY”，其右端与“30”较为接近。整体没有可见图例或单位。\n模型分析边界：仅描述所附图片中可见内容；图表数据的含义、单位及来源无法从图片确定。",
+        "runId": "01a16830-079a-7f60-bc35-d7c643acde40"
+      }
+    },
+    {
+      "name": "真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称",
+      "status": "PASS",
+      "detail": {
+        "jobId": "38a08545-8649-46bb-93da-6edd1d79cf85",
+        "timestamps": [
+          0,
+          3333,
+          6666
+        ],
+        "runIds": [
+          "01a16830-57b6-7041-9789-f984468c6096",
+          "01a16830-a4b9-7211-aa48-53c775c28279",
+          "01a16830-edfc-78b2-bde1-5f5d811ad921"
+        ]
+      }
+    },
+    {
+      "name": "真实AI局部文稿转换ScriptSegment，稳定ID/允许集引用/未改段落保持",
+      "status": "PASS",
+      "detail": {
+        "jobId": "8d3b1559-0f42-4e97-a2f0-d7cdad9997e8",
+        "runId": "01a16831-32e9-7340-a25b-d10af9b7ca64",
+        "segmentId": "63be9182-bdee-46aa-bf47-ba7bf87d4a44",
+        "text": "观察，是记录看到了什么；推断，是根据这些记录作出判断；证据，则是能用来支持或质疑判断的材料，还要看它与判断是否相关、是否可靠。这里提供的内部测试声明称，已获取一份 ffprobe 文档，但这仍未经过独立核实。因此，不能把“取得文档”直接当成“文档内容已证实某个结论”，也不能把审批通过当成事实核验。当前材料不足以依据官方文档确认具体说法，仍需人工审核。"
+      }
+    },
+    {
+      "name": "真实整体文稿生成沿用全部稳定ID与引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "0df1035e-fdcd-452c-ab97-7bb02c975a10",
+        "runId": "01a16831-857a-7c83-98ff-65ebf8c00423"
+      }
+    },
+    {
+      "name": "真实浏览器来源/视觉/写稿/使用量可见，刷新持久化",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "运行中真实Codex取消终止进程树、审计保留、迟到文稿不写入",
+      "status": "PASS",
+      "detail": {
+        "jobId": "82adcaba-2c1c-47e3-8233-f31ac829e37f",
+        "aiRuns": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16831-f510-7761-8ea8-3c855d945755",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-23T09:57:46.559Z",
+            "durationMs": 6194,
+            "usage": null,
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": "CODEX_CANCELLED",
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "jobAttempt": 1,
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实生成沿用审批只读和Fork，研究引用归属不变",
+      "status": "PASS",
+      "detail": {
+        "forkHttpStatus": 200
+      }
+    },
+    {
+      "name": "重启保持真实结果与审计；原用户数据不变",
+      "status": "PASS",
+      "detail": {
+        "originalBefore": "fafaedf6913bd7e296c986e449576be553cb920aae308cf00ff96345c895ac89",
+        "unchanged": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "1a157644-0693-4234-80c0-a77181fa6b00",
+  "finishedAt": "2026-10-23T10:01:31.856Z",
+  "resumedFinalization": "Original test expected fork 201, but existing API correctly returns 200. Corrected test and reverified final steps on same isolated run; no repeat model calls."
+}

@@ -1,0 +1,9 @@
+{
+  "status": "FAIL",
+  "at": "2026-10-23T10:56:58.829Z",
+  "backend": "sqlite",
+  "mode": "real-native-CLI-killed-and-retried",
+  "checks": [],
+  "error": "{\"error\":{\"code\":\"VALIDATION_ERROR\",\"message\":\"请检查项目输入\",\"details\":{\"formErrors\":[\"Invalid input\"],\"fieldErrors\":{}}},\"meta\":{\"requestId\":\"5c794f30-dbc2-471d-a372-8d0ca57ba7f1\"}}\n\n400 !== 201\n",
+  "finishedAt": "2026-10-23T10:57:00.423Z"
+}

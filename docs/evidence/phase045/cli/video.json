@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "fixtureOnly": true,
+  "value": {
+    "summary": "画面为竖向构图，背景接近黑色的深蓝色，其上分布细薄的蓝色网格线，形成大小相近的四边形。画面中下部有一块较亮的深蓝色大四边形，近似横向矩形，边缘略有倾斜，覆盖部分网格。未见可辨认的文字、标签或其他明确图案。",
+    "keywords": [
+      "深蓝色",
+      "近黑色背景",
+      "蓝色网格",
+      "四边形",
+      "竖向构图"
+    ],
+    "limitations": "仅描述所附单帧图像的可见内容，属于视觉分析，未经事实核验；暗部细节有限，无法判断音频或运动。"
+  },
+  "runId": "01a16811-35d9-75c3-9d28-ac794471734a",
+  "usage": {
+    "input_tokens": 9368,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 174,
+    "reasoning_output_tokens": 0
+  },
+  "searches": [],
+  "audit": {
+    "provider": "codex-cli",
+    "cliVersion": "codex-cli 0.163.0",
+    "model": "gpt-6.1-sol",
+    "runId": "01a16811-35d9-75c3-9d28-ac794471734a",
+    "searchMode": "disabled",
+    "startedAt": "2026-10-23T09:22:00.302Z",
+    "durationMs": 17540,
+    "usage": {
+      "input_tokens": 9368,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 174,
+      "reasoning_output_tokens": 0
+    },
+    "quota": null,
+    "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+    "failureReason": null,
+    "policy": "data-only-v1",
+    "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a"
+  }
+}

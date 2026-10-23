@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "fixtureOnly": true,
+  "value": {
+    "results": [
+      {
+        "title": "ffprobe Documentation",
+        "url": "https://ffmpeg.org/ffprobe.html",
+        "summary": "Official reference for inspecting multimedia streams, selecting metadata, and formatting output as JSON, XML, and other formats."
+      },
+      {
+        "title": "ffprobe Documentation — Complete Reference",
+        "url": "https://ffmpeg.org/ffprobe-all.html",
+        "summary": "Expanded official reference covering ffprobe options and FFmpeg component settings."
+      },
+      {
+        "title": "FFmpeg Documentation",
+        "url": "https://www.ffmpeg.org/documentation.html",
+        "summary": "Official documentation index linking to ffprobe and its complete reference. Documentation is regenerated nightly for the newest FFmpeg revision."
+      }
+    ]
+  },
+  "runId": "01a16814-7a8c-7a12-a3b7-69b595163d8b",
+  "usage": {
+    "input_tokens": 26602,
+    "cached_input_tokens": 11136,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 203,
+    "reasoning_output_tokens": 0
+  },
+  "searches": [
+    {
+      "id": "exec-5bdfe782-8500-457e-8500-d1c8c9f25abd",
+      "type": "web_search",
+      "query": "",
+      "action": {
+        "type": "other"
+      }
+    },
+    {
+      "id": "exec-5bdfe782-8500-457e-8500-d1c8c9f25abd",
+      "type": "web_search",
+      "query": "site:ffmpeg.org ffprobe documentation",
+      "action": {
+        "type": "search",
+        "query": "site:ffmpeg.org ffprobe documentation"
+      },
+      "results": [
+        {
+          "type": "text_result",
+          "domain": "www.ffmpeg.org",
+          "ref_id": "turn0search0",
+          "snippet": "# ffprobe Documentation",
+          "title": "ffprobe Documentation",
+          "url": "https://www.ffmpeg.org/ffprobe.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "www.ffmpeg.org",
+          "ref_id": "turn0search1",
+          "snippet": "# ffprobe Documentation",
+          "title": "ffprobe Documentation",
+          "url": "https://www.ffmpeg.org/ffprobe-all.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "roundup.ffmpeg.org",
+          "ref_id": "turn0search2",
+          "snippet": "# ffprobe Documentation",
+          "title": "ffprobe Documentation",
+          "url": "https://roundup.ffmpeg.org/ffprobe.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "www.ffmpeg.org",
+          "ref_id": "turn0search3",
+          "snippet": "# Documentation ... * ffprobe: `ffprobe` tool",
+          "title": "Documentation",
+          "url": "https://www.ffmpeg.org/documentation.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "ffmpeg.org",
+          "ref_id": "turn0search4",
+          "snippet": "Note that the term ’codec’ is used throughout this documentation as a shortcut for what is more correctly called a media bitstream format. ... `ffprobe`",
+          "title": "ffprobe Documentation",
+          "url": "https://ffmpeg.org/ffprobe.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "ffmpeg.org",
+          "ref_id": "turn0search5",
+          "snippet": "For example, to output a report to a file named `ffreport.log` using a log level of `32` (alias for log level `info`): ... ‘`PowerPC`’ ...",
+          "title": "ffprobe Documentation",
+          "url": "https://ffmpeg.org/ffprobe-all.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "svn.ffmpeg.org",
+          "ref_id": "turn0search6",
+          "snippet": "# ffprobe Documentation",
+          "title": "ffprobe Documentation",
+          "url": "https://svn.ffmpeg.org/ffprobe-all.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "ffmpeg.org",
+          "ref_id": "turn0search7",
+          "snippet": "# Documentation ... * ffprobe: `ffprobe` tool",
+          "title": "Documentation",
+          "url": "https://ffmpeg.org/documentation.html?section=Streaming"
+        },
+        {
+          "type": "text_result",
+          "domain": "ffmpeg.org",
+          "ref_id": "turn0search8",
+          "snippet": "ffprobe -show_streams -analyze_frames -read_intervals \"%+20\" INPUT",
+          "title": "ffprobe Documentation",
+          "url": "https://ffmpeg.org/ffprobe.html?from_column=20423"
+        },
+        {
+          "type": "text_result",
+          "domain": "svn.ffmpeg.org",
+          "ref_id": "turn0search9",
+          "snippet": "# Documentation ... * ffprobe: `ffprobe` tool",
+          "title": "Documentation",
+          "url": "https://svn.ffmpeg.org/documentation.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "ffmpeg.org",
+          "ref_id": "turn0search10",
+          "snippet": "+ at settitle FFprobe Documentation",
+          "title": "[FFmpeg-cvslog] r21936 - in trunk: Changelog Makefile configure doc/ffprobe-doc.texi ffprobe.c",
+          "url": "https://ffmpeg.org/pipermail/ffmpeg-cvslog/2010-February/028084.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "www.ffmpeg.org",
+          "ref_id": "turn0search11",
+          "snippet": "# ffprobe.c File Reference",
+          "title": "FFmpeg: ffprobe.c File Reference",
+          "url": "https://www.ffmpeg.org/doxygen/0.8/ffprobe_8c.html"
+        },
+        {
+          "type": "text_result",
+          "domain": "samples.ffmpeg.org",
+          "ref_id": "turn0search12",
+          "snippet": "Documentation",
+          "title": "4X Technologies ©",
+          "url": "https://samples.ffmpeg.org/game-formats/4xm/4X%20Movie%20eng.pdf"
+        },
+        {
+          "type": "text_result",
+          "domain": "www.ffmpeg.org",
+          "ref_id": "turn0search13",
+          "snippet": "FFV1 Video Codec Specification",
+          "title": "FFV1 Video Codec Specification",
+          "url": "https://www.ffmpeg.org/~michael/ffv1-old/ffv1.pdf"
+        },
+        {
+          "type": "text_result",
+          "domain": "www.ffmpeg.org",
+          "ref_id": "turn0search14",
+          "snippet": "<tr><td>0</td><td>FFV1 version 0</td><td></td></tr><tr><td>1</td><td>FFV1 version 1</td><td></td></tr>",
+          "title": "5.5 Parameters",
+          "url": "https://www.ffmpeg.org/~michael/broken_ffv1.pdf"
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "provider": "codex-cli",
+    "cliVersion": "codex-cli 0.163.0",
+    "model": "gpt-6.1-sol",
+    "runId": "01a16814-7a8c-7a12-a3b7-69b595163d8b",
+    "searchMode": "live",
+    "startedAt": "2026-10-23T09:25:34.577Z",
+    "durationMs": 23606,
+    "usage": {
+      "input_tokens": 26602,
+      "cached_input_tokens": 11136,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 203,
+      "reasoning_output_tokens": 0
+    },
+    "quota": null,
+    "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+    "failureReason": null,
+    "policy": "data-only-v1",
+    "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a"
+  }
+}

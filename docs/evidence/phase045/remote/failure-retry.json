@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T10:57:38.709Z",
+  "backend": "sqlite",
+  "mode": "real-native-CLI-killed-and-retried",
+  "checks": [
+    {
+      "name": "Actual native CLI abnormal exit releases lease and writes no partial script",
+      "status": "PASS",
+      "detail": {
+        "jobId": "811ff298-7081-49c9-a692-59b0b400fcf5",
+        "attempt": 1,
+        "errorCode": "CODEX_PROCESS_FAILED",
+        "audit": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16868-d21d-7141-8957-b2bc88b7c782",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-23T10:57:41.881Z",
+            "durationMs": 2401,
+            "usage": null,
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": "CODEX_PROCESS_FAILED",
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "jobAttempt": 1,
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Retry of same failed job completes with actual model output and fenced attempt 2",
+      "status": "PASS",
+      "detail": {
+        "jobId": "811ff298-7081-49c9-a692-59b0b400fcf5",
+        "attempts": [
+          {
+            "workerId": "182dc39a-6fd0-4a12-ae92-f1eb6753ec9a",
+            "number": 1,
+            "startedAt": "2026-10-23T10:57:40.908Z",
+            "finishedAt": "2026-10-23T10:57:44.284Z",
+            "state": "failed",
+            "errorCode": "CODEX_PROCESS_FAILED"
+          },
+          {
+            "workerId": "58b7ce9b-8dec-4819-8882-b3edb3ea85fe",
+            "number": 2,
+            "startedAt": "2026-10-23T10:57:45.032Z",
+            "finishedAt": "2026-10-23T10:58:00.559Z",
+            "state": "succeeded",
+            "errorCode": null
+          }
+        ],
+        "aiRuns": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16868-d21d-7141-8957-b2bc88b7c782",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-23T10:57:41.881Z",
+            "durationMs": 2401,
+            "usage": null,
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": "CODEX_PROCESS_FAILED",
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "jobAttempt": 1,
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          },
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16868-e1bc-7702-8067-1e0b2f2895f0",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-23T10:57:45.788Z",
+            "durationMs": 14766,
+            "usage": {
+              "input_tokens": 9420,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 179,
+              "reasoning_output_tokens": 0
+            },
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": null,
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "jobAttempt": 2,
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Retried real script survives application restart",
+      "status": "PASS",
+      "detail": {
+        "snapshotSha256": "b89e4ac0981aa5732c7becd2f1128bbd3034ae1ead821de7d2b105001828d9da"
+      }
+    }
+  ],
+  "projectId": "01613917-7a32-46f7-a487-a0b862d529d2",
+  "finishedAt": "2026-10-23T10:58:01.886Z"
+}

@@ -1,0 +1,47 @@
+{
+  "notes": "Actual failures are retained or summarized; only final completed runs count as PASS.",
+  "cases": [
+    {
+      "case": "intermediate-agent-message-json",
+      "initial": "Natural-language progress was parsed as JSON",
+      "resolution": "Parse only the final completed agent message; real live search rerun passed"
+    },
+    {
+      "case": "code-mode-host-disabled",
+      "initial": "CODEX_SEARCH_NOT_EXECUTED; host-unavailable error event",
+      "resolution": "Review V8/registry boundary, enable standalone host with no in-process fallback; real search passed"
+    },
+    {
+      "case": "mcp-helper-gate",
+      "initial": "CODEX_TOOL_BOUNDARY",
+      "resolution": "Review three built-in resource helpers, explicitly disable all configured servers and verify zero enabled; safety-initial.json remains FAIL, final safety.json PASS"
+    },
+    {
+      "case": "cancel-audit-owner",
+      "initial": "Actual cancelled job lost audit after leaseOwner cleared",
+      "resolution": "Persist attempt workerId, fence metadata by worker/attempt; unit red-green and actual cancellation passed on both databases"
+    },
+    {
+      "case": "fork-http-contract",
+      "initial": "Test expected 201; unchanged existing API correctly returned 200",
+      "resolution": "Correct test only; same SQLite isolated run final two steps reverified without repeating model calls; PostgreSQL full run passed"
+    },
+    {
+      "case": "capture-selector",
+      "initial": "Test used 与 instead of 和 in the task summary label",
+      "resolution": "Correct selector; both final browser captures PASS"
+    },
+    {
+      "case": "native-regression-process",
+      "initial": "One Phase03 batch exited 0xC0000409 after HTTP; not counted as passed",
+      "resolution": "Independent retry completed SQLite 15 and PostgreSQL 16 groups; root cause unconfirmed",
+      "remainingRisk": "Windows native-process abnormal exit requires monitoring; no claim that its root cause was fixed"
+    },
+    {
+      "case": "native-final-capture-process",
+      "initial": "Later capture batch exited -1073740791 (0xC0000409) after completing SQLite",
+      "resolution": "Added port/readiness guard and single-backend capture option; independent PostgreSQL capture completed, no model calls repeated",
+      "remainingRisk": "Second native-process abnormal exit, root cause unconfirmed"
+    }
+  ]
+}

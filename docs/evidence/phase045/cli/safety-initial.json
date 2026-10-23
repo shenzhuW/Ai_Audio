@@ -1,0 +1,27 @@
+{
+  "status": "FAIL",
+  "startedAt": "2026-10-23T09:42:34.619Z",
+  "error": "CODEX_TOOL_BOUNDARY",
+  "audit": {
+    "provider": "codex-cli",
+    "cliVersion": "codex-cli 0.163.0",
+    "model": "gpt-6.1-sol",
+    "runId": "01a16824-0e2e-70c0-bfcb-0317d35ec490",
+    "searchMode": "disabled",
+    "startedAt": "2026-10-23T09:42:35.231Z",
+    "durationMs": 20069,
+    "usage": {
+      "input_tokens": 17968,
+      "cached_input_tokens": 8832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 252,
+      "reasoning_output_tokens": 0
+    },
+    "quota": null,
+    "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+    "failureReason": "CODEX_TOOL_BOUNDARY",
+    "policy": "data-only-v1",
+    "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a"
+  },
+  "diagnostic": null
+}

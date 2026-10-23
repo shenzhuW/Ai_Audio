@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "backend": "sqlite",
+  "at": "2026-10-23T10:36:33.412Z",
+  "pageErrors": [],
+  "images": [
+    {
+      "file": "03-real-search.png",
+      "sha256": "ec32c044be32e7bf97057f737d88121e14f74d06e2deccf183a22db1c9ec5a7f",
+      "bytes": 333380
+    },
+    {
+      "file": "03-real-vision.png",
+      "sha256": "bbdc32f0b4c221d5cb5baf7fd0d93dea2471e48a6dd23369a136928acf322b4f",
+      "bytes": 319840
+    },
+    {
+      "file": "03-real-video.png",
+      "sha256": "74efdbfb3ce30a30ff0680bc22b512b71c03d84a0c8fc6497f1a2c25b29a9456",
+      "bytes": 401325
+    },
+    {
+      "file": "03-real-audit.png",
+      "sha256": "aec26fe45258c81116d03cc51d1aae9c326dc7e3e4eb904b1b68b6e947e1f085",
+      "bytes": 487568
+    },
+    {
+      "file": "04-real-script.png",
+      "sha256": "d591f00238608b4861a520eb914db52719cb1a097c257400b2eb25fa0e63eda8",
+      "bytes": 445770
+    },
+    {
+      "file": "04-mobile.png",
+      "sha256": "b3e0a9ddfd6b4bc1e0698bd2424e531e8a24e6b31326267bd8c0efc4e9b46f3c",
+      "bytes": 357655
+    }
+  ]
+}

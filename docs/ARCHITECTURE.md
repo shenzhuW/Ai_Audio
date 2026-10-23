@@ -74,3 +74,11 @@ B. 用户修改文稿一段后能计算哪些修订变成 stale，成功回退/�
 - **首版**：模块化单体 API + 单独媒体和隔离渲染 Worker。
 - **扩展**：增加多 Provider、语义向量检索及队列调度。
 - **以后**：多租户、团队协作、GPU 分割/追踪。是否采用 Agent 工作流框架视可恢复性压测结果确定。
+
+## Phase 03 实施边界
+
+研究模块位于 `server/research`，使用原 Workflow Repository 的项目事务锁和 Job/Outbox，不另建审批或项目系统。四张研究实体表绑定研究修订，摘要和资料共同参与 contentHash；fork 复制元数据快照、复用原 Blob。PostgreSQL 增量迁移为 0003，SQLite 增量建表含相同的草稿写入保护。
+
+独立 Research Worker 只调用固定本地解析器：PDF.js 提取 PDF 文本/页数，FFprobe 检测图片/视频，FFmpeg 稀疏抽帧。子进程环境过滤凭据、Node 堆 512MB、任务 120 秒、心跳续租，API 不执行解析器或不可信代码。不是完整 OS 沙箱；任意 TSX 保持禁止。没有正式视频裁剪、素材智能匹配或网络页面执行。
+
+Search/Content/Vision 接口与 real/mock/unconfigured 状态分开；本地真实提取不等于视觉语义识别或事实核验。未配置搜索不伪造文章，用户 URL 只作未访问备注。研究页面复用原 WorkflowPanel 审核精确修订，资料/引用/索引和任务在独立面板查询。详见 [Phase 03 交付](PHASE_03_DELIVERY.md)。

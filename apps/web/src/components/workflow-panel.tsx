@@ -94,7 +94,9 @@ function Jobs({
                   ? 'Mock 文本任务'
                   : j.provider === 'remotion'
                     ? 'Remotion 真实渲染'
-                    : '提供方尚未配置'}{' '}
+                    : j.provider === 'research'
+                      ? `研究分析 · ${j.researchInput?.mode === 'real' ? '本地真实提取' : j.researchInput?.mode === 'mock' ? 'Mock' : 'Provider 未配置'}`
+                      : '提供方尚未配置'}{' '}
                 · 执行 {j.attempt}/{j.maxAttempts} 次
               </p>
               <code className={s.caption}>{j.id}</code>
@@ -202,10 +204,14 @@ export function WorkflowPanel({
   projectId,
   type,
   originalText = '',
+  onRevisionChange,
+  integratedResearch = false,
 }: {
   projectId: string;
   type: ArtifactType;
   originalText?: string;
+  onRevisionChange?: (id: string) => void;
+  integratedResearch?: boolean;
 }) {
   const { snapshot, error, busy, reload, send } = useWorkflow(projectId);
   const [selected, setSelected] = useState<string | null>(null);
@@ -228,12 +234,19 @@ export function WorkflowPanel({
       setText(r.text);
       setEditVersion(r.version);
       setDirty(false);
+      onRevisionChange?.(r.id);
     }
   }
   useEffect(() => {
     if (!selected && artifact?.currentRevisionId)
       select(revisions.find((r) => r.id === artifact.currentRevisionId));
   }, [artifact?.currentRevisionId, selected]);
+  useEffect(() => {
+    if (integratedResearch && !dirty && revision && revision.version !== editVersion) {
+      setText(revision.text);
+      setEditVersion(revision.version);
+    }
+  }, [integratedResearch, dirty, revision?.version, editVersion]);
   const inputs = () => {
     if (revision)
       return (
@@ -310,7 +323,7 @@ export function WorkflowPanel({
     <>
       <Notice>
         本页已接通真实保存、版本和审核。模拟生成仅提供带 Mock
-        标记的文本，事实核验、配音与渲染仍未接通。
+        标记的文本，外部事实核验与配音仍未接通；可信组件渲染位于第 08 页。
       </Notice>
       {error && (
         <p role="alert" className={s.error}>
@@ -483,7 +496,9 @@ export function WorkflowPanel({
               <p className={s.caption}>尚无修订，原始需求和上传资料保留在项目总览。</p>
             )}
           </Card>
-          <Jobs jobs={snapshot.jobs} projectId={projectId} send={send} busy={busy} />
+          {!integratedResearch && (
+            <Jobs jobs={snapshot.jobs} projectId={projectId} send={send} busy={busy} />
+          )}
         </div>
       </div>
     </>

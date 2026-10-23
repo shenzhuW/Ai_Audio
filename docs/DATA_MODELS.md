@@ -92,3 +92,17 @@ export const CandidateClipSchema = z.object({
 3. 文稿 v3 的第三段改动：相关 Cue/Shot/Scene stale，其他镜头仍复用。
 4. `pending`、`research_only` 或不可商用素材可进入内部测试合成/下载，来源及已知限制不丢失，不产生商业授权审批；访问/SSRF/媒体完整性失败仍受保护，结果不自动公开发布。
 5. 同一素材多个 CandidateClip 不复制/覆盖源文件；独立生成 PreparedAsset，按 recipeHash 复用。
+
+## Phase 03 已实现研究子集
+
+四个独立实体表为 `research_sources` / `research_claims` / `research_claim_evidence` / `research_index_entries`。每行保存经过 Zod 校验的 schemaVersion=1 文档，关联 Project 与具体研究 `revisionId`；证据到 Claim/Source、索引到 Source 使用包含 revisionId 的外键，禁止混用不同修订的实体。
+
+研究资料由该修订拥有，纳入其 contentHash；摘要仍使用原 Revision.text。批准/提交后的研究记录由服务与数据库触发器保持只读，修改时复用原 fork：复制资料快照、生成修订内新实体 ID 并重映射引用，复用原 Blob，不覆写原件。历史 revisionId 保留其完整来源/证据视图。未带研究资料的 Phase 01 文本修订继续使用原内容散列规则，不改写历史。
+
+Source 保存真实上传原件 Blob（UUID、MIME、大小、SHA256）、来源标题、URL 备注、发布者/平台、作者、发布日期、获取时间、采用状态及已知限制。URL 标记为 user_supplied；未访问核实的 URL 不作为“已检索文章”导航。许可未知/blocked/research_only/pending 不阻断内部分析，不无凭证写 cleared。初始项目上传资料可显式加入研究，原 Project/附件不改变。
+
+Claim.verificationStatus 为 `unverified/supported/conflicting/withdrawn`。supported 仅表示人工选择的支持引用已在真实提取文本中定位，**不等于独立核验**；没有 matched 支持引用不得设置 supported，Mock 不可作为 matched。存在采用中的支持与反驳引用时标记冲突，保留双方证据。没有自动 verified 入口，审批报告不改变事实真实性。
+
+ClaimEvidence 保存 role、quote 与结构化 locator（文本标签、实际 PDF 页码、图片说明或原视频毫秒区间），validation 为 unvalidated/matched/mock。ResearchIndexEntry 保存内容类型、摘要、关键词、可提取文本、页码/时间段及抽帧引用、real/mock 来源；视频只是索引，不生成 PreparedAsset。页码及时间范围依实际元数据校验，列表按页码/起始时间排序。
+
+Workflow Job 兼容追加 provider=research 和可选 researchInput/researchResult。分析固定 sourceId、revisionId、Blob 与 mode，沿用原 Job/Outbox/幂等/租约；提交或批准后到达的结果失败为 TARGET_CHANGED，不改写已审资料。迁移为增量 0003，不重写 0001/0002，不自动迁移真实用户库。

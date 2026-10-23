@@ -25,6 +25,8 @@
     "db:local": "pwsh -NoProfile -File scripts/postgres-local.ps1",
     "worker": "pnpm --filter @studio/web worker",
     "render:worker": "pnpm --filter @studio/web render:worker",
+    "research:worker": "pnpm --filter @studio/web research:worker",
+    "test:research": "node tests/research/run.cjs",
     "render:fixtures": "node scripts/render-fixtures.cjs",
     "render:typecheck": "pnpm --filter @studio/render exec tsc --noEmit",
     "db:generate": "pnpm --filter @studio/web db:generate",

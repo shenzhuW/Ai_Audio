@@ -23,6 +23,10 @@ model Project {
   workflowOutboxs         WorkflowOutbox[]
   workflowRequestReceipts WorkflowRequestReceipt[]
   workflowAuditEvents     WorkflowAuditEvent[]
+  researchSources         ResearchSource[]
+  researchClaims          ResearchClaim[]
+  researchEvidence        ResearchClaimEvidence[]
+  researchIndexes         ResearchIndexEntry[]
 
   @@index([ownerId, updatedAt])
   @@map("projects")
@@ -42,16 +46,20 @@ model WorkflowArtifact {
 }
 
 model WorkflowRevision {
-  id             String                  @id @db.Uuid
-  projectId      String                  @map("project_id") @db.Uuid
-  document       Json
-  project        Project                 @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
-  artifactId     String                  @map("artifact_id") @db.Uuid
-  revisionNumber Int                     @map("revision_number")
-  artifact       WorkflowArtifact        @relation(fields: [artifactId], references: [id], onDelete: Restrict, onUpdate: Cascade)
-  approvals      WorkflowApprovalEvent[]
-  inputs         WorkflowDependency[]    @relation("Downstream")
-  outputs        WorkflowDependency[]    @relation("Upstream")
+  id               String                  @id @db.Uuid
+  projectId        String                  @map("project_id") @db.Uuid
+  document         Json
+  project          Project                 @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  artifactId       String                  @map("artifact_id") @db.Uuid
+  revisionNumber   Int                     @map("revision_number")
+  artifact         WorkflowArtifact        @relation(fields: [artifactId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  approvals        WorkflowApprovalEvent[]
+  inputs           WorkflowDependency[]    @relation("Downstream")
+  outputs          WorkflowDependency[]    @relation("Upstream")
+  researchSources  ResearchSource[]
+  researchClaims   ResearchClaim[]
+  researchEvidence ResearchClaimEvidence[]
+  researchIndexes  ResearchIndexEntry[]
 
   @@unique([artifactId, revisionNumber])
   @@index([projectId])
@@ -130,4 +138,63 @@ model WorkflowAuditEvent {
 
   @@index([projectId])
   @@map("workflow_audit_events")
+}
+
+model ResearchSource {
+  id         String                  @id @db.Uuid
+  projectId  String                  @map("project_id") @db.Uuid
+  revisionId String                  @map("revision_id") @db.Uuid
+  document   Json
+  project    Project                 @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision   WorkflowRevision        @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  evidence   ResearchClaimEvidence[]
+  indexes    ResearchIndexEntry[]
+
+  @@unique([id, revisionId])
+  @@index([projectId])
+  @@map("research_sources")
+}
+
+model ResearchClaim {
+  id         String                  @id @db.Uuid
+  projectId  String                  @map("project_id") @db.Uuid
+  revisionId String                  @map("revision_id") @db.Uuid
+  document   Json
+  project    Project                 @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision   WorkflowRevision        @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  evidence   ResearchClaimEvidence[]
+
+  @@unique([id, revisionId])
+  @@index([projectId])
+  @@map("research_claims")
+}
+
+model ResearchClaimEvidence {
+  id         String           @id @db.Uuid
+  projectId  String           @map("project_id") @db.Uuid
+  revisionId String           @map("revision_id") @db.Uuid
+  claimId    String           @map("claim_id") @db.Uuid
+  sourceId   String           @map("source_id") @db.Uuid
+  document   Json
+  project    Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision   WorkflowRevision @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  claim      ResearchClaim    @relation(fields: [claimId, revisionId], references: [id, revisionId], onDelete: Restrict, onUpdate: Cascade)
+  source     ResearchSource   @relation(fields: [sourceId, revisionId], references: [id, revisionId], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([projectId])
+  @@map("research_claim_evidence")
+}
+
+model ResearchIndexEntry {
+  id         String           @id @db.Uuid
+  projectId  String           @map("project_id") @db.Uuid
+  revisionId String           @map("revision_id") @db.Uuid
+  sourceId   String           @map("source_id") @db.Uuid
+  document   Json
+  project    Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision   WorkflowRevision @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  source     ResearchSource   @relation(fields: [sourceId, revisionId], references: [id, revisionId], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([projectId])
+  @@map("research_index_entries")
 }

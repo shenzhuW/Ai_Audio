@@ -16,8 +16,8 @@
 | A-005 | 01 | 旧修订批准冲突 409、重复请求幂等 | PASS | [PostgreSQL HTTP](../docs/evidence/phase01/workflow-http-postgresql.json)、[SQLite HTTP](../docs/evidence/phase01/workflow-http-sqlite.json)；同键并发一个下游任务、异内容 409、双候选仅一批准、固定输入和 Outbox |
 | A-006 | 02 | 使用自有测试片+React SVG 层真实渲染 MP4，音/视元数据正确 | PASS | [交付报告](../docs/PHASE_02_DELIVERY.md)、[SQLite](../docs/evidence/phase02/sqlite/results.json)、[真实 PostgreSQL](../docs/evidence/phase02/postgresql/results.json)：10s/1080×1920/30fps/H.264，none 无音轨；3 组重复帧严格一致，真实播放及 MP4 帧对照 |
 | A-007 | 02 | Worker 失败产生可见错误日志，不在主站直接执行不可信 TSX | PASS | [完整异常测试](../docs/evidence/phase02/sqlite/full-results.json)、[真实失败 UI](../docs/evidence/phase02/sqlite/08-failed.png)：缺少 Chromium 的真实子进程失败、重试成功、运行取消；仅可信固定入口，OS 级沙箱 NOT RUN |
-| A-008 | 03 | Source/Claim 带来源与状态，未核实不显示已核实 | NOT RUN | |
-| A-009 | 03 | 图片/视频内容基础索引可保存，研究阶段无正式大规模裁剪 | NOT RUN | |
+| A-008 | 03 | Source/Claim 带来源与状态，未核实不显示已核实 | PASS | [交付报告](../docs/PHASE_03_DELIVERY.md)、[SQLite](../docs/evidence/phase03/sqlite/results.json)、[真实 PostgreSQL](../docs/evidence/phase03/postgresql/results.json)：双来源页码/文本引用、冲突、无证据 422、verified 400、Mock 不能升级、批准只读/fork、真实浏览器 |
+| A-009 | 03 | 图片/视频内容基础索引可保存，研究阶段无正式大规模裁剪 | PASS | 同上：真实 PDF/图片/10 秒视频元数据、3 段时间码与抽帧、没有正式 MP4 裁剪；独立 Worker 异常/取消/重试、两库重启持久化；搜索/视觉/OCR/ASR 未配置明确标识 |
 | A-010 | 04 | 文稿片段编辑/来源引用/历史修订/批准可恢复 | NOT RUN | |
 | A-011 | 04 | Claim 变化能识别相关文稿/镜头受影响 | NOT RUN | |
 | A-012 | 05 | TTS/导入/无口播三模式均可产生可验证的时间轴结构 | NOT RUN | |

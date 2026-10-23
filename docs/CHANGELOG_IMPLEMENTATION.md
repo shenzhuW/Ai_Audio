@@ -1,8 +1,18 @@
 # 实施日志（Codex 维护）
 
-当前状态：**Phase 01 已正式验收通过，Phase 02 实现完成、等待审核。2026-10-23 同步 D-17/D-18 内部测试素材策略，不返工 Phase 00–01，不提前开发后续素材引擎。**
+当前状态：**Phase 00–02 已验收通过；Phase 03 已完成并提供实际测试/浏览器证据，等待用户审核。未进入 Phase 04。D-17/D-18 保持有效。**
 
 每次 Codex 完成阶段后，在此按日期追加：阶段、主要变更、数据迁移、执行的命令与真实结果、Mock/Real 界线、技术取舍、阻塞问题。
+
+## 2026-10-23 · Phase 03 研究来源与内容索引
+
+- 查阅 wallstreet-explainer 固定源码的 sourcing / snap_news 与 MIT 许可，记录引用定位、来源绑定和失败处理；未复制代码或引入样片，未绕过访问保护。
+- 新增四类研究实体、PostgreSQL `0003_research` 和 SQLite 增量表；复用审批/幂等/依赖/Job/Outbox。结构化资料加入修订哈希，批准只读，fork 复制并重映射引用 ID，原 Blob 复用。
+- 独立 Research Worker 用真实 PDF.js / FFprobe / FFmpeg 提取 PDF 页码文字、图片宽高、视频时间段和稀疏帧；没有正式裁剪。Search/Content/Vision 可替换，外部搜索/视觉/OCR/ASR 未配置明确显示，Mock 显式选择。
+- 第 03 页完成真实上传、来源/限制、Claim 编辑、支持/冲突/背景证据、索引/日志/任务、受保护下载和修订审核。D-17/D-18 不把未知/不可商用限制作为内部分析硬门禁。
+- 修复真实验收发现的 PDF 字体路径、索引时间排序和 fork 后表单残留旧 Claim ID；两库浏览器复测通过。
+- 实际通过 22 项单元、Web/Render 类型检查、生产构建、SQLite 15 组/PG 16 组集成；旧 HTTP 各 15 项、旧工作流各 8 组包含在内。真实 PostgreSQL 17.6 迁移重复部署及零漂移，原数据散列不变，应用重启恢复。
+- [交付报告](PHASE_03_DELIVERY.md)、[证据](evidence/phase03/)、[自制验收资料](../fixtures/research/README.md)。OS 级沙箱与真实外部事实核验未验证；没有 Phase 04 功能，停止等待审核。
 
 ## 2026-10-23 · Phase 02 真实 Remotion PoC
 

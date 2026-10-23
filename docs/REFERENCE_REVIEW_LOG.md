@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | 01 | Hypit 包与 Run 设计 | REVIEWED (static) | 2026-10-22 固定版本阅读见下方记录，未运行 | 修改版 Apache，不复制或依赖 |
 | 02 | Remotion Renderer/Player | REVIEWED；Renderer 实际通过，Player 仅研究 | 2026-10-23，固定 v4.0.538 / SHA 见下；[真实 MP4/双数据库/重复帧证据](PHASE_02_DELIVERY.md) | Remotion License，本地非商业技术评估；Player 不作任意代码入口 |
-| 03 | wallstreet sourcing/新闻截图 | NOT REVIEWED | 待填写 | 待填写 |
+| 03 | wallstreet sourcing/新闻截图 | REVIEWED（源码静态阅读，未运行第三方脚本） | 2026-10-23，固定 `920ed1d3b3ecb5997d861902e2719dda6688c0b1`，适配见下 | MIT；示例新闻/视频素材不受源码许可覆盖 |
 | 05 | wallstreet 语音对齐 | NOT REVIEWED | 待填写 | 待填写 |
 | 06 | wallstreet 导演/动画语法 | NOT REVIEWED | 待填写 | 待填写 |
 | 07 | wallstreet footage.py | NOT REVIEWED | 待填写 | 待填写 |
@@ -63,4 +63,15 @@
 - 首轮真实 Worker 编译通过，但本机 Chromium 已移除旧 headless 模式，启动失败且 Job 正确留存日志。核对 [openBrowser](https://www.remotion.dev/docs/renderer/open-browser)、[Chrome modes](https://www.remotion.dev/docs/miscellaneous/chrome-headless-shell) 及已安装 `dist/open-browser.js` 的模式分支，统一配置 `chromeMode: chrome-for-testing` 使用新 headless 模式，再实际复跑；具体结果记录在 Phase 02 交付报告。
 - 实读依赖自带 LICENSE.md 与 [许可 FAQ](https://www.remotion.dev/docs/license/faq)：此 PoC 为本地非商业适配评估；不能把 Remotion 当 MIT 或推断以后商业自动化免费。公开/商业使用之前按实际主体另行复核，不购买或规避许可。
 - 未采用 Remotion 的项目管理/审批或模板业务状态，继续复用本项目 Workflow、Job、Outbox。Docker daemon 当前不可用，可信子进程不等于任意代码安全沙箱；未来自由 TSX 仍禁止。本轮不提前研究 Phase 07 全部源码，素材参考要求已随 D-17/D-18 同步到对应计划。
+
+## 2026-10-23 · Phase 03 / 来源与轻量内容索引
+
+GitHub API 已核实 wallstreet-explainer 当时 main SHA 为 `920ed1d3b3ecb5997d861902e2719dda6688c0b1`，实读固定 SHA 的 [references/sourcing.md](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/references/sourcing.md)、[scripts/snap_news.mjs](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/scripts/snap_news.mjs) 和 [LICENSE](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/LICENSE)。固定副本保存在忽略目录 `.cache/reference-phase03/`。没有运行其网络采集脚本，也没有复制其源码。
+
+- sourcing 的新闻原文/原声章节把证据定位与说明性画面分开；字幕时间码可作为查找位置，不应当作真实事件的自动证明。本项目使用 Source + ClaimEvidence.locator/quote/role 保存依据，视频只做稀疏抽帧与时间索引，正式裁剪留 Phase 07。
+- snap_news 的 `loadPlaywright`、`strip`、逐页导航与 `p.evaluate` 采集逻辑，将 URL、标题、标题框和按行关键词矩形一起登记；先等待字体再测量/截图，避免视觉标注漂移。可借鉴结构化位置与快照来源的绑定；本阶段先实现 PDF 页码、文本引用、图像说明、视频时间码，不把页面截图等同原文或事实核验。
+- 该脚本按域名过滤和移除浮层，会改变原页面；访问失败后仍继续采集，也可能得到不完整页面。本产品不继承此行为，不绕过访问保护、不执行远程页面或把受阻页面记为已取证。未访问验证的用户 URL 仅作为备注，不提供伪装的“已检索文章”。
+- LICENSE 为 MIT，示例第三方新闻截图/视频/照片明确不在该源码许可内；D-17/D-18 允许内部测试的候选策略仍适用，不能据此写入虚假 cleared。本次实际验收资料全部自制，不引入示例新闻素材或第三方下载器。
+
+PDF 本地提取另参考 [Mozilla PDF.js Node getinfo.mjs](https://github.com/mozilla/pdf.js/blob/master/examples/node/getinfo.mjs) 的 getDocument/getPage/getTextContent 接口，安装精确 `pdfjs-dist@6.4.299`（Apache-2.0，Node >=22.13，当前 Node 24.15）。实际已提取合成 PDF 页数和文本。Worker 读取字节数组，禁止脚本求值，不执行 PDF action，字体从依赖本地目录读取；不开放 HTTP URL 给解析器。图片/视频用现有 FFprobe/FFmpeg，视觉/OCR/ASR 未配置时仅记录真实技术信息。完整双数据库/浏览器验证以阶段交付报告为准，不将静态参考阅读算成外部 Provider 可用。
 

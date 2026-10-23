@@ -1,5 +1,14 @@
 import { z } from 'zod';
 import { RenderInputSchema, RenderResultSchema } from './motion';
+import {
+  researchCommands,
+  SourceSchema,
+  ClaimSchema,
+  ClaimEvidenceSchema,
+  ResearchIndexEntrySchema,
+  ResearchJobInputSchema,
+  ResearchResultSchema,
+} from './research';
 export const artifactTypes = [
   'research',
   'script',
@@ -37,6 +46,7 @@ export const RevisionSchema = z.object({
   createdAt: at,
   updatedAt: at,
   createdBy: z.string(),
+  researchSchemaVersion: z.literal(1).optional(),
 });
 export const DependencySchema = z.object({
   id,
@@ -64,7 +74,7 @@ export const WorkflowJobSchema = z.object({
   id,
   kind: ArtifactTypeSchema,
   version,
-  provider: z.enum(['mock', 'unconfigured', 'remotion']),
+  provider: z.enum(['mock', 'unconfigured', 'remotion', 'research']),
   state: z.enum(['queued', 'running', 'succeeded', 'failed', 'cancelled']),
   inputRevisionIds: z.array(id),
   idempotencyKey: z.string(),
@@ -80,6 +90,8 @@ export const WorkflowJobSchema = z.object({
   updatedAt: at,
   renderInput: RenderInputSchema.optional(),
   renderResult: RenderResultSchema.optional(),
+  researchInput: ResearchJobInputSchema.optional(),
+  researchResult: ResearchResultSchema.optional(),
   progress: z.number().min(0).max(1).optional(),
   heartbeatAt: at.optional(),
   logs: z
@@ -112,10 +124,15 @@ export const WorkflowStateSchema = z.object({
   outbox: z.array(OutboxSchema),
   receipts: z.array(ReceiptSchema),
   audit: z.array(AuditSchema),
+  researchSources: z.array(SourceSchema).default([]),
+  researchClaims: z.array(ClaimSchema).default([]),
+  researchEvidence: z.array(ClaimEvidenceSchema).default([]),
+  researchIndexes: z.array(ResearchIndexEntrySchema).default([]),
 });
 const revisionAction = { revisionId: id, expectedVersion: version };
 const jobAction = { jobId: id, expectedVersion: version };
 export const WorkflowCommandSchema = z.discriminatedUnion('action', [
+  ...researchCommands,
   z.object({ action: z.literal('render'), input: RenderInputSchema }).strict(),
   z
     .object({
@@ -175,6 +192,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       text: text.optional(),
       errorCode: z.string().max(80).optional(),
       renderResult: RenderResultSchema.optional(),
+      researchResult: ResearchResultSchema.optional(),
     })
     .strict(),
   z.object({ action: z.literal('recover'), jobId: id }).strict(),

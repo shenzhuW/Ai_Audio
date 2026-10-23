@@ -77,6 +77,34 @@ Prisma CLI 从 `apps/web/.env` 或进程环境读取 DATABASE_URL；Next 从 `.e
 
 ## 本次环境与验证记录
 
+### Phase 03 研究资料
+
+```powershell
+pnpm install --frozen-lockfile
+pnpm db:generate
+# 使用 PostgreSQL 时，明确配置 DATABASE_URL 后再按审核/备份流程应用增量迁移
+pnpm db:migrate
+pnpm dev
+# 另一终端，从仓库根目录，使用与 Web 相同的 DATABASE_URL / STUDIO_DATA_DIR
+pnpm research:worker
+```
+
+无 DATABASE_URL 时仍使用真实 SQLite，启动时只增量建立研究表和保护触发器。Worker 从 apps/web 解析默认 `.data`；自定义数据目录建议用绝对路径。Worker 不自动读取 Next 的 `.env.local`，需在终端显式配置相同环境。不要直接将真实用户库用于验收。
+
+需要 Node >=22.13、FFmpeg/FFprobe（本机实际 4.3.1）；PDF.js 精确版本 6.4.299 随 pnpm 依赖安装，字体数据本地读取。可设置 STUDIO_FFMPEG_PATH / STUDIO_FFPROBE_PATH。上传默认 10MB，通过 STUDIO_MAX_UPLOAD_MB 调整；STUDIO_RESEARCH_MAX_VIDEO_SECONDS 默认 120（1–600），STUDIO_RESEARCH_MAX_PDF_PAGES 默认 50（1–100）。PDF 单页最多 100000 字符、每文件总文本 300000 字符，截断会标明。任务 120 秒超时；这些是分析预算，不是项目目标时长限制。
+
+视频播放需要支持 H.264 的浏览器；本机浏览器验收使用已安装 Google Chrome。UI 只显示真实元数据、文本、时间索引；OCR、视觉语义与 ASR 未配置，不能用分析成功冒充事实核验。已分析快照保留，失败任务可按原输入重试；需要替换成功分析时，可在新修订添加新来源并排除旧来源。
+
+```powershell
+pnpm build
+$env:STUDIO_UI_BROWSER_PATH='C:/path/to/h264-capable-chrome.exe'
+pnpm test:research
+# 按 POSTGRESQL_LOCAL.md 启动专用的 127.0.0.1:55432 测试集群后
+node tests/research/run.cjs --postgres
+```
+
+验收使用 3008 端口、`.cache/phase03/<runId>` 和新建 `studio_phase03_*` 数据库。PostgreSQL 流程先部署旧两项迁移并保存测试项目，再增量升级 0003、重复部署、对照 schema；不 reset/drop 或导入现有用户库。[样例及手工流程](../fixtures/research/README.md)、[交付报告](PHASE_03_DELIVERY.md)。
+
 ### Phase 02 真实渲染
 
 安装依赖后，`apps/render/public/` 已包含自制测试片和附许可证的本地字体；需要重建测试片可执行 `pnpm render:fixtures`（需要 ffmpeg，保留已有文件）。启动 Web 和 Render Worker 的终端需使用一致的 `DATABASE_URL` 与 `STUDIO_DATA_DIR`；Worker 不读取 Next 的 `.env.local`，请显式传入进程环境。默认 Web 数据目录从 `apps/web` 解析为 `.data`。

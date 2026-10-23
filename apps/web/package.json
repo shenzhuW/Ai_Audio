@@ -6,6 +6,7 @@
     "dev": "node dev.cjs",
     "worker": "node ../../scripts/workflow-worker.cjs",
     "render:worker": "node ../../scripts/render-worker.cjs",
+    "research:worker": "node ../../scripts/research-worker.cjs",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
@@ -16,19 +17,20 @@
     "db:migrate": "prisma migrate deploy"
   },
   "dependencies": {
+    "@prisma/client": "6.19.3",
+    "lucide-react": "0.468.0",
     "next": "15.5.19",
+    "pdfjs-dist": "6.4.299",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "zod": "4.4.3",
-    "@prisma/client": "6.19.3",
-    "lucide-react": "0.468.0"
+    "zod": "4.4.3"
   },
   "devDependencies": {
-    "typescript": "5.9.3",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "playwright": "1.55.0",
-    "prisma": "6.19.3"
+    "prisma": "6.19.3",
+    "typescript": "5.9.3"
   }
 }

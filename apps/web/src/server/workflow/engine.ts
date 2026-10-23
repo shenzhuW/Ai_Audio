@@ -11,6 +11,13 @@ import {
 } from '../../domain/workflow';
 import type { Project } from '../../domain/project';
 import { AppError } from '../errors';
+import { ResearchCommandSchema } from '../../domain/research';
+import {
+  applyResearchCommand,
+  researchContent,
+  cloneResearch,
+  finishResearch,
+} from '../research/engine';
 
 export const emptyWorkflow = (): WorkflowState => ({
   schemaVersion: 1,
@@ -22,6 +29,10 @@ export const emptyWorkflow = (): WorkflowState => ({
   outbox: [],
   receipts: [],
   audit: [],
+  researchSources: [],
+  researchClaims: [],
+  researchEvidence: [],
+  researchIndexes: [],
 });
 function canonical(v: unknown): string {
   if (v === null || typeof v !== 'object') return JSON.stringify(v);
@@ -221,8 +232,21 @@ export function applyWorkflow(
     s.outbox.push({ id: randomUUID(), jobId: j.id, delivered: false });
     return j;
   };
-  let result: WorkflowRevision | WorkflowJob;
-  if (c.action === 'render') {
+  let result: { id: string };
+  if (c.action.startsWith('research-')) {
+    const change = applyResearchCommand(s, project.id, ResearchCommandSchema.parse(c), time);
+    if (change.input) {
+      const j = enqueue('research', [], key);
+      j.provider = 'research';
+      j.researchInput = change.input;
+      j.progress = 0;
+      j.logs = [{ at: time, message: `研究 ${change.input.kind} 已排队 · ${change.input.mode}` }];
+      result = j;
+    } else {
+      change.revision.contentHash = fingerprint(researchContent(s, change.revision));
+      result = change.entity!;
+    }
+  } else if (c.action === 'render') {
     const j = enqueue('motion', [], key);
     j.provider = 'remotion';
     j.renderInput = c.input;
@@ -247,6 +271,10 @@ export function applyWorkflow(
       old,
       c.inputRevisionIds !== undefined,
     );
+    cloneResearch(s, old, result as WorkflowRevision);
+    (result as WorkflowRevision).contentHash = fingerprint(
+      researchContent(s, result as WorkflowRevision),
+    );
   } else if (['patch', 'submit', 'approve', 'reject'].includes(c.action)) {
     if (!('revisionId' in c)) throw new Error('Invalid revision action');
     const r = revision(c.revisionId),
@@ -257,7 +285,7 @@ export function applyWorkflow(
     if (c.action === 'patch') {
       if (r.status !== 'draft') fail('INVALID_STATE', '仅草稿可以保存，请创建新修订。');
       r.text = c.text;
-      r.contentHash = fingerprint(c.text);
+      r.contentHash = fingerprint(researchContent(s, r));
     } else if (c.action === 'submit') {
       if (r.status !== 'draft') fail('INVALID_STATE', '仅草稿可以提交审核。');
       requireInputs(
@@ -368,10 +396,22 @@ export function applyWorkflow(
           c.errorCode ??
           (j.provider === 'unconfigured'
             ? 'PROVIDER_NOT_CONFIGURED'
-            : currentVersion !== j.targetVersion
+            : j.provider !== 'research' && currentVersion !== j.targetVersion
               ? 'TARGET_CHANGED'
               : null);
-        if (!j.errorCode && j.provider === 'remotion') {
+        if (!j.errorCode && j.provider === 'research') {
+          const input = j.researchInput ?? fail('INVALID_RESULT', '研究任务缺少固定输入。');
+          const output = c.researchResult ?? fail('INVALID_RESULT', '研究任务缺少结构化结果。');
+          j.errorCode = finishResearch(s, input, output, time);
+          if (!j.errorCode) {
+            j.researchResult = output;
+            j.resultRevisionId = input.revisionId;
+            j.state = 'succeeded';
+            j.progress = 1;
+            const r = revision(input.revisionId);
+            r.contentHash = fingerprint(researchContent(s, r));
+          } else j.state = 'failed';
+        } else if (!j.errorCode && j.provider === 'remotion') {
           if (
             !c.renderResult ||
             !j.renderInput ||

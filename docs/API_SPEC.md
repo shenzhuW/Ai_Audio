@@ -144,3 +144,27 @@ HTTP 400 输入错误；401 未认证；403 无访问权限；404 对象不存�
 - `GET|HEAD /jobs/:jobId/render-files/:file`，仅当前用户且成功 Job，固定文件 `video.mp4`、`frame-060.png`、`frame-150.png`、`frame-240.png`、`ffprobe.json`、`manifest.json`。校验记录 SHA/大小，私有缓存策略，支持单段/后缀 Range 206；非法范围 416，未完成 409，匿名 401，其他文件名 400。没有公共视频发布入口。
 
 Worker 生成真实 draft motion revision（mock=false），不自动批准；该 PoC 不依赖尚未实现的 Director，不生成虚假上游批准版本。项目自定义时长保持原值，只有此明确标示的验证 Composition 固定 10 秒。预览和下载使用同一最终 MP4，SceneSpec/Props/时间轴/版本固定在 manifest 中。详细运行和安全限制见 [Phase 02 交付](PHASE_02_DELIVERY.md)。
+
+## Phase 03 已实现子集
+
+全部研究写请求要求 Idempotency-Key，现有 Host/session/Origin 检查保留。除队列写入外，编辑请求带 `{revisionId,expectedVersion}`，版本冲突 409，非当前草稿/已批准内容不可直接修改。原 research-runs 保持 Phase 01 Mock 文本语义，不暗中改接口。
+
+| 方法 | 路径（均以 /api/v1 开头） | 实际行为 |
+|---|---|---|
+| GET | `/projects/:id/research?revisionId=…` | 指定资料快照、研究修订、任务及 Provider 状态；省略 revisionId 读当前候选 |
+| GET/POST | `/projects/:id/research-sources` | 列表；POST multipart 单 file + metadata JSON，201，保存真实原件和来源 |
+| PATCH | `/projects/:id/research-sources/:sourceId` | 当前草稿采用/不采用，及可选 knownRestrictions |
+| POST | `/projects/:id/research-import-source` | `{revisionId,expectedVersion,attachmentId}`，仅本项目已有原件，显式加入研究，201 |
+| GET/POST | `/projects/:id/claims` | 带证据的声明列表；创建 `{revisionId,expectedVersion,claim:{text,asOf,scope,unit,caveats,verificationStatus}}`，201 |
+| PATCH | `/projects/:id/claims/:claimId` | 同样 payload 编辑本修订 Claim；不得传 verified 或伪造 matched |
+| POST/PATCH | `/projects/:id/research-evidence[/:evidenceId]` | `{revisionId,expectedVersion,claimId,sourceId,role,quote,locator}`；添加/编辑引用，新增 201 |
+| POST | `/projects/:id/research-analysis-runs` | `{revisionId,expectedVersion,sourceId,mode:"real"|"mock"|"unconfigured"}`，202 + jobId，real 为本地技术提取 |
+| POST | `/projects/:id/research-search-runs` | `{revisionId,expectedVersion,query,mode:"mock"|"unconfigured"}`，202；没有已配置网络搜索，不虚构文章 |
+| GET | `/sources/:sourceId` | 当前用户来源详情与已保存内容索引 |
+| GET/HEAD | `/sources/:sourceId/files/:blobId` | 仅来源所属原件/抽帧，SHA/大小校验；Range 206/416，匿名 401，跨来源 blob 404 |
+
+metadata 为 `{revisionId,expectedVersion,title,sourceUrl?,publisher?,creator?,publishedAt?,knownRestrictions?,licenseStatus?}`，不接受客户端 Blob 路径、真实 Provider 标志或技术元数据。许可仅记录 unknown/research_only/pending/blocked，不建立商业审批。支持 TXT/MD/PDF/PNG/JPEG/MP4，限额经环境配置。相同 metadata/file/key 重放返回原 Source，不重复创建记录。
+
+locator 为 `{kind:"text",label}`、`{kind:"page",page,label?}`、`{kind:"image",label}` 或 `{kind:"time",startMs,endMs,label?}`。需要原文 quote，PDF 页数与视频时间先经真实分析确定。Quote 匹配只代表引用位置可追溯，不保证 Claim 正确。
+
+分析在独立研究 Worker 执行；API 不运行解析器或 TSX。状态/取消/重试继续用 jobs 接口。未配置 Provider 为失败任务 PROVIDER_NOT_CONFIGURED；Mock 搜索返回说明和空候选，不生成假 URL；Mock 描述不变为真实视觉结论。旧 Job JSON 与 Phase 02 Render Worker 保持兼容。

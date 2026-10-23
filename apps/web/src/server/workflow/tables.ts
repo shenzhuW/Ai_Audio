@@ -1,4 +1,5 @@
 import type { WorkflowState } from '../../domain/workflow';
+import { researchTables, sqliteResearchGuards } from '../research/tables';
 type Collection = Exclude<keyof WorkflowState, 'schemaVersion'>;
 export const tables: {
   key: Collection;
@@ -63,6 +64,7 @@ export const tables: {
     constraints: ['UNIQUE(project_id,idempotency_key)'],
   },
   { key: 'audit', table: 'workflow_audit_events', columns: [], fields: [], constraints: [] },
+  ...researchTables,
 ];
 export function sqliteWorkflowSchema() {
   return (
@@ -87,6 +89,7 @@ BEGIN SELECT RAISE(ABORT,'Revision history cannot be deleted'); END;
 CREATE TRIGGER IF NOT EXISTS ${t}_append_only_delete BEFORE DELETE ON ${t} BEGIN SELECT RAISE(ABORT,'History is append only'); END;`,
       )
       .join('\n') +
-    '\nINSERT OR IGNORE INTO schema_migrations(version) VALUES(2);'
+    '\nINSERT OR IGNORE INTO schema_migrations(version) VALUES(2);' +
+    sqliteResearchGuards()
   );
 }

@@ -15,6 +15,7 @@ import fixture from '../../../../fixtures/example-project.json';
 import { Card, Badge, PageHead, Empty, Notice, s } from './ui';
 import { WorkflowPanel } from './workflow-panel';
 import { RenderPanel } from './render-panel';
+import { ResearchPanel } from './research-panel';
 
 export function StageWorkspace({
   stage,
@@ -27,6 +28,17 @@ export function StageWorkspace({
 }) {
   const index = pages.findIndex((p) => p.key === stage);
   const page = pages[index];
+  if (!demo && project && stage === 'research')
+    return (
+      <>
+        <PageHead
+          number="03"
+          title={page.label}
+          description="保存真实来源，定位引用与冲突，按修订审核研究依据。"
+        />
+        <ResearchPanel projectId={project.id} />
+      </>
+    );
   if (!demo && project && stage === 'motion')
     return (
       <>

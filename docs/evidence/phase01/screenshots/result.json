@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "at": "2026-10-22T14:04:49.096Z",
+  "base": "http://127.0.0.1:3003",
+  "projectUrl": "http://127.0.0.1:3003/projects/1c1dc9c4-f83f-4290-aa3b-3f4448283bab",
+  "checks": [
+    "create/save/reload",
+    "submit/approve",
+    "fork/reject/reload",
+    "immutable history",
+    "real overview",
+    "390px layout"
+  ],
+  "errors": []
+}

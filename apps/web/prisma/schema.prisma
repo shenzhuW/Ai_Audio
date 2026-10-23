@@ -1,18 +1,133 @@
 generator client {
   provider = "prisma-client-js"
 }
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 // Phase 00 stores a validated versioned Project aggregate, including ProjectInput.
 // Future artifact/revision tables must not overwrite this project's input history.
 model Project {
-  id        String @id @db.Uuid
-  ownerId   String @map("owner_id")
-  version   Int
-  updatedAt String @map("updated_at")
-  document  Json
+  id                      String                   @id @db.Uuid
+  ownerId                 String                   @map("owner_id")
+  version                 Int
+  updatedAt               String                   @map("updated_at")
+  document                Json
+  workflowArtifacts       WorkflowArtifact[]
+  workflowRevisions       WorkflowRevision[]
+  workflowDependencys     WorkflowDependency[]
+  workflowApprovalEvents  WorkflowApprovalEvent[]
+  workflowJobs            WorkflowJob[]
+  workflowOutboxs         WorkflowOutbox[]
+  workflowRequestReceipts WorkflowRequestReceipt[]
+  workflowAuditEvents     WorkflowAuditEvent[]
+
   @@index([ownerId, updatedAt])
   @@map("projects")
+}
+
+model WorkflowArtifact {
+  id        String             @id @db.Uuid
+  projectId String             @map("project_id") @db.Uuid
+  document  Json
+  project   Project            @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  type      String
+  revisions WorkflowRevision[]
+
+  @@unique([projectId, type])
+  @@index([projectId])
+  @@map("workflow_artifacts")
+}
+
+model WorkflowRevision {
+  id             String                  @id @db.Uuid
+  projectId      String                  @map("project_id") @db.Uuid
+  document       Json
+  project        Project                 @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  artifactId     String                  @map("artifact_id") @db.Uuid
+  revisionNumber Int                     @map("revision_number")
+  artifact       WorkflowArtifact        @relation(fields: [artifactId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  approvals      WorkflowApprovalEvent[]
+  inputs         WorkflowDependency[]    @relation("Downstream")
+  outputs        WorkflowDependency[]    @relation("Upstream")
+
+  @@unique([artifactId, revisionNumber])
+  @@index([projectId])
+  @@map("workflow_revisions")
+}
+
+model WorkflowDependency {
+  id                   String           @id @db.Uuid
+  projectId            String           @map("project_id") @db.Uuid
+  document             Json
+  project              Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  upstreamRevisionId   String           @map("upstream_revision_id") @db.Uuid
+  downstreamRevisionId String           @map("downstream_revision_id") @db.Uuid
+  upstream             WorkflowRevision @relation("Upstream", fields: [upstreamRevisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  downstream           WorkflowRevision @relation("Downstream", fields: [downstreamRevisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@unique([upstreamRevisionId, downstreamRevisionId])
+  @@index([projectId])
+  @@map("workflow_dependencies")
+}
+
+model WorkflowApprovalEvent {
+  id         String           @id @db.Uuid
+  projectId  String           @map("project_id") @db.Uuid
+  document   Json
+  project    Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revisionId String           @map("revision_id") @db.Uuid
+  revision   WorkflowRevision @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([projectId])
+  @@map("workflow_approval_events")
+}
+
+model WorkflowJob {
+  id        String          @id @db.Uuid
+  projectId String          @map("project_id") @db.Uuid
+  document  Json
+  project   Project         @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  state     String
+  outbox    WorkflowOutbox?
+
+  @@index([state])
+  @@index([projectId])
+  @@map("workflow_jobs")
+}
+
+model WorkflowOutbox {
+  id        String      @id @db.Uuid
+  projectId String      @map("project_id") @db.Uuid
+  document  Json
+  project   Project     @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  jobId     String      @unique @map("job_id") @db.Uuid
+  job       WorkflowJob @relation(fields: [jobId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([projectId])
+  @@map("workflow_outbox")
+}
+
+model WorkflowRequestReceipt {
+  id        String  @id @db.Uuid
+  projectId String  @map("project_id") @db.Uuid
+  document  Json
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  key       String  @map("idempotency_key")
+
+  @@unique([projectId, key])
+  @@index([projectId])
+  @@map("workflow_request_receipts")
+}
+
+model WorkflowAuditEvent {
+  id        String  @id @db.Uuid
+  projectId String  @map("project_id") @db.Uuid
+  document  Json
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([projectId])
+  @@map("workflow_audit_events")
 }

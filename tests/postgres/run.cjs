@@ -5,6 +5,8 @@ const { resolve, join } = require('node:path');
 const { createHash } = require('node:crypto');
 const { spawn, spawnSync } = require('node:child_process');
 const { createRequire } = require('node:module');
+const { execFileSync } = require('node:child_process');
+const { pathToFileURL } = require('node:url');
 const root = resolve(__dirname, '../..');
 const appDir = join(root, 'apps/web');
 const appRequire = createRequire(join(appDir, 'package.json'));
@@ -16,10 +18,11 @@ assert.equal(creds.port, 55432);
 assert.equal(creds.appUser, 'studio_app');
 assert.match(creds.appPassword, /^[A-F0-9]{48}$/);
 const runId = Date.now().toString(36);
-const database = `studio_phase005_${runId}`;
+const phase01 = process.argv.includes('--workflow');
+const database = `${phase01 ? 'studio_phase01' : 'studio_phase005'}_${runId}`;
 const freshDatabase = `${database}_fresh`;
-const dataDir = join(root, '.cache/phase005-runs', runId);
-const evidenceDir = join(root, 'docs/evidence/phase00-5');
+const dataDir = join(root, '.cache', phase01 ? 'phase01-runs' : 'phase005-runs', runId);
+const evidenceDir = join(root, 'docs/evidence', phase01 ? 'phase01' : 'phase00-5');
 mkdirSync(dataDir, { recursive: true });
 mkdirSync(evidenceDir, { recursive: true });
 const url = (name, admin = false) =>
@@ -43,6 +46,9 @@ const record = (name, detail) => {
   console.log(`PASS ${name}`);
 };
 const prismaCli = appRequire.resolve('prisma/build/index.js');
+const migrationCount = readdirSync(join(appDir, 'prisma/migrations'), {
+  withFileTypes: true,
+}).filter((e) => e.isDirectory()).length;
 function command(exe, args, env = {}, cwd = appDir, options = {}) {
   const r = spawnSync(exe, args, {
     cwd,
@@ -158,7 +164,7 @@ async function run() {
     if (roles.length === 0)
       await admin.$executeRawUnsafe(`CREATE ROLE studio_app LOGIN PASSWORD '${creds.appPassword}'`);
     for (const name of [database, freshDatabase]) {
-      assert.match(name, /^studio_phase005_[a-z0-9_]+$/);
+      assert.match(name, /^studio_phase(?:005|01)_[a-z0-9_]+$/);
       await admin.$executeRawUnsafe(`CREATE DATABASE "${name}" OWNER studio_app`);
     }
   } finally {
@@ -168,8 +174,51 @@ async function run() {
     join(dataDir, '.env.postgres'),
     `DATABASE_URL=${url(database)}\nSTUDIO_DATA_DIR=${dataDir.replaceAll('\\', '/')}\n`,
   );
+  let legacy;
+  if (phase01) {
+    const baseline = join(dataDir, 'baseline');
+    mkdirSync(join(baseline, 'migrations/0001_project'), { recursive: true });
+    writeFileSync(
+      join(baseline, 'schema.prisma'),
+      execFileSync(
+        'git',
+        ['show', 'b79eab2c34509d6eaa5a6b74e392e1e9ddb2363e:apps/web/prisma/schema.prisma'],
+        { cwd: root },
+      ),
+    );
+    writeFileSync(
+      join(baseline, 'migrations/0001_project/migration.sql'),
+      readFileSync(join(appDir, 'prisma/migrations/0001_project/migration.sql')),
+    );
+    writeFileSync(
+      join(baseline, 'migrations/migration_lock.toml'),
+      readFileSync(join(appDir, 'prisma/migrations/migration_lock.toml')),
+    );
+    command(
+      process.execPath,
+      [prismaCli, 'migrate', 'deploy', '--schema', join(baseline, 'schema.prisma')],
+      { DATABASE_URL: url(database) },
+    );
+    const { openPostgresRepository } = require('../../apps/web/src/server/project/postgres.ts');
+    const { createProjectService } = require('../../apps/web/src/server/project/service.ts');
+    const old = await openPostgresRepository(url(database));
+    legacy = await createProjectService(old, { maxDurationMs: 3600000 }).create(
+      {
+        title: '升级前的项目',
+        prompt: '迁移必须保留',
+        targetDurationMs: 30000,
+        width: 1080,
+        height: 1920,
+        entryType: 'topic',
+        voiceMode: 'tts',
+        budgetLimit: { currency: 'CNY', amount: 50 },
+      },
+      'local-user',
+    );
+    await old.close();
+  }
   const firstMigration = migrate(database);
-  assert.match(firstMigration, /0001_project/);
+  assert.match(firstMigration, phase01 ? /0002_workflow/ : /0001_project/);
   assert.match(migrate(database), /No pending migrations/);
   assert.match(migrate(freshDatabase), /0001_project/);
   record('原迁移首次部署、重复执行与第二空库初始化', { migration: '0001_project', freshDatabase });
@@ -190,6 +239,10 @@ async function run() {
   );
   record('实际 PostgreSQL 与 Prisma schema 一致', { drift: false });
   db = new PrismaClient({ datasources: { db: { url: url(database) } } });
+  if (legacy) {
+    assert.deepEqual((await db.project.findUnique({ where: { id: legacy.id } })).document, legacy);
+    record('0001 既有项目升级 0002 后原 JSON 完整保留', { projectId: legacy.id });
+  }
   const role = await db.$queryRawUnsafe(
     'SELECT rolsuper, rolcreatedb FROM pg_roles WHERE rolname=current_user',
   );
@@ -210,6 +263,62 @@ async function run() {
   for (const p of before)
     assert.deepEqual((await db.project.findUnique({ where: { id: p.id } })).document, p);
   record('15 项 HTTP 验收且返回数据逐项对应 PostgreSQL 行', { projectIds: http.projectIds });
+  let workflowBefore, workflowHttp;
+  if (phase01) {
+    const { workflowAcceptance } = await import(
+      pathToFileURL(join(root, 'tests/workflow/http.mjs')).href
+    );
+    workflowHttp = await workflowAcceptance(base, 'postgresql', evidenceDir);
+    command(process.execPath, [join(root, 'scripts/workflow-worker.cjs'), '--once'], appEnv);
+    const page = await fetch(base + '/projects/new'),
+      auth = { Cookie: page.headers.get('set-cookie').split(';')[0] };
+    const mock = (
+      await (await fetch(base + '/api/v1/jobs/' + workflowHttp.mockJobId, { headers: auth })).json()
+    ).data;
+    const unconfigured = (
+      await (
+        await fetch(base + '/api/v1/jobs/' + workflowHttp.providerJobId, { headers: auth })
+      ).json()
+    ).data;
+    assert.equal(mock.state, 'succeeded');
+    assert.ok(mock.resultRevisionId);
+    const rev = await db.$queryRawUnsafe(
+      'SELECT document FROM workflow_revisions WHERE id=$1::uuid',
+      mock.resultRevisionId,
+    );
+    assert.equal(rev[0].document.mock, true);
+    assert.equal(rev[0].document.status, 'draft');
+    assert.equal(unconfigured.state, 'failed');
+    assert.equal(unconfigured.errorCode, 'PROVIDER_NOT_CONFIGURED');
+    workflowBefore = (
+      await (
+        await fetch(base + `/api/v1/projects/${workflowHttp.projectId}/workflow`, { headers: auth })
+      ).json()
+    ).data;
+    const protectedRevision = workflowBefore.revisions.find((r) => r.status === 'approved');
+    await assert.rejects(
+      db.$executeRawUnsafe(
+        "UPDATE workflow_revisions SET document=jsonb_set(document,'{text}','\"overwrite\"') WHERE id=$1::uuid",
+        protectedRevision.id,
+      ),
+    );
+    await assert.rejects(
+      db.$executeRawUnsafe(
+        "UPDATE workflow_approval_events SET document='{}'::jsonb WHERE project_id=$1::uuid",
+        workflowHttp.projectId,
+      ),
+    );
+    record('真实 Worker / Mock 标签 / 未配置提供方 / 数据库不可变保护', {
+      mockJobId: mock.id,
+      providerError: unconfigured.errorCode,
+    });
+    for (let run = 0; run < 3; run++)
+      command(process.execPath, [join(root, 'tests/workflow/browser.mjs')], {
+        ...appEnv,
+        STUDIO_TEST_URL: base,
+      });
+    record('真实 PostgreSQL 浏览器审核、历史、刷新与响应式', { screenshots: 4, rounds: 3 });
+  }
   const attachment = before[2].input.attachments[0];
   const blob = readFileSync(join(dataDir, 'blobs', attachment.id));
   assert.equal(createHash('sha256').update(blob).digest('hex'), attachment.sha256);
@@ -254,11 +363,23 @@ async function run() {
   const migrations = await db.$queryRawUnsafe(
     'SELECT migration_name, finished_at, rolled_back_at FROM _prisma_migrations',
   );
-  assert.equal(migrations.length, 1);
-  assert.ok(migrations[0].finished_at && !migrations[0].rolled_back_at);
+  assert.equal(migrations.length, migrationCount);
+  assert.ok(migrations.every((m) => m.finished_at && !m.rolled_back_at));
+  if (phase01) {
+    const page = await fetch(base + '/projects/new');
+    const restored = (
+      await (
+        await fetch(base + `/api/v1/projects/${workflowHttp.projectId}/workflow`, {
+          headers: { Cookie: page.headers.get('set-cookie').split(';')[0] },
+        })
+      ).json()
+    ).data;
+    assert.deepEqual(restored, workflowBefore);
+    record('工作流、审批历史、任务和审计重启后完整恢复', { projectId: workflowHttp.projectId });
+  }
   assert.match(migrate(database), /No pending migrations/);
   record('数据库与应用共同重启后持久化，原件可下载，迁移记录仍唯一', {
-    migrations: 1,
+    migrations: migrationCount,
     attachmentPersistent: true,
   });
   assert.equal(protectedDataHash(), originalHash);

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node dev.cjs",
+    "worker": "node ../../scripts/workflow-worker.cjs",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",

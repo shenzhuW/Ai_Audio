@@ -12,8 +12,8 @@
 | INF-003 | 00.5 | PostgreSQL CRUD、时长、九模式组合、并发冲突 | PASS | 同上：30/240/90.5 秒，9 组合，竞争写入仅一次成功；[15 项 HTTP](../docs/evidence/phase00-5/http-results.json) |
 | INF-004 | 00.5 | PostgreSQL 上传、保护下载及应用/数据库重启持久化 | PASS | 重启后项目完整 JSON 不变，附件字节和 SHA256 相同；匿名 401、跨站 403 |
 | INF-005 | 00.5 | SQLite 兼容性和原数据保护，回归门禁 | PASS | 相同 9 份文档精确往返；旧数据目录前后散列相同；7 项单元/类型检查/生产构建通过 |
-| A-004 | 01 | 保存草稿/提交/批准/驳回均持久化，旧版可读 | NOT RUN | |
-| A-005 | 01 | 旧修订批准冲突 409、重复请求幂等 | NOT RUN | |
+| A-004 | 01 | 保存草稿/提交/批准/驳回均持久化，旧版可读 | PASS | [PostgreSQL](../docs/evidence/phase01/postgres-results.json)、[浏览器](../docs/evidence/phase01/screenshots/result.json)；独立表、不可变保护、fork 和应用/DB 重启恢复 |
+| A-005 | 01 | 旧修订批准冲突 409、重复请求幂等 | PASS | [PostgreSQL HTTP](../docs/evidence/phase01/workflow-http-postgresql.json)、[SQLite HTTP](../docs/evidence/phase01/workflow-http-sqlite.json)；同键并发一个下游任务、异内容 409、双候选仅一批准、固定输入和 Outbox |
 | A-006 | 02 | 使用自有测试片+React SVG 层真实渲染 MP4，音/视元数据正确 | NOT RUN | |
 | A-007 | 02 | Worker 失败产生可见错误日志，不在主站直接执行不可信 TSX | NOT RUN | |
 | A-008 | 03 | Source/Claim 带来源与状态，未核实不显示已核实 | NOT RUN | |
@@ -36,6 +36,8 @@
 | A-025 | 09 | 导出前事实/授权/媒体完整性校验有真实阻断能力 | NOT RUN | |
 
 ## 端到端样例（统一）
+
+Phase 01：12 项单元测试通过；SQLite 和真实 PostgreSQL 各运行现有 15 项 HTTP 回归和 8 项工作流检查。生产构建/类型检查通过；PostgreSQL 浏览器连续三轮通过，4 张最新截图落盘。实际 Worker 成功写入 Mock 草稿；未配置音频 Provider 明确失败；任务租约/取消/重试边界通过单元测试。`0001` 测试项目升级 `0002` 后 JSON 不变，重启后修订/审批/审计/任务完整恢复。没有执行真实用户数据迁移、真实 AI、音频或视频渲染。
 
 Phase 00 实际执行日期：2026-10-22。Node 24.15.0 / Windows / Next 15.5.19 / Playwright 1.55.0 / Chromium 1187。最终 HTTP 和浏览器使用 `STUDIO_TEST_URL=http://127.0.0.1:3002` 的生产实例及独立验收数据目录。`pnpm typecheck`、`pnpm build`、Prisma generate/validate 通过。PostgreSQL 连接/迁移/CRUD、真实 AI/TTS/媒体渲染未运行；不在 A-001 至 A-003 的 PASS 范围。详细命令与限制见 [交付记录](../docs/PHASE_00_DELIVERY.md)。
 

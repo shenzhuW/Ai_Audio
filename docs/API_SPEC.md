@@ -122,3 +122,17 @@ HTTP 400 输入错误；401 未认证；403 未许可；404 对象不存在；40
 - 原型页面中“可下载”按钮必须真实存在合法 BlobObject + 当前用户访问权限，否则禁用并说明。
 - 真实 Provider 没配置时后端返回明确 `PROVIDER_NOT_CONFIGURED` 或选择标有 `mock` 的工作模式。
 - 文件下载 URL 短期有效、限制访问范围；上传失败及时清理临时对象。
+
+## Phase 01 已实现子集（2026-10-22）
+
+旧项目 GET/PATCH 继续使用 Phase 00 的 Project JSON 与 version，不将 workflow 状态写回初始需求。`GET /projects/:id/workflow` 是当前阶段、待审核、依赖失效、实际任务及审计的唯一查询入口；`GET /projects/:id/artifacts` 列出稳定产物身份。
+
+新增 `POST /projects/:id/artifacts` 创建首份手动草稿，body 为 `{type,text,inputRevisionIds}`；同类产物已存在返回 409，后续使用已有修订 fork。本文定义的 revisions 查询、PATCH、submit/approve/reject/impact 已实现；`POST /artifacts/:artifactId/revisions` 要求 `{revisionId,expectedVersion,inputRevisionIds?}`。不传 inputs 时保留原依赖，传入时只接受本项目当前有效批准版；禁止同阶段/逆向依赖。草稿正文保存在版本化修订 JSON 中，最多 50000 字符，contentHash 为正文规范 JSON 表示的 SHA256，不是附件字节散列。
+
+所有 workflow 写请求（含 PATCH）要求 `Idempotency-Key`，与旧项目创建/PATCH 规则分开，保持兼容。同项目同键同动作/内容返回原始结果，不重复审核或排队；同键异内容返回 `IDEMPOTENCY_CONFLICT` 409。expectedVersion 是当前修订的并发版本，不是 revisionNumber；旧候选批准返回 `REVISION_CONFLICT` 409。批准版 PATCH 返回 422，驳回和已提交版本也不可直接编辑，只能 fork。
+
+`POST /projects/:id/research-runs`、`script-runs` 仅创建明确标记的 Mock 文本任务，body `{inputRevisionIds:[]}`，返回 202 `{jobId,status}`。API 不执行任务；独立 Worker 领取持久 Outbox。GET jobs/events 和 POST cancel/retry 已实现；取消/重试 body `{expectedVersion}`。审批事务原子保存事件、下游 Job、Outbox 和幂等响应。任务每次尝试绑定原 inputRevisionIds，最多 3 次，租约 30 秒；中断后标记 `WORKER_INTERRUPTED`，需显式重试。
+
+当前 Worker 只生成研究/文稿 Mock 文本（始终 mock=true），不验证事实或授权。配音及其他提供方未配置时任务失败 `PROVIDER_NOT_CONFIGURED`，没有音频或视频输出；不会用静态原型冒充产物。手动内容 mock=false 表示用户输入，仍是“未核实”。Job 成功只代表文本草稿实际已落库，不代表已批准。
+
+本小节之外的媒体、研究来源、Claim、音频、分镜、渲染和导出接口仍为后续阶段草案，不代表已实现。

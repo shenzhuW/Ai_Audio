@@ -19,8 +19,10 @@
     "test:e2e": "pnpm --filter @studio/web test:e2e",
     "test:http": "pnpm --filter @studio/web test:http",
     "test:postgres": "node tests/postgres/run.cjs",
+    "test:workflow": "node tests/postgres/run.cjs --workflow",
     "audit:staged": "node scripts/audit-staged.cjs",
     "db:local": "pwsh -NoProfile -File scripts/postgres-local.ps1",
+    "worker": "pnpm --filter @studio/web worker",
     "db:generate": "pnpm --filter @studio/web db:generate",
     "db:migrate": "pnpm --filter @studio/web db:migrate"
   }

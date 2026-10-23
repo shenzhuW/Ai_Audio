@@ -6,7 +6,7 @@ const { openRepository } = require('../../apps/web/src/server/project/repository
 const { createProjectService } = require('../../apps/web/src/server/project/service.ts');
 
 module.exports = async function verifyRepository(url) {
-  assert.match(new URL(url).pathname, /^\/studio_phase005_/);
+  assert.match(new URL(url).pathname, /^\/studio_phase(?:005|01)_/);
   const pg = await openPostgresRepository(url);
   const sqlite = await openRepository('file::memory:');
   const owner = `integration-${randomUUID()}`;

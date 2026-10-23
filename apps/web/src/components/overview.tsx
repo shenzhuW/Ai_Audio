@@ -4,8 +4,19 @@ import { type Project, formatDuration } from '@/domain/project';
 import { pages, stagePath } from '@/domain/navigation';
 import { ProjectEditor } from './project-editor';
 import { Card, Badge, PageHead, Empty, Notice, s } from './ui';
-export function Overview({ project: p }: { project: Project }) {
+import type { WorkflowSnapshot } from '@/server/workflow/engine';
+import { workflowLabels, statusLabels } from '@/domain/workflow';
+import { WorkflowDashboard } from './workflow-panel';
+export function Overview({
+  project: p,
+  snapshot,
+}: {
+  project: Project;
+  snapshot: WorkflowSnapshot;
+}) {
   const workflow = pages.filter((x) => !['new', 'overview', 'assets'].includes(x.key));
+  const scriptArtifact = snapshot.artifacts.find((a) => a.type === 'script');
+  const scriptRevision = snapshot.revisions.find((r) => r.id === scriptArtifact?.currentRevisionId);
   const start =
     p.input.entryType === 'topic'
       ? 'research'
@@ -48,7 +59,7 @@ export function Overview({ project: p }: { project: Project }) {
         <div className={s.divider} />
         <div className={s.cardHead}>
           <h3>完整创作流程</h3>
-          <Badge tone="gray">当前阶段：创作需求</Badge>
+          <Badge tone="gray">当前阶段：{workflowLabels[snapshot.currentStage]}</Badge>
         </div>
         <div className={s.steps}>
           {workflow.map((page, i) => (
@@ -60,7 +71,9 @@ export function Overview({ project: p }: { project: Project }) {
             >
               <span>{String(i + 1).padStart(2, '0')}</span>
               <b>{page.label}</b>
-              <small>尚未开始</small>
+              <small>
+                {statusLabels[snapshot.stages.find((s) => s.type === page.key)?.status || 'empty']}
+              </small>
             </Link>
           ))}
         </div>
@@ -75,9 +88,19 @@ export function Overview({ project: p }: { project: Project }) {
         </Card>
         <Card>
           <span>文稿版本</span>
-          <strong>{p.input.entryType === 'script' ? '已有原稿' : '暂无'}</strong>
+          <strong>
+            {scriptRevision
+              ? `v${scriptRevision.revisionNumber}`
+              : p.input.entryType === 'script'
+                ? '已有原稿'
+                : '暂无'}
+          </strong>
           <p>
-            {p.input.entryType === 'script' ? '已保存原文，尚未创建审核修订' : '等待创作下一阶段'}
+            {scriptRevision
+              ? `${statusLabels[scriptRevision.status]}${scriptRevision.mock ? ' · Mock' : ''}`
+              : p.input.entryType === 'script'
+                ? '已保存原文，尚未创建审核修订'
+                : '等待创作下一阶段'}
           </p>
         </Card>
         <Card>
@@ -88,6 +111,7 @@ export function Overview({ project: p }: { project: Project }) {
           <p>目标时长 {formatDuration(p.targetDurationMs)} · 数量按内容规划</p>
         </Card>
       </div>
+      <WorkflowDashboard projectId={p.id} initial={snapshot} />
       <div className={s.split}>
         <div className={s.stack}>
           <Card title="创作需求与项目设置" aside={<Badge tone="green">已保存</Badge>}>
@@ -137,9 +161,19 @@ export function Overview({ project: p }: { project: Project }) {
                 </span>
                 <div>
                   <b>{page.label}</b>
-                  <small>暂无产物或已批准版本</small>
+                  <small>
+                    {snapshot.stages.find((s) => s.type === page.key)?.approvedRevisionId
+                      ? '有已批准修订，历史保留'
+                      : '暂无有效批准版'}
+                  </small>
                 </div>
-                <Badge tone="gray">未接通</Badge>
+                <Badge tone="gray">
+                  {
+                    statusLabels[
+                      snapshot.stages.find((s) => s.type === page.key)?.status || 'empty'
+                    ]
+                  }
+                </Badge>
                 <ArrowRight size={14} />
               </Link>
             ))}
@@ -180,7 +214,7 @@ export function Overview({ project: p }: { project: Project }) {
           </Card>
           <Notice>
             <LockKeyhole size={15} />{' '}
-            后续创作模块尚未接通。当前已保存的内容可随时查看，项目不会自动执行 AI 任务。
+            工作流审核已接通。模拟任务仅生成明确标记的文本；配音、媒体制作与渲染仍未接通。
           </Notice>
         </div>
       </div>

@@ -2,6 +2,39 @@
   display: flex;
   min-height: 100vh;
 }
+.workflowMeta {
+  overflow-wrap: anywhere;
+}
+.workflowVersion {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 8px;
+  color: var(--ink);
+  cursor: pointer;
+}
+.workflowVersion[aria-pressed='true'] {
+  border-color: var(--blue);
+  background: #eef4ff;
+}
+.workflowJob {
+  border-top: 1px solid var(--stroke);
+  padding: 15px 0;
+  overflow-wrap: anywhere;
+}
+.workflowReview {
+  border-top: 1px solid var(--stroke);
+  margin-top: 20px;
+  padding-top: 18px;
+}
+.workflowMessage {
+  color: var(--green);
+  padding: 10px 0;
+}
 .sidebar {
   width: 224px;
   flex: 0 0 224px;

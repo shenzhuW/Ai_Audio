@@ -1,6 +1,5 @@
 'use client';
 import { useState, type FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
 import {
   ArrowRight,
   Upload,
@@ -26,7 +25,6 @@ export function ProjectForm({
   maxDurationMs: number;
   maxUploadBytes: number;
 }) {
-  const router = useRouter();
   const [entry, setEntry] = useState<'topic' | 'script' | 'upload'>('topic');
   const [voice, setVoice] = useState<'tts' | 'import' | 'none'>('tts');
   const [files, setFiles] = useState<File[]>([]);
@@ -90,8 +88,9 @@ export function ProjectForm({
       const result = await response.json();
       if (!response.ok) throw new Error(result.error?.message || '保存失败，请重试');
       const project = ProjectSchema.parse(result.data);
-      router.push(`/projects/${project.id}`);
-      router.refresh();
+      // A newly persisted project has no useful client cache. Navigate directly so
+      // creation cannot be stranded by Next 15's client navigation/prefetch state.
+      window.location.assign(`/projects/${project.id}`);
     } catch (e) {
       setError(e instanceof Error ? e.message : '保存失败，请重试');
       setBusy(false);

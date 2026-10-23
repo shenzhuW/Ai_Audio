@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "at": "2026-10-22T14:04:26.191Z",
+  "database": "studio_phase01_mvjm46a7",
+  "host": "127.0.0.1",
+  "port": 55432,
+  "backend": "real-postgresql",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL 服务器版本",
+      "status": "PASS",
+      "detail": "PostgreSQL 17.6 on x86_64-windows, compiled by msvc-19.44.35217, 64-bit"
+    },
+    {
+      "name": "原迁移首次部署、重复执行与第二空库初始化",
+      "status": "PASS",
+      "detail": {
+        "migration": "0001_project",
+        "freshDatabase": "studio_phase01_mvjm46a7_fresh"
+      }
+    },
+    {
+      "name": "实际 PostgreSQL 与 Prisma schema 一致",
+      "status": "PASS",
+      "detail": {
+        "drift": false
+      }
+    },
+    {
+      "name": "0001 既有项目升级 0002 后原 JSON 完整保留",
+      "status": "PASS",
+      "detail": {
+        "projectId": "c5fe3a18-b819-4347-8d68-4b7c8110b2ac"
+      }
+    },
+    {
+      "name": "应用使用非超级用户、无建库权限",
+      "status": "PASS",
+      "detail": {
+        "rolsuper": false,
+        "rolcreatedb": false
+      }
+    },
+    {
+      "name": "九组合、时长、并发锁、重连及 SQLite 协议对照",
+      "status": "PASS",
+      "detail": {
+        "combinations": 9,
+        "compatibleDocuments": 9,
+        "concurrentWinners": 1,
+        "reconnectPersistent": true
+      }
+    },
+    {
+      "name": "15 项 HTTP 验收且返回数据逐项对应 PostgreSQL 行",
+      "status": "PASS",
+      "detail": {
+        "projectIds": [
+          "e1307516-da48-4d5c-a10b-e88e89c32e83",
+          "a06b6565-9e55-44f4-977a-45df6e0d6370",
+          "50cb42b2-a26a-46cf-95b7-5a7a47d3152f"
+        ]
+      }
+    },
+    {
+      "name": "真实 Worker / Mock 标签 / 未配置提供方 / 数据库不可变保护",
+      "status": "PASS",
+      "detail": {
+        "mockJobId": "5146e842-d222-4389-b950-68bc359fd9ff",
+        "providerError": "PROVIDER_NOT_CONFIGURED"
+      }
+    },
+    {
+      "name": "真实 PostgreSQL 浏览器审核、历史、刷新与响应式",
+      "status": "PASS",
+      "detail": {
+        "screenshots": 4,
+        "rounds": 3
+      }
+    },
+    {
+      "name": "上传原件与 PostgreSQL 附件元数据 SHA256 一致",
+      "status": "PASS",
+      "detail": {
+        "bytes": 24
+      }
+    },
+    {
+      "name": "应用进程重启后项目与设置持久化",
+      "status": "PASS",
+      "detail": {
+        "projects": 3
+      }
+    },
+    {
+      "name": "工作流、审批历史、任务和审计重启后完整恢复",
+      "status": "PASS",
+      "detail": {
+        "projectId": "14a78c7e-6da7-402d-8a01-9ee159163959"
+      }
+    },
+    {
+      "name": "数据库与应用共同重启后持久化，原件可下载，迁移记录仍唯一",
+      "status": "PASS",
+      "detail": {
+        "migrations": 2,
+        "attachmentPersistent": true
+      }
+    },
+    {
+      "name": "原 SQLite 数据、附件和会话文件未被修改",
+      "status": "PASS",
+      "detail": {
+        "unchanged": true
+      }
+    }
+  ]
+}

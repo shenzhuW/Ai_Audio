@@ -6,7 +6,7 @@
 
 | 阶段 | 仓库/文件 | 状态 | 结论与适配位置 | 许可/安全复核 |
 |---|---|---|---|---|
-| 01 | Hypit 包与 Run 设计 | NOT REVIEWED | 待填写 | 待填写 |
+| 01 | Hypit 包与 Run 设计 | REVIEWED (static) | 2026-10-22 固定版本阅读见下方记录，未运行 | 修改版 Apache，不复制或依赖 |
 | 02 | Remotion Renderer/Player | NOT REVIEWED | 待填写 | 待填写 |
 | 03 | wallstreet sourcing/新闻截图 | NOT REVIEWED | 待填写 | 待填写 |
 | 05 | wallstreet 语音对齐 | NOT REVIEWED | 待填写 | 待填写 |
@@ -44,4 +44,13 @@
 - 主架构仍指定 PostgreSQL + Prisma。当前环境无运行中的 PostgreSQL/Docker；本机验收使用 `node:sqlite` 的真实文件数据库仓储。权限调整后 Prisma 客户端生成与 schema 校验已通过；PostgreSQL schema、迁移与 Prisma 仓储已预留但尚未完成集成验证，不声称达到 PostgreSQL 验收。
 - Phase 00 的 Project + ProjectInput 采用一个 Zod 校验的版本化聚合 JSON 存储；索引列保存 ID、owner、version 和更新时间。尚未建立产物/审批表。后续规范化迁移必须保留已有输入及 UUID，不可破坏性重建。
 - `git status --short` 返回 `not a git repository`，本次没有初始化、提交或删除现有文件。
+
+## 2026-10-22 · Phase 01 / 固定版本研究
+
+通过 GitHub API 核实当时 main SHA：`0d36de9a9d17562fca0e478969b80eb1c16a7693`。已读 `docs/guide/packages.md` 和 `docs/quickstart/run.md` 的 Run/Results 部分，以及固定 SHA 下 [protocol/build.ts](https://github.com/hypit-ai/hypit/blob/0d36de9a9d17562fca0e478969b80eb1c16a7693/packages/protocol/src/build.ts) 前 85 行、[compiler/graph-query.ts](https://github.com/hypit-ai/hypit/blob/0d36de9a9d17562fca0e478969b80eb1c16a7693/packages/compiler/src/graph-query.ts) 和 [cli/result-query.ts](https://github.com/hypit-ai/hypit/blob/0d36de9a9d17562fca0e478969b80eb1c16a7693/packages/cli/src/result-query.ts)。尝试 `packages/result/src/record.ts` 得到 404，未声称已读；未运行 Hypit。
+
+- Packages 区分创作输入、Provider 和结果仓储；Run 显式引用先前 Build 的具体输出，不自动推断复用。借鉴为固定 revisionId 的依赖边和任务输入、保留历史，避免持续读取 latest。
+- build.ts 的已读区域区分图中的值与操作引用；graph-query.ts 沿输入关系遍历并用 visited 去重；result-query.ts 按仓储历史游标查特定输出。借鉴依赖遍历及可定位历史身份，不复制其实现。
+- 本项目的批准/驳回、expectedVersion、事务幂等与 outbox 根据本项目协议实现；Hypit 的新 Build 机制不替代本产品的修订/审批语义，也不作为隐含幂等键。
+- 复核 LICENSE：仍为修改版 Apache，包含托管/多租户、商业再分发及标识条款。本次无源码复制、无新增 Hypit 依赖；只采用设计思想。
 

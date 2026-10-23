@@ -13,6 +13,7 @@ import { pages, stagePath, type Stage } from '@/domain/navigation';
 import { type Project, formatDuration } from '@/domain/project';
 import fixture from '../../../../fixtures/example-project.json';
 import { Card, Badge, PageHead, Empty, Notice, s } from './ui';
+import { WorkflowPanel } from './workflow-panel';
 
 export function StageWorkspace({
   stage,
@@ -25,6 +26,23 @@ export function StageWorkspace({
 }) {
   const index = pages.findIndex((p) => p.key === stage);
   const page = pages[index];
+  if (!demo && project && (stage === 'research' || stage === 'script'))
+    return (
+      <>
+        <PageHead
+          number={String(index + 1).padStart(2, '0')}
+          title={page.label}
+          description="保存每次创作，审核精确修订，保留历史与依赖。"
+        />
+        <WorkflowPanel
+          projectId={project.id}
+          type={stage}
+          originalText={
+            stage === 'script' && project.input.entryType === 'script' ? project.input.prompt : ''
+          }
+        />
+      </>
+    );
   const duration = project?.targetDurationMs ?? fixture.targetDurationMs;
   const pending = <Badge tone="gray">未接通</Badge>;
   const empty = (title: string, text: string) => <Empty title={title}>{text}</Empty>;

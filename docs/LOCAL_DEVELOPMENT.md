@@ -1,4 +1,4 @@
-# 本地开发与验证 · Phase 00 / 00.5
+# 本地开发与验证 · Phase 00 / 00.5 / 01
 
 ## 运行
 
@@ -20,6 +20,8 @@ pnpm dev
 `pnpm dev` 使用 Next.js 官方 custom-server API，仍支持 App Router、Route Handlers 和开发热更新。使用该入口是为了避开此机器的 CLI 子进程监督器限制；Next.js 升级时要重新验证。仅监听 127.0.0.1。未实现公网认证或生产部署。
 
 工作台链接显式设定 `prefetch={false}`，保留客户端导航。该设置避免本次在 Next 15 生产构建中观察到的部分预取/导航异常；升级框架后再用真实点击验收评估是否恢复预取，详见交付记录。
+
+Phase 01 已接通研究/文稿页的保存、审核、历史和后台任务，总览显示真实状态。另开终端用相同数据库及数据目录执行 `pnpm worker`；未启动时任务保持可查询 queued，不在 HTTP 请求里生成。Mock 文本有明确标签；真实音频/视频不在本阶段实现。详见 [工作流说明](WORKFLOW_IMPLEMENTATION.md)。创建成功使用浏览器完整导航打开永久项目地址，避免当前 Next 15 客户端导航偶发停留；项目 CRUD 契约没有改变。
 
 ## 项目数据与路由
 
@@ -61,6 +63,8 @@ pnpm test:e2e
 ## PostgreSQL / Prisma
 
 schema 和 SQL migration 位于 `apps/web/prisma/`。在能够安装 Prisma 平台引擎且已有 PostgreSQL 的环境中：
+
+Phase 01 新增 `0002_workflow`，不改写 `0001_project`。本次只对新测试库验证升级；真实数据库应用迁移前应按现有备份/审核流程操作，不自动导入用户数据。SQLite 增量添加独立 workflow 表，原项目 JSON、原件和会话保持原状。
 
 ```powershell
 # 先设置 DATABASE_URL（不要把真实密码写入仓库）

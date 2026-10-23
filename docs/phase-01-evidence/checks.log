@@ -1,0 +1,36 @@
+
+> ai-code-video-studio@0.1.0 typecheck W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web typecheck
+
+
+> @studio/web@0.1.0 typecheck W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> tsc --noEmit
+
+
+> ai-code-video-studio@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web test
+
+
+> @studio/web@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> node ../../scripts/test.cjs
+
+✔ Signed local session rejects forged and expired cookies (2.964ms)
+✔ Local-only host and origin checks reject remote host and CSRF (0.4459ms)
+✔ Real database: 30/240 seconds and all entry modes survive closing and reopening (35.6233ms)
+✔ Real database: atomic optimistic update permits only one writer (1.4656ms)
+✔ Reject blank prompt, zero/negative/nonfinite duration, invalid aspect, budget, unknown keys (1.8413ms)
+✔ Seconds and mm:ss are exact, invalid strings never silently normalize (0.3429ms)
+✔ Real upload validation checks extension, contents and byte limit (0.3661ms)
+✔ SQLite workflow transactions survive reopening, roll back failures and preserve legacy project JSON (49.2064ms)
+✔ Workflow persists approval truth: draft/edit/submit/approve/fork, immutable old content and history (1.7144ms)
+✔ Workflow rejects stale approvals; identical retries reuse exact response and one durable downstream job (1.308ms)
+✔ Rejected revisions fork for editing; upstream replacement derives transitive stale without rewriting approved status (6.1058ms)
+✔ Mock jobs have durable claim/finish, cancellation fencing, bounded retries and expired lease recovery (5.8686ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 341.5367

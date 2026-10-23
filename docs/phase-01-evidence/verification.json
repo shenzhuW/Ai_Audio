@@ -1,0 +1,279 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-23T00:26:38.932Z",
+  "commit": "70d4ddf06d3ce306b7f30cd3c78e4de3b6251638",
+  "database": "studio_phase01_final_mvk8cces",
+  "backend": "real-postgresql",
+  "port": 3005,
+  "checks": [
+    {
+      "name": "隔离 PostgreSQL 新测试库",
+      "status": "PASS",
+      "detail": {
+        "version": "PostgreSQL 17.6 on x86_64-windows, compiled by msvc-19.44.35217, 64-bit",
+        "database": "studio_phase01_final_mvk8cces"
+      }
+    },
+    {
+      "name": "迁移重复执行、零漂移和应用最小数据库角色",
+      "status": "PASS",
+      "detail": {
+        "rolsuper": false,
+        "rolcreatedb": false
+      }
+    },
+    {
+      "name": "现有工作流 HTTP 在真实 PostgreSQL 复跑",
+      "status": "PASS",
+      "detail": {
+        "checks": 8
+      }
+    },
+    {
+      "name": "浏览器版本冲突与缓冲保护",
+      "status": "PASS",
+      "detail": {
+        "status": 409,
+        "error": {
+          "code": "REVISION_CONFLICT",
+          "message": "修订或当前候选已变化，请重新载入后再操作。"
+        },
+        "bufferPreserved": true
+      }
+    },
+    {
+      "name": "批准修订不可 PATCH，fork 新身份",
+      "status": "PASS",
+      "detail": {
+        "approvedRevisionId": "50958211-ae7b-4f99-bddc-217100fa972d",
+        "approvedVersion": 4,
+        "patchStatus": 422,
+        "error": "IMMUTABLE_REVISION",
+        "forkRevisionId": "09d62788-1d29-4ad2-b0c6-d57bec71f000",
+        "forkRevisionNumber": 2
+      }
+    },
+    {
+      "name": "草稿/提交/批准/驳回/历史与刷新",
+      "status": "PASS",
+      "detail": {
+        "projectId": "35b9270a-0371-4474-baf0-493c0b23e981",
+        "oldApprovedUnchanged": true
+      }
+    },
+    {
+      "name": "真实依赖失效与批准历史保护",
+      "status": "PASS",
+      "detail": {
+        "upstreamOld": "50958211-ae7b-4f99-bddc-217100fa972d",
+        "upstreamNew": "75434dd9-b099-4c3c-a094-8786720df077",
+        "downstream": "b6ab3892-55fa-4479-96ec-00df85a91365",
+        "stale": true,
+        "historicalStatus": "approved"
+      }
+    },
+    {
+      "name": "总览刷新与持久任务恢复",
+      "status": "PASS",
+      "detail": {
+        "jobs": 3,
+        "staleRevisionIds": [
+          "b6ab3892-55fa-4479-96ec-00df85a91365"
+        ]
+      }
+    },
+    {
+      "name": "并发审批 409 与幂等重放单任务",
+      "status": "PASS",
+      "detail": {
+        "projectId": "ee5a4d4b-ccb9-4aef-8b8c-cd0914c6c159",
+        "concurrentStatuses": [
+          409,
+          200
+        ],
+        "losingCode": "REVISION_CONFLICT",
+        "approvedRevisionId": "9fea0bdf-fde5-4c00-bacd-e1da79d0cea0",
+        "replayStatuses": [
+          200,
+          200
+        ],
+        "identicalResponses": true,
+        "changedBodyStatus": 409,
+        "changedBodyCode": "IDEMPOTENCY_CONFLICT",
+        "downstreamJobIds": [
+          "fcd83671-1b59-404a-a02a-3044ca67f174"
+        ],
+        "approvalEvents": 1
+      }
+    },
+    {
+      "name": "Mock 标识、独立 Worker 与来源继承",
+      "status": "PASS",
+      "detail": {
+        "projectId": "f027b2b7-13e9-438f-a7f4-a33e9e271c32",
+        "jobId": "21a42cbd-1179-44f1-9c0f-ca51875daf33",
+        "jobState": "succeeded",
+        "revisionIds": [
+          "2dce3cbc-1aa2-420e-ba01-0f744bef0991",
+          "44cb90d9-dbd8-4429-beb9-913e950dc905"
+        ],
+        "mockPreserved": true
+      }
+    },
+    {
+      "name": "提供方未配置真实失败",
+      "status": "PASS",
+      "detail": {
+        "projectId": "0f54ab4e-23aa-4f6e-946a-f71bc9e77fa0",
+        "jobId": "e7db6d20-f4ac-4fde-b89c-d7985f377dd1",
+        "state": "failed",
+        "errorCode": "PROVIDER_NOT_CONFIGURED",
+        "resultRevisionId": null
+      }
+    },
+    {
+      "name": "真实审核页面响应式与浏览器错误",
+      "status": "PASS",
+      "detail": {
+        "viewport": "390x844",
+        "noHorizontalOverflow": true,
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "PostgreSQL 直接 SQL 不可变保护",
+      "status": "PASS",
+      "detail": {
+        "revisionId": "03e9839d-ea13-49e1-bb44-39f4842376c5",
+        "updateRejected": true,
+        "approvalDeleteRejected": true,
+        "documentUnchanged": true
+      }
+    },
+    {
+      "name": "应用进程重启后审核/依赖/任务历史保持一致",
+      "status": "PASS",
+      "detail": {
+        "projectId": "35b9270a-0371-4474-baf0-493c0b23e981",
+        "mockProjectId": "f027b2b7-13e9-438f-a7f4-a33e9e271c32"
+      }
+    },
+    {
+      "name": "现有工作流 HTTP 在独立 SQLite 复跑",
+      "status": "PASS",
+      "detail": {
+        "checks": 8
+      }
+    },
+    {
+      "name": "原项目数据库、上传原件和会话目录未改变",
+      "status": "PASS",
+      "detail": {
+        "unchanged": true,
+        "sha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "01-draft.png",
+      "label": "草稿保存并刷新恢复；手动内容标未核实",
+      "at": "2026-10-23T00:26:47.032Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981/research",
+      "sha256": "f726d29f2fec96da07dcbcb8bebe0ef7959946cdfe25592c5e0ea81a8d3644d9"
+    },
+    {
+      "file": "02-conflict-409.png",
+      "label": "两个真实浏览器标签页：旧并发版本保存返回 409，保留本地编辑并提示重载",
+      "at": "2026-10-23T00:26:50.552Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981/research",
+      "sha256": "8139ee24f7cf2f1439297b2e2ea8f0b4a7bec48242c8bdd34f88fb7817ab7220"
+    },
+    {
+      "file": "03-submitted.png",
+      "label": "提交后待审核，只读并出现批准/驳回与审核意见",
+      "at": "2026-10-23T00:26:51.914Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981/research",
+      "sha256": "a868fed51ae4eaf3a241a990ab1e11b1770f077994e9ef1aeeb2849ddb1dc8d9"
+    },
+    {
+      "file": "04-approved-readonly.png",
+      "label": "批准版只读，仅可创建新修订，真实下游任务已排队",
+      "at": "2026-10-23T00:26:52.544Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981/research",
+      "sha256": "5fbef27a25dd54541a73600b417e216d04472e5155ea00af8abc21f5738fa78c"
+    },
+    {
+      "file": "05-fork-new-revision.png",
+      "label": "批准后修改必须 fork 为 v2 草稿，新 UUID、旧批准版保留",
+      "at": "2026-10-23T00:26:52.754Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981/research",
+      "sha256": "92d6f84a382448bc5c0b27ec649d668490355b333d4afdf4b5490659c101f6b5"
+    },
+    {
+      "file": "06-rejected.png",
+      "label": "驳回及意见刷新后仍在；驳回版不能原地编辑",
+      "at": "2026-10-23T00:26:53.195Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981/research",
+      "sha256": "c6982937b436055c734dd731a8067188fa6e6f79f6cf2f3e750be3e23896abfb"
+    },
+    {
+      "file": "07-approved-history.png",
+      "label": "查看旧批准版，正文、状态、审核历史保持",
+      "at": "2026-10-23T00:26:53.384Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981/research",
+      "sha256": "25367e339436c468302f6efa5c5d7283dae1cbde5aa9654378a5fe183d85cdbe"
+    },
+    {
+      "file": "08-dependency-stale.png",
+      "label": "上游批准新版后，下游显示依赖失效，旧 approved 事实保持",
+      "at": "2026-10-23T00:26:54.127Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981/script",
+      "sha256": "a680c061c14587c176574710fc8d72af25db00cdd18e31da3571e4a035a5d999"
+    },
+    {
+      "file": "09-overview-dependencies.png",
+      "label": "总览显示真实阶段、依赖失效、版本与持久任务",
+      "at": "2026-10-23T00:26:54.768Z",
+      "url": "http://127.0.0.1:3005/projects/35b9270a-0371-4474-baf0-493c0b23e981",
+      "sha256": "d78b46e9e712ebd9a18550ab39259074137b56f8405bda5e61784cb676128651"
+    },
+    {
+      "file": "10-mock-job-queued.png",
+      "label": "真实 jobId 已排队，尚无文本产物",
+      "at": "2026-10-23T00:26:56.063Z",
+      "url": "http://127.0.0.1:3005/projects/f027b2b7-13e9-438f-a7f4-a33e9e271c32/research",
+      "sha256": "79f3bd05a0f3ac169f1fb9259d8229d04c2b8ce2da008b2cfd5c148860a3a036"
+    },
+    {
+      "file": "11-mock-draft.png",
+      "label": "独立 Worker 生成带 mock=true 的未核实草稿，无自动批准",
+      "at": "2026-10-23T00:26:58.473Z",
+      "url": "http://127.0.0.1:3005/projects/f027b2b7-13e9-438f-a7f4-a33e9e271c32/research",
+      "sha256": "badc67814a3eb844b9d5d191c2e24fad208e7b663e1e807f5c6c0fe391ddf87e"
+    },
+    {
+      "file": "12-mock-edited-fork.png",
+      "label": "编辑和 fork 后仍保留 Mock 来源标签",
+      "at": "2026-10-23T00:26:58.835Z",
+      "url": "http://127.0.0.1:3005/projects/f027b2b7-13e9-438f-a7f4-a33e9e271c32/research",
+      "sha256": "f3dbd58d7b0d7764ef9f0fae1edac2adb55e468a4c9d5af7248a1afbd65ca932"
+    },
+    {
+      "file": "13-provider-unconfigured.png",
+      "label": "实际未配置配音任务失败，不伪造媒体结果",
+      "at": "2026-10-23T00:27:00.237Z",
+      "url": "http://127.0.0.1:3005/projects/0f54ab4e-23aa-4f6e-946a-f71bc9e77fa0",
+      "sha256": "66325524aeb868d2a7f4dd4f17b4f2c2e7145a308ed73d5144089a9fb5c35609"
+    },
+    {
+      "file": "14-mobile-390.png",
+      "label": "390px 窄屏折叠、审核按钮与 Mock 标签可用",
+      "at": "2026-10-23T00:27:00.473Z",
+      "url": "http://127.0.0.1:3005/projects/f027b2b7-13e9-438f-a7f4-a33e9e271c32/research",
+      "sha256": "3459ddaa339645346202cea8438ee5c42793361229ae90b988ceee04893e410b"
+    }
+  ],
+  "browserErrors": [],
+  "finishedAt": "2026-10-23T00:27:04.228Z"
+}

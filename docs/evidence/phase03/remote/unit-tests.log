@@ -1,0 +1,38 @@
+
+> ai-code-video-studio@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web test
+
+
+> @studio/web@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> node ../../scripts/test.cjs
+
+✔ Signed local session rejects forged and expired cookies (2.2903ms)
+✔ Local-only host and origin checks reject remote host and CSRF (0.4457ms)
+✔ Real database: 30/240 seconds and all entry modes survive closing and reopening (32.7942ms)
+✔ Real database: atomic optimistic update permits only one writer (1.8474ms)
+✔ Reject blank prompt, zero/negative/nonfinite duration, invalid aspect, budget, unknown keys (2.9734ms)
+✔ Seconds and mm:ss are exact, invalid strings never silently normalize (0.4791ms)
+✔ Render child environment never inherits database, user session, token, proxy or Node injection variables (0.506ms)
+✔ Protected video byte ranges support seeking and reject invalid, excessive and multiple ranges (0.4315ms)
+✔ Workflow persists approval truth: draft/edit/submit/approve/fork, immutable old content and history (17.0168ms)
+✔ Workflow rejects stale approvals; identical retries reuse exact response and one durable downstream job (2.1208ms)
+✔ Rejected revisions fork for editing; upstream replacement derives transitive stale without rewriting approved status (8.4213ms)
+✔ Mock jobs have durable claim/finish, cancellation fencing, bounded retries and expired lease recovery (7.269ms)
+✔ SceneSpec freezes frame timeline and declared editable props, rejects unsafe/invalid inputs (6.9077ms)
+✔ FFprobe gate rejects incorrect encoding, frame rate, frame count and dimensions (4.5355ms)
+✔ Render jobs reuse workflow idempotency, heartbeat lease fencing, cancellation and failure attempts (6.3151ms)
+✔ Research upload accepts actual MP4 brand but rejects disguised executable, bad extensions and byte overflow (10.7093ms)
+✔ Local PDF parser loads standard fonts and extracts real pages/text with Windows-compatible paths (594.437ms)
+✔ Research records are revision-bound; missing evidence and Mock cannot become verified facts (8.6717ms)
+✔ Research approval freezes source/claim/evidence/index and fork copies a coherent snapshot (11.0697ms)
+✔ Research analysis uses durable jobs, idempotent enqueue and fences approval/cancelled results (4.062ms)
+✔ Real upload validation checks extension, contents and byte limit (0.4614ms)
+✔ SQLite workflow transactions survive reopening, roll back failures and preserve legacy project JSON (69.1493ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1160.4501

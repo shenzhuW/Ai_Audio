@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T03:58:32.698Z",
+  "codeCommit": "50bdda5bce8e83c821ab56a20a243f6aba778d7f",
+  "backends": [
+    {
+      "backend": "sqlite",
+      "status": "PASS",
+      "originalIntegrationChecks": 15,
+      "claimId": "d2a10c0e-6888-4932-87cd-86b955ba3d7f",
+      "sourceIds": [
+        "60e06a4c-3f75-414f-a565-651119de3887",
+        "3c54ed50-f2be-48df-b618-407f46cc12a4"
+      ],
+      "evidenceIds": [
+        "43b6e928-3534-4822-9bd1-892d3b90e327",
+        "4f60306b-d04c-4d28-9b66-2f9a2c1d5d85"
+      ],
+      "state": "conflicting",
+      "currentRevisionReferencesOnly": true,
+      "reproducedPdfPageAndText": true,
+      "reproducedFrames": 3,
+      "imageMetadata": {
+        "width": 640,
+        "height": 360,
+        "semanticUnderstanding": "unconfigured"
+      },
+      "mockSearchCandidates": 0,
+      "unconfiguredProviderFailureVisible": true
+    },
+    {
+      "backend": "postgresql",
+      "status": "PASS",
+      "originalIntegrationChecks": 16,
+      "claimId": "f79e4701-66e6-4324-a0da-5687f3b2bea9",
+      "sourceIds": [
+        "b5739691-56d9-4c80-8541-59b8819e9243",
+        "a0aeb85a-d32a-41a4-9de8-44c60bf3cb6e"
+      ],
+      "evidenceIds": [
+        "293f56d8-b1ca-46db-bb56-9e84ce8044fa",
+        "e922c5fc-c11b-467f-ba2f-b65b42c4e124"
+      ],
+      "state": "conflicting",
+      "currentRevisionReferencesOnly": true,
+      "reproducedPdfPageAndText": true,
+      "reproducedFrames": 3,
+      "imageMetadata": {
+        "width": 640,
+        "height": 360,
+        "semanticUnderstanding": "unconfigured"
+      },
+      "mockSearchCandidates": 0,
+      "unconfiguredProviderFailureVisible": true
+    }
+  ],
+  "pdf": {
+    "pages": 1,
+    "page": 1,
+    "extractedText": "SYNTHETIC TEST ONLY. Capacity is 32 units.",
+    "originalSha256": "8e41bceefbb9bc896eb86ab6666b4410e03d346b19c37037a39b8799bf1f52f1",
+    "provenance": "real"
+  },
+  "video": {
+    "toolVersion": "ffmpeg version 4.3.1 Copyright (c) 2000-2020 the FFmpeg developers",
+    "originalSha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+    "comparison": "exact JPEG SHA256 at each recorded timestamp; no semantic recognition",
+    "frames": [
+      {
+        "timeMs": 0,
+        "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133"
+      },
+      {
+        "timeMs": 3333,
+        "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0"
+      },
+      {
+        "timeMs": 6666,
+        "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4"
+      }
+    ]
+  }
+}

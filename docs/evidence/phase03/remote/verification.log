@@ -1,0 +1,2 @@
+PASS sqlite: evidence links, fork IDs, PDF page/text, source video frames, provider boundaries
+PASS postgresql: evidence links, fork IDs, PDF page/text, source video frames, provider boundaries

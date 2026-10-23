@@ -1,0 +1,554 @@
+{
+  "at": "2026-10-23T04:03:51.760Z",
+  "commit": "50bdda5bce8e83c821ab56a20a243f6aba778d7f",
+  "scannedFiles": 109,
+  "maxFileBytes": 411592,
+  "findings": [],
+  "files": [
+    {
+      "file": ".env.example",
+      "bytes": 1495,
+      "blob": "0943607b113cf88a8d73ce4acc1ccd0935135add"
+    },
+    {
+      "file": ".gitattributes",
+      "bytes": 85,
+      "blob": "739e8406c6ff12201deb84856e04fa63f96c0e07"
+    },
+    {
+      "file": "README.md",
+      "bytes": 8268,
+      "blob": "fa387a7d2cae5fcb0c6a0cdd365646237bd68edc"
+    },
+    {
+      "file": "apps/web/package.json",
+      "bytes": 1042,
+      "blob": "d7f8799514e72ae11543c809383237248b34c35d"
+    },
+    {
+      "file": "apps/web/prisma/migrations/0003_research/migration.sql",
+      "bytes": 5364,
+      "blob": "fe5f934649ef59509f107579c0ad82a775344003"
+    },
+    {
+      "file": "apps/web/prisma/schema.prisma",
+      "bytes": 8293,
+      "blob": "dc030028ad1b68af2fdc476232d4ac52d29c70ad"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/claims/[claimId]/route.ts",
+      "bytes": 312,
+      "blob": "c57a56604f593964f803cf39f15960075fd107d6"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/claims/route.ts",
+      "bytes": 300,
+      "blob": "7753c940a04527ceebc710a5cbfc991c79f962ec"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-analysis-runs/route.ts",
+      "bytes": 293,
+      "blob": "148fb4a30f78e88ec2fb574385944778eaa1c11c"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-evidence/[evidenceId]/route.ts",
+      "bytes": 320,
+      "blob": "c3530f980c23ff4f72e38929a8bf6581f70e1adb"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-evidence/route.ts",
+      "bytes": 288,
+      "blob": "26f0be27f2216605009955dcdaa3fbafeaeafa61"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-import-source/route.ts",
+      "bytes": 293,
+      "blob": "cb4b7d1070385b9b19a368b0050ba0a0278a1adb"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-search-runs/route.ts",
+      "bytes": 291,
+      "blob": "99c65b843647b6c541e22e8206dac65d5738333b"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-sources/[sourceId]/route.ts",
+      "bytes": 323,
+      "blob": "a0cc6787d463b1dedf92cd5e4a89dab17475f1ed"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-sources/route.ts",
+      "bytes": 310,
+      "blob": "0f8513bc003241bb506af618587e38c655e8c7fe"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research/route.ts",
+      "bytes": 287,
+      "blob": "fd63c2805615aea1273c79ad7c3850aa499ef92a"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/sources/[sourceId]/files/[blobId]/route.ts",
+      "bytes": 278,
+      "blob": "c893bc18ec97dcc6cbdfc6f338c0b32cfda24585"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/sources/[sourceId]/route.ts",
+      "bytes": 220,
+      "blob": "db10ad8d880ef21d5d0774498e7cbb583ef532ab"
+    },
+    {
+      "file": "apps/web/src/components/research-panel.tsx",
+      "bytes": 39558,
+      "blob": "89b4a4118f38ed6a80a7acbac001fc870cf062b6"
+    },
+    {
+      "file": "apps/web/src/components/stage-workspace.tsx",
+      "bytes": 18456,
+      "blob": "b7e07b05bdb5d52262f15821eef52b909ac0de0b"
+    },
+    {
+      "file": "apps/web/src/components/studio.module.css",
+      "bytes": 27568,
+      "blob": "6fca3a5c0d45f9ba87aa88e6b47a299003e36558"
+    },
+    {
+      "file": "apps/web/src/components/workflow-panel.tsx",
+      "bytes": 18393,
+      "blob": "8effa96c5ce8073d334676df57703d5d48329d36"
+    },
+    {
+      "file": "apps/web/src/domain/research.ts",
+      "bytes": 7549,
+      "blob": "20e72961df0e09292576c142240a20424d22754d"
+    },
+    {
+      "file": "apps/web/src/domain/workflow.ts",
+      "bytes": 6751,
+      "blob": "e081972726de47c1fbf27a0bc88bca9faba64cf9"
+    },
+    {
+      "file": "apps/web/src/server/research/engine.ts",
+      "bytes": 11027,
+      "blob": "61091629cc02e79f0db6ed7cf62d00bfdf2a2080"
+    },
+    {
+      "file": "apps/web/src/server/research/http.ts",
+      "bytes": 7383,
+      "blob": "c78b912a4c65dbedb56a3f007d7c51b019d8ce00"
+    },
+    {
+      "file": "apps/web/src/server/research/providers.ts",
+      "bytes": 2902,
+      "blob": "f730d9bc1608b53e77a941d064d96c5c5885e160"
+    },
+    {
+      "file": "apps/web/src/server/research/service.ts",
+      "bytes": 5063,
+      "blob": "28ee03b91018c1e0ea8f798c61b7945b1c36684f"
+    },
+    {
+      "file": "apps/web/src/server/research/storage.ts",
+      "bytes": 2295,
+      "blob": "ecffb90af055d2090ea3dfda9b2c0be93c56e7a4"
+    },
+    {
+      "file": "apps/web/src/server/research/tables.ts",
+      "bytes": 2276,
+      "blob": "53f54f921e8d27b27700b850548dd54ad2b0491d"
+    },
+    {
+      "file": "apps/web/src/server/workflow/engine.ts",
+      "bytes": 17383,
+      "blob": "92de73d7513e95924cb31febe031de704aa088ab"
+    },
+    {
+      "file": "apps/web/src/server/workflow/service.ts",
+      "bytes": 3711,
+      "blob": "740ec9e8293eaf20d46e046c6c264d7f9251ab6c"
+    },
+    {
+      "file": "apps/web/src/server/workflow/tables.ts",
+      "bytes": 3564,
+      "blob": "e12182235ad603c86302687017dfaebca51f2359"
+    },
+    {
+      "file": "docs/API_SPEC.md",
+      "bytes": 13792,
+      "blob": "bb03cf21b51bfa5f7fc27b2b7cffa8daa3a00464"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "bytes": 7521,
+      "blob": "4d92afea2ff7201525ec5c2440d68067d1b096a5"
+    },
+    {
+      "file": "docs/CHANGELOG_IMPLEMENTATION.md",
+      "bytes": 9552,
+      "blob": "acdffd9db7617cc7fb94d9b5160039810c498493"
+    },
+    {
+      "file": "docs/DATA_MODELS.md",
+      "bytes": 10632,
+      "blob": "50a4cc23534de1ef5467c4dee0a918a387b06cdc"
+    },
+    {
+      "file": "docs/LOCAL_DEVELOPMENT.md",
+      "bytes": 11769,
+      "blob": "103c5864d8c81e5bd687ef5e13e0c99d27f01edd"
+    },
+    {
+      "file": "docs/PHASE_03_DELIVERY.md",
+      "bytes": 12597,
+      "blob": "1927e71726e577bf445b18ec94c5d981596ddd52"
+    },
+    {
+      "file": "docs/PHASE_03_IMPLEMENTATION.md",
+      "bytes": 2287,
+      "blob": "88db9dfec2604dfad941230714b30c6da05e57c5"
+    },
+    {
+      "file": "docs/REFERENCE_REVIEW_LOG.md",
+      "bytes": 13327,
+      "blob": "17d43e352ec9467f749be32799563e3ccd5e591b"
+    },
+    {
+      "file": "docs/SECURITY_QUALITY.md",
+      "bytes": 6397,
+      "blob": "df658b9c26a2ddb0a080cf6327a219d0b31e969a"
+    },
+    {
+      "file": "docs/UI_SPEC.md",
+      "bytes": 9493,
+      "blob": "231446dfcbac923ff95003d85484a961107a5949"
+    },
+    {
+      "file": "docs/evidence/phase03/browser-media.log",
+      "bytes": 128,
+      "blob": "2bc22e5707fe7471940c2361cebc805c7ecd4fa7"
+    },
+    {
+      "file": "docs/evidence/phase03/build.log",
+      "bytes": 4386,
+      "blob": "7d0b7c1672aa16f7a519f2a82d33f9c8e0ab83a3"
+    },
+    {
+      "file": "docs/evidence/phase03/local-services.log",
+      "bytes": 240,
+      "blob": "05cc5dbef0f5792ed48829e14398824318dca660"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/03-approved.png",
+      "bytes": 326286,
+      "blob": "ef3dfb8b3bff6dda025ca7b402713272a0606de4"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/03-history.png",
+      "bytes": 324958,
+      "blob": "1dea3d5aedab49cf90dcd16f1a4f379e3571cc18"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/03-mobile.png",
+      "bytes": 269473,
+      "blob": "2419351990076d3f0955363c699cc1b21588a14f"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/03-mock-and-failure.png",
+      "bytes": 373230,
+      "blob": "dadb96f4d7bb2cb3b606ddfd006f83a2e77bb6a4"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/03-overview-viewport.png",
+      "bytes": 183086,
+      "blob": "04f3e2a36cc143ea23a5d64a090a05f707feb91f"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/03-pdf-conflict.png",
+      "bytes": 312984,
+      "blob": "3cefc042f455c9c369767d0d79661df5aae31340"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/03-video-index.png",
+      "bytes": 404838,
+      "blob": "e1f3287c85d85274109aa3fcb9e37c14d13e3556"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/03-video-viewport.png",
+      "bytes": 200706,
+      "blob": "9728da787c4b994d5a21a1b262caca603c740580"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/browser-media.json",
+      "bytes": 340,
+      "blob": "7cb68e09a1601098a57bca3329a626d7698e79d1"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/frame-0.jpg",
+      "bytes": 18055,
+      "blob": "1e55442387ed7df919941163339b1866606b2811"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/frame-3333.jpg",
+      "bytes": 16252,
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/frame-6666.jpg",
+      "bytes": 16151,
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/http-results.json",
+      "bytes": 1807,
+      "blob": "4ceac438f9cfac42bd630dfbdf4cebf2c3b5fd67"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/integration.log",
+      "bytes": 1675,
+      "blob": "d107ed385822dbcf59ae03eed86755d61759806d"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/legacy-http.log",
+      "bytes": 814,
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/migrations.log",
+      "bytes": 1106,
+      "blob": "cd2d17feb39aa5535090f4f9c55f3f2bfc401ec9"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/research-snapshot.json",
+      "bytes": 37597,
+      "blob": "a97cb36102be47bca7c13c4e4c85138d51d15b97"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/research-worker.log",
+      "bytes": 517,
+      "blob": "33acd8437bf3555b01cf4257f917632d45858d5f"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/results.json",
+      "bytes": 5392,
+      "blob": "875f2217906ad6516cfe8d7e254c5ab4a5d9a8cb"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/schema-drift.log",
+      "bytes": 31,
+      "blob": "235370d9742ffa1d8a321d08c66438619e04578c"
+    },
+    {
+      "file": "docs/evidence/phase03/postgresql/workflow-http-postgresql.json",
+      "bytes": 1235,
+      "blob": "ad7ad70ef800c1138040c69a3532a33cf907c134"
+    },
+    {
+      "file": "docs/evidence/phase03/prisma-generate.log",
+      "bytes": 734,
+      "blob": "0d9243f15da1e2157e3c8973e3d7a91d753c413f"
+    },
+    {
+      "file": "docs/evidence/phase03/prisma-validate.log",
+      "bytes": 96,
+      "blob": "244a60c99682cebf6c1a2714b6bb2eb9581f95a5"
+    },
+    {
+      "file": "docs/evidence/phase03/render-typecheck.log",
+      "bytes": 182,
+      "blob": "280fb2c50d1515ad6532d33cf33f912fb6569705"
+    },
+    {
+      "file": "docs/evidence/phase03/security-audit.json",
+      "bytes": 66,
+      "blob": "78cc76ae6ad82e546b790829fc718f635eafbceb"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/03-approved.png",
+      "bytes": 331605,
+      "blob": "c437c6d7171d3d0ab8b7f3a98a467d5a4399c2dd"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/03-history.png",
+      "bytes": 322301,
+      "blob": "ffb6180a816841d3721d7e7e81669bdc48558c73"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/03-mobile.png",
+      "bytes": 267833,
+      "blob": "cd078dbfa52005045e5e8b320e236591e14ea5da"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/03-mock-and-failure.png",
+      "bytes": 398364,
+      "blob": "6045fd594b22b245fe06050d1ba7da6006f6f36f"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/03-overview-viewport.png",
+      "bytes": 187031,
+      "blob": "db40c1a482e8101de09426e9dd4e56c686ee6059"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/03-pdf-conflict.png",
+      "bytes": 319892,
+      "blob": "f06f0c2f770e518e598a06b3cdef6247dd4bfbda"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/03-video-index.png",
+      "bytes": 411592,
+      "blob": "1bc699c577bafc2660c1c0327f19a545a0afb86b"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/03-video-viewport.png",
+      "bytes": 206027,
+      "blob": "f2f926a8f4a7b0cb1b54679065fad666736bd332"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/browser-media.json",
+      "bytes": 336,
+      "blob": "2141599e23a9df68ab07fd331e120bfb322f7f66"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/frame-0.jpg",
+      "bytes": 18055,
+      "blob": "1e55442387ed7df919941163339b1866606b2811"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/frame-3333.jpg",
+      "bytes": 16252,
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/frame-6666.jpg",
+      "bytes": 16151,
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/http-results.json",
+      "bytes": 1803,
+      "blob": "e8af4542be898e93d93d916d22f2ccabdb1fb1e2"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/integration.log",
+      "bytes": 1593,
+      "blob": "8ea0d3bccf3e86bde6c8d695d78f78748644aab5"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/legacy-http.log",
+      "bytes": 814,
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/research-snapshot.json",
+      "bytes": 44549,
+      "blob": "8887c70b700bfb0c11a95a07f2ecbce07863387f"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/research-worker.log",
+      "bytes": 517,
+      "blob": "9830b52a25a699ba9be13cb6c3b8e37b03b48358"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/results.json",
+      "bytes": 5125,
+      "blob": "adfd9754897bbfd83ba9e19e16ee5b3658b0c5cf"
+    },
+    {
+      "file": "docs/evidence/phase03/sqlite/workflow-http-sqlite.json",
+      "bytes": 1231,
+      "blob": "2ff07548ad374613f8c2fccc64e96d965a9c3d5d"
+    },
+    {
+      "file": "docs/evidence/phase03/typecheck.log",
+      "bytes": 306,
+      "blob": "44abd43bb908f9fabda8a15befa9b8430f742bb4"
+    },
+    {
+      "file": "docs/evidence/phase03/unit-tests.log",
+      "bytes": 2719,
+      "blob": "44a3d6d553e48f57970a4b2d1b3e829040476904"
+    },
+    {
+      "file": "fixtures/research/README.md",
+      "bytes": 2190,
+      "blob": "1bb75445b3e3ad9f62ae6de3c6ca92453e9735ee"
+    },
+    {
+      "file": "fixtures/research/broken.pdf",
+      "bytes": 55,
+      "blob": "424f4b69ffcbd74b9627c5c6c3240ff10fb89af3"
+    },
+    {
+      "file": "fixtures/research/diagram.png",
+      "bytes": 1506,
+      "blob": "cd2085a1c051e446664a484c61cd16a8e9084271"
+    },
+    {
+      "file": "fixtures/research/source-a.pdf",
+      "bytes": 617,
+      "blob": "22bf9aadf3dd0a5a19737e02165a54a6b9a77254"
+    },
+    {
+      "file": "fixtures/research/source-b.txt",
+      "bytes": 70,
+      "blob": "c0ee9a437c9d563ce3cff0fc6afd75289a547690"
+    },
+    {
+      "file": "package.json",
+      "bytes": 1460,
+      "blob": "201c27f3af30b27f8c5fbed032add98b3164bb5e"
+    },
+    {
+      "file": "plans/03-research.md",
+      "bytes": 2997,
+      "blob": "f2171f1e65eb3e4a4a087166ca78721f5308642f"
+    },
+    {
+      "file": "pnpm-lock.yaml",
+      "bytes": 101343,
+      "blob": "1e13a232551b680b65ac26d801b4a505a1261afd"
+    },
+    {
+      "file": "scripts/research-child.cjs",
+      "bytes": 1738,
+      "blob": "09a43950ebeaee0f9532596f73ad20f2e54c2065"
+    },
+    {
+      "file": "scripts/research-extract.cjs",
+      "bytes": 7632,
+      "blob": "c9ddbacc195c355be6accde5dd1fc51428373e4c"
+    },
+    {
+      "file": "scripts/research-worker.cjs",
+      "bytes": 7034,
+      "blob": "0e516115de04bd21587f207a93d3608f2ce79ba6"
+    },
+    {
+      "file": "tests/ACCEPTANCE.md",
+      "bytes": 7748,
+      "blob": "edd08743112367ed7ccdc829962e8ac8c4a560f3"
+    },
+    {
+      "file": "tests/research/browser-media.cjs",
+      "bytes": 5310,
+      "blob": "0fb9d2f4d88dc064eab2ca797dbd57a3729304b0"
+    },
+    {
+      "file": "tests/research/fixtures.cjs",
+      "bytes": 2456,
+      "blob": "9f33dd4ecd41a797f6d80e1296375c7d756ebeac"
+    },
+    {
+      "file": "tests/research/run.cjs",
+      "bytes": 37446,
+      "blob": "fca6aa540046e19f7ce9b80c7ac9fd9026a9d888"
+    },
+    {
+      "file": "tests/unit/research-media.test.ts",
+      "bytes": 2002,
+      "blob": "115b520c4b5fdacb47e0b7d64bc37fd16ac5c255"
+    },
+    {
+      "file": "tests/unit/research.test.ts",
+      "bytes": 7894,
+      "blob": "be3bb17c0eb4ea8cc577a231df00193d8b5fc3ea"
+    }
+  ]
+}

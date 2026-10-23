@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T03:58:39.775Z",
+  "backend": "sqlite",
+  "projectId": "c14dbdc3-1b3c-4d92-ada8-a75ed36f5506",
+  "readOnly": true,
+  "media": {
+    "currentTime": 3.615812,
+    "duration": 10,
+    "readyState": 4,
+    "decodedWidth": 1080,
+    "decodedHeight": 1920,
+    "error": null
+  },
+  "image": {
+    "decodedWidth": 640,
+    "decodedHeight": 360,
+    "semanticUnderstanding": "unconfigured"
+  },
+  "pageErrors": []
+}

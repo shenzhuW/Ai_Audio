@@ -6,9 +6,12 @@ const fs = require('node:fs'),
 const root = path.resolve(__dirname, '../..'),
   appDir = path.join(root, 'apps/web'),
   req = createRequire(path.join(appDir, 'package.json'));
+const remote = process.argv.includes('--remote');
 async function verify(backend) {
   const evidence = path.join(root, 'docs/evidence/phase03', backend),
     saved = JSON.parse(fs.readFileSync(path.join(evidence, 'results.json')));
+  const output = remote ? path.join(root, 'docs/evidence/phase03/remote', backend) : evidence;
+  fs.mkdirSync(output, { recursive: true });
   if (
     saved.status !== 'PASS' ||
     !/^[a-z0-9]+$/.test(saved.runId) ||
@@ -82,7 +85,8 @@ async function verify(backend) {
       })
       .waitFor();
     await page.evaluate(() => scrollTo(0, 0));
-    await page.screenshot({ path: path.join(evidence, '03-overview-viewport.png') });
+    await page.waitForTimeout(200);
+    await page.screenshot({ path: path.join(output, '03-overview-viewport.png') });
     const videoSource = data.sources.find(
       (s) => s.sourceType === 'video' && s.metadata?.durationMs === 10000,
     );
@@ -123,7 +127,39 @@ async function verify(backend) {
       throw Error('Real video decode failed');
     await page.waitForTimeout(200);
     await page.evaluate(() => scrollTo(0, 0));
-    await page.screenshot({ path: path.join(evidence, '03-video-viewport.png') });
+    await page.screenshot({ path: path.join(output, '03-video-viewport.png') });
+    let image;
+    if (remote) {
+      const imageSource = data.sources.find(
+        (s) =>
+          s.sourceType === 'image' &&
+          s.metadata?.width === 640 &&
+          data.indexes.some((x) => x.sourceId === s.id && x.provenance === 'real'),
+      );
+      if (!imageSource) throw Error('Missing real image metadata fixture');
+      await page
+        .getByRole('button', { name: new RegExp(imageSource.title + '.*IMAGE') })
+        .first()
+        .click();
+      await page.waitForFunction(() =>
+        Array.from(document.querySelectorAll('img')).some(
+          (i) => i.complete && i.naturalWidth === 640 && i.naturalHeight === 360,
+        ),
+      );
+      image = await page.evaluate(() => {
+        const i = Array.from(document.querySelectorAll('img')).find(
+          (i) => i.naturalWidth === 640 && i.naturalHeight === 360,
+        );
+        return {
+          decodedWidth: i.naturalWidth,
+          decodedHeight: i.naturalHeight,
+          semanticUnderstanding: 'unconfigured',
+        };
+      });
+      await page.evaluate(() => scrollTo(0, 0));
+      await page.screenshot({ path: path.join(output, '03-image-index.png'), fullPage: true });
+      if (pageErrors.length) throw Error('Browser page error');
+    }
     const result = {
       status: 'PASS',
       at: new Date().toISOString(),
@@ -131,10 +167,11 @@ async function verify(backend) {
       projectId: saved.projectId,
       readOnly: true,
       media,
+      ...(image ? { image } : {}),
       pageErrors,
     };
     fs.writeFileSync(
-      path.join(evidence, 'browser-media.json'),
+      path.join(output, 'browser-media.json'),
       JSON.stringify(result, null, 2) + '\n',
     );
     console.log('PASS focused real browser PDF view and video playback: ' + backend);

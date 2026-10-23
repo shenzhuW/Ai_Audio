@@ -149,6 +149,7 @@ export async function researchFile(r: NextRequest, sourceId: string, blobId: str
     const { source, indexes } = await (await research()).source(sourceId, 'local-user');
     const blob = [
       source.blob,
+      ...(source.webCapture ? [source.webCapture.rawBlob] : []),
       ...indexes.flatMap((x) => x.frameRefs?.map((f) => f.blob) || []),
     ].find((x) => x.id === blobId);
     if (!blob) throw new AppError('NOT_FOUND', '此文件不属于当前来源。', 404);

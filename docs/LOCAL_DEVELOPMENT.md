@@ -1,5 +1,47 @@
 # 本地开发与验证 · Phase 00 / 00.5 / 01
 
+## Phase 04.5：本机 Codex 真实能力
+
+目前固定验证 `codex-cli 0.163.0`、ChatGPT登录、gpt-6.1-sol。只调用用户已有Codex安装，不复制登录文件、不设置额外API Key、不安装SDK。运行 `codex --version` 和 `codex login status` 即可核查，不要打印auth.json。版本不同会返回CODEX_VERSION_UNVALIDATED，先重新做工具/功能PoC再更新版本，不能删除检查或开全权限。
+
+```powershell
+# 保留原有 DATABASE_URL / STUDIO_DATA_DIR，不覆盖 .env 或用户数据。
+$env:STUDIO_CODEX_ENABLED='1'
+pnpm dev
+# 另两个终端保持相同原数据配置，并各自设置 STUDIO_CODEX_ENABLED=1：
+pnpm research:worker
+pnpm worker
+```
+
+第03页输入检索词并点“Codex实时搜索”，或上传图片/视频后勾选“Codex真实视觉分析”。第04页选择“Codex CLI · 本机ChatGPT登录”整体/局部写稿。默认仍为显式选择；未启用或登录/版本错误会失败，不回退为假真实结果。搜索生成的标题/URL/摘要可查看；摘要与独立网页原文分开；原文/HTML是受保护文本附件，不执行页面。视觉不自动OCR匹配/核实Claim，不处理音轨，不正式裁剪。
+
+运行时每次预检：只读/临时目录/忽略用户配置和规则、模型Shell/补丁禁用、已配置MCP服务逐项disabled且启用数0、插件/Hook/技能/浏览器/子Agent禁用；独立V8 Host不能访问Node文件/进程API。三个空的MCP资源辅助入口由此版本固定保留，不是可用连接。不要把此边界称为任意TSX的OS沙箱。可通过可信环境变量STUDIO_CODEX_BINARY指定本机codex.exe绝对路径，不能从UI或用户输入设置。
+
+限额：模型子进程120秒/最多4MiB事件/单次6张PNG或JPEG且每张8MiB；研究含三帧任务最多240秒，心跳每2秒续30秒租约。静态网页只处理HTTP(S)默认端口，无凭据/Cookie/页面JS；IPv4公共地址校验与DNS固定、每次重定向复核，最多3次、1MiB、15秒（含DNS）。IPv6直连/仅IPv6、动态JS页面和非UTF8/非文本页面会明确失败，不强行绕过。
+
+真实调用消耗当前账号额度/适用credits，可能与其他Codex活动共享；exec未公开剩余额度，记录unknown，可在账号usage dashboard或CLI /status查看。项目金额预算暂不折算为ChatGPT剩余额度，不承诺永久免费、不自动购买credits。停止Worker后设STUDIO_CODEX_ENABLED=0可关闭运行时；保留新代码/数据库，旧程序不能直接读取新增web-fetch/real搜索文档。
+
+实际验证命令（使用新的隔离库/目录，需真实账号可用额度）：
+
+```powershell
+pnpm test
+pnpm typecheck
+pnpm render:typecheck
+pnpm build
+node scripts/codex-poc.cjs structured
+node scripts/codex-poc.cjs search
+node scripts/codex-poc.cjs image
+node scripts/codex-poc.cjs safety
+$env:STUDIO_UI_BROWSER_PATH='C:/Program Files/Google/Chrome/Application/chrome.exe'
+node tests/real-ai/run.cjs
+pnpm db:local start
+node tests/real-ai/run.cjs --postgres
+node tests/real-ai/capture.cjs
+pnpm db:local stop
+```
+
+`video` PoC需先用FFmpeg从已有测试视频3333ms抽帧到`.cache/phase045-frame-3333.jpg`；完整双库验收会自己抽三帧并独立比对SHA。`capture.cjs`只重拍已通过的隔离项目，不再次调用模型。研究公共证据投影仅保存原文短预览/长度/SHA，原件在私有数据目录；实际结果和全部失败记录见[交付](PHASE_04_5_DELIVERY.md)。
+
 ## 运行
 
 要求 Node.js >= 22.13，推荐与本次验证一致的 Node 24；pnpm 10.34.4。仓库目录是 `AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B`，不是它的父目录。

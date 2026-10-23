@@ -31,13 +31,15 @@ process.on('message', (message) => {
     progress: 0.1,
   });
   const result = ResearchResultSchema.parse(
-    await analyze(input, raw.dataDir, path.join(dir, 'frames'), limits),
+    await analyze(input, raw.dataDir, path.join(dir, 'frames'), limits, controller.signal),
   );
   if (controller.signal.aborted) throw Error('RESEARCH_CANCELLED');
   fs.writeFileSync(path.join(dir, 'result.json'), JSON.stringify(result, null, 2), { flag: 'wx' });
+  if (result.aiRuns) process.send?.({ aiRuns: result.aiRuns });
   process.send?.({ message: '内容提取完成；未自动核实 Claim。', progress: 0.9 });
 })()
   .catch((e) => {
+    if (e.aiRuns || e.aiRun) process.send?.({ aiRuns: e.aiRuns || [e.aiRun] });
     console.error(
       e.code === 'PROVIDER_NOT_CONFIGURED'
         ? 'PROVIDER_NOT_CONFIGURED'

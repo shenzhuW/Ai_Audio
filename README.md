@@ -2,9 +2,9 @@
 
 **用途**：以用户确认的产品需求和 10 页面 v2 原型逐阶段开发。文档基线 v1.3，整理日期：2026-10-22。
 
-## 当前实现状态：Phase 04 完成，等待验收
+## 当前实现状态：Phase 04.5 本地交付，等待审核
 
-已加入十页工作区、真实项目 CRUD/原件、修订审核、依赖失效、持久任务、真实 Remotion MP4 和研究来源/Claim/内容索引。**Phase 00–03 已验收；Phase 04 实现结构化口播段落、固定研究引用、叙事/节奏、估时、版本差异、段落范围依赖及显式 Mock 写稿，等待用户审核。** [Phase 04 交付](docs/PHASE_04_DELIVERY.md)、[可复现文稿样例](fixtures/script/README.md)。真实写作模型、网络搜索、视觉/OCR/ASR 与真实配音未配置；不把 Mock、文件元数据或文字估时当作 AI 理解/事实核验/实测音频。原 API、数据与可信组件限制保留，[内部测试优先策略](docs/INTERNAL_TEST_POLICY_UPDATE.md) 有效。未进入 Phase 05；人工产品体验按用户决定延后。
+已加入十页工作区、项目CRUD/原件、修订审核/依赖/任务、真实Remotion MP4、研究来源/Claim/内容索引和结构化口播。Phase04已远程交付；**Phase04.5优先复用本机Codex CLI / ChatGPT登录，实现真实live搜索、独立原文获取、图片/视频关键帧视觉和整体/局部文稿生成，已完成本地双库/浏览器验收，等待审核。** [Phase04.5交付](docs/PHASE_04_5_DELIVERY.md)、[启用方法](docs/LOCAL_DEVELOPMENT.md#phase-045本机-codex-真实能力)、[自制样例](fixtures/real-ai/README.md)。默认显式启用；SDK已评估，暂保留CLI传输。ASR、真实配音、任意代码OS沙箱仍待后续；模型描述不等于事实核实，估时不等于实测音频。原API/数据及可信组件限制保留，[内部测试优先策略](docs/INTERNAL_TEST_POLICY_UPDATE.md)有效。Phase05继续暂停；人工产品体验按用户决定延后。
 
 先阅读 [Phase 01 交付报告](docs/PHASE_01_DELIVERY.md)、[工作流运行说明](docs/WORKFLOW_IMPLEMENTATION.md)、[本地运行说明](docs/LOCAL_DEVELOPMENT.md)、[PostgreSQL 说明](docs/POSTGRESQL_LOCAL.md) 和 [验收记录](tests/ACCEPTANCE.md)。旧阶段报告保留为当时记录。以下交接包介绍保留作原始研发背景，实际开发进度以实施日志为准。
 
@@ -14,7 +14,7 @@ pnpm install
 pnpm db:generate
 pnpm dev
 # 打开 http://127.0.0.1:3000/projects/new
-# 另一个终端使用相同数据配置，启动 Mock 文本任务 Worker
+# 另一个终端使用相同数据配置，启动文本任务 Worker（Codex启用见本地说明）
 pnpm worker
 # 研究文件的真实元数据/文本/浅索引，使用同样的数据目录/数据库环境
 pnpm research:worker

@@ -6,6 +6,7 @@ import { applyWorkflow, workflowSnapshot } from './engine';
 import type { WorkflowRepository, Collection } from './repository';
 import { MockWorkflowTextProvider } from './provider';
 import { scriptProvider } from '../script/providers';
+import type { AiRun } from '../../domain/ai';
 export function createWorkflowService(repo: WorkflowRepository) {
   return {
     async execute(projectId: string, owner: string, command: WorkflowCommand, key: string) {
@@ -25,7 +26,7 @@ export function createWorkflowService(repo: WorkflowRepository) {
       z.uuid().parse(id);
       return repo.locate(collection, id, owner);
     },
-    async tick(workerId = randomUUID()) {
+    async tick(workerId = randomUUID(), signal?: AbortSignal) {
       let processed = 0;
       for (const projectId of await repo.workProjects()) {
         const { state, project } = await repo.transaction(projectId, 'local-user');
@@ -60,6 +61,11 @@ export function createWorkflowService(repo: WorkflowRepository) {
             if (claimed.provider === 'script') {
               let heartbeat: ReturnType<typeof setInterval> | undefined;
               const controller = new AbortController();
+              const abort = () => controller.abort();
+              signal?.addEventListener('abort', abort, { once: true });
+              if (signal?.aborted) controller.abort();
+              let aiRuns: AiRun[] = [],
+                auditRecorded = false;
               let pending = Promise.resolve();
               try {
                 const input = claimed.scriptInput!;
@@ -87,8 +93,9 @@ export function createWorkflowService(repo: WorkflowRepository) {
                 heartbeat = setInterval(beat, 2000);
                 const provider = scriptProvider(input.mode);
                 const output = await (input.segmentId
-                  ? provider.rewrite(input)
-                  : provider.generate(input));
+                  ? provider.rewrite(input, { signal: controller.signal })
+                  : provider.generate(input, { signal: controller.signal }));
+                if (output.aiRun) aiRuns = [output.aiRun];
                 await pending;
                 if (controller.signal.aborted) continue;
                 await this.execute(
@@ -97,7 +104,10 @@ export function createWorkflowService(repo: WorkflowRepository) {
                   { action: 'finish', jobId: j.id, workerId, scriptResult: output },
                   `finish:${j.id}:${claimed.attempt}`,
                 );
+                auditRecorded = true;
               } catch (e) {
+                const run = (e as { aiRun?: AiRun }).aiRun;
+                if (run) aiRuns = [run];
                 if (e instanceof AppError && ['JOB_CONFLICT', 'REVISION_CONFLICT'].includes(e.code))
                   continue;
                 await this.execute(
@@ -108,12 +118,33 @@ export function createWorkflowService(repo: WorkflowRepository) {
                     jobId: j.id,
                     workerId,
                     errorCode: e instanceof AppError ? e.code : 'SCRIPT_PROVIDER_FAILED',
+                    ...(aiRuns.length ? { aiRuns } : {}),
                   },
                   `finish:${j.id}:${claimed.attempt}`,
                 );
+                auditRecorded = true;
               } finally {
                 if (heartbeat) clearInterval(heartbeat);
                 await pending;
+                signal?.removeEventListener('abort', abort);
+                if (!auditRecorded && aiRuns.length) {
+                  try {
+                    await this.execute(
+                      projectId,
+                      'local-user',
+                      {
+                        action: 'record-ai-run',
+                        jobId: j.id,
+                        workerId,
+                        attempt: claimed.attempt,
+                        aiRuns,
+                      },
+                      randomUUID(),
+                    );
+                  } catch {
+                    /* A newer attempt cannot be overwritten. */
+                  }
+                }
               }
               processed++;
               continue;

@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { AiRunSchema } from './ai';
 const id = z.uuid();
 export const purposeLabels = {
   hook: '开场钩子',
@@ -112,7 +113,12 @@ export const ScriptJobInputSchema = z.object({
     .max(500),
 });
 export const ScriptResultSchema = z
-  .object({ mode: z.enum(['mock', 'real']), segments: editSegments, notes: z.string().max(3000) })
+  .object({
+    mode: z.enum(['mock', 'real']),
+    segments: editSegments,
+    notes: z.string().max(3000),
+    aiRun: AiRunSchema.optional(),
+  })
   .strict();
 export type ScriptSegment = z.infer<typeof ScriptSegmentSchema>;
 export type ScriptJobInput = z.infer<typeof ScriptJobInputSchema>;

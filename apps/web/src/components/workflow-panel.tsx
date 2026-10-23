@@ -95,8 +95,14 @@ function Jobs({
                   : j.provider === 'remotion'
                     ? 'Remotion 真实渲染'
                     : j.provider === 'research'
-                      ? `研究分析 · ${j.researchInput?.mode === 'real' ? '本地真实提取' : j.researchInput?.mode === 'mock' ? 'Mock' : 'Provider 未配置'}`
-                      : '提供方尚未配置'}{' '}
+                      ? `研究分析 · ${j.researchInput?.mode === 'real' ? (j.researchInput.kind === 'search' || j.researchInput.vision ? 'Codex 真实分析' : '本地真实提取') : j.researchInput?.mode === 'mock' ? 'Mock' : 'Provider 未配置'}`
+                      : j.provider === 'script'
+                        ? j.scriptInput?.mode === 'real'
+                          ? 'Codex 真实写稿'
+                          : j.scriptInput?.mode === 'mock'
+                            ? 'Mock 写稿演示'
+                            : '提供方尚未配置'
+                        : '提供方尚未配置'}{' '}
                 · 执行 {j.attempt}/{j.maxAttempts} 次
               </p>
               <code className={s.caption}>{j.id}</code>
@@ -369,7 +375,7 @@ export function WorkflowPanel({
             aside={
               revision ? (
                 <Badge tone={revision.mock ? 'amber' : 'gray'}>
-                  {revision.mock ? 'Mock · 未核实' : '手动内容 · 未核实'}
+                  {revision.mock ? 'Mock · 未核实' : '内容快照 · 未核实'}
                 </Badge>
               ) : undefined
             }

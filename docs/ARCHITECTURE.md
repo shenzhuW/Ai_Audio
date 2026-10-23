@@ -1,10 +1,28 @@
 # 系统技术架构 v1.3
 
-## Phase 04 文稿模块
+## Phase 04.5 Codex 优先真实能力（本地交付，等待审核）
+
+本地单用户运行时数据分析优先复用用户已授权的 Codex CLI / ChatGPT 登录，先验证 CLI，再评估 Codex SDK；不要求先购买搜索或模型 API。它是独立、有限权限的任务执行器，不是当前开发会话，不获得开发进程的工具和权限。真实能力及安全边界必须经 PoC 后才能标已接通；详见 [实施计划](../plans/04-5-real-ai.md)。
+
+Research/Script Worker 只传递冻结的 JSON 和必要图片附件到独立任务目录。必须禁止模型 Shell、文件修改、凭据读取、Git、MCP/插件/Hook 等外部能力，限制时间和输出，保留进程树取消与租约保护。read-only 并不自动限制全盘读取，不能替代工具禁用和实际隔离验证；不可用则 fail closed，不启用不安全运行时。
+
+搜索结果（标题/URL/模型摘要）与独立网页原文获取分开持久化。受限获取器做 SSRF、重定向、大小、类型和超时校验；模型摘要不能成为原文 matched 证据。FFmpeg 关键帧继续绑定源时间戳，Codex 视觉输出标为模型分析。文稿输出仍经 ScriptSegment、固定研究与引用校验，稳定段落 ID/审批/依赖机制不变。每任务记录 Provider、模型、运行 ID、搜索模式、耗时、可获得的实际使用量/额度和错误，未知字段不得猜测。无需持久会话先不引入 app-server，SDK 必须保留相同执行边界。
+
+## Phase 04.5 执行边界与 SDK 取舍
+
+Phase 04.5 实施补充：执行边界在 `scripts/codex-runtime.cjs`。固定 CLI 0.163.0，独立临时目录，ignore-user-config/ignore-rules/ephemeral、只读、stdin JSON和最多六张必要PNG/JPEG，过滤数据库/Provider/Git环境，单次模型120秒和4MiB输出限额。生成单模型 catalog（shell disabled、patch null、扩展工具空）并再次 debug models 验证；逐项将已有MCP服务覆盖为 disabled并预检启用数为零，仅空表不会删除既有配置。
+
+本版本 live 搜索需要独立 Code Mode Host，启用V8数据计算并关闭进程内fallback；实际诊断确认无process/require/fetch/Deno，node:fs导入被拒绝。Code ModeOnly固定暴露三个MCP资源辅助入口，但无启用的服务器，不能声称工具表完全为空。Shell、apply_patch、view_image、子Agent、浏览器、插件等仍禁用，图片只由可信宿主作为附件发送。这不是Phase08任意TSX的OS沙箱。
+
+Research Worker保留本地解析分支，显式vision=true才做图片/FFmpeg关键帧理解；Codex桥接与受限静态网页获取分别位于scripts/codex-research.cjs和public-fetch.cjs。ScriptProvider复用原Workflow Worker，心跳取消传递AbortSignal并终止CLI进程树。Attempt记录workerId，取消后同一尝试只能补记审计，不能恢复租约、写回结果或覆盖后续尝试。
+
+已读SDK 0.164.0仍包装exec --experimental-json，有事件流/AbortSignal/图片/Schema/configOverrides，但缺少本桥接所需ignore-user-config、ignore-rules、ephemeral开关；本阶段暂不引入SDK包。替换传输前必须保留相同安全边界。没有持久会话需求，不启动app-server常驻服务。
+
+## Phase 04 文稿模块（已交付基线）
 
 `domain/script.ts` 与 `server/script/` 负责结构化段落、引用校验、估时、差异和 Provider 契约。Workflow Engine 只增量接入初始化/保存/异步任务、fork 快照及段落范围依赖，原项目/审批/队列/媒体 Worker 不重写；新增 0004 的文稿配置和段落版本表。旧文本修订可读，转换显式进行。
 
-已有 Workflow Worker 消费 provider=script，输入冻结在 Job 中，使用 Mock 或明确未配置 Provider，2 秒心跳沿用 30 秒租约；用户保存导致目标版本变化时不写入迟到结果。未来真实模型实现应通过同一 ScriptProvider 接口，验证输出 schema、引用允许集、超时/取消、使用量与费用，不能将开发会话当作运行时模型。当前没有新的网络调用或 AI 代码执行。
+已有 Workflow Worker 消费 provider=script，输入冻结在 Job 中，Phase04交付时使用Mock或未配置Provider，2秒心跳/30秒租约；用户保存改变目标版本时不写入迟到结果。Phase04.5已通过同一ScriptProvider接口追加真实Codex、Schema/引用校验、超时/取消与使用审计，仍不将开发会话当服务。Phase04原基线没有网络模型调用，不能据此描述Phase04.5的当前能力。
 
 第 04 页采用段落编辑器与原 WorkflowPanel 集成；保存后刷新审核版本，未保存修改阻止审核/切换版本，409 保留编辑缓冲区并允许显式重新载入。来源查看使用固定研究快照和受保护原件，估时/画面意图仅是规划信息；Voice/Director 在后续阶段消费稳定段落 ID。
 

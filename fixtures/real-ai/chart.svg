@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="white"/>
+  <text x="35" y="42" font-family="Arial" font-size="24" fill="black">SELF-AUTHORED VISUAL TEST ONLY</text>
+  <path d="M65 75V300H590" fill="none" stroke="black" stroke-width="3"/>
+  <rect x="120" y="220" width="90" height="80" fill="#e53935"/>
+  <rect x="275" y="140" width="90" height="160" fill="#2e9d45"/>
+  <rect x="430" y="60" width="90" height="240" fill="#1565c0"/>
+  <g font-family="Arial" font-size="23" text-anchor="middle" fill="black">
+    <text x="165" y="210">10</text><text x="320" y="130">20</text><text x="475" y="50">30</text>
+    <text x="165" y="333">A</text><text x="320" y="333">B</text><text x="475" y="333">C</text>
+  </g>
+</svg>

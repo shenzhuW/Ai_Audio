@@ -74,6 +74,7 @@
 | Phase 02 Render PoC | Remotion 官方 Renderer / Player | 真正渲染 MP4 的可运行示例及许可检查 |
 | Phase 03 Research | wallstreet `sourcing.md`、`snap_news.mjs` | 真实来源优先、证据截图、研究与素材授权分界 |
 | Phase 04 Script | wallstreet `SKILL.md`、`thinking.md` | 文稿段落→导演镜头的叙事约束 |
+| Phase 04.5 Real AI | OpenAI Codex官方非交互/SDK/配置/额度文档；与本机版本匹配的工具注册、配置Schema及SDK exec源码 | ChatGPT登录复用、工具与凭据边界、live事件/结构化输出、数据原文与模型分析区分；实际PoC与静态研究分开 |
 | Phase 05 Voice | wallstreet `temp_voice.py` | 词/短语锚点与替换配音的时序失效机制 |
 | Phase 06 Director | wallstreet `thinking.md`、`grammar.md`、`motion.md` | 统一 `DirectorShot`、镜头连续性、过场规范 |
 | Phase 07 Asset | wallstreet `footage.py`、`sourcing.md` | 两阶段检索、联系表、片段时间索引、自动裁剪和权限边界 |

@@ -109,6 +109,14 @@ export const CandidateClipSchema = z.object({
 
 ## Phase 03 已实现研究子集
 
+Phase 04.5在以下已有JSON文档增加可选字段/枚举，不新增表/DDL，不改写0001–0004，不迁移用户库：Source增加web-fetch/fetched及webCapture，保存受保护原始响应文本Blob、最终URL、获取时间、原始SHA、模型摘要、搜索片段和runId；Source.blob为独立提取文本，原始HTML只作附件文本下载，不在同源执行。摘要不放入extractedText。
+
+Search Job增加real；candidates最多5项，记录实际搜索标题/URL/片段、模型摘要、独立fetchStatus/失败原因及可选真实来源。只将成功获取的候选加入同一研究草稿，不自动建立/核实Claim；Mock候选仍为空。searchTrace和aiRuns保存查询/URL及调用审计。Analyze Input可选vision=true，Index.analysis保存model-vision、模型/runId、源SHA/帧时间；视觉文字永不写extractedText，可在技术索引后追加语义索引，不改批准版本，不做裁剪或ASR。
+
+ScriptResult.aiRun/Job.aiRuns可选，记录模型、CLI版本、运行ID（未建立为null）、搜索模式、耗时、实际token、quota=null及未知说明、失败码、工具策略/catalog散列和生效的隔离摘要。Attempt.workerId可选，新claim写入；取消后record-ai-run只允许相同attempt/worker追加元数据，保持cancelled/null租约，不改变用户状态版本；旧执行者不能覆盖新尝试。
+
+新代码兼容旧JSON。回滚优先STUDIO_CODEX_ENABLED=0并保留此版本数据；旧Phase04程序不认识新real搜索/web-fetch文档，不能直接降级读取新记录。代码回退前备份数据库和Blob，不删除数据适配旧程序。
+
 四个独立实体表为 `research_sources` / `research_claims` / `research_claim_evidence` / `research_index_entries`。每行保存经过 Zod 校验的 schemaVersion=1 文档，关联 Project 与具体研究 `revisionId`；证据到 Claim/Source、索引到 Source 使用包含 revisionId 的外键，禁止混用不同修订的实体。
 
 研究资料由该修订拥有，纳入其 contentHash；摘要仍使用原 Revision.text。批准/提交后的研究记录由服务与数据库触发器保持只读，修改时复用原 fork：复制资料快照、生成修订内新实体 ID 并重映射引用，复用原 Blob，不覆写原件。历史 revisionId 保留其完整来源/证据视图。未带研究资料的 Phase 01 文本修订继续使用原内容散列规则，不改写历史。

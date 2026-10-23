@@ -451,7 +451,14 @@ export function applyWorkflow(
     if (!('jobId' in c)) throw new Error('Invalid job action');
     const j = job(c.jobId);
     if ('expectedVersion' in c && j.version !== c.expectedVersion) conflict();
-    if (c.action === 'heartbeat') {
+    if (c.action === 'record-ai-run') {
+      if (j.attempts.at(-1)?.workerId !== c.workerId || j.attempt !== c.attempt)
+        fail('JOB_CONFLICT', '旧执行者不可记录新尝试的使用量。', 409);
+      j.aiRuns = [
+        ...(j.aiRuns || []),
+        ...c.aiRuns.map((run) => ({ ...run, jobAttempt: c.attempt })),
+      ].slice(-50);
+    } else if (c.action === 'heartbeat') {
       if (
         j.state !== 'running' ||
         j.leaseOwner !== c.workerId ||
@@ -498,6 +505,7 @@ export function applyWorkflow(
         j.leaseOwner = c.workerId;
         j.leaseExpiresAt = new Date(now + 30000).toISOString();
         j.attempts.push({
+          workerId: c.workerId,
           number: j.attempt,
           startedAt: time,
           finishedAt: null,
@@ -515,6 +523,13 @@ export function applyWorkflow(
       } else if (c.action === 'finish') {
         if (j.leaseOwner !== c.workerId || Date.parse(j.leaseExpiresAt!) <= now)
           fail('JOB_CONFLICT', 'Worker 租约失效。', 409);
+        const runs =
+          c.aiRuns ?? (c.scriptResult?.aiRun ? [c.scriptResult.aiRun] : c.researchResult?.aiRuns);
+        if (runs)
+          j.aiRuns = [
+            ...(j.aiRuns || []),
+            ...runs.map((run) => ({ ...run, jobAttempt: j.attempt })),
+          ].slice(-50);
         const currentVersion = s.artifacts.find((a) => a.type === j.kind)?.version ?? 0;
         j.errorCode =
           c.errorCode ??
@@ -586,13 +601,19 @@ export function applyWorkflow(
       last.state = j.state as 'succeeded' | 'failed';
       last.finishedAt = time;
       last.errorCode = j.errorCode;
+      if (j.errorCode && j.aiRuns)
+        j.aiRuns = j.aiRuns.map((run) =>
+          run.jobAttempt === j.attempt && !run.failureReason
+            ? { ...run, failureReason: j.errorCode }
+            : run,
+        );
     }
     if (j.state !== 'running') {
       j.leaseOwner = null;
       j.leaseExpiresAt = null;
     }
     // Telemetry/lease updates do not invalidate a user action's state version.
-    if (c.action !== 'heartbeat') j.version++;
+    if (c.action !== 'heartbeat' && c.action !== 'record-ai-run') j.version++;
     j.updatedAt = time;
     if (['remotion', 'research', 'script'].includes(j.provider) && c.action !== 'heartbeat')
       j.logs = [

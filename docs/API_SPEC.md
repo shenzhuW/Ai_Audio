@@ -1,5 +1,13 @@
 # HTTP API 契约 v1.2（建议草案）
 
+## Phase 04.5 Codex 增量（保留原入口）
+
+- research-search-runs的mode增加real：复用原202/jobId，固定查询与研究修订，Worker结果包含真实candidates、searchTrace与aiRuns；只成功独立获取的网页成为Source。Mock与unconfigured语义不变。
+- research-analysis-runs增加可选vision:true，只适用于real图片/视频；默认仍做原本地元数据提取。结果Index.analysis区分模型视觉与原文，图像理解不写extractedText。
+- script-runs的既有real模式接入Codex；输出仍须ScriptSegment、稳定ID、固定Claim/Source验证。STUDIO_CODEX_ENABLED不为1时真实请求失败，不静默返回Mock。
+- GET /jobs/:id及研究/文稿workspace追加可选aiRuns（模型/runId/搜索模式/耗时/token/未知quota/失败/隔离摘要）。内部record-ai-run只补记同一尝试元数据，没有新增用户审核或任意命令接口。
+- Source.webCapture.rawBlob通过原受保护文件下载入口返回text/plain附件；不执行HTML。旧API、鉴权/同源/幂等/409/批准只读保持。
+
 ## Phase 04 已实现文稿 API
 
 | Method | Path | 实际行为 |

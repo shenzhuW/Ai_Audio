@@ -35,9 +35,12 @@ async function tool(executable, args) {
     );
   }
 }
-async function analyze(input, dataDir, workDir, limits) {
+async function analyze(input, dataDir, workDir, limits, signal) {
   if (input.mode === 'unconfigured') return new UnconfiguredProvider().extract(input.blob);
-  if (input.kind === 'search') return new MockSearchProvider().search(input.query);
+  if (input.kind === 'search')
+    return input.mode === 'real'
+      ? require('./codex-research.cjs').search(input, dataDir, signal)
+      : new MockSearchProvider().search(input.query);
   const store = researchBlobStore(path.join(dataDir, 'research-blobs'), 100 * 1024 * 1024),
     blob = input.blob,
     bytes = await store.read(blob);
@@ -64,7 +67,7 @@ async function analyze(input, dataDir, workDir, limits) {
       data: new Uint8Array(bytes),
       standardFontDataUrl:
         path.join(path.dirname(appRequire.resolve('pdfjs-dist/package.json')), 'standard_fonts') +
-      '/',
+        '/',
       isEvalSupported: false,
       useSystemFonts: false,
       disableFontFace: true,
@@ -195,6 +198,9 @@ async function analyze(input, dataDir, workDir, limits) {
     }
   } else if (blob.mime.startsWith('image/') || blob.mime === 'video/mp4')
     warnings.push('视觉/OCR/ASR 提供方未配置；仅真实技术元数据和时间索引，无语义结论。');
-  return { kind: 'analyze', mode: input.mode, metadata, entries, warnings };
+  const result = { kind: 'analyze', mode: input.mode, metadata, entries, warnings };
+  return input.mode === 'real' && input.vision
+    ? require('./codex-research.cjs').vision(result, input, dataDir, signal)
+    : result;
 }
 module.exports.analyze = analyze;

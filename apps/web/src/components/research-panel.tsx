@@ -1,4 +1,5 @@
 'use client';
+import { AiRunDetails } from './ai-run-details';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Card, Badge, Notice, s } from './ui';
 import { WorkflowPanel } from './workflow-panel';
@@ -16,6 +17,7 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
     [title, setTitle] = useState(''),
     [mode, setMode] = useState('real'),
     [query, setQuery] = useState('');
+  const [vision, setVision] = useState(false);
   const [claimText, setClaimText] = useState(''),
     [claimId, setClaimId] = useState(''),
     [asOf, setAsOf] = useState(''),
@@ -206,8 +208,9 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
   return (
     <>
       <Notice>
-        真实原件与本地提取可追溯；文本匹配仅证明引用位置，不等于事实核验。网络搜索、视觉/OCR/ASR
-        尚未配置，Mock 必须显式选择。未知或不可商用限制不阻断内部测试。
+        真实原件与本地提取可追溯；文本匹配仅证明引用位置，不等于事实核验。Codex
+        搜索/视觉须本机启用， 模型摘要和视觉分析不是原文证据；ASR 尚未接通，Mock
+        必须显式选择。未知或不可商用限制不阻断内部测试。
       </Notice>
       {error && (
         <p role="alert" className={s.error}>
@@ -386,8 +389,26 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
                     disabled={!editable}
                   />
                 </label>
-                <p className={s.caption}>真实搜索 Provider 未配置；不会伪造检索结果或文章链接。</p>
+                <p className={s.caption}>
+                  {data.providers.some((p) => p.id === 'codex-cli' && p.configured)
+                    ? 'Codex 已启用；执行时核对本机登录和版本。搜索摘要是模型说明，网页原文另行受限获取；失败不生成引用。'
+                    : '真实搜索 Provider 未配置；不会伪造检索结果或文章链接。'}
+                </p>
                 <div className={s.actions}>
+                  <button
+                    className={s.primary}
+                    disabled={
+                      !editable ||
+                      busy ||
+                      !query.trim() ||
+                      !data.providers.some((p) => p.id === 'codex-cli' && p.configured)
+                    }
+                    onClick={() =>
+                      send(base + '/research-search-runs', { ...edit(), query, mode: 'real' })
+                    }
+                  >
+                    Codex 实时搜索
+                  </button>
                   <button
                     className={s.button}
                     disabled={!editable || busy || !query.trim()}
@@ -427,8 +448,33 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
                     <p>
                       已知限制：{source.knownRestrictions}（{source.licenseStatus}）
                     </p>
-                    {source.sourceUrl && (
-                      <p className={s.workflowMeta}>用户提供 URL，未访问验证：{source.sourceUrl}</p>
+                    {source.sourceUrl &&
+                      (source.webCapture ? (
+                        <p>
+                          <a href={source.sourceUrl} target="_blank" rel="noreferrer">
+                            独立获取的网页来源
+                          </a>
+                        </p>
+                      ) : (
+                        <p className={s.workflowMeta}>
+                          用户提供 URL，未访问验证：{source.sourceUrl}
+                        </p>
+                      ))}
+                    {source.webCapture && (
+                      <details>
+                        <summary>搜索摘要与网页原文分界</summary>
+                        <p>模型摘要（不可直接作证据）：{source.webCapture.modelSummary}</p>
+                        <p>搜索片段：{source.webCapture.searchSnippet}</p>
+                        <p>
+                          实际获取：{source.webCapture.finalUrl} · {source.webCapture.fetchedAt}
+                        </p>
+                        <p className={s.workflowMeta}>
+                          原始响应 SHA256：{source.webCapture.rawSha256}
+                        </p>
+                        <a href={fileUrl(source.webCapture.rawBlob.id)} download>
+                          下载原始 HTML 文本快照（不执行网页）
+                        </a>
+                      </details>
                     )}
                     <div className={s.actions}>
                       <a className={s.button} href={fileUrl(source.blob.id)} download>
@@ -497,12 +543,27 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
                         <option value="unconfigured">未配置 Provider</option>
                       </select>
                     </label>
+                    {(source.sourceType === 'image' || source.sourceType === 'video') && (
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={vision}
+                          disabled={
+                            !editable ||
+                            mode !== 'real' ||
+                            !data.providers.some((p) => p.id === 'codex-cli' && p.configured)
+                          }
+                          onChange={(e) => setVision(e.target.checked)}
+                        />
+                        Codex 真实视觉分析（发送图片或稀疏关键帧，不分析音轨）
+                      </label>
+                    )}
                     <button
                       className={s.primary}
                       disabled={
                         !editable ||
                         busy ||
-                        entries.length > 0 ||
+                        (entries.length > 0 && (!vision || entries.some((e) => e.analysis))) ||
                         data!.jobs.some(
                           (j) =>
                             j.researchInput?.kind === 'analyze' &&
@@ -515,6 +576,7 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
                           ...edit(),
                           sourceId: source.id,
                           mode,
+                          ...(vision && mode === 'real' ? { vision: true } : {}),
                         })
                       }
                     >
@@ -540,7 +602,11 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
                             : entry.contentType}
                       </b>
                       <Badge tone={entry.provenance === 'mock' ? 'amber' : 'gray'}>
-                        {entry.provenance === 'mock' ? 'Mock · 未识别' : '真实提取 · 未核实'}
+                        {entry.provenance === 'mock'
+                          ? 'Mock · 未识别'
+                          : entry.analysis
+                            ? '真实模型视觉 · 未核实'
+                            : '真实提取 · 未核实'}
                       </Badge>
                     </div>
                     <p>{entry.summary}</p>
@@ -619,7 +685,26 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
                             {job.errorCode}
                           </p>
                         )}
-                        {job.researchResult?.kind === 'search' && <p>{job.researchResult.notes}</p>}
+                        {job.researchResult?.kind === 'search' && (
+                          <>
+                            <p>{job.researchResult.notes}</p>
+                            {job.researchResult.candidates.map((c) => (
+                              <div key={c.url}>
+                                <a href={c.url} target="_blank" rel="noreferrer">
+                                  {c.title}
+                                </a>
+                                <p>模型摘要：{c.summary}</p>
+                                <p>
+                                  独立原文获取：
+                                  {c.fetchStatus === 'fetched'
+                                    ? '已保存原文，事实未核实'
+                                    : `失败 · ${c.failureReason}`}
+                                </p>
+                              </div>
+                            ))}
+                          </>
+                        )}
+                        <AiRunDetails runs={job.aiRuns} />
                         {job.researchResult?.kind === 'analyze' &&
                           job.researchResult.warnings.map((w, i) => (
                             <p key={i} className={s.caption}>

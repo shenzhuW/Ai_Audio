@@ -1,5 +1,16 @@
 # 验收与测试记录（Codex 持续填写）
 
+## Phase 04.5 本地真实能力验收（2026-10-23）
+
+| ID | 验收条件 | 实际状态 | 证据 |
+|---|---|---|---|
+| AI-045-01 | Codex ChatGPT登录复用、live搜索和标题/URL/摘要持久化，独立原文获取 | PASS，真实CLI/Worker，两库 | [结果](../docs/evidence/phase045/)、[交付](../docs/PHASE_04_5_DELIVERY.md) |
+| AI-045-02 | 图片和3帧视频真实理解，SHA与原视频时间戳一致，非原文/非ASR | PASS，真实模型，两库 | 每库research-snapshot/frames/03-real-vision及video截图 |
+| AI-045-03 | 真实整体/局部ScriptSegment，稳定ID、引用、审批只读/Fork、重启 | PASS，两库 | SQLite9组/PG10组；04-real-script.png |
+| AI-045-04 | 禁Shell/补丁/外部MCP，V8不可读Node文件；超时、取消与审计fencing | PASS，本机固定0.163.0，非通用OS沙箱 | cli/safety.json、timeout.json、36项单元及两库取消检查 |
+| AI-045-05 | SDK/账号额度如实说明 | SDK0.164.0源码评估；未采用/未实际运行；剩余额度unknown | REFERENCE_REVIEW_LOG、codex-environment.json；未把此项标为SDK集成通过 |
+| AI-045-06 | Phase03/04及原HTTP/工作流回归 | PASS；一次原生进程异常后独立重跑通过 | 本阶段regression目录；失败/重试说明见交付 |
+
 > 以下所有测试初始状态均为 **NOT RUN**。只有实际运行并保存证据后才允许标记 PASS。Mock 功能即便测试通过也必须记录 Mock，不等于完整外部服务可用。
 
 | ID | 阶段 | 验收条件 | 状态 | 证据 / 命令 / 视频文件 |

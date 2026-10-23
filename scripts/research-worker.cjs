@@ -7,6 +7,7 @@ const { spawn, spawnSync } = require('node:child_process'),
 const { workflow } = require('../apps/web/src/server/workflow/index.ts');
 const { config } = require('../apps/web/src/server/config.ts');
 const { ResearchResultSchema } = require('../apps/web/src/domain/research.ts');
+const { AiRunSchema } = require('../apps/web/src/domain/ai.ts');
 const { isolatedEnvironment } = require('./render-worker.cjs');
 const root = path.resolve(__dirname, '..');
 let stopping = false,
@@ -28,7 +29,9 @@ async function execute(service, projectId, queued) {
     pending = Promise.resolve(),
     fenced = false,
     latest = '启动独立研究解析器',
-    progress = 0;
+    progress = 0,
+    aiRuns = [],
+    auditRecorded = false;
   const abort = () => {
     if (!child || child.exitCode !== null) return;
     if (child.connected) child.send('cancel', () => {});
@@ -66,6 +69,15 @@ async function execute(service, projectId, queued) {
       { flag: 'wx' },
     );
     const env = isolatedEnvironment();
+    if (
+      job.researchInput?.mode === 'real' &&
+      (job.researchInput?.kind === 'search' || job.researchInput?.vision)
+    ) {
+      Object.assign(env, require('./codex-runtime.cjs').safeEnvironment());
+      if (process.env.STUDIO_CODEX_ENABLED === '1') env.STUDIO_CODEX_ENABLED = '1';
+      if (process.env.STUDIO_CODEX_BINARY)
+        env.STUDIO_CODEX_BINARY = process.env.STUDIO_CODEX_BINARY;
+    }
     if (process.env.STUDIO_FFMPEG_PATH) env.STUDIO_FFMPEG_PATH = process.env.STUDIO_FFMPEG_PATH;
     child = spawn(
       process.execPath,
@@ -88,6 +100,10 @@ async function execute(service, projectId, queued) {
     child.stdout.on('data', append);
     child.stderr.on('data', append);
     child.on('message', (message) => {
+      if (Array.isArray(message?.aiRuns)) {
+        const parsed = AiRunSchema.array().max(10).safeParse(message.aiRuns);
+        if (parsed.success) aiRuns = parsed.data;
+      }
       if (typeof message?.message === 'string') latest = message.message.slice(0, 1500);
       if (Number.isFinite(message?.progress))
         progress = Math.max(progress, Math.min(0.99, message.progress));
@@ -104,11 +120,14 @@ async function execute(service, projectId, queued) {
         }));
     await beat();
     heartbeat = setInterval(beat, 2000);
-    timeout = setTimeout(() => {
-      latest = 'RESEARCH_TIMEOUT';
-      fenced = true;
-      abort();
-    }, 120000);
+    timeout = setTimeout(
+      () => {
+        latest = 'RESEARCH_TIMEOUT';
+        fenced = true;
+        abort();
+      },
+      job.researchInput?.vision || job.researchInput?.kind === 'search' ? 240000 : 120000,
+    );
     const exit = await exited;
     clearInterval(heartbeat);
     clearTimeout(timeout);
@@ -135,6 +154,7 @@ async function execute(service, projectId, queued) {
       message: '提取结果已校验；正在写入同一研究草稿，不代表已核实。',
     });
     const done = await send({ action: 'finish', jobId: job.id, workerId, researchResult: result });
+    auditRecorded = true;
     console.log(
       `Research job ${job.id}: ${done.state}${done.errorCode ? ' ' + done.errorCode : ''}`,
     );
@@ -144,12 +164,32 @@ async function execute(service, projectId, queued) {
     const errorCode = /^[A-Z_]{3,80}$/.test(e.message) ? e.message : 'RESEARCH_PROCESS_FAILED';
     try {
       await send({ action: 'heartbeat', jobId: job.id, workerId, progress, message: errorCode });
-      await send({ action: 'finish', jobId: job.id, workerId, errorCode });
+      await send({
+        action: 'finish',
+        jobId: job.id,
+        workerId,
+        errorCode,
+        ...(aiRuns.length ? { aiRuns } : {}),
+      });
+      auditRecorded = true;
     } catch {
       /* Cancelled/expired owner cannot write. */
     }
     console.error(`Research attempt ${job.id}: ${errorCode}`);
   } finally {
+    if (!auditRecorded && aiRuns.length) {
+      try {
+        await send({
+          action: 'record-ai-run',
+          jobId: job.id,
+          workerId,
+          attempt: job.attempt,
+          aiRuns,
+        });
+      } catch {
+        /* New attempt owns its audit. */
+      }
+    }
     clearInterval(heartbeat);
     clearTimeout(timeout);
     clearTimeout(killTimer);

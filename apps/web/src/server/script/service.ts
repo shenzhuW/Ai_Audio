@@ -104,6 +104,11 @@ export function createScriptService(repo: WorkflowRepository) {
         },
         jobs: s.jobs.filter((j) => j.kind === 'script'),
         providers: [
+          {
+            id: 'codex-cli',
+            mode: process.env.STUDIO_CODEX_ENABLED === '1' ? 'real' : 'unconfigured',
+            configured: process.env.STUDIO_CODEX_ENABLED === '1',
+          },
           { id: 'script-model', mode: 'unconfigured', configured: false },
           { id: 'explicit-script-fixture', mode: 'mock', configured: true },
         ],

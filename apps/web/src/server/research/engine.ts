@@ -133,6 +133,7 @@ export function applyResearchCommand(
         sourceId: source(c.sourceId).id,
         blob: structuredClone(source(c.sourceId).blob),
         mode: c.mode,
+        ...(c.vision ? { vision: true } : {}),
       },
     };
   if (c.action === 'research-search')
@@ -243,7 +244,46 @@ export function finishResearch(
     a = s.artifacts.find((x) => x.id === r?.artifactId);
   if (!r || r.status !== 'draft' || a?.currentRevisionId !== r.id) return 'TARGET_CHANGED';
   if (input.kind !== result.kind || input.mode !== result.mode) return 'INVALID_RESULT';
-  if (input.kind === 'search' && result.kind === 'search') return null;
+  if (input.kind === 'search' && result.kind === 'search') {
+    if (result.mode === 'mock' && result.candidates.length) return 'INVALID_RESULT';
+    const fetched = result.candidates.filter((x) => x.fetchStatus === 'fetched');
+    if (fetched.some((c) => !c.source || !c.extractedText || c.source.sourceUrl !== c.url))
+      return 'INVALID_RESULT';
+    if (s.researchSources.filter((x) => x.revisionId === r.id).length + fetched.length > 100)
+      return 'RESEARCH_LIMIT';
+    for (const candidate of fetched) {
+      if (s.researchSources.some((x) => x.revisionId === r.id && x.sourceUrl === candidate.url))
+        continue;
+      const source = {
+        ...candidate.source!,
+        id: randomUUID(),
+        projectId: a.projectId,
+        revisionId: r.id,
+        schemaVersion: 1 as const,
+        retrievedAt: time,
+        selected: true,
+        provenance: 'web-fetch' as const,
+        urlStatus: 'fetched' as const,
+      };
+      s.researchSources.push(source);
+      s.researchIndexes.push({
+        id: randomUUID(),
+        revisionId: r.id,
+        sourceId: source.id,
+        schemaVersion: 1,
+        contentType: 'text',
+        provenance: 'real',
+        keywords: [],
+        summary: '独立受限获取器提取的网页文本；模型摘要单独保存，事实未独立核实。',
+        extractedText: candidate.extractedText,
+      });
+    }
+    r.researchSchemaVersion = 1;
+    r.version++;
+    r.updatedAt = time;
+    a.version++;
+    return null;
+  }
   if (input.kind !== 'analyze' || result.kind !== 'analyze') return 'INVALID_RESULT';
   const source = s.researchSources.find((x) => x.id === input.sourceId && x.revisionId === r.id);
   if (
@@ -254,7 +294,8 @@ export function finishResearch(
     result.metadata.mime !== input.blob.mime
   )
     return 'INVALID_RESULT';
-  if (s.researchIndexes.some((x) => x.sourceId === source.id)) return 'ANALYSIS_EXISTS';
+  if (s.researchIndexes.some((x) => x.sourceId === source.id && (!input.vision || x.analysis)))
+    return 'ANALYSIS_EXISTS';
   for (const entry of result.entries) {
     if (entry.provenance !== result.mode) return 'INVALID_RESULT';
     if (

@@ -52,6 +52,12 @@ export class MockVisionProvider implements VisionProvider {
 }
 export const researchProviderStatus = [
   {
+    id: 'codex-cli',
+    mode: process.env.STUDIO_CODEX_ENABLED === '1' ? 'real' : 'unconfigured',
+    capabilities: ['实时搜索', '图片与视频关键帧语义', '结构化文稿；不含 ASR'],
+    configured: process.env.STUDIO_CODEX_ENABLED === '1',
+  },
+  {
     id: 'local-content',
     mode: 'real',
     capabilities: ['PDF文本与页数', '图片尺寸', 'FFprobe', '稀疏视频抽帧'],
@@ -72,6 +78,8 @@ export const researchProviderStatus = [
   },
 ] as const;
 export function researchProviderName(input: ResearchJobInput) {
+  if (input.mode === 'real' && (input.kind === 'search' || input.vision))
+    return 'Codex CLI · 真实模型分析，未独立核实';
   return input.mode === 'real'
     ? '本地真实提取'
     : input.mode === 'mock'

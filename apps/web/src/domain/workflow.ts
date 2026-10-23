@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { AiRunSchema } from './ai';
 import { RenderInputSchema, RenderResultSchema } from './motion';
 import {
   scriptCommands,
@@ -73,6 +74,7 @@ export const ApprovalSchema = z.object({
   expectedVersion: version,
 });
 export const AttemptSchema = z.object({
+  workerId: z.string().min(1).optional(),
   number: version,
   startedAt: at,
   finishedAt: at.nullable(),
@@ -103,6 +105,7 @@ export const WorkflowJobSchema = z.object({
   researchResult: ResearchResultSchema.optional(),
   scriptInput: ScriptJobInputSchema.optional(),
   scriptResult: ScriptResultSchema.optional(),
+  aiRuns: z.array(AiRunSchema).max(50).optional(),
   progress: z.number().min(0).max(1).optional(),
   heartbeatAt: at.optional(),
   logs: z
@@ -145,6 +148,15 @@ export const WorkflowStateSchema = z.object({
 const revisionAction = { revisionId: id, expectedVersion: version };
 const jobAction = { jobId: id, expectedVersion: version };
 export const WorkflowCommandSchema = z.discriminatedUnion('action', [
+  z
+    .object({
+      action: z.literal('record-ai-run'),
+      jobId: id,
+      workerId: z.string().min(1),
+      attempt: version,
+      aiRuns: z.array(AiRunSchema).max(10),
+    })
+    .strict(),
   ...researchCommands,
   ...scriptCommands,
   z.object({ action: z.literal('render'), input: RenderInputSchema }).strict(),
@@ -210,6 +222,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       renderResult: RenderResultSchema.optional(),
       researchResult: ResearchResultSchema.optional(),
       scriptResult: ScriptResultSchema.optional(),
+      aiRuns: z.array(AiRunSchema).max(10).optional(),
     })
     .strict(),
   z.object({ action: z.literal('recover'), jobId: id }).strict(),

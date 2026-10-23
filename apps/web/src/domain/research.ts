@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { AiRunSchema } from './ai';
 const id = z.uuid(),
   time = z.iso.datetime(),
   short = z.string().trim().max(2000);
@@ -72,6 +73,19 @@ const sourceFields = {
     .enum(['unknown', 'research_only', 'pending', 'cleared', 'blocked'])
     .default('unknown'),
   blob: ResearchBlobSchema,
+  webCapture: z
+    .object({
+      rawBlob: ResearchBlobSchema,
+      finalUrl: z.url(),
+      fetchedAt: z.iso.datetime(),
+      rawSha256: z.string().regex(/^[a-f0-9]{64}$/),
+      modelSummary: short,
+      searchSnippet: short,
+      extraction: z.literal('static-html-basic'),
+      runId: z.string().max(150),
+    })
+    .strict()
+    .optional(),
 };
 export const ResearchUploadSourceSchema = z.object(sourceFields).strict();
 export const SourceSchema = z
@@ -83,8 +97,8 @@ export const SourceSchema = z
     schemaVersion: z.literal(1),
     retrievedAt: time,
     selected: z.boolean(),
-    provenance: z.literal('user-upload'),
-    urlStatus: z.literal('user_supplied'),
+    provenance: z.enum(['user-upload', 'web-fetch']),
+    urlStatus: z.enum(['user_supplied', 'fetched']),
     metadata: ResearchMetadataSchema.optional(),
   })
   .strict();
@@ -134,6 +148,16 @@ export const IndexContentSchema = z
       .max(6)
       .optional(),
     provenance: z.enum(['real', 'mock']),
+    analysis: z
+      .object({
+        kind: z.literal('model-vision'),
+        model: z.string(),
+        runId: z.string(),
+        sourceSha256: z.string().regex(/^[a-f0-9]{64}$/),
+        frameTimeMs: z.number().int().nonnegative().optional(),
+      })
+      .strict()
+      .optional(),
   })
   .strict()
   .superRefine((e, c) => {
@@ -157,6 +181,7 @@ export const ResearchJobInputSchema = z.discriminatedUnion('kind', [
       sourceId: id,
       blob: ResearchBlobSchema,
       mode: z.enum(['real', 'mock', 'unconfigured']),
+      vision: z.boolean().optional(),
     })
     .strict(),
   z
@@ -164,7 +189,7 @@ export const ResearchJobInputSchema = z.discriminatedUnion('kind', [
       kind: z.literal('search'),
       revisionId: id,
       query: z.string().trim().min(1).max(2000),
-      mode: z.enum(['mock', 'unconfigured']),
+      mode: z.enum(['real', 'mock', 'unconfigured']),
     })
     .strict(),
 ]);
@@ -176,14 +201,35 @@ export const ResearchResultSchema = z.discriminatedUnion('kind', [
       metadata: ResearchMetadataSchema,
       entries: z.array(IndexContentSchema).max(100),
       warnings: z.array(short).max(30),
+      aiRuns: z.array(AiRunSchema).max(10).optional(),
     })
     .strict(),
   z
     .object({
       kind: z.literal('search'),
-      mode: z.literal('mock'),
+      mode: z.enum(['real', 'mock']),
       notes: short.min(1),
-      candidates: z.array(z.never()).max(0),
+      candidates: z
+        .array(
+          z
+            .object({
+              title: z.string().min(1).max(250),
+              url: z.url().max(2000),
+              summary: short,
+              snippet: short,
+              fetchStatus: z.enum(['fetched', 'failed']),
+              failureReason: z.string().max(100).optional(),
+              source: ResearchUploadSourceSchema.optional(),
+              extractedText: z.string().max(100000).optional(),
+            })
+            .strict(),
+        )
+        .max(5),
+      aiRuns: z.array(AiRunSchema).max(10).optional(),
+      searchTrace: z
+        .array(z.object({ query: short, urls: z.array(z.url().max(2000)).max(50) }).strict())
+        .max(20)
+        .optional(),
     })
     .strict(),
 ]);
@@ -227,6 +273,7 @@ export const researchCommands = [
       ...edit,
       sourceId: id,
       mode: z.enum(['real', 'mock', 'unconfigured']),
+      vision: z.boolean().optional(),
     })
     .strict(),
   z
@@ -234,7 +281,7 @@ export const researchCommands = [
       action: z.literal('research-search'),
       ...edit,
       query: z.string().trim().min(1).max(2000),
-      mode: z.enum(['mock', 'unconfigured']),
+      mode: z.enum(['real', 'mock', 'unconfigured']),
     })
     .strict(),
 ] as const;

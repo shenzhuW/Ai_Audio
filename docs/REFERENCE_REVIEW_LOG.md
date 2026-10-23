@@ -2,7 +2,18 @@
 
 > 本文件由 Codex 在各阶段填写。未阅读不得写成已验证。每条记录需标注查阅日期和可得的 commit SHA。
 
-## 待阅读清单
+## 2026-10-23 — Phase 04.5 — Codex CLI / SDK 数据分析
+
+- 本机实际CLI为0.163.0，ChatGPT登录已确认；未读取/打印auth.json或Token。实读官方[非交互](https://learn.chatgpt.com/docs/non-interactive-mode)、[SDK](https://learn.chatgpt.com/docs/codex-sdk)、[配置](https://learn.chatgpt.com/docs/config-file/config-reference)、[额度](https://learn.chatgpt.com/docs/pricing)。登录可由exec复用，但调用消耗账号额度，模型/套餐/任务/周限制可能不同；exec事件只提供本次token，未提供剩余额度，记unknown；不承诺免费，不自行购买服务。
+- 固定[rust-v0.163.0工具注册](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/core/src/tools/spec_plan.rs)，blob `fd5b5e14eeeb57b5be78af53d3f855702167dcc7`：shell_tool关闭只移除命令工具；patch按model_info独立注册；CodeModeOnly即使无MCP服务器仍加入三个资源辅助入口。对应[测试](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/core/src/tools/spec_plan_tests.rs) blob `1a8a0661878c6e847b5ed61c80c328c1444afc29`核对了关闭命令工具的注册断言。
+- [配置Schema](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/core/config.schema.json)，blob `4aba1bab6cd2cbcc179a5de802731f2775c6bc88`：确认model_catalog_json、features、skills、权限与搜索配置字段。自建固定模型catalog只降低工具能力，不复制/修改Codex源码或认证实现。按实际生效catalog再次核对shell disabled、patch null、扩展工具空。
+- [Code Mode Host](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/code-mode-host/src/lib.rs)及[Runtime Cargo](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/code-mode-runtime/Cargo.toml)，后者blob `5a4d9e1d0930806689a04bc5857b177656bd775b`包含V8 sandbox特性；执行处理器/Delegate核对通过注册工具集转发。实际诊断确认没有process/require/fetch/Deno，node:fs导入被拒绝，不以模型自述替代配置/源码检查。未声称任意代码OS沙箱已验证。
+- 一次安全门禁因三个MCP辅助入口判失败；随后核查本机有2项MCP配置（未保存名称/连接/凭据），增加逐项disabled覆盖和启用数0预检。空表不清除已有配置，不能依赖此假设。辅助入口仍列出但没有服务器，明确保留这一边界。最初失败记录保留，不算真实搜索/视觉失败后的Mock替代。
+- npm实际查询SDK最新版0.164.0、Apache-2.0；实读[rust-v0.164.0 exec.ts](https://github.com/openai/codex/blob/rust-v0.164.0/sdk/typescript/src/exec.ts)，blob `e1735d2c764fdba636bc2ff3bc834c13119bce3c`，以及codexOptions/threadOptions和LICENSE。SDK底层仍spawn CLI，支持signal、图片、Schema、configOverrides，但未提供本桥接依赖的ignore-user-config/ignore-rules/ephemeral开关，Windows整树取消也需宿主管理。因此优先评估后暂留CLI传输，不引入SDK依赖；SDK只做静态研究，未宣称已运行SDK。暂无持久会话/审批需要，不引入常驻app-server。
+- CLI真实PoC已完成live搜索、Schema文稿、图片、3333ms视频帧；Worker/双库的最终状态以[Phase04.5交付](PHASE_04_5_DELIVERY.md)为准。引用/网页原文由独立受限获取器核对，不借用Codex摘要作原文。
+- Codex官方源码/LICENSE为Apache-2.0（LICENSE blob `4606e72e042564097e8780d66c1d4dcb611869bd`），本次没有复制第三方源码或打包CLI/SDK；仅调用用户已有安装。账号服务条件独立于软件源码许可；正式分发CLI/SDK需再核对NOTICE和许可要求。参考wallstreet已研究的“来源优先/证据分层/段落叙事”沿用，不为此重写已验收流程。
+
+## 分阶段阅读状态
 
 | 阶段 | 仓库/文件 | 状态 | 结论与适配位置 | 许可/安全复核 |
 |---|---|---|---|---|

@@ -1,4 +1,5 @@
 'use client';
+import { AiRunDetails } from './ai-run-details';
 import { useEffect, useRef, useState } from 'react';
 import { Card, Badge, Notice, s } from './ui';
 import { WorkflowPanel } from './workflow-panel';
@@ -185,8 +186,8 @@ export function ScriptPanel({ projectId }: { projectId: string }) {
   return (
     <>
       <Notice>
-        文稿以叙事段落组织，一段可覆盖多个镜头。引用只来自固定批准研究；用户自带文稿可跳过研究。真实写作模型未配置，Mock
-        需显式选择；估时不等于实测配音。
+        文稿以叙事段落组织，一段可覆盖多个镜头。引用只来自固定批准研究；用户自带文稿可跳过研究。Codex
+        真实写作须本机启用，Mock 需显式选择；估时不等于实测配音。
       </Notice>
       {error && (
         <p role="alert" className={s.error}>
@@ -270,11 +271,13 @@ export function ScriptPanel({ projectId }: { projectId: string }) {
             <Badge tone={revision!.mock ? 'amber' : 'gray'}>
               {revision!.mock
                 ? 'Mock · 未调用真实模型'
-                : data.document.origin === 'user_provided'
-                  ? '用户提供 · 未独立核实'
-                  : data.document.origin === 'legacy'
-                    ? '旧文稿导入 · 未独立核实'
-                    : '研究依据草稿 · 未独立核实'}
+                : data.document.provenance === 'real'
+                  ? '真实模型生成 · 待人工审核'
+                  : data.document.origin === 'user_provided'
+                    ? '用户提供 · 未独立核实'
+                    : data.document.origin === 'legacy'
+                      ? '旧文稿导入 · 未独立核实'
+                      : '研究依据草稿 · 未独立核实'}
             </Badge>
           </div>
           {!editable && (
@@ -332,6 +335,12 @@ export function ScriptPanel({ projectId }: { projectId: string }) {
                     onChange={(e) => setMode(e.target.value)}
                   >
                     <option value="unconfigured">真实模型 · 未配置</option>
+                    <option
+                      value="real"
+                      disabled={!data.providers.some((p) => p.id === 'codex-cli' && p.configured)}
+                    >
+                      Codex CLI · 本机 ChatGPT 登录
+                    </option>
                     <option value="mock">显式 Mock 结构演示</option>
                   </select>
                 </label>
@@ -733,7 +742,9 @@ export function ScriptPanel({ projectId }: { projectId: string }) {
                     {j.provider === 'script'
                       ? j.scriptInput?.mode === 'mock'
                         ? 'Mock 写作演示'
-                        : '真实模型未配置'
+                        : j.scriptInput?.mode === 'real'
+                          ? 'Codex 真实写作'
+                          : '真实模型未配置'
                       : '旧文本 Mock 任务'}
                   </b>{' '}
                   · {statusLabels[j.state]}
@@ -741,6 +752,7 @@ export function ScriptPanel({ projectId }: { projectId: string }) {
                     {j.id} · 尝试 {j.attempt}/{j.maxAttempts} {j.errorCode}
                   </p>
                   {j.scriptResult && <p>{j.scriptResult.notes}</p>}
+                  <AiRunDetails runs={j.aiRuns} />
                   {j.logs?.map((l, i) => (
                     <p className={s.caption} key={i}>
                       {l.at} · {l.message}

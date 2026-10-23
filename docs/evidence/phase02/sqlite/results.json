@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T01:23:34.727Z",
+  "backend": "sqlite",
+  "runId": "mvkadk1y",
+  "checks": [
+    {
+      "name": "旧 HTTP CRUD/上传/十页路由回归",
+      "status": "PASS",
+      "detail": {
+        "checks": 15
+      }
+    },
+    {
+      "name": "Phase 01 工作流回归",
+      "status": "PASS",
+      "detail": {
+        "checks": 8
+      }
+    },
+    {
+      "name": "真实 202/jobId、幂等及固定入口/参数保护",
+      "status": "PASS",
+      "detail": {
+        "jobId": "370d148b-e0ab-461c-9d7c-ecd482451556",
+        "duplicateJob": false
+      }
+    },
+    {
+      "name": "真实 Remotion/心跳/媒体规格/三帧确定性",
+      "status": "PASS",
+      "detail": {
+        "jobId": "370d148b-e0ab-461c-9d7c-ecd482451556",
+        "metadata": {
+          "durationSeconds": 10,
+          "width": 1080,
+          "height": 1920,
+          "fps": 30,
+          "codec": "h264",
+          "frames": 300
+        },
+        "leaseExtended": true,
+        "determinism": [
+          {
+            "frame": 60,
+            "first": "60e4c52d64baf1563e583bcc893f58c986720d87868128ceb1553ddd13312a33",
+            "second": "60e4c52d64baf1563e583bcc893f58c986720d87868128ceb1553ddd13312a33"
+          },
+          {
+            "frame": 150,
+            "first": "f9c4a6bddf975312e8940be3173d4322f67ac8fb2089ab5c0f3847da481c6545",
+            "second": "f9c4a6bddf975312e8940be3173d4322f67ac8fb2089ab5c0f3847da481c6545"
+          },
+          {
+            "frame": 240,
+            "first": "f02ba6be19d538bdb5018ad86d5822274102de65c5c692530acb8dd61d16e9fe",
+            "second": "f02ba6be19d538bdb5018ad86d5822274102de65c5c692530acb8dd61d16e9fe"
+          }
+        ]
+      }
+    },
+    {
+      "name": "受保护视频/Range 播放/文件白名单",
+      "status": "PASS",
+      "detail": {
+        "anonymous": 401,
+        "range": 206,
+        "invalidRange": 416,
+        "unlistedFile": 400
+      }
+    },
+    {
+      "name": "关键帧与实际 MP4 对应画面一致",
+      "status": "PASS",
+      "detail": {
+        "frame": 150,
+        "psnr": "38.129983",
+        "sharedInputProps": true,
+        "sharedTimeline": true
+      }
+    },
+    {
+      "name": "第 08 页实际视频播放、刷新与 390px 响应式",
+      "status": "PASS",
+      "detail": {
+        "duration": 10,
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "字号参数新输入、冻结时间轴、旧产物与项目不变",
+      "status": "PASS",
+      "detail": {
+        "newJobId": "23ac4471-7514-4a93-b70e-eaddf6203a47",
+        "targetDurationMs": 240000
+      }
+    },
+    {
+      "name": "进程重启恢复与原数据目录保留",
+      "status": "PASS",
+      "detail": {
+        "unchanged": true,
+        "sha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "a9c0c3b2-0b40-492e-bbb2-2f083810b2be",
+  "finishedAt": "2026-10-23T01:26:24.080Z"
+}

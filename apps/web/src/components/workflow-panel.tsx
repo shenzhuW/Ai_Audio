@@ -90,8 +90,12 @@ function Jobs({
                 </Badge>
               </div>
               <p className={s.caption}>
-                {j.provider === 'mock' ? 'Mock 文本任务' : '提供方尚未配置'} · 执行 {j.attempt}/
-                {j.maxAttempts} 次
+                {j.provider === 'mock'
+                  ? 'Mock 文本任务'
+                  : j.provider === 'remotion'
+                    ? 'Remotion 真实渲染'
+                    : '提供方尚未配置'}{' '}
+                · 执行 {j.attempt}/{j.maxAttempts} 次
               </p>
               <code className={s.caption}>{j.id}</code>
               {j.errorCode && (

@@ -1,26 +1,26 @@
-# Phase 07 — 素材搜索、许可与自动准备
+# Phase 07 — 内部测试素材搜索、追溯与自动准备
 
 **边界**：这是本阶段目标，Codex 不得一次性开发后续所有功能。见 `docs/DECISIONS.md`、`docs/ARCHITECTURE.md`、`docs/UI_SPEC.md`。
 
 ## 参考仓库阅读与适配
-开工前阅读 wallstreet-explainer `scripts/footage.py`、`references/sourcing.md`，重点验证联系表、镜头切点和按需裁剪；不得将 yt-dlp 能下载视为有素材使用授权。 请将已核实结论、路径、日期与许可注意事项记录到 `docs/REFERENCE_REVIEW_LOG.md`。
+开工前阅读 wallstreet-explainer `scripts/footage.py`、`references/sourcing.md`，重点验证视频找片、镜头索引、片段定位、联系表预览、自动裁剪和语义/构图匹配。商业许可未知不排除内部测试用途；能下载也不伪称已获商用授权，不绕过访问保护。请记录具体 SHA、源码位置、借鉴点与差异。
 
 ## 输入与前置条件
 - 已通过上一阶段的测试门禁；仓库 `AGENTS.md` 与原型资料可读。
 - 若使用外部 Provider，密钥与许可条件由用户提供；未具备时明确演示 Mock。
 
 ## 本阶段开发任务
-- 内部素材库优先，外部 Provider Adapters（首版候选 Pexels、Pixabay，API/许可可用性现场验证）；支持用户上传和官方资料 Research-only。
+- 内部素材库优先，外部 Provider Adapters（首版候选 Pexels、Pixabay，API 可用性现场验证）；支持用户上传、官方资料及其他可访问公开来源作为内部测试候选。
 - 查询由 DirectorShot.visualIntent + 画幅/时长/素材类型驱动，不把整段文稿原封不动丢给 API。
-- 去重、许可可用性、画面相关性、候选片段时间索引；只对 Top-K 候选进行更深的视频分析。
+- 去重、画面相关性、内容质量、画幅、构图、清晰度和片段时间匹配排序；只对 Top-K 深度分析。提供镜头索引、联系表与原视频时间段预览，不因不可商用或许可未知自动排除。
 - 允许用户在第 06 页批准**素材使用方案**；在第 07 页查看原始 SourceAsset/候选 CandidateClip/实际使用 AssetBinding。
 - 批准后自动 FFmpeg 裁剪/转码缓存（PreparedAsset）并记录 recipeHash，不出现单独裁剪审批。
-- 下载强制 SSRF 与文件大小/时长约束，`cleared` 需要实际 LicenseRecord。
+- 下载保留 SSRF、文件大小/时长、内容类型和访问权限检查；保留 URL、平台、作者（如有）、已知限制和已有凭证。不建立商业授权审批，不把 LicenseRecord 作为内部测试前置条件，不伪造 cleared。
 
 ## 可验收交付物
 - 原始素材保持不变，给同一源视频建立两个区间候选不产生两份原素材副本。
-- 第 07 页能以素材类型、许可证和制作状态过滤；第 06 页可绑定到镜头。
-- 对被标记 `pending` 的媒体，正式导出得到 LICENSE_BLOCKED；使用自有测试素材可正常准备。
+- 第 07 页能按类型、来源、已知限制和制作状态过滤并查看联系表/索引；第 06 页可绑定镜头及调整入出点。
+- 许可未知或不可商用素材可正常准备并用于内部 MP4 合成/下载，来源和限制保持；没有商业许可硬门禁、不自动公开发布。
 - FFmpeg 区间裁切输出时长和入出点满足可解释误差界限，并留完整日志。
 
 ## Codex 必须报告

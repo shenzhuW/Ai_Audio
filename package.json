@@ -20,9 +20,13 @@
     "test:http": "pnpm --filter @studio/web test:http",
     "test:postgres": "node tests/postgres/run.cjs",
     "test:workflow": "node tests/postgres/run.cjs --workflow",
+    "test:render": "node tests/render/run.cjs",
     "audit:staged": "node scripts/audit-staged.cjs",
     "db:local": "pwsh -NoProfile -File scripts/postgres-local.ps1",
     "worker": "pnpm --filter @studio/web worker",
+    "render:worker": "pnpm --filter @studio/web render:worker",
+    "render:fixtures": "node scripts/render-fixtures.cjs",
+    "render:typecheck": "pnpm --filter @studio/render exec tsc --noEmit",
     "db:generate": "pnpm --filter @studio/web db:generate",
     "db:migrate": "pnpm --filter @studio/web db:migrate"
   }

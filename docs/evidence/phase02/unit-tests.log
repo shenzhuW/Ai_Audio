@@ -1,0 +1,33 @@
+
+> ai-code-video-studio@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web test
+
+
+> @studio/web@0.1.0 test W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> node ../../scripts/test.cjs
+
+✔ Signed local session rejects forged and expired cookies (1.9018ms)
+✔ Local-only host and origin checks reject remote host and CSRF (0.3615ms)
+✔ Real database: 30/240 seconds and all entry modes survive closing and reopening (30.9502ms)
+✔ Real database: atomic optimistic update permits only one writer (1.3811ms)
+✔ Reject blank prompt, zero/negative/nonfinite duration, invalid aspect, budget, unknown keys (1.9453ms)
+✔ Seconds and mm:ss are exact, invalid strings never silently normalize (0.3436ms)
+✔ Render child environment never inherits database, user session, token, proxy or Node injection variables (0.4595ms)
+✔ Protected video byte ranges support seeking and reject invalid, excessive and multiple ranges (0.443ms)
+✔ Workflow persists approval truth: draft/edit/submit/approve/fork, immutable old content and history (16.7868ms)
+✔ Workflow rejects stale approvals; identical retries reuse exact response and one durable downstream job (4.0381ms)
+✔ Rejected revisions fork for editing; upstream replacement derives transitive stale without rewriting approved status (5.7753ms)
+✔ Mock jobs have durable claim/finish, cancellation fencing, bounded retries and expired lease recovery (5.0674ms)
+✔ SceneSpec freezes frame timeline and declared editable props, rejects unsafe/invalid inputs (4.3028ms)
+✔ FFprobe gate rejects incorrect encoding, frame rate, frame count and dimensions (2.7648ms)
+✔ Render jobs reuse workflow idempotency, heartbeat lease fencing, cancellation and failure attempts (7.2158ms)
+✔ Real upload validation checks extension, contents and byte limit (0.3916ms)
+✔ SQLite workflow transactions survive reopening, roll back failures and preserve legacy project JSON (37.0472ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 397.799

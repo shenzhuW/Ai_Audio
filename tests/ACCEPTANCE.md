@@ -14,8 +14,8 @@
 | INF-005 | 00.5 | SQLite 兼容性和原数据保护，回归门禁 | PASS | 相同 9 份文档精确往返；旧数据目录前后散列相同；7 项单元/类型检查/生产构建通过 |
 | A-004 | 01 | 保存草稿/提交/批准/驳回均持久化，旧版可读 | PASS | [PostgreSQL](../docs/evidence/phase01/postgres-results.json)、[浏览器](../docs/evidence/phase01/screenshots/result.json)；独立表、不可变保护、fork 和应用/DB 重启恢复 |
 | A-005 | 01 | 旧修订批准冲突 409、重复请求幂等 | PASS | [PostgreSQL HTTP](../docs/evidence/phase01/workflow-http-postgresql.json)、[SQLite HTTP](../docs/evidence/phase01/workflow-http-sqlite.json)；同键并发一个下游任务、异内容 409、双候选仅一批准、固定输入和 Outbox |
-| A-006 | 02 | 使用自有测试片+React SVG 层真实渲染 MP4，音/视元数据正确 | NOT RUN | |
-| A-007 | 02 | Worker 失败产生可见错误日志，不在主站直接执行不可信 TSX | NOT RUN | |
+| A-006 | 02 | 使用自有测试片+React SVG 层真实渲染 MP4，音/视元数据正确 | PASS | [交付报告](../docs/PHASE_02_DELIVERY.md)、[SQLite](../docs/evidence/phase02/sqlite/results.json)、[真实 PostgreSQL](../docs/evidence/phase02/postgresql/results.json)：10s/1080×1920/30fps/H.264，none 无音轨；3 组重复帧严格一致，真实播放及 MP4 帧对照 |
+| A-007 | 02 | Worker 失败产生可见错误日志，不在主站直接执行不可信 TSX | PASS | [完整异常测试](../docs/evidence/phase02/sqlite/full-results.json)、[真实失败 UI](../docs/evidence/phase02/sqlite/08-failed.png)：缺少 Chromium 的真实子进程失败、重试成功、运行取消；仅可信固定入口，OS 级沙箱 NOT RUN |
 | A-008 | 03 | Source/Claim 带来源与状态，未核实不显示已核实 | NOT RUN | |
 | A-009 | 03 | 图片/视频内容基础索引可保存，研究阶段无正式大规模裁剪 | NOT RUN | |
 | A-010 | 04 | 文稿片段编辑/来源引用/历史修订/批准可恢复 | NOT RUN | |
@@ -26,14 +26,14 @@
 | A-015 | 06 | 镜头编辑/排序及最终素材方案批准生效 | NOT RUN | |
 | A-016 | 07 | 搜索/许可/候选区间/自动裁剪独立于研究阶段 | NOT RUN | |
 | A-017 | 07 | 素材原件不可变，派生文件可重复定位与缓存 | NOT RUN | |
-| A-018 | 07 | pending/research_only 媒体正式导出必定受阻 | NOT RUN | |
+| A-018 | 07 | 商业许可未知/不可商用素材可用于内部测试分镜、裁剪、合成和下载，来源/限制保留，无商业审批 | NOT RUN | D-17/D-18 更新；后续阶段测试，未因文档变更标 PASS |
 | A-019 | 08 | 至少 3 类动画组件和真实素材叠加形成 MP4 | NOT RUN | |
 | A-020 | 08 | 指定镜头参数改动仅重新构建受影响范围 | NOT RUN | |
 | A-021 | 08 | 编译/渲染/视觉检查错误可定位，最多自动修复次数配置化 | NOT RUN | |
 | A-022 | 09 | 评论绑定渲染版本+时间码，支持局部修复和版本比较 | NOT RUN | |
 | A-023 | 09 | 合规真实样片导出 MP4、SRT、文稿和工程说明 | NOT RUN | |
 | A-024 | 09 | 浏览器刷新/任务重试/取消/恢复不丢批准的产物 | NOT RUN | |
-| A-025 | 09 | 导出前事实/授权/媒体完整性校验有真实阻断能力 | NOT RUN | |
+| A-025 | 09 | 内部导出检查媒体完整性并保留来源/限制，商业许可未知不阻断，不自动公开发布 | NOT RUN | D-17/D-18 更新；公开商业发布控制留后续 |
 
 ## 端到端样例（统一）
 
@@ -47,7 +47,7 @@ Phase 00 实际执行日期：2026-10-22。Node 24.15.0 / Windows / Next 15.5.19
 - 输入目标：`120000 ms`、`9:16`、`1080×1920`、`30 fps`。
 - 六个镜头的示例仅用于 UI/自动测试，真实视频镜头数量可动态生成。
 - 首个真实视频 PoC 推荐控制 10–15 秒；成功后逐步扩展至完整项目。
-- 样例 research Source / Claim / 授权默认 **Mock/未核实**；正式渲染仅可用自有或明示许可的测试素材。
+- 样例 research Source / Claim / 授权默认 **Mock/未核实**；内部开发测试优先，商业许可未知或不可商用不自动排除素材，来源/限制保留，不自动公开发布。
 
 ## Codex 每阶段需要补充的证据
 ```text

@@ -34,7 +34,7 @@ API / Workflow service
 | `script` | 文稿结构、局部改写、引用绑定 | 修改授权标签 |
 | `voice` | TTS/导入/无口播、音频时间轴和字幕 | 设计镜头 |
 | `director` | 导演表、视觉叙事、镜头计划 | 在主 API 进程执行 TSX |
-| `asset` | Provider 搜索、授权、媒体索引、片段推荐、虚拟区间、按需处理 | 自动判定未授权公开视频可商用 |
+| `asset` | Provider 搜索、来源/限制记录、媒体索引、片段推荐、虚拟区间、按需处理 | 商业授权审批或自动声明可商用 |
 | `motion` | SceneSpec、组件目录、场景代码、预览和最终渲染 | 擅自编造新事实数据 |
 | `visual-critic` | 规则/视觉质量报告、局部问题定位 | 替代事实审核或法律许可判定 |
 
@@ -55,7 +55,7 @@ interface MediaProcessor { probe(ref: BlobRef): Promise<MediaMetadata>; prepare(
 - Job：queued→running→succeeded/failed/cancelled；支持 idempotencyKey、attempt、maxAttempts、errorCode、输出版本引用。
 - 审核：draft→in_review→approved/rejected；更改批准内容创建新修订，旧批准版保持可读。
 - 素材：SourceAsset 保留原文件；CandidateClip 仅时间戳/语义索引；PreparedAsset 是复用的派生文件；从不覆盖源视频。
-- 实际导出：绑定 approved 分镜/口播/语音/场景代码与清晰许可状态；渲染清单固定版本，避免导出中途版本漂移。
+- 内部测试导出：绑定 approved 分镜/口播/适用时间轴/场景代码，清单固定版本并保留来源/已知限制。商业许可未知或不可商用不阻断内部渲染/下载，不自动公开发布；商业发布另行核查。
 
 ## 6. 先后顺序与并行
 研究文本/视频信息提取可并行；内容核实完成后再写正式文稿。口播确认→配音确认→初步分镜→第二轮素材检索→导演方案审核→按需物化媒体→场景代码/动画→质量检查→人工成片批准→最终导出。

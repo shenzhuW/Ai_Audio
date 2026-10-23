@@ -1,0 +1,3 @@
+
+> ai-code-video-studio@0.1.0 render:typecheck W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/render exec tsc --noEmit

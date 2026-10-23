@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/l/font?kit=k3kXo84MPvpLmixcA63oeALhLJBt8C_b2YG1Kya0jrhSXsPrxTELs3MpaQ2iHY4abCJb9QxhhTxGWvHeAcEauhYy5nd5vfVA3Tewg0vpWV9wlIIK64Hhp8_U6BLWh5xHWDLN37I-AWv43uJR4LR9KeaY_X3GwSMt0I0GBsVHGSn_KmCKhQ4JQr6n5BFE3xmvXyI53BWYOGy_acCnjDn0YCPw2esWlLxg1IB4nlHmzPaY9YxHbkDlPioBpqxVxPfLLrq0yEERC7DyA_PVigK7pHKm4BXh-LWanpF8TcvdhCIy9ZXxe5Kn_GJDeAKtGTYsM8wg94ja&skey=cf0bb10b5602fdc3&v=v41) format('woff2');
+  unicode-range: U+20, U+25, U+2b, U+2d, U+2f-39, U+41-5a, U+61-7a, U+b7, U+d7, U+3002, U+4e00, U+4e3a, U+4ee3, U+4f5c, U+4f8b, U+4fe1, U+5236, U+53ef, U+540c, U+548c, U+56fe, U+573a, U+5b57, U+5b9e, U+5e27, U+5e95, U+5f62, U+60f3, U+6210, U+636e, U+6570, U+6587, U+65e0, U+666f, U+6750, U+6bcf, U+6cd5, U+6d4b, U+751f, U+753b, U+771f, U+7801, U+793a, U+79d2, U+7d20, U+7f6e, U+81ea, U+8868, U+89c6, U+8ba9, U+8bd5, U+9010, U+91cf, U+957f, U+975e, U+9762, U+9884, U+9891, U+ff0c, U+ff1a;
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "at": "2026-10-23T01:26:43.566Z",
+  "codecSupport": "",
+  "actualMediaError": "DEMUXER_ERROR_NO_SUPPORTED_STREAMS: FFmpegDemuxer: no supported streams",
+  "visibleWarning": "浏览器无法播放此视频，请使用支持 H.264 的浏览器，或下载 MP4 查看。渲染与文件验证结果保留。",
+  "downloadStillAvailable": true
+}

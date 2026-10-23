@@ -11,7 +11,7 @@
   "meta": {"requestId":"req_123"}
 }
 ```
-HTTP 400 输入错误；401 未认证；403 未许可；404 对象不存在；409 审核/修订冲突；422 状态不合法或授权门禁；429 额度限制；500 内部错误；503 Provider 不可用。日志不可含 API Key。
+HTTP 400 输入错误；401 未认证；403 无访问权限；404 对象不存在；409 审核/修订冲突；422 状态不合法；429 额度限制；500 内部错误；503 Provider 不可用。日志不可含 API Key。按 D-17，商业许可未知或不可商用不作为内部测试合成/下载的错误或商业许可门禁。
 
 ## 项目与需求
 | Method | Path | Action |
@@ -75,12 +75,12 @@ HTTP 400 输入错误；401 未认证；403 未许可；404 对象不存在；40
 | Method | Path | Action |
 |---|---|---|
 | POST | `/projects/:id/uploads` | 获取安全上传地址/上传会话 |
-| POST | `/projects/:id/asset-search-runs` | 按 visualIntent 搜索内部/外部授权素材 |
-| GET | `/projects/:id/assets` | 多状态筛选和来源授权 |
+| POST | `/projects/:id/asset-search-runs` | 按 visualIntent 搜索内部/可访问外部素材，优先画面与时间匹配 |
+| GET | `/projects/:id/assets` | 多状态筛选、URL/平台/作者/已知限制 |
 | GET | `/assets/:assetId/index` | 带时间码的视频摘要、关键帧 |
 | POST | `/projects/:id/candidate-clips` | 保存镜头候选源区间（虚拟裁剪） |
 | POST | `/projects/:id/prepare-assets` | 按已批准 AssetBinding 自动生成派生文件；**无裁剪审批** |
-| POST | `/assets/:assetId/license-evidence` | 记录真实许可凭据并校验适用范围 |
+| POST | `/assets/:assetId/license-evidence` | 后续商业发布扩展预留；当前不实施商业授权审批 |
 
 素材搜索示例：
 ```json
@@ -91,7 +91,7 @@ HTTP 400 输入错误；401 未认证；403 未许可；404 对象不存在；40
   "types":["image","video"],
   "desiredDurationMs":6000,
   "providers":["internal","pexels","pixabay"],
-  "licenseRequirement":"commercial_use"
+  "usageContext":"internal_test"
 }
 ```
 
@@ -105,7 +105,7 @@ HTTP 400 输入错误；401 未认证；403 未许可；404 对象不存在；40
 | POST | `/projects/:id/review-comments` | 带视频版本、timeMs 和 shotId 的意见 |
 | GET | `/projects/:id/review-comments` | 评论列表和处理状态 |
 | POST | `/projects/:id/quality-runs` | QA 检查 job |
-| POST | `/projects/:id/export-runs` | 通过批准/授权门禁后正式生成 |
+| POST | `/projects/:id/export-runs` | 通过创作批准/媒体完整性检查后生成内部测试产物，许可未知不阻断 |
 | GET | `/projects/:id/exports` | 导出产物及下载链接 |
 
 ## Job / 进度
@@ -135,4 +135,12 @@ HTTP 400 输入错误；401 未认证；403 未许可；404 对象不存在；40
 
 当前 Worker 只生成研究/文稿 Mock 文本（始终 mock=true），不验证事实或授权。配音及其他提供方未配置时任务失败 `PROVIDER_NOT_CONFIGURED`，没有音频或视频输出；不会用静态原型冒充产物。手动内容 mock=false 表示用户输入，仍是“未核实”。Job 成功只代表文本草稿实际已落库，不代表已批准。
 
-本小节之外的媒体、研究来源、Claim、音频、分镜、渲染和导出接口仍为后续阶段草案，不代表已实现。
+本小节之外的研究来源、Claim、音频、分镜和完整导出接口仍为后续阶段草案；Phase 02 的真实渲染子集如下。
+
+## Phase 02 已实现子集（2026-10-23）
+
+- `POST /projects/:projectId/render-runs`，必须 `Idempotency-Key`，严格 body `{presetId:"poc-v1",titleFontSize?:72}`，字号整数 52–92，未声明字段拒绝。仅固定可信入口，不能提交 TSX、路径、URL 或自定义执行代码。202 返回 `{jobId,status}`；同键同内容复用，同键异内容 409。
+- `GET /projects/:id/workflow` 和 `GET /jobs/:id` 包含真实 Remotion Job；可选 `renderInput/renderResult/progress/heartbeatAt/logs`，历史 Job 无这些字段仍可读取。心跳更新遥测/租约，不递增取消使用的业务 version；领取/取消/重试/完成仍有并发版本保护。沿用现有 cancel/retry 接口与 attempt，不另建审批系统。
+- `GET|HEAD /jobs/:jobId/render-files/:file`，仅当前用户且成功 Job，固定文件 `video.mp4`、`frame-060.png`、`frame-150.png`、`frame-240.png`、`ffprobe.json`、`manifest.json`。校验记录 SHA/大小，私有缓存策略，支持单段/后缀 Range 206；非法范围 416，未完成 409，匿名 401，其他文件名 400。没有公共视频发布入口。
+
+Worker 生成真实 draft motion revision（mock=false），不自动批准；该 PoC 不依赖尚未实现的 Director，不生成虚假上游批准版本。项目自定义时长保持原值，只有此明确标示的验证 Composition 固定 10 秒。预览和下载使用同一最终 MP4，SceneSpec/Props/时间轴/版本固定在 manifest 中。详细运行和安全限制见 [Phase 02 交付](PHASE_02_DELIVERY.md)。

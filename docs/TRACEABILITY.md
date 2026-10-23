@@ -8,10 +8,10 @@
 | 04-script | 分段编辑/改写/来源/版本/审批 | ScriptSegment/ArtifactRevision | script/revisions | 04 |
 | 05-voice | AI/导入/无口播、Cue/字幕、时间轴批准 | VoiceAsset/VoiceCue/SubtitleCue | voice | 05 |
 | 06-storyboard | 叙事目标、候选素材、素材范围、导演表审核 | DirectorShot/AssetBinding | storyboard/asset-search | 06 |
-| 07-assets | 研究/候选/引用、来源授权、视频时间索引 | SourceAsset/CandidateClip/LicenseRecord | assets/upload/license | 07 |
+| 07-assets | 研究/候选/引用、来源与限制、视频索引和联系表 | SourceAsset/CandidateClip/PreparedAsset | assets/upload/index | 07 |
 | 08-motion | 图层、组件、SceneSpec/TSX、预览、局部修复 | SceneSpec/SceneCode/PreparedAsset | motion/preview/patch | 02 + 08 |
 | 09-review | 真实预览、时刻反馈、版本对比、批准 | RenderRevision/ReviewComment | review/quality | 09 |
-| 10-export | MP4/SRT/文稿/清单/合法工程包、授权门禁 | RenderRevision/Export/LicenseRecord | exports | 09 |
+| 10-export | 内部测试 MP4/SRT/文稿/来源限制清单/允许分发的工程包，不自动发布 | RenderRevision/Export | exports | 09 |
 
 ## 使用方式
 1. 每个计划文件必须引用相应表格行。

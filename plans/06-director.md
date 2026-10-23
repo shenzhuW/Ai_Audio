@@ -19,7 +19,7 @@
 ## 可验收交付物
 - 120 秒 6 镜头 fixture 可真实保存/reorder/edit，并可挂 script segment 与 source media。
 - 每个镜头都显示叙事目标和对应的文稿；调整镜头长度后 Cue/剩余时长有校验。
-- 用户批准分镜后，后端产生固定 storyboardRevisionId；未授权素材在界面提示阻塞。
+- 用户批准分镜后，后端产生固定 storyboardRevisionId；展示来源和已知限制，商业许可未知或不可商用不阻断内部测试素材绑定。
 
 ## Codex 必须报告
 1. 修改文件、数据迁移和关键设计取舍。

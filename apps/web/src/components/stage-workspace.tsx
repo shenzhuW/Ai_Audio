@@ -14,6 +14,7 @@ import { type Project, formatDuration } from '@/domain/project';
 import fixture from '../../../../fixtures/example-project.json';
 import { Card, Badge, PageHead, Empty, Notice, s } from './ui';
 import { WorkflowPanel } from './workflow-panel';
+import { RenderPanel } from './render-panel';
 
 export function StageWorkspace({
   stage,
@@ -26,6 +27,17 @@ export function StageWorkspace({
 }) {
   const index = pages.findIndex((p) => p.key === stage);
   const page = pages[index];
+  if (!demo && project && stage === 'motion')
+    return (
+      <>
+        <PageHead
+          number="08"
+          title={page.label}
+          description="真实视频、可信代码动画与字幕，从同一场景渲染。"
+        />
+        <RenderPanel projectId={project.id} />
+      </>
+    );
   if (!demo && project && (stage === 'research' || stage === 'script'))
     return (
       <>

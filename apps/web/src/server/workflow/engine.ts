@@ -222,7 +222,14 @@ export function applyWorkflow(
     return j;
   };
   let result: WorkflowRevision | WorkflowJob;
-  if (c.action === 'create') {
+  if (c.action === 'render') {
+    const j = enqueue('motion', [], key);
+    j.provider = 'remotion';
+    j.renderInput = c.input;
+    j.progress = 0;
+    j.logs = [{ at: time, message: '可信预置渲染已排队；输入、素材和时间轴已冻结。' }];
+    result = j;
+  } else if (c.action === 'create') {
     const existing = s.artifacts.find((a) => a.type === c.type);
     if (existing) fail('ARTIFACT_EXISTS', '该产物已有候选，请从已有版本创建分支。', 409);
     result = createRevision(c.type, c.text, c.inputRevisionIds, false);
@@ -292,7 +299,18 @@ export function applyWorkflow(
     if (!('jobId' in c)) throw new Error('Invalid job action');
     const j = job(c.jobId);
     if ('expectedVersion' in c && j.version !== c.expectedVersion) conflict();
-    if (c.action === 'cancel') {
+    if (c.action === 'heartbeat') {
+      if (
+        j.state !== 'running' ||
+        j.leaseOwner !== c.workerId ||
+        Date.parse(j.leaseExpiresAt!) <= now
+      )
+        fail('JOB_CONFLICT', 'Worker 租约失效或任务已取消。', 409);
+      j.leaseExpiresAt = new Date(now + 30000).toISOString();
+      j.heartbeatAt = time;
+      j.progress = Math.max(j.progress || 0, c.progress);
+      if (c.message) j.logs = [...(j.logs || []), { at: time, message: c.message }].slice(-200);
+    } else if (c.action === 'cancel') {
       if (!['queued', 'running'].includes(j.state)) fail('JOB_CONFLICT', '任务已经结束。', 409);
       j.state = 'cancelled';
       const last = j.attempts.at(-1);
@@ -308,6 +326,7 @@ export function applyWorkflow(
       requireInputs(j.inputRevisionIds);
       j.state = 'queued';
       j.errorCode = null;
+      if (j.provider === 'remotion') j.progress = 0;
       s.outbox.find((o) => o.jobId === j.id)!.delivered = false;
     } else if (c.action === 'claim') {
       if (j.state !== 'queued' || s.outbox.find((o) => o.jobId === j.id)?.delivered)
@@ -352,7 +371,26 @@ export function applyWorkflow(
             : currentVersion !== j.targetVersion
               ? 'TARGET_CHANGED'
               : null);
-        if (!j.errorCode) {
+        if (!j.errorCode && j.provider === 'remotion') {
+          if (
+            !c.renderResult ||
+            !j.renderInput ||
+            c.renderResult.manifestHash !== fingerprint(j.renderInput)
+          )
+            fail('INVALID_RESULT', '渲染结果未通过输入清单校验。');
+          j.renderResult = c.renderResult;
+          const r = createRevision(
+            'motion',
+            JSON.stringify(c.renderResult),
+            j.inputRevisionIds,
+            false,
+            null,
+            false,
+          );
+          j.resultRevisionId = r.id;
+          j.progress = 1;
+          j.state = 'succeeded';
+        } else if (!j.errorCode) {
           // Inputs may have become stale since enqueue. Preserve exact dependencies and show stale output.
           const r = createRevision(
             j.kind,
@@ -375,8 +413,14 @@ export function applyWorkflow(
       j.leaseOwner = null;
       j.leaseExpiresAt = null;
     }
-    j.version++;
+    // Telemetry/lease updates do not invalidate a user action's state version.
+    if (c.action !== 'heartbeat') j.version++;
     j.updatedAt = time;
+    if (j.provider === 'remotion' && c.action !== 'heartbeat')
+      j.logs = [
+        ...(j.logs || []),
+        { at: time, message: `${c.action}: ${j.state}${j.errorCode ? ' · ' + j.errorCode : ''}` },
+      ].slice(-200);
     result = j;
   }
   s.audit.push({ id: randomUUID(), action: c.action, actorId, entityId: result.id, at: time });

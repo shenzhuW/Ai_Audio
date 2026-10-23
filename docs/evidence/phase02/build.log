@@ -1,0 +1,55 @@
+
+> ai-code-video-studio@0.1.0 build W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web build
+
+
+> @studio/web@0.1.0 build W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> next build
+
+   ▲ Next.js 15.5.19
+   - Experiments (use with caution):
+     · cpus: 2
+     ⨯ webpackBuildWorker
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.4s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5)
+   Generating static pages (2/5)
+   Generating static pages (3/5)
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                            Size  First Load JS
+┌ ○ /                                                                 159 B         103 kB
+├ ○ /_not-found                                                     1.68 kB         104 kB
+├ ƒ /api/v1/artifacts/[artifactId]/revisions                          159 B         103 kB
+├ ƒ /api/v1/artifacts/[artifactId]/revisions/[revisionId]             159 B         103 kB
+├ ƒ /api/v1/artifacts/[artifactId]/revisions/[revisionId]/[action]    159 B         103 kB
+├ ƒ /api/v1/jobs/[jobId]                                              159 B         103 kB
+├ ƒ /api/v1/jobs/[jobId]/[action]                                     159 B         103 kB
+├ ƒ /api/v1/jobs/[jobId]/render-files/[file]                          159 B         103 kB
+├ ƒ /api/v1/projects                                                  159 B         103 kB
+├ ƒ /api/v1/projects/[projectId]                                      159 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/artifacts                            159 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/render-runs                          159 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-runs                        159 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/script-runs                          159 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/uploads/[blobId]                     159 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/workflow                             159 B         103 kB
+├ ƒ /demo/[stage]                                                     133 B         138 kB
+├ ƒ /projects                                                       5.36 kB         131 kB
+├ ƒ /projects/[projectId]                                           2.37 kB         137 kB
+├ ƒ /projects/[projectId]/[stage]                                     133 B         138 kB
+└ ƒ /projects/new                                                   7.44 kB         130 kB
++ First Load JS shared by all                                        102 kB
+  ├ chunks/992-86f98843c4434ec4.js                                  46.2 kB
+  ├ chunks/f3fb7984-d3bafefe2bb3d453.js                             54.2 kB
+  └ other shared chunks (total)                                        2 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand

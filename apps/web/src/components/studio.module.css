@@ -1483,3 +1483,77 @@
     flex-wrap: wrap;
   }
 }
+.motionGrid {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.65fr) minmax(280px, 1.3fr) minmax(240px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.motionVideo {
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  aspect-ratio: 9/16;
+  background: #071122;
+  border-radius: 12px;
+  margin: 0 auto 14px;
+}
+.motionEmpty {
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+  background: #f5f8ff;
+  border-radius: 12px;
+}
+.motionFrames {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+.motionFrames img {
+  width: 100%;
+  border-radius: 7px;
+}
+.motionFrames small {
+  display: block;
+  margin-top: 6px;
+}
+.motionProgress {
+  width: 100%;
+  accent-color: #2463ff;
+  margin-top: 12px;
+}
+.motionLogs {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  line-height: 1.7;
+  max-height: 490px;
+  overflow: auto;
+  padding: 12px;
+  background: #f3f6fc;
+  border-radius: 10px;
+  margin-top: 18px;
+}
+@media (max-width: 1150px) {
+  .motionGrid {
+    grid-template-columns: minmax(170px, 0.7fr) minmax(280px, 1.3fr);
+  }
+  .motionGrid > :last-child {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 700px) {
+  .motionGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .motionEmpty {
+    min-height: 250px;
+  }
+}

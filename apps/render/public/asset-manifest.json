@@ -1,0 +1,29 @@
+{
+    "schemaVersion":  1,
+    "backgroundSha256":  "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+    "fontSha256":  "abbf789f45f9c43e316f24b97e868e6e4a15cef45b18d394721524c9e776fa1a",
+    "backgroundOrigin":  "self-generated-procedural-geometry",
+    "backgroundLicenseEvidence":  "apps/render/ASSET_LICENSES.md",
+    "fontLicense":  "SIL-OFL-1.1",
+    "recipe":  [
+                   "-hide_banner",
+                   "-n",
+                   "-f",
+                   "lavfi",
+                   "-i",
+                   "color=c=0x071122:s=1080x1920:r=30:d=10",
+                   "-vf",
+                   "drawgrid=w=90:h=90:t=1:c=0x345488@0.55,drawbox=x=90:y=880:w=900:h=680:color=0x102744@0.9:t=fill,rotate=0.025*sin(2*PI*t/10):fillcolor=0x071122",
+                   "-an",
+                   "-c:v",
+                   "libx264",
+                   "-pix_fmt",
+                   "yuv420p",
+                   "-crf",
+                   "22",
+                   "-preset",
+                   "fast",
+                   "-movflags",
+                   "+faststart"
+               ]
+}

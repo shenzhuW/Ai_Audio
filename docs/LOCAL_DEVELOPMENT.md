@@ -77,6 +77,32 @@ Prisma CLI 从 `apps/web/.env` 或进程环境读取 DATABASE_URL；Next 从 `.e
 
 ## 本次环境与验证记录
 
+### Phase 02 真实渲染
+
+安装依赖后，`apps/render/public/` 已包含自制测试片和附许可证的本地字体；需要重建测试片可执行 `pnpm render:fixtures`（需要 ffmpeg，保留已有文件）。启动 Web 和 Render Worker 的终端需使用一致的 `DATABASE_URL` 与 `STUDIO_DATA_DIR`；Worker 不读取 Next 的 `.env.local`，请显式传入进程环境。默认 Web 数据目录从 `apps/web` 解析为 `.data`。
+
+```powershell
+# 已有 pnpm dev 的另一终端，从仓库根目录运行
+$env:STUDIO_TRUSTED_LOCAL_RENDER='1'
+$env:STUDIO_CHROMIUM_PATH='C:/path/to/chrome.exe' # 实际 Chrome/Chromium 路径
+# ffprobe 不在 PATH 时：$env:STUDIO_FFPROBE_PATH='C:/path/to/ffprobe.exe'
+pnpm render:worker
+# 打开任意真实项目的 /projects/:id/motion，点击“渲染 10 秒示例”
+```
+
+当前仅接受仓库内固定可信组件，本机子进程没有 OS 文件/网络沙箱，禁止改成任意 TSX。每个 Worker 串行，600 秒超时；取消/重试和产物保留在原 Job。网页预览使用实际 MP4，需要 H.264 解码能力；无解码器时显示错误并保留下载。
+
+自动验收使用独立数据和端口 3006，不要让其他应用占用。`STUDIO_UI_BROWSER_PATH` 用于实际播放测试，可与渲染浏览器不同；本机 Playwright Chromium 无 H.264 解码器，使用已安装 Chrome 进行播放测试。
+
+```powershell
+$env:STUDIO_UI_BROWSER_PATH='C:/path/to/h264-capable-chrome.exe'
+pnpm test:render
+# 先按 POSTGRESQL_LOCAL.md 启动专用测试集群，再运行
+node tests/render/run.cjs --postgres --quick
+```
+
+结果/视频/截图见 [Phase 02 交付](PHASE_02_DELIVERY.md)。PostgreSQL 测试只新建专用测试库，不迁移已有用户数据。整个数据目录不可放入 Git。
+
 - 初期外网 npm 被限制，从已有 npm 缓存安装运行依赖；权限调整后执行冻结锁文件安装成功。锁文件没有 localhost registry 或本机路径。
 - `pnpm` 未全局安装，本次从缓存解出到忽略目录 `.tools/`。在当前工作区可执行 `$env:Path=(Join-Path $PWD '.tools/bin')+';'+$env:Path` 后运行标准 `pnpm` 命令。这个临时缓存不作为可分发依赖，其他机器正常安装 pnpm。
 - Playwright 1.55.0 和 Prettier 已通过锁文件安装；浏览器验收使用本机 Chromium 1187。浏览器进程最初受到 EPERM 阻断，在获准的沙箱外执行后成功。

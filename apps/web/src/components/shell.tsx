@@ -150,8 +150,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <main id="main-content" className={s.content}>
           {children}
           <footer className={s.footer}>
-            AI Code Video Studio <span>·</span> Phase 01 工作流与审核 <span>·</span>{' '}
-            支持模拟文本，真实 AI 与视频制作尚未接通
+            AI Code Video Studio <span>·</span> Phase 02 可信场景渲染 <span>·</span>{' '}
+            支持模拟文本与真实 MP4 技术验证，真实 AI 尚未接通
           </footer>
         </main>
       </div>

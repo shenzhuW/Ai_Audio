@@ -7,7 +7,7 @@
 | 阶段 | 仓库/文件 | 状态 | 结论与适配位置 | 许可/安全复核 |
 |---|---|---|---|---|
 | 01 | Hypit 包与 Run 设计 | REVIEWED (static) | 2026-10-22 固定版本阅读见下方记录，未运行 | 修改版 Apache，不复制或依赖 |
-| 02 | Remotion Renderer/Player | NOT REVIEWED | 待填写 | 待填写 |
+| 02 | Remotion Renderer/Player | REVIEWED；Renderer 实际通过，Player 仅研究 | 2026-10-23，固定 v4.0.538 / SHA 见下；[真实 MP4/双数据库/重复帧证据](PHASE_02_DELIVERY.md) | Remotion License，本地非商业技术评估；Player 不作任意代码入口 |
 | 03 | wallstreet sourcing/新闻截图 | NOT REVIEWED | 待填写 | 待填写 |
 | 05 | wallstreet 语音对齐 | NOT REVIEWED | 待填写 | 待填写 |
 | 06 | wallstreet 导演/动画语法 | NOT REVIEWED | 待填写 | 待填写 |
@@ -53,4 +53,14 @@
 - build.ts 的已读区域区分图中的值与操作引用；graph-query.ts 沿输入关系遍历并用 visited 去重；result-query.ts 按仓储历史游标查特定输出。借鉴依赖遍历及可定位历史身份，不复制其实现。
 - 本项目的批准/驳回、expectedVersion、事务幂等与 outbox 根据本项目协议实现；Hypit 的新 Build 机制不替代本产品的修订/审批语义，也不作为隐含幂等键。
 - 复核 LICENSE：仍为修改版 Apache，包含托管/多租户、商业再分发及标识条款。本次无源码复制、无新增 Hypit 依赖；只采用设计思想。
+
+## 2026-10-23 · Phase 02 / Remotion
+
+固定版本 `4.0.538`，GitHub tag 对应 commit `5217b0c90623f2decb4575714fac89d3c4b69896`（GitHub API 实查）。安装 core/bundler/renderer 相同精确版本，未复制官方业务代码。
+
+- 已读官方 [SSR](https://www.remotion.dev/docs/ssr)、[renderMedia](https://www.remotion.dev/docs/renderer/render-media)、[renderStill](https://www.remotion.dev/docs/renderer/render-still)、[useCurrentFrame](https://www.remotion.dev/docs/use-current-frame)、[OffthreadVideo](https://www.remotion.dev/docs/offthreadvideo)、[cancel signal](https://www.remotion.dev/docs/renderer/make-cancel-signal)。采用 bundle → selectComposition → renderMedia，视频和关键帧传同一 inputProps；基于帧计算动画并使用取消信号，不复制示例组件。
+- 已读 [Player](https://www.remotion.dev/docs/player) 文档；静态检查固定 SHA 下 `packages/player/src/Player.tsx` 的 props 类型与校验区（43–58、155–162 等相关行），以及 `packages/renderer/src/render-media.ts` 的 inputProps/progress/cancel 类型定义（108–179 相关区域）。仅选择性阅读，不宣称完整审计整个仓库。学习显式 fps/尺寸/时长/props；第 08 页采用 Worker 输出的同一 MP4 原生播放，不加入同源任意 TSX 执行。
+- 首轮真实 Worker 编译通过，但本机 Chromium 已移除旧 headless 模式，启动失败且 Job 正确留存日志。核对 [openBrowser](https://www.remotion.dev/docs/renderer/open-browser)、[Chrome modes](https://www.remotion.dev/docs/miscellaneous/chrome-headless-shell) 及已安装 `dist/open-browser.js` 的模式分支，统一配置 `chromeMode: chrome-for-testing` 使用新 headless 模式，再实际复跑；具体结果记录在 Phase 02 交付报告。
+- 实读依赖自带 LICENSE.md 与 [许可 FAQ](https://www.remotion.dev/docs/license/faq)：此 PoC 为本地非商业适配评估；不能把 Remotion 当 MIT 或推断以后商业自动化免费。公开/商业使用之前按实际主体另行复核，不购买或规避许可。
+- 未采用 Remotion 的项目管理/审批或模板业务状态，继续复用本项目 Workflow、Job、Outbox。Docker daemon 当前不可用，可信子进程不等于任意代码安全沙箱；未来自由 TSX 仍禁止。本轮不提前研究 Phase 07 全部源码，素材参考要求已随 D-17/D-18 同步到对应计划。
 

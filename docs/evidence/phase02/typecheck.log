@@ -1,0 +1,7 @@
+
+> ai-code-video-studio@0.1.0 typecheck W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B
+> pnpm --filter @studio/web typecheck
+
+
+> @studio/web@0.1.0 typecheck W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\apps\web
+> tsc --noEmit

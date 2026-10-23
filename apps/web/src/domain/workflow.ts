@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { RenderInputSchema, RenderResultSchema } from './motion';
 export const artifactTypes = [
   'research',
   'script',
@@ -63,7 +64,7 @@ export const WorkflowJobSchema = z.object({
   id,
   kind: ArtifactTypeSchema,
   version,
-  provider: z.enum(['mock', 'unconfigured']),
+  provider: z.enum(['mock', 'unconfigured', 'remotion']),
   state: z.enum(['queued', 'running', 'succeeded', 'failed', 'cancelled']),
   inputRevisionIds: z.array(id),
   idempotencyKey: z.string(),
@@ -77,6 +78,14 @@ export const WorkflowJobSchema = z.object({
   errorCode: z.string().nullable(),
   createdAt: at,
   updatedAt: at,
+  renderInput: RenderInputSchema.optional(),
+  renderResult: RenderResultSchema.optional(),
+  progress: z.number().min(0).max(1).optional(),
+  heartbeatAt: at.optional(),
+  logs: z
+    .array(z.object({ at, message: z.string().max(2000) }))
+    .max(200)
+    .optional(),
 });
 export const OutboxSchema = z.object({ id, jobId: id, delivered: z.boolean() });
 export const ReceiptSchema = z.object({
@@ -107,6 +116,16 @@ export const WorkflowStateSchema = z.object({
 const revisionAction = { revisionId: id, expectedVersion: version };
 const jobAction = { jobId: id, expectedVersion: version };
 export const WorkflowCommandSchema = z.discriminatedUnion('action', [
+  z.object({ action: z.literal('render'), input: RenderInputSchema }).strict(),
+  z
+    .object({
+      action: z.literal('heartbeat'),
+      jobId: id,
+      workerId: z.string().min(1),
+      progress: z.number().min(0).max(1),
+      message: z.string().max(2000).optional(),
+    })
+    .strict(),
   z
     .object({
       action: z.literal('create'),
@@ -155,6 +174,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       workerId: z.string().min(1),
       text: text.optional(),
       errorCode: z.string().max(80).optional(),
+      renderResult: RenderResultSchema.optional(),
     })
     .strict(),
   z.object({ action: z.literal('recover'), jobId: id }).strict(),

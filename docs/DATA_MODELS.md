@@ -29,7 +29,7 @@
 | `VoiceCue` | id, voiceRevisionId, segmentId, anchorId, startMs, endMs, confidence | 时间单调非重叠的有效约束按类型定义 |
 | `SubtitleCue` | id, voiceRevisionId, startMs, endMs, text | start < end |
 | `DirectorShot` | id, storyboardRevisionId, order, title, narrativeGoal, viewerTakeaway, scriptSegmentIds, voiceCueIds, durationFrames, transition, layerSpec | 每镜叙事目标必填 |
-| `SourceAsset` | id, sourceId?, blobId?, kind, licenseStatus, licenseEvidenceRef?, metadata, contentTags | licenseStatus 由可信规则/用户核验 |
+| `SourceAsset` | id, sourceId?, blobId?, kind, sourceUrl?, sourcePlatform?, creator?, knownRestrictions?, licenseStatus?, licenseEvidenceRef?, metadata, contentTags | 来源与已知限制可追溯；商业许可标签不作为内部测试硬门禁 |
 | `CandidateClip` | id, sourceAssetId, sourceInMs, sourceOutMs, notes, visualFit, matchedShotId? | 不一定存在裁剪后物理文件 |
 | `AssetBinding` | id, shotId, sourceAssetId, clipId?, fit, crop, mute, purpose, overlaySpec | 绑定素材到镜头，内容与授权不同 |
 | `PreparedAsset` | id, bindingId, blobId, recipeHash, status, durationMs | 自动裁剪/转码派生，保留原始文件 |
@@ -52,8 +52,9 @@
 - 长任务返回 jobId，并有 idempotencyKey + inputRevisionIds；队列消息重复消费不得重复提交结果。
 
 ### License
-- `research_only`（仅内容分析）；`pending`（候选未证实）；`cleared`（有适用授权凭证）；`blocked`（许可不允许）。
-- `cleared` 必须有 `LicenseRecord`，不同项目/平台使用范围可以不同。素材相关性再高也不能覆盖 License 拒绝。
+- 既有 `research_only` / `pending` / `cleared` / `blocked` 值保留兼容，用于记录来源方声明或已知限制，不因值本身自动阻断内部候选、分镜、裁剪、合成和 MP4 下载。不可商用也不等于不能内部开发测试。
+- `cleared` 仍不能伪造，有明确凭证时才记录；LicenseRecord 为可选追溯资料，不建设商业许可审批。商业发布前另行核查，内部测试不自动转为公开发布。
+- 后续媒体协议以 `usageContext=internal_test` 表达用途，保存 sourceUrl、sourcePlatform、creator（如有）、knownRestrictions；这是后续协议设计，不在本次同步中迁移 Phase 00–01 数据。
 
 ## 4. 关键 Zod Schema 草案（示意）
 ```ts
@@ -89,5 +90,5 @@ export const CandidateClipSchema = z.object({
 1. 同一个修订重复提交/批准返回幂等结果；批准旧版本返回 409。
 2. 已批准文稿不能 PATCH 原文；fork 后批准新修订，原批准版仍可读。
 3. 文稿 v3 的第三段改动：相关 Cue/Shot/Scene stale，其他镜头仍复用。
-4. 引用 `pending` 或 `research_only` 授权的素材时，正式导出得到 `LICENSE_BLOCKED`，同时保留预览能力（预览也必须遵守适用许可）。
+4. `pending`、`research_only` 或不可商用素材可进入内部测试合成/下载，来源及已知限制不丢失，不产生商业授权审批；访问/SSRF/媒体完整性失败仍受保护，结果不自动公开发布。
 5. 同一素材多个 CandidateClip 不复制/覆盖源文件；独立生成 PreparedAsset，按 recipeHash 复用。

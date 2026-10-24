@@ -1,0 +1,20 @@
+Input #0, png_pipe, from 'W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\docs\evidence\phase06\regression-render\sqlite\decoded-150.png':
+  Duration: N/A, bitrate: N/A
+    Stream #0:0: Video: png, rgb24(pc), 1080x1920 [SAR 1:1 DAR 9:16], 25 tbr, 25 tbn, 25 tbc
+Input #1, png_pipe, from 'W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\docs\evidence\phase06\regression-render\sqlite\frame-150.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0: Video: png, rgb24(pc), 1080x1920, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 (png) -> psnr:main
+  Stream #1:0 (png) -> psnr:reference
+  psnr -> Stream #0:0 (wrapped_avframe)
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Video: wrapped_avframe, gbrp, 1080x1920 [SAR 1:1 DAR 9:16], q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      encoder         : Lavc58.91.100 wrapped_avframe
+frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.431x
+video:1kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_psnr_0 @ 000001b6c75a9f80] PSNR r:38.703824 g:40.170501 b:36.378146 average:38.132601 min:38.132601 max:38.132601

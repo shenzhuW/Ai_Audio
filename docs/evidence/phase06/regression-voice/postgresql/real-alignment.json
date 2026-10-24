@@ -1,0 +1,776 @@
+{
+  "id": "b5dc36e7-15ee-4fe8-a11e-836c5bd15d0e",
+  "kind": "voice",
+  "logs": [
+    {
+      "at": "2026-10-24T02:52:59.710Z",
+      "message": "whisper-local · final 配音任务排队；原文修订和输入已冻结，字幕不是精确转录。"
+    },
+    {
+      "at": "2026-10-24T02:53:00.918Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T02:53:00.976Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:03.040Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:05.079Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:07.078Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:09.066Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:11.076Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:13.065Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:15.091Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:17.092Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:19.114Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:53:19.417Z",
+      "message": "finish: succeeded"
+    }
+  ],
+  "state": "succeeded",
+  "attempt": 1,
+  "version": 3,
+  "attempts": [
+    {
+      "state": "succeeded",
+      "number": 1,
+      "workerId": "9152f6df-c532-48a8-879e-f153269d1525",
+      "errorCode": null,
+      "startedAt": "2026-10-24T02:53:00.918Z",
+      "finishedAt": "2026-10-24T02:53:19.417Z"
+    }
+  ],
+  "progress": 1,
+  "provider": "voice",
+  "createdAt": "2026-10-24T02:52:59.710Z",
+  "errorCode": null,
+  "updatedAt": "2026-10-24T02:53:19.417Z",
+  "voiceRuns": [
+    {
+      "model": "openai-whisper/base",
+      "runId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+      "purpose": "final",
+      "exitCode": 0,
+      "provider": "whisper-local",
+      "operation": "align",
+      "processId": 32892,
+      "startedAt": "2026-10-24T02:53:00.999Z",
+      "durationMs": 18359,
+      "jobAttempt": 1,
+      "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+      "inputSha256": "38429dbd6b04f3488025931a8da6592d67dede5453236f7a72d31f3b614c2099",
+      "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+      "failureReason": null,
+      "referenceTextProvided": true
+    }
+  ],
+  "leaseOwner": null,
+  "voiceInput": {
+    "blob": {
+      "id": "0fdd182d-962d-4b6d-a858-e6333620af6d",
+      "mime": "audio/wav",
+      "name": "chinese.wav",
+      "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+      "sizeBytes": 423470
+    },
+    "mode": "import",
+    "rate": 0,
+    "voice": "",
+    "purpose": "final",
+    "language": "zh",
+    "provider": "whisper-local",
+    "segments": [
+      {
+        "id": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "text": "测试，测试。这是配音时间轴的真实语音。字幕和词语时间需要分别校验。"
+      }
+    ],
+    "operation": "align",
+    "revisionId": "01ef31d0-ae66-4919-aa28-d0172f68c62b",
+    "maxAudioBytes": 10485760,
+    "maxDurationMs": 3600000,
+    "schemaVersion": 1,
+    "targetVersion": 3,
+    "scriptRevisionId": "2cf59336-c8e2-488b-9c50-4fbcbb650232"
+  },
+  "heartbeatAt": "2026-10-24T02:53:19.114Z",
+  "maxAttempts": 3,
+  "voiceResult": {
+    "run": {
+      "model": "openai-whisper/base",
+      "runId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+      "purpose": "final",
+      "exitCode": 0,
+      "provider": "whisper-local",
+      "operation": "align",
+      "processId": 32892,
+      "startedAt": "2026-10-24T02:53:00.999Z",
+      "durationMs": 18359,
+      "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+      "inputSha256": "38429dbd6b04f3488025931a8da6592d67dede5453236f7a72d31f3b614c2099",
+      "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+      "failureReason": null,
+      "referenceTextProvided": true
+    },
+    "cues": [
+      {
+        "id": "44d0ee20-04c4-404c-97b0-28c805c8fde0",
+        "text": "测",
+        "endMs": 340,
+        "level": "word",
+        "stale": false,
+        "endChar": 1,
+        "startMs": 260,
+        "anchorId": "0f02da2a-f0e8-431c-9ce2-3a8b62e1872a",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 0,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "f39cedae-7d05-4859-a4b1-ecb47fc00d32",
+        "text": "试，",
+        "endMs": 1060,
+        "level": "word",
+        "stale": false,
+        "endChar": 3,
+        "startMs": 340,
+        "anchorId": "7aeb56a6-6c5e-4049-b41c-dce16223910e",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 1,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "88ce7ff9-a565-4333-8c10-6e8e1b36abe0",
+        "text": "试。",
+        "endMs": 2080,
+        "level": "word",
+        "stale": false,
+        "endChar": 6,
+        "startMs": 1260,
+        "anchorId": "35ae450c-30fb-432c-afe1-13dbc5515ea3",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 4,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "7d184340-2c79-41ea-9416-131b0cc6666e",
+        "text": "这是",
+        "endMs": 2740,
+        "level": "word",
+        "stale": false,
+        "endChar": 8,
+        "startMs": 2640,
+        "anchorId": "68656753-b911-4623-9c7f-bfef74b390ee",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 6,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "1cea1274-52cb-48e7-8e50-edc6647b3682",
+        "text": "配",
+        "endMs": 3020,
+        "level": "word",
+        "stale": false,
+        "endChar": 9,
+        "startMs": 2740,
+        "anchorId": "28b04105-2f8f-4d98-b1b3-8051b5b2ef76",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 8,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "d3ac0dd5-1fdb-4c52-a0a1-4ea3b2a66a58",
+        "text": "音",
+        "endMs": 3360,
+        "level": "word",
+        "stale": false,
+        "endChar": 10,
+        "startMs": 3020,
+        "anchorId": "bd10631c-110a-4b64-9f5d-0df1eca6a506",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 9,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "80c537cb-2c7a-4cf0-8d8d-ef9ee49e3c2b",
+        "text": "时间",
+        "endMs": 3660,
+        "level": "word",
+        "stale": false,
+        "endChar": 12,
+        "startMs": 3360,
+        "anchorId": "04e8a7a4-2fc9-47d4-a9ab-dfadb25c6b03",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 10,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "3df7d3d0-d3c1-41e6-ae63-a6e0052e253e",
+        "text": "轴",
+        "endMs": 3920,
+        "level": "word",
+        "stale": false,
+        "endChar": 13,
+        "startMs": 3660,
+        "anchorId": "2fedbab4-fece-40fb-bc1b-8e441a886076",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 12,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "cc95fd55-74d4-4bab-8338-6aecec4b3d49",
+        "text": "的",
+        "endMs": 4160,
+        "level": "word",
+        "stale": false,
+        "endChar": 14,
+        "startMs": 3920,
+        "anchorId": "b3a995e5-98cf-4e89-ba0f-9944624b585a",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 13,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "1e5c7958-316c-4a65-8051-550050302db9",
+        "text": "真",
+        "endMs": 4320,
+        "level": "word",
+        "stale": false,
+        "endChar": 15,
+        "startMs": 4160,
+        "anchorId": "57e4c975-e735-48a6-932a-da3718c15c3a",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 14,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "d4ff8f69-d085-429c-9b6c-518d755a2cdc",
+        "text": "实",
+        "endMs": 4560,
+        "level": "word",
+        "stale": false,
+        "endChar": 16,
+        "startMs": 4320,
+        "anchorId": "654e7244-3648-4153-8c88-c45fd6f366b8",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 15,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "fd89b331-b858-48c3-80e7-7a0173620dc6",
+        "text": "语",
+        "endMs": 4700,
+        "level": "word",
+        "stale": false,
+        "endChar": 17,
+        "startMs": 4560,
+        "anchorId": "adc8fb5c-7e4d-4ea4-8c9a-b9046dab6074",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 16,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "93d1b80f-ea2c-49d0-a177-978803a45e49",
+        "text": "音。",
+        "endMs": 5840,
+        "level": "word",
+        "stale": false,
+        "endChar": 19,
+        "startMs": 4700,
+        "anchorId": "2902ccb5-f99a-44d8-98c8-014bec50a54e",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 17,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "ed6b79ec-bea6-4fbc-a10a-12be5d23b62c",
+        "text": "字",
+        "endMs": 6060,
+        "level": "word",
+        "stale": false,
+        "endChar": 20,
+        "startMs": 5840,
+        "anchorId": "064e5464-f9d0-45f7-bd31-bc888a4c3051",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 19,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "e6dc05fa-0ccf-480e-be2b-4feb674384a3",
+        "text": "幕",
+        "endMs": 6280,
+        "level": "word",
+        "stale": false,
+        "endChar": 21,
+        "startMs": 6060,
+        "anchorId": "1345888f-d3a0-41c6-b84c-88fda3d81a69",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 20,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "2ea36ed6-03df-46ad-9c76-f627ca5ac73d",
+        "text": "和",
+        "endMs": 6620,
+        "level": "word",
+        "stale": false,
+        "endChar": 22,
+        "startMs": 6280,
+        "anchorId": "f34a0ca6-68ce-4106-916d-f546b05acaa0",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 21,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "b5196c1f-33d0-4519-ad0e-1e0f117dce50",
+        "text": "词",
+        "endMs": 6820,
+        "level": "word",
+        "stale": false,
+        "endChar": 23,
+        "startMs": 6620,
+        "anchorId": "8552fa25-f17d-4b12-9aa7-cd568ddedd31",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 22,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "51daf85e-c89c-42d3-b497-fec023c1a13c",
+        "text": "语",
+        "endMs": 6960,
+        "level": "word",
+        "stale": false,
+        "endChar": 24,
+        "startMs": 6820,
+        "anchorId": "006e009d-f488-44c2-bd96-7086504d66d0",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 23,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "ec869667-b56a-44fb-9f14-07552f98c362",
+        "text": "时间",
+        "endMs": 7360,
+        "level": "word",
+        "stale": false,
+        "endChar": 26,
+        "startMs": 6960,
+        "anchorId": "10611b39-1c3b-4a7d-b02c-a9fd3f78b236",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 24,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "3c2f9465-dfa5-41b4-a897-b8a764d7f6dc",
+        "text": "需要",
+        "endMs": 7840,
+        "level": "word",
+        "stale": false,
+        "endChar": 28,
+        "startMs": 7360,
+        "anchorId": "03da8676-edc9-4d37-8186-107743a4d12a",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 26,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "71ae2ce9-ca9f-4aaf-8953-a53e5e868c07",
+        "text": "分",
+        "endMs": 8100,
+        "level": "word",
+        "stale": false,
+        "endChar": 29,
+        "startMs": 7840,
+        "anchorId": "38748bed-1616-4a8d-819c-e57817b53321",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 28,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "33aa8373-8f85-49df-8a60-84b61c7aff24",
+        "text": "别",
+        "endMs": 8380,
+        "level": "word",
+        "stale": false,
+        "endChar": 30,
+        "startMs": 8100,
+        "anchorId": "12c7af5e-88d4-483a-8ec2-ccbf254daf1a",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 29,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "db92c67d-4168-4e2d-8466-e58782d30fad",
+        "text": "校",
+        "endMs": 8560,
+        "level": "word",
+        "stale": false,
+        "endChar": 31,
+        "startMs": 8380,
+        "anchorId": "ada38f9c-da21-44b1-b359-9cf743b5d3b3",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 30,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "a5511ba1-3de3-40f5-9151-c86dd571e10d",
+        "text": "验。",
+        "endMs": 9060,
+        "level": "word",
+        "stale": false,
+        "endChar": 33,
+        "startMs": 8560,
+        "anchorId": "ade0851b-ddd0-4f51-bc7c-4ac7073590ed",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 31,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "e97863d6-d162-4629-9a7b-e8bcd8ad0290",
+        "text": "测试，测试。",
+        "endMs": 2080,
+        "level": "sentence",
+        "stale": false,
+        "endChar": 6,
+        "startMs": 260,
+        "anchorId": "141b0c1e-1f1a-45a8-9171-ce902e067d1c",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 0,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "9cae68cb-a7d1-43c8-bf7b-c8d6d25eebf1",
+        "text": "这是配音时间轴的真实语音。",
+        "endMs": 5840,
+        "level": "sentence",
+        "stale": false,
+        "endChar": 19,
+        "startMs": 2640,
+        "anchorId": "5f4f3653-7ddc-4fe4-b8e2-0f91f45ef066",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 6,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      },
+      {
+        "id": "f17bea82-7e16-4350-aafb-bc47f8822c2c",
+        "text": "字幕和词语时间需要分别校验。",
+        "endMs": 9060,
+        "level": "sentence",
+        "stale": false,
+        "endChar": 33,
+        "startMs": 5840,
+        "anchorId": "ea9df524-faf5-431a-afb8-4e98a73bc206",
+        "alignment": "forced",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "startChar": 19,
+        "confidence": null,
+        "alignmentRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "segmentTextSha256": "341070d53cb38c8bffa0206c826fbc8d426ed5ca1f810e7f199eb5a754410f7c"
+      }
+    ],
+    "kind": "alignment",
+    "mode": "import",
+    "model": "openai-whisper/base",
+    "notes": "给定文稿的真实Whisper/stable-ts模型对齐。1个零时长词未独立建Cue；句界来自有效模型词范围，不插值或均分，不保证人工实测精度。",
+    "words": [
+      {
+        "text": " 测",
+        "endMs": 340,
+        "startMs": 260,
+        "probability": 0.5893077428142229
+      },
+      {
+        "text": "试，",
+        "endMs": 1060,
+        "startMs": 340,
+        "probability": 0.396161762423435
+      },
+      {
+        "text": "测",
+        "endMs": 1260,
+        "startMs": 1260,
+        "probability": 0.5111081879585981
+      },
+      {
+        "text": "试。",
+        "endMs": 2080,
+        "startMs": 1260,
+        "probability": 0.7087943305571874
+      },
+      {
+        "text": "这是",
+        "endMs": 2740,
+        "startMs": 2640,
+        "probability": 0.3012257516384125
+      },
+      {
+        "text": "配",
+        "endMs": 3020,
+        "startMs": 2740,
+        "probability": 0.938807487487793
+      },
+      {
+        "text": "音",
+        "endMs": 3360,
+        "startMs": 3020,
+        "probability": 0.9323980212211609
+      },
+      {
+        "text": "时间",
+        "endMs": 3660,
+        "startMs": 3360,
+        "probability": 0.8320651650428772
+      },
+      {
+        "text": "轴",
+        "endMs": 3920,
+        "startMs": 3660,
+        "probability": 0.6464275568723679
+      },
+      {
+        "text": "的",
+        "endMs": 4160,
+        "startMs": 3920,
+        "probability": 0.9904916882514954
+      },
+      {
+        "text": "真",
+        "endMs": 4320,
+        "startMs": 4160,
+        "probability": 0.955032467842102
+      },
+      {
+        "text": "实",
+        "endMs": 4560,
+        "startMs": 4320,
+        "probability": 0.971272885799408
+      },
+      {
+        "text": "语",
+        "endMs": 4700,
+        "startMs": 4560,
+        "probability": 0.9683988392353058
+      },
+      {
+        "text": "音。",
+        "endMs": 5840,
+        "startMs": 4700,
+        "probability": 0.8945500552654266
+      },
+      {
+        "text": "字",
+        "endMs": 6060,
+        "startMs": 5840,
+        "probability": 0.47682464122772217
+      },
+      {
+        "text": "幕",
+        "endMs": 6280,
+        "startMs": 6060,
+        "probability": 0.9689215421676636
+      },
+      {
+        "text": "和",
+        "endMs": 6620,
+        "startMs": 6280,
+        "probability": 0.9754078388214111
+      },
+      {
+        "text": "词",
+        "endMs": 6820,
+        "startMs": 6620,
+        "probability": 0.7645977139472961
+      },
+      {
+        "text": "语",
+        "endMs": 6960,
+        "startMs": 6820,
+        "probability": 0.8496500253677368
+      },
+      {
+        "text": "时间",
+        "endMs": 7360,
+        "startMs": 6960,
+        "probability": 0.9715626835823059
+      },
+      {
+        "text": "需要",
+        "endMs": 7840,
+        "startMs": 7360,
+        "probability": 0.9903392195701599
+      },
+      {
+        "text": "分",
+        "endMs": 8100,
+        "startMs": 7840,
+        "probability": 0.9665035605430603
+      },
+      {
+        "text": "别",
+        "endMs": 8380,
+        "startMs": 8100,
+        "probability": 0.9824123978614807
+      },
+      {
+        "text": "校",
+        "endMs": 8560,
+        "startMs": 8380,
+        "probability": 0.0013911583228036761
+      },
+      {
+        "text": "验。",
+        "endMs": 9060,
+        "startMs": 8560,
+        "probability": 0.8211977283159891
+      }
+    ],
+    "purpose": "final",
+    "provider": "whisper-local",
+    "subtitles": [
+      {
+        "id": "919f3878-3090-43ff-8aba-4c1aa364d151",
+        "text": "测试，测试。",
+        "endMs": 2080,
+        "startMs": 260,
+        "anchorId": "141b0c1e-1f1a-45a8-9171-ce902e067d1c",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "sourceRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7"
+      },
+      {
+        "id": "190af806-aea3-4ffd-8bd1-9fec8b083f15",
+        "text": "这是配音时间轴的真实语音。",
+        "endMs": 5840,
+        "startMs": 2640,
+        "anchorId": "5f4f3653-7ddc-4fe4-b8e2-0f91f45ef066",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "sourceRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7"
+      },
+      {
+        "id": "c48cf231-b5d4-4086-b04f-2c72c35e5f25",
+        "text": "字幕和词语时间需要分别校验。",
+        "endMs": 9060,
+        "startMs": 5840,
+        "anchorId": "ea9df524-faf5-431a-afb8-4e98a73bc206",
+        "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+        "sourceRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7"
+      }
+    ],
+    "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+    "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+    "engineVersion": "stable-ts/2.19.1/whisper/20250625",
+    "scriptRevisionId": "2cf59336-c8e2-488b-9c50-4fbcbb650232"
+  },
+  "targetVersion": 3,
+  "idempotencyKey": "12c626ae-fd42-48e2-a52b-858cde519f44",
+  "leaseExpiresAt": null,
+  "inputRevisionIds": [
+    "2cf59336-c8e2-488b-9c50-4fbcbb650232"
+  ],
+  "resultRevisionId": "01ef31d0-ae66-4919-aa28-d0172f68c62b"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T05:31:27.910Z",
+  "backend": "sqlite",
+  "runId": "mvlyo6xx",
+  "checks": [
+    {
+      "name": "编辑未保存时独立刷新Job版本；取消和重试不覆盖编辑缓冲",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实浏览器409保留编辑内容；显式重新载入后采用服务器版本",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "浏览器新增/排序/删除镜头后原镜头ID保持，保存连续时间轴",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "Fork差异实际显示修改前后镜头内容和顺序",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "finishedAt": "2026-10-24T05:31:44.156Z"
+}

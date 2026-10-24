@@ -1,0 +1,10 @@
+PASS 真实Codex六镜结构、审计、冻结输入、3600连续帧及Cue引用
+PASS 空隙/重叠/负数/越界及未知文稿/Cue/Source拒绝，事务无部分写入
+PASS 一段拆多镜/多段合一镜、纯代码/待匹配/真实候选三方案；blocked授权标记不阻断内部使用
+AssertionError [ERR_ASSERTION]: {"error":{"code":"DIRECTOR_SOURCE_INVALID","message":"仅可绑定已真实提取元数据的固定研究媒体，并保留来源。"},"meta":{"requestId":"f3c0fc5d-4cc3-43de-acf5-d83d8d0e8aa9"}}
+
+422 !== 200
+
+    at api (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\director\run.cjs:140:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\director\run.cjs:358:60)

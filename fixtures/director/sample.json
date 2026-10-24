@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "title": "解释视频为什么先确定时间轴",
+  "durationMs": 120000,
+  "fps": 30,
+  "totalFrames": 3600,
+  "audioSha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d",
+  "segments": [
+    {
+      "index": 0,
+      "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+      "startMs": 0,
+      "endMs": 19333,
+      "alignment": "manual",
+      "method": "Known assembly offset + FFprobe whole speech file duration; includes SAPI leading/trailing silence; not phonetic alignment",
+      "speechDurationMs": 19333
+    },
+    {
+      "index": 1,
+      "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。",
+      "startMs": 30000,
+      "endMs": 48548,
+      "alignment": "manual",
+      "method": "Known assembly offset + FFprobe whole speech file duration; includes SAPI leading/trailing silence; not phonetic alignment",
+      "speechDurationMs": 18548
+    },
+    {
+      "index": 2,
+      "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。",
+      "startMs": 60000,
+      "endMs": 79553,
+      "alignment": "manual",
+      "method": "Known assembly offset + FFprobe whole speech file duration; includes SAPI leading/trailing silence; not phonetic alignment",
+      "speechDurationMs": 19553
+    },
+    {
+      "index": 3,
+      "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。",
+      "startMs": 90000,
+      "endMs": 109293,
+      "alignment": "manual",
+      "method": "Known assembly offset + FFprobe whole speech file duration; includes SAPI leading/trailing silence; not phonetic alignment",
+      "speechDurationMs": 19293
+    }
+  ],
+  "provenance": "Self-authored Chinese text and local Windows SAPI; no personal voice or external facts."
+}

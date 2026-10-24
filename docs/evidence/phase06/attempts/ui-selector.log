@@ -1,0 +1,8 @@
+locator.click: Error: strict mode violation: getByRole('button', { name: '取消任务', exact: true }) resolved to 2 elements:
+    1) <button class="studio_button__CEG3h">取消任务</button> aka getByRole('button', { name: '取消任务' }).first()
+    2) <button class="studio_button__CEG3h">取消任务</button> aka getByRole('button', { name: '取消任务' }).nth(1)
+
+Call log:
+  - waiting for getByRole('button', { name: '取消任务', exact: true })
+
+    at main (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\director\ui-protections.cjs:322:147)

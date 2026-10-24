@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "backend": "sqlite",
+  "runId": "mvlt4i0i",
+  "at": "2026-10-24T02:56:11.059Z",
+  "checks": [
+    {
+      "name": "真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载",
+      "status": "PASS",
+      "detail": {
+        "jobId": "ecd9424b-ccf1-4688-a21c-d7e60b60e290",
+        "candidates": 1,
+        "sourceId": "3bc7401d-8dde-45d9-9370-a6b905456928",
+        "runId": "01a16bd6-6d32-7a92-b50a-e0892579bd45"
+      }
+    },
+    {
+      "name": "真实图片理解绑定原件SHA；视觉输出不作为原文匹配",
+      "status": "PASS",
+      "detail": {
+        "jobId": "29e7b100-db3a-47a1-9221-de5642af36fd",
+        "summary": "图片为白底柱状图，黑色横轴与纵轴呈L形，没有可见刻度或网格。三根等宽柱从左到右分别为红色、绿色、蓝色，高度依次增加；柱下方分别标有“A”“B”“C”，柱顶附近分别标有“10”“20”“30”。顶部可辨认文字为“SELF-AUTHORED VISUAL TEST ONLY”，右侧与“30”距离较近。\n模型分析边界：仅描述图片中可见内容；图中未显示数据单位、轴名称或数据来源，无法确定各类别的实际含义。",
+        "runId": "01a16bd6-cb50-7161-a71a-34c64e0db4a7"
+      }
+    },
+    {
+      "name": "真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称",
+      "status": "PASS",
+      "detail": {
+        "jobId": "2a8e50fa-9597-4fbf-8193-10bcc379b639",
+        "timestamps": [
+          0,
+          3333,
+          6666
+        ],
+        "runIds": [
+          "01a16bd7-3a05-7820-98cc-e1d506124281",
+          "01a16bd7-9d7f-7fc0-8138-83e9ee0ec950",
+          "01a16bd7-e732-7ee1-b6d7-35d428fc6e34"
+        ]
+      }
+    },
+    {
+      "name": "真实AI局部文稿转换ScriptSegment，稳定ID/允许集引用/未改段落保持",
+      "status": "PASS",
+      "detail": {
+        "jobId": "4b973898-fae9-423c-87dd-6d506640dad3",
+        "runId": "01a16bd8-3986-7ef1-975e-d8f6d696c5a6",
+        "segmentId": "e7118f59-18ce-44c9-90a9-b64f42474d24",
+        "text": "观察，是直接看到了什么；推断，是根据看到的内容作出判断；证据，则要看这些内容能支持哪一个判断，支持到什么程度。这里提供的内部测试声明称，已获取一份 ffprobe 文档，但这项声明仍未核实，也不构成独立验证。因此，不能仅凭“获取了文档”，就认定相关判断已经得到官方文档支持；审批通过也不等于事实得到核实。文档内容及其是否支持相关判断，仍需人工审核。"
+      }
+    },
+    {
+      "name": "真实整体文稿生成沿用全部稳定ID与引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "deba99d8-f287-49c6-9d81-9275cf78cb1f",
+        "runId": "01a16bd8-97fe-7690-8f6a-02b2bb590c11"
+      }
+    },
+    {
+      "name": "真实浏览器来源/视觉/写稿/使用量可见，刷新持久化",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "运行中真实Codex取消终止进程树、审计保留、迟到文稿不写入",
+      "status": "PASS",
+      "detail": {
+        "jobId": "3fcd17e5-a32f-4053-8bc6-cc7e328af460",
+        "aiRuns": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16bd9-3b00-77b0-84fd-7ba4fe990abd",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-24T02:59:19.359Z",
+            "durationMs": 6568,
+            "usage": null,
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": "CODEX_CANCELLED",
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "jobAttempt": 1,
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实生成沿用审批只读和Fork，研究引用归属不变",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "重启保持真实结果与审计；原用户数据不变",
+      "status": "PASS",
+      "detail": {
+        "originalBefore": "fafaedf6913bd7e296c986e449576be553cb920aae308cf00ff96345c895ac89",
+        "unchanged": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "1f0205ab-41a1-4fc3-bfd4-fe438e597f65",
+  "finishedAt": "2026-10-24T02:59:53.659Z"
+}

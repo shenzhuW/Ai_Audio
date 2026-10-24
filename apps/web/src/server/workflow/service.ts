@@ -1,3 +1,4 @@
+import { directorProvider } from '../director/providers';
 import { z } from 'zod';
 import { randomUUID } from 'node:crypto';
 import type { WorkflowCommand } from '../../domain/workflow';
@@ -149,7 +150,7 @@ export function createWorkflowService(repo: WorkflowRepository) {
               processed++;
               continue;
             }
-            if (claimed.provider === 'script') {
+            if (claimed.provider === 'script' || claimed.provider === 'director') {
               let heartbeat: ReturnType<typeof setInterval> | undefined;
               const controller = new AbortController();
               const abort = () => controller.abort();
@@ -159,7 +160,7 @@ export function createWorkflowService(repo: WorkflowRepository) {
                 auditRecorded = false;
               let pending = Promise.resolve();
               try {
-                const input = claimed.scriptInput!;
+                const input = claimed.directorInput ?? claimed.scriptInput!;
                 const beat = () =>
                   (pending = pending
                     .then(async () => {
@@ -172,7 +173,10 @@ export function createWorkflowService(repo: WorkflowRepository) {
                           jobId: j.id,
                           workerId,
                           progress: 0.5,
-                          message: `${input.mode} 文稿任务处理中`,
+                          message:
+                            claimed.provider === 'director'
+                              ? `${input.mode} 导演任务处理中`
+                              : `${input.mode} 文稿任务处理中`,
                         },
                         randomUUID(),
                       );
@@ -182,17 +186,32 @@ export function createWorkflowService(repo: WorkflowRepository) {
                     }));
                 await beat();
                 heartbeat = setInterval(beat, 2000);
-                const provider = scriptProvider(input.mode);
-                const output = await (input.segmentId
-                  ? provider.rewrite(input, { signal: controller.signal })
-                  : provider.generate(input, { signal: controller.signal }));
+                const output = claimed.directorInput
+                  ? await directorProvider(claimed.directorInput.mode).generate(
+                      claimed.directorInput,
+                      { signal: controller.signal },
+                    )
+                  : await (claimed.scriptInput!.segmentId
+                      ? scriptProvider(claimed.scriptInput!.mode).rewrite(claimed.scriptInput!, {
+                          signal: controller.signal,
+                        })
+                      : scriptProvider(claimed.scriptInput!.mode).generate(claimed.scriptInput!, {
+                          signal: controller.signal,
+                        }));
                 if (output.aiRun) aiRuns = [output.aiRun];
                 await pending;
                 if (controller.signal.aborted) continue;
                 await this.execute(
                   projectId,
                   'local-user',
-                  { action: 'finish', jobId: j.id, workerId, scriptResult: output },
+                  {
+                    action: 'finish',
+                    jobId: j.id,
+                    workerId,
+                    ...(claimed.provider === 'director'
+                      ? { directorResult: output as import('../../domain/director').DirectorResult }
+                      : { scriptResult: output as import('../../domain/script').ScriptResult }),
+                  },
                   `finish:${j.id}:${claimed.attempt}`,
                 );
                 auditRecorded = true;

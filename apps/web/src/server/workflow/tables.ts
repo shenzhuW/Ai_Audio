@@ -1,3 +1,4 @@
+import { directorTables, sqliteDirectorGuards } from '../director/tables';
 import type { WorkflowState } from '../../domain/workflow';
 import { researchTables, sqliteResearchGuards } from '../research/tables';
 import { scriptTables, sqliteScriptGuards } from '../script/tables';
@@ -69,6 +70,7 @@ export const tables: {
   ...researchTables,
   ...scriptTables,
   ...voiceTables,
+  ...directorTables,
 ];
 export function sqliteWorkflowSchema() {
   return (
@@ -96,6 +98,7 @@ CREATE TRIGGER IF NOT EXISTS ${t}_append_only_delete BEFORE DELETE ON ${t} BEGIN
     '\nINSERT OR IGNORE INTO schema_migrations(version) VALUES(2);' +
     sqliteResearchGuards() +
     sqliteScriptGuards() +
-    sqliteVoiceGuards()
+    sqliteVoiceGuards() +
+    sqliteDirectorGuards()
   );
 }

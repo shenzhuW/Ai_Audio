@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T02:49:07.174Z",
+  "backend": "postgresql",
+  "runId": "mvlsvexx",
+  "checks": [
+    {
+      "name": "PostgreSQL 0001–0005 基线升级0006、重复部署、非超级用户",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          },
+          {
+            "migration_name": "0005_voice",
+            "count": 1
+          },
+          {
+            "migration_name": "0006_director",
+            "count": 1
+          }
+        ],
+        "role": {
+          "rolsuper": false,
+          "rolcreatedb": false
+        }
+      }
+    },
+    {
+      "name": "真实120秒音频导入、FFprobe、固定批准文稿/配音与自制研究来源",
+      "status": "PASS",
+      "detail": {
+        "projectId": "4a661359-9179-444b-820a-b5bbb504e828",
+        "scriptId": "ebf416a4-e3ef-4f09-9168-fc69eec149f0",
+        "voiceId": "6084e81b-ecee-4586-bbd8-c05ca746c5a0",
+        "sourceId": "fb07937d-aa0b-4da7-975e-f0cb0b241de3",
+        "imageId": "0c4366fa-0047-4de4-9a5b-f7415f5b9371",
+        "audioSha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d",
+        "alignment": "manual known assembly offsets; not model/word alignment"
+      }
+    },
+    {
+      "name": "未配置Provider明确失败，无假导演结果",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实Codex六镜结构、审计、冻结输入、3600连续帧及Cue引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "445a4061-41e3-4aae-94ce-80e6e8bf9d07",
+        "runId": "01a16bd0-3714-71a3-86a7-53fe4132a08c",
+        "model": "gpt-6.1-sol"
+      }
+    },
+    {
+      "name": "空隙/重叠/负数/越界及未知文稿/Cue/Source拒绝，事务无部分写入",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "一段拆多镜/多段合一镜、纯代码/待匹配/真实候选三方案；blocked授权标记不阻断内部使用",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "镜头重排与逐镜时长重算、尾段30帧提示、未覆盖禁止提交",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实并发200/409与同幂等键重放",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "实际浏览器编辑/刷新/提交/批准只读，API与两张数据库表不可覆写",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "Fork稳定shotId、单镜差异、驳回、历史不变",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "异步迟到结果不能覆盖人工编辑",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实Codex任务取消、心跳与租约回收、取消审计，无导演结果写入",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启保持导演镜头、稳定ID及真实模型审计",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "新配音批准引发导演及镜头依赖失效，批准历史保留",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "新文稿批准引发导演失效",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "静默120秒计划无伪语音Cue；Mock明确标记且不能代替真实AI样例",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "原有用户数据库/上传/会话内容SHA未变化",
+      "status": "PASS",
+      "detail": {
+        "originalDataSha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    },
+    {
+      "name": "Prisma PostgreSQL零漂移",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase06_mvlsvexx",
+  "projectId": "4a661359-9179-444b-820a-b5bbb504e828",
+  "finishedAt": "2026-10-24T02:52:10.583Z"
+}

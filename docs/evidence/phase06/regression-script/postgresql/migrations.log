@@ -1,0 +1,47 @@
+Prisma schema loaded from ..\..\.cache\phase04\mvlsw55t\baseline\prisma\schema.prisma
+Datasource "db": PostgreSQL database "studio_phase04_mvlsw55t", schema "public" at "127.0.0.1:55432"
+
+3 migrations found in prisma/migrations
+
+Applying migration `0001_project`
+Applying migration `0002_workflow`
+Applying migration `0003_research`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 0001_project/
+    └─ migration.sql
+  └─ 0002_workflow/
+    └─ migration.sql
+  └─ 0003_research/
+    └─ migration.sql
+
+All migrations have been successfully applied.
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "studio_phase04_mvlsw55t", schema "public" at "127.0.0.1:55432"
+
+6 migrations found in prisma/migrations
+
+Applying migration `0004_script`
+Applying migration `0005_voice`
+Applying migration `0006_director`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 0004_script/
+    └─ migration.sql
+  └─ 0005_voice/
+    └─ migration.sql
+  └─ 0006_director/
+    └─ migration.sql
+
+All migrations have been successfully applied.
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "studio_phase04_mvlsw55t", schema "public" at "127.0.0.1:55432"
+
+6 migrations found in prisma/migrations
+
+
+No pending migrations to apply.

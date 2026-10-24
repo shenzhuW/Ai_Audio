@@ -1,0 +1,10 @@
+PASS 真实120秒音频导入、FFprobe、固定批准文稿/配音与自制研究来源
+PASS 未配置Provider明确失败，无假导演结果
+PASS 真实Codex六镜结构、审计、冻结输入、3600连续帧及Cue引用
+AssertionError [ERR_ASSERTION]: {"error":{"code":"VALIDATION_ERROR","message":"请求内容无效"},"meta":{"requestId":"3aa4558e-d23f-44b1-a7c9-3cc07c509e62"}}
+
+400 !== 422
+
+    at api (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\director\run.cjs:140:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\director\run.cjs:350:170)

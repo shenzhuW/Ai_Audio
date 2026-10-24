@@ -1,0 +1,181 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T02:49:41.150Z",
+  "backend": "sqlite",
+  "runId": "mvlsw55k",
+  "checks": [
+    {
+      "name": "真实上传、文件签名/FFprobe拒绝损坏、SHA/9602ms、Range/HEAD/鉴权/项目隔离、幂等",
+      "status": "PASS",
+      "detail": {
+        "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+        "durationMs": 9602,
+        "audio": {
+          "blob": {
+            "id": "309c02a0-e4ed-4dd1-a1b6-e5a45bc1a098",
+            "name": "chinese.wav",
+            "mime": "audio/wav",
+            "sizeBytes": 423470,
+            "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8"
+          },
+          "durationMs": 9602,
+          "codec": "pcm_s16le",
+          "sampleRate": 22050,
+          "channels": 1,
+          "origin": "import",
+          "purpose": "final",
+          "provider": "audio-import",
+          "runId": "415b212d-ab2c-4306-9747-6838cebe8896"
+        }
+      }
+    },
+    {
+      "name": "真实中文ASR→未绑定字幕草稿；未配置/超时/重试无部分写入且保留三次审计",
+      "status": "PASS",
+      "detail": {
+        "transcript": "測試,測試。這是配音時間軸的真實語音。字幕和詞語時間需要分別教驗。",
+        "runId": "b6b79b0c-fdc0-4cb7-a6cf-083a50c6ff6b",
+        "model": "openai-whisper/base"
+      }
+    },
+    {
+      "name": "真实模型强制句/词对齐、重复词精确位置、非均分、零宽词保留原始但不伪造Cue",
+      "status": "PASS",
+      "detail": {
+        "runId": "940c2104-080c-427f-afde-5210e0f2599b",
+        "zeroWidth": [
+          {
+            "text": "测",
+            "startMs": 1260,
+            "endMs": 1260,
+            "probability": 0.5111081879585981
+          }
+        ],
+        "wordCues": 24,
+        "sentences": [
+          {
+            "id": "57fa1cb5-cf9e-49e1-be09-84477214a631",
+            "anchorId": "7c67c637-948b-486f-9635-b9afbdb14588",
+            "segmentId": "87fd13d8-4fe1-47bf-a863-ea0bd31e908d",
+            "startMs": 260,
+            "endMs": 2080,
+            "text": "测试，测试。",
+            "sourceRunId": "940c2104-080c-427f-afde-5210e0f2599b"
+          },
+          {
+            "id": "6fc9e88c-f144-4938-948a-74a1d681daae",
+            "anchorId": "886bde34-b430-464b-95ef-4cfd6cf58367",
+            "segmentId": "87fd13d8-4fe1-47bf-a863-ea0bd31e908d",
+            "startMs": 2640,
+            "endMs": 5840,
+            "text": "这是配音时间轴的真实语音。",
+            "sourceRunId": "940c2104-080c-427f-afde-5210e0f2599b"
+          },
+          {
+            "id": "2b58e9b8-fa5c-4fa8-acbf-02f9549690c6",
+            "anchorId": "7bfe25a0-e664-4744-93ca-07920a3948d8",
+            "segmentId": "87fd13d8-4fe1-47bf-a863-ea0bd31e908d",
+            "startMs": 5840,
+            "endMs": 9060,
+            "text": "字幕和词语时间需要分别校验。",
+            "sourceRunId": "940c2104-080c-427f-afde-5210e0f2599b"
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实Chrome解码播放/进度推进/模型字幕时序及人工修改刷新持久化；锚点/文稿不变",
+      "status": "PASS",
+      "detail": {
+        "media": {
+          "currentTime": 0.561912,
+          "paused": false,
+          "readyState": 4,
+          "duration": 9.601451
+        },
+        "subtitleId": "57fa1cb5-cf9e-49e1-be09-84477214a631",
+        "editedStartMs": 250
+      }
+    },
+    {
+      "name": "并发409、幂等、批准API/数据库不可变、Fork逻辑ID与历史原件保持",
+      "status": "PASS",
+      "detail": {
+        "approvedRevision": "c89d09ce-d94e-4b51-923f-3ee883ca37b3",
+        "forkRevision": "4750d354-852a-4b9b-8ef1-8d2266a74215",
+        "statuses": [
+          200,
+          409
+        ]
+      }
+    },
+    {
+      "name": "配音字幕新批准修订使合成下游依赖失效",
+      "status": "PASS",
+      "detail": {
+        "consumer": "a22117aa-f491-4073-98f2-b269f7edfc58",
+        "syntheticDependencyOnly": true
+      }
+    },
+    {
+      "name": "真实模型运行取消/心跳/租约清空、异步旧版本结果不写入",
+      "status": "PASS",
+      "detail": {
+        "cancelledJob": "a32ba403-abc0-4ca4-afff-176f42a495a2",
+        "lateJob": "8f9b38a4-2cf4-4cef-acee-29012017bd78",
+        "error": "TARGET_CHANGED"
+      }
+    },
+    {
+      "name": "音频替换后锚点失效、阻止错误确认",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "TTS真实Windows系统声音、预览/正式隔离、云未配置与Mock明确失败",
+      "status": "PASS",
+      "detail": {
+        "audio": {
+          "blob": {
+            "id": "9b5338ca-cb44-436d-bc74-0873bdf04ae4",
+            "name": "system-voice-final.wav",
+            "mime": "audio/wav",
+            "sizeBytes": 423470,
+            "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8"
+          },
+          "durationMs": 9602,
+          "codec": "pcm_s16le",
+          "sampleRate": 22050,
+          "channels": 1,
+          "origin": "tts",
+          "purpose": "final",
+          "provider": "windows-sapi",
+          "runId": "83cc543c-c8c9-4fdc-bf24-34dc440cd12a"
+        },
+        "note": "真实系统TTS；非神经模型，不宣称Codex可合成音频"
+      }
+    },
+    {
+      "name": "无口播180秒静默计划、真实持久化/批准、无音频转录或伪对齐",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "批准新文稿使旧配音/锚点失效；旧批准历史不覆写",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启后音频/字幕/真实模型结果关系保留，原有用户数据SHA未变化",
+      "status": "PASS",
+      "detail": {
+        "originalDataSha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "56f1957a-4b3f-4735-82f9-c649d370aeb9",
+  "ttsProjectId": "55220002-c936-4222-acd6-693e5af8622d",
+  "silentProjectId": "b7edc7d5-f819-40a9-b202-1ba537d7bb3e",
+  "finishedAt": "2026-10-24T02:52:12.230Z"
+}

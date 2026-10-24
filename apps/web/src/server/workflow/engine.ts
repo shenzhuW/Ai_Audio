@@ -1,3 +1,14 @@
+import { DirectorCommandSchema } from '../../domain/director';
+import {
+  directorDocument,
+  directorContent,
+  initializeDirector,
+  saveDirector,
+  directorInput,
+  cloneDirector,
+  assertDirectorSubmittable,
+  finishDirector,
+} from '../director/engine';
 import { createHash, randomUUID } from 'node:crypto';
 import {
   artifactTypes,
@@ -62,6 +73,8 @@ export const emptyWorkflow = (): WorkflowState => ({
   researchIndexes: [],
   scriptDocuments: [],
   scriptSegments: [],
+  directorDocuments: [],
+  directorShots: [],
   voiceTimelines: [],
   voiceCues: [],
   subtitleTracks: [],
@@ -272,11 +285,13 @@ export function applyWorkflow(
   };
   let result: { id: string };
   const content = (r: WorkflowRevision) =>
-    r.voiceSchemaVersion
-      ? voiceContent(s, r)
-      : r.scriptSchemaVersion
-        ? scriptContent(s, r)
-        : researchContent(s, r);
+    r.directorSchemaVersion
+      ? directorContent(s, r)
+      : r.voiceSchemaVersion
+        ? voiceContent(s, r)
+        : r.scriptSchemaVersion
+          ? scriptContent(s, r)
+          : researchContent(s, r);
   const scopeDependency = (r: WorkflowRevision, ids?: string[]) => {
     if (!ids) return;
     const deps = s.dependencies.filter(
@@ -289,7 +304,92 @@ export function applyWorkflow(
       fail('INVALID_SEGMENT_REFERENCE', '段落依赖必须属于一个明确的上游文稿修订。');
     deps[0].segmentIds = [...new Set(ids)];
   };
-  if (c.action.startsWith('voice-')) {
+  if (c.action.startsWith('director-')) {
+    const command = DirectorCommandSchema.parse(c);
+    if (command.action === 'director-start') {
+      requireInputs([command.scriptRevisionId, command.voiceRevisionId]);
+      if (
+        !revision(command.scriptRevisionId).scriptSchemaVersion ||
+        !revision(command.voiceRevisionId).voiceSchemaVersion
+      )
+        fail('DIRECTOR_INPUT_REQUIRED', '请选择结构化批准文稿与配音。');
+      const a = s.artifacts.find((a) => a.type === 'storyboard'),
+        old = a?.currentRevisionId ? revision(a.currentRevisionId) : null;
+      if (old && (old.directorSchemaVersion || old.status !== 'draft'))
+        fail('ARTIFACT_EXISTS', '已有导演版本，请Fork。', 409);
+      if (old && (command.legacyRevisionId !== old.id || command.expectedVersion !== old.version))
+        conflict();
+      if (
+        old &&
+        s.dependencies.some(
+          (d) =>
+            d.downstreamRevisionId === old.id &&
+            ![command.scriptRevisionId, command.voiceRevisionId].includes(d.upstreamRevisionId),
+        )
+      )
+        fail('DIRECTOR_LEGACY_FORK_REQUIRED', '先Fork旧文本产物并选择当前输入。');
+      const r =
+        old ??
+        createRevision(
+          'storyboard',
+          '导演草稿',
+          [command.scriptRevisionId, command.voiceRevisionId],
+          false,
+        );
+      if (old) {
+        r.version++;
+        a!.version++;
+        for (const id of [command.scriptRevisionId, command.voiceRevisionId])
+          if (
+            !s.dependencies.some(
+              (d) => d.downstreamRevisionId === r.id && d.upstreamRevisionId === id,
+            )
+          )
+            s.dependencies.push({
+              id: randomUUID(),
+              upstreamRevisionId: id,
+              downstreamRevisionId: r.id,
+              purpose: '导演固定输入',
+            });
+      }
+      initializeDirector(s, r, command.scriptRevisionId, command.voiceRevisionId, project);
+      r.contentHash = fingerprint(content(r));
+      result = r;
+    } else {
+      const r = revision(command.revisionId),
+        a = artifact(r.artifactId),
+        doc = directorDocument(s, r.id);
+      if (a.type !== 'storyboard' || !doc) fail('INVALID_STATE', '尚未建立结构化导演版本。');
+      if (r.status !== 'draft') fail('IMMUTABLE_REVISION', '导演版本只读，请Fork。');
+      if (r.version !== command.expectedVersion || a.currentRevisionId !== r.id) conflict();
+      if (command.action === 'director-save') {
+        saveDirector(s, r, { ...doc!, needsRebind: false, provenance: 'user' }, command.shots);
+        r.version++;
+        r.updatedAt = time;
+        a.version++;
+        r.contentHash = fingerprint(content(r));
+        result = r;
+      } else {
+        requireInputs([doc!.scriptRevisionId, doc!.voiceRevisionId]);
+        if (command.shotCount > doc!.totalFrames) fail('DIRECTOR_TIMELINE', '镜头数不能超过帧数。');
+        const j = enqueue('storyboard', [doc!.scriptRevisionId, doc!.voiceRevisionId], key);
+        j.provider = 'director';
+        j.directorInput = directorInput(
+          s,
+          r,
+          project,
+          command.shotCount,
+          command.instruction,
+          command.mode,
+        );
+        j.progress = 0;
+        j.logs = [
+          { at: time, message: command.mode + ' 导演任务排队；文稿、配音、素材与目标版本已冻结。' },
+        ];
+        result = j;
+      }
+    }
+  } else if (c.action.startsWith('voice-')) {
     const command = VoiceCommandSchema.parse(c);
     if (command.action === 'voice-start') {
       requireInputs([command.scriptRevisionId]);
@@ -574,6 +674,7 @@ export function applyWorkflow(
     cloneResearch(s, old, result as WorkflowRevision);
     cloneScript(s, old, result as WorkflowRevision);
     cloneVoice(s, old, result as WorkflowRevision);
+    cloneDirector(s, old, result as WorkflowRevision);
     if (c.inputSegmentIds) scopeDependency(result as WorkflowRevision, c.inputSegmentIds);
     else
       for (const dep of s.dependencies.filter((d) => d.downstreamRevisionId === result.id)) {
@@ -592,6 +693,7 @@ export function applyWorkflow(
       fail('IMMUTABLE_REVISION', '已批准内容只读，请创建新修订。');
     if (r.version !== c.expectedVersion || a.currentRevisionId !== r.id) conflict();
     if (c.action === 'patch') {
+      if (r.directorSchemaVersion) fail('STRUCTURED_DIRECTOR_REQUIRED', '请使用导演镜头保存接口。');
       if (r.scriptSchemaVersion)
         fail('STRUCTURED_SCRIPT_REQUIRED', '结构化文稿请通过段落保存接口修改。');
       if (r.voiceSchemaVersion)
@@ -602,6 +704,7 @@ export function applyWorkflow(
     } else if (c.action === 'submit') {
       assertScriptSubmittable(s, r);
       assertVoiceSubmittable(s, r);
+      assertDirectorSubmittable(s, r);
       if (r.status !== 'draft') fail('INVALID_STATE', '仅草稿可以提交审核。');
       requireInputs(
         s.dependencies
@@ -719,7 +822,9 @@ export function applyWorkflow(
         if (j.leaseOwner !== c.workerId || Date.parse(j.leaseExpiresAt!) <= now)
           fail('JOB_CONFLICT', 'Worker 租约失效。', 409);
         const runs =
-          c.aiRuns ?? (c.scriptResult?.aiRun ? [c.scriptResult.aiRun] : c.researchResult?.aiRuns);
+          c.aiRuns ??
+          (c.directorResult?.aiRun ? [c.directorResult.aiRun] : undefined) ??
+          (c.scriptResult?.aiRun ? [c.scriptResult.aiRun] : c.researchResult?.aiRuns);
         if (runs)
           j.aiRuns = [
             ...(j.aiRuns || []),
@@ -736,7 +841,26 @@ export function applyWorkflow(
             : j.provider !== 'research' && currentVersion !== j.targetVersion
               ? 'TARGET_CHANGED'
               : null);
-        if (!j.errorCode && j.provider === 'voice') {
+        if (!j.errorCode && j.provider === 'director') {
+          const input = j.directorInput ?? fail('INVALID_DIRECTOR_RESULT', '缺少固定导演输入。'),
+            output = c.directorResult ?? fail('INVALID_DIRECTOR_RESULT', '缺少导演结果。');
+          try {
+            requireInputs([input.document.scriptRevisionId, input.document.voiceRevisionId]);
+            j.errorCode = finishDirector(s, input, output);
+          } catch (e) {
+            j.errorCode = e instanceof AppError ? e.code : 'INVALID_DIRECTOR_RESULT';
+          }
+          if (!j.errorCode) {
+            j.directorResult = output;
+            j.resultRevisionId = input.revisionId;
+            j.state = 'succeeded';
+            j.progress = 1;
+            const r = revision(input.revisionId);
+            r.updatedAt = time;
+            r.contentHash = fingerprint(content(r));
+            artifact(r.artifactId).version++;
+          } else j.state = 'failed';
+        } else if (!j.errorCode && j.provider === 'voice') {
           const input = j.voiceInput ?? fail('INVALID_VOICE_RESULT', '缺少配音输入。'),
             output = c.voiceResult ?? fail('INVALID_VOICE_RESULT', '缺少配音结果。');
           try {
@@ -834,7 +958,7 @@ export function applyWorkflow(
       j.version++;
     j.updatedAt = time;
     if (
-      ['remotion', 'research', 'script', 'voice'].includes(j.provider) &&
+      ['remotion', 'research', 'script', 'voice', 'director'].includes(j.provider) &&
       c.action !== 'heartbeat'
     )
       j.logs = [

@@ -57,6 +57,8 @@ model Project {
   scriptSegments          ScriptSegmentVersion[]
   voiceTimelines          VoiceTimeline[]
   voiceCues               VoiceCueVersion[]
+  directorDocuments       DirectorDocument[]
+  directorShots           DirectorShotVersion[]
   subtitleTracks          SubtitleTrack[]
 
   @@index([ownerId, updatedAt])
@@ -96,6 +98,10 @@ model WorkflowRevision {
   voiceTimelines   VoiceTimeline[]         @relation("VoiceSnapshot")
   voiceInputs      VoiceTimeline[]         @relation("VoiceScript")
   voiceCues        VoiceCueVersion[]
+  directorSnapshots DirectorDocument[] @relation("DirectorSnapshot")
+  directorScriptInputs DirectorDocument[] @relation("DirectorScript")
+  directorVoiceInputs DirectorDocument[] @relation("DirectorVoice")
+  directorShots DirectorShotVersion[]
   subtitleTracks   SubtitleTrack[]
 
   @@unique([artifactId, revisionNumber])
@@ -277,4 +283,31 @@ model ResearchIndexEntry {
 
   @@index([projectId])
   @@map("research_index_entries")
+}
+
+model DirectorDocument {
+ id String @id @db.Uuid
+ projectId String @map("project_id") @db.Uuid
+ revisionId String @unique @map("revision_id") @db.Uuid
+ scriptRevisionId String @map("script_revision_id") @db.Uuid
+ voiceRevisionId String @map("voice_revision_id") @db.Uuid
+ document Json
+ project Project @relation(fields:[projectId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ revision WorkflowRevision @relation("DirectorSnapshot",fields:[revisionId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ scriptRevision WorkflowRevision @relation("DirectorScript",fields:[scriptRevisionId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ voiceRevision WorkflowRevision @relation("DirectorVoice",fields:[voiceRevisionId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ @@index([projectId])
+ @@map("director_documents")
+}
+model DirectorShotVersion {
+ id String @id @db.Uuid
+ projectId String @map("project_id") @db.Uuid
+ revisionId String @map("revision_id") @db.Uuid
+ shotId String @map("shot_id") @db.Uuid
+ document Json
+ project Project @relation(fields:[projectId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ revision WorkflowRevision @relation(fields:[revisionId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ @@unique([revisionId,shotId])
+ @@index([projectId])
+ @@map("director_shot_versions")
 }

@@ -1,0 +1,223 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T02:52:14.385Z",
+  "backend": "postgresql",
+  "runId": "mvlszfe5",
+  "checks": [
+    {
+      "name": "PostgreSQL 0001–0004 基线升级0005、重复部署、非超级用户",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          },
+          {
+            "migration_name": "0005_voice",
+            "count": 1
+          },
+          {
+            "migration_name": "0006_director",
+            "count": 1
+          }
+        ],
+        "role": {
+          "rolsuper": false,
+          "rolcreatedb": false
+        }
+      }
+    },
+    {
+      "name": "真实上传、文件签名/FFprobe拒绝损坏、SHA/9602ms、Range/HEAD/鉴权/项目隔离、幂等",
+      "status": "PASS",
+      "detail": {
+        "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+        "durationMs": 9602,
+        "audio": {
+          "blob": {
+            "id": "0fdd182d-962d-4b6d-a858-e6333620af6d",
+            "mime": "audio/wav",
+            "name": "chinese.wav",
+            "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+            "sizeBytes": 423470
+          },
+          "codec": "pcm_s16le",
+          "runId": "e73e5a7c-e678-426b-8bdc-4dfc968c83e1",
+          "origin": "import",
+          "purpose": "final",
+          "channels": 1,
+          "provider": "audio-import",
+          "durationMs": 9602,
+          "sampleRate": 22050
+        }
+      }
+    },
+    {
+      "name": "真实中文ASR→未绑定字幕草稿；未配置/超时/重试无部分写入且保留三次审计",
+      "status": "PASS",
+      "detail": {
+        "transcript": "測試,測試。這是配音時間軸的真實語音。字幕和詞語時間需要分別教驗。",
+        "runId": "60ffd7de-e580-46cb-8711-b9ace3c68f59",
+        "model": "openai-whisper/base"
+      }
+    },
+    {
+      "name": "真实模型强制句/词对齐、重复词精确位置、非均分、零宽词保留原始但不伪造Cue",
+      "status": "PASS",
+      "detail": {
+        "runId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7",
+        "zeroWidth": [
+          {
+            "text": "测",
+            "endMs": 1260,
+            "startMs": 1260,
+            "probability": 0.5111081879585981
+          }
+        ],
+        "wordCues": 24,
+        "sentences": [
+          {
+            "id": "919f3878-3090-43ff-8aba-4c1aa364d151",
+            "text": "测试，测试。",
+            "endMs": 2080,
+            "startMs": 260,
+            "anchorId": "7596ac25-5697-4b98-8615-39b521b6a99f",
+            "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+            "sourceRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7"
+          },
+          {
+            "id": "190af806-aea3-4ffd-8bd1-9fec8b083f15",
+            "text": "这是配音时间轴的真实语音。",
+            "endMs": 5840,
+            "startMs": 2640,
+            "anchorId": "88b3811d-a909-4d7c-b1b2-ce904b2780b4",
+            "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+            "sourceRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7"
+          },
+          {
+            "id": "c48cf231-b5d4-4086-b04f-2c72c35e5f25",
+            "text": "字幕和词语时间需要分别校验。",
+            "endMs": 9060,
+            "startMs": 5840,
+            "anchorId": "348ad4d1-5720-4ef5-b0c1-b724a9ae21dd",
+            "segmentId": "5b72c337-c8c0-4cb0-ae1e-c53df05096e5",
+            "sourceRunId": "715bb5c3-1fc3-4db3-a276-719e10f2b9f7"
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实Chrome解码播放/进度推进/模型字幕时序及人工修改刷新持久化；锚点/文稿不变",
+      "status": "PASS",
+      "detail": {
+        "media": {
+          "currentTime": 0.564386,
+          "paused": false,
+          "readyState": 4,
+          "duration": 9.601451
+        },
+        "subtitleId": "919f3878-3090-43ff-8aba-4c1aa364d151",
+        "editedStartMs": 250
+      }
+    },
+    {
+      "name": "并发409、幂等、批准API/数据库不可变、Fork逻辑ID与历史原件保持",
+      "status": "PASS",
+      "detail": {
+        "approvedRevision": "01ef31d0-ae66-4919-aa28-d0172f68c62b",
+        "forkRevision": "b0d1d01d-6e04-4fd6-abfe-d4d6971ab0e5",
+        "statuses": [
+          200,
+          409
+        ]
+      }
+    },
+    {
+      "name": "配音字幕新批准修订使合成下游依赖失效",
+      "status": "PASS",
+      "detail": {
+        "consumer": "aca2b15d-ee21-478c-86a4-f68bc90bd923",
+        "syntheticDependencyOnly": true
+      }
+    },
+    {
+      "name": "真实模型运行取消/心跳/租约清空、异步旧版本结果不写入",
+      "status": "PASS",
+      "detail": {
+        "cancelledJob": "9a93b46b-8c15-49fc-8a6c-f37779832387",
+        "lateJob": "708591ce-e16a-4dca-b703-995ac483332e",
+        "error": "TARGET_CHANGED"
+      }
+    },
+    {
+      "name": "音频替换后锚点失效、阻止错误确认",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "TTS真实Windows系统声音、预览/正式隔离、云未配置与Mock明确失败",
+      "status": "PASS",
+      "detail": {
+        "audio": {
+          "blob": {
+            "id": "063c36f0-444d-4ac6-b177-2911ba380650",
+            "mime": "audio/wav",
+            "name": "system-voice-final.wav",
+            "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+            "sizeBytes": 423470
+          },
+          "codec": "pcm_s16le",
+          "runId": "da477360-a2bc-40c5-8fc3-b3c15591c2c5",
+          "origin": "tts",
+          "purpose": "final",
+          "channels": 1,
+          "provider": "windows-sapi",
+          "durationMs": 9602,
+          "sampleRate": 22050
+        },
+        "note": "真实系统TTS；非神经模型，不宣称Codex可合成音频"
+      }
+    },
+    {
+      "name": "无口播180秒静默计划、真实持久化/批准、无音频转录或伪对齐",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "批准新文稿使旧配音/锚点失效；旧批准历史不覆写",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启后音频/字幕/真实模型结果关系保留，原有用户数据SHA未变化",
+      "status": "PASS",
+      "detail": {
+        "originalDataSha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    },
+    {
+      "name": "PostgreSQL Prisma Schema零漂移",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase05_mvlszfe5",
+  "projectId": "1a67d05b-3cd1-48b1-9678-b22a948ef06d",
+  "ttsProjectId": "fea746b7-01f7-445b-9f64-c3f2162ac7ba",
+  "silentProjectId": "f8f379ac-0f01-425a-83f8-877126b77499",
+  "finishedAt": "2026-10-24T02:54:29.079Z"
+}

@@ -1,0 +1,197 @@
+[
+  {
+    "shotId": "7875e835-77f0-481e-b395-d597399ead04",
+    "startMs": 0,
+    "endMs": 10000,
+    "startFrame": 0,
+    "endFrame": 300,
+    "segmentIds": [
+      "711d6467-5f97-4a77-ab07-cc43a53e4c9e"
+    ],
+    "anchors": [
+      "8fec5b62-4e09-4d2f-9650-2fd6fd9aaf09"
+    ],
+    "actualCues": [
+      {
+        "id": "13046988-a027-4fb8-9fea-19bbe97b46cc",
+        "anchorId": "8fec5b62-4e09-4d2f-9650-2fd6fd9aaf09",
+        "segmentId": "711d6467-5f97-4a77-ab07-cc43a53e4c9e",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "1ce580ac5a1171c3ad3a009b1d8c15f8c7c9e68a42472dffc6c70c25982c507b",
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "startMs": 0,
+        "endMs": 19333,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "0a32ca8b-399f-4f46-a967-75f5701148fe",
+    "startMs": 10000,
+    "endMs": 40000,
+    "startFrame": 300,
+    "endFrame": 1200,
+    "segmentIds": [
+      "711d6467-5f97-4a77-ab07-cc43a53e4c9e",
+      "c3d4372a-b6bc-4375-b9b8-318344cca506"
+    ],
+    "anchors": [
+      "8fec5b62-4e09-4d2f-9650-2fd6fd9aaf09",
+      "05d84659-2da0-448e-a6b2-2dbc13f05f14"
+    ],
+    "actualCues": [
+      {
+        "id": "13046988-a027-4fb8-9fea-19bbe97b46cc",
+        "anchorId": "8fec5b62-4e09-4d2f-9650-2fd6fd9aaf09",
+        "segmentId": "711d6467-5f97-4a77-ab07-cc43a53e4c9e",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "1ce580ac5a1171c3ad3a009b1d8c15f8c7c9e68a42472dffc6c70c25982c507b",
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "startMs": 0,
+        "endMs": 19333,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      },
+      {
+        "id": "051a4bdc-dad2-4d21-b778-0e08ad18c872",
+        "anchorId": "05d84659-2da0-448e-a6b2-2dbc13f05f14",
+        "segmentId": "c3d4372a-b6bc-4375-b9b8-318344cca506",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 71,
+        "segmentTextSha256": "79ef3c1ab8b0be3d8ace4500dfa2085804d845bfa947fddcf75ad31530f6831e",
+        "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。",
+        "startMs": 30000,
+        "endMs": 48548,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "6770a769-008c-4451-b0d9-54bf42b4d581",
+    "startMs": 40000,
+    "endMs": 60000,
+    "startFrame": 1200,
+    "endFrame": 1800,
+    "segmentIds": [
+      "c3d4372a-b6bc-4375-b9b8-318344cca506"
+    ],
+    "anchors": [
+      "05d84659-2da0-448e-a6b2-2dbc13f05f14"
+    ],
+    "actualCues": [
+      {
+        "id": "051a4bdc-dad2-4d21-b778-0e08ad18c872",
+        "anchorId": "05d84659-2da0-448e-a6b2-2dbc13f05f14",
+        "segmentId": "c3d4372a-b6bc-4375-b9b8-318344cca506",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 71,
+        "segmentTextSha256": "79ef3c1ab8b0be3d8ace4500dfa2085804d845bfa947fddcf75ad31530f6831e",
+        "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。",
+        "startMs": 30000,
+        "endMs": 48548,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "ec2362f4-0b61-407d-bbee-d7fbd0be49df",
+    "startMs": 60000,
+    "endMs": 79567,
+    "startFrame": 1800,
+    "endFrame": 2387,
+    "segmentIds": [
+      "d8f3a3e2-5397-42da-8d92-66bdc6ddc1b9"
+    ],
+    "anchors": [
+      "1ad688a1-1dee-46cc-a421-100c40688e1a"
+    ],
+    "actualCues": [
+      {
+        "id": "611ae892-1f1b-4e52-a678-056ab580b491",
+        "anchorId": "1ad688a1-1dee-46cc-a421-100c40688e1a",
+        "segmentId": "d8f3a3e2-5397-42da-8d92-66bdc6ddc1b9",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 73,
+        "segmentTextSha256": "308f95a275b8cd218d60a475a819598644d62e63da9d48edd332b307f83e80dd",
+        "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。",
+        "startMs": 60000,
+        "endMs": 79553,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "20a07273-5ed7-4f9c-9e93-d3d38e423f89",
+    "startMs": 79566,
+    "endMs": 90000,
+    "startFrame": 2387,
+    "endFrame": 2700,
+    "segmentIds": [
+      "d8f3a3e2-5397-42da-8d92-66bdc6ddc1b9"
+    ],
+    "anchors": [],
+    "actualCues": [
+      {
+        "id": "611ae892-1f1b-4e52-a678-056ab580b491",
+        "anchorId": "1ad688a1-1dee-46cc-a421-100c40688e1a",
+        "segmentId": "d8f3a3e2-5397-42da-8d92-66bdc6ddc1b9",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 73,
+        "segmentTextSha256": "308f95a275b8cd218d60a475a819598644d62e63da9d48edd332b307f83e80dd",
+        "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。",
+        "startMs": 60000,
+        "endMs": 79553,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "90f4c970-8878-46a9-add6-b447f8359618",
+    "startMs": 90000,
+    "endMs": 120000,
+    "startFrame": 2700,
+    "endFrame": 3600,
+    "segmentIds": [
+      "64537507-eb27-45f4-b85c-7cd060a358ed"
+    ],
+    "anchors": [
+      "082849b6-7972-49ee-a8c4-494a0ce462e4"
+    ],
+    "actualCues": [
+      {
+        "id": "63a87f0b-5008-4021-b1d0-ecba6841c4f5",
+        "anchorId": "082849b6-7972-49ee-a8c4-494a0ce462e4",
+        "segmentId": "64537507-eb27-45f4-b85c-7cd060a358ed",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "64b698d041d96930083a4906bec52de06522014cb92818ba1b7a6fd8233b65c0",
+        "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。",
+        "startMs": 90000,
+        "endMs": 109293,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  }
+]

@@ -1,5 +1,15 @@
 # 参考仓库阅读与适配记录
 
+## 2026-10-24 · Phase06 Director
+
+实读wallstreet-explainer固定commit `920ed1d3b3ecb5997d861902e2719dda6688c0b1` 的 `references/thinking.md`（blob `eeee222c837b03b5de773ca39ea96c307a401882`）、`references/grammar.md`（`4755a70917bf576ef30fd850328a02d24ba83c83`）、`references/motion.md`（`598e7afcf793059fd5205b5d47e8f6f8c6129c28`），再次读LICENSE（`7e2580e1d5b8410309b4d16b670bd16394438344`）。链接均可用 `https://github.com/HeyChengC/wallstreet-explainer/blob/<commit>/<path>` 定位。只阅读当前阶段文档，没有执行参考脚本或复制源码/样片。
+
+- thinking：镜头需要同时让观众认出对象、理解关系并接上口播；narrativeGoal/viewerTakeaway与Script段落绑定分别保存。坚持同一解释对象与一个画面主焦点，冲突/未核实事实不因画面设计被升级。
+- grammar：切点要交代上一镜留下什么、下一镜看什么及共享对象；适配为transition.continuity与推荐机制，转场不改变批准配音/字幕时间。多段一镜/一段多镜，镜头不能机械等于每句或每个Cue。
+- motion：运动服务解释，2.5D层级/视差/目标运镜和原地状态变化比无差别元素入场更清晰。适配为分层role/depth、composition、animation.mechanism/reason，当前只预览受约束图形草图，不运行任意TSX，不宣称已经产出最终2.5D动画。
+- 不把参考的2秒B-roll、固定漂移速度或统计指标变成本项目硬门槛；120秒六镜头是可复现验收样例，不限制项目时长或镜头数量。参考提供的事实/样片不进入本项目资料允许集。
+- LICENSE为MIT，第三方新闻/照片/Logo/视频明确排除。只借鉴设计方法，自行实现持久化/审批/Job，不引入参考渲染器/素材下载器。D-17/D-18仍有效，未知商业许可不阻断内部候选，但不绕过访问保护、不自动公开发布。
+
 ## 2026-10-24 · Phase05 Voice
 
 实读固定SHA `920ed1d3b3ecb5997d861902e2719dda6688c0b1` 的 wallstreet-explainer [scripts/temp_voice.py](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/scripts/temp_voice.py)，blob `f0761cabfbd1a97804c3a19c9db506ea1326691d`；复核此前固定LICENSE为MIT。没有执行其edge-tts/faster-whisper脚本、复制源码或引入其样片素材。
@@ -35,7 +45,7 @@
 | 03 | wallstreet sourcing/新闻截图 | REVIEWED（源码静态阅读，未运行第三方脚本） | 2026-10-23，固定 `920ed1d3b3ecb5997d861902e2719dda6688c0b1`，适配见下 | MIT；示例新闻/视频素材不受源码许可覆盖 |
 | 04 | wallstreet SKILL / thinking | REVIEWED（静态阅读，未执行第三方脚本） | 2026-10-23，固定同一 SHA；叙事目的、观众收获、视觉意图与事实引用见下 | MIT；不复制代码/样片，不采用外部技能的额外审批流程 |
 | 05 | wallstreet temp_voice.py / Whisper / stable-ts | REVIEWED；本地模型实际运行 | 2026-10-24 记录见本文开头；临时/正式分离、真实模型时间及范围映射 | MIT；不复制参考代码，stable-ts归档风险 |
-| 06 | wallstreet 导演/动画语法 | NOT REVIEWED | 待填写 | 待填写 |
+| 06 | wallstreet thinking/grammar/motion | REVIEWED（固定SHA静态实读） | 2026-10-24，叙事/连续性/2.5D，见顶部 | MIT，未复制源码/样片或执行参考脚本 |
 | 07 | wallstreet footage.py | NOT REVIEWED | 待填写 | 待填写 |
 | 08 | Remotion AI Starter / Hypit 组件 | NOT REVIEWED | 待填写 | 待填写 |
 | 09 | wallstreet Review/MotionCheck | NOT REVIEWED | 待填写 | 待填写 |
@@ -109,4 +119,3 @@ GitHub API 已核实 wallstreet-explainer 当时 main SHA 为 `920ed1d3b3ecb5997
 - LICENSE 为 MIT，示例第三方新闻截图/视频/照片明确不在该源码许可内；D-17/D-18 允许内部测试的候选策略仍适用，不能据此写入虚假 cleared。本次实际验收资料全部自制，不引入示例新闻素材或第三方下载器。
 
 PDF 本地提取另参考 [Mozilla PDF.js Node getinfo.mjs](https://github.com/mozilla/pdf.js/blob/master/examples/node/getinfo.mjs) 的 getDocument/getPage/getTextContent 接口，安装精确 `pdfjs-dist@6.4.299`（Apache-2.0，Node >=22.13，当前 Node 24.15）。实际已提取合成 PDF 页数和文本。Worker 读取字节数组，禁止脚本求值，不执行 PDF action，字体从依赖本地目录读取；不开放 HTTP URL 给解析器。图片/视频用现有 FFprobe/FFmpeg，视觉/OCR/ASR 未配置时仅记录真实技术信息。完整双数据库/浏览器验证以阶段交付报告为准，不将静态参考阅读算成外部 Provider 可用。
-

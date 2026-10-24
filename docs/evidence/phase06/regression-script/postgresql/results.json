@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T02:49:41.154Z",
+  "backend": "postgresql",
+  "runId": "mvlsw55t",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL：Phase03 基线升级当前迁移、重复部署与旧项目保留",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          },
+          {
+            "migration_name": "0005_voice",
+            "count": 1
+          },
+          {
+            "migration_name": "0006_director",
+            "count": 1
+          }
+        ],
+        "role": {
+          "rolsuper": false,
+          "rolcreatedb": false
+        }
+      }
+    },
+    {
+      "name": "Phase00/01 HTTP 与工作流回归",
+      "status": "PASS",
+      "detail": {
+        "http": 15,
+        "workflow": 8
+      }
+    },
+    {
+      "name": "用户文稿跳过研究、稳定段落ID、真实并发409与幂等",
+      "status": "PASS",
+      "detail": {
+        "segmentIds": [
+          "0b69d141-75cb-4b2f-b6e2-5ac06fb0fb45",
+          "c78c20ed-31b0-42f3-b674-8511116bc38d"
+        ],
+        "statuses": [
+          200,
+          409
+        ]
+      }
+    },
+    {
+      "name": "真实浏览器第二段刷新、段落增删排序、批准/驳回/Fork/历史/差异与双表保护",
+      "status": "PASS",
+      "detail": {
+        "stableSegmentIds": [
+          "0b69d141-75cb-4b2f-b6e2-5ac06fb0fb45",
+          "c78c20ed-31b0-42f3-b674-8511116bc38d"
+        ],
+        "approvedRevisionId": "2443f31c-c416-4a10-b78f-23a2da6312b9"
+      }
+    },
+    {
+      "name": "修改指定段落后依赖失效、未改段落依赖仍可复用",
+      "status": "PASS",
+      "detail": {
+        "changed": "180f3ea7-5c59-4fed-bc71-0ef5fe0c5751",
+        "unchanged": "00d73009-044d-454e-b614-5a0e1c5a49c1",
+        "syntheticConsumers": true
+      }
+    },
+    {
+      "name": "文稿固定批准研究、双来源引用一致、冲突和未核实提示",
+      "status": "PASS",
+      "detail": {
+        "researchRevisionId": "eed84bc2-8dea-4b42-b194-9efa5fd59b43",
+        "claimId": "1d62e656-e074-4f1b-b400-f19011c8ae23",
+        "sourceIds": [
+          "9bd4345c-4380-4fb2-9812-8bbb6d0dd599",
+          "a9e8d707-0621-4da9-a606-95bc1d50fa73"
+        ],
+        "invalidReference": 422,
+        "refreshedBoundSecond": {
+          "text": "带双来源引用的第二段：这些数值仅用于合成测试，刷新后仍须保留引用。",
+          "segmentId": "415b57bd-433b-4cc0-9731-df3f450e57bd",
+          "factBindings": [
+            {
+              "claimId": "1d62e656-e074-4f1b-b400-f19011c8ae23",
+              "sourceIds": [
+                "9bd4345c-4380-4fb2-9812-8bbb6d0dd599",
+                "a9e8d707-0621-4da9-a606-95bc1d50fa73"
+              ]
+            }
+          ]
+        },
+        "unverifiedClaimId": "7493bed0-e7a3-4835-897b-6829422d8f56"
+      }
+    },
+    {
+      "name": "整体/局部写稿 Adapter、真实Worker Mock标识及未配置失败",
+      "status": "PASS",
+      "detail": {
+        "partialJob": "0ac5a19f-0f2b-4fe3-8b16-e0787edc25a0",
+        "wholeJob": "27ce2b32-e7a0-4219-9ebd-b00b12a028e9",
+        "unconfigured": "5d42c56e-59cf-4b5a-b5d1-1b8e42daa1b5",
+        "partialPreservedOtherSegment": true
+      }
+    },
+    {
+      "name": "研究替换定位绑定段落、旧批准文稿保留、Fork清空旧Claim并显式重绑",
+      "status": "PASS",
+      "detail": {
+        "oldResearch": "eed84bc2-8dea-4b42-b194-9efa5fd59b43",
+        "newResearch": "87c088ab-c864-4d02-8957-85d4f32551ca",
+        "affectedSegmentIds": [
+          "415b57bd-433b-4cc0-9731-df3f450e57bd"
+        ],
+        "oldIdsRejected": 422,
+        "sameResearchFork": {
+          "revisionId": "8742186c-0531-4072-b7bb-ba30c3666827",
+          "researchRevisionId": "eed84bc2-8dea-4b42-b194-9efa5fd59b43",
+          "referencesPreserved": true
+        }
+      }
+    },
+    {
+      "name": "Phase01旧文本草稿可无损转换，不重新初始化项目",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启持久化、浏览器无错误及原数据保留",
+      "status": "PASS",
+      "detail": {
+        "originalDataHash": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54",
+        "unchanged": true,
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "PostgreSQL Schema零漂移",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase04_mvlsw55t",
+  "userProjectId": "05cc2a83-be8e-4705-be0a-0399128f0fe9",
+  "researchProjectId": "42c435a3-0756-4f6e-ad78-eebb4b43f585",
+  "finishedAt": "2026-10-24T02:50:41.853Z"
+}

@@ -1,0 +1,19 @@
+PASS 旧 HTTP CRUD/上传/十页路由回归
+PASS 旧项目 API / 新工作流隔离，创建草稿不改变原始需求
+PASS 草稿保存、驳回、fork 和具体历史读取
+PASS 批准、原子下游任务、同键并发重放和异内容冲突
+PASS 双客户端不同修订批准：旧候选 409，新候选成功且旧批准仍可读
+PASS 固定版本依赖、影响范围、上游替换派生 stale
+PASS 异步 Mock 202 / jobId、幂等、取消与重试，保留固定输入
+PASS 权限/非法输入/跨项目依赖/缺少幂等键有真实阻断
+PASS 未配置配音提供方只排入真实任务，不生成音频
+PASS Phase 01 工作流回归
+PASS 真实 202/jobId、幂等及固定入口/参数保护
+AssertionError [ERR_ASSERTION]: {"errorCode":"RENDER_PROCESS_FAILED","logs":[{"at":"2026-10-24T02:53:56.798Z","message":"可信预置渲染已排队；输入、素材和时间轴已冻结。"},{"at":"2026-10-24T02:54:00.658Z","message":"claim: running"},{"at":"2026-10-24T02:54:00.732Z","message":"启动可信渲染子进程"},{"at":"2026-10-24T02:54:02.751Z","message":"启动可信渲染子进程"},{"at":"2026-10-24T02:54:02.902Z","message":"RENDER_PROCESS_FAILED: Error: CHROMIUM_NOT_CONFIGURED\n    at main ([repo]\\scripts\\render-child.cjs:46:11)\n    at Object.<anonymous> ([repo]\\scripts\\render-child.cjs:168:1)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n    at Module.load (node:internal/modules/cjs/loader:1553:32)\n    at Module._load (node:internal/modules/cjs/loader:1355:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n"},{"at":"2026-10-24T02:54:02.922Z","message":"finish: failed · RENDER_PROCESS_FAILED"}],"worker":"Render attempt ended: RENDER_PROCESS_FAILED\n"}
++ actual - expected
+
++ 'failed'
+- 'succeeded'
+
+    at main (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\render\run.cjs:306:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

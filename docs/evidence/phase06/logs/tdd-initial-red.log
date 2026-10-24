@@ -1,0 +1,326 @@
+
+> ai-code-video-studio@0.1.0 test [repo]
+> pnpm --filter @studio/web test
+
+
+> @studio/web@0.1.0 test [repo]\apps\web
+> node ../../scripts/test.cjs
+
+✔ Signed local session rejects forged and expired cookies (1.6515ms)
+✔ Local-only host and origin checks reject remote host and CSRF (0.2901ms)
+✔ Workflow persists approval truth: draft/edit/submit/approve/fork, immutable old content and history (19.7478ms)
+✔ Workflow rejects stale approvals; identical retries reuse exact response and one durable downstream job (2.0791ms)
+✔ Rejected revisions fork for editing; upstream replacement derives transitive stale without rewriting approved status (7.3466ms)
+✔ Mock jobs have durable claim/finish, cancellation fencing, bounded retries and expired lease recovery (6.804ms)
+✔ Claim candidates persist separately; edit/reject/accept are explicit and accepted quotes stay unverified (17.0678ms)
+✔ Candidate generation rejects invented source IDs, nonliteral quotes and attempted verification (10.3011ms)
+✔ Missing original text creates an explicit insufficient result and no fake evidence (1.7849ms)
+✔ Approved research and changed input versions fence late candidate generation (10.7897ms)
+✔ Candidate review enforces concurrent version, current source integrity and immutable revisions (4.8371ms)
+✔ Fork never accepts old candidates or old Source IDs; accepted formal claims follow existing clone mapping (4.8892ms)
+✔ Candidate inputs exclude Mock, summaries and vision descriptions; limits are explicit and hashes bind full extracted text (1.8681ms)
+✔ PDF candidate quotes preserve real page and exact whitespace; edited text hashes invalidate acceptance (1.0895ms)
+✔ Conflict evidence remains a warning after explicit acceptance and never becomes supported (3.0409ms)
+✔ Codex data-only policy removes all filesystem and executable model capabilities (1.0599ms)
+✔ Codex output needs a completed turn and search trace; commands and file changes fail closed (0.3633ms)
+✔ Codex child receives no application database, provider tokens or Git credentials (0.1109ms)
+✔ Native worker bridge loads without bundling a CLI and propagates pre-cancelled audit (0.964ms)
+✔ Public fetch rejects local/reserved addresses before connecting and excludes executable HTML (50.7295ms)
+✔ Real search persists independent fetched text, never model summaries as matched evidence (2.7994ms)
+✔ Cancelled Codex attempt can save audit without regaining a lease; old owners cannot alter later attempts (4.855ms)
+✖ Director uses approved confirmed Voice as a 3600-frame timebase; silent planning never invents voice anchors (6.2209ms)
+✖ Shot duration/order edits reflow exactly; gaps, overlaps, bounds and unknown references are rejected (3.3975ms)
+✖ Director enforces explicit pending/code routes and current source allow-list without commercial licensing gate (2.1459ms)
+✖ Director approval/Fork keeps shot identities and immutable history; new voice approval invalidates director (1.8142ms)
+✔ Real database: 30/240 seconds and all entry modes survive closing and reopening (26.9266ms)
+✔ Real database: atomic optimistic update permits only one writer (1.2534ms)
+✔ Reject blank prompt, zero/negative/nonfinite duration, invalid aspect, budget, unknown keys (1.7167ms)
+✔ Seconds and mm:ss are exact, invalid strings never silently normalize (0.3334ms)
+✔ Render child environment never inherits database, user session, token, proxy or Node injection variables (0.4911ms)
+✔ Protected video byte ranges support seeking and reject invalid, excessive and multiple ranges (0.3523ms)
+✔ SceneSpec freezes frame timeline and declared editable props, rejects unsafe/invalid inputs (4.1467ms)
+✔ FFprobe gate rejects incorrect encoding, frame rate, frame count and dimensions (3.5521ms)
+✔ Render jobs reuse workflow idempotency, heartbeat lease fencing, cancellation and failure attempts (4.6359ms)
+✔ Research upload accepts actual MP4 brand but rejects disguised executable, bad extensions and byte overflow (6.4427ms)
+✔ Local PDF parser loads standard fonts and extracts real pages/text with Windows-compatible paths (577.7771ms)
+✔ Research records are revision-bound; missing evidence and Mock cannot become verified facts (4.715ms)
+✔ Research approval freezes source/claim/evidence/index and fork copies a coherent snapshot (4.382ms)
+✔ Research analysis uses durable jobs, idempotent enqueue and fences approval/cancelled results (2.5614ms)
+✔ Script timing is a transparent mixed-language estimate and diff follows stable IDs (1.4963ms)
+✔ Empty scripts cannot submit; partial AI output cannot overwrite another segment (2.8791ms)
+✔ Current script workspace reports consumers of earlier approved versions and predicts draft impact (3.353ms)
+✔ Structured script imports without research, keeps logical IDs through edit/order/delete and protects 409/idempotency (1.6266ms)
+✔ Script binds only approved research and coherent Claim/Source; warnings never assert verified facts (2.7851ms)
+✔ Approved script forks stable segments, computes diff and invalidates only declared changed segment dependencies (4.2045ms)
+✔ Script generation freezes whole/partial inputs, records explicit Mock and fences late results (3.6138ms)
+✔ Real upload validation checks extension, contents and byte limit (0.2554ms)
+✔ Real analysis operations freeze actual audio and reject silent/no-audio timelines (1.9983ms)
+✔ Unbound ASR subtitles are drafts, not fabricated script-position mappings or approved final input (1.4554ms)
+✔ Model timing conversion preserves repeated-word offsets and nonuniform acoustic times without averaging (9.5012ms)
+✔ Silent duration obeys configured resource limits instead of bypassing project duration bounds (2.1603ms)
+✔ Ordinary saves cannot invent forced alignment provenance (1.3498ms)
+✔ Legacy text voice drafts convert only by explicit current revision/version and preserve their identity (1.0751ms)
+✔ All voice modes persist explicit timelines fixed to current approved script; silent mode never creates audio (5.4404ms)
+✔ Cue mappings distinguish repeated words by offsets, retain anchor identity, and validate same-level overlap and time bounds (4.2541ms)
+✔ Voice drafts reuse idempotency, 409, approval immutability and stable Fork identity (4.0572ms)
+✔ Voice submission/rejection is immutable and Fork restores editable stable anchors (2.7215ms)
+✔ Replacing approved script invalidates voice dependencies and affected cues without modifying historical snapshots (4.2661ms)
+✔ SQLite workflow transactions survive reopening, roll back failures and preserve legacy project JSON (72.6192ms)
+ℹ tests 60
+ℹ suites 0
+ℹ pass 56
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1460.0171
+
+✖ failing tests:
+
+test at ..\..\tests\unit\director.test.ts:26:25
+✖ Director uses approved confirmed Voice as a 3600-frame timebase; silent planning never invents voice anchors (6.2209ms)
+  ZodError: [
+    {
+      "code": "invalid_union",
+      "errors": [],
+      "note": "No matching discriminator",
+      "discriminator": "action",
+      "options": [
+        "record-voice-run",
+        "voice-analyze",
+        "voice-start",
+        "voice-save",
+        "voice-mode",
+        "voice-retime",
+        "voice-generate",
+        "voice-import",
+        "record-ai-run",
+        "research-claims",
+        "research-candidate-review",
+        "research-source",
+        "research-source-edit",
+        "research-claim",
+        "research-evidence",
+        "research-analyze",
+        "research-search",
+        "script-start",
+        "script-save",
+        "script-generate",
+        "render",
+        "heartbeat",
+        "create",
+        "fork",
+        "patch",
+        "submit",
+        "approve",
+        "reject",
+        "enqueue",
+        "cancel",
+        "retry",
+        "claim",
+        "finish",
+        "recover"
+      ],
+      "path": [
+        "action"
+      ],
+      "message": "Invalid discriminator value. Expected 'record-voice-run' | 'voice-analyze' | 'voice-start' | 'voice-save' | 'voice-mode' | 'voice-retime' | 'voice-generate' | 'voice-import' | 'record-ai-run' | 'research-claims' | 'research-candidate-review' | 'research-source' | 'research-source-edit' | 'research-claim' | 'research-evidence' | 'research-analyze' | 'research-search' | 'script-start' | 'script-save' | 'script-generate' | 'render' | 'heartbeat' | 'create' | 'fork' | 'patch' | 'submit' | 'approve' | 'reject' | 'enqueue' | 'cancel' | 'retry' | 'claim' | 'finish' | 'recover'"
+    }
+  ]
+      at applyWorkflow ([repo]\apps\web\src\server\workflow\engine.ts:115:48)
+      at Object.run ([repo]\tests\unit\workflow.test.ts:41:48)
+      at run ([repo]\tests\unit\director.test.ts:13:31)
+      at setup ([repo]\tests\unit\director.test.ts:19:22)
+      at TestContext.<anonymous> ([repo]\tests\unit\director.test.ts:27:15)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at ..\..\tests\unit\director.test.ts:37:25
+✖ Shot duration/order edits reflow exactly; gaps, overlaps, bounds and unknown references are rejected (3.3975ms)
+  ZodError: [
+    {
+      "code": "invalid_union",
+      "errors": [],
+      "note": "No matching discriminator",
+      "discriminator": "action",
+      "options": [
+        "record-voice-run",
+        "voice-analyze",
+        "voice-start",
+        "voice-save",
+        "voice-mode",
+        "voice-retime",
+        "voice-generate",
+        "voice-import",
+        "record-ai-run",
+        "research-claims",
+        "research-candidate-review",
+        "research-source",
+        "research-source-edit",
+        "research-claim",
+        "research-evidence",
+        "research-analyze",
+        "research-search",
+        "script-start",
+        "script-save",
+        "script-generate",
+        "render",
+        "heartbeat",
+        "create",
+        "fork",
+        "patch",
+        "submit",
+        "approve",
+        "reject",
+        "enqueue",
+        "cancel",
+        "retry",
+        "claim",
+        "finish",
+        "recover"
+      ],
+      "path": [
+        "action"
+      ],
+      "message": "Invalid discriminator value. Expected 'record-voice-run' | 'voice-analyze' | 'voice-start' | 'voice-save' | 'voice-mode' | 'voice-retime' | 'voice-generate' | 'voice-import' | 'record-ai-run' | 'research-claims' | 'research-candidate-review' | 'research-source' | 'research-source-edit' | 'research-claim' | 'research-evidence' | 'research-analyze' | 'research-search' | 'script-start' | 'script-save' | 'script-generate' | 'render' | 'heartbeat' | 'create' | 'fork' | 'patch' | 'submit' | 'approve' | 'reject' | 'enqueue' | 'cancel' | 'retry' | 'claim' | 'finish' | 'recover'"
+    }
+  ]
+      at applyWorkflow ([repo]\apps\web\src\server\workflow\engine.ts:115:48)
+      at Object.run ([repo]\tests\unit\workflow.test.ts:41:48)
+      at run ([repo]\tests\unit\director.test.ts:13:31)
+      at setup ([repo]\tests\unit\director.test.ts:19:22)
+      at TestContext.<anonymous> ([repo]\tests\unit\director.test.ts:38:15)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at ..\..\tests\unit\director.test.ts:49:25
+✖ Director enforces explicit pending/code routes and current source allow-list without commercial licensing gate (2.1459ms)
+  ZodError: [
+    {
+      "code": "invalid_union",
+      "errors": [],
+      "note": "No matching discriminator",
+      "discriminator": "action",
+      "options": [
+        "record-voice-run",
+        "voice-analyze",
+        "voice-start",
+        "voice-save",
+        "voice-mode",
+        "voice-retime",
+        "voice-generate",
+        "voice-import",
+        "record-ai-run",
+        "research-claims",
+        "research-candidate-review",
+        "research-source",
+        "research-source-edit",
+        "research-claim",
+        "research-evidence",
+        "research-analyze",
+        "research-search",
+        "script-start",
+        "script-save",
+        "script-generate",
+        "render",
+        "heartbeat",
+        "create",
+        "fork",
+        "patch",
+        "submit",
+        "approve",
+        "reject",
+        "enqueue",
+        "cancel",
+        "retry",
+        "claim",
+        "finish",
+        "recover"
+      ],
+      "path": [
+        "action"
+      ],
+      "message": "Invalid discriminator value. Expected 'record-voice-run' | 'voice-analyze' | 'voice-start' | 'voice-save' | 'voice-mode' | 'voice-retime' | 'voice-generate' | 'voice-import' | 'record-ai-run' | 'research-claims' | 'research-candidate-review' | 'research-source' | 'research-source-edit' | 'research-claim' | 'research-evidence' | 'research-analyze' | 'research-search' | 'script-start' | 'script-save' | 'script-generate' | 'render' | 'heartbeat' | 'create' | 'fork' | 'patch' | 'submit' | 'approve' | 'reject' | 'enqueue' | 'cancel' | 'retry' | 'claim' | 'finish' | 'recover'"
+    }
+  ]
+      at applyWorkflow ([repo]\apps\web\src\server\workflow\engine.ts:115:48)
+      at Object.run ([repo]\tests\unit\workflow.test.ts:41:48)
+      at run ([repo]\tests\unit\director.test.ts:13:31)
+      at setup ([repo]\tests\unit\director.test.ts:19:22)
+      at TestContext.<anonymous> ([repo]\tests\unit\director.test.ts:50:15)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at ..\..\tests\unit\director.test.ts:57:25
+✖ Director approval/Fork keeps shot identities and immutable history; new voice approval invalidates director (1.8142ms)
+  ZodError: [
+    {
+      "code": "invalid_union",
+      "errors": [],
+      "note": "No matching discriminator",
+      "discriminator": "action",
+      "options": [
+        "record-voice-run",
+        "voice-analyze",
+        "voice-start",
+        "voice-save",
+        "voice-mode",
+        "voice-retime",
+        "voice-generate",
+        "voice-import",
+        "record-ai-run",
+        "research-claims",
+        "research-candidate-review",
+        "research-source",
+        "research-source-edit",
+        "research-claim",
+        "research-evidence",
+        "research-analyze",
+        "research-search",
+        "script-start",
+        "script-save",
+        "script-generate",
+        "render",
+        "heartbeat",
+        "create",
+        "fork",
+        "patch",
+        "submit",
+        "approve",
+        "reject",
+        "enqueue",
+        "cancel",
+        "retry",
+        "claim",
+        "finish",
+        "recover"
+      ],
+      "path": [
+        "action"
+      ],
+      "message": "Invalid discriminator value. Expected 'record-voice-run' | 'voice-analyze' | 'voice-start' | 'voice-save' | 'voice-mode' | 'voice-retime' | 'voice-generate' | 'voice-import' | 'record-ai-run' | 'research-claims' | 'research-candidate-review' | 'research-source' | 'research-source-edit' | 'research-claim' | 'research-evidence' | 'research-analyze' | 'research-search' | 'script-start' | 'script-save' | 'script-generate' | 'render' | 'heartbeat' | 'create' | 'fork' | 'patch' | 'submit' | 'approve' | 'reject' | 'enqueue' | 'cancel' | 'retry' | 'claim' | 'finish' | 'recover'"
+    }
+  ]
+      at applyWorkflow ([repo]\apps\web\src\server\workflow\engine.ts:115:48)
+      at Object.run ([repo]\tests\unit\workflow.test.ts:41:48)
+      at run ([repo]\tests\unit\director.test.ts:13:31)
+      at setup ([repo]\tests\unit\director.test.ts:19:22)
+      at TestContext.<anonymous> ([repo]\tests\unit\director.test.ts:58:15)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+[repo]\apps\web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @studio/web@0.1.0 test: `node ../../scripts/test.cjs`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

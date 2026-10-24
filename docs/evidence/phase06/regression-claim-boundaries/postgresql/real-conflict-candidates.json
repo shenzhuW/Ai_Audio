@@ -1,0 +1,134 @@
+{
+  "jobId": "af475b55-3582-41de-a45d-4b6b12f7142f",
+  "attempts": [
+    {
+      "state": "failed",
+      "number": 1,
+      "workerId": "af24a3cf-23a6-45a6-9a2c-44da9a896c53",
+      "errorCode": "PROVIDER_NOT_CONFIGURED",
+      "startedAt": "2026-10-24T05:28:20.764Z",
+      "finishedAt": "2026-10-24T05:28:21.573Z"
+    },
+    {
+      "state": "succeeded",
+      "number": 2,
+      "workerId": "9cd91f89-20b9-4ed1-a139-eccb84989359",
+      "errorCode": null,
+      "startedAt": "2026-10-24T05:28:23.911Z",
+      "finishedAt": "2026-10-24T05:28:56.027Z"
+    }
+  ],
+  "aiRuns": [
+    {
+      "model": "gpt-6.1-sol",
+      "quota": null,
+      "runId": "01a16c61-bbc0-7da2-b525-88f0287efa16",
+      "usage": {
+        "input_tokens": 9585,
+        "output_tokens": 505,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 0,
+        "cache_write_input_tokens": 0
+      },
+      "policy": "data-only-v1",
+      "provider": "codex-cli",
+      "isolation": {
+        "ephemeral": true,
+        "modelPatch": "disabled",
+        "modelShell": "disabled",
+        "codeModeHost": "v8-data-only",
+        "enabledMcpServers": 0,
+        "userConfigIgnored": true
+      },
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "startedAt": "2026-10-24T05:28:26.059Z",
+      "cliVersion": "codex-cli 0.163.0",
+      "durationMs": 29861,
+      "jobAttempt": 2,
+      "searchMode": "disabled",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "failureReason": null
+    }
+  ],
+  "candidates": [
+    {
+      "id": "2aaf49de-1f12-4168-9e73-a4c34b85fb45",
+      "claim": {
+        "asOf": "2026-10-23",
+        "text": "虚构测试资料 A 将测试样品 Z 的2026-10-23批次容量标注为32单位。",
+        "unit": "单位",
+        "scope": "资料 A 中测试样品 Z 的指定批次容量标注",
+        "caveats": "日期为批次日期；仅为虚构资料中的标注，不代表真实测量。记录未说明测量方法。",
+        "verificationStatus": "unverified"
+      },
+      "evidence": [
+        {
+          "role": "support",
+          "match": {
+            "endChar": 67,
+            "locator": {
+              "kind": "text",
+              "label": "ce6309a2-421b-4fed-bbd8-97643c46f811 · UTF-16 33–67"
+            },
+            "startChar": 33,
+            "sourceSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243",
+            "indexTextSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243"
+          },
+          "quote": "同一测试样品 Z、同一2026-10-23批次，标注容量为32单位。",
+          "indexId": "ce6309a2-421b-4fed-bbd8-97643c46f811",
+          "sourceId": "bb68d577-b513-4d7a-9f5d-f04ab01d20b2"
+        },
+        {
+          "role": "refute",
+          "match": {
+            "endChar": 67,
+            "locator": {
+              "kind": "text",
+              "label": "054a013d-ab49-44b1-ad7d-860b8703cabc · UTF-16 33–67"
+            },
+            "startChar": 33,
+            "sourceSha256": "e725e0855d038fade7bd604dcb2f794334fe3aaa3aa992f0420d5d5dbda3455f",
+            "indexTextSha256": "e725e0855d038fade7bd604dcb2f794334fe3aaa3aa992f0420d5d5dbda3455f"
+          },
+          "quote": "同一测试样品 Z、同一2026-10-23批次，标注容量为64单位。",
+          "indexId": "054a013d-ab49-44b1-ad7d-860b8703cabc",
+          "sourceId": "7fe491ae-788f-4184-8236-d93bd9b0fc03"
+        },
+        {
+          "role": "context",
+          "match": {
+            "endChar": 32,
+            "locator": {
+              "kind": "text",
+              "label": "ce6309a2-421b-4fed-bbd8-97643c46f811 · UTF-16 11–32"
+            },
+            "startChar": 11,
+            "sourceSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243",
+            "indexTextSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243"
+          },
+          "quote": "本记录为虚构测试资料，不描述真实世界测量。",
+          "indexId": "ce6309a2-421b-4fed-bbd8-97643c46f811",
+          "sourceId": "bb68d577-b513-4d7a-9f5d-f04ab01d20b2"
+        },
+        {
+          "role": "context",
+          "match": {
+            "endChar": 88,
+            "locator": {
+              "kind": "text",
+              "label": "ce6309a2-421b-4fed-bbd8-97643c46f811 · UTF-16 68–88"
+            },
+            "startChar": 68,
+            "sourceSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243",
+            "indexTextSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243"
+          },
+          "quote": "记录没有说明测量方法，不能判断真实容量。",
+          "indexId": "ce6309a2-421b-4fed-bbd8-97643c46f811",
+          "sourceId": "bb68d577-b513-4d7a-9f5d-f04ab01d20b2"
+        }
+      ],
+      "conflictNote": "资料 B 对同一样品、同一批次标注为64单位，与资料 A 的32单位冲突。所给片段不足以判定哪项正确。"
+    }
+  ],
+  "note": "Real model analysis of actual uploaded, self-authored fictional labels. NOT real-world factual verification."
+}

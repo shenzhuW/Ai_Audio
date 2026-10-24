@@ -1,0 +1,13 @@
+PASS 真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载
+PASS 真实图片理解绑定原件SHA；视觉输出不作为原文匹配
+PASS 真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称
+PASS 真实AI局部文稿转换ScriptSegment，稳定ID/允许集引用/未改段落保持
+PASS 真实整体文稿生成沿用全部稳定ID与引用
+PASS 真实浏览器来源/视觉/写稿/使用量可见，刷新持久化
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'succeeded'
+- 'running'
+
+    at main (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\real-ai\run.cjs:705:10)

@@ -227,7 +227,7 @@ async function initializePostgres() {
   );
   for (const file of fs
     .readdirSync(path.join(appDir, 'prisma/migrations'))
-    .filter((f) => f !== '0005_voice'))
+    .filter((f) => !['0005_voice','0006_director'].includes(f)))
     fs.cpSync(path.join(appDir, 'prisma/migrations', file), path.join(legacy, 'migrations', file), {
       recursive: true,
     });
@@ -270,7 +270,7 @@ async function initializePostgres() {
   const migrations = await db.$queryRawUnsafe(
     'SELECT migration_name,count(*)::int AS count FROM _prisma_migrations WHERE finished_at IS NOT NULL GROUP BY migration_name ORDER BY migration_name',
   );
-  assert.equal(migrations.length, 5);
+  assert.equal(migrations.length, fs.readdirSync(path.join(appDir,'prisma/migrations'),{withFileTypes:true}).filter(x=>x.isDirectory()).length);
   assert.ok(migrations.every((m) => m.count === 1));
   const role = (
     await db.$queryRawUnsafe('SELECT rolsuper,rolcreatedb FROM pg_roles WHERE rolname=current_user')

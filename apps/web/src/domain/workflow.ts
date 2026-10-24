@@ -1,3 +1,10 @@
+import {
+  directorCommands,
+  DirectorDocumentSchema,
+  DirectorShotRecordSchema,
+  DirectorJobInputSchema,
+  DirectorResultSchema,
+} from './director';
 import { z } from 'zod';
 import { AiRunSchema } from './ai';
 import {
@@ -67,6 +74,7 @@ export const RevisionSchema = z.object({
   researchSchemaVersion: z.literal(1).optional(),
   scriptSchemaVersion: z.literal(1).optional(),
   voiceSchemaVersion: z.literal(1).optional(),
+  directorSchemaVersion: z.literal(1).optional(),
 });
 export const DependencySchema = z.object({
   id,
@@ -96,7 +104,7 @@ export const WorkflowJobSchema = z.object({
   id,
   kind: ArtifactTypeSchema,
   version,
-  provider: z.enum(['mock', 'unconfigured', 'remotion', 'research', 'script', 'voice']),
+  provider: z.enum(['mock', 'unconfigured', 'remotion', 'research', 'script', 'voice', 'director']),
   state: z.enum(['queued', 'running', 'succeeded', 'failed', 'cancelled']),
   inputRevisionIds: z.array(id),
   idempotencyKey: z.string(),
@@ -117,6 +125,8 @@ export const WorkflowJobSchema = z.object({
   claimCandidateReviews: z.array(ClaimCandidateReviewSchema).max(8).optional(),
   scriptInput: ScriptJobInputSchema.optional(),
   scriptResult: ScriptResultSchema.optional(),
+  directorInput: DirectorJobInputSchema.optional(),
+  directorResult: DirectorResultSchema.optional(),
   voiceInput: VoiceJobInputSchema.optional(),
   voiceResult: VoiceResultSchema.optional(),
   voiceRuns: z.array(VoiceRunSchema).max(50).optional(),
@@ -159,6 +169,8 @@ export const WorkflowStateSchema = z.object({
   researchIndexes: z.array(ResearchIndexEntrySchema).default([]),
   scriptDocuments: z.array(ScriptDocumentSchema).default([]),
   scriptSegments: z.array(SegmentRecordSchema).default([]),
+  directorDocuments: z.array(DirectorDocumentSchema).default([]),
+  directorShots: z.array(DirectorShotRecordSchema).default([]),
   voiceTimelines: z.array(VoiceTimelineSchema).default([]),
   voiceCues: z.array(VoiceCueRecordSchema).default([]),
   subtitleTracks: z.array(SubtitleTrackSchema).default([]),
@@ -176,6 +188,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
     })
     .strict(),
   ...voiceCommands,
+  ...directorCommands,
   z
     .object({
       action: z.literal('record-ai-run'),
@@ -251,6 +264,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       researchResult: ResearchResultSchema.optional(),
       voiceResult: VoiceResultSchema.optional(),
       voiceRun: VoiceRunSchema.optional(),
+      directorResult: DirectorResultSchema.optional(),
       scriptResult: ScriptResultSchema.optional(),
       aiRuns: z.array(AiRunSchema).max(10).optional(),
     })

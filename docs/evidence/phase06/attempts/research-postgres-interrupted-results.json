@@ -1,0 +1,48 @@
+{
+  "status": "RUNNING",
+  "at": "2026-10-24T02:50:29.967Z",
+  "backend": "postgresql",
+  "runId": "mvlsx6tp",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL：旧两迁移初始化、项目保留、0003 升级与重复部署",
+      "status": "PASS",
+      "detail": {
+        "version": "PostgreSQL 17.6 on x86_64-windows, compiled by msvc-19.44.35217, 64-bit",
+        "migrationRows": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          },
+          {
+            "migration_name": "0005_voice",
+            "count": 1
+          },
+          {
+            "migration_name": "0006_director",
+            "count": 1
+          }
+        ],
+        "legacyProjectUnchanged": true,
+        "roles": {
+          "rolsuper": false,
+          "rolcreatedb": false
+        }
+      }
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase03_mvlsx6tp"
+}

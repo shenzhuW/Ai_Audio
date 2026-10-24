@@ -145,3 +145,11 @@ Workflow Job 兼容追加 provider=research 和可选 researchInput/researchResu
 - Job.voiceInput冻结目标修订/版本、已批准文稿、音频blob/SHA、operation、Provider与资源限额；voiceResult区分audio/asr/alignment，保存原始词（可零宽）、模型SHA、音频SHA、时间与字幕草稿。voiceRuns记录每次attempt的runId/时长/失败、输入SHA、模型/进程信息及ASR是否有参考文稿；没有远程账号用量。输出校验和事务保护沿用Workflow。
 
 删除Cue用removed保留版本，替换音频标旧锚点stale，改变批准Script使配音依赖失效；同输入Fork不改逻辑ID，改变输入保留能证明身份的段落并标变化，不能把旧时间直接确认为新音轨。旧Phase01通用配音文本保持兼容/历史可读，不是可用VoiceTimeline；显式转换草稿或Fork后再建立。
+
+## Phase06 实际导演协议（增量，2026-10-24）
+
+- DirectorDocument：id/revisionId/schemaVersion=1/scriptRevisionId/voiceRevisionId/researchRevisionId/fps=30/durationMs/totalFrames/provenance(user|real|mock)/needsRebind。WorkflowRevision新增可选directorSchemaVersion=1，旧JSON保持可读。
+- DirectorShotVersion：物理id、revisionId、稳定shotId、order、value、removed；revisionId+shotId唯一，删除为草稿墓碑，Fork保留逻辑ID、新建物理行。更换输入仍可验证时保留镜头；引用或范围不兼容时新草稿明确要求重新规划，历史不改写。
+- Shot.value：shotId/title/narrativeGoal/viewerTakeaway/scriptSegmentIds/voiceCueAnchorIds/startFrame/durationFrames/endFrame/visualType/route/composition/layers(role,kind,label,depth)/transition(type,durationFrames,continuity)/animation(mechanism,reason)/visualSearchIntent(query,subject,action,composition,format)/media(sourceId,sourceInMs,sourceOutMs,playback)或null/claimIds/sourceIds/risks。
+- Cue使用稳定anchorId；空锚点以帧区间明确引用范围；静默强制空语音锚点。需包含时段内所有正在讲述的段落；真正停顿可延续对象。Claim来自所用固定段落factBindings，Source来自固定研究已选集合，保留核验状态，导演审核不升级事实。
+- PostgreSQL仅追加0006_director；SQLite幂等建表并登记版本6。两类表有草稿插入/更新、禁止删除触发器和项目/修订外键。批准、待审核、驳回快照不可改。未触碰旧迁移或真实用户库。

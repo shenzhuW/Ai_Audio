@@ -1,3 +1,4 @@
+import { DirectorPanel } from './director-panel';
 import Link from 'next/link';
 import {
   FileText,
@@ -30,6 +31,17 @@ export function StageWorkspace({
 }) {
   const index = pages.findIndex((p) => p.key === stage);
   const page = pages[index];
+  if (!demo && project && stage === 'storyboard')
+    return (
+      <>
+        <PageHead
+          number="06"
+          title={page.label}
+          description="把批准文稿与语音时间轴转为可编辑、可追溯的导演方案。"
+        />
+        <DirectorPanel projectId={project.id} />
+      </>
+    );
   if (!demo && project && stage === 'voice')
     return (
       <>

@@ -1,0 +1,26 @@
+PASS 真实 PostgreSQL 与幂等迁移
+PASS 旧 HTTP CRUD/上传/十页路由回归
+PASS 旧项目 API / 新工作流隔离，创建草稿不改变原始需求
+PASS 草稿保存、驳回、fork 和具体历史读取
+PASS 批准、原子下游任务、同键并发重放和异内容冲突
+PASS 双客户端不同修订批准：旧候选 409，新候选成功且旧批准仍可读
+PASS 固定版本依赖、影响范围、上游替换派生 stale
+PASS 异步 Mock 202 / jobId、幂等、取消与重试，保留固定输入
+PASS 权限/非法输入/跨项目依赖/缺少幂等键有真实阻断
+PASS 未配置配音提供方只排入真实任务，不生成音频
+PASS Phase 01 工作流回归
+PASS 真实 202/jobId、幂等及固定入口/参数保护
+PASS PostgreSQL 行与真实 HTTP/Worker 结果完全一致
+PASS 真实 Remotion/心跳/媒体规格/三帧确定性
+PASS 受保护视频/Range 播放/文件白名单
+PASS 关键帧与实际 MP4 对应画面一致
+PASS 第 08 页实际视频播放、刷新与 390px 响应式
+PASS 字号参数新输入、冻结时间轴、旧产物与项目不变
+AssertionError [ERR_ASSERTION]: [{"at":"2026-10-24T03:05:03.257Z","message":"可信预置渲染已排队；输入、素材和时间轴已冻结。"},{"at":"2026-10-24T03:05:04.582Z","message":"claim: running"},{"at":"2026-10-24T03:05:04.674Z","message":"启动可信渲染子进程"},{"at":"2026-10-24T03:05:06.381Z","message":"RENDER_PROCESS_FAILED: Error: CHROMIUM_NOT_CONFIGURED\n    at main ([repo]\\scripts\\render-child.cjs:46:11)\n    at Object.<anonymous> ([repo]\\scripts\\render-child.cjs:168:1)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n    at Module.load (node:internal/modules/cjs/loader:1553:32)\n    at Module._load (node:internal/modules/cjs/loader:1355:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n"},{"at":"2026-10-24T03:05:06.408Z","message":"finish: failed · RENDER_PROCESS_FAILED"},{"at":"2026-10-24T03:05:06.983Z","message":"retry: queued"},{"at":"2026-10-24T03:05:08.194Z","message":"claim: running"},{"at":"2026-10-24T03:05:08.290Z","message":"启动可信渲染子进程"},{"at":"2026-10-24T03:05:10.318Z","message":"编译可信组件"},{"at":"2026-10-24T03:05:12.324Z","message":"编译可信组件"},{"at":"2026-10-24T03:05:14.343Z","message":"视频渲染 0%"},{"at":"2026-10-24T03:05:16.368Z","message":"视频渲染 1%"},{"at":"2026-10-24T03:05:18.377Z","message":"视频渲染 3%"},{"at":"2026-10-24T03:05:20.378Z","message":"视频渲染 4%"},{"at":"2026-10-24T03:05:22.376Z","message":"视频渲染 6%"},{"at":"2026-10-24T03:05:24.398Z","message":"视频渲染 8%"},{"at":"2026-10-24T03:05:26.425Z","message":"视频渲染 10%"},{"at":"2026-10-24T03:05:28.454Z","message":"视频渲染 11%"},{"at":"2026-10-24T03:05:30.460Z","message":"视频渲染 12%"},{"at":"2026-10-24T03:05:32.479Z","message":"视频渲染 14%"},{"at":"2026-10-24T03:05:34.513Z","message":"视频渲染 15%"},{"at":"2026-10-24T03:05:36.454Z","message":"视频渲染 16%"},{"at":"2026-10-24T03:05:38.436Z","message":"视频渲染 18%"},{"at":"2026-10-24T03:05:40.467Z","message":"视频渲染 21%"},{"at":"2026-10-24T03:05:42.459Z","message":"视频渲染 23%"},{"at":"2026-10-24T03:05:44.453Z","message":"视频渲染 25%"},{"at":"2026-10-24T03:05:46.495Z","message":"视频渲染 28%"},{"at":"2026-10-24T03:05:48.465Z","message":"视频渲染 30%"},{"at":"2026-10-24T03:05:50.462Z","message":"视频渲染 33%"},{"at":"2026-10-24T03:05:52.486Z","message":"视频渲染 36%"},{"at":"2026-10-24T03:05:54.463Z","message":"视频渲染 38%"},{"at":"2026-10-24T03:05:56.477Z","message":"视频渲染 40%"},{"at":"2026-10-24T03:05:58.479Z","message":"视频渲染 42%"},{"at":"2026-10-24T03:06:00.519Z","message":"视频渲染 44%"},{"at":"2026-10-24T03:06:02.481Z","message":"视频渲染 46%"},{"at":"2026-10-24T03:06:04.486Z","message":"视频渲染 48%"},{"at":"2026-10-24T03:06:06.559Z","message":"视频渲染 49%"},{"at":"2026-10-24T03:06:08.527Z","message":"视频渲染 50%"},{"at":"2026-10-24T03:06:10.510Z","message":"视频渲染 51%"},{"at":"2026-10-24T03:06:12.512Z","message":"视频渲染 52%"}]
++ actual - expected
+
++ 'running'
+- 'succeeded'
+
+    at main (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\render\run.cjs:485:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

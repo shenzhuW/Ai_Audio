@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "backend": "postgresql",
+  "runId": "mvlyjrom",
+  "at": "2026-10-24T05:28:01.512Z",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL 初始化/重复迁移：当前全部增量迁移",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          },
+          {
+            "migration_name": "0005_voice",
+            "count": 1
+          },
+          {
+            "migration_name": "0006_director",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "无原文真实HTTP/Worker明确insufficient，零模型调用、零Claim/Evidence",
+      "status": "PASS",
+      "detail": {
+        "jobId": "d9ced970-f6b0-436d-b18d-e90240b2d7d4"
+      }
+    },
+    {
+      "name": "Provider关闭时任务明确失败并释放租约，没有Mock回退或部分写库",
+      "status": "PASS",
+      "detail": {
+        "jobId": "af475b55-3582-41de-a45d-4b6b12f7142f",
+        "errorCode": "PROVIDER_NOT_CONFIGURED"
+      }
+    },
+    {
+      "name": "真实Codex重试成功：同一候选关联双Source及冲突提示；用户接受幂等且仍为冲突未核实",
+      "status": "PASS",
+      "detail": {
+        "jobId": "af475b55-3582-41de-a45d-4b6b12f7142f",
+        "runIds": [
+          "01a16c61-bbc0-7da2-b525-88f0287efa16"
+        ],
+        "claimId": "ee23a3dc-c13e-4457-8a39-abf7b457e4f5",
+        "evidenceCount": 4
+      }
+    },
+    {
+      "name": "Fork拒绝旧候选，正式引用新ID保持同修订；应用重启候选审核及来源关系一致",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase045_mvlyjrom",
+  "projectId": "dfc05b60-2c0f-430a-a8b9-d1e4eb98ad07",
+  "finishedAt": "2026-10-24T05:28:58.617Z"
+}

@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "unit": {
+    "tests": 66,
+    "pass": 66,
+    "fail": 0
+  },
+  "integrationGroups": 157,
+  "checks": [
+    {
+      "file": "postgresql/results.json",
+      "groups": 18,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-claim-boundaries/postgresql/results.json",
+      "groups": 5,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-claim-boundaries/sqlite/results.json",
+      "groups": 4,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-real-ai/sqlite/results.json",
+      "groups": 9,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-render/postgresql/results.json",
+      "groups": 13,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-render/sqlite/results.json",
+      "groups": 11,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-research/postgresql/results.json",
+      "groups": 16,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-research/sqlite/results.json",
+      "groups": 15,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-script/postgresql/results.json",
+      "groups": 11,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-script/sqlite/results.json",
+      "groups": 9,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-voice/postgresql/results.json",
+      "groups": 14,
+      "status": "PASS"
+    },
+    {
+      "file": "regression-voice/sqlite/results.json",
+      "groups": 12,
+      "status": "PASS"
+    },
+    {
+      "file": "sqlite/results.json",
+      "groups": 16,
+      "status": "PASS"
+    },
+    {
+      "file": "ui-protections/sqlite/results.json",
+      "groups": 4,
+      "status": "PASS"
+    }
+  ],
+  "actualDirectorBackends": [
+    "sqlite",
+    "postgresql"
+  ],
+  "rawAiOutputMatchesSavedResult": true,
+  "audioSha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d",
+  "note": "Group counts follow existing programs; nested HTTP/workflow assertions are not double-counted. Mock exercises are labelled and do not replace real director results."
+}

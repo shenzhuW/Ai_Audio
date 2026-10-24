@@ -1,0 +1,194 @@
+[
+  {
+    "shotId": "a9e41b85-516e-44de-8d76-ed35d93d2460",
+    "startMs": 0,
+    "endMs": 19334,
+    "startFrame": 0,
+    "endFrame": 580,
+    "segmentIds": [
+      "97ab1a02-49fb-48d4-8ffb-4d624b53fa1b"
+    ],
+    "anchors": [
+      "f3b335b8-2322-438f-a993-58c7adf49abe"
+    ],
+    "actualCues": [
+      {
+        "id": "a257c6cb-9206-4994-aff4-cdb3e76dbbcc",
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "endMs": 19333,
+        "level": "phrase",
+        "stale": false,
+        "endChar": 75,
+        "startMs": 0,
+        "anchorId": "f3b335b8-2322-438f-a993-58c7adf49abe",
+        "alignment": "manual",
+        "segmentId": "97ab1a02-49fb-48d4-8ffb-4d624b53fa1b",
+        "startChar": 0,
+        "confidence": null,
+        "segmentTextSha256": "1ce580ac5a1171c3ad3a009b1d8c15f8c7c9e68a42472dffc6c70c25982c507b"
+      }
+    ]
+  },
+  {
+    "shotId": "dc5cf23c-5e47-4de6-97be-c0c9f144585a",
+    "startMs": 19333,
+    "endMs": 50000,
+    "startFrame": 580,
+    "endFrame": 1500,
+    "segmentIds": [
+      "97ab1a02-49fb-48d4-8ffb-4d624b53fa1b",
+      "6db8e78a-cd56-468c-bec2-fc3d9fd0e13d"
+    ],
+    "anchors": [
+      "ba5914cd-a471-487c-9153-b9af3cd7914d"
+    ],
+    "actualCues": [
+      {
+        "id": "a257c6cb-9206-4994-aff4-cdb3e76dbbcc",
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "endMs": 19333,
+        "level": "phrase",
+        "stale": false,
+        "endChar": 75,
+        "startMs": 0,
+        "anchorId": "f3b335b8-2322-438f-a993-58c7adf49abe",
+        "alignment": "manual",
+        "segmentId": "97ab1a02-49fb-48d4-8ffb-4d624b53fa1b",
+        "startChar": 0,
+        "confidence": null,
+        "segmentTextSha256": "1ce580ac5a1171c3ad3a009b1d8c15f8c7c9e68a42472dffc6c70c25982c507b"
+      },
+      {
+        "id": "51679797-817c-42fd-b771-ddb38beac646",
+        "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。",
+        "endMs": 48548,
+        "level": "phrase",
+        "stale": false,
+        "endChar": 71,
+        "startMs": 30000,
+        "anchorId": "ba5914cd-a471-487c-9153-b9af3cd7914d",
+        "alignment": "manual",
+        "segmentId": "6db8e78a-cd56-468c-bec2-fc3d9fd0e13d",
+        "startChar": 0,
+        "confidence": null,
+        "segmentTextSha256": "79ef3c1ab8b0be3d8ace4500dfa2085804d845bfa947fddcf75ad31530f6831e"
+      }
+    ]
+  },
+  {
+    "shotId": "540fd7ce-8cc3-4512-9b4c-78f7bd7ed31d",
+    "startMs": 50000,
+    "endMs": 60000,
+    "startFrame": 1500,
+    "endFrame": 1800,
+    "segmentIds": [
+      "6db8e78a-cd56-468c-bec2-fc3d9fd0e13d"
+    ],
+    "anchors": [],
+    "actualCues": [
+      {
+        "id": "51679797-817c-42fd-b771-ddb38beac646",
+        "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。",
+        "endMs": 48548,
+        "level": "phrase",
+        "stale": false,
+        "endChar": 71,
+        "startMs": 30000,
+        "anchorId": "ba5914cd-a471-487c-9153-b9af3cd7914d",
+        "alignment": "manual",
+        "segmentId": "6db8e78a-cd56-468c-bec2-fc3d9fd0e13d",
+        "startChar": 0,
+        "confidence": null,
+        "segmentTextSha256": "79ef3c1ab8b0be3d8ace4500dfa2085804d845bfa947fddcf75ad31530f6831e"
+      }
+    ]
+  },
+  {
+    "shotId": "961d8f1d-7171-43ea-9a90-b1663b7faa42",
+    "startMs": 60000,
+    "endMs": 90000,
+    "startFrame": 1800,
+    "endFrame": 2700,
+    "segmentIds": [
+      "ed6f28e6-dc6f-4c92-99fc-6dc23bebb671"
+    ],
+    "anchors": [
+      "ab62d73a-350e-434f-ae0d-5b0df991475f"
+    ],
+    "actualCues": [
+      {
+        "id": "911bb179-e6ea-486b-98a8-e1ec0b9536a0",
+        "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。",
+        "endMs": 79553,
+        "level": "phrase",
+        "stale": false,
+        "endChar": 73,
+        "startMs": 60000,
+        "anchorId": "ab62d73a-350e-434f-ae0d-5b0df991475f",
+        "alignment": "manual",
+        "segmentId": "ed6f28e6-dc6f-4c92-99fc-6dc23bebb671",
+        "startChar": 0,
+        "confidence": null,
+        "segmentTextSha256": "308f95a275b8cd218d60a475a819598644d62e63da9d48edd332b307f83e80dd"
+      }
+    ]
+  },
+  {
+    "shotId": "f9c342ed-f5d0-44ba-8d5a-9142a71f6ba0",
+    "startMs": 90000,
+    "endMs": 109300,
+    "startFrame": 2700,
+    "endFrame": 3279,
+    "segmentIds": [
+      "497b9636-9c91-4346-9430-c31fffc36e90"
+    ],
+    "anchors": [
+      "163ced16-5e93-4e6a-867b-a25a3967751b"
+    ],
+    "actualCues": [
+      {
+        "id": "6abf2964-5b44-4bdf-acf9-cb7ae2ca4df5",
+        "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。",
+        "endMs": 109293,
+        "level": "phrase",
+        "stale": false,
+        "endChar": 75,
+        "startMs": 90000,
+        "anchorId": "163ced16-5e93-4e6a-867b-a25a3967751b",
+        "alignment": "manual",
+        "segmentId": "497b9636-9c91-4346-9430-c31fffc36e90",
+        "startChar": 0,
+        "confidence": null,
+        "segmentTextSha256": "64b698d041d96930083a4906bec52de06522014cb92818ba1b7a6fd8233b65c0"
+      }
+    ]
+  },
+  {
+    "shotId": "8db0e19f-8c37-4fe9-a8fa-483cacb4d835",
+    "startMs": 109300,
+    "endMs": 120000,
+    "startFrame": 3279,
+    "endFrame": 3600,
+    "segmentIds": [
+      "497b9636-9c91-4346-9430-c31fffc36e90"
+    ],
+    "anchors": [],
+    "actualCues": [
+      {
+        "id": "6abf2964-5b44-4bdf-acf9-cb7ae2ca4df5",
+        "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。",
+        "endMs": 109293,
+        "level": "phrase",
+        "stale": false,
+        "endChar": 75,
+        "startMs": 90000,
+        "anchorId": "163ced16-5e93-4e6a-867b-a25a3967751b",
+        "alignment": "manual",
+        "segmentId": "497b9636-9c91-4346-9430-c31fffc36e90",
+        "startChar": 0,
+        "confidence": null,
+        "segmentTextSha256": "64b698d041d96930083a4906bec52de06522014cb92818ba1b7a6fd8233b65c0"
+      }
+    ]
+  }
+]

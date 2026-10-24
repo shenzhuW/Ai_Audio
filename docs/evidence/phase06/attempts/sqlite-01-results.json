@@ -1,0 +1,38 @@
+{
+  "status": "FAIL",
+  "at": "2026-10-24T02:43:56.187Z",
+  "backend": "sqlite",
+  "runId": "mvlsoqzb",
+  "checks": [
+    {
+      "name": "真实120秒音频导入、FFprobe、固定批准文稿/配音与自制研究来源",
+      "status": "PASS",
+      "detail": {
+        "projectId": "3da5ed17-0e81-4c78-b8df-b772e4a2d4b5",
+        "scriptId": "31e3002e-c4d7-4f15-ac09-3b6a75204101",
+        "voiceId": "5dfb302b-531d-44c0-a658-d89c7edecd90",
+        "sourceId": "31ad9607-ba98-4992-a5d4-53b700ec8129",
+        "imageId": "7a852b8e-f765-4ba6-a59b-368dfd194782",
+        "audioSha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d",
+        "alignment": "manual known assembly offsets; not model/word alignment"
+      }
+    },
+    {
+      "name": "未配置Provider明确失败，无假导演结果",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实Codex六镜结构、审计、冻结输入、3600连续帧及Cue引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "12ab8344-26f8-4feb-beff-64fefdf577b6",
+        "runId": "01a16bcb-4a83-78a1-8c52-720586c541d8",
+        "model": "gpt-6.1-sol"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "3da5ed17-0e81-4c78-b8df-b772e4a2d4b5",
+  "error": "AssertionError [ERR_ASSERTION]: {\"error\":{\"code\":\"VALIDATION_ERROR\",\"message\":\"请求内容无效\"},\"meta\":{\"requestId\":\"3aa4558e-d23f-44b1-a7c9-3cc07c509e62\"}}\n\n400 !== 422\n\n    at api (W:\\a_study\\Other\\AI_Audio\\AI_audio_work\\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\\tests\\director\\run.cjs:140:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async main (W:\\a_study\\Other\\AI_Audio\\AI_audio_work\\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\\tests\\director\\run.cjs:350:170)"
+}

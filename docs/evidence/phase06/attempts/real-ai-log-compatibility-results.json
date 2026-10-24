@@ -1,0 +1,72 @@
+{
+  "status": "FAIL",
+  "backend": "sqlite",
+  "runId": "mvlsz7m3",
+  "at": "2026-10-24T02:52:04.302Z",
+  "checks": [
+    {
+      "name": "真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载",
+      "status": "PASS",
+      "detail": {
+        "jobId": "1242504c-f2cd-4483-ae3c-400090de5a0b",
+        "candidates": 1,
+        "sourceId": "4cc026ff-f46d-48b1-abea-35f41d105f5c",
+        "runId": "01a16bd2-b9c0-7aa2-8ee3-09f339790982"
+      }
+    },
+    {
+      "name": "真实图片理解绑定原件SHA；视觉输出不作为原文匹配",
+      "status": "PASS",
+      "detail": {
+        "jobId": "cac95263-dfb7-48a7-9645-16174f8dc463",
+        "summary": "图片为白色背景的柱状图，左侧和底部有黑色坐标轴，无刻度线。三根矩形柱从左到右分别为红色、绿色和蓝色，高度依次增加；柱下分别标有“A”“B”“C”，柱顶分别标有“10”“20”“30”。顶部可辨认黑色文字“SELF-AUTHORED VISUAL TEST ONLY”，右侧接近蓝柱上方的“30”。画面中没有可见人物或其他实物。\n模型分析边界：仅描述所附图片可见内容；图中未注明数据单位或坐标轴含义，无法确定其实际业务含义。",
+        "runId": "01a16bd3-07f1-71a0-82de-a14de4e20590"
+      }
+    },
+    {
+      "name": "真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称",
+      "status": "PASS",
+      "detail": {
+        "jobId": "7bdbda41-9c29-455e-bd8a-ae41867f9028",
+        "timestamps": [
+          0,
+          3333,
+          6666
+        ],
+        "runIds": [
+          "01a16bd3-4ca6-7d51-b76c-16ee5907856c",
+          "01a16bd3-92ed-7b50-831f-d3ddb5e79cbb",
+          "01a16bd3-c764-7850-80c6-0a7e6b2cf8d7"
+        ]
+      }
+    },
+    {
+      "name": "真实AI局部文稿转换ScriptSegment，稳定ID/允许集引用/未改段落保持",
+      "status": "PASS",
+      "detail": {
+        "jobId": "6554da0b-4b06-4ef6-a75b-287e136ace73",
+        "runId": "01a16bd4-0a61-7683-a38b-132c43b316b5",
+        "segmentId": "3f9dec3d-a686-40a6-a4ca-e38b6d540659",
+        "text": "观察，是记录看到了什么；推断，是根据这些记录提出解释；证据，则要看这些记录能支持哪个具体判断，以及支持到什么程度。这里的内部测试声明称，已获取一份 ffprobe 文档，但这项声明尚未核实，也不构成独立验证。因此，不能把“获取了文档”直接当成“结论已经证实”。现有材料没有提供可核对的官方文档内容，我们只能解释这些概念，相关声明与文档内容仍需人工审核；审批通过也不等于事实得到验证。"
+      }
+    },
+    {
+      "name": "真实整体文稿生成沿用全部稳定ID与引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "340a8351-6b76-45d7-8b8c-9a9810120602",
+        "runId": "01a16bd4-47d1-7643-a05c-2b17536fe194"
+      }
+    },
+    {
+      "name": "真实浏览器来源/视觉/写稿/使用量可见，刷新持久化",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "11e06fd0-ac97-4900-a1ce-d528d7b132eb",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'succeeded'\n- 'running'\n\n    at main (W:\\a_study\\Other\\AI_Audio\\AI_audio_work\\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\\tests\\real-ai\\run.cjs:705:10)"
+}

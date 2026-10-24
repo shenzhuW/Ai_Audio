@@ -1,0 +1,191 @@
+{
+  "jobId": "e9324c1d-5206-4f18-9ddd-5fef4c49839b",
+  "runId": "60ffd7de-e580-46cb-8711-b9ace3c68f59",
+  "inputKeys": [
+    "operation",
+    "language",
+    "audioPath",
+    "modelPath"
+  ],
+  "operation": "transcribe",
+  "language": "zh",
+  "referenceTextProvided": false,
+  "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+  "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+  "output": {
+    "model": "openai-whisper/base",
+    "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+    "engineVersion": "stable-ts/2.19.1/whisper/20250625",
+    "transcript": "測試,測試。這是配音時間軸的真實語音。字幕和詞語時間需要分別教驗。",
+    "words": [
+      {
+        "text": "測",
+        "startMs": 0,
+        "endMs": 320,
+        "probability": 0.491150775924325
+      },
+      {
+        "text": "試,",
+        "startMs": 320,
+        "endMs": 800,
+        "probability": 0.9680749773979187
+      },
+      {
+        "text": "測",
+        "startMs": 800,
+        "endMs": 1200,
+        "probability": 0.7196236997842789
+      },
+      {
+        "text": "試。",
+        "startMs": 1200,
+        "endMs": 1620,
+        "probability": 0.9960677623748779
+      },
+      {
+        "text": "這是",
+        "startMs": 2400,
+        "endMs": 2740,
+        "probability": 0.7598904967308044
+      },
+      {
+        "text": "配",
+        "startMs": 2740,
+        "endMs": 3040,
+        "probability": 0.9298218488693237
+      },
+      {
+        "text": "音",
+        "startMs": 3040,
+        "endMs": 3360,
+        "probability": 0.9201987385749817
+      },
+      {
+        "text": "時間",
+        "startMs": 3360,
+        "endMs": 3660,
+        "probability": 0.9182754755020142
+      },
+      {
+        "text": "軸",
+        "startMs": 3660,
+        "endMs": 3940,
+        "probability": 0.8537160158157349
+      },
+      {
+        "text": "的",
+        "startMs": 3940,
+        "endMs": 4160,
+        "probability": 0.9834458231925964
+      },
+      {
+        "text": "真",
+        "startMs": 4160,
+        "endMs": 4300,
+        "probability": 0.9606042504310608
+      },
+      {
+        "text": "實",
+        "startMs": 4300,
+        "endMs": 4560,
+        "probability": 0.9772729277610779
+      },
+      {
+        "text": "語",
+        "startMs": 4560,
+        "endMs": 4680,
+        "probability": 0.9530054926872253
+      },
+      {
+        "text": "音。",
+        "startMs": 4680,
+        "endMs": 5020,
+        "probability": 0.9980664849281311
+      },
+      {
+        "text": "字",
+        "startMs": 5940,
+        "endMs": 6060,
+        "probability": 0.3235475718975067
+      },
+      {
+        "text": "幕",
+        "startMs": 6060,
+        "endMs": 6260,
+        "probability": 0.9795910120010376
+      },
+      {
+        "text": "和",
+        "startMs": 6260,
+        "endMs": 6620,
+        "probability": 0.9597977995872498
+      },
+      {
+        "text": "詞",
+        "startMs": 6620,
+        "endMs": 6820,
+        "probability": 0.8900278806686401
+      },
+      {
+        "text": "語",
+        "startMs": 6820,
+        "endMs": 7000,
+        "probability": 0.8819063901901245
+      },
+      {
+        "text": "時間",
+        "startMs": 7000,
+        "endMs": 7320,
+        "probability": 0.9631377458572388
+      },
+      {
+        "text": "需要",
+        "startMs": 7320,
+        "endMs": 7840,
+        "probability": 0.9843244552612305
+      },
+      {
+        "text": "分",
+        "startMs": 7840,
+        "endMs": 8100,
+        "probability": 0.9860040545463562
+      },
+      {
+        "text": "別",
+        "startMs": 8100,
+        "endMs": 8380,
+        "probability": 0.9980156421661377
+      },
+      {
+        "text": "教",
+        "startMs": 8380,
+        "endMs": 8540,
+        "probability": 0.9006814956665039
+      },
+      {
+        "text": "驗。",
+        "startMs": 8540,
+        "endMs": 8780,
+        "probability": 0.8347861170768738
+      }
+    ],
+    "segments": [
+      {
+        "text": "測試,測試。",
+        "startMs": 0,
+        "endMs": 1620
+      },
+      {
+        "text": "這是配音時間軸的真實語音。",
+        "startMs": 2400,
+        "endMs": 5020
+      },
+      {
+        "text": "字幕和詞語時間需要分別教驗。",
+        "startMs": 5940,
+        "endMs": 8780
+      }
+    ]
+  },
+  "note": "实际私有input/output的脱敏副本；只删除宿主文件路径，保留原始模型输出。"
+}

@@ -2,9 +2,11 @@
 
 **用途**：以用户确认的产品需求和 10 页面 v2 原型逐阶段开发。文档基线 v1.3，整理日期：2026-10-22。
 
-## 当前实现状态：Phase 04.5 本地交付，等待审核
+## 当前实现状态：Phase06 完成本地交付，等待正式审核
 
-已完成 Phase00–04.5 的本地创作底座、修订审核、真实Remotion、研究追溯、Codex搜索/视觉/写稿及候选Claim/Evidence。Phase05正在交付真实配音时间轴：本机系统TTS、用户导入、无口播；本地Whisper真实中文ASR与stable-ts声学强制对齐，第05页播放/字幕/稳定锚点/版本审核。详见[配音启用与限制](docs/VOICE_SETUP.md)、[自制音频](fixtures/voice/README.md)和[Phase05交付](docs/PHASE_05_DELIVERY.md)。云端神经TTS未配置，不把系统声音冒充神经模型；模型输出须试听校正，不自动批准或核实。Codex原安全门禁与可信组件限制保留。Phase06未启动，人工整体体验仍按用户决定延后。
+Phase00–05及Phase04.5候选补充已正式验收。Phase06新增真实Codex结构化导演、批准文稿/配音固定输入、连续帧时间轴、镜头编辑/来源追溯、审核/Fork/前后差异与素材需求接口。见[交付报告](docs/PHASE_06_DELIVERY.md)、[证据](docs/evidence/phase06/README.md)、[120秒真实音频样例](fixtures/director/README.md)。66项单元、157组集成及相关回归、类型检查/生产构建通过。未进入Phase07，本轮仅本地提交，不推送。
+
+导演API与`pnpm worker`使用相同数据配置并显式启用`STUDIO_CODEX_ENABLED=1`，复用已有固定CLI登录，不复制Token。未配置明确失败，Mock单独标记。素材pending只是待匹配，SVG只是示意；不在本阶段自动找片/裁剪或执行自由TSX。系统TTS不是云端神经模型，Whisper/对齐精度限制及Windows异常UNCONFIRMED继续保留。
 
 先阅读 [Phase 01 交付报告](docs/PHASE_01_DELIVERY.md)、[工作流运行说明](docs/WORKFLOW_IMPLEMENTATION.md)、[本地运行说明](docs/LOCAL_DEVELOPMENT.md)、[PostgreSQL 说明](docs/POSTGRESQL_LOCAL.md) 和 [验收记录](tests/ACCEPTANCE.md)。旧阶段报告保留为当时记录。以下交接包介绍保留作原始研发背景，实际开发进度以实施日志为准。
 
@@ -74,7 +76,7 @@ ai-code-video-studio/
 4. Codex 交付后先检查 `pnpm dev` 实际启动的 10 页路由、真实 Project 创建/保存、类型检查和测试日志，再决定进入 Phase 01。
 5. 后续使用 `prompts/NEXT_PHASE_TEMPLATE.md` 并明确 `plans/NN-xxx.md`。
 
-上面的步骤是初次交接说明；当前目录已有 Phase 00 实现，不应重复初始化或覆盖。当前目录没有 `.git`，本次没有初始化 Git 或提交代码。
+上面的步骤是初次交接说明；当前目录已有实现、本地 Git 与验收历史，不应重复初始化或覆盖。
 
 ## 两种下载包
 - `AI_Code_Video_Studio_Codex_交接包_v1.3_含原型.zip`：自包含完整原型+全部文档。**推荐**。

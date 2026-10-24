@@ -1,0 +1,31 @@
+{
+  "incident": "Phase06 regression: earlier PostgreSQL Render Worker ended while task remained running",
+  "exitCode": "NOT_CAPTURED; test only captured state assertion and log",
+  "rootCause": "UNCONFIRMED; not evidence that historical Windows root cause is fixed or identical",
+  "originalTestDatabase": "studio_phase02_mvltdasj",
+  "observations": [
+    {
+      "before": {
+        "id": "8b326366-a5f3-412d-bbce-c8c32cc46509",
+        "state": "running",
+        "leaseExpiresAt": "2026-10-24T03:06:42.512Z",
+        "heartbeatAt": "2026-10-24T03:06:12.512Z",
+        "resultRevisionId": null,
+        "hasRenderResult": false,
+        "lastLog": {
+          "at": "2026-10-24T03:06:12.512Z",
+          "message": "视频渲染 52%"
+        }
+      },
+      "after": {
+        "state": "failed",
+        "errorCode": "WORKER_INTERRUPTED",
+        "leaseOwner": null,
+        "leaseExpiresAt": null,
+        "resultRevisionId": null,
+        "hasRenderResult": false
+      }
+    }
+  ],
+  "mitigation": "Retain original failure; independent full PostgreSQL rerun PASS; recover only expired lease in this isolated test database; no user data accessed"
+}

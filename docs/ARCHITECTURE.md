@@ -120,3 +120,13 @@ Search/Content/Vision 接口与 real/mock/unconfigured 状态分开；本地真�
 `processVoice`统一音频/ASR/对齐任务，Provider由服务端允许集选择。句/词模型时间绑定输入音频SHA、固定scriptRevisionId、segmentId、字符范围和段落SHA，零时长词保留原始但不制造时长；字幕另轨可改。ASR不接收参考文稿，其未绑定草稿不可批准。人工校时、估算、静默计划、模型强制对齐分别标识。没有自由Python/PowerShell/SSML/TSX执行接口，不将本机可信进程称为OS沙箱。更多配置、维护/精度风险见[VOICE_SETUP](VOICE_SETUP.md)。
 
 Worker每2秒心跳/30秒租约，模型默认600秒超时，取消杀子进程树，失败可重试；目标修订、音频SHA和目标版本不匹配时拒绝迟到写入。音频正式替换使锚点失效，新批准文稿使完整音轨依赖失效；一个段落可有多层多个Cue，未实现镜头映射或Phase06。
+
+## Phase06 导演实现（2026-10-24）
+
+Director为结构化storyboard产物，新增director_documents/director_shot_versions两类快照表，不改变旧产物或AI隔离配置。DirectorDocument固定具体批准ScriptRevision与VoiceRevision；配音须确认且属于同一文稿。使用完整输入修订依赖，任一新批准输入导致下游stale，保守将全部镜头列为需要重新核对，不改写历史。
+
+DirectorProvider调用既有Codex数据运行时（固定CLI、安全目录、禁Shell/补丁/MCP、搜索关闭、默认120秒超时）。复用Workflow Worker/Job/Outbox，每2秒心跳、30秒租约、3次尝试、取消及迟到版本保护；主API不执行AI代码。Job冻结brief、段落、Cue/字幕、事实、已选来源/索引和应用分配shotId；结构、引用、连续帧与时间绑定通过后才事务写入。runId/模型/耗时/usage/失败原因保留，剩余额度未知；Mock与未配置分别呈现。
+
+30FPS半开帧区间[start,end)，totalFrames=ceil(Voice.durationMs*fps/1000)，仅末尾向上取整，误差小于一帧；各镜头duration精确累加，转场内含。草稿允许明确的未分配尾段，提交须完全覆盖；静默间隔可延续同一对象，不伪造Cue。时长/排序编辑重算后续范围，UI显示影响和剩余帧；时间来源沿用原Cue的manual/forced等标记。
+
+执行方案为code/pending/bound：code只图形文字；pending保存VisualSearchIntent并输出assetRequirements供Phase07消费，批准不代表素材已找到；bound仅引用固定研究真实图片/视频元数据及合法候选区间。保留来源、作者、限制，D-17/D-18不加商业审批。SVG仅图层示意，未生成正式动画、裁剪或开放自由TSX。

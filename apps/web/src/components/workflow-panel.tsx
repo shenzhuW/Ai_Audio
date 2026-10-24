@@ -102,9 +102,11 @@ function Jobs({
                           : j.scriptInput?.mode === 'mock'
                             ? 'Mock 写稿演示'
                             : '提供方尚未配置'
-                        : j.provider === 'voice'
-                          ? `配音任务 · ${j.voiceInput?.provider} · ${j.voiceInput?.operation} · ${j.voiceInput?.purpose}`
-                          : '提供方尚未配置'}{' '}
+                        : j.provider === 'director'
+                          ? `导演任务 · ${j.directorInput?.mode} · ${j.aiRuns?.at(-1)?.model || '调用情况见审计'}`
+                          : j.provider === 'voice'
+                            ? `配音任务 · ${j.voiceInput?.provider} · ${j.voiceInput?.operation} · ${j.voiceInput?.purpose}`
+                            : '提供方尚未配置'}{' '}
                 · 执行 {j.attempt}/{j.maxAttempts} 次
               </p>
               <code className={s.caption}>{j.id}</code>
@@ -216,6 +218,7 @@ export function WorkflowPanel({
   integratedResearch = false,
   integratedScript = false,
   integratedVoice = false,
+  integratedDirector = false,
   externalDirty = false,
   externalRevision,
 }: {
@@ -226,11 +229,12 @@ export function WorkflowPanel({
   integratedResearch?: boolean;
   integratedScript?: boolean;
   integratedVoice?: boolean;
+  integratedDirector?: boolean;
   externalDirty?: boolean;
   externalRevision?: { id: string; version: number };
 }) {
   const { snapshot, error, busy, reload, send } = useWorkflow(projectId);
-  const integratedEditor = integratedScript || integratedVoice;
+  const integratedEditor = integratedScript || integratedVoice || integratedDirector;
   const [selected, setSelected] = useState<string | null>(null);
   const [text, setText] = useState(originalText),
     [editVersion, setEditVersion] = useState(1);
@@ -351,9 +355,11 @@ export function WorkflowPanel({
   return (
     <>
       <Notice>
-        {integratedVoice
-          ? '本页审核上方实际保存的声音和时间轴；模型时间、人工校时与静默计划分别标识，批准后只读。'
-          : '本页已接通真实保存、版本和审核。模拟生成仅提供带 Mock 标记的文本，外部事实核验不由审批自动完成；可信组件渲染位于第 08 页。'}
+        {integratedDirector
+          ? '导演审核固定文稿、配音和画面方案；待匹配素材不表示已找到，后续素材引擎继续处理。'
+          : integratedVoice
+            ? '本页审核上方实际保存的声音和时间轴；模型时间、人工校时与静默计划分别标识，批准后只读。'
+            : '本页已接通真实保存、版本和审核。模拟生成仅提供带 Mock 标记的文本，外部事实核验不由审批自动完成；可信组件渲染位于第 08 页。'}
       </Notice>
       {error && (
         <p role="alert" className={s.error}>
@@ -404,7 +410,10 @@ export function WorkflowPanel({
             {revision && !isCurrent && (
               <Notice>正在查看历史修订。当前候选已变化；请选取当前修订或显式创建新修订。</Notice>
             )}
-            {integratedEditor && (revision?.scriptSchemaVersion || revision?.voiceSchemaVersion) ? (
+            {integratedEditor &&
+            (revision?.scriptSchemaVersion ||
+              revision?.voiceSchemaVersion ||
+              revision?.directorSchemaVersion) ? (
               <p className={s.caption}>
                 {integratedVoice
                   ? '音频、Cue与字幕在上方保存；此处审核同一时间轴修订。'

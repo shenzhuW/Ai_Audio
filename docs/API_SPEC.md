@@ -213,3 +213,16 @@ locator 为 `{kind:"text",label}`、`{kind:"page",page,label?}`、`{kind:"image"
 | GET/HEAD | `/voice-files/:blobId` | 只允许本项目正式音轨或成功试听Job；SHA验证、Range206/416、private no-store |
 
 审核、拒绝、Fork、历史、任务查询/取消/重试使用已有Artifact/Job API，不重造审批系统。preview输出不替换正式Timeline也不提升目标版本；ASR未绑定草稿不能提交；替换音频/文稿须重新核对。具体严格结构见domain/voice.ts；模型单任务限额与未配置行为见VOICE_SETUP。
+
+## Phase06 实际导演API（2026-10-24）
+
+沿用/api/v1、项目归属、同源会话、Idempotency-Key、expectedVersion；Zod格式错误400、业务边界422、并发409。
+
+| 方法 | /projects/:id 下路径 | 契约 |
+|---|---|---|
+| GET | /director?revisionId= | document/shots/segments/voice/cues/subtitles/sources/claims/evidence/jobs/revisions/diff/impact/timing/warnings/assetRequirements |
+| POST | /director | scriptRevisionId+voiceRevisionId；当前有效批准版且配音确认；旧草稿显式legacyRevisionId+expectedVersion转换 |
+| PATCH | /director | revisionId+expectedVersion+shots完整有序数组；稳定shotId、连续start/end，可暂存尾段；不能通用文本覆盖 |
+| POST | /director-runs | revisionId+expectedVersion+mode(real/mock/unconfigured)+shotCount(1–60)+instruction；202 {jobId,status}；冻结目标及输入 |
+
+审批/驳回/Fork/历史与Job取消/重试沿用现有API。单次手工镜头上限120，AI任务60镜头；输入750KB、500来源、每来源100索引，超出明确失败而不静默截断。120秒六镜头仅样例。assetRequirements为directorRevisionId/shotId/pending/intent，供Phase07匹配，不表示已经找到或裁剪素材。

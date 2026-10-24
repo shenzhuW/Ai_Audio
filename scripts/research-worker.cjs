@@ -71,7 +71,7 @@ async function execute(service, projectId, queued) {
     const env = isolatedEnvironment();
     if (
       job.researchInput?.mode === 'real' &&
-      (job.researchInput?.kind === 'search' || job.researchInput?.vision)
+      (['search', 'claims'].includes(job.researchInput?.kind) || job.researchInput?.vision)
     ) {
       Object.assign(env, require('./codex-runtime.cjs').safeEnvironment());
       if (process.env.STUDIO_CODEX_ENABLED === '1') env.STUDIO_CODEX_ENABLED = '1';
@@ -126,7 +126,9 @@ async function execute(service, projectId, queued) {
         fenced = true;
         abort();
       },
-      job.researchInput?.vision || job.researchInput?.kind === 'search' ? 240000 : 120000,
+      job.researchInput?.vision || ['search', 'claims'].includes(job.researchInput?.kind)
+        ? 240000
+        : 120000,
     );
     const exit = await exited;
     clearInterval(heartbeat);

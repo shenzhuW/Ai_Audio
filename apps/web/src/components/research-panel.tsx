@@ -1,5 +1,6 @@
 'use client';
 import { AiRunDetails } from './ai-run-details';
+import { ClaimCandidates } from './claim-candidates';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Card, Badge, Notice, s } from './ui';
 import { WorkflowPanel } from './workflow-panel';
@@ -1016,6 +1017,15 @@ export function ResearchPanel({ projectId }: { projectId: string }) {
         </>
       )}
       <div id="research-review" className={s.researchReview}>
+        {data && (
+          <ClaimCandidates
+            key={revision?.id}
+            data={data}
+            editable={!!editable}
+            busy={busy}
+            send={send}
+          />
+        )}
         <WorkflowPanel
           projectId={projectId}
           type="research"

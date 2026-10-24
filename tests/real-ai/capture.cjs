@@ -9,7 +9,12 @@ const root = path.resolve(__dirname, '../..'),
   req = createRequire(path.join(appDir, 'package.json'));
 const { publicEvidence } = require('./public-evidence.cjs');
 async function capture(backend) {
-  const output = path.join(root, 'docs/evidence/phase045', backend),
+  const supplement = process.argv.includes('--claims-supplement');
+  const output = path.join(
+      root,
+      supplement ? 'docs/evidence/phase045-claims' : 'docs/evidence/phase045',
+      backend,
+    ),
     result = JSON.parse(fs.readFileSync(path.join(output, 'results.json'), 'utf8'));
   if (result.status !== 'PASS' || !/^[a-z0-9]+$/.test(result.runId))
     throw Error('Only completed synthetic runs may be recaptured');
@@ -122,6 +127,29 @@ async function capture(backend) {
     }
     await page.getByText('查看研究任务和日志', { exact: true }).click();
     await snap('03-real-audit.png');
+    if (supplement) {
+      const job = research.jobs.find((j) => j.researchResult?.kind === 'claims');
+      const accepted = job.claimCandidateReviews.find((r) => r.state === 'accepted');
+      const row = page.locator(`[data-candidate-id="${accepted.candidateId}"]`);
+      await page.setViewportSize({ width: 1800, height: 1500 });
+      await row.evaluate((el) => scrollTo(0, el.getBoundingClientRect().top + scrollY - 96));
+      if (!(await row.getByRole('textbox', { name: '候选 Claim', exact: true }).isDisabled()))
+        throw Error('Approved candidate editable');
+      const bytes = await page.screenshot({
+        path: path.join(output, '03-candidate-approved-final.png'),
+      });
+      record.images.push({
+        file: '03-candidate-approved-final.png',
+        sha256: createHash('sha256').update(bytes).digest('hex'),
+        bytes: bytes.length,
+      });
+      await page.setViewportSize({ width: 390, height: 1000 });
+      await row.scrollIntoViewIfNeeded();
+      await page.screenshot({ path: path.join(output, '03-candidate-mobile-final.png') });
+      if (!(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)))
+        throw Error('Candidate mobile overflow');
+      await page.setViewportSize({ width: 1800, height: 1200 });
+    }
     await page.goto(base + `/projects/${result.projectId}/script`);
     await page.getByRole('textbox', { name: '第2段正文', exact: true }).waitFor();
     if (
@@ -151,7 +179,12 @@ async function capture(backend) {
   }
 }
 (async () => {
-  for (const backend of process.argv.includes('--postgres') ? ['postgresql'] : process.argv.includes('--sqlite') ? ['sqlite'] : ['sqlite', 'postgresql']) await capture(backend);
+  for (const backend of process.argv.includes('--postgres')
+    ? ['postgresql']
+    : process.argv.includes('--sqlite')
+      ? ['sqlite']
+      : ['sqlite', 'postgresql'])
+    await capture(backend);
 })().catch((e) => {
   console.error(e.message);
   process.exitCode = 1;

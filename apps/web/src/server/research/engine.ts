@@ -7,6 +7,7 @@ import {
   type ResearchResult,
 } from '../../domain/research';
 import { AppError } from '../errors';
+import { claimInput, validateClaimInput, groundCandidates } from './claim-candidates';
 const fail = (code: string, message: string, status = 422): never => {
   throw new AppError(code, message, status);
 };
@@ -141,8 +142,79 @@ export function applyResearchCommand(
       revision: r,
       input: { kind: 'search', revisionId: r.id, query: c.query, mode: c.mode },
     };
+  if (c.action === 'research-claims') return { revision: r, input: claimInput(s, r) };
   let entity: { id: string };
-  if (c.action === 'research-source') {
+  if (c.action === 'research-candidate-review') {
+    const job =
+      s.jobs.find(
+        (x) =>
+          x.id === c.jobId &&
+          x.state === 'succeeded' &&
+          x.researchInput?.kind === 'claims' &&
+          x.researchInput.revisionId === r.id &&
+          x.researchResult?.kind === 'claims',
+      ) ?? fail('INVALID_CANDIDATE_JOB', '候选任务不属于当前研究修订，或尚未成功。');
+    const input = job.researchInput,
+      output = job.researchResult;
+    if (input?.kind !== 'claims' || output?.kind !== 'claims')
+      throw new AppError('INVALID_CANDIDATE_JOB', '候选任务类型不符。', 422);
+    const original =
+      output.candidates.find((x) => x.id === c.candidateId) ??
+      fail('NOT_FOUND', '候选不存在。', 404);
+    const reviews = (job.claimCandidateReviews ??= []),
+      previous = reviews.find((x) => x.candidateId === c.candidateId);
+    if (previous && previous.state !== 'pending')
+      fail('CANDIDATE_ALREADY_REVIEWED', '候选已接受或拒绝，不可重复操作。', 409);
+    // Reject remains possible if a source was deselected; edit/accept must still match original bytes.
+    if (c.decision !== 'reject') validateClaimInput(s, input);
+    const candidate =
+      c.decision === 'reject'
+        ? (previous?.candidate ?? original)
+        : groundCandidates(input, [
+            { ...(c.candidate ?? previous?.candidate ?? original), id: original.id },
+          ])[0];
+    const row: NonNullable<typeof job.claimCandidateReviews>[number] = {
+      id: previous?.id ?? randomUUID(),
+      candidateId: original.id,
+      candidate,
+      state: c.decision === 'edit' ? 'pending' : c.decision === 'accept' ? 'accepted' : 'rejected',
+      version: (previous?.version ?? 0) + 1,
+      updatedAt: time,
+      actor: 'local-user',
+    };
+    if (c.decision === 'accept') {
+      const accepted = {
+        ...candidate.claim,
+        id: randomUUID(),
+        revisionId: r.id,
+        schemaVersion: 1 as const,
+      };
+      s.researchClaims.push(accepted);
+      row.acceptedClaimId = accepted.id;
+      row.acceptedEvidenceIds = candidate.evidence.map((e) => {
+        const evidence = {
+          id: randomUUID(),
+          revisionId: r.id,
+          schemaVersion: 1 as const,
+          claimId: accepted.id,
+          sourceId: e.sourceId,
+          role: e.role,
+          quote: e.quote,
+          locator: e.match!.locator,
+          validation: 'matched' as const,
+        };
+        validateLocator(s, evidence);
+        s.researchEvidence.push(evidence);
+        return evidence.id;
+      });
+      reconcileClaim(s, accepted.id);
+    }
+    if (previous) reviews[reviews.indexOf(previous)] = row;
+    else reviews.push(row);
+    job.version++;
+    job.updatedAt = time;
+    entity = row;
+  } else if (c.action === 'research-source') {
     if (s.researchSources.filter((x) => x.revisionId === r.id).length >= 100)
       fail('RESEARCH_LIMIT', '单个研究修订最多 100 个来源。', 429);
     const kind = c.source.blob.mime.startsWith('image/')
@@ -244,6 +316,17 @@ export function finishResearch(
     a = s.artifacts.find((x) => x.id === r?.artifactId);
   if (!r || r.status !== 'draft' || a?.currentRevisionId !== r.id) return 'TARGET_CHANGED';
   if (input.kind !== result.kind || input.mode !== result.mode) return 'INVALID_RESULT';
+  if (input.kind === 'claims' && result.kind === 'claims') {
+    if (r.version !== input.targetVersion) return 'TARGET_CHANGED';
+    if (result.candidates.length && !result.aiRuns.length) return 'INVALID_RESULT';
+    try {
+      validateClaimInput(s, input);
+      result.candidates = groundCandidates(input, result.candidates);
+      return null;
+    } catch (e) {
+      return e instanceof AppError ? e.code : 'INVALID_RESULT';
+    }
+  }
   if (input.kind === 'search' && result.kind === 'search') {
     if (result.mode === 'mock' && result.candidates.length) return 'INVALID_RESULT';
     const fetched = result.candidates.filter((x) => x.fetchStatus === 'fetched');

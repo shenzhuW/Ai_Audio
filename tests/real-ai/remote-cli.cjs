@@ -8,7 +8,13 @@ const { createHash, randomUUID } = require('node:crypto');
 const { execFileSync } = require('node:child_process');
 const root = path.resolve(__dirname, '../..');
 const { runCodex, safeEnvironment } = require('../../scripts/codex-runtime.cjs');
-const dir = path.join(root, 'docs/evidence/phase045/remote');
+const evidenceRoot = path.join(
+  root,
+  process.argv.includes('--claims-supplement')
+    ? 'docs/evidence/phase045-claims'
+    : 'docs/evidence/phase045',
+);
+const dir = path.join(evidenceRoot, 'remote');
 fs.mkdirSync(dir, { recursive: true });
 const sha = (b) => createHash('sha256').update(b).digest('hex');
 const read = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
@@ -111,15 +117,28 @@ async function main() {
   const known = new Map();
   for (const backend of ['sqlite', 'postgresql']) {
     for (const area of ['research', 'script']) {
-      const snapshot = read(
-        path.join(root, 'docs/evidence/phase045', backend, area + '-snapshot.json'),
-      );
+      const snapshot = read(path.join(evidenceRoot, backend, area + '-snapshot.json'));
       for (const j of snapshot.jobs)
         for (const a of j.aiRuns || [])
           if (a.runId) known.set(a.runId, { backend, jobId: j.id, audit: a });
     }
   }
   const canaryFile = path.join(dir, 'injection-canary.json');
+  if (process.argv.includes('--claims-supplement')) {
+    for (const backend of ['sqlite', 'postgresql']) {
+      const file = path.join(evidenceRoot, 'boundaries', backend, 'real-conflict-candidates.json');
+      if (fs.existsSync(file)) {
+        const proof = read(file);
+        for (const a of proof.aiRuns || [])
+          if (a.runId)
+            known.set(a.runId, {
+              backend: backend + '-conflict-boundary',
+              jobId: proof.jobId,
+              audit: a,
+            });
+      }
+    }
+  }
   if (fs.existsSync(canaryFile)) {
     const c = read(canaryFile);
     if (c.runId) known.set(c.runId, { backend: 'standalone-canary', audit: c.audit });

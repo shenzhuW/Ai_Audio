@@ -10,7 +10,17 @@ const root = path.resolve(__dirname, '../..'),
   appDir = path.join(root, 'apps/web');
 const req = createRequire(path.join(appDir, 'package.json'));
 const backend = process.argv.includes('--postgres') ? 'postgresql' : 'sqlite';
-const output = path.join(root, 'docs/evidence/phase045', backend),
+const boundaries = process.argv.includes('--claims-boundaries');
+const supplement = process.argv.includes('--claims-supplement') || boundaries;
+const output = path.join(
+    root,
+    boundaries
+      ? 'docs/evidence/phase045-claims/boundaries'
+      : supplement
+        ? 'docs/evidence/phase045-claims'
+        : 'docs/evidence/phase045',
+    backend,
+  ),
   base = 'http://127.0.0.1:3012';
 const resume = process.argv.includes('--resume-finalize')
   ? JSON.parse(fs.readFileSync(path.join(output, 'results.json'), 'utf8'))
@@ -101,13 +111,13 @@ async function stop() {
   }
   app = undefined;
 }
-async function api(p, method = 'GET', body, status = 200) {
+async function api(p, method = 'GET', body, status = 200, key = randomUUID()) {
   const r = await fetch(base + '/api/v1' + p, {
     method,
     headers: {
       Cookie: cookie,
       Origin: base,
-      ...(body ? { 'Content-Type': 'application/json', 'Idempotency-Key': randomUUID() } : {}),
+      ...(body ? { 'Content-Type': 'application/json', 'Idempotency-Key': key } : {}),
     },
     ...(body ? { body: JSON.stringify(body) } : {}),
   });
@@ -115,10 +125,10 @@ async function api(p, method = 'GET', body, status = 200) {
   assert.equal(r.status, status, JSON.stringify(json));
   return json.data;
 }
-async function worker(file) {
+async function worker(file, overrides = {}) {
   const child = spawn(process.execPath, [path.join(root, 'scripts', file), '--once'], {
     cwd: root,
-    env,
+    env: { ...env, ...overrides },
     windowsHide: true,
     stdio: ['ignore', 'pipe', 'pipe'],
   });
@@ -217,6 +227,26 @@ async function postgres() {
   check('真实 PostgreSQL 初始化/重复迁移：沿用0001–0004，无本阶段DDL', { migrations });
 }
 async function main() {
+  if (boundaries) {
+    if (backend === 'postgresql') await postgres();
+    await start();
+    await require('./claim-boundaries.cjs')({
+      api,
+      worker,
+      upload,
+      check,
+      output,
+      result,
+      approve,
+      start,
+      stop,
+    });
+    assert.equal(originalHash(), originalBefore);
+    result.status = 'PASS';
+    result.finishedAt = new Date().toISOString();
+    save();
+    return;
+  }
   if (resume) {
     assert.equal(backend, 'sqlite');
     assert.equal(resume.checks.length, 7);
@@ -466,39 +496,71 @@ async function main() {
     runIds: videoDone.aiRuns.map((a) => a.runId),
   });
   w = await api(`/projects/${p.id}/research`);
-  const claim = await api(
-    `/projects/${p.id}/claims`,
-    'POST',
-    {
-      revisionId: r.id,
-      expectedVersion: w.revision.version,
-      claim: {
-        text: 'Internal test claim: a fetched ffprobe document exists; not independent verification.',
-        verificationStatus: 'unverified',
-        scope: 'synthetic acceptance only',
-        caveats: 'Approval does not verify factual truth',
+  let claim, evidence;
+  const candidateProof = supplement
+    ? await require('./claim-supplement.cjs')({
+        api,
+        worker,
+        browser,
+        p,
+        r,
+        output,
+        check,
+        base,
+        capture,
+        result,
+      })
+    : null;
+  if (candidateProof) ({ claim, evidence } = candidateProof);
+  else {
+    claim = await api(
+      `/projects/${p.id}/claims`,
+      'POST',
+      {
+        revisionId: r.id,
+        expectedVersion: w.revision.version,
+        claim: {
+          text: 'Internal test claim: a fetched ffprobe document exists; not independent verification.',
+          verificationStatus: 'unverified',
+          scope: 'synthetic acceptance only',
+          caveats: 'Approval does not verify factual truth',
+        },
       },
-    },
-    201,
-  );
-  w = await api(`/projects/${p.id}/research`);
-  const evidence = await api(
-    `/projects/${p.id}/research-evidence`,
-    'POST',
-    {
-      revisionId: r.id,
-      expectedVersion: w.revision.version,
-      claimId: claim.id,
-      sourceId: web.id,
-      role: 'support',
-      quote: webIndex.extractedText.slice(0, 100),
-      locator: { kind: 'text', label: 'Independent static page snapshot, first 100 characters' },
-    },
-    201,
-  );
-  assert.equal(evidence.validation, 'matched');
+      201,
+    );
+    w = await api(`/projects/${p.id}/research`);
+    evidence = await api(
+      `/projects/${p.id}/research-evidence`,
+      'POST',
+      {
+        revisionId: r.id,
+        expectedVersion: w.revision.version,
+        claimId: claim.id,
+        sourceId: web.id,
+        role: 'support',
+        quote: webIndex.extractedText.slice(0, 100),
+        locator: { kind: 'text', label: 'Independent static page snapshot, first 100 characters' },
+      },
+      201,
+    );
+    assert.equal(evidence.validation, 'matched');
+  }
   w = await api(`/projects/${p.id}/research`);
   const approved = await approve(w.revision);
+  if (candidateProof) {
+    await api(
+      `/projects/${p.id}/research-candidates/${candidateProof.candidateId}`,
+      'POST',
+      {
+        revisionId: approved.id,
+        expectedVersion: approved.version,
+        jobId: candidateProof.jobId,
+        decision: 'reject',
+      },
+      422,
+    );
+    check('已批准研究拒绝候选审核写入，正式 Claim 保持未核实');
+  }
   await api(
     `/projects/${p.id}/script`,
     'POST',
@@ -510,7 +572,7 @@ async function main() {
     201,
   );
   let sw = await api(`/projects/${p.id}/script`);
-  sw.segments[1].factBindings = [{ claimId: claim.id, sourceIds: [web.id] }];
+  sw.segments[1].factBindings = [{ claimId: claim.id, sourceIds: [evidence.sourceId] }];
   await api(`/projects/${p.id}/script`, 'PATCH', {
     revisionId: sw.revision.id,
     expectedVersion: sw.revision.version,
@@ -669,6 +731,22 @@ async function main() {
   assert.equal(forked.document.researchRevisionId, approved.id);
   check('真实生成沿用审批只读和Fork，研究引用归属不变');
   const publicResearch = await api(`/projects/${p.id}/research`);
+  const persistedResearch = structuredClone(publicResearch);
+  if (supplement)
+    for (const job of publicResearch.jobs) {
+      if (job.researchInput?.kind === 'claims')
+        for (const passage of job.researchInput.passages) {
+          passage.textLength = passage.text.length;
+          delete passage.text;
+        }
+      if (job.researchResult?.kind === 'search')
+        for (const c of job.researchResult.candidates) {
+          if (c.extractedText) {
+            c.extractedTextSha256 = sha(c.extractedText);
+            delete c.extractedText;
+          }
+        }
+    }
   for (const entry of publicResearch.indexes)
     if (
       publicResearch.sources.some((s) => s.id === entry.sourceId && s.provenance === 'web-fetch') &&
@@ -692,6 +770,7 @@ async function main() {
   await stop();
   await start();
   assert.deepEqual(await api(`/projects/${p.id}/script`), persisted);
+  if (supplement) assert.deepEqual(await api(`/projects/${p.id}/research`), persistedResearch);
   assert.equal(originalHash(), originalBefore);
   assert.deepEqual(result.pageErrors, []);
   fs.writeFileSync(

@@ -1,5 +1,11 @@
 # HTTP API 契约 v1.2（建议草案）
 
+## Phase 04.5 候选 Claim 补充
+
+- `POST /api/v1/projects/:projectId/research-claim-runs`：`{revisionId,expectedVersion}`，202 `{jobId,status}`；真实 Codex 只读原文分析，无 Mock 回退。缺原文任务明确 `insufficient`、aiRuns 为空；有原文但 Provider 关闭则失败 `PROVIDER_NOT_CONFIGURED`。
+- `POST /api/v1/projects/:projectId/research-candidates/:candidateId`：`{revisionId,expectedVersion,jobId,decision:"edit"|"accept"|"reject",candidate?}`，200 审核记录。edit 必须提供 `{claim,conflictNote,evidence:[{sourceId,indexId,role,quote}]}`；accept/reject 只操作已保存候选，不接收顺带修改。沿用会话、同源、Idempotency-Key、100000 bytes 请求上限。
+- `GET .../research` 的 jobs 暴露候选结果/审核映射及 aiRuns；原 jobs 查询/取消/重试不变。Source/Index 不在固定允许集：422 `INVALID_CANDIDATE_SOURCE`；非逐字引用：422 `INVALID_CLAIM_QUOTE`；原文或选择变化：409 `CANDIDATE_INPUT_CHANGED`；版本冲突：409 `REVISION_CONFLICT`；已终结候选再次审核：409 `CANDIDATE_ALREADY_REVIEWED`；批准/历史研究沿用不可变保护。异步结果遇目标变化记 Job failed/TARGET_CHANGED，保留调用审计。过期任务重试不会更新冻结输入，应重新生成候选。
+
 ## Phase 04.5 Codex 增量（保留原入口）
 
 - research-search-runs的mode增加real：复用原202/jobId，固定查询与研究修订，Worker结果包含真实candidates、searchTrace与aiRuns；只成功独立获取的网页成为Source。Mock与unconfigured语义不变。

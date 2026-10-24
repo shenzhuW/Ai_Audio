@@ -36,6 +36,7 @@ async function tool(executable, args) {
   }
 }
 async function analyze(input, dataDir, workDir, limits, signal) {
+  if (input.kind === 'claims') return require('./codex-claims.cjs').claims(input, signal);
   if (input.mode === 'unconfigured') return new UnconfiguredProvider().extract(input.blob);
   if (input.kind === 'search')
     return input.mode === 'real'

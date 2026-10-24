@@ -24,7 +24,7 @@ const uploadSchema = z
   })
   .strict();
 export function researchHttp(r: NextRequest, projectId: string, section: string, itemId?: string) {
-  const run = ['analysis-runs', 'search-runs'].includes(section);
+  const run = ['analysis-runs', 'search-runs', 'claim-runs'].includes(section);
   return api(
     r,
     async () => {
@@ -108,15 +108,19 @@ export function researchHttp(r: NextRequest, projectId: string, section: string,
       else if (section === 'source-settings') action = 'research-source-edit';
       else if (section === 'analysis-runs') action = 'research-analyze';
       else if (section === 'search-runs') action = 'research-search';
+      else if (section === 'claim-runs') action = 'research-claims';
+      else if (section === 'candidate-review') action = 'research-candidate-review';
       else throw new AppError('NOT_FOUND', '研究接口不存在。', 404);
       const command = ResearchCommandSchema.parse({
         ...input,
         ...(itemId
-          ? section === 'claims'
-            ? { claimId: itemId }
-            : section === 'evidence'
-              ? { evidenceId: itemId }
-              : { sourceId: itemId }
+          ? section === 'candidate-review'
+            ? { candidateId: itemId }
+            : section === 'claims'
+              ? { claimId: itemId }
+              : section === 'evidence'
+                ? { evidenceId: itemId }
+                : { sourceId: itemId }
           : {}),
         action,
       });

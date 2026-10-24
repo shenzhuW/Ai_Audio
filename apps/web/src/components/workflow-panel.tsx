@@ -95,7 +95,7 @@ function Jobs({
                   : j.provider === 'remotion'
                     ? 'Remotion 真实渲染'
                     : j.provider === 'research'
-                      ? `研究分析 · ${j.researchInput?.mode === 'real' ? (j.researchInput.kind === 'search' || j.researchInput.vision ? 'Codex 真实分析' : '本地真实提取') : j.researchInput?.mode === 'mock' ? 'Mock' : 'Provider 未配置'}`
+                      ? `研究分析 · ${j.researchInput?.mode === 'real' ? (j.researchInput.kind !== 'analyze' || j.researchInput.vision ? 'Codex 分析任务（调用情况见审计）' : '本地真实提取') : j.researchInput?.mode === 'mock' ? 'Mock' : 'Provider 未配置'}`
                       : j.provider === 'script'
                         ? j.scriptInput?.mode === 'real'
                           ? 'Codex 真实写稿'

@@ -173,7 +173,80 @@ export const ResearchIndexEntrySchema = IndexContentSchema.safeExtend({
   sourceId: id,
   schemaVersion: z.literal(1),
 });
+const sha = z.string().regex(/^[a-f0-9]{64}$/);
+export const ClaimPassageSchema = z
+  .object({
+    sourceId: id,
+    indexId: id,
+    title: z.string().max(250),
+    sourceUrl: z.url().optional(),
+    sourceSha256: sha,
+    indexTextSha256: sha,
+    text: z.string().min(1).max(12000),
+    page: z.number().int().positive().optional(),
+  })
+  .strict();
+const CandidateEvidenceSchema = z
+  .object({
+    sourceId: id,
+    indexId: id,
+    role: z.enum(['support', 'refute', 'context']),
+    quote: z.string().trim().min(1).max(5000),
+  })
+  .strict();
+export const ClaimCandidateDraftSchema = z
+  .object({
+    claim: ClaimInputSchema.extend({
+      verificationStatus: z.literal('unverified').default('unverified'),
+    }),
+    conflictNote: short,
+    evidence: z.array(CandidateEvidenceSchema).min(1).max(6),
+  })
+  .strict();
+export const ClaimCandidateSchema = ClaimCandidateDraftSchema.extend({
+  id,
+  evidence: z
+    .array(
+      CandidateEvidenceSchema.extend({
+        match: z
+          .object({
+            startChar: z.number().int().nonnegative(),
+            endChar: z.number().int().positive(),
+            sourceSha256: sha,
+            indexTextSha256: sha,
+            locator: CitationLocatorSchema,
+          })
+          .strict()
+          .optional(),
+      }),
+    )
+    .min(1)
+    .max(6),
+}).strict();
+export const ClaimCandidateReviewSchema = z
+  .object({
+    id,
+    candidateId: id,
+    state: z.enum(['pending', 'accepted', 'rejected']),
+    candidate: ClaimCandidateSchema,
+    version: z.number().int().positive(),
+    updatedAt: time,
+    actor: z.literal('local-user'),
+    acceptedClaimId: id.optional(),
+    acceptedEvidenceIds: z.array(id).max(6).optional(),
+  })
+  .strict();
 export const ResearchJobInputSchema = z.discriminatedUnion('kind', [
+  z
+    .object({
+      kind: z.literal('claims'),
+      revisionId: id,
+      targetVersion: z.number().int().positive(),
+      mode: z.literal('real'),
+      passages: z.array(ClaimPassageSchema).max(20),
+      warnings: z.array(short).max(30),
+    })
+    .strict(),
   z
     .object({
       kind: z.literal('analyze'),
@@ -194,6 +267,20 @@ export const ResearchJobInputSchema = z.discriminatedUnion('kind', [
     .strict(),
 ]);
 export const ResearchResultSchema = z.discriminatedUnion('kind', [
+  z
+    .object({
+      kind: z.literal('claims'),
+      mode: z.literal('real'),
+      status: z.enum(['ready', 'insufficient']),
+      notes: short.min(1),
+      candidates: z.array(ClaimCandidateSchema).max(8),
+      aiRuns: z.array(AiRunSchema).max(10),
+    })
+    .strict()
+    .refine(
+      (x) => (x.status === 'ready') === x.candidates.length > 0,
+      '候选为空时必须明确标记证据不足',
+    ),
   z
     .object({
       kind: z.literal('analyze'),
@@ -235,6 +322,21 @@ export const ResearchResultSchema = z.discriminatedUnion('kind', [
 ]);
 const edit = { revisionId: id, expectedVersion: z.number().int().positive() };
 export const researchCommands = [
+  z.object({ action: z.literal('research-claims'), ...edit }).strict(),
+  z
+    .object({
+      action: z.literal('research-candidate-review'),
+      ...edit,
+      jobId: id,
+      candidateId: id,
+      decision: z.enum(['edit', 'accept', 'reject']),
+      candidate: ClaimCandidateDraftSchema.optional(),
+    })
+    .strict()
+    .refine(
+      (x) => (x.decision === 'edit' ? !!x.candidate : !x.candidate),
+      '编辑必须提供候选；接受或拒绝使用已保存的候选',
+    ),
   z
     .object({ action: z.literal('research-source'), ...edit, source: ResearchUploadSourceSchema })
     .strict(),
@@ -294,6 +396,9 @@ export type ResearchIndexEntry = z.infer<typeof ResearchIndexEntrySchema>;
 export type ResearchJobInput = z.infer<typeof ResearchJobInputSchema>;
 export type ResearchResult = z.infer<typeof ResearchResultSchema>;
 export type ResearchBlob = z.infer<typeof ResearchBlobSchema>;
+export type ClaimCandidate = z.infer<typeof ClaimCandidateSchema>;
+export type ClaimCandidateDraft = z.infer<typeof ClaimCandidateDraftSchema>;
+export type ClaimPassage = z.infer<typeof ClaimPassageSchema>;
 export const claimLabels = {
   unverified: '未核实',
   supported: '有支持引用 · 未独立核验',

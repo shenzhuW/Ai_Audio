@@ -78,7 +78,7 @@ export const researchProviderStatus = [
   },
 ] as const;
 export function researchProviderName(input: ResearchJobInput) {
-  if (input.mode === 'real' && (input.kind === 'search' || input.vision))
+  if (input.mode === 'real' && (input.kind !== 'analyze' || input.vision))
     return 'Codex CLI · 真实模型分析，未独立核实';
   return input.mode === 'real'
     ? '本地真实提取'

@@ -1,5 +1,11 @@
 # 核心数据模型与版本协议 v1.2
 
+## Phase 04.5 候选 Claim 结项补充
+
+不修改 Prisma Schema、既有迁移或正式 Claim/Evidence 结构。Research Job 增加 `kind: claims`：输入含 `revisionId/targetVersion/passages/warnings/mode:real`；每段冻结 sourceId/indexId、原件及完整提取文本 SHA256、文本前缀与 PDF 页码。候选结果包含 `status:ready|insufficient`、notes、candidates、aiRuns。Candidate 的 Claim.verificationStatus 只能为 unverified，引用必须是冻结原文的连续精确子串。应用派生 match 的 UTF-16 `[startChar,endChar)`、locator 和双 SHA，忽略模型提供的偏移与哈希。模型不生成候选身份。
+
+Job 可选 `claimCandidateReviews[]` 保存 candidateId、用户编辑后的 candidate、pending/accepted/rejected、version、local-user、时间、接受后的 Claim/Evidence ID 映射；原始 researchResult 保留。旧 Job 缺此字段仍可读。审核修改递增研究修订/Artifact 的版本；接受与正式记录插入处于同一事务，失败无部分写入，同键重试无重复记录。拒绝后不可接受；已批准修订不可审核候选。Fork 的正式引用沿用既有重映射；待审核候选保留在原任务中，新修订须重新生成。
+
 ## Phase 04 已实现文稿子集
 
 ScriptRevision 继续使用唯一的 WorkflowRevision（可选 `scriptSchemaVersion=1`），不另建审批系统。`script_documents` 保存一修订一份文稿配置（origin、固定 researchRevisionId、unitsPerMinute、user/mock/real provenance）；`script_segment_versions` 保存该修订的段落快照，数据库行 `id` 为物理 UUID，`segmentId` 为跨修订稳定逻辑 UUID。API `segments[].id` 返回逻辑 ID；微调、重排与 fork 不改变它，新增段落生成新 ID。移除的草稿段落记 removed，不物理删历史；新 fork 只复制活跃段落。

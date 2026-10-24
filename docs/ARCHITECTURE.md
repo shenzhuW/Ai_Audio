@@ -10,6 +10,10 @@ Research/Script Worker 只传递冻结的 JSON 和必要图片附件到独立任
 
 ## Phase 04.5 执行边界与 SDK 取舍
 
+结项补充：`research-claims` 沿用 Research Worker，冻结当前草稿版本与被选中的真实 text/pdf_page 提取原文（最多20段/每段12000字符/共60000字符，截断必须明示）。Codex 的搜索在此任务关闭，安全策略与登录处理不变。模型仅输出 Claim 字段、Source/Index 允许集内的候选引文和冲突说明；应用生成候选 ID，并重新计算逐字字符范围与 SHA256。搜索摘要、Mock、视觉描述和抓取失败结果都不能作为候选原文。
+
+候选生成结果与审核状态保存到现有 Job JSON，不增加表或迁移。`claimCandidateReviews` 与 Job 原始结果分开；原始模型结果不被用户编辑替换。用户 edit/accept/reject 经同一研究草稿 expectedVersion、事务幂等、当前修订及不可变保护。只有 accept 写正式 Claim/Evidence，保持 unverified；存在支持和反驳证据时沿用 conflicting 提示，不自动 supported/核实。接受前重核原文 SHA、来源选择与逐字引用；新 Fork 不沿用旧候选 ID/Source ID。已批准修订及迟到 AI 结果均受版本围栏保护。
+
 Phase 04.5 实施补充：执行边界在 `scripts/codex-runtime.cjs`。固定 CLI 0.163.0，独立临时目录，ignore-user-config/ignore-rules/ephemeral、只读、stdin JSON和最多六张必要PNG/JPEG，过滤数据库/Provider/Git环境，单次模型120秒和4MiB输出限额。生成单模型 catalog（shell disabled、patch null、扩展工具空）并再次 debug models 验证；逐项将已有MCP服务覆盖为 disabled并预检启用数为零，仅空表不会删除既有配置。
 
 本版本 live 搜索需要独立 Code Mode Host，启用V8数据计算并关闭进程内fallback；实际诊断确认无process/require/fetch/Deno，node:fs导入被拒绝。Code ModeOnly固定暴露三个MCP资源辅助入口，但无启用的服务器，不能声称工具表完全为空。Shell、apply_patch、view_image、子Agent、浏览器、插件等仍禁用，图片只由可信宿主作为附件发送。这不是Phase08任意TSX的OS沙箱。

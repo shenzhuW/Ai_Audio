@@ -16,6 +16,7 @@ import {
   ResearchIndexEntrySchema,
   ResearchJobInputSchema,
   ResearchResultSchema,
+  ClaimCandidateReviewSchema,
 } from './research';
 export const artifactTypes = [
   'research',
@@ -103,6 +104,7 @@ export const WorkflowJobSchema = z.object({
   renderResult: RenderResultSchema.optional(),
   researchInput: ResearchJobInputSchema.optional(),
   researchResult: ResearchResultSchema.optional(),
+  claimCandidateReviews: z.array(ClaimCandidateReviewSchema).max(8).optional(),
   scriptInput: ScriptJobInputSchema.optional(),
   scriptResult: ScriptResultSchema.optional(),
   aiRuns: z.array(AiRunSchema).max(50).optional(),

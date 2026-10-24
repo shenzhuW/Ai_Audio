@@ -4,7 +4,16 @@ function publicEvidence(value) {
   if (value && typeof value === 'object') {
     const out = {};
     for (const [key, item] of Object.entries(value)) {
-      if (key === 'extractedText' && typeof item === 'string') {
+      if (
+        key === 'text' &&
+        typeof item === 'string' &&
+        value.indexId &&
+        value.indexTextSha256 &&
+        value.sourceSha256
+      ) {
+        out.passageTextSha256 = createHash('sha256').update(item).digest('hex');
+        out.passageTextLength = item.length;
+      } else if (key === 'extractedText' && typeof item === 'string') {
         out.extractedTextSha256 = createHash('sha256').update(item).digest('hex');
         out.extractedTextLength = item.length;
         out.extractedTextPreview = item.slice(0, 100);

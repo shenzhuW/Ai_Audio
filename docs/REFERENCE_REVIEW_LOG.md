@@ -2,6 +2,10 @@
 
 > 本文件由 Codex 在各阶段填写。未阅读不得写成已验证。每条记录需标注查阅日期和可得的 commit SHA。
 
+## 2026-10-23 — Phase 04.5 候选 Claim 结项补充
+
+复读 Phase03 已固定的 wallstreet-explainer `920ed1d3b3ecb5997d861902e2719dda6688c0b1` 本地副本 `references/sourcing.md` 的“新闻原文”段落：借鉴来源可追溯与定位的分离，当前进一步将 source/index/hash/精确引文固定到任务。没有运行其采集脚本、复制第三方代码或新增下载能力。来源截图/模型摘要仍不能代替实际原文；匹配位置也不等于核实。CLI 继续使用上述已核验0.163.0安全门禁，未更改权限、模型工具或认证处理。候选分析关闭搜索；主链路用公开 FFmpeg 文档实际获取结果，冲突专项用明确标为虚构记录的自制原文。许可证判断仍沿用原记录，不新增第三方依赖。
+
 ## 2026-10-23 — Phase 04.5 — Codex CLI / SDK 数据分析
 
 - 本机实际CLI为0.163.0，ChatGPT登录已确认；未读取/打印auth.json或Token。实读官方[非交互](https://learn.chatgpt.com/docs/non-interactive-mode)、[SDK](https://learn.chatgpt.com/docs/codex-sdk)、[配置](https://learn.chatgpt.com/docs/config-file/config-reference)、[额度](https://learn.chatgpt.com/docs/pricing)。登录可由exec复用，但调用消耗账号额度，模型/套餐/任务/周限制可能不同；exec事件只提供本次token，未提供剩余额度，记unknown；不承诺免费，不自行购买服务。

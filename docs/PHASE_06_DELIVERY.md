@@ -1,5 +1,7 @@
 # Phase06 — AI 导演表与分镜审核交付
 
+本文件保留原本地交付记录。用户随后授权本阶段最终远程验收和安全核查后的快进推送；新增复核见[正式远程验收报告](PHASE_06_REMOTE_ACCEPTANCE.md)及[截图索引](evidence/phase06/remote/README.md)。受检代码ad26a25保持不变，不amend，不进入Phase07。
+
 日期：2026-10-24。批准基线：`0f2fa62bf4fd9ef6cde2ff21540fed71574b8258`。开工fetch确认本地与origin/main一致、工作区干净。仅实施Phase06；独立本地提交的完整Hash见最终回复及Git历史，不推送远程、不进入Phase07。
 
 ## 实现与阶段边界

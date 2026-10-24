@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "backend": "postgresql",
+  "projectId": "4a661359-9179-444b-820a-b5bbb504e828",
+  "checks": [
+    {
+      "name": "批准历史真实六镜/交换顺序/一段多镜多段一镜/三路线与双输入stale",
+      "status": "PASS",
+      "detail": {
+        "approvedRevisionId": "4f3fe441-be88-4de0-a316-5cc50be325bf",
+        "sortedShotIds": [
+          "dc5cf23c-5e47-4de6-97be-c0c9f144585a",
+          "a9e41b85-516e-44de-8d76-ed35d93d2460",
+          "540fd7ce-8cc3-4512-9b4c-78f7bd7ed31d",
+          "961d8f1d-7171-43ea-9a90-b1663b7faa42",
+          "f9c342ed-f5d0-44ba-8d5a-9142a71f6ba0",
+          "8db0e19f-8c37-4fe9-a8fa-483cacb4d835"
+        ],
+        "originalShotIds": [
+          "a9e41b85-516e-44de-8d76-ed35d93d2460",
+          "dc5cf23c-5e47-4de6-97be-c0c9f144585a",
+          "540fd7ce-8cc3-4512-9b4c-78f7bd7ed31d",
+          "961d8f1d-7171-43ea-9a90-b1663b7faa42",
+          "f9c342ed-f5d0-44ba-8d5a-9142a71f6ba0",
+          "8db0e19f-8c37-4fe9-a8fa-483cacb4d835"
+        ],
+        "impact": {
+          "stale": true,
+          "scriptChanged": true,
+          "voiceChanged": true,
+          "affectedShotIds": [
+            "dc5cf23c-5e47-4de6-97be-c0c9f144585a",
+            "a9e41b85-516e-44de-8d76-ed35d93d2460",
+            "540fd7ce-8cc3-4512-9b4c-78f7bd7ed31d",
+            "961d8f1d-7171-43ea-9a90-b1663b7faa42",
+            "f9c342ed-f5d0-44ba-8d5a-9142a71f6ba0",
+            "8db0e19f-8c37-4fe9-a8fa-483cacb4d835"
+          ]
+        }
+      }
+    },
+    {
+      "name": "真实浏览器补拍已完成Codex审计与排序后的批准历史；只发送GET，无新模型调用",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "两次应用启动后导演/Job/历史/失效关系一致，用户数据不变",
+      "status": "PASS",
+      "detail": {
+        "originalDataSha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "finishedAt": "2026-10-24T05:57:45.497Z"
+}

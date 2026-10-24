@@ -1,0 +1,159 @@
+{
+  "scope": "Exact Git index before adding this audit and its index link; final scan including them retained privately to avoid self-reference",
+  "code": "ad26a25e2bc01c9a22e95c4a4076b5ea09720f25",
+  "scannedFiles": 25,
+  "maxFileBytes": 128934,
+  "findings": [],
+  "manifest": [
+    {
+      "path": "docs/CHANGELOG_IMPLEMENTATION.md",
+      "bytes": 17715,
+      "sha256": "c4d894dbd5b6be3514940268db1d301f23438e8a80d389f896af370407f2a941",
+      "blob": "14a8cbbd52dd3175ef3407009b0f37f16dc20813"
+    },
+    {
+      "path": "docs/PHASE_06_DELIVERY.md",
+      "bytes": 10953,
+      "sha256": "e4278ba48def696a0c61535475dd319276b1807d9333c568fb3698cfbf1d1107",
+      "blob": "6eafad18c2a3a46991042f9a72b217116f303bd8"
+    },
+    {
+      "path": "docs/PHASE_06_REMOTE_ACCEPTANCE.md",
+      "bytes": 9135,
+      "sha256": "b3dcd92aaacdc39b1abdfa32d3eb3c4c6960c3c0b53b804a1feb88aa98de8896",
+      "blob": "093d397508d89060f9031edc1f02bf207db2439a"
+    },
+    {
+      "path": "docs/evidence/phase06/README.md",
+      "bytes": 5394,
+      "sha256": "e6c3584bf9b2fd0327bf2f09c45acc1f92d7f6daeafe7797b7574fea06de6edb",
+      "blob": "d4d770b4be3db92803f613c2a47f023fc32abb5e"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/README.md",
+      "bytes": 2544,
+      "sha256": "d5dafe1c54ef52308da80fbbca4d3269e2aa2a5e77198048a4147231e385ddbd",
+      "blob": "ca4bf1a79a2d2b916f3beb822c12c48007565d7c"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/code-security-audit.json",
+      "bytes": 76635,
+      "sha256": "33f08f3afaa5af2fbb0241d13cf4455989d708993060a6da083dc1222d449dbc",
+      "blob": "c5b91971a6db2b62440fdeaf70db8b89a7944032"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/ffprobe.json",
+      "bytes": 1193,
+      "sha256": "3199e3897a04012a6f964102f83f127fbd8f196919678754110cefa1874e6f91",
+      "blob": "5f8723e08da0147b16ea9c8f20663153a36eb98c"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/logs/browser-postgres.log",
+      "bytes": 289,
+      "sha256": "d07c635a4ce3b46abb93020a86dc8e12432248ff293e25098135b5ec2367d6a9",
+      "blob": "c87d6c5b2a3181383fd38f4aff2dee64d1b623e2"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/logs/browser-sqlite.log",
+      "bytes": 289,
+      "sha256": "d07c635a4ce3b46abb93020a86dc8e12432248ff293e25098135b5ec2367d6a9",
+      "blob": "c87d6c5b2a3181383fd38f4aff2dee64d1b623e2"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/logs/build.log",
+      "bytes": 6541,
+      "sha256": "b26ce43f81534af80051e3f62f6ed8b5150dfd4732086b95aeca326dff6361ac",
+      "blob": "45861f4dbb34d409f9150b6aa135ad88d9a4d776"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/logs/typecheck.log",
+      "bytes": 148,
+      "sha256": "0180decf6774f3e311af82367ad5ac440791e33c34d3aa9226fc318a9a8e96ea",
+      "blob": "66b3bb7a33bacd2a2de3fbf3ac0424ce5f917a64"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/logs/unit.log",
+      "bytes": 7418,
+      "sha256": "af7ba7e3b88e67f8fe29870dc3cbaef19bd8b30fa7fcb114c92702f965852780",
+      "blob": "6d4eafe79d9db55ed44529fa0706a01018d81a97"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/postgresql/06-real-generation-audit.png",
+      "bytes": 102641,
+      "sha256": "06d28da5911cca409f1f3e188aeaa596ca30b273e52bb9c13e559d81557defe6",
+      "blob": "9f472c94602410fbe8c1a3e159a0785b97d8e8b0"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/postgresql/06-sorted-approved.png",
+      "bytes": 128934,
+      "sha256": "1003e1ea444dd79937341970b29ebc3986bb323bc4d8d0dd5adb32897f50e4b5",
+      "blob": "bd1f9d2ea8a3d482ac1c73a0fbde02e84efb8f79"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/postgresql/app.log",
+      "bytes": 286,
+      "sha256": "c6786f8a204c164b5c1c1da6275e5b662105c5bac6d33687f96224d7a6b6f7dd",
+      "blob": "6c943843eb8fed48309e6dd3a3475a074f98517a"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/postgresql/browser-review.json",
+      "bytes": 2011,
+      "sha256": "41a6a6c708b40958444b1cec896dc614cd8d7a45b1f6fd308b87b04e513646a2",
+      "blob": "ba0d58906436fdda8ad0087d414a8f57084e60db"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/review.json",
+      "bytes": 2429,
+      "sha256": "37d56a744ac131c760e48f61fa723100140faa8e015f0c14b0f0a3b57d3a4f00",
+      "blob": "8fad36685f0560bb5ff533fbb1e007c6df4121e9"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/sqlite/06-real-generation-audit.png",
+      "bytes": 102098,
+      "sha256": "6b8f80fc1757590262e282937b1f17ac18f2012b7fc9396afb8d03615789ab33",
+      "blob": "8b5278b0e7105c4d13c89ded1c80e0d187d640b4"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/sqlite/06-sorted-approved.png",
+      "bytes": 121812,
+      "sha256": "e1f70dee0ab9f141ab723e837da8fe6571624646f5a80ea09c01df7f8fbbad61",
+      "blob": "977d9666cfc0f5d10a2677b33aedba0808d5c4ec"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/sqlite/app.log",
+      "bytes": 286,
+      "sha256": "082b55cc1dea9f812d322580ca49b826b3f200cb4b62050071c38544f064898e",
+      "blob": "5a12e1849c9e21c87bbdf86dbb1a9ee456dbfcd4"
+    },
+    {
+      "path": "docs/evidence/phase06/remote/sqlite/browser-review.json",
+      "bytes": 2007,
+      "sha256": "ebc50989fd8eced86ecdb5a4129a8a82b69608d28038a27304696e7d4bd7468e",
+      "blob": "3d74881618089ee7074e60edec713505146746d9"
+    },
+    {
+      "path": "tests/ACCEPTANCE.md",
+      "bytes": 13428,
+      "sha256": "cec62c17d160e7be8394b6f8d6ec60190983b7570e10e4f2158e9f3a8fae92c4",
+      "blob": "7db5605cc989447db309dba4c6108e4cd9978e5d"
+    },
+    {
+      "path": "tests/director/remote-audit.cjs",
+      "bytes": 3613,
+      "sha256": "84d95e5bcca8da897c916879a303f9ccc718ca7464a0a2b790d75faff2824512",
+      "blob": "b10876255728fc63c5927828f09d5d09d936117f"
+    },
+    {
+      "path": "tests/director/remote-browser.cjs",
+      "bytes": 7283,
+      "sha256": "022e13931ee53f706e72784d0837c0519d3d90668eec46669ceacc61f1f50e26",
+      "blob": "d173816002f7346da2d59b40544d20c370594bde"
+    },
+    {
+      "path": "tests/director/remote-review.cjs",
+      "bytes": 6808,
+      "sha256": "e4ef4aa2bc96cd86675622b755266043f29aed065469db68c41e27d6d8bb8563",
+      "blob": "907130c59a1019640be8145e7189ef3f8548e769"
+    }
+  ]
+}

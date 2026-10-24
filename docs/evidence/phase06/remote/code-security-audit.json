@@ -1,0 +1,1831 @@
+{
+  "code": "ad26a25e2bc01c9a22e95c4a4076b5ea09720f25",
+  "baseline": "0f2fa62bf4fd9ef6cde2ff21540fed71574b8258",
+  "scannedFiles": 284,
+  "findings": [],
+  "totalBytes": 47200882,
+  "maxFileBytes": 5292078,
+  "duplicateGroups": [
+    {
+      "sha256": "0983c8c2474f18152b093842104ef9aef25f03fb78861c9e681da2249a64a385",
+      "bytesEach": 31,
+      "paths": [
+        "docs/evidence/phase06/postgresql/schema-drift.log",
+        "docs/evidence/phase06/regression-research/postgresql/schema-drift.log",
+        "docs/evidence/phase06/regression-script/postgresql/schema-drift.log",
+        "docs/evidence/phase06/regression-voice/postgresql/schema-drift.log"
+      ]
+    },
+    {
+      "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133",
+      "bytesEach": 18055,
+      "paths": [
+        "docs/evidence/phase06/regression-real-ai/sqlite/frame-0.jpg",
+        "docs/evidence/phase06/regression-research/postgresql/frame-0.jpg",
+        "docs/evidence/phase06/regression-research/sqlite/frame-0.jpg"
+      ]
+    },
+    {
+      "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0",
+      "bytesEach": 16252,
+      "paths": [
+        "docs/evidence/phase06/regression-real-ai/sqlite/frame-3333.jpg",
+        "docs/evidence/phase06/regression-research/postgresql/frame-3333.jpg",
+        "docs/evidence/phase06/regression-research/sqlite/frame-3333.jpg"
+      ]
+    },
+    {
+      "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4",
+      "bytesEach": 16151,
+      "paths": [
+        "docs/evidence/phase06/regression-real-ai/sqlite/frame-6666.jpg",
+        "docs/evidence/phase06/regression-research/postgresql/frame-6666.jpg",
+        "docs/evidence/phase06/regression-research/sqlite/frame-6666.jpg"
+      ]
+    },
+    {
+      "sha256": "0ba72b9dbaffbf9a1942ff88da8ee26d934014599f0fd97b84bdba14c1fdbb99",
+      "bytesEach": 465020,
+      "paths": [
+        "docs/evidence/phase06/regression-render/postgresql/decoded-150.png",
+        "docs/evidence/phase06/regression-render/sqlite/decoded-150.png"
+      ]
+    },
+    {
+      "sha256": "2e859b3cef5de9a47a618387dbdfe1bd59ad7f926f78576fb2a803bb913ad786",
+      "bytesEach": 691544,
+      "paths": [
+        "docs/evidence/phase06/regression-render/postgresql/frame-060.png",
+        "docs/evidence/phase06/regression-render/sqlite/frame-060.png"
+      ]
+    },
+    {
+      "sha256": "b1b291ca074058bfd22b4115e2bdb0624c38c19c2155fdfbdc148d4c0394ee55",
+      "bytesEach": 550159,
+      "paths": [
+        "docs/evidence/phase06/regression-render/postgresql/frame-150.png",
+        "docs/evidence/phase06/regression-render/sqlite/frame-150.png"
+      ]
+    },
+    {
+      "sha256": "e734cc419644e95499f83ee4782cde5cb0f9c7ea7662a7628c961650536721ff",
+      "bytesEach": 697163,
+      "paths": [
+        "docs/evidence/phase06/regression-render/postgresql/frame-240.png",
+        "docs/evidence/phase06/regression-render/sqlite/frame-240.png"
+      ]
+    },
+    {
+      "sha256": "592b838aa72755555bdc01b7aa5bd1c478559b7567922f675f43feb9fbb8474f",
+      "bytesEach": 814,
+      "paths": [
+        "docs/evidence/phase06/regression-render/postgresql/legacy-http.log",
+        "docs/evidence/phase06/regression-render/sqlite/legacy-http.log",
+        "docs/evidence/phase06/regression-research/postgresql/legacy-http.log",
+        "docs/evidence/phase06/regression-research/sqlite/legacy-http.log",
+        "docs/evidence/phase06/regression-script/postgresql/http.log",
+        "docs/evidence/phase06/regression-script/sqlite/http.log"
+      ]
+    },
+    {
+      "sha256": "80d78c1dfe7138cf25c381ab1738d27327e0255a7a58f750741fa9c3609dc570",
+      "bytesEach": 3019,
+      "paths": [
+        "docs/evidence/phase06/regression-render/postgresql/manifest.json",
+        "docs/evidence/phase06/regression-render/sqlite/manifest.json"
+      ]
+    },
+    {
+      "sha256": "b7913b6c3c15fbe92101b27b61ba418952fb8454c892ab35f674650571ff7ca2",
+      "bytesEach": 3230799,
+      "paths": [
+        "docs/evidence/phase06/regression-render/postgresql/video.mp4",
+        "docs/evidence/phase06/regression-render/sqlite/video.mp4"
+      ]
+    },
+    {
+      "sha256": "d12a80acef43f591ade11f0fa60e63c7b136f29ef1d1233867e811c5bddba753",
+      "bytesEach": 208,
+      "paths": [
+        "docs/evidence/phase06/regression-voice/postgresql/playback-seek.json",
+        "docs/evidence/phase06/regression-voice/sqlite/playback-seek.json"
+      ]
+    },
+    {
+      "sha256": "dcec80f6f9584ed1b670c177377004ed02001a5e66aafc55c9c90d2392b6a79c",
+      "bytesEach": 884,
+      "paths": [
+        "docs/evidence/phase06/regression-voice/postgresql/workers.log",
+        "docs/evidence/phase06/regression-voice/sqlite/workers.log"
+      ]
+    }
+  ],
+  "duplicatePolicy": "Retain accepted evidence and per-backend paths. Identical blobs are deduplicated by Git; do not rewrite the accepted commit.",
+  "fixtureReview": "Self-authored Chinese text, local Windows SAPI output; no private human recording or voice engine distribution. FFprobe and original text retained.",
+  "manifest": [
+    {
+      "path": "README.md",
+      "bytes": 8525,
+      "sha256": "52fd729681b88993cb10ba3f121d953e0cb6e23eb7148a9df1fbf057c5e47d06",
+      "blob": "524cbc2820e4c50376ace0a09c0ddc1781158731"
+    },
+    {
+      "path": "apps/web/prisma/migrations/0006_director/migration.sql",
+      "bytes": 2821,
+      "sha256": "3ae8a314b7ede38b54079438647ad16a972637ac85aaafd7de8e423b62a46472",
+      "blob": "365c29d1fb86acf987d6e6fa1ef9d2bcb131e5b0"
+    },
+    {
+      "path": "apps/web/prisma/schema.prisma",
+      "bytes": 13576,
+      "sha256": "30f10d8f0e70e587c41937cb969aeec92cbd2a3332ca5ee6b1ca367102894322",
+      "blob": "5eaeab67837433f0ba88ded5769bba99044cc5a4"
+    },
+    {
+      "path": "apps/web/src/app/api/v1/projects/[projectId]/director-runs/route.ts",
+      "bytes": 261,
+      "sha256": "217f99ba65806899615a8c7fae2db7b41fe587a90a7053b63bf85e9982246197",
+      "blob": "25b15f979b60ea857e06e0936258be062d4beca7"
+    },
+    {
+      "path": "apps/web/src/app/api/v1/projects/[projectId]/director/route.ts",
+      "bytes": 314,
+      "sha256": "734e3019f0d6f35415696f41fd19ac19318af4289c03eea5ec5d9637c30c327a",
+      "blob": "fed782ffeb26237a08cd98e4437c9db083ba13b1"
+    },
+    {
+      "path": "apps/web/src/components/director-panel.tsx",
+      "bytes": 36694,
+      "sha256": "073659f9be6f4ae2719625f73c87e22cf5a28cfe0b20260d9e959b2c9d0ef525",
+      "blob": "ec021223436eb14f21771bb9b64f6daa442ba907"
+    },
+    {
+      "path": "apps/web/src/components/stage-workspace.tsx",
+      "bytes": 19554,
+      "sha256": "4407ae9202752106fbb8b55f046311c3a63369b1504ae48d0b70ac594266098b",
+      "blob": "cfcbfd5b5958d1620e8f0acdcd17354d02951868"
+    },
+    {
+      "path": "apps/web/src/components/workflow-panel.tsx",
+      "bytes": 21373,
+      "sha256": "412b95500b1bc00ab316834e8f74daa5d887de8202e1183ca3342fc1ec9e2c64",
+      "blob": "e1410de79227ac19cce89f917609ec7144a60609"
+    },
+    {
+      "path": "apps/web/src/domain/director.ts",
+      "bytes": 8276,
+      "sha256": "851705da88148270d857170615f661f7c95f56ab4d7a4a31ae807552ba3834f2",
+      "blob": "36ffd6ad65740d2d9aa2fd83e7a4f8aec32522b0"
+    },
+    {
+      "path": "apps/web/src/domain/workflow.ts",
+      "bytes": 9287,
+      "sha256": "eb4706aa34d898da1b7dfb11db6e2b635ae30c3660f76b828f77e1f728d3362a",
+      "blob": "e6dce9707fe600dc48e4bf1f2a4b0a0990a39ca5"
+    },
+    {
+      "path": "apps/web/src/server/director/engine.ts",
+      "bytes": 15143,
+      "sha256": "ca3916b9bfe69636f92fc971a5ca9a928ede7a8bbb45b15499d9a96de23e8569",
+      "blob": "08cbd3842b396c48aa6e3ee53624d2717373fa54"
+    },
+    {
+      "path": "apps/web/src/server/director/http.ts",
+      "bytes": 1188,
+      "sha256": "a70ff061b6bf407bf919605c7e613c0491ac281a1a0b95f152998a08eb0c825e",
+      "blob": "60cd7b6eab9eb63b81a714014b0bef254322f27f"
+    },
+    {
+      "path": "apps/web/src/server/director/providers.ts",
+      "bytes": 4924,
+      "sha256": "145a6b151c48e11379941b2a362db2433d38b144d530aa24ad9f3fc0ad4771f6",
+      "blob": "5806053cbace12ec7b534016bc54880a12815dec"
+    },
+    {
+      "path": "apps/web/src/server/director/service.ts",
+      "bytes": 5740,
+      "sha256": "a4e1da4ac8d1358a9d198563631dcc0a291d692f4dcf09a4182a70e69a5d892f",
+      "blob": "9f0868d87126471143f592d0c7975668c5982292"
+    },
+    {
+      "path": "apps/web/src/server/director/tables.ts",
+      "bytes": 1709,
+      "sha256": "dc861911282fd9c677132d7e9d95267d2c2c80815f2c4071135a73fc27ad9bb5",
+      "blob": "7e2509a076159e799a85796c2df85656e5c30d26"
+    },
+    {
+      "path": "apps/web/src/server/workflow/engine.ts",
+      "bytes": 38298,
+      "sha256": "a8ef341eda63d1a91822b20c210a9579d1c3a4968b90ef783a45baee468572e2",
+      "blob": "d557f3f465936455db41bf8bf428b21fe8cecb64"
+    },
+    {
+      "path": "apps/web/src/server/workflow/service.ts",
+      "bytes": 12223,
+      "sha256": "e75ef1aa01b83873d2f5da5a5019d1ae0b494bc064fd7dcbf2685447841f8bb5",
+      "blob": "e26a2064f625b91316a6aa09b396d9352beb0cee"
+    },
+    {
+      "path": "apps/web/src/server/workflow/tables.ts",
+      "bytes": 3914,
+      "sha256": "c023c0c43e8767dc9d6b7880730b3d92463a9c94ed10ddcca6caf433deba4344",
+      "blob": "32ae2cf59df4088f0b63e7fe95116325adb687a7"
+    },
+    {
+      "path": "docs/API_SPEC.md",
+      "bytes": 21075,
+      "sha256": "3f2973d0f5063278c119af2840eca9af211813b601b0e696779b5b48a5eec33c",
+      "blob": "7feb2c4edc984f61cc93e0c3dffcbbb482158b1d"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 16214,
+      "sha256": "d2f1863965cf8c1cc8c3230074a6cafbd2c0d212f824b87490dcbd97afeffffe",
+      "blob": "ea791f1ea794d759279ebb51d5f8275f3d490c5b"
+    },
+    {
+      "path": "docs/CHANGELOG_IMPLEMENTATION.md",
+      "bytes": 17013,
+      "sha256": "7c28ed20b215d0a70b1d0075c5cb986515cf12e62fbcd9784a101b4d390c26d0",
+      "blob": "c35f5b243b8c683202735bf8c59f8d8c3f5ed3c8"
+    },
+    {
+      "path": "docs/DATA_MODELS.md",
+      "bytes": 20053,
+      "sha256": "9beb702a095ac76ffe0ad865756474ea5e60580f1c1431b73d61122133437d8e",
+      "blob": "d8c34de7218858c9f49b2c37a998e62aab499bca"
+    },
+    {
+      "path": "docs/PHASE_06_DELIVERY.md",
+      "bytes": 10640,
+      "sha256": "57416e48490fd4a04585edad317b5de7f48f671786b3055e7eca52d700860cda",
+      "blob": "f2d187919840f1deb2174bdc15c7ce98ffc921c9"
+    },
+    {
+      "path": "docs/REFERENCE_REVIEW_LOG.md",
+      "bytes": 24372,
+      "sha256": "e95931b18fc7f56d9260dae26b17545080078a2cd538eb964087b4c4d789d4f3",
+      "blob": "81dfaea42253f41f3357e6fd22fa8ee025a07899"
+    },
+    {
+      "path": "docs/evidence/phase06/README.md",
+      "bytes": 5055,
+      "sha256": "a8d2baf514a045c930c5f67b212e37b8ad7aab84ab3a65afacef54cb00802ad1",
+      "blob": "30906f1dbabc03be20a226e40eb6958f03e11992"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/real-ai-log-compatibility-results.json",
+      "bytes": 3525,
+      "sha256": "2c11dd17a931910bdab2fe7a89d08adb4f0723a468696762bd484ec5d01fbbc2",
+      "blob": "d2dfe549d65211d37145b86f2f418745d8b09696"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/real-ai-log-compatibility.log",
+      "bytes": 763,
+      "sha256": "c7c0cdf0edd3989a0099a3b3e6aaa904d9218877b7581dd5b1698ee78efc5489",
+      "blob": "116cf2b3ff70093b3d47b8e7d65870ce3dcf7a62"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/render-browser-unconfigured.log",
+      "bytes": 2203,
+      "sha256": "9262c71f993908a2abf46cb2f825faf67505854de0d40c4c467f710ef74b86cb",
+      "blob": "85314f567a1080d379e25c038ff5d25dffe5208b"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/render-interruption-diagnosis.json",
+      "bytes": 1156,
+      "sha256": "3f969a0a06b3f4c4dc45b54bb03b225aa36cde961b62f2a225f4ee0462098128",
+      "blob": "aaad0376816064bddace46a7ac084729571a034a"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/render-postgres-worker-interrupted-results.json",
+      "bytes": 7100,
+      "sha256": "1496c6a40843cf81254c1957d146ce1bf5d939ac560139de49406f38e91a6745",
+      "blob": "bb77d47a8fa4604cc1628a61504a0f42cafdb29f"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/render-postgres-worker-interrupted.log",
+      "bytes": 4624,
+      "sha256": "b551922dab04951062026cac1e841920754171a6feaec829da1cf8ac04f0c7e5",
+      "blob": "3f18134d9c10e231b18fd8566f18dd222afab539"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/render-relative-path-postgres.log",
+      "bytes": 538,
+      "sha256": "7da716be0f20b742de67c618de93f34b0f326368360a8f6c597966b850d24526",
+      "blob": "3f97f5ad73d3fab26c25fa76d69480a47b19dc08"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/render-relative-path-sqlite.log",
+      "bytes": 495,
+      "sha256": "ac35ce5209357ed2c6be6aa649a12441b455e45f1b335d3d3a50ea60ad49486f",
+      "blob": "9889aa5355c3278a4a95387fa70076a0cda9a54d"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/research-postgres-interrupted-results.json",
+      "bytes": 1180,
+      "sha256": "b5a2e7df393fb55c7e149680b0f865d6df0e2038c1341586499e2328be0adf34",
+      "blob": "81b9a3c285b34570eb39e24453056984e37c34ed"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/research-postgres-interrupted.log",
+      "bytes": 91,
+      "sha256": "ea10e81491a44629f70d616f54624c803d1e4fce2adc71cc74a17b9494736da9",
+      "blob": "7789ab68c3d9119febe873c79578f6c9b8200b39"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/sqlite-01-results.json",
+      "bytes": 1832,
+      "sha256": "3f062aded6090f49d34c526488e8bcac6bc960b9a362b406bce743a7dc573c00",
+      "blob": "d6d3826d36590d178495758c90aeda146b2cfd59"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/sqlite-01.log",
+      "bytes": 750,
+      "sha256": "b61eea50a64283f49832444fe3eb799a9d6e090f21bd0679dc52ccaa906107bc",
+      "blob": "d8e8d65b044e978100ec2c475e58b9fdd7ecd9d9"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/sqlite-02.log",
+      "bytes": 884,
+      "sha256": "01a087034de5482d736bac8eea77afaf6b9ef440843e1e2329898fd45cceb7f8",
+      "blob": "b9bb05ca91e25e08e82b840e921b7f60567970c4"
+    },
+    {
+      "path": "docs/evidence/phase06/attempts/ui-selector.log",
+      "bytes": 604,
+      "sha256": "3a2cd0db45b9cdb989b4da098921adbd497c296098d8a3c28354c98ebc9cefc2",
+      "blob": "7d3a4275caf16dc2d682f1f599d54b61234c6b42"
+    },
+    {
+      "path": "docs/evidence/phase06/cli-evidence.json",
+      "bytes": 5689,
+      "sha256": "c6c6c1c1fe7a2dbfbf3c686d644f2b858a5126306a9fa18bb801f992e814a1b1",
+      "blob": "14adfddd55b38cf01adaa9595a57e7188f1f21bc"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/build.log",
+      "bytes": 6542,
+      "sha256": "e51d48467d6fc0b211391d484574aec3611fa6dee4f4bbc9237abac4398e13fa",
+      "blob": "1d1d711d2befd60e4377ae0f4a5ddeedca956c39"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/director-postgres.log",
+      "bytes": 1300,
+      "sha256": "a6541d1f2120f5c314d1222ae5cc90857281a6e37173144f8ebf12e7e00c2e57",
+      "blob": "48856de38eb8087bad3fd5018d7613b9720410e8"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/director-sqlite.log",
+      "bytes": 1190,
+      "sha256": "f4b1ecdc8da9e51ad2949be639294559896d1f578f72cd86c5760111e258148a",
+      "blob": "b184d1a32a7e86f1fb20513d58a80d764b59564f"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/fixture.log",
+      "bytes": 180,
+      "sha256": "9e5d021db1e91de5d1bdcfc86eb2af071b28a6c958372a8fe9966bbd599d165e",
+      "blob": "818a8f79b00795ef0d2ad310bc7922e700db9e7f"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/prisma-generate.log",
+      "bytes": 528,
+      "sha256": "5986e03842350d959086d44c28dea9f997a87a221cec9bd280b0e501d111ec29",
+      "blob": "f874dd9c18d9d5275f915db1b567b5e53e06a2dc"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-claims-postgres.log",
+      "bytes": 478,
+      "sha256": "061810441e33041a398439c444864d4fb2cdc5d1302a242e2779ab88449060d0",
+      "blob": "4691a1544895424d2e6ede4dc1b0ff3ed84d9b36"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-claims-sqlite.log",
+      "bytes": 405,
+      "sha256": "d1de97c070da67979cfebc0cbf44098e0e21a140f2290e70469eb07eabccee93",
+      "blob": "21b3317b0c01e66cdb76f96ce9113c53d6bb8441"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-real-ai-sqlite.log",
+      "bytes": 735,
+      "sha256": "29666ee32ada4964e0c9ae3e511d56021292329e0b45038237a8730c6c7925bc",
+      "blob": "51c548c35efa16e09f34fbcdad4eee07f5892fb7"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-render-postgres.log",
+      "bytes": 1292,
+      "sha256": "c37f3572502647f2322bad260cea60f6bef3cb597e142b8884ea3835ea9fd965",
+      "blob": "caa3030f4af4a857dadf2f224633c38683fc8d36"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-render-sqlite.log",
+      "bytes": 1176,
+      "sha256": "912b2f70d73cc78f6fbfaab311023effc736e0f0816c871702f9451f8d63719c",
+      "blob": "e2ef9b1228d2cba41ab09a2fab25b54930d913e8"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-research-postgres.log",
+      "bytes": 1692,
+      "sha256": "f6c96026b4cd1e9e0017b1a3007d5cc79f762825ce6716d1e07745185b9d462e",
+      "blob": "1b9ef071a1bc5dbdecdac0600231b4dc89632d38"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-research-sqlite.log",
+      "bytes": 1593,
+      "sha256": "40852242bdf6b807ee818e56c9c39e83876aad82eb53b1196c995ec5710eb395",
+      "blob": "8ea0d3bccf3e86bde6c8d695d78f78748644aab5"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-script-postgres.log",
+      "bytes": 1385,
+      "sha256": "f63fd6c99f13351998aee4d83bac40daf590ffd040b106e72441ec24d2423d5d",
+      "blob": "848835cf2b63ef983a3c8bb55a6047c6aa2f229c"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-script-sqlite.log",
+      "bytes": 1262,
+      "sha256": "4cdac5721e7359013a5ffb153ec23c7e91035962086a61021253903927ec01ea",
+      "blob": "61dc21afadce50dadb26ef0cba219668e9e6d34b"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-voice-postgres.log",
+      "bytes": 1195,
+      "sha256": "00f4b925db7dfafcc0a2908e23a135a2e732e0f0af4365ea2502cbc570802eac",
+      "blob": "ad0ff50f4c3d70210bab7cc3245a4e1d1618f913"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/regression-voice-sqlite.log",
+      "bytes": 1078,
+      "sha256": "a9a47a470736a90f5fc073ba1d3a310077c20d48fcefcc9650217c2e616b348a",
+      "blob": "95cc709c192b551d252e7d3ebced86aa30f8ad59"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/security-staged-preliminary.log",
+      "bytes": 64,
+      "sha256": "94b6d04c9e47feb6f876f171f945dd1c6f3f70a3eb0d03c0f1ddbdc7dc40d817",
+      "blob": "b872ab07bb9936af6ce56c0c7acc1d9a62f29e74"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/security-worktree.log",
+      "bytes": 67,
+      "sha256": "eeae0a1fc8283799e6216db6dbf36c76f04347d264c0666182a38ece5fed96ff",
+      "blob": "4a4fdf4a8a7cab9a98b9add875d42af502b18de2"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/tdd-cue-red.log",
+      "bytes": 8310,
+      "sha256": "034249bf49ee2d5ef2d4a48464ed927830cf646a9973379559907373f8106941",
+      "blob": "9e29aa84b65d94416f2c90517e69390cee7d36a0"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/tdd-diff-red.log",
+      "bytes": 8067,
+      "sha256": "55f13d469f8f7b993ba081afdc8bd531c873399a03299a060588b716883b10e5",
+      "blob": "2935fb0633f75ee3a45849987652c8de8fdb064f"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/tdd-initial-red.log",
+      "bytes": 16668,
+      "sha256": "95e536a06ad60dc934521cf8fc4c975577a5fdbe3491a7d5cb14a43cb8f7f9ee",
+      "blob": "1e878e8c2dc2e643a12002bef4ea12ec534b58c2"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/typecheck.log",
+      "bytes": 148,
+      "sha256": "0180decf6774f3e311af82367ad5ac440791e33c34d3aa9226fc318a9a8e96ea",
+      "blob": "66b3bb7a33bacd2a2de3fbf3ac0424ce5f917a64"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/ui-protections.log",
+      "bytes": 317,
+      "sha256": "3e8cbb8d73a106fb3b342b3bc7503be941568570794b7ad9673865aa365c4609",
+      "blob": "78d574579656bf28cf13363c8bba994bb8f88a10"
+    },
+    {
+      "path": "docs/evidence/phase06/logs/unit.log",
+      "bytes": 7425,
+      "sha256": "fb7a6241b06dcb7d524587d2edc4a2f391499b56b7d8dabad47e36fdcc4efaf2",
+      "blob": "c936dd02d8bfccaa0bbf68cdd3bc3a94bf10ee70"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/06-approved-readonly.png",
+      "bytes": 748482,
+      "sha256": "426b510e485f3858e66b95dadbead8d40e8200560b16057f386c6ac5a2a70add",
+      "blob": "bbd1835d205bb83011880cb582fbe4a7ecd1eb36"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/06-director-workbench.png",
+      "bytes": 706291,
+      "sha256": "916965cf5d8b42ced01b3fa3d5927849fb7c586daba89f9fcc0366fff4f5132b",
+      "blob": "458a9eea6e591133fd7d79e4aae38864d3744242"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/06-edited-persisted.png",
+      "bytes": 705396,
+      "sha256": "811eeefe4b16883ee92da40a1c33ea550abef5b296bb3459505c84c4be11e469",
+      "blob": "170114464bdc7c3418c241c008eb840f7d651ee8"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/06-fork-diff.png",
+      "bytes": 748399,
+      "sha256": "680640bc0a7e44f64af51f9d11fb22f60ff16c818901f59904d809f097525a40",
+      "blob": "c7a7945cb88b4da51ccb198af7a6c7064f602668"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/06-mobile.png",
+      "bytes": 484961,
+      "sha256": "358454735c4c971cc0dac921248cd6818641e352534f16b31eac4cef3f65ea1d",
+      "blob": "3766850c519ed77758280165b2ee069130c17772"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/06-silent-explicit-mock.png",
+      "bytes": 397651,
+      "sha256": "3c0cd4955e32739df489c919979f9673f0df9ccbb410282b1e18c54e0f528a2b",
+      "blob": "550811431eec537572dd8b61df448e3b90ee4c7c"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/cancelled-cli-events.jsonl",
+      "bytes": 101,
+      "sha256": "50845e21a11c5ae40b23700ef157de6c92a6330f9ccb9bc069a882275c7b47e7",
+      "blob": "64a04f4c020d5f05eeab67d16fbcaa4d64edd503"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/cancelled-director-job.json",
+      "bytes": 28360,
+      "sha256": "7bce3dc076675ccb17c17173d6499d6402f4b8576879b3caf6d3892c36b1dbad",
+      "blob": "13cb42c7213603e220eb8326b3170f3df4f01930"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/database-snapshot.json",
+      "bytes": 64277,
+      "sha256": "1dd02a965b4782d46d698f583594fbc58a66c53ffe3e673255310e3ea22d10e9",
+      "blob": "4acbdb55e39fbd9417e444299a814ef55b71b221"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/migrations.log",
+      "bytes": 1350,
+      "sha256": "030d412ad39a0923c4cdbac78b1674f6a7c3f4b83ebd560818b0302dd3dbb9c8",
+      "blob": "9cc8b50326056379f67bfbb99aac81c6ed16a7ba"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/real-cli-events.jsonl",
+      "bytes": 14414,
+      "sha256": "3fd4e29044e1400e9e025599d3043e7d07a9b17a4d256540b8b70bde7ffbab35",
+      "blob": "5c0bc0844088da81b4609e2b5dca6a62c15a8f6e"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/real-director-job.json",
+      "bytes": 36070,
+      "sha256": "e496669b88491d23eaac7207e449616602f3c88e806df3b6b8a3993a327cfca0",
+      "blob": "1f32a943422fd6f90f32cbdbf64415db328e6ed3"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/real-director-snapshot.json",
+      "bytes": 84109,
+      "sha256": "d43be708c39a4cf3a4fb306bc6f57748b8404e8755cbdc08c6c26743641dba52",
+      "blob": "1b44cf9a55f42ece805fc9e9aef7589c5e60f531"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/results.json",
+      "bytes": 4236,
+      "sha256": "744adb4b5d0effe85389d84200029183e74533d12d7a837c5edd435b034bdafc",
+      "blob": "e7061a7572b8b9568bcbb2b041bf6853b7b67e83"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/schema-drift.log",
+      "bytes": 31,
+      "sha256": "0983c8c2474f18152b093842104ef9aef25f03fb78861c9e681da2249a64a385",
+      "blob": "235370d9742ffa1d8a321d08c66438619e04578c"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/time-mapping.json",
+      "bytes": 6989,
+      "sha256": "1d530c12fc3dca0bb600187b6f2670ef30cae5f6e67507649fff89d20ad167e4",
+      "blob": "e2d1743731068b0c3db5823c35fe621d63ac8596"
+    },
+    {
+      "path": "docs/evidence/phase06/postgresql/workers.log",
+      "bytes": 408,
+      "sha256": "6648da214eca8aea88642fce1a0a6afc6777d1e3f7b864f4e83385f7e5c5c3a7",
+      "blob": "bb4dc75dedc60e2bb35aac312b9ddeaee40f64ba"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-claim-boundaries/postgresql/migrations.log",
+      "bytes": 1015,
+      "sha256": "2706576ca69eae08d072838cb965025cd11186536065ba8804cdff2586a0f0a2",
+      "blob": "2afac0427aabd1fa252ea28bc59bb16d27028d5c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-claim-boundaries/postgresql/real-conflict-candidates.json",
+      "bytes": 5210,
+      "sha256": "0fb09b00bb76b564d20638104424f258132ade8e9846288da4e15cf3c7b174bb",
+      "blob": "e29f25bdc64a1ca5d8a0afca727e23486b6f393a"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-claim-boundaries/postgresql/results.json",
+      "bytes": 2114,
+      "sha256": "923df48c97fc4843aea3e0eeadb0c3bf9996870026a16541363f542f8559fd7a",
+      "blob": "a240e1a19975a94ce29db1fc907d7746c51cc140"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-claim-boundaries/postgresql/workers.log",
+      "bytes": 323,
+      "sha256": "84a879a7092f135c0b704b7cff61607d7239881ed744ca871319d3b4a23dd658",
+      "blob": "75373e5651353db7d76ce84c037f75998d0919ec"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-claim-boundaries/sqlite/real-conflict-candidates.json",
+      "bytes": 7370,
+      "sha256": "1b36d483c2b11ecdebd8198a9ba25842c095baef07b3bf30074cf46ba98164d0",
+      "blob": "3afffc7923674d8c67eebdad4f910656b96346a1"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-claim-boundaries/sqlite/results.json",
+      "bytes": 1323,
+      "sha256": "22f75c32761c076084b0cc842d02530356a0179cc15ea57c9490ccbd24f57544",
+      "blob": "5a100a57e6e0b098651154f22f9e509afc5a2794"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-claim-boundaries/sqlite/workers.log",
+      "bytes": 323,
+      "sha256": "be7b12a9f2991a68b5c4208c7fdc6b73c37916c9675a947016ce6b05eb27498b",
+      "blob": "27b43cd1ce050389f24998d407188e689a884f1d"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/03-real-search.png",
+      "bytes": 360654,
+      "sha256": "01efe80c38031d096f354998ed3f289fb50e56a344989ee8645c36b1f8746af5",
+      "blob": "00e1d5e0a1c56d05f1a0357e99f603dc40942101"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/03-real-video.png",
+      "bytes": 451643,
+      "sha256": "1ce22e755fbe160983e2cda1f28e58f3ee295633e6e154ad6d0a17e823f87d2b",
+      "blob": "e111ba64e1da3b56da06572724ef56414722f076"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/03-real-vision.png",
+      "bytes": 343968,
+      "sha256": "5f7041052dfa611096bf24c309adcfba47eb20c8ba0a1fc13e471dbb19c93dd0",
+      "blob": "b3f90108f4873dd9643eea552ecf672f84109d91"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/04-mobile.png",
+      "bytes": 326074,
+      "sha256": "7f6de3b75eafa81c9d1e4e70f6b73b3236faacd2eb8bbe0f56a60fc7488a4aab",
+      "blob": "ce1f1760120f007e0d7d88517c0cf5e887bf0d6a"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/04-real-script.png",
+      "bytes": 370679,
+      "sha256": "d3ba3503ccd50e1f6475b834fb4b605f5ef05d81e69e636102e06e656f26ef6a",
+      "blob": "60db63edce18faea4616c370fb9947733b90ecb3"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/frame-0.jpg",
+      "bytes": 18055,
+      "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133",
+      "blob": "1e55442387ed7df919941163339b1866606b2811"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/frame-3333.jpg",
+      "bytes": 16252,
+      "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0",
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/frame-6666.jpg",
+      "bytes": 16151,
+      "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4",
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/research-snapshot.json",
+      "bytes": 85585,
+      "sha256": "afa7672e8518f7531f5ca2de7432140991bee7961ebe362805b030acd61e6f12",
+      "blob": "da18a7e07679656a9fd7f65fdceafe19c99f8f51"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/results.json",
+      "bytes": 4839,
+      "sha256": "1d351db1dfd25063e55fabe2db1770f70f0c8f6e163c866a7704a4b215caee62",
+      "blob": "59450bbd65f5e9468723dbf66d828fe8006319bb"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/script-snapshot.json",
+      "bytes": 40108,
+      "sha256": "a37065d311c25441ba968c97415d9e95a71fd75b4e8ce5b2496399bc301628fb",
+      "blob": "c7821897eef56b3068c675fea302ef4fd363c811"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/self-authored-chart.png",
+      "bytes": 9170,
+      "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165",
+      "blob": "620f521485d013dcc69238e6b28e8effd231091b"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-real-ai/sqlite/workers.log",
+      "bytes": 774,
+      "sha256": "84d1edadf89a6e48a540c72d4e26ee37ab90ed93bf006b0d7b2963eb92b61ac4",
+      "blob": "9797656f27eef1e6476da52ae16e6c44440ea607"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/08-failed.png",
+      "bytes": 145684,
+      "sha256": "a647e5113d079b275b5cb1f1a130ec1194e94f8c4901240f847f31d54da8f7ff",
+      "blob": "dd3bf98a21a33fbea85745a4e70d9725144bdf5a"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/08-mobile.png",
+      "bytes": 104813,
+      "sha256": "2f436820c4a6de9e8b1c5546267915d1d7f16c21e58b941997aa14e915cce139",
+      "blob": "cc6e53e58d384ab139995ee38678b51dbbe98302"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/08-queued.png",
+      "bytes": 112445,
+      "sha256": "ecf10290decd6ad859b3e4ef29515cec13d652d3a6ea26b4c8f8abde3732f638",
+      "blob": "bfb422522246c182e503e7504bb52672ae8ebde5"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/08-running.png",
+      "bytes": 118026,
+      "sha256": "64c566685fdab3dd4c2ccdd2d78a654d38adad2982cb65fe28c5515dd600f788",
+      "blob": "c25ea268ade2162a29d9a5afa85341d8fe076bfa"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/08-success.png",
+      "bytes": 277946,
+      "sha256": "f59d0d1a2fdee5ccfff2fdfa41658ebfe22c4857bebc85d769e8f4b9e94fec77",
+      "blob": "29df95d47f9ecbe233dac5e4d5e3099c2eccb719"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/decoded-150.png",
+      "bytes": 465020,
+      "sha256": "0ba72b9dbaffbf9a1942ff88da8ee26d934014599f0fd97b84bdba14c1fdbb99",
+      "blob": "c2f39375aa17f680fe508d490f95f9537ea1a443"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/ffprobe-independent.json",
+      "bytes": 2690,
+      "sha256": "0cb2284638e0a98530a9141b5c1f19530cd785a562c052e48177a87b5c08cf6a",
+      "blob": "ea2c39f37dd9e204a6d57d778a670a69f91bc7ad"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/ffprobe.json",
+      "bytes": 2246,
+      "sha256": "e7cd50aa17d8d742f925baeb06166a5a694e4e529e7a2b4c2c1f1a77cab7feea",
+      "blob": "2005793c584dcbeb97147b6d06059144301461ba"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/frame-060.png",
+      "bytes": 691544,
+      "sha256": "2e859b3cef5de9a47a618387dbdfe1bd59ad7f926f78576fb2a803bb913ad786",
+      "blob": "9e9ca076e6d16b9e0535d586bb5e0c2be9616c64"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/frame-150.png",
+      "bytes": 550159,
+      "sha256": "b1b291ca074058bfd22b4115e2bdb0624c38c19c2155fdfbdc148d4c0394ee55",
+      "blob": "f798956da73db36d30cda9d1f7966d58ecb7fcaf"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/frame-240.png",
+      "bytes": 697163,
+      "sha256": "e734cc419644e95499f83ee4782cde5cb0f9c7ea7662a7628c961650536721ff",
+      "blob": "3fcdab4e46ae3aaf318d06245cc228f82ad6d778"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/frame-match.log",
+      "bytes": 1315,
+      "sha256": "e00f769fd146d6509e2aff0f304bb93fba3f32a6dbc429ec97dd9d43c6553c22",
+      "blob": "4f43531dc75c1bb517fdd6a6a0390d48b389e8c6"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/http-results.json",
+      "bytes": 1807,
+      "sha256": "13506e298b58821cb10e7082aa85f0570e60f5624e3430df6411ebe8dddf9386",
+      "blob": "932fec51abf61e0e68d4f15c3446e1ae43990025"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/legacy-http.log",
+      "bytes": 814,
+      "sha256": "592b838aa72755555bdc01b7aa5bd1c478559b7567922f675f43feb9fbb8474f",
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/manifest.json",
+      "bytes": 3019,
+      "sha256": "80d78c1dfe7138cf25c381ab1738d27327e0255a7a58f750741fa9c3609dc570",
+      "blob": "b6510115567d2153c7d3a81acea4e40bad295111"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/migrations.log",
+      "bytes": 790,
+      "sha256": "6207c2f3a97270c5489ba98caf224c5d06d817671c7f12be117746879c04efe8",
+      "blob": "865f777f0941c86732217aff1391924e2a2757fd"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/results.json",
+      "bytes": 4525,
+      "sha256": "baaff52e7a16b5ed49876f0cf6486f981ff96b358400f4132ffb5d4839d2ba65",
+      "blob": "c4733dab35d963462f783bc086e76de74a080615"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/video.mp4",
+      "bytes": 3230799,
+      "sha256": "b7913b6c3c15fbe92101b27b61ba418952fb8454c892ab35f674650571ff7ca2",
+      "blob": "9820c1a534b0a181c86df0a38d4c46cc1b240c94"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/worker.log",
+      "bytes": 54,
+      "sha256": "6279d73a5ac744c451c5eab204c5f88612890fc8bfe79034ffb540339ac8b768",
+      "blob": "24faaf07e8178d6ccf2e72e2509bd8f0608c485d"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/postgresql/workflow-http-postgresql.json",
+      "bytes": 1235,
+      "sha256": "eaaa726710c050cbfd6e339eb2c51d78eb47e5cc673d7b9ee8b5adc49182f5ec",
+      "blob": "e31725ff53fa45830132552e9764f49d05af06f4"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/08-failed.png",
+      "bytes": 147331,
+      "sha256": "b6ebec254169010f7ad225b7206dceae2503c9faee76483e6659354850a2148e",
+      "blob": "95e703304630de61cc2c713af6276b9661565ccd"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/08-mobile.png",
+      "bytes": 190935,
+      "sha256": "62bf648d279c78373b67fe2740b0cf0a80a6ceb4458dd6a5fc4b089878be085d",
+      "blob": "e599222a828c5839846eb9ecf6ceb44c87d854b4"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/08-queued.png",
+      "bytes": 112411,
+      "sha256": "f51547f687fcdf2fe9c0e1ca6915ff5474aea354f45c8afe2dbd9f8c4d72dd92",
+      "blob": "985beea8583fcb2db47c2a719aea2a36f418dc11"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/08-running.png",
+      "bytes": 117857,
+      "sha256": "c48ffa705c6d181def061062de0fe9b6dd5887486dfe0d0f2488451aa9a55b13",
+      "blob": "d773982b7ae811439c4408d45135a53471e2169b"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/08-success.png",
+      "bytes": 276140,
+      "sha256": "3dc19e5dba8fe62645f10472d81762d27075a7a09247870899fe4ce4e5a7e823",
+      "blob": "125a8540acaa2ce96a4169005af908eb88f3edea"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/decoded-150.png",
+      "bytes": 465020,
+      "sha256": "0ba72b9dbaffbf9a1942ff88da8ee26d934014599f0fd97b84bdba14c1fdbb99",
+      "blob": "c2f39375aa17f680fe508d490f95f9537ea1a443"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/ffprobe-independent.json",
+      "bytes": 2686,
+      "sha256": "02f42c927a4001fd2d127b29db1e37dba85c808cf4b745368d6899533e3476e1",
+      "blob": "5eeacd04d8562fb2ffa4949152a598cdb7f6e170"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/ffprobe.json",
+      "bytes": 2246,
+      "sha256": "73ff1cd4ea9864c1c451151c01c0c784818f86c59740b16f91f5ba0112be3d6f",
+      "blob": "ae680aba81b348c098f3e84407addb564683ba70"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/frame-060.png",
+      "bytes": 691544,
+      "sha256": "2e859b3cef5de9a47a618387dbdfe1bd59ad7f926f78576fb2a803bb913ad786",
+      "blob": "9e9ca076e6d16b9e0535d586bb5e0c2be9616c64"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/frame-150.png",
+      "bytes": 550159,
+      "sha256": "b1b291ca074058bfd22b4115e2bdb0624c38c19c2155fdfbdc148d4c0394ee55",
+      "blob": "f798956da73db36d30cda9d1f7966d58ecb7fcaf"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/frame-240.png",
+      "bytes": 697163,
+      "sha256": "e734cc419644e95499f83ee4782cde5cb0f9c7ea7662a7628c961650536721ff",
+      "blob": "3fcdab4e46ae3aaf318d06245cc228f82ad6d778"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/frame-match.log",
+      "bytes": 1307,
+      "sha256": "3fe28066dd1a81f6c37e43dde3843d675339b06955b9e0967f29cfa5781f7a7f",
+      "blob": "314767c78f7f37297331cee6e86477cff34469ce"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/http-results.json",
+      "bytes": 1803,
+      "sha256": "f715b5380b2cd540338202de70060da883959b8f18de2fc195688a3417f20f0d",
+      "blob": "a8eecd10f108c41f5ce21833328bf33a7343c216"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/legacy-http.log",
+      "bytes": 814,
+      "sha256": "592b838aa72755555bdc01b7aa5bd1c478559b7567922f675f43feb9fbb8474f",
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/manifest.json",
+      "bytes": 3019,
+      "sha256": "80d78c1dfe7138cf25c381ab1738d27327e0255a7a58f750741fa9c3609dc570",
+      "blob": "b6510115567d2153c7d3a81acea4e40bad295111"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/results.json",
+      "bytes": 4025,
+      "sha256": "82caebb557a7da73ed24d068e78bbcbc69639783dfaa9d034442751aa8aee335",
+      "blob": "0eccd6d425e8943c020b319ca0dabf76ca66d5c2"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/video.mp4",
+      "bytes": 3230799,
+      "sha256": "b7913b6c3c15fbe92101b27b61ba418952fb8454c892ab35f674650571ff7ca2",
+      "blob": "9820c1a534b0a181c86df0a38d4c46cc1b240c94"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/worker.log",
+      "bytes": 54,
+      "sha256": "13f1a37ef401b3dbe6790a05541a770bd34cb9eb6254d2d137f396b0aab6c5a8",
+      "blob": "566d6e4ca1b8acf4bb40264b80dcacb07bb36868"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-render/sqlite/workflow-http-sqlite.json",
+      "bytes": 1231,
+      "sha256": "9a6bf07518e53d29b4c721f96a5a6637eb974db3a352b88a4ad5624409ca054d",
+      "blob": "7062fc41c8acb7971c98be0f4f82bb47a4649e52"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/03-approved.png",
+      "bytes": 358826,
+      "sha256": "8b3cfbb800d5461f4cc3b19e5a4a7598307a726e988d1f6b3e7a1187257cc696",
+      "blob": "f0418847ee89eb36bf5d56f76f941e74068584f3"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/03-history.png",
+      "bytes": 415322,
+      "sha256": "dcae337a0b7f3b2168de6fd02d73da1523ae7c86a8ec9b3a80ce5264a3dafc55",
+      "blob": "f6b24111671ac56334463f791cc95917c3c46f69"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/03-mobile.png",
+      "bytes": 366439,
+      "sha256": "39dcb99803a9aaf7df5d07e9cd3d647bff4c0a4c79cfa4266d05eb943b29c7df",
+      "blob": "6f868d3806bc51e2d04d265998b7a1a305d3eb7c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/03-mock-and-failure.png",
+      "bytes": 399129,
+      "sha256": "ac165f8134a7aa76e651467cb954349670fadf66280b65804180e79a4eeb2efa",
+      "blob": "ae3b6fdf325f83f5f26bcc3a595ef9d58612a8f8"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/03-overview-viewport.png",
+      "bytes": 207157,
+      "sha256": "14546b7dd09acdb8f29519b5cd95df3e7cb6dd102070ab05b90b98f177a39e37",
+      "blob": "fd1f0a6ef09a2d62dad07986550748764d6e37c6"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/03-pdf-conflict.png",
+      "bytes": 335816,
+      "sha256": "014a058d7a8bf71b87bffea40cd5b9cdd7a2d8a66fa373d855a1d8bc272d53e9",
+      "blob": "2c2ad731b9549c15442bca04bcc1f3e4cda4aee1"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/03-video-index.png",
+      "bytes": 429605,
+      "sha256": "f688d75437c7f5c5e81c2fbd13211f5ffac8188d83cc4bae16d4e7bbb345da9f",
+      "blob": "7d91ad742d80210b2e078ef9874a20e7be56d494"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/frame-0.jpg",
+      "bytes": 18055,
+      "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133",
+      "blob": "1e55442387ed7df919941163339b1866606b2811"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/frame-3333.jpg",
+      "bytes": 16252,
+      "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0",
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/frame-6666.jpg",
+      "bytes": 16151,
+      "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4",
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/http-results.json",
+      "bytes": 1807,
+      "sha256": "7df589cc47dda5a559ba53a980e9e86595ce26c838febcf53599020a88c54d58",
+      "blob": "d519c6deacf58b6d53983d58eb262d9cff84c12a"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/legacy-http.log",
+      "bytes": 814,
+      "sha256": "592b838aa72755555bdc01b7aa5bd1c478559b7567922f675f43feb9fbb8474f",
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/migrations.log",
+      "bytes": 1348,
+      "sha256": "e9032daca0dbd7348dbe6d96bf04cb859cc434bcf83dea8cde8422a262ed4f38",
+      "blob": "f4e8e325d957db1fbc27076911d2dfaa54fbeb90"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/research-snapshot.json",
+      "bytes": 41925,
+      "sha256": "c46837946ff37e18460d790e837af7a9f12119e280609c07b2d47a21e9866694",
+      "blob": "140e9e5fa8e37f2ef81a40a824b65c3a20d48307"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/research-worker.log",
+      "bytes": 517,
+      "sha256": "19c7a8630c023c787a153e79f2118ed69ccb5f42b73573d5b49a90967b02a047",
+      "blob": "fbbf7246e04860ba46c1cad1e658d201c86b60a1"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/results.json",
+      "bytes": 5672,
+      "sha256": "764dd457142141cbbffcdeb55716d084d7859d681757ab56a90d3ec39ecb318c",
+      "blob": "31c9f777afe6c666ca175ca5e2fa983950717752"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/schema-drift.log",
+      "bytes": 31,
+      "sha256": "0983c8c2474f18152b093842104ef9aef25f03fb78861c9e681da2249a64a385",
+      "blob": "235370d9742ffa1d8a321d08c66438619e04578c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/postgresql/workflow-http-postgresql.json",
+      "bytes": 1235,
+      "sha256": "7f18a258fd91a6fbd6577ec2cecf422a89e281403315852dd60ecae78608c3c8",
+      "blob": "1e17df6ad5c956ded3f7d215b70674ebc0229e7b"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/03-approved.png",
+      "bytes": 365070,
+      "sha256": "8e55b20bf23f3a7123e173467c4a46718eac6d877b19bbbf8b575114b9b709e7",
+      "blob": "3db792f120faaa83f640a2f7330170d63bdcb208"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/03-history.png",
+      "bytes": 346925,
+      "sha256": "fb9bb61b813f78b97a50006d640f38efdcc4257ae6f0e0c8831abba4c26e030e",
+      "blob": "a17c68e431f8312efd67d20ba711d227cc0151f9"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/03-mobile.png",
+      "bytes": 288496,
+      "sha256": "35f95d2332e06bc6a7b065f947f456acd2eacc19e86161d91c24bf2795c235ab",
+      "blob": "7d11f18cc307b535978050cfeecc30d9ceb55e97"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/03-mock-and-failure.png",
+      "bytes": 425594,
+      "sha256": "8f58614101abd75b2e4406c3dc051f63068984f77a787151f9ba34991d517a3f",
+      "blob": "566ce3c15607968ff83676ef78e85d98790739bc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/03-overview-viewport.png",
+      "bytes": 210311,
+      "sha256": "fb7bf73a47c72f4baf22479fe8350c9384894972d6b8ae1a6a754b0509b8f569",
+      "blob": "1be116fd18ef171306d0ba753b44d71c98bd5935"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/03-pdf-conflict.png",
+      "bytes": 342234,
+      "sha256": "2efe1df35ade79fd0b021b3765c3521dbe9ad4851e1a5503daa70531e4ab8b94",
+      "blob": "b32e159f04ab7c8950e304973dba3873f5905461"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/03-video-index.png",
+      "bytes": 437892,
+      "sha256": "f10989596392d790824817ec027bf2f91be2b40e891582d7ae0d17b72164d88a",
+      "blob": "2a294e42c21b2fa576639cca4c5c8afc47a4786e"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/frame-0.jpg",
+      "bytes": 18055,
+      "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133",
+      "blob": "1e55442387ed7df919941163339b1866606b2811"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/frame-3333.jpg",
+      "bytes": 16252,
+      "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0",
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/frame-6666.jpg",
+      "bytes": 16151,
+      "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4",
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/http-results.json",
+      "bytes": 1803,
+      "sha256": "25f7a7a9c74a43a9ee998edfb688d01be64b1b9483d3acb114137b42af4558ff",
+      "blob": "d1e6140ae3ff89585393ad0e8746c4c1011af886"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/legacy-http.log",
+      "bytes": 814,
+      "sha256": "592b838aa72755555bdc01b7aa5bd1c478559b7567922f675f43feb9fbb8474f",
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/research-snapshot.json",
+      "bytes": 47931,
+      "sha256": "450869f810e39c739c0f708da77d6d72962df8c7daa6d0111295c675aedfa43b",
+      "blob": "cd3b4b0415b97bad26d9ebf071c2a641df51d21f"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/research-worker.log",
+      "bytes": 517,
+      "sha256": "6f2f528485e733b451c3c0ceb10878f33f2d3228400a5ed79a9d305242d14917",
+      "blob": "0717dbd89e8425a849f5cb0fe361cc866b5c07d9"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/results.json",
+      "bytes": 5253,
+      "sha256": "06ccac555b2107c84ff7ed93c30f11dc2a1a3a4e1ddf3225620cca2ca24e2917",
+      "blob": "759680472988b140bf15b025cbfe670cd9c2d4ee"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-research/sqlite/workflow-http-sqlite.json",
+      "bytes": 1231,
+      "sha256": "3d5af0d34c9c6f4cfec9e8a24d7ee221ff96eeee8a21eedcabfd1aea4dc45fbc",
+      "blob": "ef0c043cdffd54a454dc0c540199261ff5b1d929"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-approved.png",
+      "bytes": 237392,
+      "sha256": "623b856a2ea07e71dba96e23d1abe6b84fb51b0a70ee71c34d3bc0c6cacd3092",
+      "blob": "85985ddf317fbf2a2c5fdbc200c82fcd00da02e3"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-claims-conflict.png",
+      "bytes": 267645,
+      "sha256": "fbffd5a139a94dab455dd41aacb2e5d0fc3991493f38b87e4b1894b114e3344c",
+      "blob": "c5406eae5060f0bd7cedc4d6ba1b1471006d5568"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-diff.png",
+      "bytes": 225947,
+      "sha256": "33242f47e186b3d7609071b5c32d08d773cd0344bdb2577da6094e635219cbcd",
+      "blob": "b12176ccddd70eaf5cce6830d4f96eeabcef47fa"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-downstream-impact.png",
+      "bytes": 201119,
+      "sha256": "6abd2da5d1c021bbfae1a7d1585a666081c4641ca50e0b1d58a83570f08cd9b8",
+      "blob": "e3c3d8dbff6cb5c42c0806c2fc1269ccb0900d2d"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-history.png",
+      "bytes": 242792,
+      "sha256": "ab89888d7d2b70b891c8e215c52238b0d6212370c76088c4d33dd44d3021d687",
+      "blob": "10d193a517a79945c91d182142a5d8bfb5c44196"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-mobile.png",
+      "bytes": 177875,
+      "sha256": "f0d7fc8f0dc778151a06268c4f5ca455934056a9b3d49fb43ddd2c49ec062598",
+      "blob": "7432adfe02a9cc1fcf521fcecfdc218ae8761f54"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-mock-unconfigured.png",
+      "bytes": 322491,
+      "sha256": "22655048d9f021f191b11108cf9b309ff4f75874737625023ee47e2487da7460",
+      "blob": "90c36c7ca4bbdc8e1281f2ec47f06c37f1afd919"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-rejected.png",
+      "bytes": 234441,
+      "sha256": "c0e1bc8ed4b5dc20be96c03536bb4b5300c5b2ca77840361760009fc7d2e67d6",
+      "blob": "0e560aeeff4ddfc3750f12e8b88e134afcee6449"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-research-impact.png",
+      "bytes": 244151,
+      "sha256": "46cac0bad02859e6a07c5eebfaffd9088ae728808d22a35c2dffeb183c1cff01",
+      "blob": "f5d00744cadda7a939d831e00c4ae5fa20678083"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/04-user-script.png",
+      "bytes": 225856,
+      "sha256": "4ed638c48c656c7571fde86ecd06be7aede71a0a7c391956d3a3c509db953071",
+      "blob": "85f1c149d98cf49be155534c29744dbc2a787338"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/http-results.json",
+      "bytes": 1807,
+      "sha256": "2dca0d01a8ff85cf0456d50bbd7fd08674add6f07df3fa42e0dd4e6cd32f761c",
+      "blob": "d874df6714f81ea426fc7ef454b0bde613dcf898"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/http.log",
+      "bytes": 814,
+      "sha256": "592b838aa72755555bdc01b7aa5bd1c478559b7567922f675f43feb9fbb8474f",
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/migrations.log",
+      "bytes": 1350,
+      "sha256": "042ddc1979873fc208b789c1005a78cd4e7b7d8d2c2624c4330061fffeb310e2",
+      "blob": "a9a864ae8e33dcfaca862a2afb0b58c69074de08"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/results.json",
+      "bytes": 4981,
+      "sha256": "668ad28a67b2d99516a7c42cbfdef7b36032fd70a92a9df39a8204b37204d407",
+      "blob": "84217c7182fcb670f809bcbb4eec6e41ce2d463c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/schema-drift.log",
+      "bytes": 31,
+      "sha256": "0983c8c2474f18152b093842104ef9aef25f03fb78861c9e681da2249a64a385",
+      "blob": "235370d9742ffa1d8a321d08c66438619e04578c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/script-snapshot.json",
+      "bytes": 30225,
+      "sha256": "9a0b7212c50fe46d17faef8af7bf5e570caa15ad581ef5646abae725171ac141",
+      "blob": "25849316e5a036e824d72371e10ed8c0241617c4"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/workers.log",
+      "bytes": 326,
+      "sha256": "ae5eaac07614c44efaed0168ace81dfb372b60ac0ca4e1bb61f1460ffb79a16f",
+      "blob": "70061b2baeb33e6601c21414f6f6571b6cea67e5"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/postgresql/workflow-http-postgresql.json",
+      "bytes": 1235,
+      "sha256": "80595091d394f515a822677f491f4ba5aa92ede5986436ae0b63f738cd22d128",
+      "blob": "14c349a6312ef9eebb336b4e83c089e393378b29"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-approved.png",
+      "bytes": 237416,
+      "sha256": "1385909c0e2f0e2acb38870cbaba1559ebde8e955c751f59cb284fadcf127ef8",
+      "blob": "48c282e6f5876241b2c60db323cb638d282afc02"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-claims-conflict.png",
+      "bytes": 267311,
+      "sha256": "a3ebc7755444df2ea8d8406ce61a447eeeda6abb9e153d999e5990241d75e037",
+      "blob": "d8eb241f7962b9d1d4ab072be4a05ae2b34952fa"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-diff.png",
+      "bytes": 226024,
+      "sha256": "00c4560507430f5df53c5c26e26a40cd856e7fdff7d10a6a0a42fa3bb1d49bf0",
+      "blob": "11372211c71b80d1b55ad764a202d8766f3add46"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-downstream-impact.png",
+      "bytes": 234975,
+      "sha256": "6a002f8e870c282d907c25aa6b202b0d1fae2987d0a8c45796fd6eed7f78ba43",
+      "blob": "c9505024a4dffe7970a37d8c8eeb290f517e4df8"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-history.png",
+      "bytes": 242808,
+      "sha256": "152b0a1f5f5a93dfb16c626b1e256cc1ece87f7808e90367cc6f9c6ca9f0b1e1",
+      "blob": "46401c4247d2027d5de9633394db308ca8f7088a"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-mobile.png",
+      "bytes": 211867,
+      "sha256": "c893f07e73fafe58eca3047717d14c817933402547d8c32b3724f51638d99805",
+      "blob": "94265b5f2cfe18ebed3b2457ded9c34e12519bc8"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-mock-unconfigured.png",
+      "bytes": 322247,
+      "sha256": "d8d0687656477ec6b50c9beb57d9a7724022f444aa4a2c781ff8e4268650d236",
+      "blob": "eec12795493587d7491d9f9d45ff3be211479f3d"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-rejected.png",
+      "bytes": 234368,
+      "sha256": "bda4ddda4b234ce2303829c3eb6f8551d9bc203ac72d0b79f6c6c5bb64a434f6",
+      "blob": "be564f2c61f02c9d4836be9f57a57337f3fa1215"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-research-impact.png",
+      "bytes": 283544,
+      "sha256": "160a8b24b4ce2c6fd5cfdbe8af0f57f85c23c9e66d2f5ed97e44c5cbcc567313",
+      "blob": "ca48a01378aff7e2aa19f317e18725982daa81bb"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/04-user-script.png",
+      "bytes": 225957,
+      "sha256": "6e532ed66501c870c4c778c1fcd32b59477719c949c7599b5d93c3bfa3069599",
+      "blob": "546050c30fc14d2b85ea74500f0efd3d91e2bd43"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/http-results.json",
+      "bytes": 1803,
+      "sha256": "b3b4649c379f4dd55134145a9b812be000e0392fe7b027add222a3e2093b713b",
+      "blob": "cd88f243e2f8b936aed806aa5fd302c806628ad9"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/http.log",
+      "bytes": 814,
+      "sha256": "592b838aa72755555bdc01b7aa5bd1c478559b7567922f675f43feb9fbb8474f",
+      "blob": "fb86f2533e344164db6aa35bdee3830e6297c5dc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/results.json",
+      "bytes": 3984,
+      "sha256": "88c883e32e84f221c2bb9380f00a76674566f8a598561747795030b7d2378dcd",
+      "blob": "f765e4a3d286b77c1a3ba05c7a74c0976d5f86d0"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/script-snapshot.json",
+      "bytes": 30225,
+      "sha256": "046e108ec78b641d712481a6974b883a6dba1adaf64052072e1b8cefd2d470ec",
+      "blob": "3250c56a599ffdbda95c14300d8711de13767fc6"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/workers.log",
+      "bytes": 326,
+      "sha256": "24b93f4bd50102a6197fe9645cc883695eadfe12aa881c2dc3c14c63ff0af6af",
+      "blob": "9fd47cdeed7651dc00f17f93dd86018f704294e1"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-script/sqlite/workflow-http-sqlite.json",
+      "bytes": 1231,
+      "sha256": "1e727a9646f274d53201db62679ea554af1f59b42b78c13e37a938e0358793ec",
+      "blob": "b94d1d57f0f11618557fbfbeeb882c43ce6a59a9"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-approved-readonly.png",
+      "bytes": 376143,
+      "sha256": "b76f80f6af37e08c37a5d563671869ad4dd8aedfc30b04908d491ee4f360f672",
+      "blob": "def2d6317db08d11d3333a2e7afd60ddb1e084b2"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-conflict-buffer.png",
+      "bytes": 375226,
+      "sha256": "de0fff2e5d83fa4550c6577fb15274c7a8abf1ccdf4101a8cf7e8fe45ac3fd02",
+      "blob": "104695bd6ab1a8ea3ae86abba3b10323fae77b95"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-drag-seek.png",
+      "bytes": 365196,
+      "sha256": "c2de28b5c66b3307253308f5d3baeaef27278b84443eb7655d2204873c682e07",
+      "blob": "5563ca3548b79d8b53d94b852e347d4289cb755b"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-edit-after-restart.png",
+      "bytes": 364300,
+      "sha256": "b0b8c00caaba4b3a85b2f72d164717095f6484261f76634471f9f3dab9485b3d",
+      "blob": "48b38d25e1afc39a03cea8577f0f3c66d498966d"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-manual-edit-persisted.png",
+      "bytes": 364285,
+      "sha256": "0b448d595095503e789e5934570ae5f3077d7dca61869c90206ff0d40b3437de",
+      "blob": "ea003c9c0f03366dd84fe5b684b22f544c43b495"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-mobile.png",
+      "bytes": 300531,
+      "sha256": "368f720f7d185654ad1db5d7562ae09d7c69d05cd9b4913bc9cf8739c9f6f7a8",
+      "blob": "e259de01bcb7bfee3631671208e6ff19bfa16535"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-playing-subtitle.png",
+      "bytes": 363129,
+      "sha256": "7fffcbe848adc2a53bbd5def346d863fa3baa288a55ed1ad35f688f1e16bb89a",
+      "blob": "f505560483ed782b4206b6828cba47a9190df50e"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-real-alignment.png",
+      "bytes": 363301,
+      "sha256": "14e953f98b2865e31912d7adc649bfb682a219b7fe7a5c0815bdc9aecd5541ef",
+      "blob": "65b72d0b6e6748de14dd26706b30d83743c605cb"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-real-system-tts.png",
+      "bytes": 345895,
+      "sha256": "fede568ce98c97093cfbb19d6c2b95d124ff52410f66b0fc24d6e239069f74c4",
+      "blob": "9744ddf9b586319ab7a29e69f6aae454f488f830"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/05-silent-timeline.png",
+      "bytes": 321649,
+      "sha256": "9c504eddac1b813bbb1aaee307af916880e5863521a7217148188fd89a397511",
+      "blob": "1b47b86c82b3f4011bdac2a7b0018d746aa4d99f"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/cancelled-job.json",
+      "bytes": 3018,
+      "sha256": "c1e5018463625e109764e9fae269826c334679547456c6c35dffb67fc3c1622e",
+      "blob": "e4e901ebfa5156cbc578021266d5caf974a3a474"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/edited-restart.json",
+      "bytes": 38674,
+      "sha256": "d1be0c6e50159941a74b45b68cf89c2cdd438506aa3cfa5798d22d634abb541c",
+      "blob": "f7abde5514525de65bc7ac316231a3c3d8a20e16"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/migrations.log",
+      "bytes": 1350,
+      "sha256": "9a34d105959a4cd4874bea25de2a88a14664a864dffb3703d9ca42f0d4d0fa44",
+      "blob": "4156005391a929e6c1454504a4a1a8886123f9dc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/model-align-io.json",
+      "bytes": 4499,
+      "sha256": "d3150e75612dba1f46584846bdadcbd94ceae378848b674c36f43eb91f586dda",
+      "blob": "0fa9f1dfd666a11f112fde4df9fa2be6554fc8b2"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/model-transcribe-io.json",
+      "bytes": 4532,
+      "sha256": "76bcfca00adde78eca1140fa2c8eaaa5e20d3a09aa7ce6e9a44976c318735df3",
+      "blob": "0ee7d3a1687178bb23f36a960dcc36cc7debaadc"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/playback-seek.json",
+      "bytes": 208,
+      "sha256": "d12a80acef43f591ade11f0fa60e63c7b136f29ef1d1233867e811c5bddba753",
+      "blob": "99c0b1be249fc5f79aeadab0436a337c2a44574e"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/real-alignment.json",
+      "bytes": 25627,
+      "sha256": "33a6a47197a9286af5ff590c4981a23ce304a193679ea62f14334dca2f76d560",
+      "blob": "3cdaa181c23e9f0a72a801bbad48c72a15a8382e"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/real-asr.json",
+      "bytes": 11809,
+      "sha256": "4402c55748d613dd40ead4e42af2f3b4dc365346a8c62fb9945c88492c153e73",
+      "blob": "2bd99940c4c289564111df0a9ef1f9758ca142b9"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/results.json",
+      "bytes": 7163,
+      "sha256": "27cb715cb2d3b3ad3fdae8ec2052b086901a66392596cdac5b16def201017af8",
+      "blob": "cca1a450d179e3f7e7e0b4d967a113102b1c1999"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/schema-drift.log",
+      "bytes": 31,
+      "sha256": "0983c8c2474f18152b093842104ef9aef25f03fb78861c9e681da2249a64a385",
+      "blob": "235370d9742ffa1d8a321d08c66438619e04578c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/stale-result-job.json",
+      "bytes": 3993,
+      "sha256": "76f9929e6b292634119dd826cc41e1b801fa11ddff4bd1450f13b20c6268e339",
+      "blob": "01dc8175cedc87baa0d35fe4e23e8a0e5952cb8f"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/postgresql/workers.log",
+      "bytes": 884,
+      "sha256": "dcec80f6f9584ed1b670c177377004ed02001a5e66aafc55c9c90d2392b6a79c",
+      "blob": "565edd6bd51debf3cf1840a25d4ac3eeb3459812"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-approved-readonly.png",
+      "bytes": 375908,
+      "sha256": "8d798c0e50982603d2d862ae77d359b93b4f66d4e8e6879bdbeb7e2c9e7f42bf",
+      "blob": "879509b4e233fc0f0b8507c717211213ef38207c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-conflict-buffer.png",
+      "bytes": 375053,
+      "sha256": "53afd1cac6e56458527c7c2c2a159db9abff1aee3804bc1bc5096a02b5bd0249",
+      "blob": "bbfec1519d08363cdcb3daa07be39715f415920f"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-drag-seek.png",
+      "bytes": 364850,
+      "sha256": "d140b164ddf792678f3c32fc18036d6c017d6e46361e28274214088f94643d64",
+      "blob": "faf5ea391977f294441b2f9c27bebae4a5425c23"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-edit-after-restart.png",
+      "bytes": 363972,
+      "sha256": "0beec124765570d585eb867d57f509d49d8a3efb90b034d2d25b570a2b36e8a4",
+      "blob": "5ac90cac56565d7f73f266f6cef3f724d2f52cb6"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-manual-edit-persisted.png",
+      "bytes": 363954,
+      "sha256": "3916d3d8914da8953c506c8e3f3db7cb03d39933bb7ca43b04fb573e95416610",
+      "blob": "28b91fff8df41929ba28647d7b2534346b608d38"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-mobile.png",
+      "bytes": 300397,
+      "sha256": "0288181e0e74c85ced8476ac08b96ec8463c7b992a01ab286e216fbbbc4e2040",
+      "blob": "0c787760bf7f86a0a73853cc6bfae1e4b926a539"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-playing-subtitle.png",
+      "bytes": 362758,
+      "sha256": "ee034821dff6f895a6673d7c546ffda90ecf15c5a125fe29cabe9899dabdd91c",
+      "blob": "e62f3711e77dbb33d2ad8eab5f9e6a1c9be6c601"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-real-alignment.png",
+      "bytes": 362955,
+      "sha256": "35ef97b51b0a5cb9ac1ea8d2124bcc3e1fb40962c1f267b45d8c8326c0151893",
+      "blob": "0fba5979a666dc27b8af6a1f8743e29c70418f10"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-real-system-tts.png",
+      "bytes": 345329,
+      "sha256": "91aa2791da798b9809609db5502fa22e9b37b228be535c5284666201009afc65",
+      "blob": "7a73baf8bca05398b12c04ceeb53f10df475d520"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/05-silent-timeline.png",
+      "bytes": 320975,
+      "sha256": "6616141a5c3aaf3a2b2d30bf0ef814a09f58d01370e2f104db3599d7bd0ce35c",
+      "blob": "ef04e4b3bdcc5d9ba501fd4cf83672b5ab0d1fa1"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/cancelled-job.json",
+      "bytes": 3018,
+      "sha256": "4d3dd065636dbb6fb80e11dbcfeb831b1178c88810a3cf664a449d8c38f572a4",
+      "blob": "005c442d8b6076b58f5e82e2a02eb84221988bb3"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/edited-restart.json",
+      "bytes": 38674,
+      "sha256": "346ac38d7b07eef6521e9f12e42c5cb6782a0d8a8128f8ecdbdd89504e3d7ae6",
+      "blob": "fb26504bec6a58879aad636223da3c6fee0a571c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/model-align-io.json",
+      "bytes": 4499,
+      "sha256": "658f1513ba8c89b0129fe64a84357824aab9ef3b349200073dbacaa3b6838f20",
+      "blob": "5b2a7ac31137f7b0f5f1fdec5030dac1264735da"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/model-transcribe-io.json",
+      "bytes": 4532,
+      "sha256": "622236126967a343bbbd0610680be7bb3a46c142aec5f4ff5c102869eea2f800",
+      "blob": "3a667afb2055990e72d26a940a78360626f736ba"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/playback-seek.json",
+      "bytes": 208,
+      "sha256": "d12a80acef43f591ade11f0fa60e63c7b136f29ef1d1233867e811c5bddba753",
+      "blob": "99c0b1be249fc5f79aeadab0436a337c2a44574e"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/real-alignment.json",
+      "bytes": 25761,
+      "sha256": "28475251bc1726c5ae48a671ec97086fb0d0cbba76f0e8fc885ab2ec725c8c00",
+      "blob": "505e7421f003650ff991048b2736caa7e763057c"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/real-asr.json",
+      "bytes": 12479,
+      "sha256": "9ce81a4e5fe5b6a28e7bf39d005e7e988b1c4a81434e9fd098d8e593f3447e9b",
+      "blob": "d5d881deae9c1cca17812d0f6fdbc3ff6177cbfd"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/results.json",
+      "bytes": 6172,
+      "sha256": "0536f2f40a622f118da1272d97082dc863a9a78c4461ced253fbda5971afb1e4",
+      "blob": "4b09527af7937b32b4a793396eb642ef429f3e62"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/stale-result-job.json",
+      "bytes": 4931,
+      "sha256": "f8eb6710b6e0df9e41daeb070276ec2fa28d977f04cd132957ce8dc1aa858a33",
+      "blob": "6ab64a3c0703f7391c52bda5814bbea459822f14"
+    },
+    {
+      "path": "docs/evidence/phase06/regression-voice/sqlite/workers.log",
+      "bytes": 884,
+      "sha256": "dcec80f6f9584ed1b670c177377004ed02001a5e66aafc55c9c90d2392b6a79c",
+      "blob": "565edd6bd51debf3cf1840a25d4ac3eeb3459812"
+    },
+    {
+      "path": "docs/evidence/phase06/security-audit.json",
+      "bytes": 55153,
+      "sha256": "b8d0705372b86302cfc4ea7087db07272aec9892320f0a8de9b61440c19463d5",
+      "blob": "6b8fa5b9de3c4d47534eafc595308a86d8aa565f"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/06-approved-readonly.png",
+      "bytes": 718721,
+      "sha256": "0637356a8806f4ff41286fd5dcb69c56e74a4ea5f82d062c8b3f1401d7d646e9",
+      "blob": "2f63b4282508928cbb5e3fd4c566e67d8b8c8b9b"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/06-director-workbench.png",
+      "bytes": 711260,
+      "sha256": "948cfd164a172d9d25853850f1571106effe7a653ef647fa6ba9de4e79d69711",
+      "blob": "f705482ce1ee807bf156a6799fd0fa3626241ef3"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/06-edited-persisted.png",
+      "bytes": 677013,
+      "sha256": "22d18efc192b2771c150034923a1be8d2b951f6a6e48dee432c1bdc27201b746",
+      "blob": "0631e83a0a2e476f96c68475942e6a986e45c171"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/06-fork-diff.png",
+      "bytes": 718638,
+      "sha256": "fccf2c12fd2ca620760f43d1949d32d7478dde091334edfb8bda1b16e82e6714",
+      "blob": "0197d9642a6a6f8002efe529fd841db27c13eb7f"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/06-mobile.png",
+      "bytes": 435830,
+      "sha256": "4a40fd111cf426e2302bbf2420611546027a84b50b98e8425a71136522254ad9",
+      "blob": "9a7185e38db13974226370d5e21d09092b1fac2a"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/06-silent-explicit-mock.png",
+      "bytes": 398033,
+      "sha256": "de34d83a739983affe4cd603bb44422b6876d8ef63179096f0437c288de791ef",
+      "blob": "85942720407371e0bd655758afd2468c62e47b17"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/cancelled-cli-events.jsonl",
+      "bytes": 101,
+      "sha256": "cf69d027534998779865d16a741b9c1dadb149d104449f33bf51b61f6ed64215",
+      "blob": "a8922521ed78fa2b33bf80cc1a28e2d48502a270"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/cancelled-director-job.json",
+      "bytes": 27903,
+      "sha256": "5c7a27d307b3c9d7b5bceb8fe6503fde17c79b184daa55a468a7a0267addc46c",
+      "blob": "73dfe70291b70320d2f7c1077318b8ede616395c"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/database-snapshot.json",
+      "bytes": 62873,
+      "sha256": "af929c0c97d06a33cb420bcbfc5142db88a82203ef446b327b23a974673327be",
+      "blob": "a1a830588ebfc28b6e0c92c6cbab2815406ccd2a"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/real-cli-events.jsonl",
+      "bytes": 13758,
+      "sha256": "2c8a700601d411346b3b948bc34a72c196150a0753cf3d6865ba399f1ecb82c8",
+      "blob": "5c325271f368db0030297714dee73b5be5f73d6a"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/real-director-job.json",
+      "bytes": 35191,
+      "sha256": "97647a29bcaf0875889945402722ef297466926adbca0ad1d39d15180c4336a6",
+      "blob": "06d5c664ce6928d74d533246141d59784d1e6309"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/real-director-snapshot.json",
+      "bytes": 82594,
+      "sha256": "c57bca3982c2051b3a9f0d0c06f9b79a272f47db86677e95f003d212592a0214",
+      "blob": "1a18a00a78bcd6c8f198e2b8c31ff1f93628eadb"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/results.json",
+      "bytes": 3252,
+      "sha256": "9bb23c868cd1c553c0faaae11b70d2cf7d3838e127b98bc7f039e1379f548590",
+      "blob": "4c3c08c2aa70ecb2ebb5abb6e44cf592181964ab"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/time-mapping.json",
+      "bytes": 7076,
+      "sha256": "302df6da2801df45b4916fd746a1079fd955cf149f37fcccde002d983ccd67a1",
+      "blob": "7c7e776bdcb9b428c78b4e8770eccd18ab9d382d"
+    },
+    {
+      "path": "docs/evidence/phase06/sqlite/workers.log",
+      "bytes": 816,
+      "sha256": "f4df2fb5787935ff22c56d22399a32b7a7b31d58e125dcef6886e675b9176b79",
+      "blob": "b51be1513afcb601519c2d5cdac294cd20073347"
+    },
+    {
+      "path": "docs/evidence/phase06/summary.json",
+      "bytes": 2060,
+      "sha256": "7b2bc2b49613554af1e6555763ee3ee87c9743c3007a3de2c1fc8f81679eb9f4",
+      "blob": "5edfcea34fb854405b822bfcbf68cdfa2654d27a"
+    },
+    {
+      "path": "docs/evidence/phase06/ui-protections/sqlite/06-before-after-diff.png",
+      "bytes": 494101,
+      "sha256": "d2da7bd2ab995982c4c17911adafc21719e510d5b8a0696d191f2be448485c65",
+      "blob": "9a10c5b2ce7759d2fe6e9e7b41afaf5be54faf58"
+    },
+    {
+      "path": "docs/evidence/phase06/ui-protections/sqlite/06-conflict-buffer.png",
+      "bytes": 442740,
+      "sha256": "c9923cfd62c4317d21ebe87791be3e811645427db52ef6b6f01be802d907c6d8",
+      "blob": "de7afded17f434726a373f896772bf1d67fec51a"
+    },
+    {
+      "path": "docs/evidence/phase06/ui-protections/sqlite/06-workbench-viewport.png",
+      "bytes": 107945,
+      "sha256": "e7cc4f7423092c9b7d73f9fcbc2b3750b624974ee9bfc2ed78a68f9cf689d733",
+      "blob": "8e2512223ebee23e79f826f2af8c8d068c84523f"
+    },
+    {
+      "path": "docs/evidence/phase06/ui-protections/sqlite/results.json",
+      "bytes": 776,
+      "sha256": "e74c378215943534ac63f455f9387d3474e1b87a20d27a9683efa1d2d0af069f",
+      "blob": "3fed1b23b5342108f60982e9305b410b0a6f84fd"
+    },
+    {
+      "path": "fixtures/director/README.md",
+      "bytes": 1847,
+      "sha256": "1d0fad227815c64aa04b7f100c59ec5deddbd45707666c6e97f5c3f62be0406e",
+      "blob": "b1dc5f2fb373de1421aaa53f5dc3db48bd5fac78"
+    },
+    {
+      "path": "fixtures/director/director-120s.wav",
+      "bytes": 5292078,
+      "sha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d",
+      "blob": "e0a5a7bb05f32e105e36b75d24f8efd0909011f7"
+    },
+    {
+      "path": "fixtures/director/ffprobe.json",
+      "bytes": 1193,
+      "sha256": "3199e3897a04012a6f964102f83f127fbd8f196919678754110cefa1874e6f91",
+      "blob": "5f8723e08da0147b16ea9c8f20663153a36eb98c"
+    },
+    {
+      "path": "fixtures/director/sample.json",
+      "bytes": 2422,
+      "sha256": "8409735c9ca4b93ecf14e71828b266356b9b4dc9e54528ae611d10c6b9dd82a2",
+      "blob": "2b6f1db71abaa02dd1ac6f800e0dcb10d508f355"
+    },
+    {
+      "path": "plans/06-director.md",
+      "bytes": 4138,
+      "sha256": "6fe5fe0ff15022528a7160691de780cadcbdf33ebbeb816c00aaa53d7c4f686b",
+      "blob": "d41bd6eb16a679aecf9dd5e7e33a186ef28e3cc7"
+    },
+    {
+      "path": "scripts/director-evidence.cjs",
+      "bytes": 2533,
+      "sha256": "e027ab5832f9c80047bafa5a26a3f6879ad80d37aae6c64ce5ab2ded9742bbe9",
+      "blob": "cd2db4c72aa72c767b69cdb48418c5483cef6494"
+    },
+    {
+      "path": "scripts/director-fixtures.cjs",
+      "bytes": 4181,
+      "sha256": "fa33ec2595b772e2a317c955b39673e6990c338bd1ddd1bd10ae6c78d2d19a3c",
+      "blob": "0a20576a7f2a4a476509292aef45560b7b0e0ed5"
+    },
+    {
+      "path": "tests/ACCEPTANCE.md",
+      "bytes": 13112,
+      "sha256": "8ece7cca0b8ea343c90e05baf5321817f107bceaf0b372b45867bc7441c6b23e",
+      "blob": "79914cb22079cf6037d7f1367b86466651564b64"
+    },
+    {
+      "path": "tests/director/run.cjs",
+      "bytes": 32873,
+      "sha256": "bf504a95ad83e1e648005ebe7f8f62a6cc12a84ec5153eccc9d9b46a21c18629",
+      "blob": "ec1b3d0bc3fca4a5806e3b609a574fc2e45dbd8b"
+    },
+    {
+      "path": "tests/director/ui-protections.cjs",
+      "bytes": 17526,
+      "sha256": "d928fd6e65e940a7d75316d6b8c9df60fbd4ed9df9508c9f831cd919360941c5",
+      "blob": "5c7c1a7bbef22a85d2e08c0f4801fc9126c74ecb"
+    },
+    {
+      "path": "tests/director/verify-evidence.cjs",
+      "bytes": 4190,
+      "sha256": "793927ae1c6019c95bb8fab28b38ff2d87ef3550559260aa3b079cd9d87fef15",
+      "blob": "5258b353720290c3c1037ce0a7f9cdf18ba4ebc5"
+    },
+    {
+      "path": "tests/unit/director.test.ts",
+      "bytes": 12395,
+      "sha256": "ef1328090c9e94318d7c44999ccaaac78ea506e3e16fe258ba122693e86d2c57",
+      "blob": "f31ba7b74c99a20976e7e3e5d0632fe62a968b6b"
+    },
+    {
+      "path": "tests/voice/run.cjs",
+      "bytes": 37234,
+      "sha256": "19f06e106371ab43ce65fe3778f0e9109f96526d09864bb28dd164ad8219aab3",
+      "blob": "d793e29471f90c23039d8cf5ee70532e8f81498a"
+    }
+  ]
+}

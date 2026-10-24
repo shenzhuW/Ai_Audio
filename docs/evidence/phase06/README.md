@@ -1,5 +1,7 @@
 # Phase06 验收证据索引
 
+最终远程复核补充：[正式报告](../../PHASE_06_REMOTE_ACCEPTANCE.md)、[截图索引](remote/README.md)、[284文件扫描](remote/code-security-audit.json)。本轮重新运行66单元/类型/构建与两库6组只读浏览器/重启检查；以下157组为原阶段实际记录，已逐文件核对，未冒称全部重跑。
+
 [交付报告](../../PHASE_06_DELIVERY.md) · [机器核对汇总](summary.json) · [自制120秒样例](../../../fixtures/director/README.md)。全部为真实运行记录；Mock只出现在明确标记的静默/边界测试中。
 
 | 材料 | SQLite | PostgreSQL |

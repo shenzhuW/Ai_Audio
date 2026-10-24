@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "code": "ad26a25e2bc01c9a22e95c4a4076b5ea09720f25",
+  "baseline": "0f2fa62bf4fd9ef6cde2ff21540fed71574b8258",
+  "unit": {
+    "pass": 66,
+    "fail": 0
+  },
+  "previousIntegrationGroupsRechecked": 157,
+  "freshReadOnlyBrowserGroups": 6,
+  "realAIReexecuted": false,
+  "backends": [
+    {
+      "backend": "sqlite",
+      "status": "PASS",
+      "model": "gpt-6.1-sol",
+      "runId": "01a16bd0-11e7-7a62-b621-3dd12a253c19",
+      "durationMs": 93545,
+      "usage": {
+        "input_tokens": 13081,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3971,
+        "reasoning_output_tokens": 246
+      },
+      "shotCount": 6,
+      "totalFrames": 3600,
+      "voiceDurationMs": 120000,
+      "scriptRevisionId": "31d2e92b-7d29-4047-8c96-f5c515f7e041",
+      "voiceRevisionId": "1bd6b04f-3137-4a06-800b-0b26577f919f",
+      "audioSha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d",
+      "approvedDirectorRevisionId": "ebe8625d-4aa3-46fe-a246-2cb5c59b0af7",
+      "paragraphSplitAndMerge": true,
+      "routes": [
+        "code",
+        "bound",
+        "pending"
+      ],
+      "browserChecks": 3
+    },
+    {
+      "backend": "postgresql",
+      "status": "PASS",
+      "model": "gpt-6.1-sol",
+      "runId": "01a16bd0-3714-71a3-86a7-53fe4132a08c",
+      "durationMs": 98857,
+      "usage": {
+        "input_tokens": 13097,
+        "output_tokens": 4113,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 252,
+        "cache_write_input_tokens": 0
+      },
+      "shotCount": 6,
+      "totalFrames": 3600,
+      "voiceDurationMs": 120000,
+      "scriptRevisionId": "ebf416a4-e3ef-4f09-9168-fc69eec149f0",
+      "voiceRevisionId": "6084e81b-ecee-4586-bbd8-c05ca746c5a0",
+      "audioSha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d",
+      "approvedDirectorRevisionId": "4f3fe441-be88-4de0-a316-5cc50be325bf",
+      "paragraphSplitAndMerge": true,
+      "routes": [
+        "code",
+        "bound",
+        "pending"
+      ],
+      "browserChecks": 3
+    }
+  ],
+  "security": {
+    "scannedFiles": 284,
+    "findings": [],
+    "maxFileBytes": 5292078,
+    "duplicateGroups": 13
+  },
+  "safetyRuntimeUnchanged": true,
+  "notes": "Fresh unit/type/build and browser restart checks; existing actual AI/database/integration evidence was rechecked, not re-labelled as new model executions."
+}

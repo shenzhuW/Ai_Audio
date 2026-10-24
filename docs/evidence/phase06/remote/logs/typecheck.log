@@ -1,0 +1,7 @@
+
+> ai-code-video-studio@0.1.0 typecheck [repo]
+> pnpm --filter @studio/web typecheck
+
+
+> @studio/web@0.1.0 typecheck [repo]\apps\web
+> tsc --noEmit

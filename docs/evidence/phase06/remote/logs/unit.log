@@ -1,0 +1,82 @@
+
+> ai-code-video-studio@0.1.0 test [repo]
+> pnpm --filter @studio/web test
+
+
+> @studio/web@0.1.0 test [repo]\apps\web
+> node ../../scripts/test.cjs
+
+✔ Signed local session rejects forged and expired cookies (1.6167ms)
+✔ Local-only host and origin checks reject remote host and CSRF (0.2663ms)
+✔ Workflow persists approval truth: draft/edit/submit/approve/fork, immutable old content and history (26.0513ms)
+✔ Workflow rejects stale approvals; identical retries reuse exact response and one durable downstream job (3.3644ms)
+✔ Rejected revisions fork for editing; upstream replacement derives transitive stale without rewriting approved status (7.9197ms)
+✔ Mock jobs have durable claim/finish, cancellation fencing, bounded retries and expired lease recovery (7.2768ms)
+✔ Claim candidates persist separately; edit/reject/accept are explicit and accepted quotes stay unverified (17.4262ms)
+✔ Candidate generation rejects invented source IDs, nonliteral quotes and attempted verification (9.1523ms)
+✔ Missing original text creates an explicit insufficient result and no fake evidence (1.3038ms)
+✔ Approved research and changed input versions fence late candidate generation (6.4389ms)
+✔ Candidate review enforces concurrent version, current source integrity and immutable revisions (5.164ms)
+✔ Fork never accepts old candidates or old Source IDs; accepted formal claims follow existing clone mapping (5.795ms)
+✔ Candidate inputs exclude Mock, summaries and vision descriptions; limits are explicit and hashes bind full extracted text (2.0358ms)
+✔ PDF candidate quotes preserve real page and exact whitespace; edited text hashes invalidate acceptance (2.3436ms)
+✔ Conflict evidence remains a warning after explicit acceptance and never becomes supported (3.4393ms)
+✔ Codex data-only policy removes all filesystem and executable model capabilities (1.4692ms)
+✔ Codex output needs a completed turn and search trace; commands and file changes fail closed (0.387ms)
+✔ Codex child receives no application database, provider tokens or Git credentials (0.1314ms)
+✔ Native worker bridge loads without bundling a CLI and propagates pre-cancelled audit (1.6155ms)
+✔ Public fetch rejects local/reserved addresses before connecting and excludes executable HTML (46.9386ms)
+✔ Real search persists independent fetched text, never model summaries as matched evidence (3.3708ms)
+✔ Cancelled Codex attempt can save audit without regaining a lease; old owners cannot alter later attempts (6.1504ms)
+✔ Director uses approved confirmed Voice as a 3600-frame timebase; silent planning never invents voice anchors (12.2469ms)
+✔ Shot duration/order edits reflow exactly; gaps, overlaps, bounds and unknown references are rejected (14.323ms)
+✔ Director enforces explicit pending/code routes and current source allow-list without commercial licensing gate (8.1785ms)
+✔ Director approval/Fork keeps shot identities and immutable history; new voice approval invalidates director (11.8963ms)
+✔ Director rounds once with a half-open frame interval; edits preserve exact integer coverage (2.5732ms)
+✔ Director freezes exact approved input; cancelled and late results cannot write shots (18.3051ms)
+✔ Director rejects wrong result identity, oversized transition and fake Claim without partial mutation (6.4736ms)
+✔ A shot must reference every spoken segment in its time range, while genuine silent pauses are allowed (2.5004ms)
+✔ Director Job lease recovery, retries and idempotency fence old workers (7.9498ms)
+✔ Director history diff exposes the exact before/after shot data, not only changed IDs (7.4372ms)
+✔ Real database: 30/240 seconds and all entry modes survive closing and reopening (21.8804ms)
+✔ Real database: atomic optimistic update permits only one writer (1.2421ms)
+✔ Reject blank prompt, zero/negative/nonfinite duration, invalid aspect, budget, unknown keys (2.2219ms)
+✔ Seconds and mm:ss are exact, invalid strings never silently normalize (0.3362ms)
+✔ Render child environment never inherits database, user session, token, proxy or Node injection variables (0.1297ms)
+✔ Protected video byte ranges support seeking and reject invalid, excessive and multiple ranges (0.2597ms)
+✔ SceneSpec freezes frame timeline and declared editable props, rejects unsafe/invalid inputs (5.027ms)
+✔ FFprobe gate rejects incorrect encoding, frame rate, frame count and dimensions (2.633ms)
+✔ Render jobs reuse workflow idempotency, heartbeat lease fencing, cancellation and failure attempts (5.8908ms)
+✔ Research upload accepts actual MP4 brand but rejects disguised executable, bad extensions and byte overflow (7.19ms)
+✔ Local PDF parser loads standard fonts and extracts real pages/text with Windows-compatible paths (605.3949ms)
+✔ Research records are revision-bound; missing evidence and Mock cannot become verified facts (4.2483ms)
+✔ Research approval freezes source/claim/evidence/index and fork copies a coherent snapshot (3.825ms)
+✔ Research analysis uses durable jobs, idempotent enqueue and fences approval/cancelled results (2.8082ms)
+✔ Script timing is a transparent mixed-language estimate and diff follows stable IDs (2.2934ms)
+✔ Empty scripts cannot submit; partial AI output cannot overwrite another segment (3.4418ms)
+✔ Current script workspace reports consumers of earlier approved versions and predicts draft impact (4.5221ms)
+✔ Structured script imports without research, keeps logical IDs through edit/order/delete and protects 409/idempotency (1.2535ms)
+✔ Script binds only approved research and coherent Claim/Source; warnings never assert verified facts (3.0647ms)
+✔ Approved script forks stable segments, computes diff and invalidates only declared changed segment dependencies (4.7991ms)
+✔ Script generation freezes whole/partial inputs, records explicit Mock and fences late results (4.3718ms)
+✔ Real upload validation checks extension, contents and byte limit (0.249ms)
+✔ Real analysis operations freeze actual audio and reject silent/no-audio timelines (1.825ms)
+✔ Unbound ASR subtitles are drafts, not fabricated script-position mappings or approved final input (1.5686ms)
+✔ Model timing conversion preserves repeated-word offsets and nonuniform acoustic times without averaging (11.313ms)
+✔ Silent duration obeys configured resource limits instead of bypassing project duration bounds (1.7952ms)
+✔ Ordinary saves cannot invent forced alignment provenance (1.3644ms)
+✔ Legacy text voice drafts convert only by explicit current revision/version and preserve their identity (1.0907ms)
+✔ All voice modes persist explicit timelines fixed to current approved script; silent mode never creates audio (5.348ms)
+✔ Cue mappings distinguish repeated words by offsets, retain anchor identity, and validate same-level overlap and time bounds (4.9217ms)
+✔ Voice drafts reuse idempotency, 409, approval immutability and stable Fork identity (4.3339ms)
+✔ Voice submission/rejection is immutable and Fork restores editable stable anchors (3.6311ms)
+✔ Replacing approved script invalidates voice dependencies and affected cues without modifying historical snapshots (5.5112ms)
+✔ SQLite workflow transactions survive reopening, roll back failures and preserve legacy project JSON (71.7735ms)
+ℹ tests 66
+ℹ suites 0
+ℹ pass 66
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1594.6459

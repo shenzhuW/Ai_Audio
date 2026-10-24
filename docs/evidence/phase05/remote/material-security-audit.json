@@ -1,0 +1,377 @@
+{
+  "at": "2026-10-24T02:16:01.856Z",
+  "mode": "exact-index",
+  "commit": null,
+  "scannedFiles": 61,
+  "maxFileBytes": 376514,
+  "findings": [],
+  "limitations": "Pattern/path/binary checks plus human fixture/evidence review; not a guarantee against every possible encoded secret.",
+  "files": [
+    {
+      "file": "docs/CHANGELOG_IMPLEMENTATION.md",
+      "bytes": 15995,
+      "sha256": "0302d9f41f27097f279362b587fd3b5468cb183392e44b4e8fa74f35225ca19c",
+      "blob": "23a355daa4a535d57fc977965f5ddb9e19046837"
+    },
+    {
+      "file": "docs/PHASE_05_DELIVERY.md",
+      "bytes": 11102,
+      "sha256": "204e99ceb0a25f2788ad6d686d9b16fce269bd6de590650e61f8ac138052d975",
+      "blob": "c23f669f563006c02e325c6d8dac63301a1abe8f"
+    },
+    {
+      "file": "docs/PHASE_05_REMOTE_ACCEPTANCE.md",
+      "bytes": 13990,
+      "sha256": "567accc506b74cca9b4a3c7152f89558d9023ec1e6b6fdf724ae822f5b6dec9a",
+      "blob": "98f3a3a6b445c3ff22f9546954608f323cf4b51e"
+    },
+    {
+      "file": "docs/evidence/phase05/README.md",
+      "bytes": 3225,
+      "sha256": "81c3b7ae8f66776ff33bee1bd5e7b96068f496e85563e3f21ab56fa878ebbcde",
+      "blob": "9582928c9c419df35695c34bc3459d6838e23d59"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/README.md",
+      "bytes": 2455,
+      "sha256": "30c820578c5341926baf3affaaf8cde71ab74b3ba00ab42f9b11d6a0e2e1fb66",
+      "blob": "74ac8dbcc3fc258c4b373ebfffdff97d2aa51107"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/code-security-audit.json",
+      "bytes": 63020,
+      "sha256": "a75498881eae38129f4cfbbb1c9db0f16a1bf1352c95d6b512cc69ec0eae85ec",
+      "blob": "da498bd8d853b89723d1c22166c0bdc3ce1af64a"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/environment.json",
+      "bytes": 593,
+      "sha256": "bbb4a4d9d42a542e26b7372ebb531319f7e9dfdfa8eec778187968d06902f61d",
+      "blob": "aa69880d06af2296c3d765cb2e7a7615a614f3fc"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/ffprobe.json",
+      "bytes": 1193,
+      "sha256": "f22c2e32250b194a973b1826d3ecc37ee951037797d8973c016c708422553f87",
+      "blob": "3d8d1176ca9bc5263a3e7e65567d7d53327c27bd"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/remote-build.log",
+      "bytes": 6353,
+      "sha256": "f85dc7c504cda5f22dde23a7c9b8cb9e332345a5e84a77d5e0d08d5fec8c2059",
+      "blob": "d871fd58ed425753d2b5f90ce26d903cf7629b0d"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/remote-typecheck.log",
+      "bytes": 148,
+      "sha256": "0180decf6774f3e311af82367ad5ac440791e33c34d3aa9226fc318a9a8e96ea",
+      "blob": "66b3bb7a33bacd2a2de3fbf3ac0424ce5f917a64"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/remote-unit.log",
+      "bytes": 6314,
+      "sha256": "08dda578dbd587bfa9891602a05eb226407fd9a093d47ea6d500c245fcfc1e7a",
+      "blob": "e72be7799f55311cb8f384b2ddd0d40dc9a0f425"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/remote-voice-postgresql.log",
+      "bytes": 1195,
+      "sha256": "00f4b925db7dfafcc0a2908e23a135a2e732e0f0af4365ea2502cbc570802eac",
+      "blob": "ad0ff50f4c3d70210bab7cc3245a4e1d1618f913"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/remote-voice-sqlite.log",
+      "bytes": 1078,
+      "sha256": "a9a47a470736a90f5fc073ba1d3a310077c20d48fcefcc9650217c2e616b348a",
+      "blob": "95cc709c192b551d252e7d3ebced86aa30f8ad59"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/verification.json",
+      "bytes": 5782,
+      "sha256": "6c8ced3f410907a6657f1f78cb5f7d38c54f92043d8c8908fce9f3093e81cc3a",
+      "blob": "404880a1f88e188ed3f4c3309514107e7bfc4392"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-approved-readonly.png",
+      "bytes": 376514,
+      "sha256": "6f5db18a320e28c055949a3cc6b64364f4ab3a5d0250b2cad3692f75ab4f3eeb",
+      "blob": "b3294f49b93e3c51cd54f0d978cc55d511a80bdd"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-conflict-buffer.png",
+      "bytes": 375540,
+      "sha256": "b86b58cdbce5effd02fb32116b5f52104c3f8da1a869b2186ffcfb4dafb47bde",
+      "blob": "0173c1395d807ddc25765276500f099362c09684"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-drag-seek.png",
+      "bytes": 365456,
+      "sha256": "0b50db9fb801e602daeaebc5abcdd9b47df2953667562351aa24e98b47d533d0",
+      "blob": "51bf6cd2bd9dbe5d6a591916b09ad59f1be25b9b"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-edit-after-restart.png",
+      "bytes": 364562,
+      "sha256": "c6133d53d8353c4a34c9e312f55babb0ef27b1958fee28f408dd3291d8f454f9",
+      "blob": "d5bc4b20d41f86ffefd1c0c16bce277d1ce82db5"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-manual-edit-persisted.png",
+      "bytes": 364562,
+      "sha256": "c6133d53d8353c4a34c9e312f55babb0ef27b1958fee28f408dd3291d8f454f9",
+      "blob": "d5bc4b20d41f86ffefd1c0c16bce277d1ce82db5"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-mobile.png",
+      "bytes": 300696,
+      "sha256": "d4bae317ef6d377d7386f0f1550da0de9b8478349171045c00b848befa6caaf0",
+      "blob": "dfce950ee578867d365f922315b29d56f4b3211b"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-playing-subtitle.png",
+      "bytes": 363305,
+      "sha256": "767565d5dc533f535e59699d44140dc920920225b4a6c3743956d0ea8a888ca4",
+      "blob": "0635ab04bddea847b9eeb2499b5b06caa799aa09"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-real-alignment.png",
+      "bytes": 363566,
+      "sha256": "c725ec5b385c8ebe8f93d06a104efff36c16ed682bdb21d7b8c5cc3641379fad",
+      "blob": "1bb27f8304645c6431fda18815541131f9ea0ebc"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-real-system-tts.png",
+      "bytes": 346109,
+      "sha256": "f76d3a6fdaf917486aae65ec77920eadf055a461afce4e30771885eda10a5dde",
+      "blob": "5db3edf3d7926f50be09374de37363efc4e6d686"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/05-silent-timeline.png",
+      "bytes": 321755,
+      "sha256": "b3d01ace9aa382a432dc7f79b8547b2fea8d06e2d44d6c789735200471afe527",
+      "blob": "a8e46507238a062741dff901d25412466f4a8b21"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/cancelled-job.json",
+      "bytes": 3018,
+      "sha256": "ae58e163a816f93712f6e9cab413ed515e381fae78932129dd66388c65e566d4",
+      "blob": "0b0de107f7a0640c8e97ccc190dbc320d6a1cade"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/edited-restart.json",
+      "bytes": 38674,
+      "sha256": "bd29acbdbbceb4de37d8b750c75f2fa3776d0d96c08669fabddf68dbf3c63f73",
+      "blob": "a4e8edc2c38739a0fbbfeb4803e4de40bef4e48d"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/migrations.log",
+      "bytes": 1266,
+      "sha256": "de531cdf7951614f294c3be977454ecc721dfd1075c63225f5fa1598c922a9fb",
+      "blob": "374017312b0829b3045d6db58892557b164a24e3"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/model-align-io.json",
+      "bytes": 4499,
+      "sha256": "a799f2d7cce6206d98f3608e014794f6c1d2d7262bc8d70a5a03066c798af1ff",
+      "blob": "b4b372607a3eb767ba4d276e2b0a31b67a87d689"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/model-transcribe-io.json",
+      "bytes": 4532,
+      "sha256": "dfa7d823df4a59a10f3df1edc7bd3af04972f78a940a9ea8b047c9d0b700fe3a",
+      "blob": "8eaff29bc171a982a61eda03b6e9fd8e94b44a98"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/playback-seek.json",
+      "bytes": 208,
+      "sha256": "d12a80acef43f591ade11f0fa60e63c7b136f29ef1d1233867e811c5bddba753",
+      "blob": "99c0b1be249fc5f79aeadab0436a337c2a44574e"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/real-alignment.json",
+      "bytes": 24955,
+      "sha256": "f195316114f37bab40780dd810abeb7c84b580c6e9f1bd1f56ee78109a5a7e54",
+      "blob": "982434875fec429d66750756a66a2264d5d749b1"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/real-asr.json",
+      "bytes": 11139,
+      "sha256": "4ac9deb61abd71c4a0ddc63c6e71cdc1ad1de449db1d2b76b164635780a21c12",
+      "blob": "7960384e033ecd5fe3f05e3f1ed1fb7fdc66f90d"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/results.json",
+      "bytes": 7068,
+      "sha256": "6804b9b90f7e8a35fb15e509e700f3a89740b81f7481ebaa1eb9f2449f51788d",
+      "blob": "6ad84023bcb79c0b96f4326740c9b9ee06d9a696"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/review-details.json",
+      "bytes": 2302,
+      "sha256": "a9fa24c0d4c5d649fd750516c4e1c339f19be5c7c234fb7e42528cb6f899e493",
+      "blob": "96f529cadd108cb95ce982939f5ac1a27f2f3ac6"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/schema-drift.log",
+      "bytes": 31,
+      "sha256": "0983c8c2474f18152b093842104ef9aef25f03fb78861c9e681da2249a64a385",
+      "blob": "235370d9742ffa1d8a321d08c66438619e04578c"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/stale-result-job.json",
+      "bytes": 3456,
+      "sha256": "0b44c9b7c7c7759ad2c303363e6ea596c499a7620a3425de2154bed02f4d02ef",
+      "blob": "aa9ee93a3dedc0ab3b2a7db1f4589a5fc6c4292e"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/postgresql/workers.log",
+      "bytes": 884,
+      "sha256": "dcec80f6f9584ed1b670c177377004ed02001a5e66aafc55c9c90d2392b6a79c",
+      "blob": "565edd6bd51debf3cf1840a25d4ac3eeb3459812"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-approved-readonly.png",
+      "bytes": 375701,
+      "sha256": "b18632df03fcc306a4bfd743af8fd8e8bab5e30fce56dc03effa05f364dfe3f6",
+      "blob": "dda493e95e85e338e64180ddb306a26846aa6a44"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-conflict-buffer.png",
+      "bytes": 374582,
+      "sha256": "6b0a3747031b26aa1ba396fd9cdff50b0e91bba8696f84ed0d1ac7f35aec4ea8",
+      "blob": "3dc5983fc5112973c5f41d90c3dbd11b9b462e96"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-drag-seek.png",
+      "bytes": 364541,
+      "sha256": "88febd58bc3309b99cd1107f1d5b9646d844b059297bc992c929ca48a5b84916",
+      "blob": "d76383f94c11a7cdf176c5a88bb193b4f1a67445"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-edit-after-restart.png",
+      "bytes": 363638,
+      "sha256": "5eec547e4e61800772934b966a31dbd1fbd31f457714ab950d59b008f0fa1f8d",
+      "blob": "b292bf757e2cfbf32ea5bd827b5dcf7614b54dbd"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-manual-edit-persisted.png",
+      "bytes": 363638,
+      "sha256": "5eec547e4e61800772934b966a31dbd1fbd31f457714ab950d59b008f0fa1f8d",
+      "blob": "b292bf757e2cfbf32ea5bd827b5dcf7614b54dbd"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-mobile.png",
+      "bytes": 300058,
+      "sha256": "498f7f4bd1bcd13ad005ad2688559188445e87718d382a31ad57eb16ffdeb0da",
+      "blob": "91c1407bd94de8e5d89d0ba8cd0ac6bde6c322cc"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-playing-subtitle.png",
+      "bytes": 362505,
+      "sha256": "56c01a2cd0b646a0454e673595a10d5711061fe2cbc88b4fc87f8ffb4fffa2c8",
+      "blob": "1588be664b9b0592e229280b5c2e455ecb8ebd79"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-real-alignment.png",
+      "bytes": 362634,
+      "sha256": "0a8d8584e36d72b4a677a4681b902fcc15d2620f4e1bb6bb5d1a0791e90c695c",
+      "blob": "0e8685519f6ed508f7c168c8e103ca1cfaf074b7"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-real-system-tts.png",
+      "bytes": 345573,
+      "sha256": "4d6e0064fce7b4b28aa9f2ee6558e766e0aec6eb411e8a52c28de51c4ffbce4e",
+      "blob": "acc49875cf45b897882f94f2f69a1600af708d9a"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/05-silent-timeline.png",
+      "bytes": 321384,
+      "sha256": "549e9b5a1d646b0e416dbf93c1f3ed600194e0bea305348bbdf96fea32e0c0a6",
+      "blob": "e8617d8a3c3c55031c56d121a156e5fe41980d92"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/cancelled-job.json",
+      "bytes": 3018,
+      "sha256": "4c710703de6047fd5264ce5eada6aa0a18532ffd7c232cd56548fa1a7bf12ac9",
+      "blob": "ddbbee48b1b40fceaafb3fa20e72e266fd8633dd"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/edited-restart.json",
+      "bytes": 38674,
+      "sha256": "10a447c5e8d6e491899fa0839c125f5bed89e7e5864e562fe621d01957e9559a",
+      "blob": "c85b71047b97ffed36bc1479e6180dee2dcecdbe"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/model-align-io.json",
+      "bytes": 4499,
+      "sha256": "989449c4c1b8772b0594a07a0f804d2a4cba25d2fe7885e4b2d570574f70a49c",
+      "blob": "bb24704d553e1f4f5b25fb79d932dc345ffb8bae"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/model-transcribe-io.json",
+      "bytes": 4532,
+      "sha256": "3210dfc26201dda38901fe2f0f865653f3277b2e468157f5673e44d2a3439676",
+      "blob": "cc0b52722b90b2deaef21862ac2343eca40b37ab"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/playback-seek.json",
+      "bytes": 208,
+      "sha256": "d12a80acef43f591ade11f0fa60e63c7b136f29ef1d1233867e811c5bddba753",
+      "blob": "99c0b1be249fc5f79aeadab0436a337c2a44574e"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/real-alignment.json",
+      "bytes": 24955,
+      "sha256": "f1ee4ee24e36d2f8e17714d4644f1b98ba7d68dbda6f10af6650ea50ea0393ae",
+      "blob": "9213428c7f39e7ed05ec015f9427260886a3b0cc"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/real-asr.json",
+      "bytes": 10868,
+      "sha256": "48f9aef3b1ac19f10f99fdc5198159dd2cc20b143539348f2fcd07a4ecf5395d",
+      "blob": "2e661e5b500d7ffeaa007918b71e92e3648bd39a"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/results.json",
+      "bytes": 6172,
+      "sha256": "65292ec1fa36f1117cd75bf2a4768ac587af5b66c1246a6c71e803b2dfbbaa9e",
+      "blob": "7abe7894c0787bdb00989661f569d60649730822"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/review-details.json",
+      "bytes": 2297,
+      "sha256": "9271e0ecbc6e865851b472c24fa8141a7397f4b5aaa391fe4d13974542937846",
+      "blob": "0d82e4f24bc8ee62dc196ba799bbcce4ed3fb318"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/stale-result-job.json",
+      "bytes": 3456,
+      "sha256": "6144107bcf95d2562a2f4fbaf663da4e227b1c45bfc7390c550afa346d6807da",
+      "blob": "722113d03954157460a887f6bd869fc4b6cdddc0"
+    },
+    {
+      "file": "docs/evidence/phase05/remote/voice/sqlite/workers.log",
+      "bytes": 884,
+      "sha256": "dcec80f6f9584ed1b670c177377004ed02001a5e66aafc55c9c90d2392b6a79c",
+      "blob": "565edd6bd51debf3cf1840a25d4ac3eeb3459812"
+    },
+    {
+      "file": "tests/ACCEPTANCE.md",
+      "bytes": 12149,
+      "sha256": "e62da15de4c37f0c70753de1a2fc04262d9ec3f82cd11082e5c600e0fd7ae801",
+      "blob": "dcf9c0336dbebbd97914bf2ac36ed435b6ef2187"
+    },
+    {
+      "file": "tests/voice/run.cjs",
+      "bytes": 37102,
+      "sha256": "5cbba9ccdbe359816195db86ea8dc0ec8e4e90281981c95248212b30b872e38f",
+      "blob": "b0afc55d4b4aaf7d5f031bf482ffe67fd1dcd699"
+    },
+    {
+      "file": "tests/voice/verify-remote.cjs",
+      "bytes": 9210,
+      "sha256": "ab617691277f56f4eec210e6fa4c28a1b6e9168648b7967a5f9b88b646525d92",
+      "blob": "b262d6d4ce542dfccc51cd392e64505be725b14c"
+    }
+  ]
+}

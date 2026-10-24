@@ -1,0 +1,113 @@
+{
+  "id": "ac92115c-0459-455c-81a8-c9be1fa3da7c",
+  "kind": "voice",
+  "version": 3,
+  "provider": "voice",
+  "state": "failed",
+  "inputRevisionIds": [
+    "721c8c8a-72ce-4edf-aaa3-fc70ca268c6f"
+  ],
+  "idempotencyKey": "25828330-10e1-4a8f-96c0-c61e13531b07",
+  "attempt": 1,
+  "maxAttempts": 3,
+  "attempts": [
+    {
+      "workerId": "9c055401-b5b8-4f53-a0f9-aab1dbdae655",
+      "number": 1,
+      "startedAt": "2026-10-24T02:10:49.854Z",
+      "finishedAt": "2026-10-24T02:10:58.909Z",
+      "state": "failed",
+      "errorCode": "TARGET_CHANGED"
+    }
+  ],
+  "targetVersion": 17,
+  "leaseOwner": null,
+  "leaseExpiresAt": null,
+  "resultRevisionId": null,
+  "errorCode": "TARGET_CHANGED",
+  "createdAt": "2026-10-24T02:10:48.597Z",
+  "updatedAt": "2026-10-24T02:10:58.909Z",
+  "voiceInput": {
+    "schemaVersion": 1,
+    "revisionId": "4a366a5a-2315-460d-8f7f-074595794a72",
+    "targetVersion": 1,
+    "scriptRevisionId": "721c8c8a-72ce-4edf-aaa3-fc70ca268c6f",
+    "operation": "align",
+    "language": "zh",
+    "mode": "import",
+    "provider": "whisper-local",
+    "voice": "",
+    "rate": 0,
+    "purpose": "final",
+    "segments": [
+      {
+        "id": "c4511a42-375a-4863-afd4-e487e968b672",
+        "text": "测试，测试。这是配音时间轴的真实语音。字幕和词语时间需要分别校验。"
+      }
+    ],
+    "blob": {
+      "id": "31b4267d-4c95-42a1-a234-a3b9ab8dbcd2",
+      "name": "chinese.wav",
+      "mime": "audio/wav",
+      "sizeBytes": 423470,
+      "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8"
+    },
+    "maxDurationMs": 3600000,
+    "maxAudioBytes": 10485760
+  },
+  "voiceRuns": [
+    {
+      "provider": "whisper-local",
+      "runId": "06ec4b60-0883-419e-aa45-31ae41b62d89",
+      "startedAt": "2026-10-24T02:10:49.911Z",
+      "durationMs": 8994,
+      "purpose": "final",
+      "failureReason": null,
+      "jobAttempt": 1,
+      "operation": "align",
+      "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+      "inputSha256": "5d988c57087ab81765666fe867404d8f020beac730a36e47c9f59cfb4e26a267",
+      "model": "openai-whisper/base",
+      "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+      "referenceTextProvided": true,
+      "processId": 40252,
+      "exitCode": 0
+    }
+  ],
+  "progress": 0.5,
+  "heartbeatAt": "2026-10-24T02:10:57.939Z",
+  "logs": [
+    {
+      "at": "2026-10-24T02:10:48.597Z",
+      "message": "whisper-local · final 配音任务排队；原文修订和输入已冻结，字幕不是精确转录。"
+    },
+    {
+      "at": "2026-10-24T02:10:49.854Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T02:10:49.880Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:10:51.915Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:10:53.916Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:10:55.930Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:10:57.939Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T02:10:58.909Z",
+      "message": "finish: failed · TARGET_CHANGED"
+    }
+  ]
+}

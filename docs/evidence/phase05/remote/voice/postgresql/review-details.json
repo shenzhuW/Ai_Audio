@@ -1,0 +1,84 @@
+{
+  "backend": "postgresql",
+  "status": "PASS",
+  "runId": "mvlrhk8d",
+  "groups": 14,
+  "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+  "scriptRevisionId": "4840a05c-d9d0-4a09-8eb4-afa900243bab",
+  "asrRunId": "8950958c-530b-4b4f-b5a2-ad7ab93e24ad",
+  "alignmentRunId": "b5b242d0-791d-4b35-9fa1-7773f22b2b07",
+  "transcript": "測試,測試。這是配音時間軸的真實語音。字幕和詞語時間需要分別教驗。",
+  "model": "openai-whisper/base",
+  "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+  "engineVersion": "stable-ts/2.19.1/whisper/20250625",
+  "modelWordCount": 25,
+  "wordCueCount": 24,
+  "sentenceCueCount": 3,
+  "firstRepeatedWord": [
+    {
+      "text": " 测",
+      "startMs": 260,
+      "endMs": 340,
+      "probability": 0.5893077428142229,
+      "startChar": 0,
+      "endChar": 1
+    },
+    {
+      "text": "试，",
+      "startMs": 340,
+      "endMs": 1060,
+      "probability": 0.396161762423435,
+      "startChar": 1,
+      "endChar": 3
+    }
+  ],
+  "secondRepeatedWord": [
+    {
+      "text": "测",
+      "startMs": 1260,
+      "endMs": 1260,
+      "probability": 0.5111081879585981,
+      "startChar": 3,
+      "endChar": 4
+    },
+    {
+      "text": "试。",
+      "startMs": 1260,
+      "endMs": 2080,
+      "probability": 0.7087943305571874,
+      "startChar": 4,
+      "endChar": 6
+    }
+  ],
+  "zeroWidth": [
+    {
+      "text": "测",
+      "startMs": 1260,
+      "endMs": 1260,
+      "probability": 0.5111081879585981
+    }
+  ],
+  "seek": {
+    "status": "PASS",
+    "input": "native range actual mouse drag",
+    "targetMs": 6040,
+    "seeked": {
+      "currentTime": 6.084,
+      "duration": 9.601451,
+      "paused": true
+    },
+    "timelineDurationMs": 9602
+  },
+  "editedSubtitle": {
+    "id": "2f5d3d98-bd0b-4f73-8012-2c53cabe417d",
+    "text": "测试，测试。（人工修正字幕）",
+    "endMs": 2080,
+    "startMs": 250,
+    "anchorId": "4935d8fa-64d4-400f-96c4-e96aa1acfeed",
+    "segmentId": "f1443361-8f19-4389-9531-535dc8bba775",
+    "sourceRunId": "b5b242d0-791d-4b35-9fa1-7773f22b2b07"
+  },
+  "asrMs": 12112,
+  "alignmentMs": 8257,
+  "note": "重复词/标点位置与模型原始时间可追溯；停顿、零宽词及误差不视为人工金标准。"
+}

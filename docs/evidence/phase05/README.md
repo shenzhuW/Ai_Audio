@@ -1,5 +1,7 @@
 # Phase05 验收证据
 
+2026-10-24远程验收补充：[报告](../../PHASE_05_REMOTE_ACCEPTANCE.md)、[新双库重跑/原始模型IO/拖动/字幕修改后重启](remote/README.md)。原证据保留，本轮没有修改已交付业务功能。
+
 语音主链路使用真实中文WAV和本地Whisper/stable-ts，不是Mock。浏览器为真实Chrome的自动操作，不代表用户已经人工体验或独立听审。
 
 | 验收 | SQLite | PostgreSQL |

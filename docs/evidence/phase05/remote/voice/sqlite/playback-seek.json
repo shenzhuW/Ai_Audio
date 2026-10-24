@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "input": "native range actual mouse drag",
+  "targetMs": 6040,
+  "seeked": {
+    "currentTime": 6.084,
+    "duration": 9.601451,
+    "paused": true
+  },
+  "timelineDurationMs": 9602
+}

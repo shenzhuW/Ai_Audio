@@ -374,6 +374,42 @@ function voiceState(w) {
     segments: w.segments,
   };
 }
+function modelIo(job) {
+  const dir = path.join(dataDir, 'voice-work', job.voiceResult.run.runId),
+    input = JSON.parse(fs.readFileSync(path.join(dir, 'input.json'))),
+    output = JSON.parse(fs.readFileSync(path.join(dir, 'output.json')));
+  assert.equal(input.operation, job.voiceInput.operation);
+  assert.equal(Object.hasOwn(input, 'text'), input.operation === 'align');
+  assert.equal(
+    createHash('sha256').update(fs.readFileSync(input.audioPath)).digest('hex'),
+    job.voiceResult.audioSha256,
+  );
+  assert.deepEqual(output.words, job.voiceResult.words);
+  if (input.operation === 'transcribe') {
+    assert.equal(output.transcript, job.voiceResult.transcript);
+    assert.notEqual(output.transcript, transcript);
+  } else assert.equal(input.text, job.voiceInput.segments.map((s) => s.text).join('\n'));
+  fs.writeFileSync(
+    path.join(evidence, `model-${input.operation}-io.json`),
+    JSON.stringify(
+      {
+        jobId: job.id,
+        runId: job.voiceResult.run.runId,
+        inputKeys: Object.keys(input),
+        operation: input.operation,
+        language: input.language,
+        referenceTextProvided: Object.hasOwn(input, 'text'),
+        ...(input.text ? { text: input.text } : {}),
+        audioSha256: job.voiceResult.audioSha256,
+        modelSha256: output.modelSha256,
+        output,
+        note: '实际私有input/output的脱敏副本；只删除宿主文件路径，保留原始模型输出。',
+      },
+      null,
+      2,
+    ) + '\n',
+  );
+}
 async function nativeWorker(extra = {}) {
   const child = spawn(
     process.execPath,
@@ -480,6 +516,7 @@ async function main() {
   assert.equal(j.voiceResult.run.referenceTextProvided, false);
   assert.equal(j.voiceResult.run.exitCode, 0);
   fs.writeFileSync(path.join(evidence, 'real-asr.json'), JSON.stringify(j, null, 2) + '\n');
+  modelIo(j);
   w = await voice(p);
   assert.ok(w.track.cues.length > 0);
   assert.ok(w.track.cues.every((s) => s.segmentId === null));
@@ -518,6 +555,7 @@ async function main() {
   const zero = words.filter((c) => c.endMs === c.startMs);
   assert.equal(w.cues.filter((c) => c.level === 'word').length, words.length - zero.length);
   fs.writeFileSync(path.join(evidence, 'real-alignment.json'), JSON.stringify(j, null, 2) + '\n');
+  modelIo(j);
   record('真实模型强制句/词对齐、重复词精确位置、非均分、零宽词保留原始但不伪造Cue', {
     runId: j.voiceResult.run.runId,
     zeroWidth: zero,
@@ -571,6 +609,52 @@ async function main() {
   await page.getByTestId('active-subtitle').getByText(first.text, { exact: true }).waitFor();
   await screenshot(page, '05-playing-subtitle.png');
   await page.getByLabel('配音播放器', { exact: true }).evaluate((a) => a.pause());
+  assert.ok(Math.abs(media.duration * 1000 - w.timeline.durationMs) <= 1);
+  const seekTarget = w.track.cues[2].startMs + 200;
+  const slider = page.getByRole('slider', { name: '时间轴定位', exact: true });
+  await slider.scrollIntoViewIfNeeded();
+  const box = await slider.boundingBox();
+  assert.ok(box);
+  const thumb = 8,
+    rangeWidth = box.width - 2 * thumb;
+  const startX = box.x + thumb + rangeWidth * ((media.currentTime * 1000) / w.timeline.durationMs);
+  await page.mouse.move(startX, box.y + box.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(
+    box.x + thumb + rangeWidth * (seekTarget / w.timeline.durationMs),
+    box.y + box.height / 2,
+    { steps: 8 },
+  );
+  await page.mouse.up();
+  await page.waitForFunction(
+    (target) =>
+      Math.abs(
+        document.querySelector('audio[aria-label="配音播放器"]').currentTime * 1000 - target,
+      ) < 200,
+    seekTarget,
+  );
+  await page
+    .getByTestId('active-subtitle')
+    .getByText(w.track.cues[2].text, { exact: true })
+    .waitFor();
+  const seeked = await page
+    .getByLabel('配音播放器', { exact: true })
+    .evaluate((a) => ({ currentTime: a.currentTime, duration: a.duration, paused: a.paused }));
+  fs.writeFileSync(
+    path.join(evidence, 'playback-seek.json'),
+    JSON.stringify(
+      {
+        status: 'PASS',
+        input: 'native range actual mouse drag',
+        targetMs: seekTarget,
+        seeked,
+        timelineDurationMs: w.timeline.durationMs,
+      },
+      null,
+      2,
+    ) + '\n',
+  );
+  await screenshot(page, '05-drag-seek.png');
   await page
     .getByRole('textbox', { name: '第1条字幕', exact: true })
     .fill('测试，测试。（人工修正字幕）');
@@ -592,6 +676,31 @@ async function main() {
   assert.deepEqual(edited.segments, w.segments);
   assert.equal(edited.track.cues[0].id, first.id);
   await screenshot(page, '05-manual-edit-persisted.png');
+  const editSnapshot = voiceState(edited);
+  await stopApp();
+  await startApp();
+  assert.deepEqual(voiceState(await voice(p)), editSnapshot);
+  await ctx.clearCookies();
+  await ctx.addCookies([{ name: cookie.split('=')[0], value: cookie.split('=')[1], url: base }]);
+  await page.reload();
+  await page.getByRole('textbox', { name: '第1条字幕', exact: true }).waitFor();
+  assert.equal(
+    await page.getByRole('textbox', { name: '第1条字幕', exact: true }).inputValue(),
+    editSnapshot.track.cues[0].text,
+  );
+  assert.equal(
+    await page.getByRole('spinbutton', { name: '字幕1开始（秒）', exact: true }).inputValue(),
+    '0.25',
+  );
+  fs.writeFileSync(
+    path.join(evidence, 'edited-restart.json'),
+    JSON.stringify(
+      { status: 'PASS', before: editSnapshot, after: voiceState(await voice(p)) },
+      null,
+      2,
+    ) + '\n',
+  );
+  await screenshot(page, '05-edit-after-restart.png');
   await page.setViewportSize({ width: 390, height: 844 });
   await screenshot(page, '05-mobile.png');
   await page.setViewportSize({ width: 1440, height: 1100 });

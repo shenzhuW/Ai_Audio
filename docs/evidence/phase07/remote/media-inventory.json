@@ -1,0 +1,615 @@
+{
+  "code": "0240d6ef8a5e674598ff46758c4bca0f1e8fa9e3",
+  "count": 76,
+  "scope": "Changed media in accepted code; new remote screenshots use same synthetic sources and three decoded MP4 samples; see material audit for their hashes",
+  "items": [
+    {
+      "path": "docs/evidence/phase07/final-ui/06-history-binding.png",
+      "bytes": 127935,
+      "sha256": "2cb66dca504b46e7bab7a72c37a0f0f7b871c1ec3fc0276db943a1d7f9dba828",
+      "blob": "60d067c681811f1756dfb487501854809efb1855",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/final-ui/07-workspace-viewport.png",
+      "bytes": 163483,
+      "sha256": "e1182fff15188abef61e42415596142c02726269b2c457102c26927d7c6309bc",
+      "blob": "ecd0a158816491954211890fd613df2c9af0271e",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/06-asset-binding.png",
+      "bytes": 760782,
+      "sha256": "53c768e0d5675cc7586f929a1f0bc47aabb4606f2d3c07566394a296ffd7575c",
+      "blob": "a3e1e0866122850dfc06173c9d774c08f8615aa0",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/07-concurrent-409.png",
+      "bytes": 856515,
+      "sha256": "8f1455460b7bce5031d0a7404a9ac79d348c499fca5a50b48067fd985d52021e",
+      "blob": "991613e80c1d5633c4557b9b7a0318d45adeb56b",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/07-library.png",
+      "bytes": 653218,
+      "sha256": "acdfc2166f0b2a637587e3635fb68a7268bb60fce77adc9556883fe85753b0e4",
+      "blob": "cca0a4e9f940a66e87f7829253c4a5c3e981b2f8",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/07-mobile.png",
+      "bytes": 477914,
+      "sha256": "1cbcfeb196042add5c4a4bd4e9118d6b78105e8d339bd010f8fadcfb91ba9762",
+      "blob": "f70530e50290f9bc9cc432bf45e807e30906ad8e",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/07-range-preview.png",
+      "bytes": 839941,
+      "sha256": "ecb2ebc86a768d378c883b1040b11db890da65e25ff54415e24d0a215bf1b317",
+      "blob": "f2c642815287b3e8dd1a801f1fc67b230e62a807",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/08-prepared-remotion.png",
+      "bytes": 286350,
+      "sha256": "6cb41f36e9b0ca52770607e2df7bdcfb56350c509ec446cded788d362f576ac4",
+      "blob": "41984ba8611518416b4a93dd82a0ba6d01e87903",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/external-contact-sheet.jpg",
+      "bytes": 46212,
+      "sha256": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+      "blob": "f02f436d6a8ec5c38001bde77504db7dc02a7faf",
+      "provenance": "NASA PIA00342, credited audit thumbnail",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/internal-poc.mp4",
+      "bytes": 1657402,
+      "sha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+      "blob": "1e9be322c9fa0e6ed58c7c2a962d6ea885c83afa",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/local-contact-sheet.jpg",
+      "bytes": 48508,
+      "sha256": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+      "blob": "5c6670f0e55be5a6f84771aac6a5bbf5b4a0c4e4",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/remotion-frame-060.png",
+      "bytes": 763258,
+      "sha256": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+      "blob": "795b2667e4683680f4a1ee8181706dfff1c868b4",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/remotion-frame-150.png",
+      "bytes": 771525,
+      "sha256": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+      "blob": "13844b56a18c926f850b09a67e92fef7ebc7bdf1",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/remotion-frame-240.png",
+      "bytes": 703321,
+      "sha256": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+      "blob": "7a93e63b2b63c77ec1f73ca234825a1c4c08ec29",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/postgresql/remotion-keyframe.png",
+      "bytes": 771525,
+      "sha256": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+      "blob": "13844b56a18c926f850b09a67e92fef7ebc7bdf1",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/providers/commons-image-contact.jpg",
+      "bytes": 53022,
+      "sha256": "410ac1f2cdafd8adf2e85cd6889221f1c85912fb8a6f81781dac034387d03232",
+      "blob": "3535f4f03ded5d35f456b8203bc70c23b1dc77b7",
+      "provenance": "NASA/NOAA Blue Marble, Commons public-domain-labelled thumbnail",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/providers/nasa-video-contact.jpg",
+      "bytes": 25737,
+      "sha256": "7ea2ce276a2dda0cf45ff6ce5b179070196d4221bde2b8fc5b36c4bc1e071f65",
+      "blob": "38b047d81ad8c37182be06c9d0860c0e8e101d15",
+      "provenance": "NASA GSFC SVS11964 credited six-frame contact sheet",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/03-approved.png",
+      "bytes": 364988,
+      "sha256": "0f8f2e1245179453bbf51fd8b8fb2cca6fc3a5acdcf19fe45ff71b47335ebcd4",
+      "blob": "f0a5271a10ae1baf73eede8dabe82c597decc46f",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/03-history.png",
+      "bytes": 347194,
+      "sha256": "3644bf9356dc0a3b94952d5d155d067ebd7ed9869c739dd21aa3dd8a565c31e8",
+      "blob": "27c054e45e4074c9c29820e6945b9979c7218a70",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/03-mobile.png",
+      "bytes": 288479,
+      "sha256": "94396b1a9bf7b3c8d22d3dd053866eb6f0a631fec3ed9a2526ea444a2a91ed8d",
+      "blob": "cbcb8a045e1443f6ae2cdd7ac9acbc09da1b5319",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/03-mock-and-failure.png",
+      "bytes": 425949,
+      "sha256": "1e4971ce29cbe9fb448f1b3df7b5699a269880a32d57453ceda6db21c36b6eb6",
+      "blob": "326ceb52da4e9528bb199b99760aa93b588248f4",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/03-overview-viewport.png",
+      "bytes": 212229,
+      "sha256": "5d8250717ccc0d746d0e37646f05792212aeb7f8e91b43c071e7c0a77d4ddafb",
+      "blob": "fa05cc24b245057b8139b2a42d53d44cce078cd2",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/03-pdf-conflict.png",
+      "bytes": 342619,
+      "sha256": "745ea7253e9323ae428f857117493b5f3cb1cf467a3c65f73b25e36f8c8d59ee",
+      "blob": "43bb4fc3eb445d607c4b1f93d5af4579ad14e14e",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/03-video-index.png",
+      "bytes": 437398,
+      "sha256": "f8f2f24f974ecf5ad1e68951dc5c9b19974c6193c20351d1fa99e293a16db6ea",
+      "blob": "ec98ae037e94fe3fb278564479662b229e794622",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/frame-0.jpg",
+      "bytes": 18055,
+      "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133",
+      "blob": "1e55442387ed7df919941163339b1866606b2811",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/frame-3333.jpg",
+      "bytes": 16252,
+      "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0",
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase03/sqlite/frame-6666.jpg",
+      "bytes": 16151,
+      "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4",
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-approved.png",
+      "bytes": 240818,
+      "sha256": "e05b1c818a59b73ded2f11302e6e3fdac4414d68faa411d12509762672545b79",
+      "blob": "d7592286cbaa3a7fc4432adcea252e75b54881a4",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-claims-conflict.png",
+      "bytes": 270685,
+      "sha256": "0d6c313d568180b4b61bcb649eb64e60c6fd2d6898548b3eb8075e3cd6248ea5",
+      "blob": "562ca3e81b56391e59a14b779b716e11eb311b42",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-diff.png",
+      "bytes": 228797,
+      "sha256": "ae02edc103951aef7e79e26fa9486e8d6597227ca764a0623d7e009d6179646e",
+      "blob": "34c0b87065ed5f93f2c68e0695510c8d4ff0a4a8",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-downstream-impact.png",
+      "bytes": 238445,
+      "sha256": "9724c52e372f1ae17634cfab0a4e594827e3ae247d99a64c04b95917b7484a20",
+      "blob": "d50e8f5efa6500c1204d89d1e4cc6cb2acd232f0",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-history.png",
+      "bytes": 246043,
+      "sha256": "310b81ed73273ad8a7c733cf033f0bef025f0df8b6e329219024f72ddb2b962b",
+      "blob": "076fb9616a2eb6e9f8c54a060418003f4eec8592",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-mobile.png",
+      "bytes": 213474,
+      "sha256": "3fba6a9ccaeece338492e232063b67ad158091b80e5eb4437631e32f45dc215f",
+      "blob": "ba98ba0be33a70b5c7d327c02d3ef6b880fd9887",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-mock-unconfigured.png",
+      "bytes": 326721,
+      "sha256": "b7df9e4aed90b431b91d6026bc7631161d9d3871aa7f98995e3d81e824fd3b05",
+      "blob": "0d071b7d059df9bebac6facfb02a2211a655a0fb",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-rejected.png",
+      "bytes": 237121,
+      "sha256": "4140c4bed52d37b5fd744b08e6650f856a8be2c2f396188be0eb4aeaa3e9f36a",
+      "blob": "2dbef1cb965529a9cbdd2974b56675eecbe78a57",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-research-impact.png",
+      "bytes": 288221,
+      "sha256": "2d19e413ffaff6af18287985321908de25dd67f7e822bee2d3fd945ff59270cd",
+      "blob": "e696b7c0682a46d38bf3590d93b131d9c4601470",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase04/sqlite/04-user-script.png",
+      "bytes": 229081,
+      "sha256": "946971613330f8fe166e76ff1e18fac4d47a6f86dd105de93e1f5fb16985a33c",
+      "blob": "980358987831413f540152eff4628df14cdaa43d",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/03-real-search.png",
+      "bytes": 359122,
+      "sha256": "96c197a49e6a890e553af5b3049fa8f2312edb0269940440488449651a631479",
+      "blob": "50d34ce76fc9cef0e62e77c44c6dbd23a1d1bc3c",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/03-real-video.png",
+      "bytes": 448407,
+      "sha256": "0c9dc6e8f220ed29aafd44e6ed2ed30558868ece7aa6a516de9386341ab463c6",
+      "blob": "959351f72d23875b824a80d2b7b03ce8da4de5ec",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/03-real-vision.png",
+      "bytes": 348771,
+      "sha256": "84507c7df8eb40ed8e231624ad161430f332a233c9c320adec6b0dd3a1167ae2",
+      "blob": "0c9195cd12ccaf39fb5ece7816784c8f4bb7c690",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/04-mobile.png",
+      "bytes": 360343,
+      "sha256": "7913ca5ebfadd5fdc86de3f02a395d95399a3d1efc3e2f602e051ebf1eeb1be3",
+      "blob": "80411d92e9eb9b442eee51603366876fcb62afce",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/04-real-script.png",
+      "bytes": 407057,
+      "sha256": "5122dab7294f7c08e28bd33a3b43ca081dc39dae63a3689f33c2a0a466bce35c",
+      "blob": "ca935bd77672b6a9b768355b4a1e92cf9edfbe1c",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/frame-0.jpg",
+      "bytes": 18055,
+      "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133",
+      "blob": "1e55442387ed7df919941163339b1866606b2811",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/frame-3333.jpg",
+      "bytes": 16252,
+      "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0",
+      "blob": "b686843a3d6e262da988c160c9b542bd93cadd3f",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/frame-6666.jpg",
+      "bytes": 16151,
+      "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4",
+      "blob": "a0c7747aa880dfd68f4ea7101446026d23686ed4",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase045/sqlite/self-authored-chart.png",
+      "bytes": 9170,
+      "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165",
+      "blob": "620f521485d013dcc69238e6b28e8effd231091b",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-approved-readonly.png",
+      "bytes": 376119,
+      "sha256": "8035b8f75c8b5a437ef19e0d7ffee50856fdbe35c57706ef70798787b4720d38",
+      "blob": "c129a33d4dea51f2cf4e724b52b8fc840061aa67",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-conflict-buffer.png",
+      "bytes": 375068,
+      "sha256": "1c897ac0e41a4b68dcc1de370eddaf791d046227ae16daa8c823a6813061048e",
+      "blob": "35c3fb14ff35647ce449ff4541736f80df8fe865",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-drag-seek.png",
+      "bytes": 364978,
+      "sha256": "1c3a45cb012947c6e71e1cc43f231ba124959992532b5b56ef24c1a929103d7f",
+      "blob": "c2eac074c457cd2c6fc720f62327bf1f0f476814",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-edit-after-restart.png",
+      "bytes": 364084,
+      "sha256": "c580aef329de64ce1bc454240b17d8cf6c9dfbd26f934591b7530dae5ef18cd3",
+      "blob": "e631a63f6e420c7cccc55d28141802d3098d5897",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-manual-edit-persisted.png",
+      "bytes": 364084,
+      "sha256": "c580aef329de64ce1bc454240b17d8cf6c9dfbd26f934591b7530dae5ef18cd3",
+      "blob": "e631a63f6e420c7cccc55d28141802d3098d5897",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-mobile.png",
+      "bytes": 300638,
+      "sha256": "11a88df1d9875dfcb488ccb151db611087ff180a94590dbd15b194d6eef6558b",
+      "blob": "6675c34267993a25b792736e3b580ee053f7e623",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-playing-subtitle.png",
+      "bytes": 362895,
+      "sha256": "1f4d348b6c6ba41f47c882d44df088a68b6325767134cb37f2f77d818aa4a99b",
+      "blob": "ff8880161e6497ec428f99b7bff6dd9e7ef74e98",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-real-alignment.png",
+      "bytes": 363086,
+      "sha256": "61cd47480c22b30075020643524ffc5e024cbf59924a0fb9235f607401a04dba",
+      "blob": "ce7c69590470790a6da76712784071535db7bb6f",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-real-system-tts.png",
+      "bytes": 345186,
+      "sha256": "a699cbb50762ab5bf033001e6e7c93d28c99daafbb3162e2243d53bee27207c4",
+      "blob": "6c092a034fc512e48c12220236e3ba732e466e9a",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase05/sqlite/05-silent-timeline.png",
+      "bytes": 321299,
+      "sha256": "361033a1976b1c3d2f5d924f7a369e3c92bab8d5ab1d4c6fd6c9c38bfcbcf603",
+      "blob": "77c077605087941308b63914c8e5b23e47b477ff",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase06/sqlite/06-approved-readonly.png",
+      "bytes": 789872,
+      "sha256": "abb91e5452701cbdb5ed7a1f0db6fa056c24a5145d402c0ff181f74b62258b10",
+      "blob": "7ae22f335594f876a235c85928fe8da70be93b4d",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase06/sqlite/06-director-workbench.png",
+      "bytes": 680805,
+      "sha256": "4d1fc4db6b0c20bb7fe6b9333e77485c83f4c93478a74de4f52802ab22fc083d",
+      "blob": "33f2ad60ad430051bc1b1bce088a7f1afe87f734",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase06/sqlite/06-edited-persisted.png",
+      "bytes": 681150,
+      "sha256": "9a3d9b671370cce47f40b304e053aa807fcbee0b7c7ad5a93e2a802fd174127c",
+      "blob": "da82142476cd4d7a1d7fac19301681afe58d0ce1",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase06/sqlite/06-fork-diff.png",
+      "bytes": 723740,
+      "sha256": "9f077250f18c8ff857a5c892cb49c09e304c1fc35cf7bff07de744c26d5dde36",
+      "blob": "67e676ff800dee7f6744cd4039d94011ababf8ad",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase06/sqlite/06-mobile.png",
+      "bytes": 435013,
+      "sha256": "ae35ca104ba4b1bf05612b06df7015c99de0bd07b81193e3b9207b2aeec28483",
+      "blob": "9a2e6d445688048658afaf5129481c7e96781c07",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/regression/phase06/sqlite/06-silent-explicit-mock.png",
+      "bytes": 415528,
+      "sha256": "49107c224ba891e57660aff90a259686e25a6d903ab9059eabc1730908a26bee",
+      "blob": "d3d6561a9412355935fe42cb292322450520f032",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/06-asset-binding.png",
+      "bytes": 687260,
+      "sha256": "e3ad411f428dd0b4207b360c7ecc28d3cbcbae087cef63256179d415a99065e2",
+      "blob": "33b38cf0fd55e3d261b203cc29d770f6507a4725",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/07-concurrent-409.png",
+      "bytes": 848589,
+      "sha256": "3b031bf0611bfe88a56f689b1b617f6af4db5a40f2796cd143057da650e213e7",
+      "blob": "8e5e2a417c811fab82c4ba55ba4879abf08476b8",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/07-library.png",
+      "bytes": 651636,
+      "sha256": "26b17d3613985f628a70a4ecdc4d4f3e914a3417d24b51c13f843546a5de0efb",
+      "blob": "55606cc52f9ab1b5a93c9dc4735ccab0ef82e8fe",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/07-mobile.png",
+      "bytes": 476341,
+      "sha256": "230cf13fc59ae0f0425db413c1fa90620b79a85a7ac89fc41dab5010f84877d5",
+      "blob": "a3b67c9fd18455e1a351a540044962b624cb6038",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/07-range-preview.png",
+      "bytes": 829253,
+      "sha256": "621fb96357ae5a3442b5fcc5c3e88d372e9e23ea5953a3379a4cab48faf30ad6",
+      "blob": "76ca6465f5530e98ffb9272fc27a3251b95acb39",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/08-prepared-remotion.png",
+      "bytes": 284758,
+      "sha256": "cd5c7bd84c59c95886155af852538f8c0dc95031a4d6987b7b8a1890e6a55095",
+      "blob": "cdc128f58d619829f49e7fa4d808500f7229eb4d",
+      "provenance": "Synthetic project UI screenshot; source-attributed thumbnails where visible",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/external-contact-sheet.jpg",
+      "bytes": 46212,
+      "sha256": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+      "blob": "f02f436d6a8ec5c38001bde77504db7dc02a7faf",
+      "provenance": "NASA PIA00342, credited audit thumbnail",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/internal-poc.mp4",
+      "bytes": 1657402,
+      "sha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+      "blob": "1e9be322c9fa0e6ed58c7c2a962d6ea885c83afa",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/local-contact-sheet.jpg",
+      "bytes": 48508,
+      "sha256": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+      "blob": "5c6670f0e55be5a6f84771aac6a5bbf5b4a0c4e4",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/remotion-frame-060.png",
+      "bytes": 763258,
+      "sha256": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+      "blob": "795b2667e4683680f4a1ee8181706dfff1c868b4",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/remotion-frame-150.png",
+      "bytes": 771525,
+      "sha256": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+      "blob": "13844b56a18c926f850b09a67e92fef7ebc7bdf1",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/remotion-frame-240.png",
+      "bytes": 703321,
+      "sha256": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+      "blob": "7a93e63b2b63c77ec1f73ca234825a1c4c08ec29",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "docs/evidence/phase07/sqlite/remotion-keyframe.png",
+      "bytes": 771525,
+      "sha256": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+      "blob": "13844b56a18c926f850b09a67e92fef7ebc7bdf1",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    },
+    {
+      "path": "fixtures/assets/gpu-two-scenes.mp4",
+      "bytes": 378449,
+      "sha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+      "blob": "55fde52d5c575d0217bee9450ed558fe295f957e",
+      "provenance": "Self-authored fixture or trusted render derivative",
+      "publicAcceptanceUse": true
+    }
+  ]
+}

@@ -4,6 +4,8 @@
 
 ## 入口
 
+- [最终远程验收报告](../../PHASE_07_REMOTE_ACCEPTANCE.md)、[本轮复核](remote/review.json)、[媒体公开提交审查](remote/media-publication-review.md)。本轮76单元/类型/构建、双库只读播放与重启、14组媒体故障/三时间点解码检查与原真实AI记录分别保留；未重跑模型调用，不进入Phase08。
+
 - [测试汇总](test-summary.json)；[76项单元](unit-tests.log)、[Web类型](typecheck.log)、[Render类型](render-typecheck.log)、[生产构建](build.log)。
 - [SQLite闭环19组](sqlite/results.json)、[PostgreSQL闭环21组](postgresql/results.json)，每库含1条原真实渲染任务续跑来源说明；[PG增量/重复迁移](postgresql/migrations.log)、[PG零漂移](postgresql/schema-drift.log)。
 - [真实FFmpeg像素/时长/缓存回归](media-regression.json)：单次、循环、末帧定格；音频/容器比视频流更长的情况。
@@ -41,4 +43,4 @@
 
 diagnostics保留模块路径、AI审计归并、freeze、超时归因、测试器HTTP连接/续跑辅助函数/字幕夹具与缺H.264浏览器等失败记录。实际渲染先成功，测试器随后连接失败，修正后在同一隔离库续跑；未将早期失败删除或宣称首轮全绿。历史两次Windows原生异常仍UNCONFIRMED，见既有04.5记录，本阶段没有宣称修复其根因。
 
-安全边界、资源上限、额外Provider未配置和后续Phase08依赖见[配置说明](../../ASSET_ENGINE_SETUP.md)。提交仅本地，不自动推送或发布。
+安全边界、资源上限、额外Provider未配置和后续Phase08依赖见[配置说明](../../ASSET_ENGINE_SETUP.md)。本地交付时未推送；本轮根据用户授权，在安全检查后将代码与独立验收材料正常快进推送供远程审核，不进入下一阶段。

@@ -1,0 +1,273 @@
+{
+  "status": "PASS",
+  "backend": "postgresql",
+  "projectId": "58d5958d-7659-48cc-a683-0ada17ff4e0a",
+  "checks": [
+    {
+      "name": "真实数据库读取固定批准导演、区间绑定历史、PreparedAsset与任务状态",
+      "status": "PASS",
+      "detail": {
+        "director": "bc172038-2599-48f3-b274-e3c5deabf80b",
+        "bindings": [
+          {
+            "id": "08d92056-468d-4663-9951-4772e270a65b",
+            "shotId": "58e04d21-b847-46a4-9a31-6d6cccfa0e0d",
+            "version": 1,
+            "recipeHash": "82591fd48eb4ede241eac46ffe82fa1ebf8c67994b70419baa583be82e06d15b"
+          },
+          {
+            "id": "150399ba-fbad-46bf-9966-4a61ed39ac3e",
+            "shotId": "23aa3bb4-d0c7-4f74-972e-8f5db2655549",
+            "version": 4,
+            "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53"
+          },
+          {
+            "id": "2604e4a4-f1dd-4335-86e9-c78c9dfadfe4",
+            "shotId": "23aa3bb4-d0c7-4f74-972e-8f5db2655549",
+            "version": 1,
+            "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53"
+          },
+          {
+            "id": "5546e25c-b88d-4376-ad26-4c712c9b342b",
+            "shotId": "23aa3bb4-d0c7-4f74-972e-8f5db2655549",
+            "version": 2,
+            "recipeHash": "b73053f93bf494160ce94cb3684b0e8e31192fb9b205642d837ce49555ca5ee3"
+          },
+          {
+            "id": "c6a9d9a2-2916-43fc-a3cf-c1da7f5d4251",
+            "shotId": "23aa3bb4-d0c7-4f74-972e-8f5db2655549",
+            "version": 3,
+            "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53"
+          }
+        ],
+        "sources": [
+          {
+            "id": "24efb5df-dd09-4497-9930-0ca13e27f781"
+          },
+          {
+            "id": "70cd0e93-70ae-4665-b330-b0473a295925"
+          },
+          {
+            "id": "7dc1c3fa-7641-4bb8-9849-6faae78d3539"
+          },
+          {
+            "id": "800e62f0-a930-4af8-b82e-8cc26a714a31",
+            "sha256": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b"
+          },
+          {
+            "id": "9414e3f3-9b3b-4e48-a270-bbfe7f23b6b6",
+            "sha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce"
+          },
+          {
+            "id": "963a614e-4f54-434d-a5b1-4ec266f4b168"
+          },
+          {
+            "id": "968d97ab-713e-494e-ba2a-77b0dce8678a"
+          }
+        ],
+        "prepared": [
+          {
+            "id": "7bdc0330-c5bb-4a64-b233-db1dd4179b6c",
+            "sha256": "2300cef562b764cb17337ce32bb22873b0b212b8d2bc0b60133e5a55661aea7a",
+            "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53"
+          },
+          {
+            "id": "cb2b8352-07e8-4404-964b-0513e11c29d7",
+            "sha256": "c9b51dfcbc95d487add48a3596e3442a83a4ec22f9d8633c8416cfb38a461634",
+            "recipeHash": "82591fd48eb4ede241eac46ffe82fa1ebf8c67994b70419baa583be82e06d15b"
+          },
+          {
+            "id": "da6da184-8dc5-46ce-a82c-6c91b76ec3d7",
+            "sha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+            "recipeHash": "b73053f93bf494160ce94cb3684b0e8e31192fb9b205642d837ce49555ca5ee3"
+          }
+        ],
+        "jobs": [
+          {
+            "id": "048c8aa1-0ed8-418f-8cba-fb24aea693ba",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "0d3c710b-7b2d-4558-b374-7dc736bf47b8",
+            "state": "cancelled",
+            "errorCode": null
+          },
+          {
+            "id": "190386a0-2bf1-4f31-82e6-553fe1851dfd",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "1b859224-f57a-4446-9649-0c52e913e18a",
+            "state": "cancelled",
+            "errorCode": null
+          },
+          {
+            "id": "1f188723-dfeb-4098-ba24-2e133be92a99",
+            "state": "cancelled",
+            "errorCode": null
+          },
+          {
+            "id": "3032b095-8473-4994-9bbd-998326a6e39a",
+            "state": "failed",
+            "errorCode": "PROVIDER_NOT_CONFIGURED"
+          },
+          {
+            "id": "3479bf38-4da2-4df5-baa6-b8148ae53f73",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "4b23f9fe-5aab-4c41-beff-9d420d8ceda1",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "4ef8528b-a6a4-4340-9d57-324e8610d4d4",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "5b554834-c03e-452e-87cb-a661b293c105",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "5edd3c36-606b-4ae1-87c6-3d1622c16c4c",
+            "state": "cancelled",
+            "errorCode": null
+          },
+          {
+            "id": "63787df6-16be-41c3-b060-551725116403",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "6d20612a-f82f-4fb5-a116-d21549d2cd4e",
+            "state": "cancelled",
+            "errorCode": null
+          },
+          {
+            "id": "6faa57af-0eba-4108-8130-b45e3bbc7d1c",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "7661659f-c926-4155-9e2c-a42cc173e52a",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "82250a18-cdef-40fd-9d8c-0ab9111a1481",
+            "state": "failed",
+            "errorCode": "PROVIDER_NOT_CONFIGURED"
+          },
+          {
+            "id": "865c20f8-a80c-4414-8d2e-3740353b24f5",
+            "state": "failed",
+            "errorCode": "PROVIDER_NOT_CONFIGURED"
+          },
+          {
+            "id": "86f582b7-b2b9-4a96-916f-4dd4812e373f",
+            "state": "failed",
+            "errorCode": "ASSET_INTERRUPTED"
+          },
+          {
+            "id": "8d2a4421-5807-415a-803f-5c5081457479",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "8d633380-5835-4453-b534-8a311f527249",
+            "state": "failed",
+            "errorCode": "PROVIDER_NOT_CONFIGURED"
+          },
+          {
+            "id": "a9aa44a2-73b9-412d-8086-62a47e350f85",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "af059890-ad74-46ac-a692-892472a11230",
+            "state": "cancelled",
+            "errorCode": null
+          },
+          {
+            "id": "b384b232-a2de-46e6-a2b3-c91d1a9a2a58",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "b5008a89-8818-4319-aa81-3df2d1c8f45d",
+            "state": "cancelled",
+            "errorCode": null
+          },
+          {
+            "id": "bb8d48d2-b8fa-4b15-b1a2-f545ccb59d9e",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "ca1d5788-8d81-4f04-a06d-8e9bc3bd1a1b",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "d03aa381-8b44-46d3-8692-4b1c37b4b672",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "d2f8e31f-46b4-4e7a-9ae6-9ae1261b9f87",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "e0111793-a6e6-4876-9310-87d4fca05e61",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "e29ef741-5500-43fb-85bb-82b23bf561ca",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "e76408e5-9c76-47dd-962a-aa6b497e05b3",
+            "state": "succeeded",
+            "errorCode": null
+          },
+          {
+            "id": "f1c99e8e-6fc1-4332-ae84-582900ff8d78",
+            "state": "succeeded",
+            "errorCode": null
+          }
+        ],
+        "stale": true
+      }
+    },
+    {
+      "name": "生产浏览器原片真实播放/7秒定位，历史stale明确只读",
+      "status": "PASS",
+      "detail": {
+        "media": {
+          "duration": 12,
+          "currentTime": 7.50656,
+          "width": 640,
+          "height": 360,
+          "readyState": 4
+        }
+      }
+    },
+    {
+      "name": "应用重启后完整素材关系/历史/任务一致，受保护Range206，原用户数据不变",
+      "status": "PASS",
+      "detail": {
+        "originalDataSha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "finishedAt": "2026-10-24T08:20:42.353Z"
+}

@@ -1,0 +1,190 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Real FFmpeg preparation then exact recipe cache hit",
+      "status": "PASS",
+      "detail": {
+        "recipeHash": "0040f0f1dc5bac436a3aaa8cf8f50be306baf69fd36c80935325c409393e2d9d",
+        "metadata": {
+          "kind": "video",
+          "width": 320,
+          "height": 180,
+          "durationMs": 3000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 90
+        }
+      }
+    },
+    {
+      "name": "Changing interval rebuilds distinct recipe and output",
+      "status": "PASS",
+      "detail": {
+        "before": "0040f0f1dc5bac436a3aaa8cf8f50be306baf69fd36c80935325c409393e2d9d",
+        "after": "b25703ee4391c979456578ac84bfd7706da1a90674efcc4611739029bce2272e"
+      }
+    },
+    {
+      "name": "New source content SHA creates a new immutable source and cache key",
+      "status": "PASS",
+      "detail": {
+        "before": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+        "after": "bb421c3a7707399c396a8b6455302d125f9ebdee901e3574e9a60dd7fc064e4f",
+        "recipeHash": "6ba28591a9cfdc8a69f0af48c643675f8449d0f15f50deb465c51388917c55d1"
+      }
+    },
+    {
+      "name": "Modified source is refused before cached output use",
+      "status": "PASS",
+      "detail": {
+        "error": "ASSET_SOURCE_CHANGED"
+      }
+    },
+    {
+      "name": "Missing original produces explicit failure",
+      "status": "PASS",
+      "detail": {
+        "error": "ENOENT: no such file or directory, open 'W:\\a_study\\Other\\AI_Audio\\AI_audio_work\\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\\.cache\\phase07\\remote-media\\mvm4vpdi\\asset-blobs\\absent-original'"
+      }
+    },
+    {
+      "name": "Corrupt recipe manifest is refused",
+      "status": "PASS",
+      "detail": {
+        "error": "ASSET_CACHE_INVALID"
+      }
+    },
+    {
+      "name": "Corrupt cached media is refused by SHA",
+      "status": "PASS",
+      "detail": {
+        "error": "ASSET_BLOB_CHANGED"
+      }
+    },
+    {
+      "name": "Missing cache manifest rebuilds verified output rather than assuming a hit",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "FFmpeg unavailable produces an explicit media failure",
+      "status": "PASS",
+      "detail": {
+        "error": "ASSET_MEDIA_FAILED"
+      }
+    },
+    {
+      "name": "Stale provider URL 404 (fault injection)",
+      "status": "PASS",
+      "detail": {
+        "error": "FETCH_HTTP_404"
+      }
+    },
+    {
+      "name": "Interrupted download does not produce success (fault injection)",
+      "status": "PASS",
+      "detail": {
+        "error": "FETCH_NETWORK_ERROR"
+      }
+    },
+    {
+      "name": "Cancelled fetch rejected without network",
+      "status": "PASS",
+      "detail": {
+        "error": "FETCH_ABORTED"
+      }
+    },
+    {
+      "name": "Self-authored source remains byte-identical after all fault checks",
+      "status": "PASS",
+      "detail": {
+        "sha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce"
+      }
+    },
+    {
+      "name": "Decode actual Remotion MP4 at 2/5/8 seconds and compare spatial background to exact PreparedAsset",
+      "status": "PASS",
+      "detail": {
+        "videoSha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+        "roi": {
+          "x": 0,
+          "y": 40,
+          "width": 1080,
+          "height": 60,
+          "scale": [
+            108,
+            6
+          ]
+        },
+        "tolerance": "Green-channel Pearson >0.90; expected gradient darkening; graphics-free ROI containing grid lines",
+        "metadata": {
+          "kind": "video",
+          "width": 1080,
+          "height": 1920,
+          "durationMs": 10000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 300
+        },
+        "samples": [
+          {
+            "seconds": 2,
+            "sourceInMs": 6000,
+            "sourceOutMs": 12000,
+            "preparedSha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+            "greenChannelSpatialCorrelation": 0.9969956840963965,
+            "meanPreparedRGB": [
+              23.02777777777778,
+              86.32407407407408,
+              64.95679012345678
+            ],
+            "meanMp4RGB": [
+              15.746913580246913,
+              64.6358024691358,
+              57.373456790123456
+            ]
+          },
+          {
+            "seconds": 5,
+            "sourceInMs": 6000,
+            "sourceOutMs": 12000,
+            "preparedSha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+            "greenChannelSpatialCorrelation": 0.9946341200105038,
+            "meanPreparedRGB": [
+              23.228395061728396,
+              86.56327160493827,
+              65.11574074074075
+            ],
+            "meanMp4RGB": [
+              15.694444444444445,
+              64.63888888888889,
+              57.31172839506173
+            ]
+          },
+          {
+            "seconds": 8,
+            "sourceInMs": 6000,
+            "sourceOutMs": 12000,
+            "preparedSha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+            "greenChannelSpatialCorrelation": 0.9939659453680175,
+            "meanPreparedRGB": [
+              23.132716049382715,
+              86.92746913580247,
+              64.92746913580247
+            ],
+            "meanMp4RGB": [
+              15.640432098765432,
+              64.72067901234568,
+              57.11265432098765
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "faultInjection": "Only synthetic isolated copies and transport stubs; never presented as external provider success.",
+  "finishedAt": "2026-10-24T08:25:21.974Z"
+}

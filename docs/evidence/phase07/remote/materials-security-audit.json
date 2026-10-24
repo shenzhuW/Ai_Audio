@@ -1,0 +1,230 @@
+{
+  "code": "0240d6ef8a5e674598ff46758c4bca0f1e8fa9e3",
+  "baseline": "34d88410a1f1b1e0a92a4bae548871fcc9c7288f",
+  "scannedFiles": 33,
+  "findings": [],
+  "totalBytes": 716775,
+  "maxFileBytes": 205606,
+  "duplicateGroups": [
+    {
+      "sha256": "14a2dc957c8b3c93c8936c47d0a196d2cfe5b988ee3f5bbc6e98b5733bf9504b",
+      "bytesEach": 276,
+      "paths": [
+        "docs/evidence/phase07/remote/logs/postgresql-browser.log",
+        "docs/evidence/phase07/remote/logs/sqlite-browser.log"
+      ]
+    },
+    {
+      "sha256": "3d05f8381382fd25ac06a17b05a3a54e762a8216897fe007e631bf150ee11f32",
+      "bytesEach": 3605,
+      "paths": [
+        "docs/evidence/phase07/remote/logs/review.log",
+        "docs/evidence/phase07/remote/review.json"
+      ]
+    }
+  ],
+  "duplicatePolicy": "Retain accepted evidence and per-backend paths. Identical blobs are deduplicated by Git; do not rewrite the accepted commit.",
+  "fixtureReview": "Self-authored procedural GPU video and trusted Remotion MP4; source-attributed NASA/Commons low-resolution audit images; synthetic UI and regression fixtures, no private human recordings. See media-publication-review.md.",
+  "manifest": [
+    {
+      "path": "docs/PHASE_07_REMOTE_ACCEPTANCE.md",
+      "bytes": 9954,
+      "sha256": "ea3fdfc7c1dce2f27ae751ff7b24546b10f95dfbd2dbdbba349044b854fa6261",
+      "blob": "ad5be97782f3a5ce3e486efa3db5b19158e0b229"
+    },
+    {
+      "path": "docs/evidence/phase07/README.md",
+      "bytes": 6738,
+      "sha256": "46e612d04486c5efc0ebb742fb4cc3ac6c4074d163213aa057835438e4e8e74b",
+      "blob": "90303cf687b5d21d9135d8a851f0a405f9420dc5"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/code-security-audit.json",
+      "bytes": 62090,
+      "sha256": "40e6ed95efd74db9337bcf52ac02a5cb55ee674faed17c381205dc16c0940915",
+      "blob": "f5d628599e7b87e219b9eede0d7c016669cfc638"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/diagnostics/first-media-roi.json",
+      "bytes": 3258,
+      "sha256": "cd2ab119444f492d777f983cb693f2a3b0587c3c542e055c345c4a46ce6efc31",
+      "blob": "abef9364f4abcbbbc7cea744ed506a4d016d9f6e"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/diagnostics/first-media-roi.log",
+      "bytes": 785,
+      "sha256": "574057bbf2ab5001959149bb096577140659e722c8a6d35117e39c64f44ef5f9",
+      "blob": "0ad9eebc72247d05fd6f4c1cf72bfc0dd6bd700e"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/git-before-push.json",
+      "bytes": 456,
+      "sha256": "10dc0f9733b5dac4eeaf7ff35b93edcb40b3420ea00b5eb3bddf5d7099cebc97",
+      "blob": "71986d317b51031082dc83d97752b6d25dfc641a"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/logs/build.log",
+      "bytes": 8005,
+      "sha256": "65c2a187895ce33fe6d2ed8099704defe642228ccf1fd0c86b29ce6ac79051ff",
+      "blob": "542a84f35d279a078eeca119019b0d77b418191e"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/logs/media-fault.log",
+      "bytes": 853,
+      "sha256": "7b97c7e5f484f0a2b554258c4b66b97abc9bce4db721c1ce0c214829b38f61c2",
+      "blob": "102e37a9735ef1c42f2179b5220b26130ad10c0c"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/logs/postgresql-browser.log",
+      "bytes": 276,
+      "sha256": "14a2dc957c8b3c93c8936c47d0a196d2cfe5b988ee3f5bbc6e98b5733bf9504b",
+      "blob": "c19448f8ca91fd0771d4dfe72c6d7dc2a0d110b8"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/logs/render-typecheck.log",
+      "bytes": 103,
+      "sha256": "62ee6efd7b30f465d93ea2aed1ad51999fefa9c1aa2cd6a3aeac1ed9a7e8dd29",
+      "blob": "aaa915c97eef92b73719915c6744027e88ae6f26"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/logs/review.log",
+      "bytes": 3605,
+      "sha256": "3d05f8381382fd25ac06a17b05a3a54e762a8216897fe007e631bf150ee11f32",
+      "blob": "5619ef071f0068a9d1c266c4ed2debf5781e5d0c"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/logs/sqlite-browser.log",
+      "bytes": 276,
+      "sha256": "14a2dc957c8b3c93c8936c47d0a196d2cfe5b988ee3f5bbc6e98b5733bf9504b",
+      "blob": "c19448f8ca91fd0771d4dfe72c6d7dc2a0d110b8"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/logs/typecheck.log",
+      "bytes": 148,
+      "sha256": "0180decf6774f3e311af82367ad5ac440791e33c34d3aa9226fc318a9a8e96ea",
+      "blob": "66b3bb7a33bacd2a2de3fbf3ac0424ce5f917a64"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/logs/unit.log",
+      "bytes": 8480,
+      "sha256": "c9defc53c6744aca2b48647aee8d3cf36349d19e3507b8c323fa5e39e2389e6b",
+      "blob": "7a47047d5d6a65b6ad5a73aa8d03dc1a47c339f6"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/media-fault-review.json",
+      "bytes": 5835,
+      "sha256": "5b8dcc99fb66ff6c8c7507c13a693c32a1b22aa0542f523bbc372109e5d1a70f",
+      "blob": "50dcd8b1c38a1ccdf36b374d3371bb569fae86b7"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/media-inventory.json",
+      "bytes": 29226,
+      "sha256": "3c52eb70317fc8c08d17c82ccba3e42396e020344ddc9dec6d2a65f63d18c53b",
+      "blob": "a02e076ad826c6571b3a79171ec8672ae1c90b5d"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/media-publication-review.md",
+      "bytes": 3631,
+      "sha256": "4fee7877dccce8996dbdea546dcc510417b28e2af47d952e506a8b5e47ba4508",
+      "blob": "99b39e0922ebb135ebce13cb221e1e5dc8439a22"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/mp4-at-2s.jpg",
+      "bytes": 34998,
+      "sha256": "c35e6b19fb055cf074fa85caa37398f9b1ff99870627f93493a005b8c87db4c2",
+      "blob": "3f8c37a96dc4b5aa763109ba92570132b18cb3b4"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/mp4-at-5s.jpg",
+      "bytes": 38350,
+      "sha256": "ac030705570a14536e48ab400ecdcee34b4f025d75aae8794f3537c9a1c69cb7",
+      "blob": "64314014713d0b0646e3b37bc707581d8e8c6675"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/mp4-at-8s.jpg",
+      "bytes": 38556,
+      "sha256": "1884509d53139354032d55773ffc399559911ef1c118e6b8ebe5a333d27fb99b",
+      "blob": "b991c0f16b69fe189ae2c1ad5697be4a978b5286"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/postgresql/07-source-playback.png",
+      "bytes": 205606,
+      "sha256": "481bc0facedb10f81b69e0a8f5f05e7671042c1ff65e83735987fb9fbb346c38",
+      "blob": "91bd6b1eade2db9d647e8e592040655661f57139"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/postgresql/app.log",
+      "bytes": 286,
+      "sha256": "aa08c2db7450d1fefe97bbc68179de93e46e5b9726d00a7d8184424b02a7fd71",
+      "blob": "12411b2924aeda854a64fc0d1acb0a5d1a0aa383"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/postgresql/browser-review.json",
+      "bytes": 8814,
+      "sha256": "4bde430a7184eeafc60c4dd54c31d5269fbfa517051375d702e56f972aa2adf7",
+      "blob": "56b68fede043a9f829ff5c53111fcf23de7059fe"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/review.json",
+      "bytes": 3605,
+      "sha256": "3d05f8381382fd25ac06a17b05a3a54e762a8216897fe007e631bf150ee11f32",
+      "blob": "5619ef071f0068a9d1c266c4ed2debf5781e5d0c"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/security-staged.json",
+      "bytes": 63,
+      "sha256": "d50c0d205604ea331ccdc25020c64eba412ffe2550950d163a27bd5c11e11129",
+      "blob": "4db662ff262a1241fa9917ecad2933f776a76aa8"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/security-worktree.json",
+      "bytes": 67,
+      "sha256": "ba20c3772c8e4f26d5291914c5f01075af74b2855317e916efe19623161ae8a6",
+      "blob": "41b487503e3c0560374a6ef17141098516dcbdc6"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/sqlite/07-source-playback.png",
+      "bytes": 205055,
+      "sha256": "a585408bfe9808c2815c162bd2e30f2d81aebf0a56ba54260c86d71abf7c20cd",
+      "blob": "8375a798c9c091bbc756d3fcf31f0fafcbba2549"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/sqlite/app.log",
+      "bytes": 286,
+      "sha256": "49f867935fff14624c94f593e48283dd209eb2aaf9555685caea8b491885d323",
+      "blob": "a4a59deb3443f138a1e15ef16ddea4b8f6a95fbb"
+    },
+    {
+      "path": "docs/evidence/phase07/remote/sqlite/browser-review.json",
+      "bytes": 8811,
+      "sha256": "86972a8e2fff92e417e49c7baadfb8fc38ac58e4f2bab49f7372c9c042eb0d85",
+      "blob": "3e3e889298499fa18559e083bd05513d76cdda13"
+    },
+    {
+      "path": "tests/assets/remote-audit.cjs",
+      "bytes": 4163,
+      "sha256": "0a64d1779325592b3f7fbcbaa23f1e983f78a8ef5dafedd4a15f9402dae0da04",
+      "blob": "6792af8735d0cc677225213027cc3feabd0bfc0e"
+    },
+    {
+      "path": "tests/assets/remote-browser.cjs",
+      "bytes": 7100,
+      "sha256": "dc327e01089b61600e30c6c1523795a6388310037f8946bcf49c89ff4a73b4f1",
+      "blob": "02ce5feeffb9fce8edd431a52b2debcea9e6c5b0"
+    },
+    {
+      "path": "tests/assets/remote-media.cjs",
+      "bytes": 9233,
+      "sha256": "753755911890bcf87405742239fc22c303958b69ac772ae42fc32d16bc9d4f5c",
+      "blob": "2732bc9233f1937611bbccef776a7a3916e464fb"
+    },
+    {
+      "path": "tests/assets/remote-review.cjs",
+      "bytes": 8063,
+      "sha256": "ed7a47f2b09ae31b62c1e1d385bcd9a8acda4c7d9f056e4d6ee2e5ba6bc050b4",
+      "blob": "73fa9da6ace5279255704a593553ec1d1048b452"
+    }
+  ],
+  "mode": "exact staged material blobs",
+  "selfExclusion": "docs/evidence/phase07/remote/materials-security-audit.json (prevents recursive hash; final audit:staged includes it)"
+}

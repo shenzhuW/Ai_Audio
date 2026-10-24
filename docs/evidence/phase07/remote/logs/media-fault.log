@@ -1,0 +1,14 @@
+PASS Real FFmpeg preparation then exact recipe cache hit
+PASS Changing interval rebuilds distinct recipe and output
+PASS New source content SHA creates a new immutable source and cache key
+PASS Modified source is refused before cached output use
+PASS Missing original produces explicit failure
+PASS Corrupt recipe manifest is refused
+PASS Corrupt cached media is refused by SHA
+PASS Missing cache manifest rebuilds verified output rather than assuming a hit
+PASS FFmpeg unavailable produces an explicit media failure
+PASS Stale provider URL 404 (fault injection)
+PASS Interrupted download does not produce success (fault injection)
+PASS Cancelled fetch rejected without network
+PASS Self-authored source remains byte-identical after all fault checks
+PASS Decode actual Remotion MP4 at 2/5/8 seconds and compare spatial background to exact PreparedAsset

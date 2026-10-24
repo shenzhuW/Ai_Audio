@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "code": "0240d6ef8a5e674598ff46758c4bca0f1e8fa9e3",
+  "baseline": "34d88410a1f1b1e0a92a4bae548871fcc9c7288f",
+  "at": "2026-10-24T08:25:22.661Z",
+  "fresh": {
+    "unitPass": 76,
+    "unitFail": 0,
+    "browserRestartGroups": 6,
+    "mediaFaultAndPixelGroups": 14
+  },
+  "historicalEvidenceRechecked": {
+    "sqliteGroups": 19,
+    "postgresqlGroups": 21,
+    "oldPhaseSQLiteGroups": 65,
+    "renderArtifactsByteVerified": 12
+  },
+  "backends": [
+    {
+      "backend": "sqlite",
+      "status": "PASS",
+      "historicalIntegrationGroups": 19,
+      "includesResumeProvenance": 1,
+      "freshReadOnlyBrowserGroups": 3,
+      "directorRevisionId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+      "sourceCount": 7,
+      "candidateCount": 10,
+      "bindingVersions": 5,
+      "preparedCount": 3,
+      "aiAudits": [
+        {
+          "runId": "01a16cc9-c327-7e82-b482-be66c2784a43",
+          "model": "gpt-6.1-sol",
+          "durationMs": 22042,
+          "usage": {
+            "input_tokens": 10827,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 351,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "runId": "01a16cca-2d86-7852-98cb-482db1faa8e2",
+          "model": "gpt-6.1-sol",
+          "durationMs": 16256,
+          "usage": {
+            "input_tokens": 9623,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 203,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "remotionSha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+      "protectedUserDataHash": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+    },
+    {
+      "backend": "postgresql",
+      "status": "PASS",
+      "historicalIntegrationGroups": 21,
+      "includesResumeProvenance": 1,
+      "freshReadOnlyBrowserGroups": 3,
+      "directorRevisionId": "bc172038-2599-48f3-b274-e3c5deabf80b",
+      "sourceCount": 7,
+      "candidateCount": 10,
+      "bindingVersions": 5,
+      "preparedCount": 3,
+      "aiAudits": [
+        {
+          "runId": "01a16cca-1b92-70a2-98ac-ee09160bcff2",
+          "model": "gpt-6.1-sol",
+          "durationMs": 21458,
+          "usage": {
+            "input_tokens": 10851,
+            "output_tokens": 374,
+            "cached_input_tokens": 0,
+            "reasoning_output_tokens": 0,
+            "cache_write_input_tokens": 0
+          }
+        },
+        {
+          "runId": "01a16cca-7fc5-7262-a48a-0fa51e038055",
+          "model": "gpt-6.1-sol",
+          "durationMs": 16732,
+          "usage": {
+            "input_tokens": 9623,
+            "output_tokens": 195,
+            "cached_input_tokens": 0,
+            "reasoning_output_tokens": 0,
+            "cache_write_input_tokens": 0
+          }
+        }
+      ],
+      "remotionSha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+      "protectedUserDataHash": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+    }
+  ],
+  "realAIReexecuted": false,
+  "codexSafetyRuntimeUnchanged": true,
+  "notes": [
+    "Fresh unit/type/build, two database read-only browser/restart and actual media fault/pixel checks. Original actual AI and integration logs reviewed; not renamed as freshly rerun.",
+    "Transport interruption and HTTP404 checks use explicit fault injection; real external success evidence remains original NASA/Commons calls.",
+    "No business implementation or migration changes in final acceptance supplement."
+  ]
+}

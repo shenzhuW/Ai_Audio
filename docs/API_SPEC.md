@@ -195,3 +195,21 @@ metadata 为 `{revisionId,expectedVersion,title,sourceUrl?,publisher?,creator?,p
 locator 为 `{kind:"text",label}`、`{kind:"page",page,label?}`、`{kind:"image",label}` 或 `{kind:"time",startMs,endMs,label?}`。需要原文 quote，PDF 页数与视频时间先经真实分析确定。Quote 匹配只代表引用位置可追溯，不保证 Claim 正确。
 
 分析在独立研究 Worker 执行；API 不运行解析器或 TSX。状态/取消/重试继续用 jobs 接口。未配置 Provider 为失败任务 PROVIDER_NOT_CONFIGURED；Mock 搜索返回说明和空候选，不生成假 URL；Mock 描述不变为真实视觉结论。旧 Job JSON 与 Phase 02 Render Worker 保持兼容。
+
+## Phase05 实际语音API（2026-10-24）
+
+沿用 `/api/v1`、同源会话、项目归属、Zod、Idempotency-Key与expectedVersion。草稿可写、批准只读；冲突409，业务边界422。旧通用文本API保持兼容，但不能绕过结构化保存。
+
+| 方法 | `/projects/:id` 下路径 | 契约 |
+|---|---|---|
+| GET | `/voice-timeline?revisionId=` | timeline/cues/track/segments/revisions/jobs/providers/diff/impact |
+| POST | `/voice-timeline` | scriptRevisionId+mode，201；旧草稿显式legacyRevisionId+expectedVersion |
+| PATCH | `/voice-timeline` | revisionId+expectedVersion+durationMs+cues+subtitles+alignmentConfirmed |
+| POST | `/voice-mode` | 草稿修订/版本+mode，显式清除当前音轨并重建估算/静默计划 |
+| POST | `/voice-retime` | 草稿修订/版本，显式重建估算/静默节奏，不冒充模型对齐 |
+| POST | `/voice-audio` | 单file+JSON metadata(revisionId/expectedVersion)，签名/大小校验；202 Job，Worker验证FFprobe |
+| POST | `/voice-runs` | 修订/版本+provider(windows-sapi/unconfigured/mock)+voice+rate(-10..10)+purpose(preview/final)，202 |
+| POST | `/voice-analysis-runs` | 修订/版本+operation(transcribe/align)+provider(whisper-local/unconfigured/mock)，202 |
+| GET/HEAD | `/voice-files/:blobId` | 只允许本项目正式音轨或成功试听Job；SHA验证、Range206/416、private no-store |
+
+审核、拒绝、Fork、历史、任务查询/取消/重试使用已有Artifact/Job API，不重造审批系统。preview输出不替换正式Timeline也不提升目标版本；ASR未绑定草稿不能提交；替换音频/文稿须重新核对。具体严格结构见domain/voice.ts；模型单任务限额与未配置行为见VOICE_SETUP。

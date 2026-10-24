@@ -1,0 +1,221 @@
+{
+  "revisionId": "a31e43fc-4115-43fa-b47d-e657b6128a6e",
+  "jobId": "8c5a9c68-dba4-46a9-bb39-e2bce7af3f30",
+  "aiRuns": [
+    {
+      "model": "gpt-6.1-sol",
+      "quota": null,
+      "runId": "01a16b93-daec-7c13-97f1-ef772b63fe7b",
+      "usage": {
+        "input_tokens": 12022,
+        "output_tokens": 1270,
+        "cached_input_tokens": 0,
+        "reasoning_output_tokens": 25,
+        "cache_write_input_tokens": 0
+      },
+      "policy": "data-only-v1",
+      "provider": "codex-cli",
+      "isolation": {
+        "ephemeral": true,
+        "modelPatch": "disabled",
+        "modelShell": "disabled",
+        "codeModeHost": "v8-data-only",
+        "enabledMcpServers": 0,
+        "userConfigIgnored": true
+      },
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "startedAt": "2026-10-24T01:43:33.957Z",
+      "cliVersion": "codex-cli 0.163.0",
+      "durationMs": 32986,
+      "jobAttempt": 1,
+      "searchMode": "disabled",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "failureReason": null
+    }
+  ],
+  "candidates": [
+    {
+      "id": "e316e37e-4523-4858-9243-b52370d2c1be",
+      "claim": {
+        "asOf": null,
+        "text": "文档描述，ffprobe 可收集多媒体流信息，并以人和机器可读的形式输出，包括容器格式及其中各媒体流的格式和类型。",
+        "unit": "不适用",
+        "scope": "所给 ffprobe 文档描述的功能",
+        "caveats": "未指定软件版本；这是文档功能描述，未经过实际运行验证。",
+        "verificationStatus": "unverified"
+      },
+      "evidence": [
+        {
+          "role": "support",
+          "match": {
+            "endChar": 846,
+            "locator": {
+              "kind": "text",
+              "label": "f2705556-7885-46cb-9085-52c99b6831a7 · UTF-16 587–846"
+            },
+            "startChar": 587,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+          },
+          "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion. For example it can be used to check the format of the container used by a multimedia stream and the format and type of each media stream contained in it.",
+          "indexId": "f2705556-7885-46cb-9085-52c99b6831a7",
+          "sourceId": "eaf65c3c-380c-497a-a62a-b307f3382ec1"
+        }
+      ],
+      "conflictNote": "片段内未见相反描述；仅有单一来源支持。"
+    },
+    {
+      "id": "9fec30b0-c7a4-4f80-9d6c-6667b2272545",
+      "claim": {
+        "asOf": null,
+        "text": "文档说明，输入 URL 无法打开或无法被识别为多媒体文件时，ffprobe 返回正数退出码。",
+        "unit": "退出码（正数，未指定具体值）",
+        "scope": "ffprobe 对输入 URL 的打开或识别失败情形",
+        "caveats": "仅描述所列失败条件，不据此推断其他条件下的退出码。",
+        "verificationStatus": "unverified"
+      },
+      "evidence": [
+        {
+          "role": "support",
+          "match": {
+            "endChar": 1028,
+            "locator": {
+              "kind": "text",
+              "label": "f2705556-7885-46cb-9085-52c99b6831a7 · UTF-16 931–1028"
+            },
+            "startChar": 931,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+          },
+          "quote": "If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.",
+          "indexId": "f2705556-7885-46cb-9085-52c99b6831a7",
+          "sourceId": "eaf65c3c-380c-497a-a62a-b307f3382ec1"
+        }
+      ],
+      "conflictNote": "片段内未见相反描述；仅有单一来源支持，未验证实际退出行为。"
+    },
+    {
+      "id": "4725ddfb-7e14-458c-a758-283acf71755c",
+      "claim": {
+        "asOf": null,
+        "text": "文档规定，除非另有说明，数值选项可接受带 SI 前缀的数字字符串；前缀后追加 i 表示以 1024 的幂为基础的二进制倍数，追加 B 则将数值乘以 8。",
+        "unit": "SI 前缀及二进制倍数；B 对应乘数 8",
+        "scope": "所给文档中未另行规定的数值选项",
+        "caveats": "保留“除非另有说明”的例外；不扩展为对任意参数或实际安装版本的保证。",
+        "verificationStatus": "unverified"
+      },
+      "evidence": [
+        {
+          "role": "support",
+          "match": {
+            "endChar": 2489,
+            "locator": {
+              "kind": "text",
+              "label": "f2705556-7885-46cb-9085-52c99b6831a7 · UTF-16 1997–2489"
+            },
+            "startChar": 1997,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+          },
+          "quote": "All the numerical options, if not specified otherwise, accept a string representing a number as input, which may be followed by one of the SI unit prefixes, for example: &rsquo;K&rsquo;, &rsquo;M&rsquo;, or &rsquo;G&rsquo;. If &rsquo;i&rsquo; is appended to the SI unit prefix, the complete prefix will be interpreted as a unit prefix for binary multiples, which are based on powers of 1024 instead of powers of 1000. Appending &rsquo;B&rsquo; to the SI unit prefix multiplies the value by 8.",
+          "indexId": "f2705556-7885-46cb-9085-52c99b6831a7",
+          "sourceId": "eaf65c3c-380c-497a-a62a-b307f3382ec1"
+        }
+      ],
+      "conflictNote": "片段内未见相反描述；仅有单一来源支持。"
+    },
+    {
+      "id": "28b19f4f-de75-4867-8690-c1eb739d2b50",
+      "claim": {
+        "asOf": null,
+        "text": "文档说明，-sources 返回输入设备自动检测到的源列表，但部分设备的系统相关源名称可能无法自动检测，因此不能假定返回列表始终完整。",
+        "unit": "不适用",
+        "scope": "通用选项 -sources 的输入设备源列表",
+        "caveats": "这是文档明确给出的完整性限制，不表示每次返回的列表都不完整。",
+        "verificationStatus": "unverified"
+      },
+      "evidence": [
+        {
+          "role": "support",
+          "match": {
+            "endChar": 9306,
+            "locator": {
+              "kind": "text",
+              "label": "f2705556-7885-46cb-9085-52c99b6831a7 · UTF-16 9065–9306"
+            },
+            "startChar": 9065,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+          },
+          "quote": "-sources device [, opt1 = val1 [, opt2 = val2 ]...] Show autodetected sources of the input device. Some devices may provide system-dependent source names that cannot be autodetected. The returned list cannot be assumed to be always complete.",
+          "indexId": "f2705556-7885-46cb-9085-52c99b6831a7",
+          "sourceId": "eaf65c3c-380c-497a-a62a-b307f3382ec1"
+        }
+      ],
+      "conflictNote": "片段内未见相反描述；仅有单一来源支持，无法判断具体设备的列表完整性。"
+    }
+  ],
+  "grounding": [
+    {
+      "candidateId": "e316e37e-4523-4858-9243-b52370d2c1be",
+      "sourceId": "eaf65c3c-380c-497a-a62a-b307f3382ec1",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "indexId": "f2705556-7885-46cb-9085-52c99b6831a7",
+      "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion. For example it can be used to check the format of the container used by a multimedia stream and the format and type of each media stream contained in it.",
+      "endChar": 846,
+      "locator": {
+        "kind": "text",
+        "label": "f2705556-7885-46cb-9085-52c99b6831a7 · UTF-16 587–846"
+      },
+      "startChar": 587,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+    },
+    {
+      "candidateId": "9fec30b0-c7a4-4f80-9d6c-6667b2272545",
+      "sourceId": "eaf65c3c-380c-497a-a62a-b307f3382ec1",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "indexId": "f2705556-7885-46cb-9085-52c99b6831a7",
+      "quote": "If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.",
+      "endChar": 1028,
+      "locator": {
+        "kind": "text",
+        "label": "f2705556-7885-46cb-9085-52c99b6831a7 · UTF-16 931–1028"
+      },
+      "startChar": 931,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+    },
+    {
+      "candidateId": "4725ddfb-7e14-458c-a758-283acf71755c",
+      "sourceId": "eaf65c3c-380c-497a-a62a-b307f3382ec1",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "indexId": "f2705556-7885-46cb-9085-52c99b6831a7",
+      "quote": "All the numerical options, if not specified otherwise, accept a string representing a number as input, which may be followed by one of the SI unit prefixes, for example: &rsquo;K&rsquo;, &rsquo;M&rsquo;, or &rsquo;G&rsquo;. If &rsquo;i&rsquo; is appended to the SI unit prefix, the complete prefix will be interpreted as a unit prefix for binary multiples, which are based on powers of 1024 instead of powers of 1000. Appending &rsquo;B&rsquo; to the SI unit prefix multiplies the value by 8.",
+      "endChar": 2489,
+      "locator": {
+        "kind": "text",
+        "label": "f2705556-7885-46cb-9085-52c99b6831a7 · UTF-16 1997–2489"
+      },
+      "startChar": 1997,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+    },
+    {
+      "candidateId": "28b19f4f-de75-4867-8690-c1eb739d2b50",
+      "sourceId": "eaf65c3c-380c-497a-a62a-b307f3382ec1",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "indexId": "f2705556-7885-46cb-9085-52c99b6831a7",
+      "quote": "-sources device [, opt1 = val1 [, opt2 = val2 ]...] Show autodetected sources of the input device. Some devices may provide system-dependent source names that cannot be autodetected. The returned list cannot be assumed to be always complete.",
+      "endChar": 9306,
+      "locator": {
+        "kind": "text",
+        "label": "f2705556-7885-46cb-9085-52c99b6831a7 · UTF-16 9065–9306"
+      },
+      "startChar": 9065,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+    }
+  ],
+  "note": "Original text hashes and exact UTF-16 offsets verified against privately retained fetched bytes. Candidate claims are NOT verified facts."
+}

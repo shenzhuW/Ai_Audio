@@ -1,5 +1,12 @@
 # 验收与测试记录（Codex 持续填写）
 
+## Phase05 配音与语音时间轴（2026-10-24）
+
+- PASS：真实中文Whisper ASR→未绑定字幕草稿，真实stable-ts声学句/词对齐→试听/人工修正；不是Mock或平均分配。音频/模型SHA、固定文稿、UTF-16范围、重复词和零宽原始词均可追溯。
+- PASS：系统TTS/真实导入/无口播三模式；云端神经TTS未配置和Mock明确失败，临时试听/正式音轨分离；真实FFprobe及Chrome播放/定位/字幕出现/人工编辑刷新。
+- PASS：稳定segmentId/anchorId、时间边界、forced来源保护、字幕未绑定禁止提交、批准数据库只读、拒绝/Fork、409/幂等、依赖失效、真实取消/重试/迟到保护及两库重启。SQLite12组、PG14组；56项单元/类型/构建通过。
+- 真实Codex旧能力及Phase00–04.5相关回归均按独立证据目录记录；原用户数据保持不变。Windows原生旧两次异常仍UNCONFIRMED。系统声音不是神经模型，识别错字和零宽模型边界须人工核对。详见[Phase05交付](../docs/PHASE_05_DELIVERY.md)。完成后本地提交停止，不推送/不进入Phase06。
+
 ## Phase04.5 候选 Claim 补充（整理2026-10-24）
 
 - PASS：真实原文→Codex候选→逐字Evidence→浏览器编辑/接受/拒绝→固定研究文稿引用，两库真实验证；候选unverified，正式冲突记录conflicting，不自动核实。

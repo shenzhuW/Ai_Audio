@@ -206,3 +206,7 @@ node tests/render/run.cjs --postgres --quick
 - `pnpm build` 已完整通过编译、类型检查、页面数据采集、静态生成与构建跟踪。开发服务器和生产服务器均实际启动；最终 HTTP / 浏览器证据来自生产实例。
 - `prisma generate` 和 `prisma validate` 已通过。Phase 00 时 PostgreSQL 未运行；Phase 00.5 使用独立 PostgreSQL 17.6 在 55432 端口完成实际迁移、CRUD、冲突、上传下载和重启测试；应用验收端口 3003，结果保存在 `docs/evidence/phase00-5/`。
 - 普通开发使用 3000；验收专用生产实例使用 3002 和 `.cache/acceptance-data`，与默认工作数据隔离。运行生产实例：`$env:PORT='3002'; $env:STUDIO_DATA_DIR='../../.cache/acceptance-data'; pnpm start`（从项目根目录）。
+
+## Phase05 本机语音
+
+新增三模式、真实导入/FFprobe、系统TTS、本地中文ASR与模型强制对齐。安装、开关、默认限额、Worker、数据库迁移和回滚见[VOICE_SETUP](VOICE_SETUP.md)。模型/venv/私有语音目录必须忽略；只提交自制公开验收夹具。不要在用户库上运行自动验收，不重新初始化项目。

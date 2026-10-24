@@ -1,0 +1,33 @@
+{
+  "status": "FAIL",
+  "at": "2026-10-24T01:49:09.256Z",
+  "backend": "sqlite",
+  "runId": "mvlqqarp",
+  "checks": [
+    {
+      "name": "旧 HTTP CRUD/上传/十页路由回归",
+      "status": "PASS",
+      "detail": {
+        "checks": 15
+      }
+    },
+    {
+      "name": "Phase 01 工作流回归",
+      "status": "PASS",
+      "detail": {
+        "checks": 8
+      }
+    },
+    {
+      "name": "真实 202/jobId、幂等及固定入口/参数保护",
+      "status": "PASS",
+      "detail": {
+        "jobId": "e4e045da-5a46-411e-9571-76c4163415de",
+        "duplicateJob": false
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "1e7c7960-1813-4d16-af2a-e349c66201ed",
+  "error": "AssertionError [ERR_ASSERTION]: {\"errorCode\":\"RENDER_PROCESS_FAILED\",\"logs\":[{\"at\":\"2026-10-24T01:49:11.689Z\",\"message\":\"可信预置渲染已排队；输入、素材和时间轴已冻结。\"},{\"at\":\"2026-10-24T01:49:14.333Z\",\"message\":\"claim: running\"},{\"at\":\"2026-10-24T01:49:14.405Z\",\"message\":\"启动可信渲染子进程\"},{\"at\":\"2026-10-24T01:49:15.757Z\",\"message\":\"RENDER_PROCESS_FAILED: Error: CHROMIUM_NOT_CONFIGURED\\n    at main ([repo]\\\\scripts\\\\render-child.cjs:46:11)\\n    at Object.<anonymous> ([repo]\\\\scripts\\\\render-child.cjs:168:1)\\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\\n    at Module.load (node:internal/modules/cjs/loader:1553:32)\\n    at Module._load (node:internal/modules/cjs/loader:1355:12)\\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\\n    at node:internal/main/run_main_module:33:47\\n\"},{\"at\":\"2026-10-24T01:49:15.762Z\",\"message\":\"finish: failed · RENDER_PROCESS_FAILED\"}],\"worker\":\"Render attempt ended: RENDER_PROCESS_FAILED\\n\"}\n+ actual - expected\n\n+ 'failed'\n- 'succeeded'\n\n    at main ([repo]\\tests\\render\\run.cjs:306:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}

@@ -134,3 +134,14 @@ Claim.verificationStatus 为 `unverified/supported/conflicting/withdrawn`。supp
 ClaimEvidence 保存 role、quote 与结构化 locator（文本标签、实际 PDF 页码、图片说明或原视频毫秒区间），validation 为 unvalidated/matched/mock。ResearchIndexEntry 保存内容类型、摘要、关键词、可提取文本、页码/时间段及抽帧引用、real/mock 来源；视频只是索引，不生成 PreparedAsset。页码及时间范围依实际元数据校验，列表按页码/起始时间排序。
 
 Workflow Job 兼容追加 provider=research 和可选 researchInput/researchResult。分析固定 sourceId、revisionId、Blob 与 mode，沿用原 Job/Outbox/幂等/租约；提交或批准后到达的结果失败为 TARGET_CHANGED，不改写已审资料。迁移为增量 0003，不重写 0001/0002，不自动迁移真实用户库。
+
+## Phase05 语音快照实现（2026-10-24）
+
+权威运行时协议为 `apps/web/src/domain/voice.ts`。新增0005，仅追加 `voice_timelines`、`voice_cue_versions`、`subtitle_tracks`；PG Prisma/SQLite同构JSON快照，草稿外禁止修改，历史禁止删除。`WorkflowRevision.voiceSchemaVersion=1`与固定Script依赖。
+
+- VoiceTimeline：物理id、revisionId、scriptRevisionId、mode、durationMs（有音频时必须FFprobe实测）、targetDurationMs、audio、timingBasis、alignmentConfirmed、audioStale。
+- VoiceCue：逻辑id与anchorId跨保存/同输入Fork稳定；物理版本行另有id/revisionId/cueId。segmentId+UTF-16 startChar/endChar+segmentTextSha256精确映射重复词，不允许切开代理对。level=sentence/phrase/word；同层非重叠、跨层可嵌套；时间非负且start<end<=duration。alignment=manual/estimated/planned/forced，forced只有真实结果可创建，手改后降为manual；confidence未知为null，原始模型概率另存，不伪造精度。
+- SubtitleTrack：稳定trackId、语言、独立字幕数组；字幕稳定id、可空anchorId/segmentId、text/start/end/sourceRunId。ASR未绑定字幕segmentId=null且不可提交；不把识别结果当作原文自动绑定。字幕改动不写ScriptSegment/Claim/Source。
+- Job.voiceInput冻结目标修订/版本、已批准文稿、音频blob/SHA、operation、Provider与资源限额；voiceResult区分audio/asr/alignment，保存原始词（可零宽）、模型SHA、音频SHA、时间与字幕草稿。voiceRuns记录每次attempt的runId/时长/失败、输入SHA、模型/进程信息及ASR是否有参考文稿；没有远程账号用量。输出校验和事务保护沿用Workflow。
+
+删除Cue用removed保留版本，替换音频标旧锚点stale，改变批准Script使配音依赖失效；同输入Fork不改逻辑ID，改变输入保留能证明身份的段落并标变化，不能把旧时间直接确认为新音轨。旧Phase01通用配音文本保持兼容/历史可读，不是可用VoiceTimeline；显式转换草稿或Fork后再建立。

@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T01:53:44.291Z",
+  "backend": "postgresql",
+  "runId": "mvlqw6zl",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL 与幂等迁移",
+      "status": "PASS",
+      "detail": {
+        "version": "PostgreSQL 17.6 on x86_64-windows, compiled by msvc-19.44.35217, 64-bit"
+      }
+    },
+    {
+      "name": "旧 HTTP CRUD/上传/十页路由回归",
+      "status": "PASS",
+      "detail": {
+        "checks": 15
+      }
+    },
+    {
+      "name": "Phase 01 工作流回归",
+      "status": "PASS",
+      "detail": {
+        "checks": 8
+      }
+    },
+    {
+      "name": "真实 202/jobId、幂等及固定入口/参数保护",
+      "status": "PASS",
+      "detail": {
+        "jobId": "92301b7b-6213-4cfc-9afd-d1ef03fae453",
+        "duplicateJob": false
+      }
+    },
+    {
+      "name": "PostgreSQL 行与真实 HTTP/Worker 结果完全一致",
+      "status": "PASS",
+      "detail": {
+        "jobId": "92301b7b-6213-4cfc-9afd-d1ef03fae453",
+        "rolsuper": false,
+        "rolcreatedb": false
+      }
+    },
+    {
+      "name": "真实 Remotion/心跳/媒体规格/三帧确定性",
+      "status": "PASS",
+      "detail": {
+        "jobId": "92301b7b-6213-4cfc-9afd-d1ef03fae453",
+        "metadata": {
+          "durationSeconds": 10,
+          "width": 1080,
+          "height": 1920,
+          "fps": 30,
+          "codec": "h264",
+          "frames": 300
+        },
+        "leaseExtended": true,
+        "determinism": [
+          {
+            "first": "2e859b3cef5de9a47a618387dbdfe1bd59ad7f926f78576fb2a803bb913ad786",
+            "frame": 60,
+            "second": "2e859b3cef5de9a47a618387dbdfe1bd59ad7f926f78576fb2a803bb913ad786"
+          },
+          {
+            "first": "b1b291ca074058bfd22b4115e2bdb0624c38c19c2155fdfbdc148d4c0394ee55",
+            "frame": 150,
+            "second": "b1b291ca074058bfd22b4115e2bdb0624c38c19c2155fdfbdc148d4c0394ee55"
+          },
+          {
+            "first": "e734cc419644e95499f83ee4782cde5cb0f9c7ea7662a7628c961650536721ff",
+            "frame": 240,
+            "second": "e734cc419644e95499f83ee4782cde5cb0f9c7ea7662a7628c961650536721ff"
+          }
+        ]
+      }
+    },
+    {
+      "name": "受保护视频/Range 播放/文件白名单",
+      "status": "PASS",
+      "detail": {
+        "anonymous": 401,
+        "range": 206,
+        "invalidRange": 416,
+        "unlistedFile": 400
+      }
+    },
+    {
+      "name": "关键帧与实际 MP4 对应画面一致",
+      "status": "PASS",
+      "detail": {
+        "frame": 150,
+        "psnr": "38.132601",
+        "sharedInputProps": true,
+        "sharedTimeline": true
+      }
+    },
+    {
+      "name": "第 08 页实际视频播放、刷新与 390px 响应式",
+      "status": "PASS",
+      "detail": {
+        "duration": 10,
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "字号参数新输入、冻结时间轴、旧产物与项目不变",
+      "status": "PASS",
+      "detail": {
+        "newJobId": "563b2778-c6b7-4f9f-b4b6-ad8a7ccfbe28",
+        "targetDurationMs": 240000
+      }
+    },
+    {
+      "name": "进程重启恢复与原数据目录保留",
+      "status": "PASS",
+      "detail": {
+        "unchanged": true,
+        "sha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase02_mvlqw6zl",
+  "projectId": "649b866c-19b3-458f-8fe1-86dd56185161",
+  "finishedAt": "2026-10-24T01:56:01.396Z"
+}

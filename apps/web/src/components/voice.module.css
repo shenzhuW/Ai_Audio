@@ -1,0 +1,88 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 0.38fr);
+  gap: 20px;
+  margin-top: 20px;
+  align-items: start;
+}
+.grid > * {
+  min-width: 0;
+}
+.audio {
+  width: 100%;
+  margin: 18px 0 8px;
+}
+.row {
+  padding: 18px 0;
+  border-bottom: 1px solid #e5ecf5;
+  min-width: 0;
+}
+.row:last-child {
+  border-bottom: 0;
+}
+.row p {
+  line-height: 1.8;
+}
+.hash {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+  color: #64748b;
+}
+.subtitle {
+  background: #102846;
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  min-height: 100px;
+}
+.subtitle p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 10px 0;
+}
+.subtitle small {
+  opacity: 0.7;
+}
+.timeline {
+  position: relative;
+  height: 28px;
+  background: #eaf1fc;
+  border-radius: 6px;
+  margin: 18px 0;
+  overflow: hidden;
+}
+.timeline button {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  background: #4f8aff;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.check {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  line-height: 1.8;
+  font-size: 12px;
+  margin: 20px 0;
+}
+.check input {
+  margin-top: 4px;
+  flex: none;
+}
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .subtitle {
+    padding: 14px;
+  }
+  .subtitle p {
+    font-size: 16px;
+  }
+}

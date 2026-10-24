@@ -1,0 +1,92 @@
+{
+  "status": "FAIL",
+  "backend": "postgresql",
+  "runId": "mvlqbj1c",
+  "at": "2026-10-24T01:37:40.132Z",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL 初始化/重复迁移：当前全部增量迁移",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          },
+          {
+            "migration_name": "0005_voice",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载",
+      "status": "PASS",
+      "detail": {
+        "jobId": "30778344-52ab-4041-aaa5-6f8c82e77ab5",
+        "candidates": 1,
+        "sourceId": "20e52ad8-f31e-4f7c-b838-185251cad306",
+        "runId": "01a16b8e-9cb0-7a41-bc24-e53a96969ea2"
+      }
+    },
+    {
+      "name": "真实图片理解绑定原件SHA；视觉输出不作为原文匹配",
+      "status": "PASS",
+      "detail": {
+        "jobId": "f2e20334-9265-4edb-9466-02cf8948beee",
+        "summary": "图片为白色背景的简易柱状图。黑色横轴位于下方，左侧有黑色纵轴，未见刻度或单位。三个竖直矩形柱从左到右分别为红色、绿色、蓝色，高度依次增加；柱下标有“A”“B”“C”，柱顶附近分别标有“10”“20”“30”。顶部黑色文字为“SELF-AUTHORED VISUAL TEST ONLY”，其中右端与“30”较为接近。未见图例；这些数值的实际含义无法从图片确定。\n模型分析边界：仅描述所附图片中可见的静态内容；无法确定数据来源、单位或业务含义。",
+        "runId": "01a16b8e-ea08-72d3-b733-a978dd2d06a3"
+      }
+    },
+    {
+      "name": "真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称",
+      "status": "PASS",
+      "detail": {
+        "jobId": "6d67f2cd-f7c5-4881-85ea-49e9f41ecef5",
+        "timestamps": [
+          0,
+          3333,
+          6666
+        ],
+        "runIds": [
+          "01a16b8f-237c-74b0-88cb-499a4167edd2",
+          "01a16b8f-5971-7891-b186-403d29906046",
+          "01a16b8f-881e-7291-bee1-be886765c907"
+        ]
+      }
+    },
+    {
+      "name": "真实 Codex 从已抓取原文生成候选；Source/Index允许集、SHA和逐字引用验证；尚无正式Claim",
+      "status": "PASS",
+      "detail": {
+        "jobId": "75a0a347-e9cf-4049-a4a9-bf5571d9edd8",
+        "count": 4,
+        "runIds": [
+          "01a16b8f-d89e-7222-9928-bbf49dd957ae"
+        ]
+      }
+    },
+    {
+      "name": "真实HTTP拒绝伪造原文与未知Source ID，事务没有部分写入",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase045_mvlqbj1c",
+  "projectId": "1972cda6-1b9d-4641-9fdb-dc6103a638ad",
+  "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-candidate-id=\"870c024d-7ae4-44de-b62c-05c0afaa6351\"]').getByRole('textbox', { name: '候选 Claim', exact: true }) to be visible\u001b[22m\n\n    at module.exports ([repo]\\tests\\real-ai\\claim-supplement.cjs:132:69)\n    at async main ([repo]\\tests\\real-ai\\run.cjs:507:7)"
+}

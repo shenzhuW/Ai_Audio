@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-24T01:58:59.174Z",
+  "status": "PASS",
+  "unit": {
+    "pass": 56,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "module": "voice",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 12,
+      "runId": "mvlqey57",
+      "file": "sqlite/results.json"
+    },
+    {
+      "module": "voice",
+      "backend": "postgresql",
+      "status": "PASS",
+      "groups": 14,
+      "runId": "mvlqey66",
+      "file": "postgresql/results.json"
+    },
+    {
+      "module": "regression-research",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 15,
+      "runId": "mvlq12nz",
+      "file": "regression-research/sqlite/results.json"
+    },
+    {
+      "module": "regression-research",
+      "backend": "postgresql",
+      "status": "PASS",
+      "groups": 16,
+      "runId": "mvlq7vmr",
+      "file": "regression-research/postgresql/results.json"
+    },
+    {
+      "module": "regression-script",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 9,
+      "runId": "mvlq1c1t",
+      "file": "regression-script/sqlite/results.json"
+    },
+    {
+      "module": "regression-script",
+      "backend": "postgresql",
+      "status": "PASS",
+      "groups": 11,
+      "runId": "mvlq7vb5",
+      "file": "regression-script/postgresql/results.json"
+    },
+    {
+      "module": "regression-real-ai",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 13,
+      "runId": "mvlq2noi",
+      "file": "regression-real-ai/sqlite/results.json"
+    },
+    {
+      "module": "regression-real-ai",
+      "backend": "postgresql",
+      "status": "PASS",
+      "groups": 14,
+      "runId": "mvlqgibs",
+      "file": "regression-real-ai/postgresql/results.json"
+    },
+    {
+      "module": "regression-render",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 11,
+      "runId": "mvlqqvsg",
+      "file": "regression-render/sqlite/results.json"
+    },
+    {
+      "module": "regression-render",
+      "backend": "postgresql",
+      "status": "PASS",
+      "groups": 11,
+      "runId": "mvlqw6zl",
+      "file": "regression-render/postgresql/results.json"
+    }
+  ],
+  "limitations": [
+    "No cloud neural TTS configured",
+    "ASR errors and zero-duration raw model words preserved",
+    "Trusted native inference, not an OS sandbox",
+    "Prior two Windows native anomalies remain UNCONFIRMED"
+  ]
+}

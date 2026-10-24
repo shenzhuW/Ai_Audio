@@ -4,7 +4,7 @@
 
 ## 当前实现状态：Phase 04.5 本地交付，等待审核
 
-已加入十页工作区、项目CRUD/原件、修订审核/依赖/任务、真实Remotion MP4、研究来源/Claim/内容索引和结构化口播。Phase04已远程交付；**Phase04.5优先复用本机Codex CLI / ChatGPT登录，实现真实live搜索、独立原文获取、图片/视频关键帧视觉和整体/局部文稿生成，已完成本地双库/浏览器验收，等待审核。** [Phase04.5交付](docs/PHASE_04_5_DELIVERY.md)、[启用方法](docs/LOCAL_DEVELOPMENT.md#phase-045本机-codex-真实能力)、[自制样例](fixtures/real-ai/README.md)。默认显式启用；SDK已评估，暂保留CLI传输。ASR、真实配音、任意代码OS沙箱仍待后续；模型描述不等于事实核实，估时不等于实测音频。原API/数据及可信组件限制保留，[内部测试优先策略](docs/INTERNAL_TEST_POLICY_UPDATE.md)有效。Phase05继续暂停；人工产品体验按用户决定延后。
+已完成 Phase00–04.5 的本地创作底座、修订审核、真实Remotion、研究追溯、Codex搜索/视觉/写稿及候选Claim/Evidence。Phase05正在交付真实配音时间轴：本机系统TTS、用户导入、无口播；本地Whisper真实中文ASR与stable-ts声学强制对齐，第05页播放/字幕/稳定锚点/版本审核。详见[配音启用与限制](docs/VOICE_SETUP.md)、[自制音频](fixtures/voice/README.md)和[Phase05交付](docs/PHASE_05_DELIVERY.md)。云端神经TTS未配置，不把系统声音冒充神经模型；模型输出须试听校正，不自动批准或核实。Codex原安全门禁与可信组件限制保留。Phase06未启动，人工整体体验仍按用户决定延后。
 
 先阅读 [Phase 01 交付报告](docs/PHASE_01_DELIVERY.md)、[工作流运行说明](docs/WORKFLOW_IMPLEMENTATION.md)、[本地运行说明](docs/LOCAL_DEVELOPMENT.md)、[PostgreSQL 说明](docs/POSTGRESQL_LOCAL.md) 和 [验收记录](tests/ACCEPTANCE.md)。旧阶段报告保留为当时记录。以下交接包介绍保留作原始研发背景，实际开发进度以实施日志为准。
 

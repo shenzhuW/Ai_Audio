@@ -1,0 +1,221 @@
+{
+  "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+  "jobId": "397db1b2-6762-4eb6-87ac-966daada44ef",
+  "aiRuns": [
+    {
+      "provider": "codex-cli",
+      "cliVersion": "codex-cli 0.163.0",
+      "model": "gpt-6.1-sol",
+      "runId": "01a16b89-daf5-71d2-8db2-4021489dbab9",
+      "searchMode": "disabled",
+      "startedAt": "2026-10-24T01:32:38.536Z",
+      "durationMs": 24357,
+      "usage": {
+        "input_tokens": 12030,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1137,
+        "reasoning_output_tokens": 41
+      },
+      "quota": null,
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "failureReason": null,
+      "policy": "data-only-v1",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "jobAttempt": 1,
+      "isolation": {
+        "modelShell": "disabled",
+        "modelPatch": "disabled",
+        "enabledMcpServers": 0,
+        "codeModeHost": "v8-data-only",
+        "userConfigIgnored": true,
+        "ephemeral": true
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "claim": {
+        "text": "据所给文档，ffprobe 收集多媒体流信息，并以人和机器可读的形式输出。",
+        "asOf": null,
+        "scope": "文档描述的 ffprobe 信息收集与输出功能",
+        "unit": "不适用",
+        "verificationStatus": "unverified",
+        "caveats": "原文未提供版本或日期；这是文档功能描述，未经运行验证。"
+      },
+      "conflictNote": "仅有单一来源支持，片段内未见直接反证。",
+      "evidence": [
+        {
+          "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+          "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+          "role": "support",
+          "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion.",
+          "match": {
+            "startChar": 587,
+            "endChar": 692,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "locator": {
+              "kind": "text",
+              "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 587–692"
+            }
+          }
+        }
+      ],
+      "id": "8d34dca8-c3b3-4de0-abaa-07b65c835a7c"
+    },
+    {
+      "claim": {
+        "text": "据所给文档，输入 URL 无法打开或无法被识别为多媒体文件时，ffprobe 返回正的退出码。",
+        "asOf": null,
+        "scope": "ffprobe 对输入 URL 的打开或识别失败情形",
+        "unit": "退出码（大于 0）",
+        "verificationStatus": "unverified",
+        "caveats": "原文未给出具体退出码，也未说明各类失败与退出码的对应关系；未经运行验证。"
+      },
+      "conflictNote": "仅有单一来源支持，片段内未见直接反证。",
+      "evidence": [
+        {
+          "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+          "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+          "role": "support",
+          "quote": "If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.",
+          "match": {
+            "startChar": 931,
+            "endChar": 1028,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "locator": {
+              "kind": "text",
+              "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 931–1028"
+            }
+          }
+        }
+      ],
+      "id": "d6b84b88-4d02-480a-a8fa-8ea87baca834"
+    },
+    {
+      "claim": {
+        "text": "据所给文档，流说明符 v 匹配所有视频流；V 仅匹配不属于附加图片、视频缩略图或封面图的视频流。",
+        "asOf": null,
+        "scope": "文档中 stream_type 流说明符的匹配规则",
+        "unit": "不适用",
+        "verificationStatus": "unverified",
+        "caveats": "保留 v 与 V 的大小写区别；这是匹配规则描述，未经具体媒体文件验证。"
+      },
+      "conflictNote": "仅有单一来源支持；v 与 V 的匹配范围差异不是相互矛盾。",
+      "evidence": [
+        {
+          "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+          "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+          "role": "support",
+          "quote": "&rsquo;v&rsquo; matches all video streams, &rsquo;V&rsquo; only matches video streams which are not attached pictures, video thumbnails or cover arts.",
+          "match": {
+            "startChar": 4804,
+            "endChar": 4954,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "locator": {
+              "kind": "text",
+              "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 4804–4954"
+            }
+          }
+        }
+      ],
+      "id": "0310e8a1-26f4-4f0e-86ee-14634a27be5b"
+    },
+    {
+      "claim": {
+        "text": "据所给文档，-sources 返回输入设备自动检测到的源列表，但某些设备的系统相关源名称无法自动检测，因此不能假定列表始终完整。",
+        "asOf": null,
+        "scope": "ff* 工具通用选项 -sources 的输入设备源枚举结果",
+        "unit": "不适用",
+        "verificationStatus": "unverified",
+        "caveats": "文档提示的是可能不完整，不表示每次返回的列表都不完整；未提供具体设备的完整性测试。"
+      },
+      "conflictNote": "仅有单一来源支持，片段内未见直接反证。",
+      "evidence": [
+        {
+          "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+          "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+          "role": "support",
+          "quote": "Show autodetected sources of the input device. Some devices may provide system-dependent source names that cannot be autodetected. The returned list cannot be assumed to be always complete.",
+          "match": {
+            "startChar": 9117,
+            "endChar": 9306,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "locator": {
+              "kind": "text",
+              "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 9117–9306"
+            }
+          }
+        }
+      ],
+      "id": "1ce35fba-c979-4a98-9243-381eeb017bc2"
+    }
+  ],
+  "grounding": [
+    {
+      "candidateId": "8d34dca8-c3b3-4de0-abaa-07b65c835a7c",
+      "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+      "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion.",
+      "startChar": 587,
+      "endChar": 692,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "locator": {
+        "kind": "text",
+        "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 587–692"
+      }
+    },
+    {
+      "candidateId": "d6b84b88-4d02-480a-a8fa-8ea87baca834",
+      "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+      "quote": "If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.",
+      "startChar": 931,
+      "endChar": 1028,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "locator": {
+        "kind": "text",
+        "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 931–1028"
+      }
+    },
+    {
+      "candidateId": "0310e8a1-26f4-4f0e-86ee-14634a27be5b",
+      "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+      "quote": "&rsquo;v&rsquo; matches all video streams, &rsquo;V&rsquo; only matches video streams which are not attached pictures, video thumbnails or cover arts.",
+      "startChar": 4804,
+      "endChar": 4954,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "locator": {
+        "kind": "text",
+        "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 4804–4954"
+      }
+    },
+    {
+      "candidateId": "1ce35fba-c979-4a98-9243-381eeb017bc2",
+      "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+      "quote": "Show autodetected sources of the input device. Some devices may provide system-dependent source names that cannot be autodetected. The returned list cannot be assumed to be always complete.",
+      "startChar": 9117,
+      "endChar": 9306,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "locator": {
+        "kind": "text",
+        "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 9117–9306"
+      }
+    }
+  ],
+  "note": "Original text hashes and exact UTF-16 offsets verified against privately retained fetched bytes. Candidate claims are NOT verified facts."
+}

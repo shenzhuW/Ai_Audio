@@ -1,0 +1,22 @@
+Guessed Channel Layout for Input Stream #0.0 : mono
+Input #0, wav, from 'fixtures/voice/chinese-system-speech.wav':
+  Duration: 00:00:09.60, bitrate: 352 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 22050 Hz, mono, s16, 352 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Output #0, null, to 'NUL':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0: Audio: pcm_s16le, 22050 Hz, mono, s16, 352 kb/s
+    Metadata:
+      encoder         : Lavc58.91.100 pcm_s16le
+[silencedetect @ 000001a868fd91c0] silence_start: 0.564717
+[silencedetect @ 000001a868fd91c0] silence_end: 1.05143 | silence_duration: 0.486712
+[silencedetect @ 000001a868fd91c0] silence_start: 1.45787
+[silencedetect @ 000001a868fd91c0] silence_end: 2.42163 | silence_duration: 0.963764
+[silencedetect @ 000001a868fd91c0] silence_start: 4.95515
+[silencedetect @ 000001a868fd91c0] silence_end: 5.91868 | silence_duration: 0.963537
+[silencedetect @ 000001a868fd91c0] silence_start: 8.79338
+size=N/A time=00:00:09.60 bitrate=N/A speed= 479x
+video:0kB audio:414kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[silencedetect @ 000001a868fd91c0] silence_end: 9.60145 | silence_duration: 0.808073

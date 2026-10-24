@@ -102,7 +102,9 @@ function Jobs({
                           : j.scriptInput?.mode === 'mock'
                             ? 'Mock 写稿演示'
                             : '提供方尚未配置'
-                        : '提供方尚未配置'}{' '}
+                        : j.provider === 'voice'
+                          ? `配音任务 · ${j.voiceInput?.provider} · ${j.voiceInput?.operation} · ${j.voiceInput?.purpose}`
+                          : '提供方尚未配置'}{' '}
                 · 执行 {j.attempt}/{j.maxAttempts} 次
               </p>
               <code className={s.caption}>{j.id}</code>
@@ -213,6 +215,7 @@ export function WorkflowPanel({
   onRevisionChange,
   integratedResearch = false,
   integratedScript = false,
+  integratedVoice = false,
   externalDirty = false,
   externalRevision,
 }: {
@@ -222,10 +225,12 @@ export function WorkflowPanel({
   onRevisionChange?: (id: string) => void;
   integratedResearch?: boolean;
   integratedScript?: boolean;
+  integratedVoice?: boolean;
   externalDirty?: boolean;
   externalRevision?: { id: string; version: number };
 }) {
   const { snapshot, error, busy, reload, send } = useWorkflow(projectId);
+  const integratedEditor = integratedScript || integratedVoice;
   const [selected, setSelected] = useState<string | null>(null);
   const [text, setText] = useState(originalText),
     [editVersion, setEditVersion] = useState(1);
@@ -241,12 +246,12 @@ export function WorkflowPanel({
   const isCurrent = artifact?.currentRevisionId === revision?.id;
   const stale = revision && snapshot?.staleRevisionIds.includes(revision.id);
   const waitingForSavedRevision =
-    integratedScript &&
+    integratedEditor &&
     externalRevision?.id === revision?.id &&
     externalRevision?.version !== revision?.version;
   useEffect(() => {
-    if (integratedScript && externalRevision) reload().catch(() => {});
-  }, [integratedScript, externalRevision?.id, externalRevision?.version]);
+    if (integratedEditor && externalRevision) reload().catch(() => {});
+  }, [integratedEditor, externalRevision?.id, externalRevision?.version]);
   function select(r: typeof revision) {
     if (r) {
       setSelected(r.id);
@@ -262,7 +267,7 @@ export function WorkflowPanel({
   }, [artifact?.currentRevisionId, selected]);
   useEffect(() => {
     if (
-      (integratedResearch || integratedScript) &&
+      (integratedResearch || integratedEditor) &&
       !dirty &&
       revision &&
       revision.version !== editVersion
@@ -270,7 +275,7 @@ export function WorkflowPanel({
       setText(revision.text);
       setEditVersion(revision.version);
     }
-  }, [integratedResearch, integratedScript, dirty, revision?.version, editVersion]);
+  }, [integratedResearch, integratedEditor, dirty, revision?.version, editVersion]);
   const inputs = () => {
     if (revision)
       return (
@@ -314,7 +319,7 @@ export function WorkflowPanel({
         } else {
           url += '/' + action;
           body = {
-            expectedVersion: integratedScript ? revision.version : editVersion,
+            expectedVersion: integratedEditor ? revision.version : editVersion,
             ...(action === 'approve' || action === 'reject' ? { comment } : {}),
           };
         }
@@ -346,8 +351,9 @@ export function WorkflowPanel({
   return (
     <>
       <Notice>
-        本页已接通真实保存、版本和审核。模拟生成仅提供带 Mock
-        标记的文本，外部事实核验与配音仍未接通；可信组件渲染位于第 08 页。
+        {integratedVoice
+          ? '本页审核上方实际保存的声音和时间轴；模型时间、人工校时与静默计划分别标识，批准后只读。'
+          : '本页已接通真实保存、版本和审核。模拟生成仅提供带 Mock 标记的文本，外部事实核验不由审批自动完成；可信组件渲染位于第 08 页。'}
       </Notice>
       {error && (
         <p role="alert" className={s.error}>
@@ -375,7 +381,11 @@ export function WorkflowPanel({
             aside={
               revision ? (
                 <Badge tone={revision.mock ? 'amber' : 'gray'}>
-                  {revision.mock ? 'Mock · 未核实' : '内容快照 · 未核实'}
+                  {revision.mock
+                    ? 'Mock · 未核实'
+                    : integratedVoice
+                      ? '时间基准快照'
+                      : '内容快照 · 未核实'}
                 </Badge>
               ) : undefined
             }
@@ -394,9 +404,11 @@ export function WorkflowPanel({
             {revision && !isCurrent && (
               <Notice>正在查看历史修订。当前候选已变化；请选取当前修订或显式创建新修订。</Notice>
             )}
-            {integratedScript && revision?.scriptSchemaVersion ? (
+            {integratedEditor && (revision?.scriptSchemaVersion || revision?.voiceSchemaVersion) ? (
               <p className={s.caption}>
-                正文与引用在上方按段保存；此处审核同一修订，不会重新生成文稿。
+                {integratedVoice
+                  ? '音频、Cue与字幕在上方保存；此处审核同一时间轴修订。'
+                  : '正文与引用在上方按段保存；此处审核同一修订，不会重新生成文稿。'}
               </p>
             ) : (
               <label className={s.field}>
@@ -408,7 +420,7 @@ export function WorkflowPanel({
                   maxLength={50000}
                   value={text}
                   readOnly={
-                    integratedScript || (!!revision && (revision.status !== 'draft' || !isCurrent))
+                    integratedEditor || (!!revision && (revision.status !== 'draft' || !isCurrent))
                   }
                   onChange={(e) => {
                     setText(e.target.value);
@@ -421,7 +433,7 @@ export function WorkflowPanel({
               无来源核验标记；批准内容仅确认此次创作修订，不授予素材商业许可。
             </p>
             <div className={s.actions}>
-              {!integratedScript && (!revision || (revision.status === 'draft' && isCurrent)) && (
+              {!integratedEditor && (!revision || (revision.status === 'draft' && isCurrent)) && (
                 <button
                   className={s.primary}
                   disabled={busy || !text.trim()}
@@ -448,7 +460,7 @@ export function WorkflowPanel({
                   创建新修订
                 </button>
               )}
-              {!integratedScript && (
+              {!integratedEditor && (
                 <button className={s.button} disabled={busy || dirty} onClick={() => act('mock')}>
                   生成模拟{type === 'research' ? '研究' : '文稿'}文本
                 </button>
@@ -534,7 +546,7 @@ export function WorkflowPanel({
               <p className={s.caption}>尚无修订，原始需求和上传资料保留在项目总览。</p>
             )}
           </Card>
-          {!integratedResearch && !integratedScript && (
+          {!integratedResearch && !integratedEditor && (
             <Jobs jobs={snapshot.jobs} projectId={projectId} send={send} busy={busy} />
           )}
         </div>

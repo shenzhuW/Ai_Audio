@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T01:29:44.517Z",
+  "backend": "sqlite",
+  "runId": "mvlq1c1t",
+  "checks": [
+    {
+      "name": "Phase00/01 HTTP 与工作流回归",
+      "status": "PASS",
+      "detail": {
+        "http": 15,
+        "workflow": 8
+      }
+    },
+    {
+      "name": "用户文稿跳过研究、稳定段落ID、真实并发409与幂等",
+      "status": "PASS",
+      "detail": {
+        "segmentIds": [
+          "ce5c3f45-6563-44d0-89a5-df734a15b95c",
+          "1fb6d33a-7d8e-43e5-82c4-f022f9afccdf"
+        ],
+        "statuses": [
+          200,
+          409
+        ]
+      }
+    },
+    {
+      "name": "真实浏览器第二段刷新、段落增删排序、批准/驳回/Fork/历史/差异与双表保护",
+      "status": "PASS",
+      "detail": {
+        "stableSegmentIds": [
+          "ce5c3f45-6563-44d0-89a5-df734a15b95c",
+          "1fb6d33a-7d8e-43e5-82c4-f022f9afccdf"
+        ],
+        "approvedRevisionId": "6a9286cb-8944-498c-aa1d-ac043da87566"
+      }
+    },
+    {
+      "name": "修改指定段落后依赖失效、未改段落依赖仍可复用",
+      "status": "PASS",
+      "detail": {
+        "changed": "579e0df6-99c6-4d2c-a4b7-dfd6c71b7167",
+        "unchanged": "f88f5f6c-0900-4547-8908-e9f96c699cd2",
+        "syntheticConsumers": true
+      }
+    },
+    {
+      "name": "文稿固定批准研究、双来源引用一致、冲突和未核实提示",
+      "status": "PASS",
+      "detail": {
+        "researchRevisionId": "8abb39fe-3870-4eda-91ab-83b2f351adad",
+        "claimId": "e718e456-fb45-40b2-acc3-8d7b6df27035",
+        "sourceIds": [
+          "f52976f2-e47f-4a39-b61b-8526c2b544f6",
+          "ff090b80-d7d0-447b-b598-b2019c055c63"
+        ],
+        "invalidReference": 422,
+        "refreshedBoundSecond": {
+          "text": "带双来源引用的第二段：这些数值仅用于合成测试，刷新后仍须保留引用。",
+          "segmentId": "2bf51798-afbe-4588-99b2-6b7592fcb8b3",
+          "factBindings": [
+            {
+              "claimId": "e718e456-fb45-40b2-acc3-8d7b6df27035",
+              "sourceIds": [
+                "f52976f2-e47f-4a39-b61b-8526c2b544f6",
+                "ff090b80-d7d0-447b-b598-b2019c055c63"
+              ]
+            }
+          ]
+        },
+        "unverifiedClaimId": "80f43c91-15e7-4ad6-952b-1e439f1004d1"
+      }
+    },
+    {
+      "name": "整体/局部写稿 Adapter、真实Worker Mock标识及未配置失败",
+      "status": "PASS",
+      "detail": {
+        "partialJob": "b6df7855-a72c-473f-9e34-f0761c12654f",
+        "wholeJob": "5bef2e09-459b-4583-a315-fd5531f02088",
+        "unconfigured": "cc48eae9-7b54-4777-b654-8b45fa976dbf",
+        "partialPreservedOtherSegment": true
+      }
+    },
+    {
+      "name": "研究替换定位绑定段落、旧批准文稿保留、Fork清空旧Claim并显式重绑",
+      "status": "PASS",
+      "detail": {
+        "oldResearch": "8abb39fe-3870-4eda-91ab-83b2f351adad",
+        "newResearch": "c7e6155a-d3ea-4716-88b5-f6bffe1482b9",
+        "affectedSegmentIds": [
+          "2bf51798-afbe-4588-99b2-6b7592fcb8b3"
+        ],
+        "oldIdsRejected": 422,
+        "sameResearchFork": {
+          "revisionId": "a2868401-d7c5-47d6-9ce4-bb89290e6544",
+          "researchRevisionId": "8abb39fe-3870-4eda-91ab-83b2f351adad",
+          "referencesPreserved": true
+        }
+      }
+    },
+    {
+      "name": "Phase01旧文本草稿可无损转换，不重新初始化项目",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启持久化、浏览器无错误及原数据保留",
+      "status": "PASS",
+      "detail": {
+        "originalDataHash": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54",
+        "unchanged": true,
+        "pageErrors": []
+      }
+    }
+  ],
+  "pageErrors": [],
+  "userProjectId": "1b160c24-3514-4552-8a0b-a3f8decbce50",
+  "researchProjectId": "c3f38753-d7e0-4541-a3f9-fe22d582f8b7",
+  "finishedAt": "2026-10-24T01:30:07.103Z"
+}

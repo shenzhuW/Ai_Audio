@@ -1,5 +1,14 @@
 import { z } from 'zod';
 import { AiRunSchema } from './ai';
+import {
+  voiceCommands,
+  VoiceTimelineSchema,
+  VoiceCueRecordSchema,
+  SubtitleTrackSchema,
+  VoiceJobInputSchema,
+  VoiceResultSchema,
+  VoiceRunSchema,
+} from './voice';
 import { RenderInputSchema, RenderResultSchema } from './motion';
 import {
   scriptCommands,
@@ -57,6 +66,7 @@ export const RevisionSchema = z.object({
   createdBy: z.string(),
   researchSchemaVersion: z.literal(1).optional(),
   scriptSchemaVersion: z.literal(1).optional(),
+  voiceSchemaVersion: z.literal(1).optional(),
 });
 export const DependencySchema = z.object({
   id,
@@ -86,7 +96,7 @@ export const WorkflowJobSchema = z.object({
   id,
   kind: ArtifactTypeSchema,
   version,
-  provider: z.enum(['mock', 'unconfigured', 'remotion', 'research', 'script']),
+  provider: z.enum(['mock', 'unconfigured', 'remotion', 'research', 'script', 'voice']),
   state: z.enum(['queued', 'running', 'succeeded', 'failed', 'cancelled']),
   inputRevisionIds: z.array(id),
   idempotencyKey: z.string(),
@@ -107,6 +117,9 @@ export const WorkflowJobSchema = z.object({
   claimCandidateReviews: z.array(ClaimCandidateReviewSchema).max(8).optional(),
   scriptInput: ScriptJobInputSchema.optional(),
   scriptResult: ScriptResultSchema.optional(),
+  voiceInput: VoiceJobInputSchema.optional(),
+  voiceResult: VoiceResultSchema.optional(),
+  voiceRuns: z.array(VoiceRunSchema).max(50).optional(),
   aiRuns: z.array(AiRunSchema).max(50).optional(),
   progress: z.number().min(0).max(1).optional(),
   heartbeatAt: at.optional(),
@@ -146,10 +159,23 @@ export const WorkflowStateSchema = z.object({
   researchIndexes: z.array(ResearchIndexEntrySchema).default([]),
   scriptDocuments: z.array(ScriptDocumentSchema).default([]),
   scriptSegments: z.array(SegmentRecordSchema).default([]),
+  voiceTimelines: z.array(VoiceTimelineSchema).default([]),
+  voiceCues: z.array(VoiceCueRecordSchema).default([]),
+  subtitleTracks: z.array(SubtitleTrackSchema).default([]),
 });
 const revisionAction = { revisionId: id, expectedVersion: version };
 const jobAction = { jobId: id, expectedVersion: version };
 export const WorkflowCommandSchema = z.discriminatedUnion('action', [
+  z
+    .object({
+      action: z.literal('record-voice-run'),
+      jobId: id,
+      workerId: z.string().min(1),
+      attempt: version,
+      run: VoiceRunSchema,
+    })
+    .strict(),
+  ...voiceCommands,
   z
     .object({
       action: z.literal('record-ai-run'),
@@ -223,6 +249,8 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       errorCode: z.string().max(80).optional(),
       renderResult: RenderResultSchema.optional(),
       researchResult: ResearchResultSchema.optional(),
+      voiceResult: VoiceResultSchema.optional(),
+      voiceRun: VoiceRunSchema.optional(),
       scriptResult: ScriptResultSchema.optional(),
       aiRuns: z.array(AiRunSchema).max(10).optional(),
     })

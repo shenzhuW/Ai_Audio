@@ -1,0 +1,219 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T01:40:19.711Z",
+  "backend": "postgresql",
+  "runId": "mvlqey66",
+  "checks": [
+    {
+      "name": "PostgreSQL 0001–0004 基线升级0005、重复部署、非超级用户",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          },
+          {
+            "migration_name": "0005_voice",
+            "count": 1
+          }
+        ],
+        "role": {
+          "rolsuper": false,
+          "rolcreatedb": false
+        }
+      }
+    },
+    {
+      "name": "真实上传、文件签名/FFprobe拒绝损坏、SHA/9602ms、Range/HEAD/鉴权/项目隔离、幂等",
+      "status": "PASS",
+      "detail": {
+        "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+        "durationMs": 9602,
+        "audio": {
+          "blob": {
+            "id": "3c98ba4c-50b3-4e7b-ad06-baf29a5f77b6",
+            "mime": "audio/wav",
+            "name": "chinese.wav",
+            "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+            "sizeBytes": 423470
+          },
+          "codec": "pcm_s16le",
+          "runId": "ff7f1841-a9b2-48e7-b496-52f2f7c2a1f8",
+          "origin": "import",
+          "purpose": "final",
+          "channels": 1,
+          "provider": "audio-import",
+          "durationMs": 9602,
+          "sampleRate": 22050
+        }
+      }
+    },
+    {
+      "name": "真实中文ASR→未绑定字幕草稿；未配置/超时/重试无部分写入且保留三次审计",
+      "status": "PASS",
+      "detail": {
+        "transcript": "測試,測試。這是配音時間軸的真實語音。字幕和詞語時間需要分別教驗。",
+        "runId": "69896e41-f812-4a01-acc0-d0a7bfac4aa9",
+        "model": "openai-whisper/base"
+      }
+    },
+    {
+      "name": "真实模型强制句/词对齐、重复词精确位置、非均分、零宽词保留原始但不伪造Cue",
+      "status": "PASS",
+      "detail": {
+        "runId": "d9124688-15ae-4688-b1c9-1d4cbf669b75",
+        "zeroWidth": [
+          {
+            "text": "测",
+            "endMs": 1260,
+            "startMs": 1260,
+            "probability": 0.5111081879585981
+          }
+        ],
+        "wordCues": 24,
+        "sentences": [
+          {
+            "id": "9a411c4a-a71e-486e-8e31-72992e7d6475",
+            "text": "测试，测试。",
+            "endMs": 2080,
+            "startMs": 260,
+            "anchorId": "1804f816-5ed3-40e6-a530-eef7642286eb",
+            "segmentId": "7238321c-4e3b-43a0-ac1f-ccd8eff8361f",
+            "sourceRunId": "d9124688-15ae-4688-b1c9-1d4cbf669b75"
+          },
+          {
+            "id": "b8b262ff-8ad4-407a-9c86-d124e5b78808",
+            "text": "这是配音时间轴的真实语音。",
+            "endMs": 5840,
+            "startMs": 2640,
+            "anchorId": "aa86da79-64cc-457e-8496-91fdd60dacbf",
+            "segmentId": "7238321c-4e3b-43a0-ac1f-ccd8eff8361f",
+            "sourceRunId": "d9124688-15ae-4688-b1c9-1d4cbf669b75"
+          },
+          {
+            "id": "e9c9945e-6355-483b-aadb-c204f34b069e",
+            "text": "字幕和词语时间需要分别校验。",
+            "endMs": 9060,
+            "startMs": 5840,
+            "anchorId": "e2c452e8-3e07-42f0-aab1-1703dcfb6a31",
+            "segmentId": "7238321c-4e3b-43a0-ac1f-ccd8eff8361f",
+            "sourceRunId": "d9124688-15ae-4688-b1c9-1d4cbf669b75"
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实Chrome解码播放/进度推进/模型字幕时序及人工修改刷新持久化；锚点/文稿不变",
+      "status": "PASS",
+      "detail": {
+        "media": {
+          "currentTime": 0.574124,
+          "paused": false,
+          "readyState": 4,
+          "duration": 9.601451
+        },
+        "subtitleId": "9a411c4a-a71e-486e-8e31-72992e7d6475",
+        "editedStartMs": 250
+      }
+    },
+    {
+      "name": "并发409、幂等、批准API/数据库不可变、Fork逻辑ID与历史原件保持",
+      "status": "PASS",
+      "detail": {
+        "approvedRevision": "805c6658-e036-43b4-b142-61112e3f9f9e",
+        "forkRevision": "5f0cafc1-cf39-4c4c-98da-7bf7dffab609",
+        "statuses": [
+          200,
+          409
+        ]
+      }
+    },
+    {
+      "name": "配音字幕新批准修订使合成下游依赖失效",
+      "status": "PASS",
+      "detail": {
+        "consumer": "a5c48d8e-b6aa-485d-8b81-230716ab57f1",
+        "syntheticDependencyOnly": true
+      }
+    },
+    {
+      "name": "真实模型运行取消/心跳/租约清空、异步旧版本结果不写入",
+      "status": "PASS",
+      "detail": {
+        "cancelledJob": "07736151-0985-4e39-aa0d-546eeab20e5b",
+        "lateJob": "a3f0b325-4574-4392-98b2-111420ff160f",
+        "error": "TARGET_CHANGED"
+      }
+    },
+    {
+      "name": "音频替换后锚点失效、阻止错误确认",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "TTS真实Windows系统声音、预览/正式隔离、云未配置与Mock明确失败",
+      "status": "PASS",
+      "detail": {
+        "audio": {
+          "blob": {
+            "id": "bd262cba-8f92-4942-b37e-0e3f5dedf98e",
+            "mime": "audio/wav",
+            "name": "system-voice-final.wav",
+            "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+            "sizeBytes": 423470
+          },
+          "codec": "pcm_s16le",
+          "runId": "1222caef-e8e9-40f2-af0d-f9b79609be51",
+          "origin": "tts",
+          "purpose": "final",
+          "channels": 1,
+          "provider": "windows-sapi",
+          "durationMs": 9602,
+          "sampleRate": 22050
+        },
+        "note": "真实系统TTS；非神经模型，不宣称Codex可合成音频"
+      }
+    },
+    {
+      "name": "无口播180秒静默计划、真实持久化/批准、无音频转录或伪对齐",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "批准新文稿使旧配音/锚点失效；旧批准历史不覆写",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启后音频/字幕/真实模型结果关系保留，原有用户数据SHA未变化",
+      "status": "PASS",
+      "detail": {
+        "originalDataSha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    },
+    {
+      "name": "PostgreSQL Prisma Schema零漂移",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase05_mvlqey66",
+  "projectId": "8a550583-8187-4f1c-802d-8e75ed6418a5",
+  "ttsProjectId": "84d893fe-6e19-4904-9f59-9ea5f65003cf",
+  "silentProjectId": "72c6955b-1553-41bd-880a-cd8a516506bd",
+  "finishedAt": "2026-10-24T01:41:47.763Z"
+}

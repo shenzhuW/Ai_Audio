@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-24T01:34:58.747Z",
+  "base": "http://127.0.0.1:3010",
+  "mode": "Real HTTP + postgresql; no external AI providers",
+  "checks": [
+    {
+      "name": "会话 cookie 使用 HttpOnly / SameSite=Strict",
+      "status": "PASS"
+    },
+    {
+      "name": "无会话 API 返回 401",
+      "status": "PASS"
+    },
+    {
+      "name": "伪造会话返回 401",
+      "status": "PASS"
+    },
+    {
+      "name": "跨站写入和缺少 Origin 返回 403",
+      "status": "PASS"
+    },
+    {
+      "name": "30 秒真实创建返回 201 和永久 UUID",
+      "status": "PASS"
+    },
+    {
+      "name": "240 秒横屏已有文稿 / 无口播真实保存",
+      "status": "PASS"
+    },
+    {
+      "name": "刷新详情及列表保留两种时长",
+      "status": "PASS"
+    },
+    {
+      "name": "空 Prompt / 非正数 / 非法比例 / 额度 / 错误 JSON",
+      "status": "PASS"
+    },
+    {
+      "name": "保存修改成功，旧版本写入返回 409",
+      "status": "PASS"
+    },
+    {
+      "name": "上传起点：原件保存、哈希、受保护下载内容一致",
+      "status": "PASS"
+    },
+    {
+      "name": "伪装文件被拒绝且不创建项目",
+      "status": "PASS"
+    },
+    {
+      "name": "多个文件总量超限 1 字节也返回 413 且不创建项目",
+      "status": "PASS"
+    },
+    {
+      "name": "10 个真实页面路由及深链接返回 200",
+      "status": "PASS"
+    },
+    {
+      "name": "9 个模拟工作区与真实项目隔离",
+      "status": "PASS"
+    },
+    {
+      "name": "不存在的 API 项目返回 404，未知页面显示 not-found",
+      "status": "PASS"
+    }
+  ],
+  "projectIds": [
+    "60dd659d-08d7-40e1-8eb1-81fa225479a0",
+    "f35e6fd9-79fe-4d16-942b-3875ebe43ac2",
+    "3cf22d67-e220-4694-986e-3d8ee3e8d915"
+  ]
+}

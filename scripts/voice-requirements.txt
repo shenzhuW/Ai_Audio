@@ -1,0 +1,8 @@
+# CPU inference; project-local virtual environment, no user/global Python mutation.
+stable-ts==2.19.1
+openai-whisper==20250625
+torch==2.4.1
+torchaudio==2.4.1
+numpy==1.24.4
+numba==0.58.1
+llvmlite==0.41.1

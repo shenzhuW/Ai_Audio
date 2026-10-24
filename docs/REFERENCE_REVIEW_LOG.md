@@ -1,5 +1,14 @@
 # 参考仓库阅读与适配记录
 
+## 2026-10-24 · Phase05 Voice
+
+实读固定SHA `920ed1d3b3ecb5997d861902e2719dda6688c0b1` 的 wallstreet-explainer [scripts/temp_voice.py](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/scripts/temp_voice.py)，blob `f0761cabfbd1a97804c3a19c9db506ea1326691d`；复核此前固定LICENSE为MIT。没有执行其edge-tts/faster-whisper脚本、复制源码或引入其样片素材。
+
+- 临时声轨用edge-tts的WordBoundary事件；正式`.final.wav`替换时会重新ASR；切除头部静音后同步修正时间，不默认事后加速。可借鉴“声轨变化使时间重新核对”，本项目保留不可变音频Blob/Hash及修订依赖，不以文件存在判断缓存身份，也不覆写正式旧文件。
+- `char_times`把词分摊到字符、SequenceMatcher匹配并对空洞插值；这些派生位置不能直接称精确强制对齐。重复词改用固定scriptRevisionId/segmentId、UTF-16范围及段落SHA绑定，时间另存来源/方法与稳定anchorId。字幕可独立编辑，一个段落允许多个Cue，不等于多个镜头。
+- 已检测本机System.Speech两个已安装声线，用中文Huihui实际输出9.601451秒PCM WAV；[Microsoft官方接口](https://learn.microsoft.com/en-us/dotnet/api/system.speech.synthesis.speechsynthesizer)确认按安装声线选择、Speak文本到Wave文件。只调用已安装系统组件，不复制/分发语音引擎，不把系统语音称为神经模型。外部API Key未配置，[OpenAI Speech文档](https://developers.openai.com/api/docs/guides/text-to-speech)的独立音频API不等于既有Codex数据CLI权限。
+- 用户追加真实中文ASR与强制对齐必验。已实读 [stable-ts官方README/Alignment](https://github.com/jianfch/stable-ts#alignment)、[alignment.py](https://github.com/jianfch/stable-ts/blob/main/stable_whisper/alignment.py)及[Whisper官方仓库](https://github.com/openai/whisper)。两者声明MIT；stable-ts官方仓库已归档，需固定版本并记录风险。实际使用Whisper识别与stable-ts给定文本的词级模型对齐，不用字符插值或均分替代；双库成功结果及精度边界见Phase05交付与真实运行日志。
+
 > 本文件由 Codex 在各阶段填写。未阅读不得写成已验证。每条记录需标注查阅日期和可得的 commit SHA。
 
 ## 2026-10-23 — Phase 04.5 候选 Claim 结项补充
@@ -25,7 +34,7 @@
 | 02 | Remotion Renderer/Player | REVIEWED；Renderer 实际通过，Player 仅研究 | 2026-10-23，固定 v4.0.538 / SHA 见下；[真实 MP4/双数据库/重复帧证据](PHASE_02_DELIVERY.md) | Remotion License，本地非商业技术评估；Player 不作任意代码入口 |
 | 03 | wallstreet sourcing/新闻截图 | REVIEWED（源码静态阅读，未运行第三方脚本） | 2026-10-23，固定 `920ed1d3b3ecb5997d861902e2719dda6688c0b1`，适配见下 | MIT；示例新闻/视频素材不受源码许可覆盖 |
 | 04 | wallstreet SKILL / thinking | REVIEWED（静态阅读，未执行第三方脚本） | 2026-10-23，固定同一 SHA；叙事目的、观众收获、视觉意图与事实引用见下 | MIT；不复制代码/样片，不采用外部技能的额外审批流程 |
-| 05 | wallstreet 语音对齐 | NOT REVIEWED | 待填写 | 待填写 |
+| 05 | wallstreet temp_voice.py / Whisper / stable-ts | REVIEWED；本地模型实际运行 | 2026-10-24 记录见本文开头；临时/正式分离、真实模型时间及范围映射 | MIT；不复制参考代码，stable-ts归档风险 |
 | 06 | wallstreet 导演/动画语法 | NOT REVIEWED | 待填写 | 待填写 |
 | 07 | wallstreet footage.py | NOT REVIEWED | 待填写 | 待填写 |
 | 08 | Remotion AI Starter / Hypit 组件 | NOT REVIEWED | 待填写 | 待填写 |

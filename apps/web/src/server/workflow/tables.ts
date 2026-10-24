@@ -1,6 +1,7 @@
 import type { WorkflowState } from '../../domain/workflow';
 import { researchTables, sqliteResearchGuards } from '../research/tables';
 import { scriptTables, sqliteScriptGuards } from '../script/tables';
+import { voiceTables, sqliteVoiceGuards } from '../voice/tables';
 type Collection = Exclude<keyof WorkflowState, 'schemaVersion'>;
 export const tables: {
   key: Collection;
@@ -67,6 +68,7 @@ export const tables: {
   { key: 'audit', table: 'workflow_audit_events', columns: [], fields: [], constraints: [] },
   ...researchTables,
   ...scriptTables,
+  ...voiceTables,
 ];
 export function sqliteWorkflowSchema() {
   return (
@@ -93,6 +95,7 @@ CREATE TRIGGER IF NOT EXISTS ${t}_append_only_delete BEFORE DELETE ON ${t} BEGIN
       .join('\n') +
     '\nINSERT OR IGNORE INTO schema_migrations(version) VALUES(2);' +
     sqliteResearchGuards() +
-    sqliteScriptGuards()
+    sqliteScriptGuards() +
+    sqliteVoiceGuards()
   );
 }

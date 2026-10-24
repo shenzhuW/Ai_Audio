@@ -7,6 +7,9 @@ import type { WorkflowRepository, Collection } from './repository';
 import { MockWorkflowTextProvider } from './provider';
 import { scriptProvider } from '../script/providers';
 import type { AiRun } from '../../domain/ai';
+import { processVoice } from '../voice/providers';
+import { config } from '../config';
+import type { VoiceRun } from '../../domain/voice';
 export function createWorkflowService(repo: WorkflowRepository) {
   return {
     async execute(projectId: string, owner: string, command: WorkflowCommand, key: string) {
@@ -58,6 +61,94 @@ export function createWorkflowService(repo: WorkflowRepository) {
             const inputTexts = claimed.inputRevisionIds.map(
               (id) => claim.state.revisions.find((r) => r.id === id)!.text,
             );
+            if (claimed.provider === 'voice') {
+              const controller = new AbortController(),
+                abort = () => controller.abort();
+              signal?.addEventListener('abort', abort, { once: true });
+              if (signal?.aborted) abort();
+              let heartbeat: ReturnType<typeof setInterval> | undefined,
+                pending = Promise.resolve(),
+                run: VoiceRun | undefined,
+                recorded = false;
+              try {
+                const beat = () =>
+                  (pending = pending
+                    .then(async () => {
+                      if (!controller.signal.aborted)
+                        await this.execute(
+                          projectId,
+                          'local-user',
+                          {
+                            action: 'heartbeat',
+                            jobId: j.id,
+                            workerId,
+                            progress: 0.5,
+                            message: '真实配音/音频校验处理中；字幕不是精确转录',
+                          },
+                          randomUUID(),
+                        );
+                    })
+                    .catch(() => controller.abort()));
+                await beat();
+                heartbeat = setInterval(beat, 2000);
+                const output = await processVoice(claimed.voiceInput!, {
+                  dataDir: config().dataDir,
+                  signal: controller.signal,
+                });
+                run = output.run;
+                await pending;
+                if (controller.signal.aborted) continue;
+                await this.execute(
+                  projectId,
+                  'local-user',
+                  { action: 'finish', jobId: j.id, workerId, voiceResult: output },
+                  `finish:${j.id}:${claimed.attempt}`,
+                );
+                recorded = true;
+              } catch (e) {
+                run = (e as { voiceRun?: VoiceRun }).voiceRun;
+                try {
+                  await this.execute(
+                    projectId,
+                    'local-user',
+                    {
+                      action: 'finish',
+                      jobId: j.id,
+                      workerId,
+                      errorCode: e instanceof AppError ? e.code : 'VOICE_PROCESS_FAILED',
+                      ...(run ? { voiceRun: run } : {}),
+                    },
+                    `finish:${j.id}:${claimed.attempt}`,
+                  );
+                  recorded = true;
+                } catch {
+                  /* Cancelled/expired owner cannot write. */
+                }
+              } finally {
+                if (heartbeat) clearInterval(heartbeat);
+                await pending;
+                signal?.removeEventListener('abort', abort);
+                if (!recorded && run)
+                  try {
+                    await this.execute(
+                      projectId,
+                      'local-user',
+                      {
+                        action: 'record-voice-run',
+                        jobId: j.id,
+                        workerId,
+                        attempt: claimed.attempt,
+                        run,
+                      },
+                      randomUUID(),
+                    );
+                  } catch {
+                    /* A newer attempt owns its audit. */
+                  }
+              }
+              processed++;
+              continue;
+            }
             if (claimed.provider === 'script') {
               let heartbeat: ReturnType<typeof setInterval> | undefined;
               const controller = new AbortController();

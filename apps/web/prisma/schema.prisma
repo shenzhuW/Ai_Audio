@@ -55,6 +55,9 @@ model Project {
   researchIndexes         ResearchIndexEntry[]
   scriptDocuments         ScriptDocument[]
   scriptSegments          ScriptSegmentVersion[]
+  voiceTimelines          VoiceTimeline[]
+  voiceCues               VoiceCueVersion[]
+  subtitleTracks          SubtitleTrack[]
 
   @@index([ownerId, updatedAt])
   @@map("projects")
@@ -90,10 +93,57 @@ model WorkflowRevision {
   researchIndexes  ResearchIndexEntry[]
   scriptDocuments  ScriptDocument[]
   scriptSegments   ScriptSegmentVersion[]
+  voiceTimelines   VoiceTimeline[]         @relation("VoiceSnapshot")
+  voiceInputs      VoiceTimeline[]         @relation("VoiceScript")
+  voiceCues        VoiceCueVersion[]
+  subtitleTracks   SubtitleTrack[]
 
   @@unique([artifactId, revisionNumber])
   @@index([projectId])
   @@map("workflow_revisions")
+}
+
+model VoiceTimeline {
+  id               String           @id @db.Uuid
+  projectId        String           @map("project_id") @db.Uuid
+  revisionId       String           @unique @map("revision_id") @db.Uuid
+  scriptRevisionId String           @map("script_revision_id") @db.Uuid
+  document         Json
+  project          Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision         WorkflowRevision @relation("VoiceSnapshot", fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  scriptRevision   WorkflowRevision @relation("VoiceScript", fields: [scriptRevisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([projectId])
+  @@map("voice_timelines")
+}
+
+model VoiceCueVersion {
+  id         String           @id @db.Uuid
+  projectId  String           @map("project_id") @db.Uuid
+  revisionId String           @map("revision_id") @db.Uuid
+  cueId      String           @map("cue_id") @db.Uuid
+  anchorId   String           @map("anchor_id") @db.Uuid
+  segmentId  String           @map("segment_id") @db.Uuid
+  document   Json
+  project    Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision   WorkflowRevision @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@unique([revisionId, cueId])
+  @@unique([revisionId, anchorId])
+  @@index([projectId])
+  @@map("voice_cue_versions")
+}
+
+model SubtitleTrack {
+  id         String           @id @db.Uuid
+  projectId  String           @map("project_id") @db.Uuid
+  revisionId String           @unique @map("revision_id") @db.Uuid
+  document   Json
+  project    Project          @relation(fields: [projectId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  revision   WorkflowRevision @relation(fields: [revisionId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([projectId])
+  @@map("subtitle_tracks")
 }
 
 model WorkflowDependency {

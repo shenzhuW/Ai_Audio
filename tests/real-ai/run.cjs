@@ -14,11 +14,12 @@ const boundaries = process.argv.includes('--claims-boundaries');
 const supplement = process.argv.includes('--claims-supplement') || boundaries;
 const output = path.join(
     root,
-    boundaries
-      ? 'docs/evidence/phase045-claims/boundaries'
-      : supplement
-        ? 'docs/evidence/phase045-claims'
-        : 'docs/evidence/phase045',
+    process.env.STUDIO_TEST_REAL_AI_EVIDENCE_ROOT ||
+      (boundaries
+        ? 'docs/evidence/phase045-claims/boundaries'
+        : supplement
+          ? 'docs/evidence/phase045-claims'
+          : 'docs/evidence/phase045'),
     backend,
   ),
   base = 'http://127.0.0.1:3012';
@@ -222,9 +223,14 @@ async function postgres() {
   const migrations = await db.$queryRawUnsafe(
     'SELECT migration_name,count(*)::int AS count FROM _prisma_migrations WHERE finished_at IS NOT NULL GROUP BY migration_name ORDER BY migration_name',
   );
-  assert.equal(migrations.length, 4);
+  assert.equal(
+    migrations.length,
+    fs
+      .readdirSync(path.join(appDir, 'prisma/migrations'), { withFileTypes: true })
+      .filter((x) => x.isDirectory()).length,
+  );
   assert.ok(migrations.every((m) => m.count === 1));
-  check('真实 PostgreSQL 初始化/重复迁移：沿用0001–0004，无本阶段DDL', { migrations });
+  check('真实 PostgreSQL 初始化/重复迁移：当前全部增量迁移', { migrations });
 }
 async function main() {
   if (boundaries) {

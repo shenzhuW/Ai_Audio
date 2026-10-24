@@ -112,3 +112,11 @@ B. 用户修改文稿一段后能计算哪些修订变成 stale，成功回退/�
 独立 Research Worker 只调用固定本地解析器：PDF.js 提取 PDF 文本/页数，FFprobe 检测图片/视频，FFmpeg 稀疏抽帧。子进程环境过滤凭据、Node 堆 512MB、任务 120 秒、心跳续租，API 不执行解析器或不可信代码。不是完整 OS 沙箱；任意 TSX 保持禁止。没有正式视频裁剪、素材智能匹配或网络页面执行。
 
 Search/Content/Vision 接口与 real/mock/unconfigured 状态分开；本地真实提取不等于视觉语义识别或事实核验。未配置搜索不伪造文章，用户 URL 只作未访问备注。研究页面复用原 WorkflowPanel 审核精确修订，资料/引用/索引和任务在独立面板查询。详见 [Phase 03 交付](PHASE_03_DELIVERY.md)。
+
+## Phase05 已实现的语音边界（2026-10-24）
+
+`voice` 模块依赖已批准、当前有效的结构化ScriptRevision，持有自己的VoiceTimeline/Cue/Subtitle快照，不改变研究或文稿。沿用Workflow/Job/Outbox，`pnpm worker` 调用固定可信媒体适配器；主API不运行语音模型。Windows系统TTS和本地Whisper/stable-ts均为独立子进程，白名单环境不含DB/Codex认证。服务器管理员显式安装/启用，运行时不下载模型。
+
+`processVoice`统一音频/ASR/对齐任务，Provider由服务端允许集选择。句/词模型时间绑定输入音频SHA、固定scriptRevisionId、segmentId、字符范围和段落SHA，零时长词保留原始但不制造时长；字幕另轨可改。ASR不接收参考文稿，其未绑定草稿不可批准。人工校时、估算、静默计划、模型强制对齐分别标识。没有自由Python/PowerShell/SSML/TSX执行接口，不将本机可信进程称为OS沙箱。更多配置、维护/精度风险见[VOICE_SETUP](VOICE_SETUP.md)。
+
+Worker每2秒心跳/30秒租约，模型默认600秒超时，取消杀子进程树，失败可重试；目标修订、音频SHA和目标版本不匹配时拒绝迟到写入。音频正式替换使锚点失效，新批准文稿使完整音轨依赖失效；一个段落可有多层多个Cue，未实现镜头映射或Phase06。

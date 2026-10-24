@@ -1,0 +1,89 @@
+
+> ai-code-video-studio@0.1.0 build [repo]
+> pnpm --filter @studio/web build
+
+
+> @studio/web@0.1.0 build [repo]\apps\web
+> next build
+
+   ▲ Next.js 15.5.19
+   - Experiments (use with caution):
+     · cpus: 2
+     ⨯ webpackBuildWorker
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|[repo]\node_modules\.pnpm\next@15.5.19_react-dom@19.2.8_react@19.2.8__react@19.2.8\node_modules\next\dist\build\webpack\loaders\next-flight-css-loader.js??ruleSet[1].rules[14].oneOf[5].use[0]![repo]\node_modules\.pnpm\next@15.5.19_react-dom@19.2.8_react@19.2.8__react@19.2.8\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[1]![repo]\node_modules\.pnpm\next@15.5.19_react-dom@19.2.8_react@19.2.8__react@19.2.8\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[2]![repo]\apps\web\src\components\voice.module.css|ssr': No serializer registered for Warning
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning
+ ⚠ Compiled with warnings in 4.6s
+
+./src/components/voice.module.css
+Warning
+
+(66:3) autoprefixer: start value has mixed support, consider using flex-start instead
+
+Import trace for requested module:
+./src/components/voice.module.css
+./src/components/voice-panel.tsx
+
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5)
+   Generating static pages (2/5)
+   Generating static pages (3/5)
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                            Size  First Load JS
+┌ ○ /                                                                 223 B         103 kB
+├ ○ /_not-found                                                     1.85 kB         104 kB
+├ ƒ /api/v1/artifacts/[artifactId]/revisions                          223 B         103 kB
+├ ƒ /api/v1/artifacts/[artifactId]/revisions/[revisionId]             223 B         103 kB
+├ ƒ /api/v1/artifacts/[artifactId]/revisions/[revisionId]/[action]    223 B         103 kB
+├ ƒ /api/v1/jobs/[jobId]                                              223 B         103 kB
+├ ƒ /api/v1/jobs/[jobId]/[action]                                     223 B         103 kB
+├ ƒ /api/v1/jobs/[jobId]/render-files/[file]                          223 B         103 kB
+├ ƒ /api/v1/projects                                                  223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]                                      223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/artifacts                            223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/claims                               223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/claims/[claimId]                     223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/render-runs                          223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research                             223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-analysis-runs               223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-candidates/[candidateId]    223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-claim-runs                  223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-evidence                    223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-evidence/[evidenceId]       223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-import-source               223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-runs                        223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-search-runs                 223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-sources                     223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/research-sources/[sourceId]          223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/script                               223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/script-runs                          223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/uploads/[blobId]                     223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/voice-analysis-runs                  223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/voice-audio                          223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/voice-files/[blobId]                 223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/voice-mode                           223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/voice-retime                         223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/voice-runs                           223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/voice-timeline                       223 B         103 kB
+├ ƒ /api/v1/projects/[projectId]/workflow                             223 B         103 kB
+├ ƒ /api/v1/sources/[sourceId]                                        223 B         103 kB
+├ ƒ /api/v1/sources/[sourceId]/files/[blobId]                         223 B         103 kB
+├ ƒ /demo/[stage]                                                     137 B         163 kB
+├ ƒ /projects                                                       5.54 kB         132 kB
+├ ƒ /projects/[projectId]                                           2.37 kB         143 kB
+├ ƒ /projects/[projectId]/[stage]                                     137 B         163 kB
+└ ƒ /projects/new                                                   7.63 kB         131 kB
++ First Load JS shared by all                                        102 kB
+  ├ chunks/2992-d9cbff08ba7df460.js                                 46.2 kB
+  ├ chunks/f3fb7984-947ef6bde2eaf5d7.js                             54.2 kB
+  └ other shared chunks (total)                                     2.01 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand

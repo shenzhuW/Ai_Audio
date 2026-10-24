@@ -13,7 +13,11 @@ require('../../scripts/register-typescript.cjs');
 const backend = process.argv.includes('--postgres') ? 'postgresql' : 'sqlite',
   runId = Date.now().toString(36);
 const dataDir = path.join(root, '.cache/phase04', runId),
-  evidence = path.join(root, process.env.STUDIO_TEST_PHASE_EVIDENCE_ROOT || 'docs/evidence/phase04', backend),
+  evidence = path.join(
+    root,
+    process.env.STUDIO_TEST_PHASE_EVIDENCE_ROOT || 'docs/evidence/phase04',
+    backend,
+  ),
   base = 'http://127.0.0.1:3010';
 fs.mkdirSync(dataDir, { recursive: true });
 fs.mkdirSync(evidence, { recursive: true });
@@ -256,14 +260,19 @@ async function initializePostgres() {
   const migrations = await db.$queryRawUnsafe(
     'SELECT migration_name,count(*)::int AS count FROM _prisma_migrations WHERE finished_at IS NOT NULL GROUP BY migration_name ORDER BY migration_name',
   );
-  assert.equal(migrations.length, 4);
+  assert.equal(
+    migrations.length,
+    fs
+      .readdirSync(path.join(appDir, 'prisma/migrations'), { withFileTypes: true })
+      .filter((x) => x.isDirectory()).length,
+  );
   assert.ok(migrations.every((x) => x.count === 1));
   const role = (
     await db.$queryRawUnsafe('SELECT rolsuper,rolcreatedb FROM pg_roles WHERE rolname=current_user')
   )[0];
   assert.equal(role.rolsuper, false);
   assert.equal(role.rolcreatedb, false);
-  record('真实 PostgreSQL：Phase03 基线升级0004、重复部署与旧项目保留', { migrations, role });
+  record('真实 PostgreSQL：Phase03 基线升级当前迁移、重复部署与旧项目保留', { migrations, role });
 }
 async function source(p, research, title, text) {
   const w = await api(`/projects/${p.id}/research`),
@@ -615,7 +624,10 @@ async function main() {
   await page.getByRole('button', { name: '保存段落草稿', exact: true }).click();
   await page.getByText('段落草稿已保存', { exact: true }).waitFor();
   await page.reload();
-  assert.equal(await page.getByRole('textbox', { name: '第2段正文', exact: true }).inputValue(), editedBoundText);
+  assert.equal(
+    await page.getByRole('textbox', { name: '第2段正文', exact: true }).inputValue(),
+    editedBoundText,
+  );
   w = await workspace(q);
   assert.equal(w.segments[1].id, boundSecondBefore.id);
   assert.equal(w.segments[1].text, editedBoundText);
@@ -630,14 +642,21 @@ async function main() {
   await page.getByText('引用存在冲突证据，请保留双方说明。', { exact: true }).waitFor();
   await page.getByText('“Capacity is 32 units.”', { exact: true }).waitFor();
   await page.getByText('“Capacity is 64 units.”', { exact: true }).waitFor();
-  assert.equal(w.research.claims.find((x) => x.id === unverifiedClaim.id).verificationStatus, 'unverified');
+  assert.equal(
+    w.research.claims.find((x) => x.id === unverifiedClaim.id).verificationStatus,
+    'unverified',
+  );
   await capture(page, '04-claims-conflict.png');
   record('文稿固定批准研究、双来源引用一致、冲突和未核实提示', {
     researchRevisionId: research.id,
     claimId: c.id,
     sourceIds: [a.id, b.id],
     invalidReference: 422,
-    refreshedBoundSecond: { text: editedBoundText, segmentId: boundSecondBefore.id, factBindings: w.segments[1].factBindings },
+    refreshedBoundSecond: {
+      text: editedBoundText,
+      segmentId: boundSecondBefore.id,
+      factBindings: w.segments[1].factBindings,
+    },
     unverifiedClaimId: unverifiedClaim.id,
   });
   const firstText = w.segments[0].text,
@@ -711,7 +730,10 @@ async function main() {
   w = await workspace(q);
   assert.equal(w.document.researchRevisionId, research.id);
   assert.deepEqual(w.segments, firstScriptSnapshot.segments);
-  assert.deepEqual((await workspace(q, firstScriptApproved.id)).segments, firstScriptSnapshot.segments);
+  assert.deepEqual(
+    (await workspace(q, firstScriptApproved.id)).segments,
+    firstScriptSnapshot.segments,
+  );
   const sameResearchForkId = w.revision.id;
   const scriptApproved = await approve(q, w.revision),
     snapshot = await workspace(q, scriptApproved.id);
@@ -771,7 +793,11 @@ async function main() {
     newResearch: researchApproved2.id,
     affectedSegmentIds: [secondId],
     oldIdsRejected: 422,
-    sameResearchFork: { revisionId: sameResearchForkId, researchRevisionId: research.id, referencesPreserved: true },
+    sameResearchFork: {
+      revisionId: sameResearchForkId,
+      researchRevisionId: research.id,
+      referencesPreserved: true,
+    },
   });
   // Legacy Phase01 documents remain readable and can convert only in draft.
   const legacyProject = await project(),

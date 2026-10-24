@@ -1,0 +1,1699 @@
+{
+  "projectId": "1d82217c-cab0-4f36-873d-da337156c317",
+  "currentRevisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+  "revision": {
+    "id": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+    "artifactId": "e9d6c0bb-3e4c-4d09-8c82-ad6242d4a4f1",
+    "revisionNumber": 1,
+    "schemaVersion": 1,
+    "version": 11,
+    "text": "Internal research: fetched page text and model analysis remain separate; not verified facts.",
+    "contentHash": "23d8c048d37080bc9ec34bc2f8e20e9e98094bdd5a82d19cbe09579447d5e1b8",
+    "mock": false,
+    "status": "approved",
+    "parentRevisionId": null,
+    "createdAt": "2026-10-24T01:30:49.452Z",
+    "updatedAt": "2026-10-24T01:33:04.781Z",
+    "createdBy": "local-user",
+    "researchSchemaVersion": 1
+  },
+  "revisions": [
+    {
+      "id": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "artifactId": "e9d6c0bb-3e4c-4d09-8c82-ad6242d4a4f1",
+      "revisionNumber": 1,
+      "schemaVersion": 1,
+      "version": 11,
+      "text": "Internal research: fetched page text and model analysis remain separate; not verified facts.",
+      "contentHash": "23d8c048d37080bc9ec34bc2f8e20e9e98094bdd5a82d19cbe09579447d5e1b8",
+      "mock": false,
+      "status": "approved",
+      "parentRevisionId": null,
+      "createdAt": "2026-10-24T01:30:49.452Z",
+      "updatedAt": "2026-10-24T01:33:04.781Z",
+      "createdBy": "local-user",
+      "researchSchemaVersion": 1
+    }
+  ],
+  "sources": [
+    {
+      "title": "self-authored-chart.png",
+      "sourceType": "image",
+      "publisher": "",
+      "creator": "",
+      "publishedAt": null,
+      "knownRestrictions": "Self-authored internal visual test only",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "e4bdf046-66d7-4124-a509-321fbfb1744e",
+        "name": "self-authored-chart.png",
+        "mime": "image/png",
+        "sizeBytes": 9170,
+        "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165"
+      },
+      "id": "2868b935-9cc0-41a2-98b3-0c1c5edfc6fd",
+      "projectId": "1d82217c-cab0-4f36-873d-da337156c317",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-24T01:31:14.976Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied",
+      "metadata": {
+        "mime": "image/png",
+        "sizeBytes": 9170,
+        "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165",
+        "width": 640,
+        "height": 360,
+        "codec": "png"
+      }
+    },
+    {
+      "title": "self-authored-background.mp4",
+      "sourceType": "video",
+      "publisher": "",
+      "creator": "",
+      "publishedAt": null,
+      "knownRestrictions": "Self-authored internal visual test only",
+      "licenseStatus": "blocked",
+      "blob": {
+        "id": "d9c14b10-261b-4850-a4df-9f66a507c4b6",
+        "name": "self-authored-background.mp4",
+        "mime": "video/mp4",
+        "sizeBytes": 1026392,
+        "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd"
+      },
+      "id": "e3d6dc05-5a50-4156-80a3-b93e019a4eeb",
+      "projectId": "1d82217c-cab0-4f36-873d-da337156c317",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-24T01:31:34.808Z",
+      "selected": true,
+      "provenance": "user-upload",
+      "urlStatus": "user_supplied",
+      "metadata": {
+        "mime": "video/mp4",
+        "sizeBytes": 1026392,
+        "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+        "width": 1080,
+        "height": 1920,
+        "durationMs": 10000,
+        "fps": 30,
+        "codec": "h264"
+      }
+    },
+    {
+      "title": "ffprobe Documentation",
+      "sourceType": "text",
+      "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+      "publisher": "ffmpeg.org",
+      "creator": "",
+      "publishedAt": null,
+      "knownRestrictions": "公开网页；其他使用限制未知。内部研究，不自动发布。",
+      "licenseStatus": "unknown",
+      "blob": {
+        "id": "90a09556-22f4-4bd0-b914-b10fa16dc350",
+        "name": "web-extracted.txt",
+        "mime": "text/plain",
+        "sizeBytes": 34267,
+        "sha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+      },
+      "webCapture": {
+        "rawBlob": {
+          "id": "0ddbe450-d2ad-46f3-8312-a6b6a2991e9a",
+          "name": "web-raw.html.txt",
+          "mime": "text/plain",
+          "sizeBytes": 62129,
+          "sha256": "75dd3d482461e4b453510ec9fc87076a95f2eb0698d211784e1eabaabc82eeb6"
+        },
+        "finalUrl": "https://ffmpeg.org/ffprobe.html",
+        "fetchedAt": "2026-10-24T01:31:14.831Z",
+        "rawSha256": "75dd3d482461e4b453510ec9fc87076a95f2eb0698d211784e1eabaabc82eeb6",
+        "modelSummary": "Official ffprobe manual covering multimedia inspection, command-line options, stream and container metadata, output formats, and timecode extraction.",
+        "searchSnippet": "# ffprobe Documentation ... An updated version of the schema can be retrieved at the url http://www.ffmpeg.org/schema/ffprobe.xsd, which redirects to the latest schema committed into",
+        "extraction": "static-html-basic",
+        "runId": "01a16b88-3eae-7c12-8bb2-7d6be739c3ae"
+      },
+      "id": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+      "projectId": "1d82217c-cab0-4f36-873d-da337156c317",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "schemaVersion": 1,
+      "retrievedAt": "2026-10-24T01:31:14.870Z",
+      "selected": true,
+      "provenance": "web-fetch",
+      "urlStatus": "fetched"
+    }
+  ],
+  "claims": [
+    {
+      "text": "据所给文档，ffprobe 收集多媒体流信息，并以人和机器可读的形式输出。（用户审核注：仅描述该来源，尚未独立核实。）",
+      "asOf": null,
+      "scope": "文档描述的 ffprobe 信息收集与输出功能",
+      "unit": "不适用",
+      "verificationStatus": "unverified",
+      "caveats": "原文未提供版本或日期；这是文档功能描述，未经运行验证。",
+      "id": "5fb165da-ba4c-469f-8959-63cab3e9efa8",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "schemaVersion": 1
+    }
+  ],
+  "evidence": [
+    {
+      "id": "f9c4ef15-7351-4a19-bd94-f6ba392fc855",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "claimId": "5fb165da-ba4c-469f-8959-63cab3e9efa8",
+      "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+      "role": "support",
+      "locator": {
+        "kind": "text",
+        "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 587–692"
+      },
+      "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion.",
+      "validation": "matched",
+      "schemaVersion": 1
+    }
+  ],
+  "indexes": [
+    {
+      "contentType": "image",
+      "summary": "图片为白底柱状图，黑色横轴和纵轴位于左侧及底部，没有可见刻度或网格。三根柱子从左至右分别为红色、绿色、蓝色，高度依次增加；柱下标注“A”“B”“C”，柱顶分别标注“10”“20”“30”。顶部黑色文字为“SELF-AUTHORED VISUAL TEST ONLY”，末尾与蓝柱上方的“30”较接近。图中未见图例、单位或数据来源，无法确定数值所代表的实际含义。\n模型分析边界：描述仅依据所附图片可见内容；无法确定图表的实际主题、数值单位或数据真实性。",
+      "keywords": [
+        "白色背景",
+        "柱状图",
+        "红色",
+        "绿色",
+        "蓝色",
+        "黑色坐标轴",
+        "A、B、C",
+        "10、20、30",
+        "英文标题"
+      ],
+      "provenance": "real",
+      "analysis": {
+        "kind": "model-vision",
+        "model": "gpt-6.1-sol",
+        "runId": "01a16b88-9ceb-7373-9c54-3c344e430353",
+        "sourceSha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165"
+      },
+      "id": "73613ba0-dc13-49e4-a960-4e5ecec5bd73",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "sourceId": "2868b935-9cc0-41a2-98b3-0c1c5edfc6fd",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "video_segment",
+      "summary": "图片为竖向构图，背景呈近黑的深蓝色，覆盖细而较暗的蓝色横竖网格线。画面中下部有一块较亮的深蓝色实心横向矩形，左右边缘距画面边界较近，遮住了该区域的网格。未见可辨认的文字、人物或具体实物。矩形用途及背景含义无法仅凭图片确定。\n模型分析边界：仅描述所附图片中可见的静态内容；暗色区域对比度较低，细节和准确色值存在不确定性。",
+      "keywords": [
+        "深蓝色",
+        "近黑背景",
+        "网格线",
+        "实心矩形",
+        "竖向构图",
+        "无可辨认文字"
+      ],
+      "startMs": 0,
+      "endMs": 3333,
+      "frameRefs": [
+        {
+          "timeMs": 0,
+          "blob": {
+            "id": "09887a6b-355d-494b-9b7c-00a9373fd66d",
+            "name": "frame-0.jpg",
+            "mime": "image/jpeg",
+            "sizeBytes": 18055,
+            "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133"
+          }
+        }
+      ],
+      "provenance": "real",
+      "analysis": {
+        "kind": "model-vision",
+        "model": "gpt-6.1-sol",
+        "runId": "01a16b88-eddd-7110-9cb1-08ee63320cde",
+        "sourceSha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+        "frameTimeMs": 0
+      },
+      "id": "16b88ab3-bea8-4f6e-bcf2-467690c2bc5b",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "sourceId": "e3d6dc05-5a50-4156-80a3-b93e019a4eeb",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "video_segment",
+      "summary": "图片为竖向构图，整体呈深蓝至近黑色。背景由细蓝线组成近似方格网，网格略有倾斜和不规则。画面中下部有一块较明亮的深蓝色实心四边形，接近横向矩形，覆盖了部分网格，其边缘略微倾斜。未见可辨认的文字、人物或其他明确物体。\n模型分析边界：画面较暗，只能确认可见的色块和线条形状；无法确定其实际材质、用途或是否对应现实物体。",
+      "keywords": [
+        "深蓝色",
+        "近黑色背景",
+        "蓝色网格",
+        "实心四边形",
+        "竖向构图",
+        "无可辨认文字"
+      ],
+      "startMs": 3333,
+      "endMs": 6666,
+      "frameRefs": [
+        {
+          "timeMs": 3333,
+          "blob": {
+            "id": "1daa910b-3156-4dcd-81cf-be9d3bceef2f",
+            "name": "frame-1.jpg",
+            "mime": "image/jpeg",
+            "sizeBytes": 16252,
+            "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0"
+          }
+        }
+      ],
+      "provenance": "real",
+      "analysis": {
+        "kind": "model-vision",
+        "model": "gpt-6.1-sol",
+        "runId": "01a16b89-1b4c-7613-8e3d-6726597b2c03",
+        "sourceSha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+        "frameTimeMs": 3333
+      },
+      "id": "3d9a8168-c339-47d6-8399-3f381cbd592d",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "sourceId": "e3d6dc05-5a50-4156-80a3-b93e019a4eeb",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "video_segment",
+      "summary": "图片为竖幅深色几何构图：背景接近黑色或深藏蓝色，覆盖细而暗淡的蓝色网格线，部分线条略有倾斜。画面中下部有一块较大的深蓝色实心四边形，近似横向矩形，边缘略倾斜，与背景形成低对比度色块。未见可辨认的文字、人物或具体实物。\n模型分析边界：画面整体较暗，细线与背景对比度低，具体色值及细微边缘形状难以准确判断；仅凭此图无法确定这些图形的实际用途或含义。",
+      "keywords": [
+        "深藏蓝背景",
+        "蓝色网格",
+        "深蓝色块",
+        "四边形",
+        "竖幅构图",
+        "无可辨认文字"
+      ],
+      "startMs": 6666,
+      "endMs": 10000,
+      "frameRefs": [
+        {
+          "timeMs": 6666,
+          "blob": {
+            "id": "a978ee53-435f-4dd4-b2c8-712c877a0222",
+            "name": "frame-2.jpg",
+            "mime": "image/jpeg",
+            "sizeBytes": 16151,
+            "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4"
+          }
+        }
+      ],
+      "provenance": "real",
+      "analysis": {
+        "kind": "model-vision",
+        "model": "gpt-6.1-sol",
+        "runId": "01a16b89-4f71-79f3-8dea-bacd42706c7d",
+        "sourceSha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+        "frameTimeMs": 6666
+      },
+      "id": "b59252d8-8717-4682-a2e6-b6d930dd6dfe",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "sourceId": "e3d6dc05-5a50-4156-80a3-b93e019a4eeb",
+      "schemaVersion": 1
+    },
+    {
+      "contentType": "text",
+      "summary": "独立受限获取器提取的网页文本；模型摘要单独保存，事实未独立核实。",
+      "keywords": [],
+      "provenance": "real",
+      "id": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+      "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+      "schemaVersion": 1,
+      "extractedTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "extractedTextLength": 34267,
+      "extractedTextPreview": "ffprobe Documentation FFmpeg About News Download Documentation Community Code of Conduct Mailing Lis"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "345dfc90-84f7-47de-a793-505056be5e1a",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "9161c3b4-b02c-46b6-996a-27d21e79076e",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "workerId": "67c7043d-7ca1-4b54-881a-6bd30d54040f",
+          "number": 1,
+          "startedAt": "2026-10-24T01:31:15.771Z",
+          "finishedAt": "2026-10-24T01:31:34.725Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 3,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "errorCode": null,
+      "createdAt": "2026-10-24T01:31:15.005Z",
+      "updatedAt": "2026-10-24T01:31:34.725Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+        "sourceId": "2868b935-9cc0-41a2-98b3-0c1c5edfc6fd",
+        "blob": {
+          "id": "e4bdf046-66d7-4124-a509-321fbfb1744e",
+          "name": "self-authored-chart.png",
+          "mime": "image/png",
+          "sizeBytes": 9170,
+          "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165"
+        },
+        "mode": "real",
+        "vision": true
+      },
+      "researchResult": {
+        "kind": "analyze",
+        "mode": "real",
+        "metadata": {
+          "mime": "image/png",
+          "sizeBytes": 9170,
+          "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165",
+          "width": 640,
+          "height": 360,
+          "codec": "png"
+        },
+        "entries": [
+          {
+            "contentType": "image",
+            "summary": "图片为白底柱状图，黑色横轴和纵轴位于左侧及底部，没有可见刻度或网格。三根柱子从左至右分别为红色、绿色、蓝色，高度依次增加；柱下标注“A”“B”“C”，柱顶分别标注“10”“20”“30”。顶部黑色文字为“SELF-AUTHORED VISUAL TEST ONLY”，末尾与蓝柱上方的“30”较接近。图中未见图例、单位或数据来源，无法确定数值所代表的实际含义。\n模型分析边界：描述仅依据所附图片可见内容；无法确定图表的实际主题、数值单位或数据真实性。",
+            "keywords": [
+              "白色背景",
+              "柱状图",
+              "红色",
+              "绿色",
+              "蓝色",
+              "黑色坐标轴",
+              "A、B、C",
+              "10、20、30",
+              "英文标题"
+            ],
+            "provenance": "real",
+            "analysis": {
+              "kind": "model-vision",
+              "model": "gpt-6.1-sol",
+              "runId": "01a16b88-9ceb-7373-9c54-3c344e430353",
+              "sourceSha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165"
+            }
+          }
+        ],
+        "warnings": [
+          "真实 Codex 视觉描述，未独立核实；没有音轨转录，不保证完整 OCR，不由单帧推断视频运动。"
+        ],
+        "aiRuns": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16b88-9ceb-7373-9c54-3c344e430353",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-24T01:31:17.188Z",
+            "durationMs": 17485,
+            "usage": {
+              "input_tokens": 9219,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 212,
+              "reasoning_output_tokens": 0
+            },
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": null,
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ]
+      },
+      "aiRuns": [
+        {
+          "provider": "codex-cli",
+          "cliVersion": "codex-cli 0.163.0",
+          "model": "gpt-6.1-sol",
+          "runId": "01a16b88-9ceb-7373-9c54-3c344e430353",
+          "searchMode": "disabled",
+          "startedAt": "2026-10-24T01:31:17.188Z",
+          "durationMs": 17485,
+          "usage": {
+            "input_tokens": 9219,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 212,
+            "reasoning_output_tokens": 0
+          },
+          "quota": null,
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "failureReason": null,
+          "policy": "data-only-v1",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "jobAttempt": 1,
+          "isolation": {
+            "modelShell": "disabled",
+            "modelPatch": "disabled",
+            "enabledMcpServers": 0,
+            "codeModeHost": "v8-data-only",
+            "userConfigIgnored": true,
+            "ephemeral": true
+          }
+        }
+      ],
+      "progress": 1,
+      "heartbeatAt": "2026-10-24T01:31:34.711Z",
+      "logs": [
+        {
+          "at": "2026-10-24T01:31:15.005Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-24T01:31:15.771Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-24T01:31:15.854Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-24T01:31:17.874Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:19.889Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:21.887Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:23.902Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:25.915Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:27.924Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:29.943Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:31.955Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:33.968Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:34.711Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-24T01:31:34.725Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "397db1b2-6762-4eb6-87ac-966daada44ef",
+      "kind": "research",
+      "version": 6,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "0e4f712d-3886-455a-b49e-94d39b65f00d",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "workerId": "94c3a048-b8e6-4a75-bef1-734cc0758baf",
+          "number": 1,
+          "startedAt": "2026-10-24T01:32:37.265Z",
+          "finishedAt": "2026-10-24T01:33:02.950Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 6,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "errorCode": null,
+      "createdAt": "2026-10-24T01:32:36.475Z",
+      "updatedAt": "2026-10-24T01:33:04.459Z",
+      "researchInput": {
+        "kind": "claims",
+        "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+        "targetVersion": 6,
+        "mode": "real",
+        "passages": [
+          {
+            "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+            "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+            "title": "ffprobe Documentation",
+            "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "textLength": 12000
+          }
+        ],
+        "warnings": [
+          "原文预算：最多20段，每段12000字符，总计60000字符；省略0段，截断1段。候选不代表完整资料核验。"
+        ]
+      },
+      "researchResult": {
+        "kind": "claims",
+        "mode": "real",
+        "status": "ready",
+        "notes": "仅依据所给单一来源片段提出候选，未作外部核验。原文有截断，候选不代表完整文档结论；所给片段中未发现这些候选存在直接矛盾。\n原文预算：最多20段，每段12000字符，总计60000字符；省略0段，截断1段。候选不代表完整资料核验。",
+        "candidates": [
+          {
+            "claim": {
+              "text": "据所给文档，ffprobe 收集多媒体流信息，并以人和机器可读的形式输出。",
+              "asOf": null,
+              "scope": "文档描述的 ffprobe 信息收集与输出功能",
+              "unit": "不适用",
+              "verificationStatus": "unverified",
+              "caveats": "原文未提供版本或日期；这是文档功能描述，未经运行验证。"
+            },
+            "conflictNote": "仅有单一来源支持，片段内未见直接反证。",
+            "evidence": [
+              {
+                "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+                "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+                "role": "support",
+                "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion.",
+                "match": {
+                  "startChar": 587,
+                  "endChar": 692,
+                  "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "locator": {
+                    "kind": "text",
+                    "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 587–692"
+                  }
+                }
+              }
+            ],
+            "id": "8d34dca8-c3b3-4de0-abaa-07b65c835a7c"
+          },
+          {
+            "claim": {
+              "text": "据所给文档，输入 URL 无法打开或无法被识别为多媒体文件时，ffprobe 返回正的退出码。",
+              "asOf": null,
+              "scope": "ffprobe 对输入 URL 的打开或识别失败情形",
+              "unit": "退出码（大于 0）",
+              "verificationStatus": "unverified",
+              "caveats": "原文未给出具体退出码，也未说明各类失败与退出码的对应关系；未经运行验证。"
+            },
+            "conflictNote": "仅有单一来源支持，片段内未见直接反证。",
+            "evidence": [
+              {
+                "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+                "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+                "role": "support",
+                "quote": "If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.",
+                "match": {
+                  "startChar": 931,
+                  "endChar": 1028,
+                  "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "locator": {
+                    "kind": "text",
+                    "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 931–1028"
+                  }
+                }
+              }
+            ],
+            "id": "d6b84b88-4d02-480a-a8fa-8ea87baca834"
+          },
+          {
+            "claim": {
+              "text": "据所给文档，流说明符 v 匹配所有视频流；V 仅匹配不属于附加图片、视频缩略图或封面图的视频流。",
+              "asOf": null,
+              "scope": "文档中 stream_type 流说明符的匹配规则",
+              "unit": "不适用",
+              "verificationStatus": "unverified",
+              "caveats": "保留 v 与 V 的大小写区别；这是匹配规则描述，未经具体媒体文件验证。"
+            },
+            "conflictNote": "仅有单一来源支持；v 与 V 的匹配范围差异不是相互矛盾。",
+            "evidence": [
+              {
+                "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+                "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+                "role": "support",
+                "quote": "&rsquo;v&rsquo; matches all video streams, &rsquo;V&rsquo; only matches video streams which are not attached pictures, video thumbnails or cover arts.",
+                "match": {
+                  "startChar": 4804,
+                  "endChar": 4954,
+                  "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "locator": {
+                    "kind": "text",
+                    "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 4804–4954"
+                  }
+                }
+              }
+            ],
+            "id": "0310e8a1-26f4-4f0e-86ee-14634a27be5b"
+          },
+          {
+            "claim": {
+              "text": "据所给文档，-sources 返回输入设备自动检测到的源列表，但某些设备的系统相关源名称无法自动检测，因此不能假定列表始终完整。",
+              "asOf": null,
+              "scope": "ff* 工具通用选项 -sources 的输入设备源枚举结果",
+              "unit": "不适用",
+              "verificationStatus": "unverified",
+              "caveats": "文档提示的是可能不完整，不表示每次返回的列表都不完整；未提供具体设备的完整性测试。"
+            },
+            "conflictNote": "仅有单一来源支持，片段内未见直接反证。",
+            "evidence": [
+              {
+                "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+                "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+                "role": "support",
+                "quote": "Show autodetected sources of the input device. Some devices may provide system-dependent source names that cannot be autodetected. The returned list cannot be assumed to be always complete.",
+                "match": {
+                  "startChar": 9117,
+                  "endChar": 9306,
+                  "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "locator": {
+                    "kind": "text",
+                    "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 9117–9306"
+                  }
+                }
+              }
+            ],
+            "id": "1ce35fba-c979-4a98-9243-381eeb017bc2"
+          }
+        ],
+        "aiRuns": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16b89-daf5-71d2-8db2-4021489dbab9",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-24T01:32:38.536Z",
+            "durationMs": 24357,
+            "usage": {
+              "input_tokens": 12030,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1137,
+              "reasoning_output_tokens": 41
+            },
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": null,
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ]
+      },
+      "claimCandidateReviews": [
+        {
+          "id": "3b00d469-8248-48b1-abd2-35c2e183fd2d",
+          "candidateId": "8d34dca8-c3b3-4de0-abaa-07b65c835a7c",
+          "state": "accepted",
+          "candidate": {
+            "claim": {
+              "text": "据所给文档，ffprobe 收集多媒体流信息，并以人和机器可读的形式输出。（用户审核注：仅描述该来源，尚未独立核实。）",
+              "asOf": null,
+              "scope": "文档描述的 ffprobe 信息收集与输出功能",
+              "unit": "不适用",
+              "verificationStatus": "unverified",
+              "caveats": "原文未提供版本或日期；这是文档功能描述，未经运行验证。"
+            },
+            "conflictNote": "仅有单一来源支持，片段内未见直接反证。",
+            "evidence": [
+              {
+                "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+                "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+                "role": "support",
+                "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion.",
+                "match": {
+                  "startChar": 587,
+                  "endChar": 692,
+                  "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "locator": {
+                    "kind": "text",
+                    "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 587–692"
+                  }
+                }
+              }
+            ],
+            "id": "8d34dca8-c3b3-4de0-abaa-07b65c835a7c"
+          },
+          "version": 2,
+          "updatedAt": "2026-10-24T01:33:04.264Z",
+          "actor": "local-user",
+          "acceptedClaimId": "5fb165da-ba4c-469f-8959-63cab3e9efa8",
+          "acceptedEvidenceIds": [
+            "f9c4ef15-7351-4a19-bd94-f6ba392fc855"
+          ]
+        },
+        {
+          "id": "bf2dc7ea-05f4-483a-abd9-b89eaf328a57",
+          "candidateId": "d6b84b88-4d02-480a-a8fa-8ea87baca834",
+          "state": "rejected",
+          "candidate": {
+            "claim": {
+              "text": "据所给文档，输入 URL 无法打开或无法被识别为多媒体文件时，ffprobe 返回正的退出码。",
+              "asOf": null,
+              "scope": "ffprobe 对输入 URL 的打开或识别失败情形",
+              "unit": "退出码（大于 0）",
+              "verificationStatus": "unverified",
+              "caveats": "原文未给出具体退出码，也未说明各类失败与退出码的对应关系；未经运行验证。"
+            },
+            "conflictNote": "仅有单一来源支持，片段内未见直接反证。",
+            "evidence": [
+              {
+                "sourceId": "f868b08b-acb0-4a59-8c42-13168a47bafc",
+                "indexId": "b0909874-cf3d-4ba0-8570-97189fa3c9c8",
+                "role": "support",
+                "quote": "If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.",
+                "match": {
+                  "startChar": 931,
+                  "endChar": 1028,
+                  "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+                  "locator": {
+                    "kind": "text",
+                    "label": "b0909874-cf3d-4ba0-8570-97189fa3c9c8 · UTF-16 931–1028"
+                  }
+                }
+              }
+            ],
+            "id": "d6b84b88-4d02-480a-a8fa-8ea87baca834"
+          },
+          "version": 1,
+          "updatedAt": "2026-10-24T01:33:04.459Z",
+          "actor": "local-user"
+        }
+      ],
+      "aiRuns": [
+        {
+          "provider": "codex-cli",
+          "cliVersion": "codex-cli 0.163.0",
+          "model": "gpt-6.1-sol",
+          "runId": "01a16b89-daf5-71d2-8db2-4021489dbab9",
+          "searchMode": "disabled",
+          "startedAt": "2026-10-24T01:32:38.536Z",
+          "durationMs": 24357,
+          "usage": {
+            "input_tokens": 12030,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1137,
+            "reasoning_output_tokens": 41
+          },
+          "quota": null,
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "failureReason": null,
+          "policy": "data-only-v1",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "jobAttempt": 1,
+          "isolation": {
+            "modelShell": "disabled",
+            "modelPatch": "disabled",
+            "enabledMcpServers": 0,
+            "codeModeHost": "v8-data-only",
+            "userConfigIgnored": true,
+            "ephemeral": true
+          }
+        }
+      ],
+      "progress": 1,
+      "heartbeatAt": "2026-10-24T01:33:02.929Z",
+      "logs": [
+        {
+          "at": "2026-10-24T01:32:36.475Z",
+          "message": "研究 claims 已排队 · real"
+        },
+        {
+          "at": "2026-10-24T01:32:37.265Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-24T01:32:37.349Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-24T01:32:39.390Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:41.404Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:43.404Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:45.415Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:47.415Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:49.428Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:51.436Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:53.436Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:55.444Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:57.451Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:59.455Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:33:01.459Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:33:02.929Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-24T01:33:02.950Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "3c65d6dd-1c7f-44d7-8123-cee02f42ccf5",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "4adac82a-7bce-45d6-ab44-f7de2d5992d7",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "workerId": "9c2fe4e4-50d2-44b8-9922-540c5921fcf3",
+          "number": 1,
+          "startedAt": "2026-10-24T01:30:50.728Z",
+          "finishedAt": "2026-10-24T01:31:14.870Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 1,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "errorCode": null,
+      "createdAt": "2026-10-24T01:30:49.485Z",
+      "updatedAt": "2026-10-24T01:31:14.870Z",
+      "researchInput": {
+        "kind": "search",
+        "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+        "query": "site:ffmpeg.org/ffprobe.html official ffprobe documentation",
+        "mode": "real"
+      },
+      "researchResult": {
+        "kind": "search",
+        "mode": "real",
+        "notes": "Codex live 搜索；摘要是模型生成说明。只有独立成功获取的网页文本可作为引用原件；获取失败不会伪造证据。",
+        "candidates": [
+          {
+            "title": "ffprobe Documentation",
+            "url": "https://ffmpeg.org/ffprobe.html",
+            "summary": "Official ffprobe manual covering multimedia inspection, command-line options, stream and container metadata, output formats, and timecode extraction.",
+            "snippet": "# ffprobe Documentation ... An updated version of the schema can be retrieved at the url http://www.ffmpeg.org/schema/ffprobe.xsd, which redirects to the latest schema committed into",
+            "fetchStatus": "fetched",
+            "source": {
+              "title": "ffprobe Documentation",
+              "sourceType": "text",
+              "sourceUrl": "https://ffmpeg.org/ffprobe.html",
+              "publisher": "ffmpeg.org",
+              "creator": "",
+              "publishedAt": null,
+              "knownRestrictions": "公开网页；其他使用限制未知。内部研究，不自动发布。",
+              "licenseStatus": "unknown",
+              "blob": {
+                "id": "90a09556-22f4-4bd0-b914-b10fa16dc350",
+                "name": "web-extracted.txt",
+                "mime": "text/plain",
+                "sizeBytes": 34267,
+                "sha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+              },
+              "webCapture": {
+                "rawBlob": {
+                  "id": "0ddbe450-d2ad-46f3-8312-a6b6a2991e9a",
+                  "name": "web-raw.html.txt",
+                  "mime": "text/plain",
+                  "sizeBytes": 62129,
+                  "sha256": "75dd3d482461e4b453510ec9fc87076a95f2eb0698d211784e1eabaabc82eeb6"
+                },
+                "finalUrl": "https://ffmpeg.org/ffprobe.html",
+                "fetchedAt": "2026-10-24T01:31:14.831Z",
+                "rawSha256": "75dd3d482461e4b453510ec9fc87076a95f2eb0698d211784e1eabaabc82eeb6",
+                "modelSummary": "Official ffprobe manual covering multimedia inspection, command-line options, stream and container metadata, output formats, and timecode extraction.",
+                "searchSnippet": "# ffprobe Documentation ... An updated version of the schema can be retrieved at the url http://www.ffmpeg.org/schema/ffprobe.xsd, which redirects to the latest schema committed into",
+                "extraction": "static-html-basic",
+                "runId": "01a16b88-3eae-7c12-8bb2-7d6be739c3ae"
+              }
+            },
+            "extractedTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351"
+          }
+        ],
+        "aiRuns": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16b88-3eae-7c12-8bb2-7d6be739c3ae",
+            "searchMode": "live",
+            "startedAt": "2026-10-24T01:30:52.733Z",
+            "durationMs": 18903,
+            "usage": {
+              "input_tokens": 26642,
+              "cached_input_tokens": 11136,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 134,
+              "reasoning_output_tokens": 0
+            },
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": null,
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ],
+        "searchTrace": [
+          {
+            "query": "site:ffmpeg.org/ffprobe.html official ffprobe documentation",
+            "urls": [
+              "https://ffmpeg.org/ffprobe.html",
+              "https://www.ffmpeg.org/ffprobe.html",
+              "https://www.ffmpeg.org/documentation.html",
+              "https://ffmpeg.org/ffprobe.html?from_column=20423",
+              "https://www.ffmpeg.org/ffprobe-all.html",
+              "https://ffmpeg.org/ffprobe-all.html",
+              "https://roundup.ffmpeg.org/ffprobe.html",
+              "https://svn.ffmpeg.org/documentation.html",
+              "https://svn.ffmpeg.org/ffprobe-all.html",
+              "https://ffmpeg.org/doxygen/trunk/md_README.html",
+              "https://www.ffmpeg.org/ffmpeg.html",
+              "https://ffmpeg.org/documentation.html?g=drawtext&group=filtering",
+              "https://ffmpeg.org/~michael/ffv1.pdf",
+              "https://ffmpeg.org/~michael/ffv1-markdown/ffv1.pdf",
+              "https://ffmpeg.org/~michael/ffv1-old/ffv1.pdf"
+            ]
+          }
+        ]
+      },
+      "aiRuns": [
+        {
+          "provider": "codex-cli",
+          "cliVersion": "codex-cli 0.163.0",
+          "model": "gpt-6.1-sol",
+          "runId": "01a16b88-3eae-7c12-8bb2-7d6be739c3ae",
+          "searchMode": "live",
+          "startedAt": "2026-10-24T01:30:52.733Z",
+          "durationMs": 18903,
+          "usage": {
+            "input_tokens": 26642,
+            "cached_input_tokens": 11136,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 134,
+            "reasoning_output_tokens": 0
+          },
+          "quota": null,
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "failureReason": null,
+          "policy": "data-only-v1",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "jobAttempt": 1,
+          "isolation": {
+            "modelShell": "disabled",
+            "modelPatch": "disabled",
+            "enabledMcpServers": 0,
+            "codeModeHost": "v8-data-only",
+            "userConfigIgnored": true,
+            "ephemeral": true
+          }
+        }
+      ],
+      "progress": 1,
+      "heartbeatAt": "2026-10-24T01:31:14.864Z",
+      "logs": [
+        {
+          "at": "2026-10-24T01:30:49.485Z",
+          "message": "研究 search 已排队 · real"
+        },
+        {
+          "at": "2026-10-24T01:30:50.728Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-24T01:30:50.796Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-24T01:30:52.812Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:30:54.827Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:30:56.843Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:30:58.841Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:00.847Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:02.850Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:04.863Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:06.862Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:08.870Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:10.877Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:12.879Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:14.864Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-24T01:31:14.870Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    },
+    {
+      "id": "f5325b24-1948-4e17-bf0f-e2a9817fba41",
+      "kind": "research",
+      "version": 3,
+      "provider": "research",
+      "state": "succeeded",
+      "inputRevisionIds": [],
+      "idempotencyKey": "4b842d83-1f37-4077-aed0-8233dbdbaf85",
+      "attempt": 1,
+      "maxAttempts": 3,
+      "attempts": [
+        {
+          "workerId": "79a9cb0b-9271-428a-8716-0b31b528e019",
+          "number": 1,
+          "startedAt": "2026-10-24T01:31:35.600Z",
+          "finishedAt": "2026-10-24T01:32:35.712Z",
+          "state": "succeeded",
+          "errorCode": null
+        }
+      ],
+      "targetVersion": 5,
+      "leaseOwner": null,
+      "leaseExpiresAt": null,
+      "resultRevisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+      "errorCode": null,
+      "createdAt": "2026-10-24T01:31:34.843Z",
+      "updatedAt": "2026-10-24T01:32:35.712Z",
+      "researchInput": {
+        "kind": "analyze",
+        "revisionId": "27e74c2e-eb1e-4546-a46b-c20b4db028a5",
+        "sourceId": "e3d6dc05-5a50-4156-80a3-b93e019a4eeb",
+        "blob": {
+          "id": "d9c14b10-261b-4850-a4df-9f66a507c4b6",
+          "name": "self-authored-background.mp4",
+          "mime": "video/mp4",
+          "sizeBytes": 1026392,
+          "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd"
+        },
+        "mode": "real",
+        "vision": true
+      },
+      "researchResult": {
+        "kind": "analyze",
+        "mode": "real",
+        "metadata": {
+          "mime": "video/mp4",
+          "sizeBytes": 1026392,
+          "sha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+          "width": 1080,
+          "height": 1920,
+          "durationMs": 10000,
+          "fps": 30,
+          "codec": "h264"
+        },
+        "entries": [
+          {
+            "contentType": "video_segment",
+            "summary": "图片为竖向构图，背景呈近黑的深蓝色，覆盖细而较暗的蓝色横竖网格线。画面中下部有一块较亮的深蓝色实心横向矩形，左右边缘距画面边界较近，遮住了该区域的网格。未见可辨认的文字、人物或具体实物。矩形用途及背景含义无法仅凭图片确定。\n模型分析边界：仅描述所附图片中可见的静态内容；暗色区域对比度较低，细节和准确色值存在不确定性。",
+            "keywords": [
+              "深蓝色",
+              "近黑背景",
+              "网格线",
+              "实心矩形",
+              "竖向构图",
+              "无可辨认文字"
+            ],
+            "startMs": 0,
+            "endMs": 3333,
+            "frameRefs": [
+              {
+                "timeMs": 0,
+                "blob": {
+                  "id": "09887a6b-355d-494b-9b7c-00a9373fd66d",
+                  "name": "frame-0.jpg",
+                  "mime": "image/jpeg",
+                  "sizeBytes": 18055,
+                  "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133"
+                }
+              }
+            ],
+            "provenance": "real",
+            "analysis": {
+              "kind": "model-vision",
+              "model": "gpt-6.1-sol",
+              "runId": "01a16b88-eddd-7110-9cb1-08ee63320cde",
+              "sourceSha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+              "frameTimeMs": 0
+            }
+          },
+          {
+            "contentType": "video_segment",
+            "summary": "图片为竖向构图，整体呈深蓝至近黑色。背景由细蓝线组成近似方格网，网格略有倾斜和不规则。画面中下部有一块较明亮的深蓝色实心四边形，接近横向矩形，覆盖了部分网格，其边缘略微倾斜。未见可辨认的文字、人物或其他明确物体。\n模型分析边界：画面较暗，只能确认可见的色块和线条形状；无法确定其实际材质、用途或是否对应现实物体。",
+            "keywords": [
+              "深蓝色",
+              "近黑色背景",
+              "蓝色网格",
+              "实心四边形",
+              "竖向构图",
+              "无可辨认文字"
+            ],
+            "startMs": 3333,
+            "endMs": 6666,
+            "frameRefs": [
+              {
+                "timeMs": 3333,
+                "blob": {
+                  "id": "1daa910b-3156-4dcd-81cf-be9d3bceef2f",
+                  "name": "frame-1.jpg",
+                  "mime": "image/jpeg",
+                  "sizeBytes": 16252,
+                  "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0"
+                }
+              }
+            ],
+            "provenance": "real",
+            "analysis": {
+              "kind": "model-vision",
+              "model": "gpt-6.1-sol",
+              "runId": "01a16b89-1b4c-7613-8e3d-6726597b2c03",
+              "sourceSha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+              "frameTimeMs": 3333
+            }
+          },
+          {
+            "contentType": "video_segment",
+            "summary": "图片为竖幅深色几何构图：背景接近黑色或深藏蓝色，覆盖细而暗淡的蓝色网格线，部分线条略有倾斜。画面中下部有一块较大的深蓝色实心四边形，近似横向矩形，边缘略倾斜，与背景形成低对比度色块。未见可辨认的文字、人物或具体实物。\n模型分析边界：画面整体较暗，细线与背景对比度低，具体色值及细微边缘形状难以准确判断；仅凭此图无法确定这些图形的实际用途或含义。",
+            "keywords": [
+              "深藏蓝背景",
+              "蓝色网格",
+              "深蓝色块",
+              "四边形",
+              "竖幅构图",
+              "无可辨认文字"
+            ],
+            "startMs": 6666,
+            "endMs": 10000,
+            "frameRefs": [
+              {
+                "timeMs": 6666,
+                "blob": {
+                  "id": "a978ee53-435f-4dd4-b2c8-712c877a0222",
+                  "name": "frame-2.jpg",
+                  "mime": "image/jpeg",
+                  "sizeBytes": 16151,
+                  "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4"
+                }
+              }
+            ],
+            "provenance": "real",
+            "analysis": {
+              "kind": "model-vision",
+              "model": "gpt-6.1-sol",
+              "runId": "01a16b89-4f71-79f3-8dea-bacd42706c7d",
+              "sourceSha256": "769a7cea3e0b1adbb35da3e50ef93673d5863bd76b0f00a6e981af18a662f0bd",
+              "frameTimeMs": 6666
+            }
+          }
+        ],
+        "warnings": [
+          "真实 Codex 视觉描述，未独立核实；没有音轨转录，不保证完整 OCR，不由单帧推断视频运动。"
+        ],
+        "aiRuns": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16b88-eddd-7110-9cb1-08ee63320cde",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-24T01:31:37.658Z",
+            "durationMs": 11024,
+            "usage": {
+              "input_tokens": 9417,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 182,
+              "reasoning_output_tokens": 0
+            },
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": null,
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          },
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16b89-1b4c-7613-8e3d-6726597b2c03",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-24T01:31:49.405Z",
+            "durationMs": 12690,
+            "usage": {
+              "input_tokens": 9415,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 182,
+              "reasoning_output_tokens": 0
+            },
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": null,
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          },
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a16b89-4f71-79f3-8dea-bacd42706c7d",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-24T01:32:02.803Z",
+            "durationMs": 32861,
+            "usage": {
+              "input_tokens": 9418,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 197,
+              "reasoning_output_tokens": 0
+            },
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": null,
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ]
+      },
+      "aiRuns": [
+        {
+          "provider": "codex-cli",
+          "cliVersion": "codex-cli 0.163.0",
+          "model": "gpt-6.1-sol",
+          "runId": "01a16b88-eddd-7110-9cb1-08ee63320cde",
+          "searchMode": "disabled",
+          "startedAt": "2026-10-24T01:31:37.658Z",
+          "durationMs": 11024,
+          "usage": {
+            "input_tokens": 9417,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 182,
+            "reasoning_output_tokens": 0
+          },
+          "quota": null,
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "failureReason": null,
+          "policy": "data-only-v1",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "jobAttempt": 1,
+          "isolation": {
+            "modelShell": "disabled",
+            "modelPatch": "disabled",
+            "enabledMcpServers": 0,
+            "codeModeHost": "v8-data-only",
+            "userConfigIgnored": true,
+            "ephemeral": true
+          }
+        },
+        {
+          "provider": "codex-cli",
+          "cliVersion": "codex-cli 0.163.0",
+          "model": "gpt-6.1-sol",
+          "runId": "01a16b89-1b4c-7613-8e3d-6726597b2c03",
+          "searchMode": "disabled",
+          "startedAt": "2026-10-24T01:31:49.405Z",
+          "durationMs": 12690,
+          "usage": {
+            "input_tokens": 9415,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 182,
+            "reasoning_output_tokens": 0
+          },
+          "quota": null,
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "failureReason": null,
+          "policy": "data-only-v1",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "jobAttempt": 1,
+          "isolation": {
+            "modelShell": "disabled",
+            "modelPatch": "disabled",
+            "enabledMcpServers": 0,
+            "codeModeHost": "v8-data-only",
+            "userConfigIgnored": true,
+            "ephemeral": true
+          }
+        },
+        {
+          "provider": "codex-cli",
+          "cliVersion": "codex-cli 0.163.0",
+          "model": "gpt-6.1-sol",
+          "runId": "01a16b89-4f71-79f3-8dea-bacd42706c7d",
+          "searchMode": "disabled",
+          "startedAt": "2026-10-24T01:32:02.803Z",
+          "durationMs": 32861,
+          "usage": {
+            "input_tokens": 9418,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 197,
+            "reasoning_output_tokens": 0
+          },
+          "quota": null,
+          "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+          "failureReason": null,
+          "policy": "data-only-v1",
+          "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+          "jobAttempt": 1,
+          "isolation": {
+            "modelShell": "disabled",
+            "modelPatch": "disabled",
+            "enabledMcpServers": 0,
+            "codeModeHost": "v8-data-only",
+            "userConfigIgnored": true,
+            "ephemeral": true
+          }
+        }
+      ],
+      "progress": 1,
+      "heartbeatAt": "2026-10-24T01:32:35.695Z",
+      "logs": [
+        {
+          "at": "2026-10-24T01:31:34.843Z",
+          "message": "研究 analyze 已排队 · real"
+        },
+        {
+          "at": "2026-10-24T01:31:35.600Z",
+          "message": "claim: running"
+        },
+        {
+          "at": "2026-10-24T01:31:35.680Z",
+          "message": "启动独立研究解析器"
+        },
+        {
+          "at": "2026-10-24T01:31:37.709Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:39.721Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:41.734Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:43.740Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:45.754Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:47.769Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:49.775Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:51.787Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:53.791Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:55.794Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:57.803Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:31:59.813Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:01.817Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:03.816Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:05.818Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:07.825Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:09.832Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:11.845Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:13.856Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:15.860Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:17.876Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:19.886Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:21.891Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:23.902Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:25.909Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:27.917Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:29.916Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:31.921Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:33.935Z",
+          "message": "本地解析器读取冻结原件；不会执行远程页面或 AI 代码。"
+        },
+        {
+          "at": "2026-10-24T01:32:35.695Z",
+          "message": "提取结果已校验；正在写入同一研究草稿，不代表已核实。"
+        },
+        {
+          "at": "2026-10-24T01:32:35.712Z",
+          "message": "finish: succeeded"
+        }
+      ]
+    }
+  ],
+  "providers": [
+    {
+      "id": "codex-cli",
+      "mode": "real",
+      "capabilities": [
+        "实时搜索",
+        "图片与视频关键帧语义",
+        "结构化文稿；不含 ASR"
+      ],
+      "configured": true
+    },
+    {
+      "id": "local-content",
+      "mode": "real",
+      "capabilities": [
+        "PDF文本与页数",
+        "图片尺寸",
+        "FFprobe",
+        "稀疏视频抽帧"
+      ],
+      "configured": true
+    },
+    {
+      "id": "web-search",
+      "mode": "unconfigured",
+      "capabilities": [
+        "网络文章搜索"
+      ],
+      "configured": false
+    },
+    {
+      "id": "vision-asr",
+      "mode": "unconfigured",
+      "capabilities": [
+        "视觉语义",
+        "OCR",
+        "ASR"
+      ],
+      "configured": false
+    },
+    {
+      "id": "explicit-fixture",
+      "mode": "mock",
+      "capabilities": [
+        "显式 Mock 演示，无真实文章"
+      ],
+      "configured": true
+    }
+  ],
+  "initialAttachments": []
+}

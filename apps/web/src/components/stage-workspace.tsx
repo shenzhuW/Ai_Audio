@@ -17,6 +17,7 @@ import { WorkflowPanel } from './workflow-panel';
 import { RenderPanel } from './render-panel';
 import { ResearchPanel } from './research-panel';
 import { ScriptPanel } from './script-panel';
+import { VoicePanel } from './voice-panel';
 
 export function StageWorkspace({
   stage,
@@ -29,6 +30,17 @@ export function StageWorkspace({
 }) {
   const index = pages.findIndex((p) => p.key === stage);
   const page = pages[index];
+  if (!demo && project && stage === 'voice')
+    return (
+      <>
+        <PageHead
+          number="05"
+          title={page.label}
+          description="选择真实声音与时间基准，校正字幕和锚点，审核固定配音修订。"
+        />
+        <VoicePanel projectId={project.id} />
+      </>
+    );
   if (!demo && project && stage === 'script')
     return (
       <>

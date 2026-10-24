@@ -13,6 +13,20 @@ import type { Project } from '../../domain/project';
 import { AppError } from '../errors';
 import { ResearchCommandSchema } from '../../domain/research';
 import { ScriptCommandSchema } from '../../domain/script';
+import { VoiceCommandSchema } from '../../domain/voice';
+import {
+  voiceTimeline,
+  voiceCues,
+  subtitleTrack,
+  voiceContent,
+  initializeVoice,
+  saveVoice,
+  cloneVoice,
+  estimatedCues,
+  subtitlesFor,
+  assertVoiceSubmittable,
+  finishVoice,
+} from '../voice/engine';
 import {
   initializeScript,
   cloneScript,
@@ -48,6 +62,9 @@ export const emptyWorkflow = (): WorkflowState => ({
   researchIndexes: [],
   scriptDocuments: [],
   scriptSegments: [],
+  voiceTimelines: [],
+  voiceCues: [],
+  subtitleTracks: [],
 });
 function canonical(v: unknown): string {
   if (v === null || typeof v !== 'object') return JSON.stringify(v);
@@ -255,7 +272,11 @@ export function applyWorkflow(
   };
   let result: { id: string };
   const content = (r: WorkflowRevision) =>
-    r.scriptSchemaVersion ? scriptContent(s, r) : researchContent(s, r);
+    r.voiceSchemaVersion
+      ? voiceContent(s, r)
+      : r.scriptSchemaVersion
+        ? scriptContent(s, r)
+        : researchContent(s, r);
   const scopeDependency = (r: WorkflowRevision, ids?: string[]) => {
     if (!ids) return;
     const deps = s.dependencies.filter(
@@ -268,7 +289,173 @@ export function applyWorkflow(
       fail('INVALID_SEGMENT_REFERENCE', '段落依赖必须属于一个明确的上游文稿修订。');
     deps[0].segmentIds = [...new Set(ids)];
   };
-  if (c.action.startsWith('script-')) {
+  if (c.action.startsWith('voice-')) {
+    const command = VoiceCommandSchema.parse(c);
+    if (command.action === 'voice-start') {
+      requireInputs([command.scriptRevisionId]);
+      if (
+        !revision(command.scriptRevisionId).scriptSchemaVersion ||
+        artifact(revision(command.scriptRevisionId).artifactId).type !== 'script'
+      )
+        fail('SCRIPT_REQUIRED', '请选择结构化的有效批准文稿。');
+      const a = s.artifacts.find((a) => a.type === 'voice'),
+        old = a?.currentRevisionId ? revision(a.currentRevisionId) : null;
+      if (old && (old.voiceSchemaVersion || old.status !== 'draft'))
+        fail('ARTIFACT_EXISTS', '已有配音修订，请Fork后继续。', 409);
+      if (old && (command.legacyRevisionId !== old.id || command.expectedVersion !== old.version))
+        conflict();
+      if (
+        old &&
+        s.dependencies.some(
+          (d) =>
+            d.downstreamRevisionId === old.id && d.upstreamRevisionId !== command.scriptRevisionId,
+        )
+      )
+        fail(
+          'VOICE_LEGACY_FORK_REQUIRED',
+          '请先Fork旧文本产物并使用当前批准文稿，再显式转换草稿。',
+        );
+      const r = old ?? createRevision('voice', '配音草稿', [command.scriptRevisionId], false);
+      if (old) {
+        r.version++;
+        a!.version++;
+        if (
+          !s.dependencies.some(
+            (d) =>
+              d.downstreamRevisionId === r.id && d.upstreamRevisionId === command.scriptRevisionId,
+          )
+        )
+          s.dependencies.push({
+            id: randomUUID(),
+            upstreamRevisionId: command.scriptRevisionId,
+            downstreamRevisionId: r.id,
+            purpose: '正式配音文稿',
+          });
+      }
+      initializeVoice(s, r, command.scriptRevisionId, command.mode, project.targetDurationMs);
+      subtitleTrack(s, r.id)!.language = project.language;
+      r.contentHash = fingerprint(content(r));
+      result = r;
+    } else {
+      const r = revision(command.revisionId),
+        a = artifact(r.artifactId),
+        doc = voiceTimeline(s, r.id);
+      if (a.type !== 'voice' || !doc)
+        throw new AppError('INVALID_STATE', '尚未建立结构化配音时间轴。', 422);
+      if (r.status !== 'draft') fail('IMMUTABLE_REVISION', '配音修订只读，请Fork后编辑。');
+      if (r.version !== command.expectedVersion || a.currentRevisionId !== r.id) conflict();
+      if (
+        command.action === 'voice-generate' ||
+        command.action === 'voice-import' ||
+        command.action === 'voice-analyze'
+      ) {
+        requireInputs([doc.scriptRevisionId]);
+        if (command.action === 'voice-analyze' && (!doc.audio || doc.mode === 'none'))
+          fail('VOICE_AUDIO_REQUIRED', '识别/强制对齐需要真实音频，无口播不生成伪语音时间。');
+        if (
+          command.action !== 'voice-analyze' &&
+          doc.mode !== (command.action === 'voice-import' ? 'import' : 'tts')
+        )
+          fail('VOICE_MODE_MISMATCH', '请先切换到对应配音模式。');
+        const j = enqueue('voice', [doc.scriptRevisionId], key);
+        j.provider = 'voice';
+        j.progress = 0;
+        const { config } = require('../config') as typeof import('../config');
+        const limits = config();
+        j.voiceInput = {
+          schemaVersion: 1,
+          revisionId: r.id,
+          targetVersion: r.version,
+          scriptRevisionId: doc.scriptRevisionId,
+          mode: doc.mode as 'tts' | 'import',
+          operation: command.action === 'voice-analyze' ? command.operation : 'audio',
+          language: project.language.startsWith('en') ? 'en' : 'zh',
+          provider: command.action === 'voice-import' ? 'audio-import' : command.provider,
+          voice: command.action === 'voice-generate' ? command.voice : '',
+          rate: command.action === 'voice-generate' ? command.rate : 0,
+          purpose: command.action === 'voice-generate' ? command.purpose : 'final',
+          segments: scriptSegments(s, doc.scriptRevisionId).map((x) => ({
+            id: x.id,
+            text: x.text,
+          })),
+          ...(command.action === 'voice-import'
+            ? { blob: command.blob }
+            : command.action === 'voice-analyze'
+              ? { blob: doc.audio!.blob }
+              : {}),
+          maxDurationMs: limits.maxDurationMs,
+          maxAudioBytes: limits.maxUploadBytes,
+        };
+        j.logs = [
+          {
+            at: time,
+            message: `${j.voiceInput.provider} · ${j.voiceInput.purpose} 配音任务排队；原文修订和输入已冻结，字幕不是精确转录。`,
+          },
+        ];
+        result = j;
+      } else {
+        if (command.action === 'voice-save') {
+          const { config } = require('../config') as typeof import('../config');
+          if (command.durationMs > config().maxDurationMs)
+            fail('VOICE_DURATION_LIMIT', '时间轴超出当前可配置资源时长上限。');
+          const previous = voiceCues(s, r.id);
+          for (const cue of command.cues.filter((c) => c.alignment === 'forced')) {
+            const old = previous.find((c) => c.id === cue.id);
+            if (
+              !old ||
+              old.alignment !== 'forced' ||
+              [
+                'startMs',
+                'endMs',
+                'startChar',
+                'endChar',
+                'segmentTextSha256',
+                'text',
+                'alignmentRunId',
+                'segmentId',
+              ].some((k) => old[k as keyof typeof old] !== cue[k as keyof typeof cue])
+            )
+              fail(
+                'ALIGNMENT_PROVENANCE',
+                '修改模型时间后请标记手动；不能把编辑结果冒充强制对齐。',
+              );
+          }
+          saveVoice(
+            s,
+            r,
+            {
+              ...doc,
+              durationMs: command.durationMs,
+              alignmentConfirmed: command.alignmentConfirmed,
+            },
+            command.cues,
+            command.subtitles,
+          );
+        } else {
+          const next =
+            command.action === 'voice-mode'
+              ? {
+                  ...doc,
+                  mode: command.mode,
+                  audio: null,
+                  durationMs: project.targetDurationMs,
+                  timingBasis:
+                    command.mode === 'none' ? ('silent_plan' as const) : ('pending_audio' as const),
+                  audioStale: false,
+                  alignmentConfirmed: false,
+                }
+              : { ...doc, alignmentConfirmed: false };
+          const cues = estimatedCues(s, next, voiceCues(s, r.id));
+          saveVoice(s, r, next, cues, subtitlesFor(cues, subtitleTrack(s, r.id)!.cues));
+        }
+        r.version++;
+        r.updatedAt = time;
+        a.version++;
+        r.contentHash = fingerprint(content(r));
+        result = r;
+      }
+    }
+  } else if (c.action.startsWith('script-')) {
     const command = ScriptCommandSchema.parse(c);
     if (command.action === 'script-start') {
       const inputs = command.researchRevisionId ? [command.researchRevisionId] : [];
@@ -386,6 +573,7 @@ export function applyWorkflow(
     );
     cloneResearch(s, old, result as WorkflowRevision);
     cloneScript(s, old, result as WorkflowRevision);
+    cloneVoice(s, old, result as WorkflowRevision);
     if (c.inputSegmentIds) scopeDependency(result as WorkflowRevision, c.inputSegmentIds);
     else
       for (const dep of s.dependencies.filter((d) => d.downstreamRevisionId === result.id)) {
@@ -406,11 +594,14 @@ export function applyWorkflow(
     if (c.action === 'patch') {
       if (r.scriptSchemaVersion)
         fail('STRUCTURED_SCRIPT_REQUIRED', '结构化文稿请通过段落保存接口修改。');
+      if (r.voiceSchemaVersion)
+        fail('STRUCTURED_VOICE_REQUIRED', '结构化配音请通过时间轴保存接口修改。');
       if (r.status !== 'draft') fail('INVALID_STATE', '仅草稿可以保存，请创建新修订。');
       r.text = c.text;
       r.contentHash = fingerprint(researchContent(s, r));
     } else if (c.action === 'submit') {
       assertScriptSubmittable(s, r);
+      assertVoiceSubmittable(s, r);
       if (r.status !== 'draft') fail('INVALID_STATE', '仅草稿可以提交审核。');
       requireInputs(
         s.dependencies
@@ -451,7 +642,11 @@ export function applyWorkflow(
     if (!('jobId' in c)) throw new Error('Invalid job action');
     const j = job(c.jobId);
     if ('expectedVersion' in c && j.version !== c.expectedVersion) conflict();
-    if (c.action === 'record-ai-run') {
+    if (c.action === 'record-voice-run') {
+      if (j.attempts.at(-1)?.workerId !== c.workerId || j.attempt !== c.attempt)
+        fail('JOB_CONFLICT', '旧执行者不可记录新尝试。', 409);
+      j.voiceRuns = [...(j.voiceRuns ?? []), { ...c.run, jobAttempt: c.attempt }].slice(-50);
+    } else if (c.action === 'record-ai-run') {
       if (j.attempts.at(-1)?.workerId !== c.workerId || j.attempt !== c.attempt)
         fail('JOB_CONFLICT', '旧执行者不可记录新尝试的使用量。', 409);
       j.aiRuns = [
@@ -531,6 +726,9 @@ export function applyWorkflow(
             ...runs.map((run) => ({ ...run, jobAttempt: j.attempt })),
           ].slice(-50);
         const currentVersion = s.artifacts.find((a) => a.type === j.kind)?.version ?? 0;
+        const voiceRun = c.voiceRun ?? c.voiceResult?.run;
+        if (voiceRun)
+          j.voiceRuns = [...(j.voiceRuns ?? []), { ...voiceRun, jobAttempt: j.attempt }].slice(-50);
         j.errorCode =
           c.errorCode ??
           (j.provider === 'unconfigured'
@@ -538,7 +736,26 @@ export function applyWorkflow(
             : j.provider !== 'research' && currentVersion !== j.targetVersion
               ? 'TARGET_CHANGED'
               : null);
-        if (!j.errorCode && j.provider === 'script') {
+        if (!j.errorCode && j.provider === 'voice') {
+          const input = j.voiceInput ?? fail('INVALID_VOICE_RESULT', '缺少配音输入。'),
+            output = c.voiceResult ?? fail('INVALID_VOICE_RESULT', '缺少配音结果。');
+          try {
+            requireInputs([input.scriptRevisionId]);
+            j.errorCode = finishVoice(s, input, output);
+          } catch (e) {
+            j.errorCode = e instanceof AppError ? e.code : 'INVALID_VOICE_RESULT';
+          }
+          if (!j.errorCode) {
+            j.voiceResult = output;
+            j.resultRevisionId = input.revisionId;
+            j.state = 'succeeded';
+            j.progress = 1;
+            const r = revision(input.revisionId);
+            r.updatedAt = time;
+            r.contentHash = fingerprint(content(r));
+            if (input.purpose === 'final') artifact(r.artifactId).version++;
+          } else j.state = 'failed';
+        } else if (!j.errorCode && j.provider === 'script') {
           const input = j.scriptInput ?? fail('INVALID_SCRIPT_RESULT', '缺少固定写稿输入。'),
             output = c.scriptResult ?? fail('INVALID_SCRIPT_RESULT', '缺少结构化写稿结果。');
           j.errorCode = finishScript(s, input, output);
@@ -613,9 +830,13 @@ export function applyWorkflow(
       j.leaseExpiresAt = null;
     }
     // Telemetry/lease updates do not invalidate a user action's state version.
-    if (c.action !== 'heartbeat' && c.action !== 'record-ai-run') j.version++;
+    if (c.action !== 'heartbeat' && c.action !== 'record-ai-run' && c.action !== 'record-voice-run')
+      j.version++;
     j.updatedAt = time;
-    if (['remotion', 'research', 'script'].includes(j.provider) && c.action !== 'heartbeat')
+    if (
+      ['remotion', 'research', 'script', 'voice'].includes(j.provider) &&
+      c.action !== 'heartbeat'
+    )
       j.logs = [
         ...(j.logs || []),
         { at: time, message: `${c.action}: ${j.state}${j.errorCode ? ' · ' + j.errorCode : ''}` },

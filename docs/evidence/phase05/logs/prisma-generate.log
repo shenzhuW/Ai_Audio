@@ -1,0 +1,15 @@
+
+> ai-code-video-studio@0.1.0 db:generate [repo]
+> pnpm --filter @studio/web db:generate
+
+
+> @studio/web@0.1.0 db:generate [repo]\apps\web
+> prisma generate
+
+Prisma schema loaded from prisma\schema.prisma
+
+✔ Generated Prisma Client (v6.19.3) to .\..\..\node_modules\.pnpm\@prisma+client@6.19.3_prism_1d040ab5215f59f0e27ddee7f0cf082e\node_modules\@prisma\client in 150ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints

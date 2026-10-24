@@ -1,0 +1,39 @@
+{
+  "id": "048bbc86-18af-4ce8-a284-9aa6abe7ed4c",
+  "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53",
+  "sourceSha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+  "blob": {
+    "key": "2300cef562b764cb17337ce32bb22873b0b212b8d2bc0b60133e5a55661aea7a",
+    "sha256": "2300cef562b764cb17337ce32bb22873b0b212b8d2bc0b60133e5a55661aea7a",
+    "sizeBytes": 4780973,
+    "mime": "video/mp4"
+  },
+  "metadata": {
+    "kind": "video",
+    "width": 1080,
+    "height": 1920,
+    "durationMs": 10000,
+    "fps": 30,
+    "codec": "h264",
+    "format": "mov,mp4,m4a,3gp,3g2,mj2",
+    "frames": 300
+  },
+  "recipe": {
+    "version": 1,
+    "sourceSha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+    "sourceInMs": 0,
+    "sourceOutMs": 6000,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 300,
+    "fit": "cover",
+    "x": 0.5,
+    "y": 0.5,
+    "playback": "loop",
+    "mute": true
+  },
+  "producerBindingId": "f835f94c-451f-4339-82c5-9db6f63de95b",
+  "createdAt": "2026-10-24T07:22:51.271Z",
+  "log": "source SHA a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce\nrecipe {\"version\":1,\"sourceSha256\":\"a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce\",\"sourceInMs\":0,\"sourceOutMs\":6000,\"width\":1080,\"height\":1920,\"fps\":30,\"frames\":300,\"fit\":\"cover\",\"x\":0.5,\"y\":0.5,\"playback\":\"loop\",\"mute\":true}\nTrim interval before looping: \nffmpeg [\"-v\",\"error\",\"-stream_loop\",\"-1\",\"-i\",\"[work]/interval.mp4\",\"-vf\",\"setsar=1,fps=30\",\"-frames:v\",\"300\",\"-an\",\"-map_metadata\",\"-1\",\"-c:v\",\"libx264\",\"-preset\",\"ultrafast\",\"-crf\",\"22\",\"-pix_fmt\",\"yuv420p\",\"-movflags\",\"+faststart\",\"-y\",\"[work]/prepared.mp4\"]\n"
+}

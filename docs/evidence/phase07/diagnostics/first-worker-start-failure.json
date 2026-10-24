@@ -1,0 +1,23 @@
+{
+  "status": "FAIL",
+  "at": "2026-10-24T07:11:25.364Z",
+  "backend": "sqlite",
+  "runId": "mvm28qlu",
+  "checks": [
+    {
+      "name": "批准文稿→确认静默时间轴→批准DirectorRevision，固定shotId/VisualSearchIntent",
+      "status": "PASS",
+      "detail": {
+        "directorRevisionId": "57df1535-530f-4486-8501-c0d43b8bc611",
+        "shotIds": [
+          "f3d5ec2a-9608-4286-bf6f-98ae81c97d67",
+          "7e2e2a3c-ed7f-4514-8a8d-a105567faf00"
+        ],
+        "durationFrames": 600
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "baa91f5b-0951-4c29-91e9-a6c14cbc610e",
+  "error": "AssertionError [ERR_ASSERTION]: Worker exit 1\n\n1 !== 0\n\n    at worker ([repo]\\tests\\assets\\run.cjs:194:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async waitWorker ([repo]\\tests\\assets\\run.cjs:322:2)\n    at async main ([repo]\\tests\\assets\\run.cjs:351:82)"
+}

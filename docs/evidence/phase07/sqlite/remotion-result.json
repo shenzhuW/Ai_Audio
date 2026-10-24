@@ -1,0 +1,483 @@
+{
+  "id": "f8d97883-9497-4c78-8789-9252b8e265e0",
+  "kind": "motion",
+  "version": 3,
+  "provider": "remotion",
+  "state": "succeeded",
+  "inputRevisionIds": [
+    "e5632d78-26f8-4487-bdf9-653f36b21bed"
+  ],
+  "idempotencyKey": "5ca64c40-9ad6-4b7a-8484-1e062349017c",
+  "attempt": 1,
+  "maxAttempts": 3,
+  "attempts": [
+    {
+      "workerId": "96a62b5b-bf27-44b2-b6f0-a93593b5fcbd",
+      "number": 1,
+      "startedAt": "2026-10-24T07:23:00.876Z",
+      "finishedAt": "2026-10-24T07:25:13.027Z",
+      "state": "succeeded",
+      "errorCode": null
+    }
+  ],
+  "targetVersion": 0,
+  "leaseOwner": null,
+  "leaseExpiresAt": null,
+  "resultRevisionId": "440520a9-f2cd-45d8-85f2-dd5bd80bb0f8",
+  "errorCode": null,
+  "createdAt": "2026-10-24T07:23:00.018Z",
+  "updatedAt": "2026-10-24T07:25:13.027Z",
+  "renderInput": {
+    "schemaVersion": 1,
+    "presetId": "poc-v1",
+    "scene": {
+      "schemaVersion": 1,
+      "sceneId": "17eefba2-b055-4cae-a613-7c61432cba86",
+      "shotId": "2c04d041-61b7-466a-bcfe-8fe7c385d7a2",
+      "narrativeGoal": "验证真实视频与帧驱动图层的技术闭环，无事实主张",
+      "fps": 30,
+      "durationFrames": 300,
+      "resolution": {
+        "width": 1080,
+        "height": 1920
+      },
+      "layers": [
+        {
+          "id": "background",
+          "zIndex": 0,
+          "kind": "video",
+          "assetBindingId": "poc-background",
+          "fit": "cover"
+        },
+        {
+          "id": "title",
+          "zIndex": 20,
+          "kind": "component",
+          "component": "KineticText",
+          "props": {
+            "text": "让想法，逐帧成形",
+            "fontSize": 72
+          }
+        },
+        {
+          "id": "chart",
+          "zIndex": 30,
+          "kind": "component",
+          "component": "BarChart",
+          "dataRef": "poc-values"
+        },
+        {
+          "id": "subtitles",
+          "zIndex": 50,
+          "kind": "subtitle",
+          "voiceTimelineRevisionId": "82e73dc6-67ac-451d-933a-b9d95ed709a8"
+        }
+      ]
+    },
+    "timeline": {
+      "schemaVersion": 1,
+      "id": "82e73dc6-67ac-451d-933a-b9d95ed709a8",
+      "mode": "none",
+      "durationFrames": 300,
+      "subtitles": [
+        {
+          "id": "042406b1-5ae7-4c4a-a2a9-3279aedfab3b",
+          "startFrame": 0,
+          "endFrame": 90,
+          "text": "真实视频作为底图。"
+        },
+        {
+          "id": "4a642657-c7e5-4a7a-b845-0e7f32f6d82f",
+          "startFrame": 90,
+          "endFrame": 195,
+          "text": "文字和图表逐帧生长。"
+        },
+        {
+          "id": "7b81c82c-5797-436d-baa2-aef1b6fbb065",
+          "startFrame": 195,
+          "endFrame": 300,
+          "text": "同一场景，生成同一画面。"
+        }
+      ]
+    },
+    "assets": {
+      "backgroundSha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+      "fontSha256": "abbf789f45f9c43e316f24b97e868e6e4a15cef45b18d394721524c9e776fa1a"
+    },
+    "preparedBackground": {
+      "directorRevisionId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+      "shotId": "69f0d812-9a71-491d-ab94-a105424ad9a7",
+      "bindingId": "053dd547-4378-434c-9080-63dfd369e51e",
+      "recipeHash": "b73053f93bf494160ce94cb3684b0e8e31192fb9b205642d837ce49555ca5ee3",
+      "sha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+      "provenance": {
+        "sourceAssetId": "dbd41720-536f-47e6-a3ad-848175a3aa44",
+        "provider": "project",
+        "sourceUrl": null,
+        "author": "Self-authored test",
+        "license": "unknown",
+        "restrictions": "non-commercial / unknown allowed for internal tests",
+        "sourceInMs": 6000,
+        "sourceOutMs": 12000,
+        "purpose": "illustrative"
+      }
+    },
+    "dataset": {
+      "id": "poc-values",
+      "provenance": "synthetic",
+      "values": [
+        32,
+        64,
+        90
+      ]
+    },
+    "toolchain": {
+      "remotion": "4.0.538",
+      "catalogVersion": "poc-v1",
+      "componentHash": "ff1d45f9825b5e04d55c9a6d260614d4bc68c49c763aa7326601b65ff67d6e06"
+    }
+  },
+  "renderResult": {
+    "schemaVersion": 1,
+    "id": "e5253669-f3e3-40e7-9888-0b86bc17c0ce",
+    "manifestHash": "a180c041993243f057e8cfeb12ec73b6d18e8df60f4932393093c6598822867e",
+    "previewManifestHash": "a180c041993243f057e8cfeb12ec73b6d18e8df60f4932393093c6598822867e",
+    "metadata": {
+      "durationSeconds": 10,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "codec": "h264",
+      "frames": 300
+    },
+    "artifacts": [
+      {
+        "file": "video.mp4",
+        "sha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+        "sizeBytes": 1657402
+      },
+      {
+        "file": "frame-060.png",
+        "sha256": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+        "sizeBytes": 763258
+      },
+      {
+        "file": "frame-150.png",
+        "sha256": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+        "sizeBytes": 771525
+      },
+      {
+        "file": "frame-240.png",
+        "sha256": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+        "sizeBytes": 703321
+      },
+      {
+        "file": "ffprobe.json",
+        "sha256": "f3161144b0ffaf9cb96de7bc818a255890e99a51c13a23bdc4d14ad4254e10fd",
+        "sizeBytes": 2246
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "88b433cff24e6392d961d5698d8bb45aacdd1752f9da169fc656b8fde226f537",
+        "sizeBytes": 3803
+      }
+    ],
+    "determinism": [
+      {
+        "frame": 60,
+        "first": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+        "second": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b"
+      },
+      {
+        "frame": 150,
+        "first": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+        "second": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71"
+      },
+      {
+        "frame": 240,
+        "first": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+        "second": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468"
+      }
+    ]
+  },
+  "progress": 1,
+  "heartbeatAt": "2026-10-24T07:25:11.800Z",
+  "logs": [
+    {
+      "at": "2026-10-24T07:23:00.018Z",
+      "message": "可信预置渲染已排队；输入、素材和时间轴已冻结。"
+    },
+    {
+      "at": "2026-10-24T07:23:00.876Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T07:23:00.994Z",
+      "message": "启动可信渲染子进程"
+    },
+    {
+      "at": "2026-10-24T07:23:03.041Z",
+      "message": "编译可信组件"
+    },
+    {
+      "at": "2026-10-24T07:23:05.055Z",
+      "message": "编译可信组件"
+    },
+    {
+      "at": "2026-10-24T07:23:07.072Z",
+      "message": "视频渲染 0%"
+    },
+    {
+      "at": "2026-10-24T07:23:09.085Z",
+      "message": "视频渲染 0%"
+    },
+    {
+      "at": "2026-10-24T07:23:11.183Z",
+      "message": "视频渲染 3%"
+    },
+    {
+      "at": "2026-10-24T07:23:13.097Z",
+      "message": "视频渲染 4%"
+    },
+    {
+      "at": "2026-10-24T07:23:15.095Z",
+      "message": "视频渲染 6%"
+    },
+    {
+      "at": "2026-10-24T07:23:17.122Z",
+      "message": "视频渲染 7%"
+    },
+    {
+      "at": "2026-10-24T07:23:19.123Z",
+      "message": "视频渲染 9%"
+    },
+    {
+      "at": "2026-10-24T07:23:21.118Z",
+      "message": "视频渲染 11%"
+    },
+    {
+      "at": "2026-10-24T07:23:23.123Z",
+      "message": "视频渲染 12%"
+    },
+    {
+      "at": "2026-10-24T07:23:25.158Z",
+      "message": "视频渲染 14%"
+    },
+    {
+      "at": "2026-10-24T07:23:27.149Z",
+      "message": "视频渲染 16%"
+    },
+    {
+      "at": "2026-10-24T07:23:29.160Z",
+      "message": "视频渲染 18%"
+    },
+    {
+      "at": "2026-10-24T07:23:31.184Z",
+      "message": "视频渲染 21%"
+    },
+    {
+      "at": "2026-10-24T07:23:33.183Z",
+      "message": "视频渲染 23%"
+    },
+    {
+      "at": "2026-10-24T07:23:35.189Z",
+      "message": "视频渲染 26%"
+    },
+    {
+      "at": "2026-10-24T07:23:37.176Z",
+      "message": "视频渲染 28%"
+    },
+    {
+      "at": "2026-10-24T07:23:39.210Z",
+      "message": "视频渲染 31%"
+    },
+    {
+      "at": "2026-10-24T07:23:41.197Z",
+      "message": "视频渲染 34%"
+    },
+    {
+      "at": "2026-10-24T07:23:43.220Z",
+      "message": "视频渲染 37%"
+    },
+    {
+      "at": "2026-10-24T07:23:45.208Z",
+      "message": "视频渲染 39%"
+    },
+    {
+      "at": "2026-10-24T07:23:47.228Z",
+      "message": "视频渲染 42%"
+    },
+    {
+      "at": "2026-10-24T07:23:49.207Z",
+      "message": "视频渲染 45%"
+    },
+    {
+      "at": "2026-10-24T07:23:51.224Z",
+      "message": "视频渲染 48%"
+    },
+    {
+      "at": "2026-10-24T07:23:53.237Z",
+      "message": "视频渲染 50%"
+    },
+    {
+      "at": "2026-10-24T07:23:55.258Z",
+      "message": "视频渲染 53%"
+    },
+    {
+      "at": "2026-10-24T07:23:57.249Z",
+      "message": "视频渲染 56%"
+    },
+    {
+      "at": "2026-10-24T07:23:59.271Z",
+      "message": "视频渲染 59%"
+    },
+    {
+      "at": "2026-10-24T07:24:01.336Z",
+      "message": "视频渲染 61%"
+    },
+    {
+      "at": "2026-10-24T07:24:03.278Z",
+      "message": "视频渲染 62%"
+    },
+    {
+      "at": "2026-10-24T07:24:05.290Z",
+      "message": "视频渲染 64%"
+    },
+    {
+      "at": "2026-10-24T07:24:07.286Z",
+      "message": "视频渲染 66%"
+    },
+    {
+      "at": "2026-10-24T07:24:09.298Z",
+      "message": "视频渲染 68%"
+    },
+    {
+      "at": "2026-10-24T07:24:11.358Z",
+      "message": "视频渲染 70%"
+    },
+    {
+      "at": "2026-10-24T07:24:13.309Z",
+      "message": "视频渲染 71%"
+    },
+    {
+      "at": "2026-10-24T07:24:15.320Z",
+      "message": "视频渲染 73%"
+    },
+    {
+      "at": "2026-10-24T07:24:17.334Z",
+      "message": "视频渲染 75%"
+    },
+    {
+      "at": "2026-10-24T07:24:19.462Z",
+      "message": "视频渲染 76%"
+    },
+    {
+      "at": "2026-10-24T07:24:21.538Z",
+      "message": "视频渲染 77%"
+    },
+    {
+      "at": "2026-10-24T07:24:23.522Z",
+      "message": "视频渲染 77%"
+    },
+    {
+      "at": "2026-10-24T07:24:25.452Z",
+      "message": "视频渲染 79%"
+    },
+    {
+      "at": "2026-10-24T07:24:27.499Z",
+      "message": "视频渲染 79%"
+    },
+    {
+      "at": "2026-10-24T07:24:29.509Z",
+      "message": "视频渲染 80%"
+    },
+    {
+      "at": "2026-10-24T07:24:31.502Z",
+      "message": "视频渲染 81%"
+    },
+    {
+      "at": "2026-10-24T07:24:33.503Z",
+      "message": "视频渲染 82%"
+    },
+    {
+      "at": "2026-10-24T07:24:35.554Z",
+      "message": "视频渲染 83%"
+    },
+    {
+      "at": "2026-10-24T07:24:37.656Z",
+      "message": "视频渲染 83%"
+    },
+    {
+      "at": "2026-10-24T07:24:39.658Z",
+      "message": "视频渲染 84%"
+    },
+    {
+      "at": "2026-10-24T07:24:41.562Z",
+      "message": "视频渲染 85%"
+    },
+    {
+      "at": "2026-10-24T07:24:43.624Z",
+      "message": "视频渲染 86%"
+    },
+    {
+      "at": "2026-10-24T07:24:45.580Z",
+      "message": "视频渲染 87%"
+    },
+    {
+      "at": "2026-10-24T07:24:47.710Z",
+      "message": "视频渲染 87%"
+    },
+    {
+      "at": "2026-10-24T07:24:49.587Z",
+      "message": "视频渲染 89%"
+    },
+    {
+      "at": "2026-10-24T07:24:51.659Z",
+      "message": "视频渲染 91%"
+    },
+    {
+      "at": "2026-10-24T07:24:53.656Z",
+      "message": "重复渲染关键帧 60"
+    },
+    {
+      "at": "2026-10-24T07:24:55.615Z",
+      "message": "重复渲染关键帧 60"
+    },
+    {
+      "at": "2026-10-24T07:24:57.633Z",
+      "message": "重复渲染关键帧 150"
+    },
+    {
+      "at": "2026-10-24T07:24:59.639Z",
+      "message": "重复渲染关键帧 150"
+    },
+    {
+      "at": "2026-10-24T07:25:01.792Z",
+      "message": "重复渲染关键帧 150"
+    },
+    {
+      "at": "2026-10-24T07:25:03.762Z",
+      "message": "重复渲染关键帧 240"
+    },
+    {
+      "at": "2026-10-24T07:25:05.775Z",
+      "message": "重复渲染关键帧 240"
+    },
+    {
+      "at": "2026-10-24T07:25:07.756Z",
+      "message": "媒体规格与重复关键帧校验通过"
+    },
+    {
+      "at": "2026-10-24T07:25:09.719Z",
+      "message": "媒体规格与重复关键帧校验通过"
+    },
+    {
+      "at": "2026-10-24T07:25:11.800Z",
+      "message": "媒体规格与重复关键帧校验通过"
+    },
+    {
+      "at": "2026-10-24T07:25:13.027Z",
+      "message": "finish: succeeded"
+    }
+  ]
+}

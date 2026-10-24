@@ -34,9 +34,15 @@ async function main() {
     (l) => l.kind === 'component' && l.component === 'KineticText',
   );
   const actual = trustedInput(title.props.fontSize);
+  if (input.preparedBackground) {
+    actual.preparedBackground = input.preparedBackground;
+    actual.assets.backgroundSha256 = input.preparedBackground.sha256;
+  }
   if (fingerprint(input) !== fingerprint(actual))
     throw new Error('INPUT_OR_COMPONENT_HASH_MISMATCH');
-  const publicDir = path.join(root, 'apps/render/public');
+  const publicDir = input.preparedBackground
+    ? path.join(output, 'public')
+    : path.join(root, 'apps/render/public');
   if (
     sha(path.join(publicDir, 'background.mp4')) !== input.assets.backgroundSha256 ||
     sha(path.join(publicDir, 'NotoSansSC-subset.woff2')) !== input.assets.fontSha256

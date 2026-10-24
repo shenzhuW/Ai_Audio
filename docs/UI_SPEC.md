@@ -106,3 +106,7 @@ Phase 04 实际布局为左侧段落大纲/写作任务入口，中间按段正�
 真实页面复用05原型的双栏卡片/模式导航：左侧声音制作、原生audio播放/seek、当前字幕、按真实位置绘制Cue条、字幕与锚点编辑；右侧Provider/声线/速度、临时试听/正式合成、真实ASR/强制对齐、偏移、确认/保存、任务审计。没有假波形。
 
 识别草稿、实际模型对齐、人工/估算、静默计划明确区分。字幕可修改文字和起止时间并刷新保留；单段可多句/短语/词Cue。同步共享Workflow审核/拒绝/Fork/版本历史及差异，批准版输入禁用；本地dirty时禁止审核/切换，409保留缓冲并提供明确放弃后重新载入。实际音轨/模型SHA和runId可查看；云端神经TTS未配置、Mock不生成声音。实际浏览器截图和操作结果以Phase05交付证据为准。
+
+## Phase07 actual behavior
+
+Page07 uses the established blue/white design system: shot search/upload toolbar, candidate/library grids, true preview/contact sheet and range/binding detail, durable job list. Filters cover type, provider, discovery/index/prepared state and known restriction text. Page06 embeds the same independent per-shot binding/range editor when showing an approved director. The binding version is captured when selecting a candidate; polling cannot refresh this editing token. Another-tab changes remain visible but old confirmation returns409. Code route changes require Director Fork, and empty search is explicit; no invented result cards. Source/Prepared previews are authenticated media with byte seeking. All licensing labels remain provenance, not internal-test approval gates.

@@ -1,5 +1,18 @@
 # 参考仓库阅读与适配记录
 
+## 2026-10-24 · Phase07 素材引擎
+
+实读 wallstreet-explainer 固定 SHA `920ed1d3b3ecb5997d861902e2719dda6688c0b1` 的 [scripts/footage.py](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/scripts/footage.py)（blob `f004b52aa59ace69ba68d1f9f730a93abaf12fce`）、[references/sourcing.md](https://github.com/HeyChengC/wallstreet-explainer/blob/920ed1d3b3ecb5997d861902e2719dda6688c0b1/references/sourcing.md)（`2c3f31305f788d800eb55c39a63ddcc45ccb819e`）及 LICENSE（`7e2580e1d5b8410309b4d16b670bd16394438344`）。没有执行或复制参考脚本。
+
+- footage 的 search/get 命令把检索元数据和下载分开；本项目改用真实 Provider Adapter，保留原始来源与下载状态，不接入绕过受阻下载的逻辑。
+- 关键辅助函数 `run` 封装固定命令参数执行，`ffdur` 用FFprobe读取真实时长，`opt` 读取CLI选项；本项目使用execFile参数数组、取消/超时、白名单环境与运行时Schema校验，用户输入不能成为Shell命令或自由FFmpeg滤镜。
+- sheet 命令采用 FFmpeg fps / drawtext / tile 制作联系表；scenes 用 select(scene,0.3) 和 showinfo 找切点。本项目记录源 SHA、实际 PTS、帧 SHA，先低成本筛选再只对 Top-K 已抽帧像素做视觉分析，区间推荐不冒充完整视频理解。
+- extract 从 clips.json 的 src/start/duration/crop/zoom/锚点生成片段；借鉴虚拟区间与按需物化，但保留原件，以 recipeHash 缓存 MP4，支持项目画幅，不采用其删除已有 JPG、固定横屏帧序列或更换渲染架构。
+- sourcing 区分证明性原文/画面与说明性 B-roll，官方来源优先，先联系表再定位片段；绑定记录说明/证据用途，许可未知仍可内部测试，不能由“可下载”推导商用授权。
+- MIT 仅涵盖参考源码，明确排除第三方样片/新闻/图片/Logo；不复制其素材、不去除水印、不绕过访问限制。媒体来源及已知限制独立保留。
+
+现场公开接口探测：NASA Images search 与 Commons MediaWiki imageinfo 均 HTTP 200，无登录凭据；这仅证明检索接口可访问，下载、视觉匹配、准备与合成须以本阶段实际测试日志为准。官方文档：[NASA API](https://api.nasa.gov/)、[NASA Images API](https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf)、[MediaWiki imageinfo](https://www.mediawiki.org/wiki/API:Imageinfo)。Pexels/Pixabay 需要独立 API Key，未配置不得宣称可用。
+
 ## 2026-10-24 · Phase06 Director
 
 实读wallstreet-explainer固定commit `920ed1d3b3ecb5997d861902e2719dda6688c0b1` 的 `references/thinking.md`（blob `eeee222c837b03b5de773ca39ea96c307a401882`）、`references/grammar.md`（`4755a70917bf576ef30fd850328a02d24ba83c83`）、`references/motion.md`（`598e7afcf793059fd5205b5d47e8f6f8c6129c28`），再次读LICENSE（`7e2580e1d5b8410309b4d16b670bd16394438344`）。链接均可用 `https://github.com/HeyChengC/wallstreet-explainer/blob/<commit>/<path>` 定位。只阅读当前阶段文档，没有执行参考脚本或复制源码/样片。

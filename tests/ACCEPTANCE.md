@@ -1,5 +1,9 @@
 # 验收与测试记录（Codex 持续填写）
 
+## Phase07（2026-10-24，本地交付）
+
+PASS：真实本地视频及NASA外部图片检索/下载/实际Codex视觉；Commons图片和NASA视频检索/下载/索引另行实际探测。双库同源两区间、独立绑定/409、FFmpeg循环/定格/单次、recipeHash复用、受保护播放/Range、重启、局部stale、Worker超时/取消/重试、批准历史不覆写。PreparedAsset进入既有可信Remotion真实10秒MP4，FFprobe与3关键帧确定性通过。76单元、类型/构建、双库19/21组（各含1条续跑说明）、旧阶段65组相关回归、最终UI2项通过。早期失败及修正均保留，不用Mock或metadata代替真实视觉。见[交付报告](../docs/PHASE_07_DELIVERY.md)及[证据索引](../docs/evidence/phase07/README.md)。仅本地提交，不推送、不进入Phase08。
+
 ## Phase06 导演表（2026-10-24）
 
 - 最终远程复核：受检ad26a25业务/迁移/安全运行时不变；284文件重新扫描、66单元/类型/构建、两库6组只读浏览器/重启通过，原157组逐文件核对。用户授权独立材料提交后快进推送，不进入Phase07。[正式报告](../docs/PHASE_06_REMOTE_ACCEPTANCE.md)。

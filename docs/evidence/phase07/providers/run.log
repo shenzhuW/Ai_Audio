@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "sources": [
+    {
+      "provider": "commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Blue_Marble_Eastern_Hemisphere.jpg",
+      "metadata": {
+        "kind": "image",
+        "width": 1280,
+        "height": 1280,
+        "durationMs": null,
+        "fps": 0,
+        "codec": "mjpeg",
+        "format": "jpeg_pipe",
+        "frames": null
+      }
+    },
+    {
+      "provider": "nasa",
+      "url": "https://images.nasa.gov/details/GSFC_20150729_Yarkovsky_m11964_Effect",
+      "metadata": {
+        "kind": "video",
+        "width": 640,
+        "height": 360,
+        "durationMs": 123500,
+        "fps": 30,
+        "codec": "h264",
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "frames": 3705
+      }
+    }
+  ]
+}

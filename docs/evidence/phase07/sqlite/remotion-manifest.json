@@ -1,0 +1,126 @@
+{
+  "input": {
+    "schemaVersion": 1,
+    "presetId": "poc-v1",
+    "scene": {
+      "schemaVersion": 1,
+      "sceneId": "17eefba2-b055-4cae-a613-7c61432cba86",
+      "shotId": "2c04d041-61b7-466a-bcfe-8fe7c385d7a2",
+      "narrativeGoal": "验证真实视频与帧驱动图层的技术闭环，无事实主张",
+      "fps": 30,
+      "durationFrames": 300,
+      "resolution": {
+        "width": 1080,
+        "height": 1920
+      },
+      "layers": [
+        {
+          "id": "background",
+          "zIndex": 0,
+          "kind": "video",
+          "assetBindingId": "poc-background",
+          "fit": "cover"
+        },
+        {
+          "id": "title",
+          "zIndex": 20,
+          "kind": "component",
+          "component": "KineticText",
+          "props": {
+            "text": "让想法，逐帧成形",
+            "fontSize": 72
+          }
+        },
+        {
+          "id": "chart",
+          "zIndex": 30,
+          "kind": "component",
+          "component": "BarChart",
+          "dataRef": "poc-values"
+        },
+        {
+          "id": "subtitles",
+          "zIndex": 50,
+          "kind": "subtitle",
+          "voiceTimelineRevisionId": "82e73dc6-67ac-451d-933a-b9d95ed709a8"
+        }
+      ]
+    },
+    "timeline": {
+      "schemaVersion": 1,
+      "id": "82e73dc6-67ac-451d-933a-b9d95ed709a8",
+      "mode": "none",
+      "durationFrames": 300,
+      "subtitles": [
+        {
+          "id": "042406b1-5ae7-4c4a-a2a9-3279aedfab3b",
+          "startFrame": 0,
+          "endFrame": 90,
+          "text": "真实视频作为底图。"
+        },
+        {
+          "id": "4a642657-c7e5-4a7a-b845-0e7f32f6d82f",
+          "startFrame": 90,
+          "endFrame": 195,
+          "text": "文字和图表逐帧生长。"
+        },
+        {
+          "id": "7b81c82c-5797-436d-baa2-aef1b6fbb065",
+          "startFrame": 195,
+          "endFrame": 300,
+          "text": "同一场景，生成同一画面。"
+        }
+      ]
+    },
+    "assets": {
+      "backgroundSha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+      "fontSha256": "abbf789f45f9c43e316f24b97e868e6e4a15cef45b18d394721524c9e776fa1a"
+    },
+    "preparedBackground": {
+      "directorRevisionId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+      "shotId": "69f0d812-9a71-491d-ab94-a105424ad9a7",
+      "bindingId": "053dd547-4378-434c-9080-63dfd369e51e",
+      "recipeHash": "b73053f93bf494160ce94cb3684b0e8e31192fb9b205642d837ce49555ca5ee3",
+      "sha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+      "provenance": {
+        "sourceAssetId": "dbd41720-536f-47e6-a3ad-848175a3aa44",
+        "provider": "project",
+        "sourceUrl": null,
+        "author": "Self-authored test",
+        "license": "unknown",
+        "restrictions": "non-commercial / unknown allowed for internal tests",
+        "sourceInMs": 6000,
+        "sourceOutMs": 12000,
+        "purpose": "illustrative"
+      }
+    },
+    "dataset": {
+      "id": "poc-values",
+      "provenance": "synthetic",
+      "values": [
+        32,
+        64,
+        90
+      ]
+    },
+    "toolchain": {
+      "remotion": "4.0.538",
+      "catalogVersion": "poc-v1",
+      "componentHash": "ff1d45f9825b5e04d55c9a6d260614d4bc68c49c763aa7326601b65ff67d6e06"
+    }
+  },
+  "manifestHash": "a180c041993243f057e8cfeb12ec73b6d18e8df60f4932393093c6598822867e",
+  "previewManifestHash": "a180c041993243f057e8cfeb12ec73b6d18e8df60f4932393093c6598822867e",
+  "compositionId": "PocVertical",
+  "codec": "h264",
+  "pixelFormat": "yuv420p",
+  "runtime": {
+    "node": "v24.15.0",
+    "platform": "win32",
+    "chromeMode": "chrome-for-testing",
+    "gl": "swangle",
+    "chromiumSha256": "15188ffe6bb074b2fc8f90d8e0fa4b8a17fa390ce49e58f55a94cd52edf9bec0",
+    "crf": 18,
+    "concurrency": 2
+  }
+}

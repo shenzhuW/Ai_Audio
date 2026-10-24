@@ -1,0 +1,270 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T07:34:25.406Z",
+  "backend": "postgresql",
+  "runId": "mvm2mm47",
+  "checks": [
+    {
+      "name": "PostgreSQL 0001–0006 基线升级0007、重复部署、非超级用户",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          },
+          {
+            "migration_name": "0005_voice",
+            "count": 1
+          },
+          {
+            "migration_name": "0006_director",
+            "count": 1
+          },
+          {
+            "migration_name": "0007_assets",
+            "count": 1
+          }
+        ],
+        "role": {
+          "rolsuper": false,
+          "rolcreatedb": false
+        }
+      }
+    },
+    {
+      "name": "批准文稿→确认静默时间轴→批准DirectorRevision，固定shotId/VisualSearchIntent",
+      "status": "PASS",
+      "detail": {
+        "directorRevisionId": "bc172038-2599-48f3-b274-e3c5deabf80b",
+        "shotIds": [
+          "23aa3bb4-d0c7-4f74-972e-8f5db2655549",
+          "58e04d21-b847-46a4-9a31-6d6cccfa0e0d"
+        ],
+        "durationFrames": 600
+      }
+    },
+    {
+      "name": "真实上传、FFprobe、实际PTS抽帧及联系表",
+      "status": "PASS",
+      "detail": {
+        "metadata": {
+          "fps": 30,
+          "kind": "video",
+          "codec": "h264",
+          "width": 640,
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 360,
+          "height": 360,
+          "durationMs": 12000
+        },
+        "frameTimes": [
+          0,
+          2400,
+          4767,
+          7167,
+          9533,
+          11900
+        ]
+      }
+    },
+    {
+      "name": "真实本地素材匹配，Codex实际查看视频帧并保存帧SHA/模型审计",
+      "status": "PASS",
+      "detail": {
+        "runIds": [
+          "01a16cca-1b92-70a2-98ac-ee09160bcff2"
+        ]
+      }
+    },
+    {
+      "name": "真实NASA API检索→受限下载→FFprobe→实际图片Codex视觉匹配",
+      "status": "PASS",
+      "detail": {
+        "sourceUrl": "https://images.nasa.gov/details/PIA00342",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA00342/PIA00342~medium.jpg",
+        "author": "NASA/JPL/USGS",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "sha256": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+        "runIds": [
+          "01a16cca-7fc5-7262-a48a-0fa51e038055"
+        ]
+      }
+    },
+    {
+      "name": "同源两个区间只保存一份原件，负数/越界拒绝",
+      "status": "PASS",
+      "detail": {
+        "sourceId": "9414e3f3-9b3b-4e48-a270-bbfe7f23b6b6",
+        "intervals": [
+          [
+            0,
+            6000
+          ],
+          [
+            6000,
+            12000
+          ]
+        ],
+        "candidateIds": [
+          "8a620fde-038e-4378-bdc2-8ba6bac05555",
+          "fc552cf2-6ed9-419b-910f-0ff4b8b15f83"
+        ]
+      }
+    },
+    {
+      "name": "真实FFmpeg仅循环选定区间、1080×1920/30FPS/H264/300帧，原件SHA不变",
+      "status": "PASS",
+      "detail": {
+        "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53",
+        "metadata": {
+          "fps": 30,
+          "kind": "video",
+          "codec": "h264",
+          "width": 1080,
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 300,
+          "height": 1920,
+          "durationMs": 10000
+        }
+      }
+    },
+    {
+      "name": "同recipeHash重复准备实际缓存命中并复核SHA/FFprobe",
+      "status": "PASS",
+      "detail": {
+        "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53"
+      }
+    },
+    {
+      "name": "替换一镜只追加本镜绑定，其他镜头/批准Director/原件/旧产物完整",
+      "status": "PASS",
+      "detail": {
+        "history": [
+          {
+            "id": "08d92056-468d-4663-9951-4772e270a65b",
+            "version": 1,
+            "shotId": "58e04d21-b847-46a4-9a31-6d6cccfa0e0d"
+          },
+          {
+            "id": "2604e4a4-f1dd-4335-86e9-c78c9dfadfe4",
+            "version": 1,
+            "shotId": "23aa3bb4-d0c7-4f74-972e-8f5db2655549"
+          },
+          {
+            "id": "5546e25c-b88d-4376-ad26-4c712c9b342b",
+            "version": 2,
+            "shotId": "23aa3bb4-d0c7-4f74-972e-8f5db2655549"
+          }
+        ]
+      }
+    },
+    {
+      "name": "复用同一测试数据库中已实际完成的可信Remotion任务（测试器HTTP连接失败后续跑）",
+      "status": "PASS",
+      "detail": {
+        "jobId": "76b8f379-739f-4be9-9e1a-9f00834f31bf"
+      }
+    },
+    {
+      "name": "PreparedAsset进入既有可信Remotion真实MP4合成、三关键帧重复渲染一致",
+      "status": "PASS",
+      "detail": {
+        "jobId": "76b8f379-739f-4be9-9e1a-9f00834f31bf",
+        "metadata": {
+          "fps": 30,
+          "codec": "h264",
+          "width": 1080,
+          "frames": 300,
+          "height": 1920,
+          "durationSeconds": 10
+        },
+        "determinism": [
+          {
+            "first": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+            "frame": 60,
+            "second": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b"
+          },
+          {
+            "first": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+            "frame": 150,
+            "second": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71"
+          },
+          {
+            "first": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+            "frame": 240,
+            "second": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468"
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实无结果/显式Mock/未配置失败/取消状态互不混淆，短区间必须显式循环或定格",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "独立真实Worker超时无部分写入、重试成功，running任务取消后不写迟到结果",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "受保护原件下载支持Range，未认证401，其他项目不能凭SHA读取",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "同所有者已索引本地库可跨项目匹配并复用原件，保持来源",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "浏览器轮询不刷新编辑会话版本：另一窗口更新后确认409；仅本镜成片依赖stale",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实浏览器：源视频播放/拖动、候选区间编辑、刷新持久化、第06/07/08页与移动端",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启后素材/绑定历史/准备产物与来源关系一致",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "配音新批准版令Director/素材方案stale，拒绝旧输入准备，历史内容保留",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "原有用户数据库/上传/会话SHA未改变",
+      "status": "PASS",
+      "detail": {
+        "originalDataSha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    },
+    {
+      "name": "PostgreSQL Prisma零漂移",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase07_mvm2mm47",
+  "projectId": "58d5958d-7659-48cc-a683-0ada17ff4e0a",
+  "finishedAt": "2026-10-24T07:35:15.331Z"
+}

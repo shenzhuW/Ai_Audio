@@ -1,0 +1,531 @@
+{
+  "id": "76b8f379-739f-4be9-9e1a-9f00834f31bf",
+  "kind": "motion",
+  "logs": [
+    {
+      "at": "2026-10-24T07:23:54.480Z",
+      "message": "可信预置渲染已排队；输入、素材和时间轴已冻结。"
+    },
+    {
+      "at": "2026-10-24T07:23:57.011Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T07:23:57.545Z",
+      "message": "启动可信渲染子进程"
+    },
+    {
+      "at": "2026-10-24T07:23:59.782Z",
+      "message": "启动可信渲染子进程"
+    },
+    {
+      "at": "2026-10-24T07:24:01.943Z",
+      "message": "启动可信渲染子进程"
+    },
+    {
+      "at": "2026-10-24T07:24:03.908Z",
+      "message": "正在编译可信预置组件"
+    },
+    {
+      "at": "2026-10-24T07:24:05.883Z",
+      "message": "正在编译可信预置组件"
+    },
+    {
+      "at": "2026-10-24T07:24:07.869Z",
+      "message": "编译可信组件"
+    },
+    {
+      "at": "2026-10-24T07:24:09.860Z",
+      "message": "编译可信组件"
+    },
+    {
+      "at": "2026-10-24T07:24:11.937Z",
+      "message": "编译可信组件"
+    },
+    {
+      "at": "2026-10-24T07:24:13.891Z",
+      "message": "编译可信组件"
+    },
+    {
+      "at": "2026-10-24T07:24:15.955Z",
+      "message": "编译可信组件"
+    },
+    {
+      "at": "2026-10-24T07:24:17.965Z",
+      "message": "视频渲染 0%"
+    },
+    {
+      "at": "2026-10-24T07:24:20.150Z",
+      "message": "视频渲染 0%"
+    },
+    {
+      "at": "2026-10-24T07:24:22.417Z",
+      "message": "视频渲染 1%"
+    },
+    {
+      "at": "2026-10-24T07:24:24.318Z",
+      "message": "视频渲染 1%"
+    },
+    {
+      "at": "2026-10-24T07:24:25.965Z",
+      "message": "视频渲染 2%"
+    },
+    {
+      "at": "2026-10-24T07:24:28.140Z",
+      "message": "视频渲染 3%"
+    },
+    {
+      "at": "2026-10-24T07:24:30.176Z",
+      "message": "视频渲染 4%"
+    },
+    {
+      "at": "2026-10-24T07:24:32.329Z",
+      "message": "视频渲染 4%"
+    },
+    {
+      "at": "2026-10-24T07:24:34.307Z",
+      "message": "视频渲染 5%"
+    },
+    {
+      "at": "2026-10-24T07:24:36.507Z",
+      "message": "视频渲染 5%"
+    },
+    {
+      "at": "2026-10-24T07:24:38.525Z",
+      "message": "视频渲染 6%"
+    },
+    {
+      "at": "2026-10-24T07:24:40.389Z",
+      "message": "视频渲染 7%"
+    },
+    {
+      "at": "2026-10-24T07:24:42.456Z",
+      "message": "视频渲染 7%"
+    },
+    {
+      "at": "2026-10-24T07:24:44.446Z",
+      "message": "视频渲染 8%"
+    },
+    {
+      "at": "2026-10-24T07:24:46.304Z",
+      "message": "视频渲染 8%"
+    },
+    {
+      "at": "2026-10-24T07:24:48.562Z",
+      "message": "视频渲染 9%"
+    },
+    {
+      "at": "2026-10-24T07:24:50.339Z",
+      "message": "视频渲染 9%"
+    },
+    {
+      "at": "2026-10-24T07:24:52.350Z",
+      "message": "视频渲染 10%"
+    },
+    {
+      "at": "2026-10-24T07:24:54.402Z",
+      "message": "视频渲染 11%"
+    },
+    {
+      "at": "2026-10-24T07:24:56.192Z",
+      "message": "视频渲染 11%"
+    },
+    {
+      "at": "2026-10-24T07:24:58.219Z",
+      "message": "视频渲染 12%"
+    },
+    {
+      "at": "2026-10-24T07:25:00.336Z",
+      "message": "视频渲染 13%"
+    },
+    {
+      "at": "2026-10-24T07:25:02.393Z",
+      "message": "视频渲染 14%"
+    },
+    {
+      "at": "2026-10-24T07:25:04.260Z",
+      "message": "视频渲染 15%"
+    },
+    {
+      "at": "2026-10-24T07:25:06.414Z",
+      "message": "视频渲染 16%"
+    },
+    {
+      "at": "2026-10-24T07:25:08.420Z",
+      "message": "视频渲染 17%"
+    },
+    {
+      "at": "2026-10-24T07:25:10.299Z",
+      "message": "视频渲染 18%"
+    },
+    {
+      "at": "2026-10-24T07:25:12.288Z",
+      "message": "视频渲染 20%"
+    },
+    {
+      "at": "2026-10-24T07:25:14.356Z",
+      "message": "视频渲染 22%"
+    },
+    {
+      "at": "2026-10-24T07:25:16.400Z",
+      "message": "视频渲染 24%"
+    },
+    {
+      "at": "2026-10-24T07:25:18.249Z",
+      "message": "视频渲染 25%"
+    },
+    {
+      "at": "2026-10-24T07:25:20.324Z",
+      "message": "视频渲染 27%"
+    },
+    {
+      "at": "2026-10-24T07:25:22.371Z",
+      "message": "视频渲染 29%"
+    },
+    {
+      "at": "2026-10-24T07:25:24.462Z",
+      "message": "视频渲染 31%"
+    },
+    {
+      "at": "2026-10-24T07:25:26.465Z",
+      "message": "视频渲染 33%"
+    },
+    {
+      "at": "2026-10-24T07:25:28.444Z",
+      "message": "视频渲染 34%"
+    },
+    {
+      "at": "2026-10-24T07:25:30.453Z",
+      "message": "视频渲染 37%"
+    },
+    {
+      "at": "2026-10-24T07:25:32.710Z",
+      "message": "视频渲染 38%"
+    },
+    {
+      "at": "2026-10-24T07:25:34.581Z",
+      "message": "视频渲染 39%"
+    },
+    {
+      "at": "2026-10-24T07:25:36.513Z",
+      "message": "视频渲染 41%"
+    },
+    {
+      "at": "2026-10-24T07:25:38.457Z",
+      "message": "视频渲染 42%"
+    },
+    {
+      "at": "2026-10-24T07:25:40.503Z",
+      "message": "视频渲染 45%"
+    },
+    {
+      "at": "2026-10-24T07:25:42.438Z",
+      "message": "视频渲染 47%"
+    },
+    {
+      "at": "2026-10-24T07:25:44.572Z",
+      "message": "视频渲染 49%"
+    },
+    {
+      "at": "2026-10-24T07:25:46.442Z",
+      "message": "视频渲染 50%"
+    },
+    {
+      "at": "2026-10-24T07:25:48.432Z",
+      "message": "视频渲染 53%"
+    },
+    {
+      "at": "2026-10-24T07:25:50.496Z",
+      "message": "视频渲染 55%"
+    },
+    {
+      "at": "2026-10-24T07:25:52.459Z",
+      "message": "视频渲染 57%"
+    },
+    {
+      "at": "2026-10-24T07:25:54.531Z",
+      "message": "视频渲染 59%"
+    },
+    {
+      "at": "2026-10-24T07:25:56.547Z",
+      "message": "视频渲染 61%"
+    },
+    {
+      "at": "2026-10-24T07:25:58.453Z",
+      "message": "视频渲染 63%"
+    },
+    {
+      "at": "2026-10-24T07:26:00.527Z",
+      "message": "视频渲染 65%"
+    },
+    {
+      "at": "2026-10-24T07:26:02.632Z",
+      "message": "视频渲染 67%"
+    },
+    {
+      "at": "2026-10-24T07:26:04.660Z",
+      "message": "视频渲染 69%"
+    },
+    {
+      "at": "2026-10-24T07:26:06.554Z",
+      "message": "视频渲染 71%"
+    },
+    {
+      "at": "2026-10-24T07:26:08.529Z",
+      "message": "视频渲染 73%"
+    },
+    {
+      "at": "2026-10-24T07:26:10.562Z",
+      "message": "视频渲染 75%"
+    },
+    {
+      "at": "2026-10-24T07:26:12.684Z",
+      "message": "视频渲染 77%"
+    },
+    {
+      "at": "2026-10-24T07:26:14.700Z",
+      "message": "视频渲染 79%"
+    },
+    {
+      "at": "2026-10-24T07:26:16.672Z",
+      "message": "视频渲染 81%"
+    },
+    {
+      "at": "2026-10-24T07:26:18.720Z",
+      "message": "视频渲染 83%"
+    },
+    {
+      "at": "2026-10-24T07:26:20.646Z",
+      "message": "视频渲染 85%"
+    },
+    {
+      "at": "2026-10-24T07:26:22.744Z",
+      "message": "视频渲染 88%"
+    },
+    {
+      "at": "2026-10-24T07:26:24.605Z",
+      "message": "重复渲染关键帧 60"
+    },
+    {
+      "at": "2026-10-24T07:26:26.589Z",
+      "message": "重复渲染关键帧 60"
+    },
+    {
+      "at": "2026-10-24T07:26:28.775Z",
+      "message": "重复渲染关键帧 150"
+    },
+    {
+      "at": "2026-10-24T07:26:30.627Z",
+      "message": "重复渲染关键帧 240"
+    },
+    {
+      "at": "2026-10-24T07:26:32.709Z",
+      "message": "重复渲染关键帧 240"
+    },
+    {
+      "at": "2026-10-24T07:26:34.554Z",
+      "message": "finish: succeeded"
+    }
+  ],
+  "state": "succeeded",
+  "attempt": 1,
+  "version": 3,
+  "attempts": [
+    {
+      "state": "succeeded",
+      "number": 1,
+      "workerId": "5d67292b-b01c-4f30-a6ef-5fb88eab3f41",
+      "errorCode": null,
+      "startedAt": "2026-10-24T07:23:57.011Z",
+      "finishedAt": "2026-10-24T07:26:34.554Z"
+    }
+  ],
+  "progress": 1,
+  "provider": "remotion",
+  "createdAt": "2026-10-24T07:23:54.480Z",
+  "errorCode": null,
+  "updatedAt": "2026-10-24T07:26:34.554Z",
+  "leaseOwner": null,
+  "heartbeatAt": "2026-10-24T07:26:32.709Z",
+  "maxAttempts": 3,
+  "renderInput": {
+    "scene": {
+      "fps": 30,
+      "layers": [
+        {
+          "id": "background",
+          "fit": "cover",
+          "kind": "video",
+          "zIndex": 0,
+          "assetBindingId": "poc-background"
+        },
+        {
+          "id": "title",
+          "kind": "component",
+          "props": {
+            "text": "让想法，逐帧成形",
+            "fontSize": 72
+          },
+          "zIndex": 20,
+          "component": "KineticText"
+        },
+        {
+          "id": "chart",
+          "kind": "component",
+          "zIndex": 30,
+          "dataRef": "poc-values",
+          "component": "BarChart"
+        },
+        {
+          "id": "subtitles",
+          "kind": "subtitle",
+          "zIndex": 50,
+          "voiceTimelineRevisionId": "82e73dc6-67ac-451d-933a-b9d95ed709a8"
+        }
+      ],
+      "shotId": "2c04d041-61b7-466a-bcfe-8fe7c385d7a2",
+      "sceneId": "17eefba2-b055-4cae-a613-7c61432cba86",
+      "resolution": {
+        "width": 1080,
+        "height": 1920
+      },
+      "narrativeGoal": "验证真实视频与帧驱动图层的技术闭环，无事实主张",
+      "schemaVersion": 1,
+      "durationFrames": 300
+    },
+    "assets": {
+      "fontSha256": "abbf789f45f9c43e316f24b97e868e6e4a15cef45b18d394721524c9e776fa1a",
+      "backgroundSha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad"
+    },
+    "dataset": {
+      "id": "poc-values",
+      "values": [
+        32,
+        64,
+        90
+      ],
+      "provenance": "synthetic"
+    },
+    "presetId": "poc-v1",
+    "timeline": {
+      "id": "82e73dc6-67ac-451d-933a-b9d95ed709a8",
+      "mode": "none",
+      "subtitles": [
+        {
+          "id": "042406b1-5ae7-4c4a-a2a9-3279aedfab3b",
+          "text": "真实视频作为底图。",
+          "endFrame": 90,
+          "startFrame": 0
+        },
+        {
+          "id": "4a642657-c7e5-4a7a-b845-0e7f32f6d82f",
+          "text": "文字和图表逐帧生长。",
+          "endFrame": 195,
+          "startFrame": 90
+        },
+        {
+          "id": "7b81c82c-5797-436d-baa2-aef1b6fbb065",
+          "text": "同一场景，生成同一画面。",
+          "endFrame": 300,
+          "startFrame": 195
+        }
+      ],
+      "schemaVersion": 1,
+      "durationFrames": 300
+    },
+    "toolchain": {
+      "remotion": "4.0.538",
+      "componentHash": "ff1d45f9825b5e04d55c9a6d260614d4bc68c49c763aa7326601b65ff67d6e06",
+      "catalogVersion": "poc-v1"
+    },
+    "schemaVersion": 1,
+    "preparedBackground": {
+      "sha256": "90d790dcabba0fa3edd49a351ffd75ee7c2bad6b5fee0e776d19d99b96b5cfad",
+      "shotId": "23aa3bb4-d0c7-4f74-972e-8f5db2655549",
+      "bindingId": "5546e25c-b88d-4376-ad26-4c712c9b342b",
+      "provenance": {
+        "author": "Self-authored test",
+        "license": "unknown",
+        "purpose": "illustrative",
+        "provider": "project",
+        "sourceUrl": null,
+        "sourceInMs": 6000,
+        "sourceOutMs": 12000,
+        "restrictions": "non-commercial / unknown allowed for internal tests",
+        "sourceAssetId": "9414e3f3-9b3b-4e48-a270-bbfe7f23b6b6"
+      },
+      "recipeHash": "b73053f93bf494160ce94cb3684b0e8e31192fb9b205642d837ce49555ca5ee3",
+      "directorRevisionId": "bc172038-2599-48f3-b274-e3c5deabf80b"
+    }
+  },
+  "renderResult": {
+    "id": "63ac50e0-092c-4b3a-9978-bfd4df1a2526",
+    "metadata": {
+      "fps": 30,
+      "codec": "h264",
+      "width": 1080,
+      "frames": 300,
+      "height": 1920,
+      "durationSeconds": 10
+    },
+    "artifacts": [
+      {
+        "file": "video.mp4",
+        "sha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+        "sizeBytes": 1657402
+      },
+      {
+        "file": "frame-060.png",
+        "sha256": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+        "sizeBytes": 763258
+      },
+      {
+        "file": "frame-150.png",
+        "sha256": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+        "sizeBytes": 771525
+      },
+      {
+        "file": "frame-240.png",
+        "sha256": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+        "sizeBytes": 703321
+      },
+      {
+        "file": "ffprobe.json",
+        "sha256": "f0ad833c19f85b8bef4e568aae98b22ac6ecc33547cc0b27a0ac5bd5a45c87d4",
+        "sizeBytes": 2246
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "558fdc69f86881360d11202be42b18bece4ec723a7df7c41d2f2b37b189d80e1",
+        "sizeBytes": 3803
+      }
+    ],
+    "determinism": [
+      {
+        "first": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+        "frame": 60,
+        "second": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b"
+      },
+      {
+        "first": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+        "frame": 150,
+        "second": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71"
+      },
+      {
+        "first": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+        "frame": 240,
+        "second": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468"
+      }
+    ],
+    "manifestHash": "72fd20ccde5d47a3837049ad61f250f8590905a8ad8fae589d3fb58d3da9e6c7",
+    "schemaVersion": 1,
+    "previewManifestHash": "72fd20ccde5d47a3837049ad61f250f8590905a8ad8fae589d3fb58d3da9e6c7"
+  },
+  "targetVersion": 0,
+  "idempotencyKey": "2388c2e5-c93f-4749-9cde-583df1764713",
+  "leaseExpiresAt": null,
+  "inputRevisionIds": [
+    "bc172038-2599-48f3-b274-e3c5deabf80b"
+  ],
+  "resultRevisionId": "e5f8962e-4139-4074-b100-2785fbb6911f"
+}

@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T07:40:22.224Z",
+  "backend": "sqlite",
+  "projectId": "886ee66a-38af-4257-bc5d-6d5077a6dd4a",
+  "mockJobId": "155540f4-57a6-46c0-a9ff-0e9198075e43",
+  "providerJobId": "c3c10456-6163-40f8-a7e0-7c46c6ef9d79",
+  "checks": [
+    {
+      "name": "旧项目 API / 新工作流隔离，创建草稿不改变原始需求",
+      "status": "PASS"
+    },
+    {
+      "name": "草稿保存、驳回、fork 和具体历史读取",
+      "status": "PASS"
+    },
+    {
+      "name": "批准、原子下游任务、同键并发重放和异内容冲突",
+      "status": "PASS"
+    },
+    {
+      "name": "双客户端不同修订批准：旧候选 409，新候选成功且旧批准仍可读",
+      "status": "PASS"
+    },
+    {
+      "name": "固定版本依赖、影响范围、上游替换派生 stale",
+      "status": "PASS"
+    },
+    {
+      "name": "异步 Mock 202 / jobId、幂等、取消与重试，保留固定输入",
+      "status": "PASS"
+    },
+    {
+      "name": "权限/非法输入/跨项目依赖/缺少幂等键有真实阻断",
+      "status": "PASS"
+    },
+    {
+      "name": "未配置配音提供方只排入真实任务，不生成音频",
+      "status": "PASS"
+    }
+  ]
+}

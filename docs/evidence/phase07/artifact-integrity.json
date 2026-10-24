@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "note": "Exact render artifact bytes retained; FFprobe filename refers only to isolated synthetic test workspace, not user data.",
+  "results": [
+    {
+      "backend": "sqlite",
+      "checks": [
+        {
+          "file": "internal-poc.mp4",
+          "originalArtifact": "video.mp4",
+          "sha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+          "sizeBytes": 1657402,
+          "status": "PASS"
+        },
+        {
+          "file": "remotion-frame-060.png",
+          "originalArtifact": "frame-060.png",
+          "sha256": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+          "sizeBytes": 763258,
+          "status": "PASS"
+        },
+        {
+          "file": "remotion-frame-150.png",
+          "originalArtifact": "frame-150.png",
+          "sha256": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+          "sizeBytes": 771525,
+          "status": "PASS"
+        },
+        {
+          "file": "remotion-frame-240.png",
+          "originalArtifact": "frame-240.png",
+          "sha256": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+          "sizeBytes": 703321,
+          "status": "PASS"
+        },
+        {
+          "file": "ffprobe-remotion.json",
+          "originalArtifact": "ffprobe.json",
+          "sha256": "f3161144b0ffaf9cb96de7bc818a255890e99a51c13a23bdc4d14ad4254e10fd",
+          "sizeBytes": 2246,
+          "status": "PASS"
+        },
+        {
+          "file": "remotion-manifest.json",
+          "originalArtifact": "manifest.json",
+          "sha256": "88b433cff24e6392d961d5698d8bb45aacdd1752f9da169fc656b8fde226f537",
+          "sizeBytes": 3803,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "backend": "postgresql",
+      "checks": [
+        {
+          "file": "internal-poc.mp4",
+          "originalArtifact": "video.mp4",
+          "sha256": "d49cc2e0d14b511e902f075666b793c301908fdfec83054473f718c9e9907a7a",
+          "sizeBytes": 1657402,
+          "status": "PASS"
+        },
+        {
+          "file": "remotion-frame-060.png",
+          "originalArtifact": "frame-060.png",
+          "sha256": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+          "sizeBytes": 763258,
+          "status": "PASS"
+        },
+        {
+          "file": "remotion-frame-150.png",
+          "originalArtifact": "frame-150.png",
+          "sha256": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+          "sizeBytes": 771525,
+          "status": "PASS"
+        },
+        {
+          "file": "remotion-frame-240.png",
+          "originalArtifact": "frame-240.png",
+          "sha256": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+          "sizeBytes": 703321,
+          "status": "PASS"
+        },
+        {
+          "file": "ffprobe-remotion.json",
+          "originalArtifact": "ffprobe.json",
+          "sha256": "f0ad833c19f85b8bef4e568aae98b22ac6ecc33547cc0b27a0ac5bd5a45c87d4",
+          "sizeBytes": 2246,
+          "status": "PASS"
+        },
+        {
+          "file": "remotion-manifest.json",
+          "originalArtifact": "manifest.json",
+          "sha256": "558fdc69f86881360d11202be42b18bece4ec723a7df7c41d2f2b37b189d80e1",
+          "sizeBytes": 3803,
+          "status": "PASS"
+        }
+      ]
+    }
+  ]
+}

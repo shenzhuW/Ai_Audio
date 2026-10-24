@@ -74,6 +74,24 @@ if (require.main === module) {
       mkdirSync(parent, { recursive: true });
       const output = join(parent, 'attempt-' + job.attempt);
       mkdirSync(output); // Existing attempt files are never overwritten.
+      if (job.renderInput.preparedBackground) {
+        const bg = job.renderInput.preparedBackground,
+          snap = await (await globalThis.studioWorkflow).transaction(projectId, 'local-user'),
+          b = snap.state.assetBindings.find((b) => b.id === bg.bindingId),
+          p = snap.state.preparedAssets.find((p) => p.recipeHash === bg.recipeHash);
+        if (!b || !p || p.blob.sha256 !== bg.sha256) throw Error('ASSET_RENDER_INVALID');
+        const bytes = await require('../apps/web/src/server/assets/storage.ts')
+          .assetStore(config().dataDir)
+          .read(p.blob);
+        const publicDir = join(output, 'public');
+        mkdirSync(publicDir);
+        writeFileSync(join(publicDir, 'background.mp4'), bytes, { flag: 'wx' });
+        writeFileSync(
+          join(publicDir, 'NotoSansSC-subset.woff2'),
+          readFileSync(join(root, 'apps/render/public/NotoSansSC-subset.woff2')),
+          { flag: 'wx' },
+        );
+      }
       writeFileSync(join(output, 'input.json'), JSON.stringify(job.renderInput), { flag: 'wx' });
       child = spawn(
         process.execPath,

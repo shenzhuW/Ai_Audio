@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-24T08:08:06.998Z",
+  "baseline": "34d88410a1f1b1e0a92a4bae548871fcc9c7288f",
+  "changedFiles": 236,
+  "textFiles": 155,
+  "findings": [],
+  "largest": [
+    {
+      "file": "docs/evidence/phase07/postgresql/internal-poc.mp4",
+      "sizeBytes": 1657402
+    },
+    {
+      "file": "docs/evidence/phase07/sqlite/internal-poc.mp4",
+      "sizeBytes": 1657402
+    },
+    {
+      "file": "docs/evidence/phase07/postgresql/07-concurrent-409.png",
+      "sizeBytes": 856515
+    },
+    {
+      "file": "docs/evidence/phase07/sqlite/07-concurrent-409.png",
+      "sizeBytes": 848589
+    },
+    {
+      "file": "docs/evidence/phase07/postgresql/07-range-preview.png",
+      "sizeBytes": 839941
+    },
+    {
+      "file": "docs/evidence/phase07/sqlite/07-range-preview.png",
+      "sizeBytes": 829253
+    },
+    {
+      "file": "docs/evidence/phase07/regression/phase06/sqlite/06-approved-readonly.png",
+      "sizeBytes": 789872
+    },
+    {
+      "file": "docs/evidence/phase07/postgresql/remotion-frame-150.png",
+      "sizeBytes": 771525
+    }
+  ],
+  "duplicateGroups": [
+    {
+      "paths": [
+        "docs/evidence/phase07/postgresql/external-contact-sheet.jpg",
+        "docs/evidence/phase07/sqlite/external-contact-sheet.jpg"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/postgresql/ffmpeg.log",
+        "docs/evidence/phase07/sqlite/ffmpeg.log"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/postgresql/internal-poc.mp4",
+        "docs/evidence/phase07/sqlite/internal-poc.mp4"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/postgresql/local-contact-sheet.jpg",
+        "docs/evidence/phase07/sqlite/local-contact-sheet.jpg"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/postgresql/remotion-frame-060.png",
+        "docs/evidence/phase07/sqlite/remotion-frame-060.png"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/postgresql/remotion-frame-150.png",
+        "docs/evidence/phase07/postgresql/remotion-keyframe.png",
+        "docs/evidence/phase07/sqlite/remotion-frame-150.png",
+        "docs/evidence/phase07/sqlite/remotion-keyframe.png"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/postgresql/remotion-frame-240.png",
+        "docs/evidence/phase07/sqlite/remotion-frame-240.png"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/regression/phase03/sqlite/frame-0.jpg",
+        "docs/evidence/phase07/regression/phase045/sqlite/frame-0.jpg"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/regression/phase03/sqlite/frame-3333.jpg",
+        "docs/evidence/phase07/regression/phase045/sqlite/frame-3333.jpg"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/regression/phase03/sqlite/frame-6666.jpg",
+        "docs/evidence/phase07/regression/phase045/sqlite/frame-6666.jpg"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/regression/phase03/sqlite/legacy-http.log",
+        "docs/evidence/phase07/regression/phase04/sqlite/http.log"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    },
+    {
+      "paths": [
+        "docs/evidence/phase07/regression/phase05/sqlite/05-edit-after-restart.png",
+        "docs/evidence/phase07/regression/phase05/sqlite/05-manual-edit-persisted.png"
+      ],
+      "note": "Git blob deduplication; independent database evidence retained"
+    }
+  ],
+  "manualReview": {
+    "sourceOriginals": "Only self-generated CC0 GPU fixture committed; third-party original media stays ignored. Provider derivative contact sheets cite public origin/restrictions.",
+    "modelMaterial": "Only synthetic/public test inputs and audited structured outputs; no Codex auth/session/raw authentication file copied.",
+    "userData": "Existing user data SHA unchanged in both DB evidence; no real-user migration or deletion.",
+    "scope": "Phase07 only; no remote push; no Phase08/free TSX.",
+    "review": "Three important findings fixed and read-only re-reviewed; no remaining critical/important issue found. NASA per-item failure handling remains disclosed minor risk."
+  },
+  "exactIndexArtifactVerification": {
+    "status": "PASS",
+    "files": 12,
+    "note": "Both MP4, three keyframes, manifest and FFprobe match their recorded byte SHA in the Git index."
+  }
+}

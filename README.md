@@ -2,9 +2,9 @@
 
 **用途**：以用户确认的产品需求和 10 页面 v2 原型逐阶段开发。文档基线 v1.3，整理日期：2026-10-22。
 
-## 当前实现状态：Phase06 完成本地交付，等待正式审核
+## 当前实现状态：Phase07 本地交付完成，等待审核
 
-Phase00–05及Phase04.5候选补充已正式验收。Phase06新增真实Codex结构化导演、批准文稿/配音固定输入、连续帧时间轴、镜头编辑/来源追溯、审核/Fork/前后差异与素材需求接口。见[交付报告](docs/PHASE_06_DELIVERY.md)、[证据](docs/evidence/phase06/README.md)、[120秒真实音频样例](fixtures/director/README.md)。66项单元、157组集成及相关回归、类型检查/生产构建通过。未进入Phase07，本轮仅本地提交，不推送。
+Phase00–06及Phase04.5候选补充已正式验收，批准基线为 `34d8841`。Phase07增加真实本地/NASA/Commons素材检索、Top-K Codex视觉匹配、带PTS的索引/联系表、独立逐镜绑定及FFmpeg缓存准备；可信Remotion PoC可使用PreparedAsset，不开放自由TSX。实际结果见[交付报告](docs/PHASE_07_DELIVERY.md)、[配置与边界](docs/ASSET_ENGINE_SETUP.md)及[证据索引](docs/evidence/phase07/README.md)。本阶段只建立本地提交，不推送、不进入Phase08。
 
 导演API与`pnpm worker`使用相同数据配置并显式启用`STUDIO_CODEX_ENABLED=1`，复用已有固定CLI登录，不复制Token。未配置明确失败，Mock单独标记。素材pending只是待匹配，SVG只是示意；不在本阶段自动找片/裁剪或执行自由TSX。系统TTS不是云端神经模型，Whisper/对齐精度限制及Windows异常UNCONFIRMED继续保留。
 

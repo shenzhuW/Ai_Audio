@@ -1,0 +1,39 @@
+{
+  "id": "7bdc0330-c5bb-4a64-b233-db1dd4179b6c",
+  "log": "source SHA a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce\nrecipe {\"version\":1,\"sourceSha256\":\"a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce\",\"sourceInMs\":0,\"sourceOutMs\":6000,\"width\":1080,\"height\":1920,\"fps\":30,\"frames\":300,\"fit\":\"cover\",\"x\":0.5,\"y\":0.5,\"playback\":\"loop\",\"mute\":true}\nTrim interval before looping: \nffmpeg [\"-v\",\"error\",\"-stream_loop\",\"-1\",\"-i\",\"[work]/interval.mp4\",\"-vf\",\"setsar=1,fps=30\",\"-frames:v\",\"300\",\"-an\",\"-map_metadata\",\"-1\",\"-c:v\",\"libx264\",\"-preset\",\"ultrafast\",\"-crf\",\"22\",\"-pix_fmt\",\"yuv420p\",\"-movflags\",\"+faststart\",\"-y\",\"[work]/prepared.mp4\"]\n",
+  "blob": {
+    "key": "2300cef562b764cb17337ce32bb22873b0b212b8d2bc0b60133e5a55661aea7a",
+    "mime": "video/mp4",
+    "sha256": "2300cef562b764cb17337ce32bb22873b0b212b8d2bc0b60133e5a55661aea7a",
+    "sizeBytes": 4780973
+  },
+  "recipe": {
+    "x": 0.5,
+    "y": 0.5,
+    "fit": "cover",
+    "fps": 30,
+    "mute": true,
+    "width": 1080,
+    "frames": 300,
+    "height": 1920,
+    "version": 1,
+    "playback": "loop",
+    "sourceInMs": 0,
+    "sourceOutMs": 6000,
+    "sourceSha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce"
+  },
+  "metadata": {
+    "fps": 30,
+    "kind": "video",
+    "codec": "h264",
+    "width": 1080,
+    "format": "mov,mp4,m4a,3gp,3g2,mj2",
+    "frames": 300,
+    "height": 1920,
+    "durationMs": 10000
+  },
+  "createdAt": "2026-10-24T07:23:23.862Z",
+  "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53",
+  "sourceSha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+  "producerBindingId": "2604e4a4-f1dd-4335-86e9-c78c9dfadfe4"
+}

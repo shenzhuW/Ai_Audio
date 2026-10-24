@@ -31,6 +31,8 @@
     "render:fixtures": "node scripts/render-fixtures.cjs",
     "render:typecheck": "pnpm --filter @studio/render exec tsc --noEmit",
     "db:generate": "pnpm --filter @studio/web db:generate",
-    "db:migrate": "pnpm --filter @studio/web db:migrate"
+    "db:migrate": "pnpm --filter @studio/web db:migrate",
+    "asset:worker": "pnpm --filter @studio/web asset:worker",
+    "test:assets": "node tests/assets/run.cjs"
   }
 }

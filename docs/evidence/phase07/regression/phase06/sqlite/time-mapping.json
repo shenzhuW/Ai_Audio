@@ -1,0 +1,197 @@
+[
+  {
+    "shotId": "00999d9b-ccf7-495e-9dd3-acf1f6f8bec7",
+    "startMs": 0,
+    "endMs": 10000,
+    "startFrame": 0,
+    "endFrame": 300,
+    "segmentIds": [
+      "161fd087-f970-4f18-adae-6b678b33a5f9"
+    ],
+    "anchors": [
+      "0b68a587-7f11-4611-aa26-435578eac61e"
+    ],
+    "actualCues": [
+      {
+        "id": "78e137f8-ffd3-42f5-8f90-aadc2079702f",
+        "anchorId": "0b68a587-7f11-4611-aa26-435578eac61e",
+        "segmentId": "161fd087-f970-4f18-adae-6b678b33a5f9",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "1ce580ac5a1171c3ad3a009b1d8c15f8c7c9e68a42472dffc6c70c25982c507b",
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "startMs": 0,
+        "endMs": 19333,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "7c8d4451-636e-4e35-a582-4df873e6e8a3",
+    "startMs": 10000,
+    "endMs": 30000,
+    "startFrame": 300,
+    "endFrame": 900,
+    "segmentIds": [
+      "161fd087-f970-4f18-adae-6b678b33a5f9"
+    ],
+    "anchors": [
+      "0b68a587-7f11-4611-aa26-435578eac61e"
+    ],
+    "actualCues": [
+      {
+        "id": "78e137f8-ffd3-42f5-8f90-aadc2079702f",
+        "anchorId": "0b68a587-7f11-4611-aa26-435578eac61e",
+        "segmentId": "161fd087-f970-4f18-adae-6b678b33a5f9",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "1ce580ac5a1171c3ad3a009b1d8c15f8c7c9e68a42472dffc6c70c25982c507b",
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "startMs": 0,
+        "endMs": 19333,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "7d82923a-74a1-4701-95f2-8fd4dded63aa",
+    "startMs": 30000,
+    "endMs": 70000,
+    "startFrame": 900,
+    "endFrame": 2100,
+    "segmentIds": [
+      "0e76f9b3-8121-4bd6-81a0-a56aa8018e4c",
+      "78da725f-258e-44c9-a01b-8f72b046dd79"
+    ],
+    "anchors": [
+      "6ac202ec-ab82-499b-b5e0-8265e893802d",
+      "afc81864-8eef-4776-9ade-ff1811e95954"
+    ],
+    "actualCues": [
+      {
+        "id": "4da3828c-c780-4288-98e0-c213a1f056fe",
+        "anchorId": "6ac202ec-ab82-499b-b5e0-8265e893802d",
+        "segmentId": "0e76f9b3-8121-4bd6-81a0-a56aa8018e4c",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 71,
+        "segmentTextSha256": "79ef3c1ab8b0be3d8ace4500dfa2085804d845bfa947fddcf75ad31530f6831e",
+        "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。",
+        "startMs": 30000,
+        "endMs": 48548,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      },
+      {
+        "id": "cca4772d-bc95-473c-8917-6abdb8a9f83d",
+        "anchorId": "afc81864-8eef-4776-9ade-ff1811e95954",
+        "segmentId": "78da725f-258e-44c9-a01b-8f72b046dd79",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 73,
+        "segmentTextSha256": "308f95a275b8cd218d60a475a819598644d62e63da9d48edd332b307f83e80dd",
+        "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。",
+        "startMs": 60000,
+        "endMs": 79553,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "957c4747-3809-41d1-87e5-42a221e23070",
+    "startMs": 70000,
+    "endMs": 90000,
+    "startFrame": 2100,
+    "endFrame": 2700,
+    "segmentIds": [
+      "78da725f-258e-44c9-a01b-8f72b046dd79"
+    ],
+    "anchors": [
+      "afc81864-8eef-4776-9ade-ff1811e95954"
+    ],
+    "actualCues": [
+      {
+        "id": "cca4772d-bc95-473c-8917-6abdb8a9f83d",
+        "anchorId": "afc81864-8eef-4776-9ade-ff1811e95954",
+        "segmentId": "78da725f-258e-44c9-a01b-8f72b046dd79",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 73,
+        "segmentTextSha256": "308f95a275b8cd218d60a475a819598644d62e63da9d48edd332b307f83e80dd",
+        "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。",
+        "startMs": 60000,
+        "endMs": 79553,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "e0325934-76c7-4b5a-83e9-7dc6200fc671",
+    "startMs": 90000,
+    "endMs": 109300,
+    "startFrame": 2700,
+    "endFrame": 3279,
+    "segmentIds": [
+      "b619bc24-b9d3-4c2a-89fc-17fb18e6723e"
+    ],
+    "anchors": [
+      "e9599653-0ef9-4cf6-8ef3-7c6d22804745"
+    ],
+    "actualCues": [
+      {
+        "id": "b121c5b0-990c-4ad6-94ba-bfca77f23358",
+        "anchorId": "e9599653-0ef9-4cf6-8ef3-7c6d22804745",
+        "segmentId": "b619bc24-b9d3-4c2a-89fc-17fb18e6723e",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "64b698d041d96930083a4906bec52de06522014cb92818ba1b7a6fd8233b65c0",
+        "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。",
+        "startMs": 90000,
+        "endMs": 109293,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  },
+  {
+    "shotId": "072d8eef-8de8-4abc-ab86-3bb9a148b8a1",
+    "startMs": 109300,
+    "endMs": 120000,
+    "startFrame": 3279,
+    "endFrame": 3600,
+    "segmentIds": [
+      "b619bc24-b9d3-4c2a-89fc-17fb18e6723e"
+    ],
+    "anchors": [],
+    "actualCues": [
+      {
+        "id": "b121c5b0-990c-4ad6-94ba-bfca77f23358",
+        "anchorId": "e9599653-0ef9-4cf6-8ef3-7c6d22804745",
+        "segmentId": "b619bc24-b9d3-4c2a-89fc-17fb18e6723e",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "64b698d041d96930083a4906bec52de06522014cb92818ba1b7a6fd8233b65c0",
+        "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。",
+        "startMs": 90000,
+        "endMs": 109293,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ]
+  }
+]

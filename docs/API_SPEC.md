@@ -226,3 +226,14 @@ locator 为 `{kind:"text",label}`、`{kind:"page",page,label?}`、`{kind:"image"
 | POST | /director-runs | revisionId+expectedVersion+mode(real/mock/unconfigured)+shotCount(1–60)+instruction；202 {jobId,status}；冻结目标及输入 |
 
 审批/驳回/Fork/历史与Job取消/重试沿用现有API。单次手工镜头上限120，AI任务60镜头；输入750KB、500来源、每来源100索引，超出明确失败而不静默截断。120秒六镜头仅样例。assetRequirements为directorRevisionId/shotId/pending/intent，供Phase07匹配，不表示已经找到或裁剪素材。
+
+## Phase07 actual routes (v1)
+
+- GET /projects/:projectId/assets?directorRevisionId=:id — fixed director, shots, owner-scoped source records/candidates/binding history/prepared status and jobs.
+- POST /projects/:projectId/asset-upload — authenticated multipart file/title/author/restrictions/license; verifies size, extension and magic before durable import job; raw blob references cannot be submitted via public JSON.
+- POST /projects/:projectId/assets — discriminated commands asset-search, asset-candidate, asset-bind, asset-prepare; Idempotency-Key required. Search specifies fixed directorRevisionId/shotId, scope all/local/nasa/commons/mock/unconfigured, analysis real/metadata/mock, optional query and Top-K 1..3. Bind requires expectedBindingVersion (0 initially), candidateId, millisecond range, fit/crop, once/loop/freeze and purpose; creates immutable binding version and jobId. Conflicts return409; invalid/stale range or inputs422.
+- GET/HEAD /projects/:projectId/asset-files/:sha256 — only files referenced by this owned project, authenticated Range support; no access merely by knowing a SHA.
+- Existing jobs/:id GET/cancel/retry expose media progress, audit and fencing. Dedicated asset worker, not generic worker, consumes asset jobs.
+- Existing POST /projects/:id/render-runs optionally accepts preparedBindingId; server resolves verified current binding and freezes provenance in trusted RenderInput. Existing PoC requests remain compatible.
+
+The earlier asset-search-runs/candidate-clips/prepare-assets table described planned resource-oriented endpoints; Phase07 consolidates these mutations under the typed assets command endpoint, with the same domain operations and no previously implemented endpoint removed. GET assets/:id/index is represented by the project workspace index plus protected frame files. No license-evidence approval is implemented.

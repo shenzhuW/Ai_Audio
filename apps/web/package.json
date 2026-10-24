@@ -14,7 +14,8 @@
     "test:e2e": "node ../../tests/browser/run.mjs",
     "test:http": "node ../../tests/http/run.mjs",
     "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate deploy"
+    "db:migrate": "prisma migrate deploy",
+    "asset:worker": "node ../../scripts/asset-worker.cjs"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",

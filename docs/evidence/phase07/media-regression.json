@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "sourceMetadata": {
+    "kind": "video",
+    "width": 640,
+    "height": 360,
+    "durationMs": 12000,
+    "fps": 30,
+    "codec": "h264",
+    "format": "mov,mp4,m4a,3gp,3g2,mj2",
+    "frames": 360
+  },
+  "actualPts": [
+    0,
+    2400,
+    4767,
+    7167,
+    9533,
+    11900
+  ],
+  "results": [
+    {
+      "mode": "loop",
+      "inputInterval": [
+        0,
+        6000
+      ],
+      "metadata": {
+        "kind": "video",
+        "width": 1080,
+        "height": 1920,
+        "durationMs": 10000,
+        "fps": 30,
+        "codec": "h264",
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "frames": 300
+      },
+      "meanRgbSamples": [
+        [
+          35,
+          55,
+          98
+        ],
+        [
+          36,
+          55,
+          98
+        ]
+      ],
+      "cacheHit": true
+    },
+    {
+      "mode": "freeze",
+      "inputInterval": [
+        6000,
+        12000
+      ],
+      "metadata": {
+        "kind": "video",
+        "width": 1080,
+        "height": 1920,
+        "durationMs": 10000,
+        "fps": 30,
+        "codec": "h264",
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "frames": 300
+      },
+      "meanRgbSamples": [
+        [
+          37,
+          82,
+          65
+        ],
+        [
+          37,
+          82,
+          65
+        ],
+        [
+          37,
+          82,
+          65
+        ]
+      ],
+      "cacheHit": true
+    },
+    {
+      "mode": "once",
+      "inputInterval": [
+        1000,
+        11000
+      ],
+      "metadata": {
+        "kind": "video",
+        "width": 1080,
+        "height": 1920,
+        "durationMs": 10000,
+        "fps": 30,
+        "codec": "h264",
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "frames": 300
+      },
+      "meanRgbSamples": [
+        [
+          36,
+          55,
+          98
+        ],
+        [
+          37,
+          82,
+          65
+        ]
+      ],
+      "cacheHit": true
+    },
+    {
+      "case": "container/audio overhang",
+      "durationMs": 12000,
+      "actualPts": [
+        0,
+        2400,
+        4767,
+        7167,
+        9533,
+        11900
+      ]
+    }
+  ]
+}

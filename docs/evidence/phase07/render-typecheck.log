@@ -1,0 +1,3 @@
+
+> ai-code-video-studio@0.1.0 render:typecheck [repo]
+> pnpm --filter @studio/render exec tsc --noEmit

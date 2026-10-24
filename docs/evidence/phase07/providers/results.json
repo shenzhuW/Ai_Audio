@@ -1,0 +1,201 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T07:35:07.586Z",
+  "results": [
+    {
+      "record": {
+        "provider": "commons",
+        "query": "Earth Apollo 17",
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&formatversion=2&generator=search&gsrsearch=Earth+Apollo+17+filetype%3Abitmap&gsrnamespace=6&gsrlimit=6&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata%7Cmime&iiurlwidth=1280",
+        "responseSha256": "a0221484e57a3f663bcff8c3a4506e70f75f7acb0050722d5edfb8f582c4782b",
+        "status": "ok",
+        "count": 6,
+        "reason": "真实公开 API 元数据；未下载条目尚未验证像素",
+        "at": "2026-10-24T07:34:38.905Z"
+      },
+      "source": {
+        "id": "35f46c0b-2d14-4f67-b210-e769f54e51d4",
+        "provider": "commons",
+        "blob": {
+          "key": "5aedea261121b536035bbcba94cbcfba69bbdc55f41a336dcf0df32664b1bf9a",
+          "sha256": "5aedea261121b536035bbcba94cbcfba69bbdc55f41a336dcf0df32664b1bf9a",
+          "sizeBytes": 409242,
+          "mime": "image/jpeg"
+        },
+        "localRef": null,
+        "metadata": {
+          "kind": "image",
+          "width": 1280,
+          "height": 1280,
+          "durationMs": null,
+          "fps": 0,
+          "codec": "mjpeg",
+          "format": "jpeg_pipe",
+          "frames": null
+        },
+        "index": {
+          "version": 1,
+          "sourceSha256": "5aedea261121b536035bbcba94cbcfba69bbdc55f41a336dcf0df32664b1bf9a",
+          "frames": [
+            {
+              "id": "15b067e2-cc39-48d2-8635-c098ed881237",
+              "atMs": 0,
+              "blob": {
+                "key": "410ac1f2cdafd8adf2e85cd6889221f1c85912fb8a6f81781dac034387d03232",
+                "sha256": "410ac1f2cdafd8adf2e85cd6889221f1c85912fb8a6f81781dac034387d03232",
+                "sizeBytes": 53022,
+                "mime": "image/jpeg"
+              }
+            }
+          ],
+          "contactSheet": {
+            "key": "410ac1f2cdafd8adf2e85cd6889221f1c85912fb8a6f81781dac034387d03232",
+            "sha256": "410ac1f2cdafd8adf2e85cd6889221f1c85912fb8a6f81781dac034387d03232",
+            "sizeBytes": 53022,
+            "mime": "image/jpeg"
+          },
+          "sceneCutsMs": [],
+          "sharpness": 13.254472159234064,
+          "scope": "sparse_frames"
+        },
+        "status": "indexed",
+        "createdAt": "2026-10-24T07:34:38.903Z",
+        "originSourceId": null,
+        "originProjectId": null,
+        "title": "File:Blue Marble Eastern Hemisphere.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blue_Marble_Eastern_Hemisphere.jpg",
+        "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Blue_Marble_Eastern_Hemisphere.jpg/1280px-Blue_Marble_Eastern_Hemisphere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "NASA images by Reto Stöckli, based on data from NASA and NOAA",
+        "restrictions": "Public domain; Attribution required: false",
+        "license": "Public domain",
+        "kind": "image",
+        "searchTerms": "Composite rendering of the Eastern Hemisphere of Earth, based on data from the Terra and Aqua satellites' MODIS instruments, the Defense Meteorological Satellite Program , Space Shuttle Endeavour , and the Radarsat Antarctic Mapping Project , combined by scientists and artists."
+      },
+      "capability": "real search/download/FFprobe/sparse frame indexing; no semantic model conclusion in this probe"
+    },
+    {
+      "record": {
+        "provider": "nasa",
+        "query": "Earth rotation",
+        "url": "https://images-api.nasa.gov/search?q=Earth+rotation&media_type=video&page_size=6",
+        "responseSha256": "cca6fda7c4122d42d1874bf2454803de2c2f2b16d5c545ea79079a204d8d0e54",
+        "status": "ok",
+        "count": 6,
+        "reason": "真实公开 API 元数据；未下载条目尚未验证像素",
+        "at": "2026-10-24T07:34:46.733Z"
+      },
+      "source": {
+        "id": "35f78a6a-a809-482e-89bc-412b043a8f6a",
+        "provider": "nasa",
+        "blob": {
+          "key": "f5bc78d011be0a6bb34e0f1c8b8562124b8196916b3a3847f5b7d1ee5030df13",
+          "sha256": "f5bc78d011be0a6bb34e0f1c8b8562124b8196916b3a3847f5b7d1ee5030df13",
+          "sizeBytes": 24938123,
+          "mime": "video/mp4"
+        },
+        "localRef": null,
+        "metadata": {
+          "kind": "video",
+          "width": 640,
+          "height": 360,
+          "durationMs": 123500,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 3705
+        },
+        "index": {
+          "version": 1,
+          "sourceSha256": "f5bc78d011be0a6bb34e0f1c8b8562124b8196916b3a3847f5b7d1ee5030df13",
+          "frames": [
+            {
+              "id": "90189ebe-c829-4526-8771-874ace90b898",
+              "atMs": 0,
+              "blob": {
+                "key": "d4417a1b67705529ceab1349eb8e68753a129e9ed8a8ade1392e0ee3a7530165",
+                "sha256": "d4417a1b67705529ceab1349eb8e68753a129e9ed8a8ade1392e0ee3a7530165",
+                "sizeBytes": 987,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "e555963b-12b0-4c42-aeab-ac11980f71ed",
+              "atMs": 24700,
+              "blob": {
+                "key": "b95d671d554231d51d181cb9c6a9b98531638ee4f451ed36d031ae805a07e3a6",
+                "sha256": "b95d671d554231d51d181cb9c6a9b98531638ee4f451ed36d031ae805a07e3a6",
+                "sizeBytes": 4155,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "aa5ad617-1d3f-4ed1-ae18-d2d22acc4746",
+              "atMs": 49367,
+              "blob": {
+                "key": "91e4628a9f846a567e04e5c8594e130cbf48c1a8a60a8e089fb780ee6d927ab5",
+                "sha256": "91e4628a9f846a567e04e5c8594e130cbf48c1a8a60a8e089fb780ee6d927ab5",
+                "sizeBytes": 6340,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "93d2af9d-d8ed-43ab-af9d-d436e219cea6",
+              "atMs": 74067,
+              "blob": {
+                "key": "7ccc826b656c466c0fc13bc3eda89a5669023fa1ff774231f86a3efb9a1d420f",
+                "sha256": "7ccc826b656c466c0fc13bc3eda89a5669023fa1ff774231f86a3efb9a1d420f",
+                "sizeBytes": 10475,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "ef745cb4-c10a-4062-b5a0-082f8d660ec4",
+              "atMs": 98733,
+              "blob": {
+                "key": "613eb1f347b85f9d4e3cb7e95c1f1457c162587e9edb88f3943c1ecc6799214d",
+                "sha256": "613eb1f347b85f9d4e3cb7e95c1f1457c162587e9edb88f3943c1ecc6799214d",
+                "sizeBytes": 11274,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "86e842a4-2d0c-43f9-b318-50357563c8b3",
+              "atMs": 123433,
+              "blob": {
+                "key": "ad671e65a950af0597295ca33f3a3bc5028ad2abd820eba8ce658b376640b7ea",
+                "sha256": "ad671e65a950af0597295ca33f3a3bc5028ad2abd820eba8ce658b376640b7ea",
+                "sizeBytes": 1108,
+                "mime": "image/jpeg"
+              }
+            }
+          ],
+          "contactSheet": {
+            "key": "7ea2ce276a2dda0cf45ff6ce5b179070196d4221bde2b8fc5b36c4bc1e071f65",
+            "sha256": "7ea2ce276a2dda0cf45ff6ce5b179070196d4221bde2b8fc5b36c4bc1e071f65",
+            "sizeBytes": 25737,
+            "mime": "image/jpeg"
+          },
+          "sceneCutsMs": [
+            107433,
+            107533
+          ],
+          "sharpness": 0.008314436885865457,
+          "scope": "sparse_frames"
+        },
+        "status": "indexed",
+        "createdAt": "2026-10-24T07:34:42.068Z",
+        "originSourceId": null,
+        "originProjectId": null,
+        "title": "How Sunlight Pushes Asteroids",
+        "sourceUrl": "https://images.nasa.gov/details/GSFC_20150729_Yarkovsky_m11964_Effect",
+        "downloadUrl": "https://images-assets.nasa.gov/video/GSFC_20150729_Yarkovsky_m11964_Effect/GSFC_20150729_Yarkovsky_m11964_Effect~small.mp4",
+        "author": "Dan Gallagher, Chris Smith",
+        "restrictions": "NASA 公开视频；保留署名、第三方、标识及已知限制，使用限制未知。不是商用授权结论。",
+        "license": "unknown; consult NASA media usage guidelines",
+        "kind": "video",
+        "searchTerms": "Asteroid Radiation Rotating OSIRIS-REx Sun Near-Earth Object Yarkovsky Effect Bennu"
+      },
+      "capability": "real search/download/FFprobe/sparse frame indexing; no semantic model conclusion in this probe"
+    }
+  ]
+}

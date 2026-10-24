@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-24T07:50:19.446Z",
+  "unit": {
+    "pass": 76,
+    "fail": 0
+  },
+  "suites": [
+    {
+      "phase": "07",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 19
+    },
+    {
+      "phase": "07",
+      "backend": "postgresql",
+      "status": "PASS",
+      "groups": 21
+    },
+    {
+      "phase": "phase03",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 15
+    },
+    {
+      "phase": "phase04",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 9
+    },
+    {
+      "phase": "phase05",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 12
+    },
+    {
+      "phase": "phase06",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 16
+    },
+    {
+      "phase": "phase045",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 9
+    },
+    {
+      "phase": "claim-boundaries",
+      "backend": "sqlite",
+      "status": "PASS",
+      "groups": 4
+    }
+  ],
+  "notes": [
+    "Phase03 includes 15 HTTP and 8 Workflow subchecks.",
+    "Phase07 database results include one resume provenance item each.",
+    "No mock substituted for real external/local/visual/FFmpeg/Remotion acceptance."
+  ],
+  "finalUI": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "final build library/preview and collapsed complete job history toggle",
+        "status": "PASS"
+      },
+      {
+        "name": "page06 historical Director requests its fixed old asset binding and remains readonly",
+        "status": "PASS",
+        "oldDirectorId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+        "newDirectorId": "beddb0ed-f1b7-4eb5-9791-75cfa7bf1466",
+        "requestPaths": [
+          "/api/v1/projects/90a9c7a0-ebf2-4fb6-8677-6d973b18491e/assets?directorRevisionId=beddb0ed-f1b7-4eb5-9791-75cfa7bf1466",
+          "/projects/90a9c7a0-ebf2-4fb6-8677-6d973b18491e/assets?_rsc=5-OjjQUJIDEHDGfK",
+          "/api/v1/projects/90a9c7a0-ebf2-4fb6-8677-6d973b18491e/assets?directorRevisionId=e5632d78-26f8-4487-bdf9-653f36b21bed"
+        ]
+      }
+    ],
+    "pageErrors": []
+  },
+  "productionBuild": {
+    "status": "PASS",
+    "log": "build.log"
+  },
+  "media": "PASS"
+}

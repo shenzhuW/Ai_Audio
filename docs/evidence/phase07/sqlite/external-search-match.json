@@ -1,0 +1,551 @@
+{
+  "id": "9782ebec-0023-49b7-909e-6977e062ae08",
+  "kind": "storyboard",
+  "version": 3,
+  "provider": "asset",
+  "state": "succeeded",
+  "inputRevisionIds": [
+    "e5632d78-26f8-4487-bdf9-653f36b21bed"
+  ],
+  "idempotencyKey": "9b115474-7bd8-4421-bf68-82e4c5549a6e",
+  "attempt": 1,
+  "maxAttempts": 3,
+  "attempts": [
+    {
+      "workerId": "3811840f-7498-45ea-8568-e55a84b3e3ae",
+      "number": 1,
+      "startedAt": "2026-10-24T07:22:27.146Z",
+      "finishedAt": "2026-10-24T07:22:47.587Z",
+      "state": "succeeded",
+      "errorCode": null
+    }
+  ],
+  "targetVersion": 4,
+  "leaseOwner": null,
+  "leaseExpiresAt": null,
+  "resultRevisionId": null,
+  "errorCode": null,
+  "createdAt": "2026-10-24T07:22:26.134Z",
+  "updatedAt": "2026-10-24T07:22:47.587Z",
+  "assetInput": {
+    "operation": "search",
+    "directorRevisionId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+    "shot": {
+      "shotId": "7f92bd13-c08f-4977-90b3-c71ddf2ff7cf",
+      "title": "Earth 真实地球图片",
+      "narrativeGoal": "展示真实地球图片与地月画面",
+      "viewerTakeaway": "看清地球画面",
+      "scriptSegmentIds": [
+        "72cecfbe-26c8-4e36-abc9-4ddc8747447d"
+      ],
+      "voiceCueAnchorIds": [],
+      "startFrame": 300,
+      "durationFrames": 300,
+      "endFrame": 600,
+      "visualType": "footage",
+      "route": "pending",
+      "composition": "中央主对象；下方保留字幕安全区",
+      "layers": [
+        {
+          "role": "content",
+          "kind": "graphic",
+          "label": "解释对象",
+          "depth": 1
+        }
+      ],
+      "transition": {
+        "type": "cut",
+        "durationFrames": 0,
+        "continuity": "延续同一解释对象"
+      },
+      "animation": {
+        "mechanism": "highlight",
+        "reason": "突出当前讲述对象"
+      },
+      "visualSearchIntent": {
+        "query": "earth",
+        "subject": "earth",
+        "action": "view from space",
+        "composition": "center subject, room for subtitles",
+        "format": "image"
+      },
+      "media": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "risks": [
+        "人工草稿，尚待审核"
+      ]
+    },
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "scope": "nasa",
+    "analysis": "real",
+    "query": "earth",
+    "topK": 1,
+    "sources": [
+      {
+        "id": "dbd41720-536f-47e6-a3ad-848175a3aa44",
+        "title": "GPU schematic two scenes",
+        "provider": "project",
+        "sourceUrl": null,
+        "downloadUrl": null,
+        "author": "Self-authored test",
+        "restrictions": "non-commercial / unknown allowed for internal tests",
+        "license": "unknown",
+        "kind": "video",
+        "blob": {
+          "key": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "sha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "sizeBytes": 378449,
+          "mime": "video/mp4"
+        },
+        "localRef": null,
+        "metadata": {
+          "kind": "video",
+          "width": 640,
+          "height": 360,
+          "durationMs": 12000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 360
+        },
+        "index": {
+          "version": 1,
+          "sourceSha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "frames": [
+            {
+              "id": "60e95bda-fabb-4c27-a6a1-4829bd201e1c",
+              "atMs": 0,
+              "blob": {
+                "key": "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+                "sha256": "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+                "sizeBytes": 14278,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "3b118b2e-90c6-4117-b4f8-83da19d37076",
+              "atMs": 2400,
+              "blob": {
+                "key": "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+                "sha256": "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+                "sizeBytes": 12816,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "0066bc28-461b-4f50-85f2-babc75eb33bc",
+              "atMs": 4767,
+              "blob": {
+                "key": "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+                "sha256": "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+                "sizeBytes": 13658,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "ad15bf5f-4ce3-427d-9be5-46726936c607",
+              "atMs": 7167,
+              "blob": {
+                "key": "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+                "sha256": "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+                "sizeBytes": 12739,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "d5ff4770-bcbf-4a33-af19-e01f05312055",
+              "atMs": 9533,
+              "blob": {
+                "key": "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81",
+                "sha256": "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81",
+                "sizeBytes": 12106,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "7377e171-60d4-4d84-b3af-27e3c573a25f",
+              "atMs": 11900,
+              "blob": {
+                "key": "769974646c4efbcad59c343f4ffb20c35384678fda22d2350c534388d1235dff",
+                "sha256": "769974646c4efbcad59c343f4ffb20c35384678fda22d2350c534388d1235dff",
+                "sizeBytes": 11832,
+                "mime": "image/jpeg"
+              }
+            }
+          ],
+          "contactSheet": {
+            "key": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+            "sha256": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+            "sizeBytes": 48508,
+            "mime": "image/jpeg"
+          },
+          "sceneCutsMs": [],
+          "sharpness": 3.7734945830183926,
+          "scope": "sparse_frames"
+        },
+        "status": "indexed",
+        "createdAt": "2026-10-24T07:21:58.197Z",
+        "originSourceId": null,
+        "originProjectId": "90a9c7a0-ebf2-4fb6-8677-6d973b18491e",
+        "searchTerms": "GPU schematic two scenes"
+      }
+    ],
+    "binding": null
+  },
+  "assetResult": {
+    "sources": [
+      {
+        "id": "1ac7b4ed-fb98-4c49-aec1-d7fabb987004",
+        "title": "The Earth & Moon",
+        "provider": "nasa",
+        "sourceUrl": "https://images.nasa.gov/details/PIA00342",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA00342/PIA00342~medium.jpg",
+        "author": "NASA/JPL/USGS",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "license": "unknown; consult NASA media usage guidelines",
+        "kind": "image",
+        "blob": {
+          "key": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+          "sha256": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+          "sizeBytes": 122699,
+          "mime": "image/jpeg"
+        },
+        "localRef": null,
+        "metadata": {
+          "kind": "image",
+          "width": 1005,
+          "height": 1280,
+          "durationMs": null,
+          "fps": 0,
+          "codec": "mjpeg",
+          "format": "jpeg_pipe",
+          "frames": null
+        },
+        "index": {
+          "version": 1,
+          "sourceSha256": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+          "frames": [
+            {
+              "id": "60fc5b80-c6f7-47cc-ac28-35fddc50bc76",
+              "atMs": 0,
+              "blob": {
+                "key": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+                "sha256": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+                "sizeBytes": 46212,
+                "mime": "image/jpeg"
+              }
+            }
+          ],
+          "contactSheet": {
+            "key": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+            "sha256": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+            "sizeBytes": 46212,
+            "mime": "image/jpeg"
+          },
+          "sceneCutsMs": [],
+          "sharpness": 11.814688838498363,
+          "scope": "sparse_frames"
+        },
+        "status": "indexed",
+        "createdAt": "2026-10-24T07:22:28.750Z",
+        "originSourceId": null,
+        "originProjectId": null,
+        "searchTerms": "Earth Galileo"
+      },
+      {
+        "id": "a370c647-4389-4fe7-8036-22f4ae4a5344",
+        "title": "Earth - Pacific Ocean",
+        "provider": "nasa",
+        "sourceUrl": "https://images.nasa.gov/details/PIA00123",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA00123/PIA00123~small.jpg",
+        "author": "NASA/JPL",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "license": "unknown; consult NASA media usage guidelines",
+        "kind": "image",
+        "blob": null,
+        "localRef": null,
+        "metadata": null,
+        "index": null,
+        "status": "discovered",
+        "createdAt": "2026-10-24T07:22:28.750Z",
+        "originSourceId": null,
+        "originProjectId": null,
+        "searchTerms": "Earth Galileo"
+      },
+      {
+        "id": "d594ddf3-1c5c-4be0-a254-855a43431ac9",
+        "title": "Earth - India and Australia",
+        "provider": "nasa",
+        "sourceUrl": "https://images.nasa.gov/details/PIA00122",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA00122/PIA00122~small.jpg",
+        "author": "NASA/JPL",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "license": "unknown; consult NASA media usage guidelines",
+        "kind": "image",
+        "blob": null,
+        "localRef": null,
+        "metadata": null,
+        "index": null,
+        "status": "discovered",
+        "createdAt": "2026-10-24T07:22:28.750Z",
+        "originSourceId": null,
+        "originProjectId": null,
+        "searchTerms": "Earth Galileo"
+      },
+      {
+        "id": "72525f90-7527-443d-ae8f-10023a1d3801",
+        "title": "Earth and Moon from 114 Million Miles",
+        "provider": "nasa",
+        "sourceUrl": "https://images.nasa.gov/details/PIA13474",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA13474/PIA13474~small.jpg",
+        "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "license": "unknown; consult NASA media usage guidelines",
+        "kind": "image",
+        "blob": null,
+        "localRef": null,
+        "metadata": null,
+        "index": null,
+        "status": "discovered",
+        "createdAt": "2026-10-24T07:22:28.750Z",
+        "originSourceId": null,
+        "originProjectId": null,
+        "searchTerms": "Earth MESSENGER"
+      },
+      {
+        "id": "572251e2-bd87-4734-905f-bca0eecb2f05",
+        "title": "Earth - Moon Conjunction",
+        "provider": "nasa",
+        "sourceUrl": "https://images.nasa.gov/details/PIA00134",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA00134/PIA00134~medium.jpg",
+        "author": "NASA/JPL",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "license": "unknown; consult NASA media usage guidelines",
+        "kind": "image",
+        "blob": null,
+        "localRef": null,
+        "metadata": null,
+        "index": null,
+        "status": "discovered",
+        "createdAt": "2026-10-24T07:22:28.750Z",
+        "originSourceId": null,
+        "originProjectId": null,
+        "searchTerms": "Earth Galileo"
+      },
+      {
+        "id": "c3a7f0c7-9c05-45b5-8750-99a008e86b7e",
+        "title": "South Polar Projection of Earth",
+        "provider": "nasa",
+        "sourceUrl": "https://images.nasa.gov/details/PIA00729",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA00729/PIA00729~thumb.jpg",
+        "author": "NASA/JPL",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "license": "unknown; consult NASA media usage guidelines",
+        "kind": "image",
+        "blob": null,
+        "localRef": null,
+        "metadata": null,
+        "index": null,
+        "status": "discovered",
+        "createdAt": "2026-10-24T07:22:28.750Z",
+        "originSourceId": null,
+        "originProjectId": null,
+        "searchTerms": "Earth Galileo"
+      }
+    ],
+    "candidates": [
+      {
+        "id": "8323f245-7828-44dd-86ef-86a30a4f0599",
+        "directorRevisionId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+        "shotId": "7f92bd13-c08f-4977-90b3-c71ddf2ff7cf",
+        "sourceAssetId": "1ac7b4ed-fb98-4c49-aec1-d7fabb987004",
+        "sourceInMs": 0,
+        "sourceOutMs": 0,
+        "method": "real_visual",
+        "score": 0.8014318719845595,
+        "scores": {
+          "semantic": 0.94,
+          "subject": 0.98,
+          "action": 0.95,
+          "composition": 0.45,
+          "aspect": 0.7164179104477612,
+          "resolution": 0.6203703703703703,
+          "sharpness": 0.36920902620307383,
+          "duration": 1
+        },
+        "reasons": [
+          "画面展示地球与月球，符合地月太空景象主题；地球偏左且被裁切，下方字幕空间有限。",
+          "地球占据左侧主体，月球位于右下方，能直接表现地月画面；主体未居中，下方天体细节较多，叠加字幕可能遮挡内容。"
+        ],
+        "limitations": [
+          "仅依据所附单张静态图判断，无法评估运动或持续时长。",
+          "无法仅凭画面确认其为真实摄影或合成图像。",
+          "仅已抽取稀疏帧；区间为候选，需试听/观看核对"
+        ],
+        "frameIds": [
+          "60fc5b80-c6f7-47cc-ac28-35fddc50bc76"
+        ],
+        "frameSha256": [
+          "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a"
+        ],
+        "runId": "01a16cca-2d86-7852-98cb-482db1faa8e2",
+        "createdAt": "2026-10-24T07:22:47.535Z"
+      }
+    ],
+    "prepared": null,
+    "cacheHit": false,
+    "searches": [
+      {
+        "provider": "local",
+        "query": "earth",
+        "url": null,
+        "responseSha256": null,
+        "status": "empty",
+        "count": 0,
+        "reason": "真实已保存文件的标题/索引低成本筛选；不是视觉模型结论",
+        "at": "2026-10-24T07:22:27.704Z"
+      },
+      {
+        "provider": "nasa",
+        "query": "earth",
+        "url": "https://images-api.nasa.gov/search?q=earth&media_type=image&page_size=6",
+        "responseSha256": "5c868e41e7577598effdd71b248762cedcefe455b4564a771f3b699492c00c26",
+        "status": "ok",
+        "count": 6,
+        "reason": "真实公开 API 元数据；未下载条目尚未验证像素",
+        "at": "2026-10-24T07:22:28.750Z"
+      }
+    ],
+    "aiRuns": [
+      {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a16cca-2d86-7852-98cb-482db1faa8e2",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-24T07:22:31.278Z",
+        "durationMs": 16256,
+        "usage": {
+          "input_tokens": 9623,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 203,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      }
+    ],
+    "notes": "真实文件已验证；许可未知不阻断内部测试；未自动公开发布。"
+  },
+  "aiRuns": [
+    {
+      "provider": "codex-cli",
+      "cliVersion": "codex-cli 0.163.0",
+      "model": "gpt-6.1-sol",
+      "runId": "01a16cca-2d86-7852-98cb-482db1faa8e2",
+      "searchMode": "disabled",
+      "startedAt": "2026-10-24T07:22:31.278Z",
+      "durationMs": 16256,
+      "usage": {
+        "input_tokens": 9623,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 203,
+        "reasoning_output_tokens": 0
+      },
+      "quota": null,
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "failureReason": null,
+      "policy": "data-only-v1",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "jobAttempt": 1,
+      "isolation": {
+        "modelShell": "disabled",
+        "modelPatch": "disabled",
+        "enabledMcpServers": 0,
+        "codeModeHost": "v8-data-only",
+        "userConfigIgnored": true,
+        "ephemeral": true
+      }
+    }
+  ],
+  "progress": 1,
+  "heartbeatAt": "2026-10-24T07:22:47.563Z",
+  "logs": [
+    {
+      "at": "2026-10-24T07:22:26.134Z",
+      "message": "素材任务排队；来源/导演/逐镜绑定输入已冻结。"
+    },
+    {
+      "at": "2026-10-24T07:22:27.146Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T07:22:27.230Z",
+      "message": "启动独立素材处理器"
+    },
+    {
+      "at": "2026-10-24T07:22:29.260Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:31.267Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:33.277Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:35.279Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:37.300Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:39.294Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:41.307Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:43.306Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:45.319Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:47.318Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:47.563Z",
+      "message": "提取结果已校验；正在校验固定导演及逐镜绑定版本。"
+    },
+    {
+      "at": "2026-10-24T07:22:47.587Z",
+      "message": "finish: succeeded"
+    }
+  ]
+}

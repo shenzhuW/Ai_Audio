@@ -130,3 +130,7 @@ DirectorProvider调用既有Codex数据运行时（固定CLI、安全目录、�
 30FPS半开帧区间[start,end)，totalFrames=ceil(Voice.durationMs*fps/1000)，仅末尾向上取整，误差小于一帧；各镜头duration精确累加，转场内含。草稿允许明确的未分配尾段，提交须完全覆盖；静默间隔可延续同一对象，不伪造Cue。时长/排序编辑重算后续范围，UI显示影响和剩余帧；时间来源沿用原Cue的manual/forced等标记。
 
 执行方案为code/pending/bound：code只图形文字；pending保存VisualSearchIntent并输出assetRequirements供Phase07消费，批准不代表素材已找到；bound仅引用固定研究真实图片/视频元数据及合法候选区间。保留来源、作者、限制，D-17/D-18不加商业审批。SVG仅图层示意，未生成正式动画、裁剪或开放自由TSX。
+
+## Phase07 implementation boundary
+
+Asset module uses SourceAsset/CandidateClip/append-only per-shot AssetBinding/PreparedAsset plus existing Workflow Job/Outbox. Fixed approved DirectorRevision is never overwritten; binding confirmation creates a version and automatically enqueues preparation, without another approval stage. Dedicated asset-worker/asset-child isolate parsers from Next; Codex uses unchanged data-only-v1 policy. Source SHA + normalized recipe v1 keys immutable MP4 cache. RenderInput may reference a validated current PreparedAsset snapshot/provenance; trusted PoC remains the sole component entry. Only consumers of a replaced binding become stale. See [setup and limits](ASSET_ENGINE_SETUP.md).

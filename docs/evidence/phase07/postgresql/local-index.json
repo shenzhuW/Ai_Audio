@@ -1,0 +1,108 @@
+{
+  "id": "9414e3f3-9b3b-4e48-a270-bbfe7f23b6b6",
+  "blob": {
+    "key": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+    "mime": "video/mp4",
+    "sha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+    "sizeBytes": 378449
+  },
+  "kind": "video",
+  "index": {
+    "scope": "sparse_frames",
+    "frames": [
+      {
+        "id": "2a3775da-3367-4c26-8a5e-5e4b4f07d4ca",
+        "atMs": 0,
+        "blob": {
+          "key": "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+          "mime": "image/jpeg",
+          "sha256": "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+          "sizeBytes": 14278
+        }
+      },
+      {
+        "id": "6bea0580-9e7e-43bd-b032-6ed0613b4479",
+        "atMs": 2400,
+        "blob": {
+          "key": "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+          "mime": "image/jpeg",
+          "sha256": "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+          "sizeBytes": 12816
+        }
+      },
+      {
+        "id": "f1c5405b-42c6-4b38-89a1-27d7854f7ef1",
+        "atMs": 4767,
+        "blob": {
+          "key": "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+          "mime": "image/jpeg",
+          "sha256": "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+          "sizeBytes": 13658
+        }
+      },
+      {
+        "id": "4b2d5e1a-2d1b-4539-a9ea-26f83b48859b",
+        "atMs": 7167,
+        "blob": {
+          "key": "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+          "mime": "image/jpeg",
+          "sha256": "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+          "sizeBytes": 12739
+        }
+      },
+      {
+        "id": "2f3504b1-576f-4a75-bd5f-0556776268be",
+        "atMs": 9533,
+        "blob": {
+          "key": "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81",
+          "mime": "image/jpeg",
+          "sha256": "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81",
+          "sizeBytes": 12106
+        }
+      },
+      {
+        "id": "5b9d0d84-13aa-436a-8189-4b96c88d0292",
+        "atMs": 11900,
+        "blob": {
+          "key": "769974646c4efbcad59c343f4ffb20c35384678fda22d2350c534388d1235dff",
+          "mime": "image/jpeg",
+          "sha256": "769974646c4efbcad59c343f4ffb20c35384678fda22d2350c534388d1235dff",
+          "sizeBytes": 11832
+        }
+      }
+    ],
+    "version": 1,
+    "sharpness": 3.7734945830183926,
+    "sceneCutsMs": [],
+    "contactSheet": {
+      "key": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+      "mime": "image/jpeg",
+      "sha256": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+      "sizeBytes": 48508
+    },
+    "sourceSha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce"
+  },
+  "title": "GPU schematic two scenes",
+  "author": "Self-authored test",
+  "status": "indexed",
+  "license": "unknown",
+  "localRef": null,
+  "metadata": {
+    "fps": 30,
+    "kind": "video",
+    "codec": "h264",
+    "width": 640,
+    "format": "mov,mp4,m4a,3gp,3g2,mj2",
+    "frames": 360,
+    "height": 360,
+    "durationMs": 12000
+  },
+  "provider": "project",
+  "createdAt": "2026-10-24T07:22:20.938Z",
+  "sourceUrl": null,
+  "downloadUrl": null,
+  "searchTerms": "GPU schematic two scenes",
+  "restrictions": "non-commercial / unknown allowed for internal tests",
+  "originSourceId": null,
+  "originProjectId": "58d5958d-7659-48cc-a683-0ada17ff4e0a"
+}

@@ -1,3 +1,4 @@
+import { renderAssetProvenance, latestBinding, applyAsset, finishAsset } from '../assets/engine';
 import { DirectorCommandSchema } from '../../domain/director';
 import {
   directorDocument,
@@ -67,6 +68,10 @@ export const emptyWorkflow = (): WorkflowState => ({
   outbox: [],
   receipts: [],
   audit: [],
+  sourceAssets: [],
+  candidateClips: [],
+  assetBindings: [],
+  preparedAssets: [],
   researchSources: [],
   researchClaims: [],
   researchEvidence: [],
@@ -97,7 +102,16 @@ const fail = (code: string, message: string, status = 422): never => {
 };
 const conflict = () => fail('REVISION_CONFLICT', '修订或当前候选已变化，请重新载入后再操作。', 409);
 export function staleRevisions(s: WorkflowState): Set<string> {
-  const stale = new Set<string>();
+  const stale = new Set<string>(
+    s.revisions
+      .filter((r) =>
+        r.assetBindingIds?.some((id) => {
+          const b = s.assetBindings.find((b) => b.id === id);
+          return !b || latestBinding(s, b.directorRevisionId, b.shotId)?.id !== id;
+        }),
+      )
+      .map((r) => r.id),
+  );
   let changed = true;
   while (changed) {
     changed = false;
@@ -304,7 +318,11 @@ export function applyWorkflow(
       fail('INVALID_SEGMENT_REFERENCE', '段落依赖必须属于一个明确的上游文稿修订。');
     deps[0].segmentIds = [...new Set(ids)];
   };
-  if (c.action.startsWith('director-')) {
+  if (c.action.startsWith('asset-')) {
+    result = applyAsset(s, project, c, time, actorId, staleRevisions(s), (ids) =>
+      enqueue('storyboard', ids, key),
+    );
+  } else if (c.action.startsWith('director-')) {
     const command = DirectorCommandSchema.parse(c);
     if (command.action === 'director-start') {
       requireInputs([command.scriptRevisionId, command.voiceRevisionId]);
@@ -646,7 +664,27 @@ export function applyWorkflow(
       result = change.entity!;
     }
   } else if (c.action === 'render') {
-    const j = enqueue('motion', [], key);
+    const bg = c.input.preparedBackground;
+    if (bg) {
+      const b = s.assetBindings.find((b) => b.id === bg.bindingId),
+        p = s.preparedAssets.find((p) => p.recipeHash === bg.recipeHash);
+      if (
+        !b ||
+        latestBinding(s, b.directorRevisionId, b.shotId)?.id !== b.id ||
+        b.directorRevisionId !== bg.directorRevisionId ||
+        b.shotId !== bg.shotId ||
+        b.recipeHash !== bg.recipeHash ||
+        fingerprint(bg.provenance) !== fingerprint(renderAssetProvenance(s, b)) ||
+        !p ||
+        p.blob.sha256 !== bg.sha256 ||
+        c.input.assets.backgroundSha256 !== p.blob.sha256 ||
+        p.metadata.width !== 1080 ||
+        p.metadata.height !== 1920 ||
+        (p.metadata.frames ?? 0) < 300
+      )
+        fail('ASSET_RENDER_INVALID', '仅当前有效、竖屏且至少10秒的已准备绑定可进入可信 PoC。');
+    }
+    const j = enqueue('motion', bg ? [bg.directorRevisionId] : [], key);
     j.provider = 'remotion';
     j.renderInput = c.input;
     j.progress = 0;
@@ -824,7 +862,8 @@ export function applyWorkflow(
         const runs =
           c.aiRuns ??
           (c.directorResult?.aiRun ? [c.directorResult.aiRun] : undefined) ??
-          (c.scriptResult?.aiRun ? [c.scriptResult.aiRun] : c.researchResult?.aiRuns);
+          (c.scriptResult?.aiRun ? [c.scriptResult.aiRun] : c.researchResult?.aiRuns) ??
+          c.assetResult?.aiRuns;
         if (runs)
           j.aiRuns = [
             ...(j.aiRuns || []),
@@ -838,10 +877,28 @@ export function applyWorkflow(
           c.errorCode ??
           (j.provider === 'unconfigured'
             ? 'PROVIDER_NOT_CONFIGURED'
-            : j.provider !== 'research' && currentVersion !== j.targetVersion
+            : !['research', 'asset'].includes(j.provider) && currentVersion !== j.targetVersion
               ? 'TARGET_CHANGED'
               : null);
-        if (!j.errorCode && j.provider === 'director') {
+        if (!j.errorCode && j.provider === 'remotion' && j.renderInput?.preparedBackground) {
+          const bg = j.renderInput.preparedBackground;
+          if (
+            latestBinding(s, bg.directorRevisionId, bg.shotId)?.id !== bg.bindingId ||
+            staleRevisions(s).has(bg.directorRevisionId) ||
+            s.artifacts.find((a) => a.type === 'storyboard')?.approvedRevisionId !==
+              bg.directorRevisionId
+          )
+            j.errorCode = 'ASSET_BINDING_CHANGED';
+        }
+        if (!j.errorCode && j.provider === 'asset') {
+          if (!j.assetInput || !c.assetResult) fail('ASSET_RESULT_INVALID', '缺少素材结果。');
+          j.errorCode = finishAsset(s, j.assetInput!, c.assetResult!, staleRevisions(s));
+          if (!j.errorCode) {
+            j.assetResult = c.assetResult;
+            j.state = 'succeeded';
+            j.progress = 1;
+          } else j.state = 'failed';
+        } else if (!j.errorCode && j.provider === 'director') {
           const input = j.directorInput ?? fail('INVALID_DIRECTOR_RESULT', '缺少固定导演输入。'),
             output = c.directorResult ?? fail('INVALID_DIRECTOR_RESULT', '缺少导演结果。');
           try {
@@ -912,6 +969,9 @@ export function applyWorkflow(
             c.renderResult.manifestHash !== fingerprint(j.renderInput)
           )
             fail('INVALID_RESULT', '渲染结果未通过输入清单校验。');
+          const bg = j.renderInput!.preparedBackground;
+          if (bg && latestBinding(s, bg.directorRevisionId, bg.shotId)?.id !== bg.bindingId)
+            fail('ASSET_BINDING_CHANGED', '素材绑定已变化，渲染结果未写入。', 409);
           j.renderResult = c.renderResult;
           const r = createRevision(
             'motion',
@@ -921,6 +981,7 @@ export function applyWorkflow(
             null,
             false,
           );
+          if (bg) r.assetBindingIds = [bg.bindingId];
           j.resultRevisionId = r.id;
           j.progress = 1;
           j.state = 'succeeded';
@@ -958,7 +1019,7 @@ export function applyWorkflow(
       j.version++;
     j.updatedAt = time;
     if (
-      ['remotion', 'research', 'script', 'voice', 'director'].includes(j.provider) &&
+      ['remotion', 'research', 'script', 'voice', 'director', 'asset'].includes(j.provider) &&
       c.action !== 'heartbeat'
     )
       j.logs = [

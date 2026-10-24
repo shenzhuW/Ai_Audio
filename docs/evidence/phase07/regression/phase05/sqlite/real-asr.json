@@ -1,0 +1,390 @@
+{
+  "id": "0a2a6750-9e38-41d7-80c2-a369341042c1",
+  "kind": "voice",
+  "version": 9,
+  "provider": "voice",
+  "state": "succeeded",
+  "inputRevisionIds": [
+    "fef3c07e-1976-4664-a45e-ef2179979051"
+  ],
+  "idempotencyKey": "9d73c72c-b640-49a0-8436-8f8b5d62c217",
+  "attempt": 3,
+  "maxAttempts": 3,
+  "attempts": [
+    {
+      "workerId": "6c238f89-1ca2-4d7c-8a14-2da719accc50",
+      "number": 1,
+      "startedAt": "2026-10-24T07:40:42.863Z",
+      "finishedAt": "2026-10-24T07:40:43.000Z",
+      "state": "failed",
+      "errorCode": "SPEECH_NOT_CONFIGURED"
+    },
+    {
+      "workerId": "95316b22-527c-4fb4-9b1c-3c80c1c2acd1",
+      "number": 2,
+      "startedAt": "2026-10-24T07:40:43.813Z",
+      "finishedAt": "2026-10-24T07:40:45.920Z",
+      "state": "failed",
+      "errorCode": "SPEECH_TIMEOUT"
+    },
+    {
+      "workerId": "0f07fee6-ed91-4f2b-8738-454adeb4aa76",
+      "number": 3,
+      "startedAt": "2026-10-24T07:40:46.739Z",
+      "finishedAt": "2026-10-24T07:40:54.981Z",
+      "state": "succeeded",
+      "errorCode": null
+    }
+  ],
+  "targetVersion": 2,
+  "leaseOwner": null,
+  "leaseExpiresAt": null,
+  "resultRevisionId": "7ecf77fe-be9b-411c-a893-130b0c1f86d3",
+  "errorCode": null,
+  "createdAt": "2026-10-24T07:40:42.028Z",
+  "updatedAt": "2026-10-24T07:40:54.981Z",
+  "voiceInput": {
+    "schemaVersion": 1,
+    "revisionId": "7ecf77fe-be9b-411c-a893-130b0c1f86d3",
+    "targetVersion": 2,
+    "scriptRevisionId": "fef3c07e-1976-4664-a45e-ef2179979051",
+    "operation": "transcribe",
+    "language": "zh",
+    "mode": "import",
+    "provider": "whisper-local",
+    "voice": "",
+    "rate": 0,
+    "purpose": "final",
+    "segments": [
+      {
+        "id": "c43abcfc-653d-460b-9fe1-6fe7e9833213",
+        "text": "测试，测试。这是配音时间轴的真实语音。字幕和词语时间需要分别校验。"
+      }
+    ],
+    "blob": {
+      "id": "8d2b5632-c83a-4cdb-a225-9dbf6384b26b",
+      "name": "chinese.wav",
+      "mime": "audio/wav",
+      "sizeBytes": 423470,
+      "sha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8"
+    },
+    "maxDurationMs": 3600000,
+    "maxAudioBytes": 10485760
+  },
+  "voiceResult": {
+    "kind": "asr",
+    "mode": "import",
+    "provider": "whisper-local",
+    "purpose": "final",
+    "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+    "scriptRevisionId": "fef3c07e-1976-4664-a45e-ef2179979051",
+    "model": "openai-whisper/base",
+    "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+    "engineVersion": "stable-ts/2.19.1/whisper/20250625",
+    "notes": "Whisper独立真实识别，未传参考文稿。字幕为未绑定草稿，可能繁简/同音错误，需人工校正。",
+    "run": {
+      "provider": "whisper-local",
+      "runId": "646a64d7-3ee0-4fd7-b0bb-a16d75e4af78",
+      "startedAt": "2026-10-24T07:40:46.785Z",
+      "durationMs": 8193,
+      "purpose": "final",
+      "failureReason": null,
+      "operation": "transcribe",
+      "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+      "inputSha256": "0c35ea317736fac47fc7cd75e609395cae21d3bb77a659c8c382d28e68524c09",
+      "model": "openai-whisper/base",
+      "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+      "referenceTextProvided": false,
+      "processId": 9912,
+      "exitCode": 0
+    },
+    "transcript": "測試,測試。這是配音時間軸的真實語音。字幕和詞語時間需要分別教驗。",
+    "words": [
+      {
+        "text": "測",
+        "startMs": 0,
+        "endMs": 320,
+        "probability": 0.491150775924325
+      },
+      {
+        "text": "試,",
+        "startMs": 320,
+        "endMs": 800,
+        "probability": 0.9680749773979187
+      },
+      {
+        "text": "測",
+        "startMs": 800,
+        "endMs": 1200,
+        "probability": 0.7196236997842789
+      },
+      {
+        "text": "試。",
+        "startMs": 1200,
+        "endMs": 1620,
+        "probability": 0.9960677623748779
+      },
+      {
+        "text": "這是",
+        "startMs": 2400,
+        "endMs": 2740,
+        "probability": 0.7598904967308044
+      },
+      {
+        "text": "配",
+        "startMs": 2740,
+        "endMs": 3040,
+        "probability": 0.9298218488693237
+      },
+      {
+        "text": "音",
+        "startMs": 3040,
+        "endMs": 3360,
+        "probability": 0.9201987385749817
+      },
+      {
+        "text": "時間",
+        "startMs": 3360,
+        "endMs": 3660,
+        "probability": 0.9182754755020142
+      },
+      {
+        "text": "軸",
+        "startMs": 3660,
+        "endMs": 3940,
+        "probability": 0.8537160158157349
+      },
+      {
+        "text": "的",
+        "startMs": 3940,
+        "endMs": 4160,
+        "probability": 0.9834458231925964
+      },
+      {
+        "text": "真",
+        "startMs": 4160,
+        "endMs": 4300,
+        "probability": 0.9606042504310608
+      },
+      {
+        "text": "實",
+        "startMs": 4300,
+        "endMs": 4560,
+        "probability": 0.9772729277610779
+      },
+      {
+        "text": "語",
+        "startMs": 4560,
+        "endMs": 4680,
+        "probability": 0.9530054926872253
+      },
+      {
+        "text": "音。",
+        "startMs": 4680,
+        "endMs": 5020,
+        "probability": 0.9980664849281311
+      },
+      {
+        "text": "字",
+        "startMs": 5940,
+        "endMs": 6060,
+        "probability": 0.3235475718975067
+      },
+      {
+        "text": "幕",
+        "startMs": 6060,
+        "endMs": 6260,
+        "probability": 0.9795910120010376
+      },
+      {
+        "text": "和",
+        "startMs": 6260,
+        "endMs": 6620,
+        "probability": 0.9597977995872498
+      },
+      {
+        "text": "詞",
+        "startMs": 6620,
+        "endMs": 6820,
+        "probability": 0.8900278806686401
+      },
+      {
+        "text": "語",
+        "startMs": 6820,
+        "endMs": 7000,
+        "probability": 0.8819063901901245
+      },
+      {
+        "text": "時間",
+        "startMs": 7000,
+        "endMs": 7320,
+        "probability": 0.9631377458572388
+      },
+      {
+        "text": "需要",
+        "startMs": 7320,
+        "endMs": 7840,
+        "probability": 0.9843244552612305
+      },
+      {
+        "text": "分",
+        "startMs": 7840,
+        "endMs": 8100,
+        "probability": 0.9860040545463562
+      },
+      {
+        "text": "別",
+        "startMs": 8100,
+        "endMs": 8380,
+        "probability": 0.9980156421661377
+      },
+      {
+        "text": "教",
+        "startMs": 8380,
+        "endMs": 8540,
+        "probability": 0.9006814956665039
+      },
+      {
+        "text": "驗。",
+        "startMs": 8540,
+        "endMs": 8780,
+        "probability": 0.8347861170768738
+      }
+    ],
+    "subtitleDraft": [
+      {
+        "text": "測試,測試。",
+        "startMs": 0,
+        "endMs": 1620
+      },
+      {
+        "text": "這是配音時間軸的真實語音。",
+        "startMs": 2400,
+        "endMs": 5020
+      },
+      {
+        "text": "字幕和詞語時間需要分別教驗。",
+        "startMs": 5940,
+        "endMs": 8780
+      }
+    ]
+  },
+  "voiceRuns": [
+    {
+      "provider": "whisper-local",
+      "runId": "9ee51088-c351-4761-9a32-e09e68e7efc2",
+      "startedAt": "2026-10-24T07:40:42.906Z",
+      "durationMs": 92,
+      "purpose": "final",
+      "failureReason": "SPEECH_NOT_CONFIGURED",
+      "jobAttempt": 1,
+      "operation": "transcribe",
+      "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+      "inputSha256": "0c35ea317736fac47fc7cd75e609395cae21d3bb77a659c8c382d28e68524c09"
+    },
+    {
+      "provider": "whisper-local",
+      "runId": "06d01e41-4b59-4743-9414-13f57760c22f",
+      "startedAt": "2026-10-24T07:40:43.854Z",
+      "durationMs": 2064,
+      "purpose": "final",
+      "failureReason": "SPEECH_TIMEOUT",
+      "jobAttempt": 2,
+      "operation": "transcribe",
+      "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+      "inputSha256": "0c35ea317736fac47fc7cd75e609395cae21d3bb77a659c8c382d28e68524c09",
+      "referenceTextProvided": false,
+      "processId": 42748,
+      "exitCode": 1
+    },
+    {
+      "provider": "whisper-local",
+      "runId": "646a64d7-3ee0-4fd7-b0bb-a16d75e4af78",
+      "startedAt": "2026-10-24T07:40:46.785Z",
+      "durationMs": 8193,
+      "purpose": "final",
+      "failureReason": null,
+      "jobAttempt": 3,
+      "operation": "transcribe",
+      "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+      "inputSha256": "0c35ea317736fac47fc7cd75e609395cae21d3bb77a659c8c382d28e68524c09",
+      "model": "openai-whisper/base",
+      "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+      "referenceTextProvided": false,
+      "processId": 9912,
+      "exitCode": 0
+    }
+  ],
+  "progress": 1,
+  "heartbeatAt": "2026-10-24T07:40:54.808Z",
+  "logs": [
+    {
+      "at": "2026-10-24T07:40:42.028Z",
+      "message": "whisper-local · final 配音任务排队；原文修订和输入已冻结，字幕不是精确转录。"
+    },
+    {
+      "at": "2026-10-24T07:40:42.863Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T07:40:42.885Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T07:40:43.000Z",
+      "message": "finish: failed · SPEECH_NOT_CONFIGURED"
+    },
+    {
+      "at": "2026-10-24T07:40:43.048Z",
+      "message": "retry: queued"
+    },
+    {
+      "at": "2026-10-24T07:40:43.813Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T07:40:43.837Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T07:40:45.912Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T07:40:45.920Z",
+      "message": "finish: failed · SPEECH_TIMEOUT"
+    },
+    {
+      "at": "2026-10-24T07:40:45.964Z",
+      "message": "retry: queued"
+    },
+    {
+      "at": "2026-10-24T07:40:46.739Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T07:40:46.762Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T07:40:48.793Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T07:40:50.803Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T07:40:52.807Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T07:40:54.808Z",
+      "message": "真实配音/音频校验处理中；字幕不是精确转录"
+    },
+    {
+      "at": "2026-10-24T07:40:54.981Z",
+      "message": "finish: succeeded"
+    }
+  ]
+}

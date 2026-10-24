@@ -14,6 +14,7 @@ export interface WorkflowRepository {
     change?: Change,
   ): Promise<{ state: WorkflowState; project: Project; result?: unknown }>;
   locate(collection: Collection, id: string, ownerId: string): Promise<string>;
+  assetLibrary?(owner: string): Promise<import('../../domain/assets').SourceAsset[]>;
   workProjects(): Promise<string[]>;
   close(): Promise<void>;
 }
@@ -90,6 +91,17 @@ export async function openWorkflowRepository(url: string): Promise<WorkflowRepos
           .get(id, owner);
         return r ? String(r.project_id) : missing();
       },
+      async assetLibrary(owner) {
+        return db
+          .prepare(
+            "SELECT e.document,e.project_id FROM source_assets e JOIN projects p ON p.id=e.project_id WHERE p.owner_id=? AND json_extract(e.document,'$.status')='indexed' LIMIT 500",
+          )
+          .all(owner)
+          .map((r) => ({
+            ...JSON.parse(r.document as string),
+            originProjectId: String(r.project_id),
+          }));
+      },
       async workProjects() {
         return db
           .prepare(
@@ -165,6 +177,17 @@ export async function openWorkflowRepository(url: string): Promise<WorkflowRepos
         owner,
       );
       return rows.length ? rows[0].project_id : missing();
+    },
+    async assetLibrary(owner) {
+      return (
+        await db.$queryRawUnsafe<{ document: unknown; project_id: string }[]>(
+          "SELECT e.document,e.project_id FROM source_assets e JOIN projects p ON p.id=e.project_id WHERE p.owner_id=$1 AND e.document->>'status'='indexed' LIMIT 500",
+          owner,
+        )
+      ).map((r) => ({
+        ...(r.document as import('../../domain/assets').SourceAsset),
+        originProjectId: r.project_id,
+      }));
     },
     async workProjects() {
       return (

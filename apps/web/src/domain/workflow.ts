@@ -1,4 +1,13 @@
 import {
+  assetCommands,
+  SourceAssetSchema,
+  CandidateClipSchema,
+  AssetBindingSchema,
+  PreparedAssetSchema,
+  AssetJobInputSchema,
+  AssetResultSchema,
+} from './assets';
+import {
   directorCommands,
   DirectorDocumentSchema,
   DirectorShotRecordSchema,
@@ -75,6 +84,7 @@ export const RevisionSchema = z.object({
   scriptSchemaVersion: z.literal(1).optional(),
   voiceSchemaVersion: z.literal(1).optional(),
   directorSchemaVersion: z.literal(1).optional(),
+  assetBindingIds: z.array(id).max(120).optional(),
 });
 export const DependencySchema = z.object({
   id,
@@ -104,7 +114,16 @@ export const WorkflowJobSchema = z.object({
   id,
   kind: ArtifactTypeSchema,
   version,
-  provider: z.enum(['mock', 'unconfigured', 'remotion', 'research', 'script', 'voice', 'director']),
+  provider: z.enum([
+    'mock',
+    'unconfigured',
+    'remotion',
+    'research',
+    'script',
+    'voice',
+    'director',
+    'asset',
+  ]),
   state: z.enum(['queued', 'running', 'succeeded', 'failed', 'cancelled']),
   inputRevisionIds: z.array(id),
   idempotencyKey: z.string(),
@@ -118,6 +137,8 @@ export const WorkflowJobSchema = z.object({
   errorCode: z.string().nullable(),
   createdAt: at,
   updatedAt: at,
+  assetInput: AssetJobInputSchema.optional(),
+  assetResult: AssetResultSchema.optional(),
   renderInput: RenderInputSchema.optional(),
   renderResult: RenderResultSchema.optional(),
   researchInput: ResearchJobInputSchema.optional(),
@@ -163,6 +184,10 @@ export const WorkflowStateSchema = z.object({
   outbox: z.array(OutboxSchema),
   receipts: z.array(ReceiptSchema),
   audit: z.array(AuditSchema),
+  sourceAssets: z.array(SourceAssetSchema).default([]),
+  candidateClips: z.array(CandidateClipSchema).default([]),
+  assetBindings: z.array(AssetBindingSchema).default([]),
+  preparedAssets: z.array(PreparedAssetSchema).default([]),
   researchSources: z.array(SourceSchema).default([]),
   researchClaims: z.array(ClaimSchema).default([]),
   researchEvidence: z.array(ClaimEvidenceSchema).default([]),
@@ -187,6 +212,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       run: VoiceRunSchema,
     })
     .strict(),
+  ...assetCommands,
   ...voiceCommands,
   ...directorCommands,
   z
@@ -260,6 +286,7 @@ export const WorkflowCommandSchema = z.discriminatedUnion('action', [
       workerId: z.string().min(1),
       text: text.optional(),
       errorCode: z.string().max(80).optional(),
+      assetResult: AssetResultSchema.optional(),
       renderResult: RenderResultSchema.optional(),
       researchResult: ResearchResultSchema.optional(),
       voiceResult: VoiceResultSchema.optional(),

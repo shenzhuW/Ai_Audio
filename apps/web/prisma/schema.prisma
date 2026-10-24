@@ -59,6 +59,10 @@ model Project {
   voiceCues               VoiceCueVersion[]
   directorDocuments       DirectorDocument[]
   directorShots           DirectorShotVersion[]
+  sourceAssets SourceAsset[]
+  candidateClips CandidateClip[]
+  assetBindings AssetBinding[]
+  preparedAssets PreparedAsset[]
   subtitleTracks          SubtitleTrack[]
 
   @@index([ownerId, updatedAt])
@@ -101,6 +105,8 @@ model WorkflowRevision {
   directorSnapshots DirectorDocument[] @relation("DirectorSnapshot")
   directorScriptInputs DirectorDocument[] @relation("DirectorScript")
   directorVoiceInputs DirectorDocument[] @relation("DirectorVoice")
+  candidateClips CandidateClip[]
+  assetBindings AssetBinding[]
   directorShots DirectorShotVersion[]
   subtitleTracks   SubtitleTrack[]
 
@@ -310,4 +316,58 @@ model DirectorShotVersion {
  @@unique([revisionId,shotId])
  @@index([projectId])
  @@map("director_shot_versions")
+}
+
+model SourceAsset {
+ id String @id @db.Uuid
+ projectId String @map("project_id") @db.Uuid
+ document Json
+ project Project @relation(fields:[projectId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ candidates CandidateClip[]
+ bindings AssetBinding[]
+ @@index([projectId])
+ @@map("source_assets")
+}
+model CandidateClip {
+ id String @id @db.Uuid
+ projectId String @map("project_id") @db.Uuid
+ directorRevisionId String @map("director_revision_id") @db.Uuid
+ sourceAssetId String @map("source_asset_id") @db.Uuid
+ document Json
+ project Project @relation(fields:[projectId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ director WorkflowRevision @relation(fields:[directorRevisionId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ source SourceAsset @relation(fields:[sourceAssetId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ bindings AssetBinding[]
+ @@index([projectId])
+ @@map("candidate_clips")
+}
+model AssetBinding {
+ id String @id @db.Uuid
+ projectId String @map("project_id") @db.Uuid
+ directorRevisionId String @map("director_revision_id") @db.Uuid
+ shotId String @map("shot_id") @db.Uuid
+ version Int @map("binding_version")
+ sourceAssetId String @map("source_asset_id") @db.Uuid
+ candidateId String @map("candidate_id") @db.Uuid
+ document Json
+ project Project @relation(fields:[projectId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ director WorkflowRevision @relation(fields:[directorRevisionId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ source SourceAsset @relation(fields:[sourceAssetId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ candidate CandidateClip @relation(fields:[candidateId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ prepared PreparedAsset[]
+ @@unique([projectId,directorRevisionId,shotId,version])
+ @@index([projectId])
+ @@map("asset_bindings")
+}
+model PreparedAsset {
+ id String @id @db.Uuid
+ projectId String @map("project_id") @db.Uuid
+ recipeHash String @map("recipe_hash")
+ producerBindingId String @map("producer_binding_id") @db.Uuid
+ document Json
+ project Project @relation(fields:[projectId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ binding AssetBinding @relation(fields:[producerBindingId],references:[id],onDelete:Restrict,onUpdate:Cascade)
+ @@unique([projectId,recipeHash])
+ @@index([projectId])
+ @@map("prepared_assets")
 }

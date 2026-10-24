@@ -1,0 +1,948 @@
+{
+  "id": "1ed4ce65-37b5-4d79-8d6b-92cece0bd33e",
+  "kind": "storyboard",
+  "version": 3,
+  "provider": "director",
+  "state": "succeeded",
+  "inputRevisionIds": [
+    "8b096600-6d34-49b8-83a2-4ee886236613",
+    "2ed49275-f544-4b40-b730-01d36b367848"
+  ],
+  "idempotencyKey": "b3584def-3582-4186-927e-a04bd6763e47",
+  "attempt": 1,
+  "maxAttempts": 3,
+  "attempts": [
+    {
+      "workerId": "017b88bf-50b3-454d-8d67-23913ca2192a",
+      "number": 1,
+      "startedAt": "2026-10-24T07:41:48.390Z",
+      "finishedAt": "2026-10-24T07:43:19.420Z",
+      "state": "succeeded",
+      "errorCode": null
+    }
+  ],
+  "targetVersion": 1,
+  "leaseOwner": null,
+  "leaseExpiresAt": null,
+  "resultRevisionId": "ef7cecae-7aef-4dbf-839c-4064f821f85d",
+  "errorCode": null,
+  "createdAt": "2026-10-24T07:41:47.564Z",
+  "updatedAt": "2026-10-24T07:43:19.420Z",
+  "directorInput": {
+    "schemaVersion": 1,
+    "revisionId": "ef7cecae-7aef-4dbf-839c-4064f821f85d",
+    "targetVersion": 1,
+    "mode": "real",
+    "instruction": "生成完整120秒6镜头解释视频。以批准Cue和实际停顿安排边界，展示一个段落拆成多镜头，也允许跨段落的一镜；不要伪造素材，至少一个纯代码镜头和一个待匹配素材镜头。保持主对象连续，叙事含开场问题、解释、执行路线、总结。",
+    "document": {
+      "id": "8302ada3-487b-47e9-accc-7b570808bd7c",
+      "revisionId": "ef7cecae-7aef-4dbf-839c-4064f821f85d",
+      "schemaVersion": 1,
+      "scriptRevisionId": "8b096600-6d34-49b8-83a2-4ee886236613",
+      "voiceRevisionId": "2ed49275-f544-4b40-b730-01d36b367848",
+      "researchRevisionId": "a4db849d-fd5c-4a4b-b9f7-f953d8fcbbb6",
+      "fps": 30,
+      "durationMs": 120000,
+      "totalFrames": 3600,
+      "provenance": "user",
+      "needsRebind": false
+    },
+    "shotIds": [
+      "00999d9b-ccf7-495e-9dd3-acf1f6f8bec7",
+      "7c8d4451-636e-4e35-a582-4df873e6e8a3",
+      "7d82923a-74a1-4701-95f2-8fd4dded63aa",
+      "957c4747-3809-41d1-87e5-42a221e23070",
+      "e0325934-76c7-4b5a-83e9-7dc6200fc671",
+      "072d8eef-8de8-4abc-ab86-3bb9a148b8a1"
+    ],
+    "existingShots": [],
+    "brief": {
+      "title": "Phase 06 sqlite 合成topic验收",
+      "prompt": "为什么这个问题值得解释？\n\n第二段用户原文，只是合成测试。",
+      "style": "科技感 / 清晰克制",
+      "audience": "普通观众",
+      "width": 1080,
+      "height": 1920,
+      "targetDurationMs": 120000
+    },
+    "segments": [
+      {
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "purpose": "hook",
+        "viewerTakeaway": "",
+        "visualIntent": "",
+        "delivery": "normal",
+        "pauseMs": 300,
+        "factBindings": [
+          {
+            "claimId": "e7aaaabd-d3a4-4982-b361-509f24e81e02",
+            "sourceIds": [
+              "84df1807-5244-4a8e-8394-b0802530a1e5"
+            ]
+          }
+        ],
+        "needsRebind": false,
+        "id": "161fd087-f970-4f18-adae-6b678b33a5f9",
+        "order": 0
+      },
+      {
+        "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。",
+        "purpose": "explanation",
+        "viewerTakeaway": "",
+        "visualIntent": "",
+        "delivery": "normal",
+        "pauseMs": 300,
+        "factBindings": [],
+        "needsRebind": false,
+        "id": "0e76f9b3-8121-4bd6-81a0-a56aa8018e4c",
+        "order": 1
+      },
+      {
+        "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。",
+        "purpose": "explanation",
+        "viewerTakeaway": "",
+        "visualIntent": "",
+        "delivery": "normal",
+        "pauseMs": 300,
+        "factBindings": [],
+        "needsRebind": false,
+        "id": "78da725f-258e-44c9-a01b-8f72b046dd79",
+        "order": 2
+      },
+      {
+        "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。",
+        "purpose": "conclusion",
+        "viewerTakeaway": "",
+        "visualIntent": "",
+        "delivery": "normal",
+        "pauseMs": 300,
+        "factBindings": [],
+        "needsRebind": false,
+        "id": "b619bc24-b9d3-4c2a-89fc-17fb18e6723e",
+        "order": 3
+      }
+    ],
+    "voice": {
+      "id": "daee4fe6-e30f-46a6-9eb3-6aa5b4c37fc0",
+      "revisionId": "2ed49275-f544-4b40-b730-01d36b367848",
+      "scriptRevisionId": "8b096600-6d34-49b8-83a2-4ee886236613",
+      "schemaVersion": 1,
+      "mode": "import",
+      "durationMs": 120000,
+      "targetDurationMs": 120000,
+      "audio": {
+        "blob": {
+          "id": "46c1d76c-c8a2-4603-a68e-56635a574872",
+          "name": "director-120s.wav",
+          "mime": "audio/wav",
+          "sizeBytes": 5292078,
+          "sha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d"
+        },
+        "durationMs": 120000,
+        "codec": "pcm_s16le",
+        "sampleRate": 22050,
+        "channels": 1,
+        "origin": "import",
+        "purpose": "final",
+        "provider": "audio-import",
+        "runId": "4dfc6021-5193-49f6-857c-addcb2362e00"
+      },
+      "alignmentConfirmed": true,
+      "timingBasis": "audio",
+      "audioStale": false
+    },
+    "cues": [
+      {
+        "id": "78e137f8-ffd3-42f5-8f90-aadc2079702f",
+        "anchorId": "0b68a587-7f11-4611-aa26-435578eac61e",
+        "segmentId": "161fd087-f970-4f18-adae-6b678b33a5f9",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "1ce580ac5a1171c3ad3a009b1d8c15f8c7c9e68a42472dffc6c70c25982c507b",
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "startMs": 0,
+        "endMs": 19333,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      },
+      {
+        "id": "4da3828c-c780-4288-98e0-c213a1f056fe",
+        "anchorId": "6ac202ec-ab82-499b-b5e0-8265e893802d",
+        "segmentId": "0e76f9b3-8121-4bd6-81a0-a56aa8018e4c",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 71,
+        "segmentTextSha256": "79ef3c1ab8b0be3d8ace4500dfa2085804d845bfa947fddcf75ad31530f6831e",
+        "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。",
+        "startMs": 30000,
+        "endMs": 48548,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      },
+      {
+        "id": "cca4772d-bc95-473c-8917-6abdb8a9f83d",
+        "anchorId": "afc81864-8eef-4776-9ade-ff1811e95954",
+        "segmentId": "78da725f-258e-44c9-a01b-8f72b046dd79",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 73,
+        "segmentTextSha256": "308f95a275b8cd218d60a475a819598644d62e63da9d48edd332b307f83e80dd",
+        "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。",
+        "startMs": 60000,
+        "endMs": 79553,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      },
+      {
+        "id": "b121c5b0-990c-4ad6-94ba-bfca77f23358",
+        "anchorId": "e9599653-0ef9-4cf6-8ef3-7c6d22804745",
+        "segmentId": "b619bc24-b9d3-4c2a-89fc-17fb18e6723e",
+        "level": "phrase",
+        "startChar": 0,
+        "endChar": 75,
+        "segmentTextSha256": "64b698d041d96930083a4906bec52de06522014cb92818ba1b7a6fd8233b65c0",
+        "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。",
+        "startMs": 90000,
+        "endMs": 109293,
+        "alignment": "manual",
+        "confidence": null,
+        "stale": false
+      }
+    ],
+    "subtitles": [
+      {
+        "id": "cddd547e-f238-4555-81c4-3c529e9f46e0",
+        "anchorId": "0b68a587-7f11-4611-aa26-435578eac61e",
+        "segmentId": "161fd087-f970-4f18-adae-6b678b33a5f9",
+        "startMs": 0,
+        "endMs": 19333,
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。"
+      },
+      {
+        "id": "67f3c651-d980-4f2d-bc3f-83cc2ee555f1",
+        "anchorId": "6ac202ec-ab82-499b-b5e0-8265e893802d",
+        "segmentId": "0e76f9b3-8121-4bd6-81a0-a56aa8018e4c",
+        "startMs": 30000,
+        "endMs": 48548,
+        "text": "先固定声音，再安排镜头。句子结束、自然停顿和叙事转折可以帮助我们选择边界。同一个段落可以拆成多个镜头，相邻的两个段落也可以共享同一个视觉对象。"
+      },
+      {
+        "id": "7c6ce134-bb59-4bfe-a353-62ba8de10de3",
+        "anchorId": "afc81864-8eef-4776-9ade-ff1811e95954",
+        "segmentId": "78da725f-258e-44c9-a01b-8f72b046dd79",
+        "startMs": 60000,
+        "endMs": 79553,
+        "text": "画面有两条执行路线。纯代码动画用文字、图形和层级解释关系；素材路线先说明需要什么画面。还没有找到素材，就明确标记待匹配，不把检索意图当成真实素材。"
+      },
+      {
+        "id": "eb2555fe-4deb-4e15-873c-a16a92adea45",
+        "anchorId": "e9599653-0ef9-4cf6-8ef3-7c6d22804745",
+        "segmentId": "b619bc24-b9d3-4c2a-89fc-17fb18e6723e",
+        "startMs": 90000,
+        "endMs": 109293,
+        "text": "最后检查观众理解了什么。镜头的时长、引用和声音都应能追溯到批准版本。本样例使用本机系统声音和已知拼接位置，只验证导演时间映射，不声称是精确的声学对齐。"
+      }
+    ],
+    "facts": [
+      {
+        "claimId": "e7aaaabd-d3a4-4982-b361-509f24e81e02",
+        "text": "为什么解释视频需要先确定时间轴？这是一段自制测试文稿。请想象一条河，声音沿着时间向前流动，画面负责解释我们正在说的对象，而不是每说一个词就换一个镜头。",
+        "status": "unverified",
+        "caveats": "自制测试叙述，不是独立核验事实",
+        "sourceIds": [
+          "84df1807-5244-4a8e-8394-b0802530a1e5"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "84df1807-5244-4a8e-8394-b0802530a1e5",
+        "title": "自制文稿资料",
+        "sourceType": "text",
+        "sourceUrl": null,
+        "publisher": "Self-authored synthetic acceptance",
+        "creator": "Test fixture",
+        "knownRestrictions": "Self-authored internal development test; no external facts",
+        "licenseStatus": "blocked",
+        "selected": true,
+        "blobSha256": "1ce580ac5a1171c3ad3a009b1d8c15f8c7c9e68a42472dffc6c70c25982c507b",
+        "metadata": {},
+        "indexes": [
+          {
+            "id": "33926bd3-f875-4dce-865b-87e0605bc801",
+            "summary": "从用户上传原件实际提取的 UTF-8 文本；未核实内容事实。",
+            "provenance": "real"
+          }
+        ]
+      },
+      {
+        "id": "85ab0d75-f8fa-47b7-8ab8-624b8f48f212",
+        "title": "自制图形候选",
+        "sourceType": "image",
+        "sourceUrl": null,
+        "publisher": "Self-authored synthetic acceptance",
+        "creator": "Test fixture",
+        "knownRestrictions": "Self-authored internal development test; no external facts",
+        "licenseStatus": "blocked",
+        "selected": true,
+        "blobSha256": "a145da0f3427d2c3abd35299f0f28071eceefaf9fc147c75b71dc87f6ddef2cf",
+        "metadata": {
+          "width": 640,
+          "height": 360
+        },
+        "indexes": [
+          {
+            "id": "d09f19e6-663f-4479-abc5-ac648b5470f6",
+            "summary": "图片 640×360；视觉/OCR 未配置，未识别图像语义。",
+            "provenance": "real"
+          }
+        ]
+      }
+    ]
+  },
+  "directorResult": {
+    "mode": "real",
+    "shots": [
+      {
+        "shotId": "00999d9b-ccf7-495e-9dd3-acf1f6f8bec7",
+        "title": "开场：为什么先定时间轴",
+        "narrativeGoal": "提出问题，建立贯穿全片的声音河流与画面节点。",
+        "viewerTakeaway": "声音提供时间基础，画面围绕讲述对象组织。",
+        "scriptSegmentIds": [
+          "161fd087-f970-4f18-adae-6b678b33a5f9"
+        ],
+        "voiceCueAnchorIds": [
+          "0b68a587-7f11-4611-aa26-435578eac61e"
+        ],
+        "startFrame": 0,
+        "durationFrames": 300,
+        "endFrame": 300,
+        "visualType": "diagram",
+        "route": "code",
+        "composition": "1080×1920竖屏，中央纵向时间河流，顶部问题文字，节点沿河排列；本镜引用首段0—10秒范围，不推断句内词语的精确位置。",
+        "layers": [
+          {
+            "role": "background",
+            "kind": "graphic",
+            "label": "深色底与时间刻度",
+            "depth": 0
+          },
+          {
+            "role": "content",
+            "kind": "graphic",
+            "label": "声音河流与主对象节点",
+            "depth": 1
+          },
+          {
+            "role": "foreground",
+            "kind": "text",
+            "label": "为什么先确定时间轴？",
+            "depth": 2
+          }
+        ],
+        "transition": {
+          "type": "cut",
+          "durationFrames": 0,
+          "continuity": "建立后续镜头持续使用的时间河流。"
+        },
+        "animation": {
+          "mechanism": "relationship",
+          "reason": "沿时间线推进节点，解释声音与画面的对应关系。"
+        },
+        "visualSearchIntent": {
+          "query": "",
+          "subject": "",
+          "action": "",
+          "composition": "",
+          "format": "none"
+        },
+        "media": null,
+        "claimIds": [
+          "e7aaaabd-d3a4-4982-b361-509f24e81e02"
+        ],
+        "sourceIds": [
+          "84df1807-5244-4a8e-8394-b0802530a1e5"
+        ],
+        "risks": [
+          "引用为未核实的自制测试叙述，不呈现为外部研究结论。",
+          "文本来源licenseStatus为blocked，仅保留内部开发测试语境，不推定对外使用授权。"
+        ]
+      },
+      {
+        "shotId": "7c8d4451-636e-4e35-a582-4df873e6e8a3",
+        "title": "同一对象延续多个镜头",
+        "narrativeGoal": "将首段拆成第二镜，示范画面围绕同一对象持续解释。",
+        "viewerTakeaway": "换镜头可以改变观察尺度，同时保留叙事对象。",
+        "scriptSegmentIds": [
+          "161fd087-f970-4f18-adae-6b678b33a5f9"
+        ],
+        "voiceCueAnchorIds": [
+          "0b68a587-7f11-4611-aa26-435578eac61e"
+        ],
+        "startFrame": 300,
+        "durationFrames": 600,
+        "endFrame": 900,
+        "visualType": "diagram",
+        "route": "code",
+        "composition": "接续河流节点，拉开为声音轨与画面轨两列；10—19.333秒承接首段口播，19.333—30秒为实际停顿，保留对象并供观众观察，不添加口播字幕。",
+        "layers": [
+          {
+            "role": "background",
+            "kind": "graphic",
+            "label": "延续深色时间刻度",
+            "depth": 0
+          },
+          {
+            "role": "content",
+            "kind": "graphic",
+            "label": "声音轨、画面轨与共享节点",
+            "depth": 1
+          },
+          {
+            "role": "caption",
+            "kind": "text",
+            "label": "画面持续解释同一对象",
+            "depth": 2
+          }
+        ],
+        "transition": {
+          "type": "match",
+          "durationFrames": 12,
+          "continuity": "匹配上一镜主节点的位置与颜色，转场计入本镜。"
+        },
+        "animation": {
+          "mechanism": "highlight",
+          "reason": "依次强调同一节点对应的声音轨和画面轨，停顿期间保持完成状态。"
+        },
+        "visualSearchIntent": {
+          "query": "",
+          "subject": "",
+          "action": "",
+          "composition": "",
+          "format": "none"
+        },
+        "media": null,
+        "claimIds": [
+          "e7aaaabd-d3a4-4982-b361-509f24e81e02"
+        ],
+        "sourceIds": [
+          "84df1807-5244-4a8e-8394-b0802530a1e5"
+        ],
+        "risks": [
+          "10秒切点是段内编辑切点，现有整段Cue不能证明此处为句末或自然停顿。",
+          "首段事实状态为unverified；来源标记blocked，保留内部测试限制。"
+        ]
+      },
+      {
+        "shotId": "7d82923a-74a1-4701-95f2-8fd4dded63aa",
+        "title": "固定声音，再展开执行路线",
+        "narrativeGoal": "用跨段落的一镜连接时间边界原则与两条执行路线。",
+        "viewerTakeaway": "段落边界不要求更换视觉对象，镜头应服从连续解释。",
+        "scriptSegmentIds": [
+          "0e76f9b3-8121-4bd6-81a0-a56aa8018e4c",
+          "78da725f-258e-44c9-a01b-8f72b046dd79"
+        ],
+        "voiceCueAnchorIds": [
+          "6ac202ec-ab82-499b-b5e0-8265e893802d",
+          "afc81864-8eef-4776-9ade-ff1811e95954"
+        ],
+        "startFrame": 900,
+        "durationFrames": 1200,
+        "endFrame": 2100,
+        "visualType": "diagram",
+        "route": "code",
+        "composition": "保留双轨时间线，标出批准Cue区间；30—48.548秒对应第二段，48.548—60秒为停顿，60—70秒承接第三段。60秒起从同一节点展开代码与素材两条分支，字幕仅在对应Cue内出现。",
+        "layers": [
+          {
+            "role": "background",
+            "kind": "graphic",
+            "label": "统一时间刻度与停顿空白带",
+            "depth": 0
+          },
+          {
+            "role": "content",
+            "kind": "graphic",
+            "label": "声音轨、镜头边界与两条执行分支",
+            "depth": 1
+          },
+          {
+            "role": "foreground",
+            "kind": "text",
+            "label": "先固定声音，再安排镜头；代码 / 素材",
+            "depth": 2
+          }
+        ],
+        "transition": {
+          "type": "match",
+          "durationFrames": 12,
+          "continuity": "延续声音轨和主节点，从已知时间关系展开路线关系。"
+        },
+        "animation": {
+          "mechanism": "relationship",
+          "reason": "展示镜头与Cue的覆盖关系，再由同一节点分出两条执行路线。"
+        },
+        "visualSearchIntent": {
+          "query": "",
+          "subject": "",
+          "action": "",
+          "composition": "",
+          "format": "none"
+        },
+        "media": null,
+        "claimIds": [],
+        "sourceIds": [],
+        "risks": [
+          "仅有整段Cue，不按词语位置触发分支动画。",
+          "48.548—60秒为空白停顿，不显示为持续讲话。"
+        ]
+      },
+      {
+        "shotId": "957c4747-3809-41d1-87e5-42a221e23070",
+        "title": "素材路线：明确待匹配",
+        "narrativeGoal": "将素材需求变成可执行检索意图，清楚显示尚未绑定素材。",
+        "viewerTakeaway": "检索需求与真实素材是两个制作状态。",
+        "scriptSegmentIds": [
+          "78da725f-258e-44c9-a01b-8f72b046dd79"
+        ],
+        "voiceCueAnchorIds": [
+          "afc81864-8eef-4776-9ade-ff1811e95954"
+        ],
+        "startFrame": 2100,
+        "durationFrames": 600,
+        "endFrame": 2700,
+        "visualType": "mixed",
+        "route": "pending",
+        "composition": "70—90秒聚焦素材分支，保留河流主节点；中央以图形占位框显示“待匹配：河流俯拍视频”，旁侧保留代码分支缩略图。70—79.553秒承接第三段，随后停顿至90秒；占位框不模拟真实检索结果。",
+        "layers": [
+          {
+            "role": "background",
+            "kind": "graphic",
+            "label": "延续时间河流背景",
+            "depth": 0
+          },
+          {
+            "role": "content",
+            "kind": "graphic",
+            "label": "素材分支与空白画面占位框",
+            "depth": 1
+          },
+          {
+            "role": "foreground",
+            "kind": "text",
+            "label": "待匹配：河流俯拍视频",
+            "depth": 2
+          }
+        ],
+        "transition": {
+          "type": "match",
+          "durationFrames": 12,
+          "continuity": "放大上一镜素材分支，保持主节点颜色和连接线。"
+        },
+        "animation": {
+          "mechanism": "highlight",
+          "reason": "强调素材需求与待匹配状态，停顿期间保持状态可读。"
+        },
+        "visualSearchIntent": {
+          "query": "河流俯拍 水流向前 单一河道 竖屏 无文字",
+          "subject": "作为时间流动比喻的单一河道",
+          "action": "水流持续向前，机位稳定",
+          "composition": "video；优先1080×1920竖屏，河道位于中央，留出上下文字区域",
+          "format": "video"
+        },
+        "media": null,
+        "claimIds": [],
+        "sourceIds": [],
+        "risks": [
+          "尚未检索或绑定视频，不能呈现为已获得素材。",
+          "已有图片只有尺寸元数据且未识别语义，不能认定适合本镜。",
+          "候选素材后续需确认可访问性与使用限制，不绕过访问限制或DRM。"
+        ]
+      },
+      {
+        "shotId": "e0325934-76c7-4b5a-83e9-7dc6200fc671",
+        "title": "总结：让时长、引用和声音可追溯",
+        "narrativeGoal": "汇合两条执行路线，呈现批准版本的时间映射及其精度边界。",
+        "viewerTakeaway": "本样例验证导演时间映射，不能据此声称完成精确声学对齐。",
+        "scriptSegmentIds": [
+          "b619bc24-b9d3-4c2a-89fc-17fb18e6723e"
+        ],
+        "voiceCueAnchorIds": [
+          "e9599653-0ef9-4cf6-8ef3-7c6d22804745"
+        ],
+        "startFrame": 2700,
+        "durationFrames": 579,
+        "endFrame": 3279,
+        "visualType": "diagram",
+        "route": "code",
+        "composition": "90—109.3秒，两条分支汇回同一时间节点，下方展示声音、镜头、引用三项追溯关系；标注“本机系统声音＋已知拼接位置”“验证导演时间映射”。口播109.293秒结束，字幕在实际Cue末尾消失。",
+        "layers": [
+          {
+            "role": "background",
+            "kind": "graphic",
+            "label": "统一深色时间网格",
+            "depth": 0
+          },
+          {
+            "role": "content",
+            "kind": "graphic",
+            "label": "双路线汇合与声音、镜头、引用连接图",
+            "depth": 1
+          },
+          {
+            "role": "caption",
+            "kind": "text",
+            "label": "导演时间映射；非精确声学对齐",
+            "depth": 2
+          }
+        ],
+        "transition": {
+          "type": "match",
+          "durationFrames": 12,
+          "continuity": "从素材分支回到完整双路线，汇合于贯穿全片的主节点。"
+        },
+        "animation": {
+          "mechanism": "relationship",
+          "reason": "连接声音、镜头和引用，解释追溯关系与验收范围。"
+        },
+        "visualSearchIntent": {
+          "query": "",
+          "subject": "",
+          "action": "",
+          "composition": "",
+          "format": "none"
+        },
+        "media": null,
+        "claimIds": [],
+        "sourceIds": [],
+        "risks": [
+          "alignmentConfirmed不等于精确声学对齐；仅采用输入批准Cue与已知拼接时间。",
+          "109.293秒口播结束点位于帧内，109.3秒为其后第一个完整帧边界。"
+        ]
+      },
+      {
+        "shotId": "072d8eef-8de8-4abc-ab86-3bb9a148b8a1",
+        "title": "无口播收束：留出理解时间",
+        "narrativeGoal": "在音轨剩余停顿中保留最终关系图，供观众回看。",
+        "viewerTakeaway": "先固定声音，再组织画面，并保留可追溯的时间与素材状态。",
+        "scriptSegmentIds": [
+          "b619bc24-b9d3-4c2a-89fc-17fb18e6723e"
+        ],
+        "voiceCueAnchorIds": [],
+        "startFrame": 3279,
+        "durationFrames": 321,
+        "endFrame": 3600,
+        "visualType": "typography",
+        "route": "code",
+        "composition": "109.3—120秒无口播尾段，保留主节点与两条路线的简化图，显示静态总结卡“声音定时 → 画面解释 → 引用可追溯”；标注为画面总结，不显示口播字幕或讲话指示。",
+        "layers": [
+          {
+            "role": "background",
+            "kind": "graphic",
+            "label": "延续深色底与静止时间河流",
+            "depth": 0
+          },
+          {
+            "role": "content",
+            "kind": "graphic",
+            "label": "主节点与双路线最终状态",
+            "depth": 1
+          },
+          {
+            "role": "foreground",
+            "kind": "text",
+            "label": "声音定时 → 画面解释 → 引用可追溯",
+            "depth": 2
+          }
+        ],
+        "transition": {
+          "type": "dissolve",
+          "durationFrames": 15,
+          "continuity": "由追溯关系图淡化为总结卡，转场包含在本镜内。"
+        },
+        "animation": {
+          "mechanism": "static_focus",
+          "reason": "利用真实无口播时段保持总结信息，给予阅读时间。"
+        },
+        "visualSearchIntent": {
+          "query": "",
+          "subject": "",
+          "action": "",
+          "composition": "",
+          "format": "none"
+        },
+        "media": null,
+        "claimIds": [],
+        "sourceIds": [],
+        "risks": [
+          "本镜完全无口播，语音锚点为空；段落引用仅延续上一镜总结对象。"
+        ]
+      }
+    ],
+    "notes": "全部6个shotId各使用一次；30FPS，半开帧区间连续覆盖[0,3600)，共120秒，不改变音轨。首段拆成两镜，第三镜跨第二、第三段；10秒与70秒为编辑切点，不宣称是已验证的句末。所有停顿按实际Cue保留。未绑定任何外部媒体，未将图片元数据冒充视觉理解。visualSearchIntent格式要求以format及composition说明；所有代码镜头无媒体层。",
+    "aiRun": {
+      "provider": "codex-cli",
+      "cliVersion": "codex-cli 0.163.0",
+      "model": "gpt-6.1-sol",
+      "runId": "01a16cdb-db04-7a42-a5c1-aae74a087bba",
+      "searchMode": "disabled",
+      "startedAt": "2026-10-24T07:41:49.540Z",
+      "durationMs": 89871,
+      "usage": {
+        "input_tokens": 13084,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3200,
+        "reasoning_output_tokens": 162
+      },
+      "quota": null,
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "failureReason": null,
+      "policy": "data-only-v1",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "isolation": {
+        "modelShell": "disabled",
+        "modelPatch": "disabled",
+        "enabledMcpServers": 0,
+        "codeModeHost": "v8-data-only",
+        "userConfigIgnored": true,
+        "ephemeral": true
+      }
+    }
+  },
+  "aiRuns": [
+    {
+      "provider": "codex-cli",
+      "cliVersion": "codex-cli 0.163.0",
+      "model": "gpt-6.1-sol",
+      "runId": "01a16cdb-db04-7a42-a5c1-aae74a087bba",
+      "searchMode": "disabled",
+      "startedAt": "2026-10-24T07:41:49.540Z",
+      "durationMs": 89871,
+      "usage": {
+        "input_tokens": 13084,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3200,
+        "reasoning_output_tokens": 162
+      },
+      "quota": null,
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "failureReason": null,
+      "policy": "data-only-v1",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "jobAttempt": 1,
+      "isolation": {
+        "modelShell": "disabled",
+        "modelPatch": "disabled",
+        "enabledMcpServers": 0,
+        "codeModeHost": "v8-data-only",
+        "userConfigIgnored": true,
+        "ephemeral": true
+      }
+    }
+  ],
+  "progress": 1,
+  "heartbeatAt": "2026-10-24T07:43:18.771Z",
+  "logs": [
+    {
+      "at": "2026-10-24T07:41:47.564Z",
+      "message": "real 导演任务排队；文稿、配音、素材与目标版本已冻结。"
+    },
+    {
+      "at": "2026-10-24T07:41:48.390Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T07:41:48.436Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:41:50.458Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:41:52.481Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:41:54.489Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:41:56.486Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:41:58.500Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:00.506Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:02.505Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:04.520Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:06.523Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:08.530Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:10.532Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:12.545Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:14.558Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:16.558Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:18.559Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:20.561Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:22.569Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:24.585Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:26.586Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:28.597Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:30.602Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:32.615Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:34.631Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:36.635Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:38.641Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:40.650Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:42.659Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:44.666Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:46.663Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:48.674Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:50.674Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:52.677Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:54.681Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:56.677Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:42:58.693Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:00.708Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:02.716Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:04.720Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:06.736Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:08.736Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:10.739Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:12.744Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:14.760Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:16.758Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:18.771Z",
+      "message": "real 导演任务处理中"
+    },
+    {
+      "at": "2026-10-24T07:43:19.420Z",
+      "message": "finish: succeeded"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T07:41:40.461Z",
+  "backend": "sqlite",
+  "runId": "mvm3bn57",
+  "checks": [
+    {
+      "name": "真实120秒音频导入、FFprobe、固定批准文稿/配音与自制研究来源",
+      "status": "PASS",
+      "detail": {
+        "projectId": "869729d4-d15e-4166-ad86-26e0857d1cab",
+        "scriptId": "8b096600-6d34-49b8-83a2-4ee886236613",
+        "voiceId": "2ed49275-f544-4b40-b730-01d36b367848",
+        "sourceId": "84df1807-5244-4a8e-8394-b0802530a1e5",
+        "imageId": "85ab0d75-f8fa-47b7-8ab8-624b8f48f212",
+        "audioSha256": "fbc21f6a7bbc16003d87e89b80929f40d8b71b6ddeeada476f9d3a2e61784f0d",
+        "alignment": "manual known assembly offsets; not model/word alignment"
+      }
+    },
+    {
+      "name": "未配置Provider明确失败，无假导演结果",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实Codex六镜结构、审计、冻结输入、3600连续帧及Cue引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "1ed4ce65-37b5-4d79-8d6b-92cece0bd33e",
+        "runId": "01a16cdb-db04-7a42-a5c1-aae74a087bba",
+        "model": "gpt-6.1-sol"
+      }
+    },
+    {
+      "name": "空隙/重叠/负数/越界及未知文稿/Cue/Source拒绝，事务无部分写入",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "一段拆多镜/多段合一镜、纯代码/待匹配/真实候选三方案；blocked授权标记不阻断内部使用",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "镜头重排与逐镜时长重算、尾段30帧提示、未覆盖禁止提交",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实并发200/409与同幂等键重放",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "实际浏览器编辑/刷新/提交/批准只读，API与两张数据库表不可覆写",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "Fork稳定shotId、单镜差异、驳回、历史不变",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "异步迟到结果不能覆盖人工编辑",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实Codex任务取消、心跳与租约回收、取消审计，无导演结果写入",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "应用重启保持导演镜头、稳定ID及真实模型审计",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "新配音批准引发导演及镜头依赖失效，批准历史保留",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "新文稿批准引发导演失效",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "静默120秒计划无伪语音Cue；Mock明确标记且不能代替真实AI样例",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "原有用户数据库/上传/会话内容SHA未变化",
+      "status": "PASS",
+      "detail": {
+        "originalDataSha256": "7a677496c48a00a14538bc505faf99f1b0fbed6a47b678600a9d62facf470b54"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "869729d4-d15e-4166-ad86-26e0857d1cab",
+  "finishedAt": "2026-10-24T07:43:44.804Z"
+}

@@ -35,7 +35,8 @@ export function createWorkflowService(repo: WorkflowRepository) {
       for (const projectId of await repo.workProjects()) {
         const { state, project } = await repo.transaction(projectId, 'local-user');
         for (const j of state.jobs) {
-          if (j.provider === 'remotion' || j.provider === 'research') continue; // Dedicated workers own media/research jobs.
+          if (j.provider === 'remotion' || j.provider === 'research' || j.provider === 'asset')
+            continue; // Dedicated workers own media/research jobs.
           try {
             if (j.state === 'running' && Date.parse(j.leaseExpiresAt!) <= Date.now()) {
               await this.execute(

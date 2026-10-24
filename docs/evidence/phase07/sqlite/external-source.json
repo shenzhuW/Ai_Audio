@@ -1,0 +1,58 @@
+{
+  "id": "1ac7b4ed-fb98-4c49-aec1-d7fabb987004",
+  "title": "The Earth & Moon",
+  "provider": "nasa",
+  "sourceUrl": "https://images.nasa.gov/details/PIA00342",
+  "downloadUrl": "https://images-assets.nasa.gov/image/PIA00342/PIA00342~medium.jpg",
+  "author": "NASA/JPL/USGS",
+  "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+  "license": "unknown; consult NASA media usage guidelines",
+  "kind": "image",
+  "blob": {
+    "key": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+    "sha256": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+    "sizeBytes": 122699,
+    "mime": "image/jpeg"
+  },
+  "localRef": null,
+  "metadata": {
+    "kind": "image",
+    "width": 1005,
+    "height": 1280,
+    "durationMs": null,
+    "fps": 0,
+    "codec": "mjpeg",
+    "format": "jpeg_pipe",
+    "frames": null
+  },
+  "index": {
+    "version": 1,
+    "sourceSha256": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+    "frames": [
+      {
+        "id": "60fc5b80-c6f7-47cc-ac28-35fddc50bc76",
+        "atMs": 0,
+        "blob": {
+          "key": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+          "sha256": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+          "sizeBytes": 46212,
+          "mime": "image/jpeg"
+        }
+      }
+    ],
+    "contactSheet": {
+      "key": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+      "sha256": "3b79ff52e4fda81dc8be0dae356bf2548b27b585d5f9082bcfd645fd43566c4a",
+      "sizeBytes": 46212,
+      "mime": "image/jpeg"
+    },
+    "sceneCutsMs": [],
+    "sharpness": 11.814688838498363,
+    "scope": "sparse_frames"
+  },
+  "status": "indexed",
+  "createdAt": "2026-10-24T07:22:28.750Z",
+  "originSourceId": null,
+  "originProjectId": null,
+  "searchTerms": "Earth Galileo"
+}

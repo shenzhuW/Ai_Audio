@@ -1,3 +1,4 @@
+import { assetTables, sqliteAssetGuards } from '../assets/tables';
 import { directorTables, sqliteDirectorGuards } from '../director/tables';
 import type { WorkflowState } from '../../domain/workflow';
 import { researchTables, sqliteResearchGuards } from '../research/tables';
@@ -71,6 +72,7 @@ export const tables: {
   ...scriptTables,
   ...voiceTables,
   ...directorTables,
+  ...assetTables,
 ];
 export function sqliteWorkflowSchema() {
   return (
@@ -99,6 +101,7 @@ CREATE TRIGGER IF NOT EXISTS ${t}_append_only_delete BEFORE DELETE ON ${t} BEGIN
     sqliteResearchGuards() +
     sqliteScriptGuards() +
     sqliteVoiceGuards() +
-    sqliteDirectorGuards()
+    sqliteDirectorGuards() +
+    sqliteAssetGuards()
   );
 }

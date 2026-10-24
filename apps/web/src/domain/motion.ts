@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { AssetProvenanceSchema } from './assets';
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
 const frame = z.number().int().min(0).max(300);
 const text = z.string().min(1).max(200);
@@ -89,6 +90,17 @@ export const RenderInputSchema = z
     scene: SceneSpecSchema,
     timeline: TimelineSchema,
     assets: z.object({ backgroundSha256: hash, fontSha256: hash }).strict(),
+    preparedBackground: z
+      .object({
+        directorRevisionId: z.uuid(),
+        shotId: z.uuid(),
+        bindingId: z.uuid(),
+        recipeHash: hash,
+        sha256: hash,
+        provenance: AssetProvenanceSchema,
+      })
+      .strict()
+      .optional(),
     dataset: z
       .object({
         id: z.literal('poc-values'),
@@ -121,6 +133,7 @@ export const RenderRequestSchema = z
   .object({
     presetId: z.literal('poc-v1'),
     titleFontSize: z.number().int().min(52).max(92).default(72),
+    preparedBindingId: z.uuid().optional(),
   })
   .strict();
 export function makePocInput(

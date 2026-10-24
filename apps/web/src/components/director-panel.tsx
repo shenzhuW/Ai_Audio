@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Card, Badge, Notice, s } from './ui';
+import { AssetPanel } from './asset-panel';
 import { WorkflowPanel } from './workflow-panel';
 import { blankShot, reflowShots, shotTime, type DirectorShot } from '@/domain/director';
 import type { DirectorWorkspace } from '@/server/director/service';
@@ -158,7 +159,7 @@ export function DirectorPanel({ projectId }: { projectId: string }) {
   return (
     <div className={s.stack}>
       <Notice>
-        导演方案明确需要什么画面。示意图为受约束图形预览；尚未进行素材搜索、正式裁剪或最终视频渲染。
+        导演方案明确需要什么画面。示意图是受约束的图形预览；真实素材搜索、区间与准备由独立素材方案管理，最终动画仍使用可信组件。
       </Notice>
       {error && (
         <div role="alert" className={s.error}>
@@ -869,6 +870,14 @@ export function DirectorPanel({ projectId }: { projectId: string }) {
             </div>
           ))}
       </Card>
+      {data?.revision?.status === 'approved' && (
+        <AssetPanel
+          projectId={projectId}
+          shotId={selected}
+          directorRevisionId={data.revision.id}
+          compact
+        />
+      )}
       <WorkflowPanel
         projectId={projectId}
         type="storyboard"

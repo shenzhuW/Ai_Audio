@@ -1,0 +1,115 @@
+{
+  "status": "FAIL",
+  "at": "2026-10-24T07:14:11.690Z",
+  "backend": "sqlite",
+  "runId": "mvm2cay1",
+  "checks": [
+    {
+      "name": "批准文稿→确认静默时间轴→批准DirectorRevision，固定shotId/VisualSearchIntent",
+      "status": "PASS",
+      "detail": {
+        "directorRevisionId": "6774f536-3a05-40e0-bb12-b9ccb8c5ac27",
+        "shotIds": [
+          "86889356-472b-448e-aaad-ce877681337e",
+          "44303cb4-8eb1-4c1e-9dd5-af7bd0de05a4"
+        ],
+        "durationFrames": 600
+      }
+    },
+    {
+      "name": "真实上传、FFprobe、实际PTS抽帧及联系表",
+      "status": "PASS",
+      "detail": {
+        "metadata": {
+          "kind": "video",
+          "width": 640,
+          "height": 360,
+          "durationMs": 12000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 360
+        },
+        "frameTimes": [
+          0,
+          2400,
+          4767,
+          7167,
+          9533,
+          11900
+        ]
+      }
+    },
+    {
+      "name": "真实本地素材匹配，Codex实际查看视频帧并保存帧SHA/模型审计",
+      "status": "PASS",
+      "detail": {
+        "runIds": [
+          "01a16cc2-b2f1-7203-ab38-4b7355ec2865"
+        ]
+      }
+    },
+    {
+      "name": "真实NASA API检索→受限下载→FFprobe→实际图片Codex视觉匹配",
+      "status": "PASS",
+      "detail": {
+        "sourceUrl": "https://images.nasa.gov/details/PIA00342",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA00342/PIA00342~medium.jpg",
+        "author": "NASA/JPL/USGS",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "sha256": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+        "runIds": [
+          "01a16cc3-0977-75a2-b436-ab4853052934"
+        ]
+      }
+    },
+    {
+      "name": "同源两个区间只保存一份原件，负数/越界拒绝",
+      "status": "PASS",
+      "detail": {
+        "sourceId": "d5ea5a88-ade2-4afc-ae08-fd220c8cd3cc",
+        "intervals": [
+          [
+            0,
+            6000
+          ],
+          [
+            6000,
+            12000
+          ]
+        ],
+        "candidateIds": [
+          "1fea3daf-63cd-4c51-a991-dac5c260fc2f",
+          "b41af1d3-e9d5-43a3-a28a-8e33b5877965"
+        ]
+      }
+    },
+    {
+      "name": "真实FFmpeg仅循环选定区间、1080×1920/30FPS/H264/300帧，原件SHA不变",
+      "status": "PASS",
+      "detail": {
+        "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53",
+        "metadata": {
+          "kind": "video",
+          "width": 1080,
+          "height": 1920,
+          "durationMs": 10000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 300
+        }
+      }
+    },
+    {
+      "name": "同recipeHash重复准备实际缓存命中并复核SHA/FFprobe",
+      "status": "PASS",
+      "detail": {
+        "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "df04d8b8-629a-4879-8cc5-d30afade74fc",
+  "error": "AssertionError [ERR_ASSERTION]: {\"state\":\"failed\",\"error\":\"ASSET_PREPARED_INVALID\",\"logs\":[{\"at\":\"2026-10-24T07:15:13.096Z\",\"message\":\"素材任务排队；来源/导演/逐镜绑定输入已冻结。\"},{\"at\":\"2026-10-24T07:15:14.050Z\",\"message\":\"claim: running\"},{\"at\":\"2026-10-24T07:15:14.148Z\",\"message\":\"启动独立研究解析器\"},{\"at\":\"2026-10-24T07:15:16.200Z\",\"message\":\"启动独立研究解析器\"},{\"at\":\"2026-10-24T07:15:16.392Z\",\"message\":\"ASSET_PREPARED_INVALID\"},{\"at\":\"2026-10-24T07:15:16.460Z\",\"message\":\"finish: failed · ASSET_PREPARED_INVALID\"}]}\n+ actual - expected\n\n+ 'failed'\n- 'succeeded'\n\n    at waitWorker ([repo]\\tests\\assets\\run.cjs:324:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async main ([repo]\\tests\\assets\\run.cjs:391:46)"
+}

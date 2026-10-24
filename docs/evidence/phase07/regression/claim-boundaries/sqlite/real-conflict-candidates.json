@@ -1,0 +1,134 @@
+{
+  "jobId": "52321796-c9cb-447a-929b-6e265cfe78f1",
+  "attempts": [
+    {
+      "workerId": "52ff390a-2156-47c2-b838-acafbe64b421",
+      "number": 1,
+      "startedAt": "2026-10-24T07:48:07.123Z",
+      "finishedAt": "2026-10-24T07:48:07.631Z",
+      "state": "failed",
+      "errorCode": "PROVIDER_NOT_CONFIGURED"
+    },
+    {
+      "workerId": "d0e8b88f-3137-4435-b11f-4c221ff86b0c",
+      "number": 2,
+      "startedAt": "2026-10-24T07:48:08.531Z",
+      "finishedAt": "2026-10-24T07:48:29.464Z",
+      "state": "succeeded",
+      "errorCode": null
+    }
+  ],
+  "aiRuns": [
+    {
+      "provider": "codex-cli",
+      "cliVersion": "codex-cli 0.163.0",
+      "model": "gpt-6.1-sol",
+      "runId": "01a16ce1-a6c7-7b93-986f-ae4418087710",
+      "searchMode": "disabled",
+      "startedAt": "2026-10-24T07:48:09.739Z",
+      "durationMs": 19658,
+      "usage": {
+        "input_tokens": 9597,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 569,
+        "reasoning_output_tokens": 0
+      },
+      "quota": null,
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "failureReason": null,
+      "policy": "data-only-v1",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "jobAttempt": 2,
+      "isolation": {
+        "modelShell": "disabled",
+        "modelPatch": "disabled",
+        "enabledMcpServers": 0,
+        "codeModeHost": "v8-data-only",
+        "userConfigIgnored": true,
+        "ephemeral": true
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "claim": {
+        "text": "虚构测试资料 B 将测试样品 Z 的2026-10-23批次容量标注为64单位，与资料 A 对同一样品、同一批次的32单位标注冲突。",
+        "asOf": "2026-10-23",
+        "scope": "虚构测试资料中测试样品 Z 的同一批次容量标注",
+        "unit": "单位",
+        "verificationStatus": "unverified",
+        "caveats": "日期为批次日期；数值仅为资料标注，不代表真实世界测量。资料 A 未说明测量方法，无法判断真实容量或哪项正确。"
+      },
+      "conflictNote": "资料 B 支持64单位标注，资料 A 对同一样品和批次标注32单位，构成文本层面的直接冲突；此判断仅基于所给片段，不是独立核验。",
+      "evidence": [
+        {
+          "sourceId": "0684f564-90b5-468b-a2e6-95139aeee4bf",
+          "indexId": "7c8f62ff-5572-4cb3-97fd-d1fbdc0a1067",
+          "role": "support",
+          "quote": "同一测试样品 Z、同一2026-10-23批次，标注容量为64单位。",
+          "match": {
+            "startChar": 33,
+            "endChar": 67,
+            "sourceSha256": "e725e0855d038fade7bd604dcb2f794334fe3aaa3aa992f0420d5d5dbda3455f",
+            "indexTextSha256": "e725e0855d038fade7bd604dcb2f794334fe3aaa3aa992f0420d5d5dbda3455f",
+            "locator": {
+              "kind": "text",
+              "label": "7c8f62ff-5572-4cb3-97fd-d1fbdc0a1067 · UTF-16 33–67"
+            }
+          }
+        },
+        {
+          "sourceId": "31b2a25e-e353-42ec-8d72-a25931d53d64",
+          "indexId": "a38d3fe5-9111-4135-b950-0ef4cce77b8b",
+          "role": "refute",
+          "quote": "同一测试样品 Z、同一2026-10-23批次，标注容量为32单位。",
+          "match": {
+            "startChar": 33,
+            "endChar": 67,
+            "sourceSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243",
+            "indexTextSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243",
+            "locator": {
+              "kind": "text",
+              "label": "a38d3fe5-9111-4135-b950-0ef4cce77b8b · UTF-16 33–67"
+            }
+          }
+        },
+        {
+          "sourceId": "0684f564-90b5-468b-a2e6-95139aeee4bf",
+          "indexId": "7c8f62ff-5572-4cb3-97fd-d1fbdc0a1067",
+          "role": "context",
+          "quote": "本记录为虚构测试资料，不描述真实世界测量。",
+          "match": {
+            "startChar": 11,
+            "endChar": 32,
+            "sourceSha256": "e725e0855d038fade7bd604dcb2f794334fe3aaa3aa992f0420d5d5dbda3455f",
+            "indexTextSha256": "e725e0855d038fade7bd604dcb2f794334fe3aaa3aa992f0420d5d5dbda3455f",
+            "locator": {
+              "kind": "text",
+              "label": "7c8f62ff-5572-4cb3-97fd-d1fbdc0a1067 · UTF-16 11–32"
+            }
+          }
+        },
+        {
+          "sourceId": "31b2a25e-e353-42ec-8d72-a25931d53d64",
+          "indexId": "a38d3fe5-9111-4135-b950-0ef4cce77b8b",
+          "role": "context",
+          "quote": "记录没有说明测量方法，不能判断真实容量。",
+          "match": {
+            "startChar": 68,
+            "endChar": 88,
+            "sourceSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243",
+            "indexTextSha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243",
+            "locator": {
+              "kind": "text",
+              "label": "a38d3fe5-9111-4135-b950-0ef4cce77b8b · UTF-16 68–88"
+            }
+          }
+        }
+      ],
+      "id": "889e5fcb-8db2-4770-8960-77e6238afc1b"
+    }
+  ],
+  "note": "Real model analysis of actual uploaded, self-authored fictional labels. NOT real-world factual verification."
+}

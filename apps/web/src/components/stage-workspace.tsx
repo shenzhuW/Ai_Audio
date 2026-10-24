@@ -1,3 +1,4 @@
+import { AssetPanel } from './asset-panel';
 import { DirectorPanel } from './director-panel';
 import Link from 'next/link';
 import {
@@ -31,6 +32,17 @@ export function StageWorkspace({
 }) {
   const index = pages.findIndex((p) => p.key === stage);
   const page = pages[index];
+  if (!demo && project && stage === 'assets')
+    return (
+      <>
+        <PageHead
+          number="07"
+          title={page.label}
+          description="按批准镜头检索真实素材，查看画面并准备可追溯片段。"
+        />
+        <AssetPanel projectId={project.id} />
+      </>
+    );
   if (!demo && project && stage === 'storyboard')
     return (
       <>

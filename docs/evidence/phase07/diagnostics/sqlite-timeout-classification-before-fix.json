@@ -1,0 +1,182 @@
+{
+  "status": "FAIL",
+  "at": "2026-10-24T07:28:19.051Z",
+  "backend": "sqlite",
+  "runId": "mvm2m8pu",
+  "checks": [
+    {
+      "name": "批准文稿→确认静默时间轴→批准DirectorRevision，固定shotId/VisualSearchIntent",
+      "status": "PASS",
+      "detail": {
+        "directorRevisionId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+        "shotIds": [
+          "69f0d812-9a71-491d-ab94-a105424ad9a7",
+          "7f92bd13-c08f-4977-90b3-c71ddf2ff7cf"
+        ],
+        "durationFrames": 600
+      }
+    },
+    {
+      "name": "真实上传、FFprobe、实际PTS抽帧及联系表",
+      "status": "PASS",
+      "detail": {
+        "metadata": {
+          "kind": "video",
+          "width": 640,
+          "height": 360,
+          "durationMs": 12000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 360
+        },
+        "frameTimes": [
+          0,
+          2400,
+          4767,
+          7167,
+          9533,
+          11900
+        ]
+      }
+    },
+    {
+      "name": "真实本地素材匹配，Codex实际查看视频帧并保存帧SHA/模型审计",
+      "status": "PASS",
+      "detail": {
+        "runIds": [
+          "01a16cc9-c327-7e82-b482-be66c2784a43"
+        ]
+      }
+    },
+    {
+      "name": "真实NASA API检索→受限下载→FFprobe→实际图片Codex视觉匹配",
+      "status": "PASS",
+      "detail": {
+        "sourceUrl": "https://images.nasa.gov/details/PIA00342",
+        "downloadUrl": "https://images-assets.nasa.gov/image/PIA00342/PIA00342~medium.jpg",
+        "author": "NASA/JPL/USGS",
+        "restrictions": "NASA 公开图片；逐项保留署名/第三方/标识与隐私限制。不是商用授权结论。",
+        "sha256": "9de1d80afa29afdf9c3ebafd7f9aa47deb87f7e876bef1be97f797f0fa91427b",
+        "runIds": [
+          "01a16cca-2d86-7852-98cb-482db1faa8e2"
+        ]
+      }
+    },
+    {
+      "name": "同源两个区间只保存一份原件，负数/越界拒绝",
+      "status": "PASS",
+      "detail": {
+        "sourceId": "dbd41720-536f-47e6-a3ad-848175a3aa44",
+        "intervals": [
+          [
+            0,
+            6000
+          ],
+          [
+            6000,
+            12000
+          ]
+        ],
+        "candidateIds": [
+          "28d65785-d088-4c68-b168-9fae2fdc6e82",
+          "9b2ce2a9-7c83-4632-a5b9-32ba153afa25"
+        ]
+      }
+    },
+    {
+      "name": "真实FFmpeg仅循环选定区间、1080×1920/30FPS/H264/300帧，原件SHA不变",
+      "status": "PASS",
+      "detail": {
+        "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53",
+        "metadata": {
+          "kind": "video",
+          "width": 1080,
+          "height": 1920,
+          "durationMs": 10000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 300
+        }
+      }
+    },
+    {
+      "name": "同recipeHash重复准备实际缓存命中并复核SHA/FFprobe",
+      "status": "PASS",
+      "detail": {
+        "recipeHash": "e07a8d6c0456beedb30fadd38902d7b72b84b5cf3c9fcebbca2aff9c7fa8ac53"
+      }
+    },
+    {
+      "name": "替换一镜只追加本镜绑定，其他镜头/批准Director/原件/旧产物完整",
+      "status": "PASS",
+      "detail": {
+        "history": [
+          {
+            "id": "053dd547-4378-434c-9080-63dfd369e51e",
+            "version": 2,
+            "shotId": "69f0d812-9a71-491d-ab94-a105424ad9a7"
+          },
+          {
+            "id": "20a59eda-df8d-4ebf-8a02-353c09ad7430",
+            "version": 1,
+            "shotId": "7f92bd13-c08f-4977-90b3-c71ddf2ff7cf"
+          },
+          {
+            "id": "f835f94c-451f-4339-82c5-9db6f63de95b",
+            "version": 1,
+            "shotId": "69f0d812-9a71-491d-ab94-a105424ad9a7"
+          }
+        ]
+      }
+    },
+    {
+      "name": "复用同一测试数据库中已实际完成的可信Remotion任务（测试器HTTP连接失败后续跑）",
+      "status": "PASS",
+      "detail": {
+        "jobId": "f8d97883-9497-4c78-8789-9252b8e265e0"
+      }
+    },
+    {
+      "name": "PreparedAsset进入既有可信Remotion真实MP4合成、三关键帧重复渲染一致",
+      "status": "PASS",
+      "detail": {
+        "jobId": "f8d97883-9497-4c78-8789-9252b8e265e0",
+        "metadata": {
+          "durationSeconds": 10,
+          "width": 1080,
+          "height": 1920,
+          "fps": 30,
+          "codec": "h264",
+          "frames": 300
+        },
+        "determinism": [
+          {
+            "frame": 60,
+            "first": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b",
+            "second": "433130391022eadd277373b48be077b97859dc5e18ad3d40b4f409fc2725fb1b"
+          },
+          {
+            "frame": 150,
+            "first": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71",
+            "second": "67160742dad5dc4497bc1dc1dcec8e0b8513af0f41c9f31e542418925e133f71"
+          },
+          {
+            "frame": 240,
+            "first": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468",
+            "second": "5f25dd0aee5b8d70eac73f009a4dd1d3eda06731d00417882c5a800917643468"
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实无结果/显式Mock/未配置失败/取消状态互不混淆，短区间必须显式循环或定格",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "90a9c7a0-ebf2-4fb6-8677-6d973b18491e",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'ASSET_INTERRUPTED'\n- 'ASSET_TIMEOUT'\n         ^\n\n    at complete ([repo]\\tests\\assets\\run.cjs:674:51)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}

@@ -1,0 +1,136 @@
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.workspace > * {
+  min-width: 0;
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  padding: 12px 0;
+}
+.toolbar label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 130px;
+}
+.toolbar input,
+.toolbar select {
+  width: 100%;
+  min-width: 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 14px;
+  margin: 14px 0;
+}
+.candidate {
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.candidate:hover,
+.selected {
+  border-color: #356df3;
+  box-shadow: 0 3px 18px #2359bd16;
+}
+.candidate img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.candidate p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+.candidate small {
+  color: #65738a;
+}
+.preview {
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  background: #101722;
+  border-radius: 9px;
+}
+.frames {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.hash {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-size: 11px;
+}
+.unloaded {
+  height: 100px;
+  background: #f3f6fc;
+  display: grid;
+  place-content: center;
+  color: #65738a;
+}
+.job {
+  border-bottom: 1px solid var(--stroke);
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.job progress {
+  width: 100%;
+}
+@media (max-width: 950px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 450px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .toolbar label {
+    flex-basis: 100%;
+  }
+}
+.panel select,
+.panel input:not([type='file']) {
+  font: inherit;
+  font-size: 13px;
+  color: inherit;
+  background: white;
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  min-height: 40px;
+  padding: 9px 12px;
+  max-width: 100%;
+}
+.panel input:focus-visible,
+.panel select:focus-visible {
+  outline: 2px solid #356df3;
+  outline-offset: 2px;
+}
+.panel select:disabled,
+.panel input:disabled {
+  background: #f3f6fc;
+  color: #65738a;
+}

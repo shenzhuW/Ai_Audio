@@ -1,0 +1,504 @@
+{
+  "id": "76479afc-ee73-4912-be3f-ab72779b04a4",
+  "kind": "storyboard",
+  "version": 3,
+  "provider": "asset",
+  "state": "succeeded",
+  "inputRevisionIds": [
+    "e5632d78-26f8-4487-bdf9-653f36b21bed"
+  ],
+  "idempotencyKey": "482489e4-4d6d-4fe9-ae6a-21475ec07980",
+  "attempt": 1,
+  "maxAttempts": 3,
+  "attempts": [
+    {
+      "workerId": "f7d453a7-7a9f-4a6e-bf7e-2c27b7a5f738",
+      "number": 1,
+      "startedAt": "2026-10-24T07:22:02.038Z",
+      "finishedAt": "2026-10-24T07:22:26.046Z",
+      "state": "succeeded",
+      "errorCode": null
+    }
+  ],
+  "targetVersion": 4,
+  "leaseOwner": null,
+  "leaseExpiresAt": null,
+  "resultRevisionId": null,
+  "errorCode": null,
+  "createdAt": "2026-10-24T07:22:01.086Z",
+  "updatedAt": "2026-10-24T07:22:26.046Z",
+  "assetInput": {
+    "operation": "search",
+    "directorRevisionId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+    "shot": {
+      "shotId": "69f0d812-9a71-491d-ab94-a105424ad9a7",
+      "title": "GPU 自制几何示意",
+      "narrativeGoal": "用蓝绿网格和居中芯片矩形示意计算概念，明确是示意动画",
+      "viewerTakeaway": "理解计算的示意表达，不将示意图冒充实拍",
+      "scriptSegmentIds": [
+        "0883f261-6fcc-4d44-af10-c891272e84a0"
+      ],
+      "voiceCueAnchorIds": [],
+      "startFrame": 0,
+      "durationFrames": 300,
+      "endFrame": 300,
+      "visualType": "footage",
+      "route": "pending",
+      "composition": "中央主对象；下方保留字幕安全区",
+      "layers": [
+        {
+          "role": "content",
+          "kind": "graphic",
+          "label": "解释对象",
+          "depth": 1
+        }
+      ],
+      "transition": {
+        "type": "cut",
+        "durationFrames": 0,
+        "continuity": "延续同一解释对象"
+      },
+      "animation": {
+        "mechanism": "highlight",
+        "reason": "突出当前讲述对象"
+      },
+      "visualSearchIntent": {
+        "query": "GPU schematic",
+        "subject": "GPU schematic",
+        "action": "abstract rotating grid",
+        "composition": "center subject, room for subtitles",
+        "format": "video"
+      },
+      "media": null,
+      "claimIds": [],
+      "sourceIds": [],
+      "risks": [
+        "人工草稿，尚待审核"
+      ]
+    },
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "scope": "local",
+    "analysis": "real",
+    "query": "GPU schematic",
+    "topK": 1,
+    "sources": [
+      {
+        "id": "dbd41720-536f-47e6-a3ad-848175a3aa44",
+        "title": "GPU schematic two scenes",
+        "provider": "project",
+        "sourceUrl": null,
+        "downloadUrl": null,
+        "author": "Self-authored test",
+        "restrictions": "non-commercial / unknown allowed for internal tests",
+        "license": "unknown",
+        "kind": "video",
+        "blob": {
+          "key": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "sha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "sizeBytes": 378449,
+          "mime": "video/mp4"
+        },
+        "localRef": null,
+        "metadata": {
+          "kind": "video",
+          "width": 640,
+          "height": 360,
+          "durationMs": 12000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 360
+        },
+        "index": {
+          "version": 1,
+          "sourceSha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "frames": [
+            {
+              "id": "60e95bda-fabb-4c27-a6a1-4829bd201e1c",
+              "atMs": 0,
+              "blob": {
+                "key": "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+                "sha256": "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+                "sizeBytes": 14278,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "3b118b2e-90c6-4117-b4f8-83da19d37076",
+              "atMs": 2400,
+              "blob": {
+                "key": "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+                "sha256": "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+                "sizeBytes": 12816,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "0066bc28-461b-4f50-85f2-babc75eb33bc",
+              "atMs": 4767,
+              "blob": {
+                "key": "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+                "sha256": "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+                "sizeBytes": 13658,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "ad15bf5f-4ce3-427d-9be5-46726936c607",
+              "atMs": 7167,
+              "blob": {
+                "key": "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+                "sha256": "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+                "sizeBytes": 12739,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "d5ff4770-bcbf-4a33-af19-e01f05312055",
+              "atMs": 9533,
+              "blob": {
+                "key": "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81",
+                "sha256": "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81",
+                "sizeBytes": 12106,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "7377e171-60d4-4d84-b3af-27e3c573a25f",
+              "atMs": 11900,
+              "blob": {
+                "key": "769974646c4efbcad59c343f4ffb20c35384678fda22d2350c534388d1235dff",
+                "sha256": "769974646c4efbcad59c343f4ffb20c35384678fda22d2350c534388d1235dff",
+                "sizeBytes": 11832,
+                "mime": "image/jpeg"
+              }
+            }
+          ],
+          "contactSheet": {
+            "key": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+            "sha256": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+            "sizeBytes": 48508,
+            "mime": "image/jpeg"
+          },
+          "sceneCutsMs": [],
+          "sharpness": 3.7734945830183926,
+          "scope": "sparse_frames"
+        },
+        "status": "indexed",
+        "createdAt": "2026-10-24T07:21:58.197Z",
+        "originSourceId": null,
+        "originProjectId": "90a9c7a0-ebf2-4fb6-8677-6d973b18491e",
+        "searchTerms": "GPU schematic two scenes"
+      }
+    ],
+    "binding": null
+  },
+  "assetResult": {
+    "sources": [
+      {
+        "id": "dbd41720-536f-47e6-a3ad-848175a3aa44",
+        "title": "GPU schematic two scenes",
+        "provider": "project",
+        "sourceUrl": null,
+        "downloadUrl": null,
+        "author": "Self-authored test",
+        "restrictions": "non-commercial / unknown allowed for internal tests",
+        "license": "unknown",
+        "kind": "video",
+        "blob": {
+          "key": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "sha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "sizeBytes": 378449,
+          "mime": "video/mp4"
+        },
+        "localRef": null,
+        "metadata": {
+          "kind": "video",
+          "width": 640,
+          "height": 360,
+          "durationMs": 12000,
+          "fps": 30,
+          "codec": "h264",
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "frames": 360
+        },
+        "index": {
+          "version": 1,
+          "sourceSha256": "a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce",
+          "frames": [
+            {
+              "id": "60e95bda-fabb-4c27-a6a1-4829bd201e1c",
+              "atMs": 0,
+              "blob": {
+                "key": "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+                "sha256": "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+                "sizeBytes": 14278,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "3b118b2e-90c6-4117-b4f8-83da19d37076",
+              "atMs": 2400,
+              "blob": {
+                "key": "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+                "sha256": "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+                "sizeBytes": 12816,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "0066bc28-461b-4f50-85f2-babc75eb33bc",
+              "atMs": 4767,
+              "blob": {
+                "key": "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+                "sha256": "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+                "sizeBytes": 13658,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "ad15bf5f-4ce3-427d-9be5-46726936c607",
+              "atMs": 7167,
+              "blob": {
+                "key": "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+                "sha256": "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+                "sizeBytes": 12739,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "d5ff4770-bcbf-4a33-af19-e01f05312055",
+              "atMs": 9533,
+              "blob": {
+                "key": "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81",
+                "sha256": "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81",
+                "sizeBytes": 12106,
+                "mime": "image/jpeg"
+              }
+            },
+            {
+              "id": "7377e171-60d4-4d84-b3af-27e3c573a25f",
+              "atMs": 11900,
+              "blob": {
+                "key": "769974646c4efbcad59c343f4ffb20c35384678fda22d2350c534388d1235dff",
+                "sha256": "769974646c4efbcad59c343f4ffb20c35384678fda22d2350c534388d1235dff",
+                "sizeBytes": 11832,
+                "mime": "image/jpeg"
+              }
+            }
+          ],
+          "contactSheet": {
+            "key": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+            "sha256": "d761b89665c71dd4d95801bf77a2b05a92b170273377939ab5fea31ff9ee5942",
+            "sizeBytes": 48508,
+            "mime": "image/jpeg"
+          },
+          "sceneCutsMs": [],
+          "sharpness": 3.7734945830183926,
+          "scope": "sparse_frames"
+        },
+        "status": "indexed",
+        "createdAt": "2026-10-24T07:21:58.197Z",
+        "originSourceId": null,
+        "originProjectId": "90a9c7a0-ebf2-4fb6-8677-6d973b18491e",
+        "searchTerms": "GPU schematic two scenes"
+      }
+    ],
+    "candidates": [
+      {
+        "id": "cb71feaa-3349-4c34-bce6-bdcaf4a346fc",
+        "directorRevisionId": "e5632d78-26f8-4487-bdf9-653f36b21bed",
+        "shotId": "69f0d812-9a71-491d-ab94-a105424ad9a7",
+        "sourceAssetId": "dbd41720-536f-47e6-a3ad-848175a3aa44",
+        "sourceInMs": 0,
+        "sourceOutMs": 10000,
+        "method": "real_visual",
+        "score": 0.7387255991748551,
+        "scores": {
+          "semantic": 0.94,
+          "subject": 0.86,
+          "action": 0.78,
+          "composition": 0.91,
+          "aspect": 0.31640625,
+          "resolution": 0.1111111111111111,
+          "sharpness": 0.11792170571932477,
+          "duration": 1
+        },
+        "reasons": [
+          "所附帧呈现蓝色与绿色网格、居中矩形及“GPU schematic”标题，符合计算概念示意动画；下方有字幕空间。",
+          "覆盖蓝、绿两种示意画面，满足10秒目标；网格在采样帧间角度变化，支持抽象旋转效果。包含场景切换，但准确切点未知。"
+        ],
+        "limitations": [
+          "仅有6张稀疏帧，无法确认旋转的连续性、速度及中间画面。",
+          "蓝色场景至绿色场景的变化发生在4767至7167毫秒之间，无法确定准确切点。",
+          "中央对象为无细节矩形，GPU含义主要由标题提供；下方虽有空间，但网格可能影响字幕辨识。",
+          "仅已抽取稀疏帧；区间为候选，需试听/观看核对"
+        ],
+        "frameIds": [
+          "60e95bda-fabb-4c27-a6a1-4829bd201e1c",
+          "3b118b2e-90c6-4117-b4f8-83da19d37076",
+          "0066bc28-461b-4f50-85f2-babc75eb33bc",
+          "ad15bf5f-4ce3-427d-9be5-46726936c607",
+          "d5ff4770-bcbf-4a33-af19-e01f05312055"
+        ],
+        "frameSha256": [
+          "9d302dae2e08bceff81a430abaa7d2a5522faa17a0444a5a8d09f9836ff7874e",
+          "947e954f7e94888b756208825e0a67cd70182d5bea3a48815950d9e799f9c16f",
+          "29c8c149558f24065421c909f5a4b10245ca2d7523d38b828bad8199122d8cd3",
+          "36de4fb75897f60acdfaffb6d2ff116f74f0f24d47220e59977742f36c4b385a",
+          "7f9626acf093e14c33acaad389688cae908323fb8792fd9b79d562a755900f81"
+        ],
+        "runId": "01a16cc9-c327-7e82-b482-be66c2784a43",
+        "createdAt": "2026-10-24T07:22:25.987Z"
+      }
+    ],
+    "prepared": null,
+    "cacheHit": false,
+    "searches": [
+      {
+        "provider": "local",
+        "query": "GPU schematic",
+        "url": null,
+        "responseSha256": null,
+        "status": "ok",
+        "count": 1,
+        "reason": "真实已保存文件的标题/索引低成本筛选；不是视觉模型结论",
+        "at": "2026-10-24T07:22:02.667Z"
+      }
+    ],
+    "aiRuns": [
+      {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a16cc9-c327-7e82-b482-be66c2784a43",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-24T07:22:03.943Z",
+        "durationMs": 22042,
+        "usage": {
+          "input_tokens": 10827,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 351,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      }
+    ],
+    "notes": "真实文件已验证；许可未知不阻断内部测试；未自动公开发布。"
+  },
+  "aiRuns": [
+    {
+      "provider": "codex-cli",
+      "cliVersion": "codex-cli 0.163.0",
+      "model": "gpt-6.1-sol",
+      "runId": "01a16cc9-c327-7e82-b482-be66c2784a43",
+      "searchMode": "disabled",
+      "startedAt": "2026-10-24T07:22:03.943Z",
+      "durationMs": 22042,
+      "usage": {
+        "input_tokens": 10827,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 351,
+        "reasoning_output_tokens": 0
+      },
+      "quota": null,
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "failureReason": null,
+      "policy": "data-only-v1",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "jobAttempt": 1,
+      "isolation": {
+        "modelShell": "disabled",
+        "modelPatch": "disabled",
+        "enabledMcpServers": 0,
+        "codeModeHost": "v8-data-only",
+        "userConfigIgnored": true,
+        "ephemeral": true
+      }
+    }
+  ],
+  "progress": 1,
+  "heartbeatAt": "2026-10-24T07:22:26.025Z",
+  "logs": [
+    {
+      "at": "2026-10-24T07:22:01.086Z",
+      "message": "素材任务排队；来源/导演/逐镜绑定输入已冻结。"
+    },
+    {
+      "at": "2026-10-24T07:22:02.038Z",
+      "message": "claim: running"
+    },
+    {
+      "at": "2026-10-24T07:22:02.127Z",
+      "message": "启动独立素材处理器"
+    },
+    {
+      "at": "2026-10-24T07:22:04.155Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:06.157Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:08.158Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:10.159Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:12.160Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:14.161Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:16.172Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:18.184Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:20.193Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:22.199Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:24.199Z",
+      "message": "验证并索引 Top-K 1/1"
+    },
+    {
+      "at": "2026-10-24T07:22:26.025Z",
+      "message": "提取结果已校验；正在校验固定导演及逐镜绑定版本。"
+    },
+    {
+      "at": "2026-10-24T07:22:26.046Z",
+      "message": "finish: succeeded"
+    }
+  ]
+}

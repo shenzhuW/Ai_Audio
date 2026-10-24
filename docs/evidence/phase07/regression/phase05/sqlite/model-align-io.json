@@ -1,0 +1,183 @@
+{
+  "jobId": "af24301a-e34e-474b-9663-31f99afbf1b3",
+  "runId": "69da092b-eead-4676-90f7-fe64ac60fe08",
+  "inputKeys": [
+    "operation",
+    "language",
+    "audioPath",
+    "modelPath",
+    "text"
+  ],
+  "operation": "align",
+  "language": "zh",
+  "referenceTextProvided": true,
+  "text": "测试，测试。这是配音时间轴的真实语音。字幕和词语时间需要分别校验。",
+  "audioSha256": "eb3ac6c85fcda8f1467dd0557403e457ea24a1a00fc7e0176b9bb7d57a57f5d8",
+  "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+  "output": {
+    "model": "openai-whisper/base",
+    "modelSha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e",
+    "engineVersion": "stable-ts/2.19.1/whisper/20250625",
+    "transcript": " 测试，测试。这是配音时间轴的真实语音。字幕和词语时间需要分别校验。",
+    "words": [
+      {
+        "text": " 测",
+        "startMs": 260,
+        "endMs": 340,
+        "probability": 0.5893077428142229
+      },
+      {
+        "text": "试，",
+        "startMs": 340,
+        "endMs": 1060,
+        "probability": 0.396161762423435
+      },
+      {
+        "text": "测",
+        "startMs": 1260,
+        "endMs": 1260,
+        "probability": 0.5111081879585981
+      },
+      {
+        "text": "试。",
+        "startMs": 1260,
+        "endMs": 2080,
+        "probability": 0.7087943305571874
+      },
+      {
+        "text": "这是",
+        "startMs": 2640,
+        "endMs": 2740,
+        "probability": 0.3012257516384125
+      },
+      {
+        "text": "配",
+        "startMs": 2740,
+        "endMs": 3020,
+        "probability": 0.938807487487793
+      },
+      {
+        "text": "音",
+        "startMs": 3020,
+        "endMs": 3360,
+        "probability": 0.9323980212211609
+      },
+      {
+        "text": "时间",
+        "startMs": 3360,
+        "endMs": 3660,
+        "probability": 0.8320651650428772
+      },
+      {
+        "text": "轴",
+        "startMs": 3660,
+        "endMs": 3920,
+        "probability": 0.6464275568723679
+      },
+      {
+        "text": "的",
+        "startMs": 3920,
+        "endMs": 4160,
+        "probability": 0.9904916882514954
+      },
+      {
+        "text": "真",
+        "startMs": 4160,
+        "endMs": 4320,
+        "probability": 0.955032467842102
+      },
+      {
+        "text": "实",
+        "startMs": 4320,
+        "endMs": 4560,
+        "probability": 0.971272885799408
+      },
+      {
+        "text": "语",
+        "startMs": 4560,
+        "endMs": 4700,
+        "probability": 0.9683988392353058
+      },
+      {
+        "text": "音。",
+        "startMs": 4700,
+        "endMs": 5840,
+        "probability": 0.8945500552654266
+      },
+      {
+        "text": "字",
+        "startMs": 5840,
+        "endMs": 6060,
+        "probability": 0.47682464122772217
+      },
+      {
+        "text": "幕",
+        "startMs": 6060,
+        "endMs": 6280,
+        "probability": 0.9689215421676636
+      },
+      {
+        "text": "和",
+        "startMs": 6280,
+        "endMs": 6620,
+        "probability": 0.9754078388214111
+      },
+      {
+        "text": "词",
+        "startMs": 6620,
+        "endMs": 6820,
+        "probability": 0.7645977139472961
+      },
+      {
+        "text": "语",
+        "startMs": 6820,
+        "endMs": 6960,
+        "probability": 0.8496500253677368
+      },
+      {
+        "text": "时间",
+        "startMs": 6960,
+        "endMs": 7360,
+        "probability": 0.9715626835823059
+      },
+      {
+        "text": "需要",
+        "startMs": 7360,
+        "endMs": 7840,
+        "probability": 0.9903392195701599
+      },
+      {
+        "text": "分",
+        "startMs": 7840,
+        "endMs": 8100,
+        "probability": 0.9665035605430603
+      },
+      {
+        "text": "别",
+        "startMs": 8100,
+        "endMs": 8380,
+        "probability": 0.9824123978614807
+      },
+      {
+        "text": "校",
+        "startMs": 8380,
+        "endMs": 8560,
+        "probability": 0.0013911583228036761
+      },
+      {
+        "text": "验。",
+        "startMs": 8560,
+        "endMs": 9060,
+        "probability": 0.8211977283159891
+      }
+    ],
+    "segments": [
+      {
+        "text": " 测试，测试。这是配音时间轴的真实语音。字幕和词语时间需要分别校验。",
+        "startMs": 260,
+        "endMs": 9060
+      }
+    ]
+  },
+  "note": "实际私有input/output的脱敏副本；只删除宿主文件路径，保留原始模型输出。"
+}

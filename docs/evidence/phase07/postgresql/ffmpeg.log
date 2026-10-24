@@ -1,0 +1,4 @@
+source SHA a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce
+recipe {"version":1,"sourceSha256":"a7ee5f61500c66dae48f4d33f185a1f3b647a383472d452f613738f5b88c53ce","sourceInMs":0,"sourceOutMs":6000,"width":1080,"height":1920,"fps":30,"frames":300,"fit":"cover","x":0.5,"y":0.5,"playback":"loop","mute":true}
+Trim interval before looping:
+ffmpeg ["-v","error","-stream_loop","-1","-i","[work]/interval.mp4","-vf","setsar=1,fps=30","-frames:v","300","-an","-map_metadata","-1","-c:v","libx264","-preset","ultrafast","-crf","22","-pix_fmt","yuv420p","-movflags","+faststart","-y","[work]/prepared.mp4"]

@@ -1,0 +1,2 @@
+PASS real CLI canary: outside sentinel not leaked, synthetic source unchanged, no command marker
+PASS actual CLI event projection: 19 known runs, attachment hashes and catalog verified

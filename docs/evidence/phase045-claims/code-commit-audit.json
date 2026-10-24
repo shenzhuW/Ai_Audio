@@ -1,0 +1,197 @@
+{
+  "at": "2026-10-24T00:04:33.520Z",
+  "mode": "exact-commit",
+  "commit": "f64b1655f0f5ca5d1050d18683759041bd75d112",
+  "scannedFiles": 31,
+  "maxFileBytes": 44057,
+  "findings": [],
+  "limitations": "Pattern/path/binary checks plus human fixture/evidence review; not a guarantee against every possible encoded secret.",
+  "files": [
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-candidates/[candidateId]/route.ts",
+      "bytes": 322,
+      "sha256": "b7d35fd90a457f4290b4895b809f5155b83c5a87a9b526f8711c4a30cfcf8efe",
+      "blob": "79e3c9e4d8242723981ea4e66c6a21c8ab3a8d86"
+    },
+    {
+      "file": "apps/web/src/app/api/v1/projects/[projectId]/research-claim-runs/route.ts",
+      "bytes": 273,
+      "sha256": "1d4a18697b3cd7bd205144f9462b4cd0f0c1d12847ad2457f810100cd809d471",
+      "blob": "c19a1ebd45766afb2a461dd9c7553899758240bb"
+    },
+    {
+      "file": "apps/web/src/components/claim-candidates.tsx",
+      "bytes": 11519,
+      "sha256": "d6939e61006f6e7a2e928504b372c67d90b6dfadf3dd8f3f31992430a55efc44",
+      "blob": "dd1b02488059390100b2cee8bb73de59ea0e6d38"
+    },
+    {
+      "file": "apps/web/src/components/research-panel.tsx",
+      "bytes": 44057,
+      "sha256": "3be0f4140b8a0d24e0dca7d2aa34751ebe955897654b22f89d14c193061f1859",
+      "blob": "14a8c512aafc59517374c0413759be696b83edef"
+    },
+    {
+      "file": "apps/web/src/components/workflow-panel.tsx",
+      "bytes": 20089,
+      "sha256": "46d038c6698dfd71a54d3380ae015a31574b3e16981cdac7e2969dd56f1a1fe3",
+      "blob": "3ed5c1a30a485299d2892b19fd7b4d7ef271ef09"
+    },
+    {
+      "file": "apps/web/src/domain/research.ts",
+      "bytes": 12208,
+      "sha256": "a4802d7577a8789204749f439df9989b4fabc6b1a12c84214fe5a1d5a0c475f6",
+      "blob": "7834edf5500302e2fee2b2bf46e5b7d33fb37040"
+    },
+    {
+      "file": "apps/web/src/domain/workflow.ts",
+      "bytes": 7904,
+      "sha256": "5bd53c62439872794e0ad67fc5c220c57dd4db14b9562dc2d28cfb06d4ecb4c8",
+      "blob": "510eeaedfd64aca70767c8f3ce8e4aa8c6ad1d1f"
+    },
+    {
+      "file": "apps/web/src/server/research/claim-candidates.ts",
+      "bytes": 4774,
+      "sha256": "ab253a662dc2615945fd28997b3fca5c40ff61940cf438d2da50c453ec310c7d",
+      "blob": "b3a4634d984479ad442e303d404e16d114282ba8"
+    },
+    {
+      "file": "apps/web/src/server/research/engine.ts",
+      "bytes": 15934,
+      "sha256": "dd3551502039cb60baf3b78a18c050988a8b1ee93977256054e5cd50dd83793c",
+      "blob": "0af0c68170abb5ed538e721d6a3b41526347a17c"
+    },
+    {
+      "file": "apps/web/src/server/research/http.ts",
+      "bytes": 7707,
+      "sha256": "07b397d4bec7de9c77208a9556cbd6d25b92740f61d3265b75b7cfd826e9f682",
+      "blob": "44e4bf6f4599e42f338a2d5189dd6e8a82d08d06"
+    },
+    {
+      "file": "apps/web/src/server/research/providers.ts",
+      "bytes": 3309,
+      "sha256": "e84b321dcffd94a48b39ce7ff2d390397ec848a3fd88ed4764fe2a53e5d8b0f1",
+      "blob": "9fd93697934ea3e6abff31212ad06cdf416632fe"
+    },
+    {
+      "file": "docs/API_SPEC.md",
+      "bytes": 18131,
+      "sha256": "abeee9597271f62865694f6b3dbfaf171b278bcaffcd6cc98d134eba2061c447",
+      "blob": "f427cff474e06822004c57123cddcede3d35605b"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "bytes": 13092,
+      "sha256": "b1eb07f41e2aac36b8794a25c40e18d849c6a4d1587e188a28ba4ebe234ceaf1",
+      "blob": "9dbe027f656db9e93658507fa26e5de269a55aed"
+    },
+    {
+      "file": "docs/DATA_MODELS.md",
+      "bytes": 16403,
+      "sha256": "be2f52d019e04ac7bca6a7ff834c01a46206e96815d469958c2efcbd2cd06ff2",
+      "blob": "447ffe5d93c2c542b80b1d17c7d90b03bbdcc8bb"
+    },
+    {
+      "file": "docs/REFERENCE_REVIEW_LOG.md",
+      "bytes": 19975,
+      "sha256": "9dd243e0f1037441b841adb7fd7b1f48da6840420301de9ca5abf4d1b15117d4",
+      "blob": "cd0e4495927c99e3cbb963f0526011d97e285314"
+    },
+    {
+      "file": "docs/UI_SPEC.md",
+      "bytes": 11576,
+      "sha256": "f71564097ecf64e3fd077eb6d4e1b71b311e2bf59c257a5638696fbd8135722d",
+      "blob": "7aaa8265e62ef5bde7f20f4f06e901ff501e305e"
+    },
+    {
+      "file": "fixtures/claims/README.md",
+      "bytes": 1795,
+      "sha256": "34c78d8b782f75ece4dcc746a8830b7cd1938cead33b07a2cfbd4413c5d86959",
+      "blob": "34c72f56610ce779bd9262126f481c8a365a0229"
+    },
+    {
+      "file": "fixtures/claims/source-a.txt",
+      "bytes": 227,
+      "sha256": "f95b27ac070bfc04251c8739f0eba0ba075a52ef6bc95693d7b62fe6e2a20243",
+      "blob": "c84a6423d12a4557b7a9df4372b958d3718abf1a"
+    },
+    {
+      "file": "fixtures/claims/source-b.txt",
+      "bytes": 247,
+      "sha256": "e725e0855d038fade7bd604dcb2f794334fe3aaa3aa992f0420d5d5dbda3455f",
+      "blob": "467dc2bdac0be3382c0e9c8073d9f82eb94573f8"
+    },
+    {
+      "file": "plans/04-5-real-ai.md",
+      "bytes": 7466,
+      "sha256": "2a0e672bd3e1ed79d7fcc77d1cc19546954ff40f8581db72b132f87cf025d0c2",
+      "blob": "cd42dbce88b04d703339f7cfb5d6c8ee12c14509"
+    },
+    {
+      "file": "scripts/codex-claims.cjs",
+      "bytes": 3700,
+      "sha256": "d57eff714c9f7b12cc7620692d51be36a45f72ee467b035b02f335c600cec7dd",
+      "blob": "c4f13bd5caa79bdae9b15445286f924410ea4457"
+    },
+    {
+      "file": "scripts/research-extract.cjs",
+      "bytes": 7984,
+      "sha256": "0c658df83dbf7fa77d5aa698ab48405fe33da07ca124d1478b1f778e3437c983",
+      "blob": "a8fa5cb455664e79cc2f3d17c7a1529984363901"
+    },
+    {
+      "file": "scripts/research-worker.cjs",
+      "bytes": 8319,
+      "sha256": "98f97544af133228138784c8f3dcdf3e287ea99006cddbdc5f037df00c7db8a6",
+      "blob": "ff959210e268f6f8a74ff0c4327b4fbd949dd751"
+    },
+    {
+      "file": "tests/real-ai/capture.cjs",
+      "bytes": 7901,
+      "sha256": "a89ebf8a3094520afa3b2de9fc046d15a3b68f72d4f79513351e4cf064b6ebf1",
+      "blob": "270f2a5dc89e68b3a7c61deb3be8a5b893365d15"
+    },
+    {
+      "file": "tests/real-ai/claim-boundaries.cjs",
+      "bytes": 6050,
+      "sha256": "16bd65c1ae0d74123f802eac59651e4620cf49c0e666fdc8ba6142fe7ea50760",
+      "blob": "7a71f1fb4cb1e8fe4b6223f0f32e46ac95f18180"
+    },
+    {
+      "file": "tests/real-ai/claim-supplement.cjs",
+      "bytes": 7290,
+      "sha256": "74cb53e47bf20492bfca3b202865c7206e646b610f822e518ba2ebf03d5bf68a",
+      "blob": "e277462c7b19dabdace35a7e7308c193972ee1d3"
+    },
+    {
+      "file": "tests/real-ai/public-evidence.cjs",
+      "bytes": 939,
+      "sha256": "51f198875a02d8aba95157be481cc9785741e3a79f693ddb2ff2a402865c2ac4",
+      "blob": "d45d8c3e80df8c1481039ec5d6af4c9b59e94390"
+    },
+    {
+      "file": "tests/real-ai/remote-cli.cjs",
+      "bytes": 9325,
+      "sha256": "3bb42130e6de9b2fc44b3c90fad9b9508ca053dfec77f234f438250cafcb325f",
+      "blob": "471d264ec3a445cbecd54f79b6bdc9168dee21dc"
+    },
+    {
+      "file": "tests/real-ai/run.cjs",
+      "bytes": 28534,
+      "sha256": "adb0f9d8b1ed07d9c313b429deb8d0f0cdbc5c2d3152e681b28679fc0be55b99",
+      "blob": "e1ef93fa4a7375bce4118e4da708e44e750c9082"
+    },
+    {
+      "file": "tests/real-ai/verify-claims.cjs",
+      "bytes": 5819,
+      "sha256": "5ab93647a620ef125b83e6095a7671c12f11cc5629ef6dcc186c2d5ce7470f3c",
+      "blob": "936759c7143b6ac859feba89f1a054ee87c4c661"
+    },
+    {
+      "file": "tests/unit/claim-candidates.test.ts",
+      "bytes": 13254,
+      "sha256": "60629da87fb5d2b93381257b6bab042a7282d26fdad270cb47a3135c7b2f14d5",
+      "blob": "75892b0a8cc9dfa6688d53c9a39cba6ce55849e0"
+    }
+  ]
+}

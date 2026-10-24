@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "backend": "postgresql",
+  "runId": "mvkyjvat",
+  "at": "2026-10-23T12:40:20.025Z",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL 初始化/重复迁移：沿用0001–0004，无本阶段DDL",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载",
+      "status": "PASS",
+      "detail": {
+        "jobId": "1f4fe3d5-d4bb-4ddd-931f-d6e28e657716",
+        "candidates": 1,
+        "sourceId": "803ecc49-6b60-4a0d-9a8a-8fe92581685b",
+        "runId": "01a168c6-e80e-77b0-b308-c7f03226c0ba"
+      }
+    },
+    {
+      "name": "真实图片理解绑定原件SHA；视觉输出不作为原文匹配",
+      "status": "PASS",
+      "detail": {
+        "jobId": "707bd532-f91b-47aa-92a6-5a80a5a45074",
+        "summary": "图片为白底柱状图，左侧和底部有黑色坐标轴，无可见刻度或网格线。三根矩形柱从左至右分别为红色、绿色、蓝色，高度依次增加；柱下标有“A”“B”“C”，柱顶分别标有“10”“20”“30”。顶部可辨认文字为“SELF-AUTHORED VISUAL TEST ONLY”，其末端与蓝色柱上方的“30”位置较近。画面中未见人物或其他实物。颜色为视觉上的近似描述，无法从图片确定精确色值。\n模型分析边界：仅依据所附图片中可见内容描述；图中未标明数据单位、坐标轴名称或数据来源，无法确定各柱代表的实际含义。",
+        "runId": "01a168c7-4ed4-7351-8ae5-9b9600cc2603"
+      }
+    },
+    {
+      "name": "真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称",
+      "status": "PASS",
+      "detail": {
+        "jobId": "c3fb9e4d-2960-447a-ad5d-d028ec4ac00b",
+        "timestamps": [
+          0,
+          3333,
+          6666
+        ],
+        "runIds": [
+          "01a168c7-8c79-79d0-8071-1b20d71dff38",
+          "01a168c7-bf25-7b01-adbc-e6fa6095a622",
+          "01a168c7-ec0d-71e2-a433-c63609bbb61e"
+        ]
+      }
+    },
+    {
+      "name": "真实 Codex 从已抓取原文生成候选；Source/Index允许集、SHA和逐字引用验证；尚无正式Claim",
+      "status": "PASS",
+      "detail": {
+        "jobId": "5954d3ee-d6e7-4b11-a9aa-98e19ae26eb7",
+        "count": 4,
+        "runIds": [
+          "01a168c8-2d4f-7932-9759-7833ab793d8b"
+        ]
+      }
+    },
+    {
+      "name": "真实HTTP拒绝伪造原文与未知Source ID，事务没有部分写入",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实浏览器编辑候选/刷新/接受/拒绝；仅接受后写正式Claim/Evidence；409并发与重复审核保护",
+      "status": "PASS",
+      "detail": {
+        "candidateId": "1411b7bc-f2ef-4244-9e71-a45992ba65fe",
+        "acceptedClaimId": "7ab9013c-3f08-4946-bed0-6cc1120b0040",
+        "evidenceIds": [
+          "68422121-7050-4503-bf2f-5dd91a7680be"
+        ]
+      }
+    },
+    {
+      "name": "已批准研究拒绝候选审核写入，正式 Claim 保持未核实",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实AI局部文稿转换ScriptSegment，稳定ID/允许集引用/未改段落保持",
+      "status": "PASS",
+      "detail": {
+        "jobId": "b93b59d3-37e0-4bf9-a0fc-93d285d6ac5b",
+        "runId": "01a168c8-b181-7701-9b80-fb258ce54584",
+        "segmentId": "d94bff8d-52d0-49a4-9848-e057a07d8b5e",
+        "text": "观察，是直接看到了什么；推断，是根据看到的内容作出判断；证据，则是用来支持具体判断的材料，还要看它能支持到哪一步。比如，所给文档描述：ffprobe 可以收集多媒体流信息，以人和机器可读的形式输出，包括容器格式，以及其中各媒体流的格式和类型。这里，我们直接看到的是文档的描述，还没有观察实际运行结果。这份文档可以支持“来源这样描述该功能”，但不能据此认定实际行为已经得到验证。片段也没有注明版本、日期或具体格式支持范围。因此，这条信息仍未独立核实，需要人工审核。区分三者，就是把看到的内容、作出的判断，以及判断的依据说清楚。"
+      }
+    },
+    {
+      "name": "真实整体文稿生成沿用全部稳定ID与引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "032e3919-d39b-4d26-a8eb-550dac0b9807",
+        "runId": "01a168c8-e9eb-7351-8627-3e1fbed152c9"
+      }
+    },
+    {
+      "name": "真实浏览器来源/视觉/写稿/使用量可见，刷新持久化",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "运行中真实Codex取消终止进程树、审计保留、迟到文稿不写入",
+      "status": "PASS",
+      "detail": {
+        "jobId": "fe0a40f4-19ab-4696-80eb-20ae2754c69d",
+        "aiRuns": [
+          {
+            "model": "gpt-6.1-sol",
+            "quota": null,
+            "runId": "01a168c9-38a0-7151-865d-25581540a359",
+            "usage": null,
+            "policy": "data-only-v1",
+            "provider": "codex-cli",
+            "isolation": {
+              "ephemeral": true,
+              "modelPatch": "disabled",
+              "modelShell": "disabled",
+              "codeModeHost": "v8-data-only",
+              "enabledMcpServers": 0,
+              "userConfigIgnored": true
+            },
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "startedAt": "2026-10-23T12:42:59.750Z",
+            "cliVersion": "codex-cli 0.163.0",
+            "durationMs": 6147,
+            "jobAttempt": 1,
+            "searchMode": "disabled",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "failureReason": "CODEX_CANCELLED"
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实生成沿用审批只读和Fork，研究引用归属不变",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "重启保持真实结果与审计；原用户数据不变",
+      "status": "PASS",
+      "detail": {
+        "originalBefore": "fafaedf6913bd7e296c986e449576be553cb920aae308cf00ff96345c895ac89",
+        "unchanged": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase045_mvkyjvat",
+  "projectId": "2a7f8965-556c-41b5-af23-b54efad2d195",
+  "finishedAt": "2026-10-23T12:43:08.547Z"
+}

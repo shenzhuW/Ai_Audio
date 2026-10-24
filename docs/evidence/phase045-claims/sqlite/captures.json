@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "backend": "sqlite",
+  "at": "2026-10-24T00:03:52.349Z",
+  "pageErrors": [],
+  "images": [
+    {
+      "file": "03-real-search.png",
+      "sha256": "1ff036bbd14acb8ce0ba0b235135e14f3e019f21f587bc3cd1b9153037504a35",
+      "bytes": 601094
+    },
+    {
+      "file": "03-real-vision.png",
+      "sha256": "f8045e49c547d3acaf8319b288d5337d7a4bcd03845139363c1e3c4fb1f27531",
+      "bytes": 592171
+    },
+    {
+      "file": "03-real-video.png",
+      "sha256": "3aa6c96ca29c58e74a4357853c5d04d70560a9f09a9b8bea71672147f6a43716",
+      "bytes": 680292
+    },
+    {
+      "file": "03-real-audit.png",
+      "sha256": "e9b9e9f99be16f0904de3ffd39d6f941c9fc50a0e052356efc8e818c0797a2b1",
+      "bytes": 774791
+    },
+    {
+      "file": "03-candidate-approved-final.png",
+      "sha256": "3e51dd9cf66781d1fced23f41f6234a46a58718f499670024f516d52c560bd27",
+      "bytes": 115910
+    },
+    {
+      "file": "04-real-script.png",
+      "sha256": "9bedfb0c0a6df97086bbe13df1ba68514ff6946ff77c5ecec87a51f071eb01de",
+      "bytes": 445390
+    },
+    {
+      "file": "04-mobile.png",
+      "sha256": "851250e8ab8249cd8b332ab05779d7d4ab676e189a9f4feb824adc9d1914f78c",
+      "bytes": 358400
+    }
+  ]
+}

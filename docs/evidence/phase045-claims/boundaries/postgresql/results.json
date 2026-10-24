@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "backend": "postgresql",
+  "runId": "mvkyrjde",
+  "at": "2026-10-23T12:46:17.814Z",
+  "checks": [
+    {
+      "name": "真实 PostgreSQL 初始化/重复迁移：沿用0001–0004，无本阶段DDL",
+      "status": "PASS",
+      "detail": {
+        "migrations": [
+          {
+            "migration_name": "0001_project",
+            "count": 1
+          },
+          {
+            "migration_name": "0002_workflow",
+            "count": 1
+          },
+          {
+            "migration_name": "0003_research",
+            "count": 1
+          },
+          {
+            "migration_name": "0004_script",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "无原文真实HTTP/Worker明确insufficient，零模型调用、零Claim/Evidence",
+      "status": "PASS",
+      "detail": {
+        "jobId": "b58f274d-d72c-40ea-bdaf-71e901fc386b"
+      }
+    },
+    {
+      "name": "Provider关闭时任务明确失败并释放租约，没有Mock回退或部分写库",
+      "status": "PASS",
+      "detail": {
+        "jobId": "d20b82df-5ce2-4417-a311-64e41a9b1c14",
+        "errorCode": "PROVIDER_NOT_CONFIGURED"
+      }
+    },
+    {
+      "name": "真实Codex重试成功：同一候选关联双Source及冲突提示；用户接受幂等且仍为冲突未核实",
+      "status": "PASS",
+      "detail": {
+        "jobId": "d20b82df-5ce2-4417-a311-64e41a9b1c14",
+        "runIds": [
+          "01a168cc-7074-7151-a9a7-19bb93b8e289"
+        ],
+        "claimId": "b7d830ab-8df3-452f-a254-621716d789b7",
+        "evidenceCount": 3
+      }
+    },
+    {
+      "name": "Fork拒绝旧候选，正式引用新ID保持同修订；应用重启候选审核及来源关系一致",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "database": "studio_phase045_mvkyrjde",
+  "projectId": "772a5a9b-595b-46c8-8c50-d6fe85656010",
+  "finishedAt": "2026-10-23T12:46:54.383Z"
+}

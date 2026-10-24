@@ -1,0 +1,23 @@
+PASS 原 HTTP CRUD、上传和十路由回归
+PASS 旧项目 API / 新工作流隔离，创建草稿不改变原始需求
+PASS 草稿保存、驳回、fork 和具体历史读取
+PASS 批准、原子下游任务、同键并发重放和异内容冲突
+PASS 双客户端不同修订批准：旧候选 409，新候选成功且旧批准仍可读
+PASS 固定版本依赖、影响范围、上游替换派生 stale
+PASS 异步 Mock 202 / jobId、幂等、取消与重试，保留固定输入
+PASS 权限/非法输入/跨项目依赖/缺少幂等键有真实阻断
+PASS 未配置配音提供方只排入真实任务，不生成音频
+PASS Phase 01 原工作流回归
+PASS PDF/图片/视频/文本真实上传、幂等、来源限制保存
+PASS 真实 PDF 文本/页数、图片宽高、视频三段时间码及抽帧
+PASS Mock、未配置、损坏原件失败及任务异常隔离
+PASS Claim 双来源、页码引用、支持/冲突、无证据与跨项目阻断
+PASS Mock 引用不能升级支持/核验状态
+PASS 来源详情及原件/帧保护、Range、HEAD 与跨来源文件拒绝
+PASS Phase 00 已有上传原件可加入研究，原项目 JSON/文件不变
+PASS 研究 draft→approve、实体只读、fork 快照及固定依赖
+PASS 实际媒体工具失败、同输入第二次尝试恢复成功
+PASS 实际运行取消阻断迟到分析写入
+locator.evaluate: Error: Video metadata timeout
+    at eval (eval at evaluate (:291:30), <anonymous>:3:45)
+    at main (W:\a_study\Other\AI_Audio\AI_audio_work\AI_Code_Video_Studio_Codex_BAE6A58CE5AB8EE58B\tests\research\run.cjs:858:11)

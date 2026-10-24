@@ -1,0 +1,1500 @@
+{
+  "at": "2026-10-23T12:49:34.690Z",
+  "status": "PASS",
+  "projection": "Allowlisted real events; agent prose/reasoning/tool arguments omitted. Not a raw log.",
+  "runs": [
+    {
+      "runId": "01a168c4-c0fd-7f90-bf7f-dfd5d7777c33",
+      "backend": "sqlite",
+      "jobId": "3cdda4cc-f0e3-488c-b32e-63e3308d4943",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c4-c0fd-7f90-bf7f-dfd5d7777c33",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:38:06.896Z",
+        "durationMs": 29459,
+        "usage": {
+          "input_tokens": 12683,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 994,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "3db8eeb03f3cfb18bf27f87f9a460fba91c7bb58a97c8e21c6c8097d8a121be5",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c4-c0fd-7f90-bf7f-dfd5d7777c33"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "bc724cae91e9dba46defe7de04b0e2cfe2e8319f2e24234548060b7302ce24e7",
+          "textLength": 2416
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 12683,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 994,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168cc-7074-7151-a9a7-19bb93b8e289",
+      "backend": "postgresql-conflict-boundary",
+      "jobId": "d20b82df-5ce2-4417-a311-64e41a9b1c14",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168cc-7074-7151-a9a7-19bb93b8e289",
+        "usage": {
+          "input_tokens": 9587,
+          "output_tokens": 791,
+          "cached_input_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:46:30.674Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 22039,
+        "jobAttempt": 2,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "414996abd7b202426779e10942092d7506c5a3d386b3601261e335c6a2100fbf",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168cc-7074-7151-a9a7-19bb93b8e289"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "b333ca6e7cbdf783f12f140a61209183e5608a20d7ace80d99d43e75fcf17647",
+          "textLength": 1474
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9587,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 791,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c8-e9eb-7351-8627-3e1fbed152c9",
+      "backend": "postgresql",
+      "jobId": "032e3919-d39b-4d26-a8eb-550dac0b9807",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c8-e9eb-7351-8627-3e1fbed152c9",
+        "usage": {
+          "input_tokens": 10157,
+          "output_tokens": 541,
+          "cached_input_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:42:39.600Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 15159,
+        "jobAttempt": 1,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "b0fc1870aa0209fbbd0f27d5ecfe9ff1c63092610dfc73aa8680f366c1ad1894",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c8-e9eb-7351-8627-3e1fbed152c9"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "5f85ce531a087af0168800e744bec3d8dfff4fcc8f98acc14b266b1157bfdd6c",
+          "textLength": 984
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 10157,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 541,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c3-e200-7df3-aa83-f795dfd01fd1",
+      "backend": "sqlite",
+      "jobId": "d02cc6ed-5ea6-4c14-aa6e-9f9a6c03832b",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c3-e200-7df3-aa83-f795dfd01fd1",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:37:09.801Z",
+        "durationMs": 11392,
+        "usage": {
+          "input_tokens": 9219,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 194,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "2e7a7ae2fc7adeeab937619e956e823ef7c2c4555ae2c47272faca516f46d463",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [
+        {
+          "file": "input-0.png",
+          "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165",
+          "bytes": 9170
+        }
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c3-e200-7df3-aa83-f795dfd01fd1"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "82539363c12848c699b77047f79c19814dad2fb354563497af9db0073ba8ee24",
+          "textLength": 292
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9219,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 194,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c4-85c4-7a61-ad0b-842b600e95b0",
+      "backend": "sqlite",
+      "jobId": "9e175d83-b544-4cab-9a1d-0e127ddf4377",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c4-85c4-7a61-ad0b-842b600e95b0",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:37:51.622Z",
+        "durationMs": 12686,
+        "usage": {
+          "input_tokens": 9421,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 191,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "ab2f86369a1689618ddaeccb1599b9950300278244f7520a9957841b94f54a07",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [
+        {
+          "file": "input-0.jpg",
+          "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4",
+          "bytes": 16151
+        }
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c4-85c4-7a61-ad0b-842b600e95b0"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "63aa96f328c1a54b132e0f11b5899bfd7b7591d2a532de4f912f8e1cb3e15bbe",
+          "textLength": 247
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9421,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 191,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168cb-912c-7991-b57b-39a992e137cf",
+      "backend": "sqlite-conflict-boundary",
+      "jobId": "d888a24c-64bb-43ad-a768-6763e0abfb9c",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168cb-912c-7991-b57b-39a992e137cf",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:45:33.486Z",
+        "durationMs": 42583,
+        "usage": {
+          "input_tokens": 9591,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 713,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 2,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "3a9e0f47284b7858c74c58a357977d6d409cb2eaeae416afd8111f111d7c2099",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168cb-912c-7991-b57b-39a992e137cf"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "1ec69b8427aa3ffb3de70dccfec19c03ebcbce5efbe30af21365d3c28ce3a60e",
+          "textLength": 1333
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9591,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 713,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c4-1964-77b0-a567-ceee6604c3a1",
+      "backend": "sqlite",
+      "jobId": "9e175d83-b544-4cab-9a1d-0e127ddf4377",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c4-1964-77b0-a567-ceee6604c3a1",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:37:24.048Z",
+        "durationMs": 12381,
+        "usage": {
+          "input_tokens": 9423,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 179,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "c1352a392794b13c424acd29df2535ff2510cb64f170ce4a2075e187cbe131f7",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [
+        {
+          "file": "input-0.jpg",
+          "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133",
+          "bytes": 18055
+        }
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c4-1964-77b0-a567-ceee6604c3a1"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "62fd71d3b8d55687577a210042bb0fbe6cae99fbb9ea853d19eb220eb5f2cfcb",
+          "textLength": 240
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9423,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 179,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c5-eaae-7dd2-9d76-cbe926a61c7f",
+      "backend": "sqlite",
+      "jobId": "e32ca9b2-7420-48b0-a43d-8a88e3d67331",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c5-eaae-7dd2-9d76-cbe926a61c7f",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:39:23.050Z",
+        "durationMs": 5907,
+        "usage": null,
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": "CODEX_CANCELLED",
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "8d86fb51114f68e70903db6a3b6b04d258f574479e439dbccce0f171a53af16d",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c5-eaae-7dd2-9d76-cbe926a61c7f"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    {
+      "runId": "01a168c4-4d39-70e3-b37b-a5770f7cfc91",
+      "backend": "sqlite",
+      "jobId": "9e175d83-b544-4cab-9a1d-0e127ddf4377",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c4-4d39-70e3-b37b-a5770f7cfc91",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:37:37.114Z",
+        "durationMs": 13843,
+        "usage": {
+          "input_tokens": 9418,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 186,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "879c622dd1e6e9d88955215f1f78c82e31b0a8aea68824492ec6b14b57f5cd70",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [
+        {
+          "file": "input-0.jpg",
+          "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0",
+          "bytes": 16252
+        }
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c4-4d39-70e3-b37b-a5770f7cfc91"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "086320b6efc4811899bd4f14c4bd400b736c0d49e96c02b63904ce1ef2b9d4a3",
+          "textLength": 242
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9418,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 186,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c5-42d0-7211-abcc-664c084133b5",
+      "backend": "sqlite",
+      "jobId": "04aee579-54ac-46be-aac9-22db4f43a03f",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c5-42d0-7211-abcc-664c084133b5",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:38:40.201Z",
+        "durationMs": 14842,
+        "usage": {
+          "input_tokens": 9592,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 376,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "1404e9dda925cd0689eff58ca50474c371077bd6cbfcd60a6ec9a42cb70540ae",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c5-42d0-7211-abcc-664c084133b5"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "f0fa4be8c95e032eccfe2ca9ff13289ac81e15f4585ddafeb26cd930cd0d445f",
+          "textLength": 651
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9592,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 376,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c7-8c79-79d0-8071-1b20d71dff38",
+      "backend": "postgresql",
+      "jobId": "c3fb9e4d-2960-447a-ad5d-d028ec4ac00b",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c7-8c79-79d0-8071-1b20d71dff38",
+        "usage": {
+          "input_tokens": 9417,
+          "output_tokens": 187,
+          "cached_input_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:41:09.952Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 12395,
+        "jobAttempt": 1,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "02a98d6487126dc63dd8d389acc0617de5c0b32c017bae95c9972f56ca058978",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [
+        {
+          "file": "input-0.jpg",
+          "sha256": "e0fe354efd73566128c27e75d3af4471be07981cc0c0ceda7f5e1b379a015133",
+          "bytes": 18055
+        }
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c7-8c79-79d0-8071-1b20d71dff38"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "1723be23ac791fe3affff8bac8b068962dc35ead6d9195d7e3c9bf7da757ff92",
+          "textLength": 244
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9417,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 187,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c7-bf25-7b01-adbc-e6fa6095a622",
+      "backend": "postgresql",
+      "jobId": "c3fb9e4d-2960-447a-ad5d-d028ec4ac00b",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c7-bf25-7b01-adbc-e6fa6095a622",
+        "usage": {
+          "input_tokens": 9421,
+          "output_tokens": 175,
+          "cached_input_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:41:23.034Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 10811,
+        "jobAttempt": 1,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "554d336a07b759e4b8f9664882db1c0870d2c0242b1e639588555f80212b02de",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [
+        {
+          "file": "input-0.jpg",
+          "sha256": "3df96643450b1bb784662733a54fc8aa2d1fa5e81562f872196d6baff94ab6c0",
+          "bytes": 16252
+        }
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c7-bf25-7b01-adbc-e6fa6095a622"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "d66b7a5ed760bd41bbc6ba2c5d5c0d7c23811115eb63a12e430a4646756e837c",
+          "textLength": 223
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9421,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 175,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c7-ec0d-71e2-a433-c63609bbb61e",
+      "backend": "postgresql",
+      "jobId": "c3fb9e4d-2960-447a-ad5d-d028ec4ac00b",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c7-ec0d-71e2-a433-c63609bbb61e",
+        "usage": {
+          "input_tokens": 9415,
+          "output_tokens": 225,
+          "cached_input_tokens": 7168,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:41:34.510Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 13815,
+        "jobAttempt": 1,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "c06e7b4dd0ec6d3cba16f9ec5a5b5e16f040aa21a267c31ca8f450063c128d03",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [
+        {
+          "file": "input-0.jpg",
+          "sha256": "a44c24f920bc635776a3c058592f5f174a59ef899cef5743b021387e311d4ac4",
+          "bytes": 16151
+        }
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c7-ec0d-71e2-a433-c63609bbb61e"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "d32e3b4ab67bd52f21a1ab6ca577a26c1bd374e53a601b72f66c65d2e4b6179f",
+          "textLength": 288
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9415,
+            "cached_input_tokens": 7168,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 225,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c8-b181-7701-9b80-fb258ce54584",
+      "backend": "postgresql",
+      "jobId": "b93b59d3-37e0-4bf9-a0fc-93d285d6ac5b",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c8-b181-7701-9b80-fb258ce54584",
+        "usage": {
+          "input_tokens": 9590,
+          "output_tokens": 409,
+          "cached_input_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:42:25.209Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 12669,
+        "jobAttempt": 1,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "2e56c4354625f7dbf2aee5f0a0bd05fcb6c1dd928169113807ffa638cbe96cb5",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c8-b181-7701-9b80-fb258ce54584"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "1f788e7fd1916ba5b2e5a393e23d40524f8128e06a4d99b968f2ccaa2a47e5f9",
+          "textLength": 720
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9590,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 409,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c7-4ed4-7351-8ae5-9b9600cc2603",
+      "backend": "postgresql",
+      "jobId": "707bd532-f91b-47aa-92a6-5a80a5a45074",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c7-4ed4-7351-8ae5-9b9600cc2603",
+        "usage": {
+          "input_tokens": 9216,
+          "output_tokens": 231,
+          "cached_input_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:40:54.176Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 12822,
+        "jobAttempt": 1,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "c65d205bb375eb3060b0fc3f576f20d8959851e1c97606ed4edc4558bc442a1a",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [
+        {
+          "file": "input-0.png",
+          "sha256": "b5e1ad437e1cadb67835cdb8a6cb995d5a50fba555a249dcfa7c6a5177e97165",
+          "bytes": 9170
+        }
+      ],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c7-4ed4-7351-8ae5-9b9600cc2603"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "794fbd3fe0725532aa96f691c88bbf171bc9eb45adcce34b9dda8dc128de886e",
+          "textLength": 345
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 9216,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 231,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168ca-04b4-7672-80d2-407b763767a1",
+      "backend": "standalone-canary",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168ca-04b4-7672-80d2-407b763767a1",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:43:51.363Z",
+        "durationMs": 8764,
+        "usage": {
+          "input_tokens": 8874,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 62,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "aef85d5fea4b4ab7b4dda632fefe2860d325f9b3dff0b55c4dda3d4610cca3ed",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168ca-04b4-7672-80d2-407b763767a1"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "b63be2c8d27acd1badb72b48e06ce64886d46b877661f8bdfee4883aafad58ba",
+          "textLength": 275
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 8874,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 62,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c3-4d93-7be0-83d3-6434b5f30f0e",
+      "backend": "sqlite",
+      "jobId": "f1026ba0-8c85-4fd3-bef3-a1d964514596",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c3-4d93-7be0-83d3-6434b5f30f0e",
+        "searchMode": "live",
+        "startedAt": "2026-10-23T12:36:31.639Z",
+        "durationMs": 15466,
+        "usage": {
+          "input_tokens": 26612,
+          "cached_input_tokens": 11136,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 199,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "52e4535d3327b6b233c2d39f9e97841d2f0ec05eeb39f4ae0e073296b58b2880",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c3-4d93-7be0-83d3-6434b5f30f0e"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "78714b65d2be6e323ede12f4e74c0f8fa5731848834459189bff4ddf1959152f",
+          "textLength": 93
+        },
+        {
+          "type": "item.started",
+          "itemType": "web_search",
+          "action": {
+            "type": "other"
+          }
+        },
+        {
+          "type": "item.completed",
+          "itemType": "web_search",
+          "action": {
+            "type": "search",
+            "query": "site:ffmpeg.org/ffprobe.html official ffprobe documentation"
+          }
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "e76fa59cfa83dde42957fd4d56e924e672dd4da4291e60d22598bdb5ee9ba296",
+          "textLength": 580
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 26612,
+            "cached_input_tokens": 11136,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 199,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c5-83a2-7610-8538-5b815b4b72b3",
+      "backend": "sqlite",
+      "jobId": "b301959c-f1fe-4a87-b7f4-64bc8035b153",
+      "audit": {
+        "provider": "codex-cli",
+        "cliVersion": "codex-cli 0.163.0",
+        "model": "gpt-6.1-sol",
+        "runId": "01a168c5-83a2-7610-8538-5b815b4b72b3",
+        "searchMode": "disabled",
+        "startedAt": "2026-10-23T12:38:56.829Z",
+        "durationMs": 21233,
+        "usage": {
+          "input_tokens": 10089,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 544,
+          "reasoning_output_tokens": 0
+        },
+        "quota": null,
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "failureReason": null,
+        "policy": "data-only-v1",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "jobAttempt": 1,
+        "isolation": {
+          "modelShell": "disabled",
+          "modelPatch": "disabled",
+          "enabledMcpServers": 0,
+          "codeModeHost": "v8-data-only",
+          "userConfigIgnored": true,
+          "ephemeral": true
+        }
+      },
+      "rawEventSha256": "4193d231916b4f1f524a4c9bb7cda41f5df540adc3e9fe3cf312b7a030eb296d",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c5-83a2-7610-8538-5b815b4b72b3"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "efae51443aff8ae1158fdd38954f5d17d0c9a50126735b7b0bd483d6207de8f3",
+          "textLength": 977
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 10089,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 544,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c9-38a0-7151-865d-25581540a359",
+      "backend": "postgresql",
+      "jobId": "fe0a40f4-19ab-4696-80eb-20ae2754c69d",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c9-38a0-7151-865d-25581540a359",
+        "usage": null,
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:42:59.750Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 6147,
+        "jobAttempt": 1,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": "CODEX_CANCELLED"
+      },
+      "rawEventSha256": "ae8b09e9c266c84dc80864e3bb53db0f6fc06af3c039f9dd6ac0e599d39c6ef7",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c9-38a0-7151-865d-25581540a359"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        }
+      ]
+    },
+    {
+      "runId": "01a168c6-e80e-77b0-b308-c7f03226c0ba",
+      "backend": "postgresql",
+      "jobId": "1f4fe3d5-d4bb-4ddd-931f-d6e28e657716",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c6-e80e-77b0-b308-c7f03226c0ba",
+        "usage": {
+          "input_tokens": 26483,
+          "output_tokens": 123,
+          "cached_input_tokens": 11136,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:40:28.026Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 15025,
+        "jobAttempt": 1,
+        "searchMode": "live",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "8be8e2d59e90e2baffaa1ce613b0e0b19a6d9dd90cf2567a2492ad517d5410e8",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c6-e80e-77b0-b308-c7f03226c0ba"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "11c765ff8c658a78d86934c2092f77cf334de72480c28438f929ae2bf1b7e771",
+          "textLength": 59
+        },
+        {
+          "type": "item.started",
+          "itemType": "web_search",
+          "action": {
+            "type": "other"
+          }
+        },
+        {
+          "type": "item.completed",
+          "itemType": "web_search",
+          "action": {
+            "type": "search",
+            "query": "site:ffmpeg.org/ffprobe.html official ffprobe documentation"
+          }
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "9e636d9bcfa0acf00414737a91652c6060c2a69f00467a3bad925d40f0fe9074",
+          "textLength": 214
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 26483,
+            "cached_input_tokens": 11136,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 123,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "runId": "01a168c8-2d4f-7932-9759-7833ab793d8b",
+      "backend": "postgresql",
+      "jobId": "5954d3ee-d6e7-4b11-a9aa-98e19ae26eb7",
+      "audit": {
+        "model": "gpt-6.1-sol",
+        "quota": null,
+        "runId": "01a168c8-2d4f-7932-9759-7833ab793d8b",
+        "usage": {
+          "input_tokens": 12036,
+          "output_tokens": 1049,
+          "cached_input_tokens": 0,
+          "reasoning_output_tokens": 0,
+          "cache_write_input_tokens": 0
+        },
+        "policy": "data-only-v1",
+        "provider": "codex-cli",
+        "isolation": {
+          "ephemeral": true,
+          "modelPatch": "disabled",
+          "modelShell": "disabled",
+          "codeModeHost": "v8-data-only",
+          "enabledMcpServers": 0,
+          "userConfigIgnored": true
+        },
+        "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+        "startedAt": "2026-10-23T12:41:51.308Z",
+        "cliVersion": "codex-cli 0.163.0",
+        "durationMs": 29707,
+        "jobAttempt": 1,
+        "searchMode": "disabled",
+        "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+        "failureReason": null
+      },
+      "rawEventSha256": "e368c9387661260423d251109a8f49d381c74c9518eb63efb69031e0dba52d2d",
+      "rawEventsKeptPrivate": true,
+      "effectiveCatalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "attachments": [],
+      "events": [
+        {
+          "type": "thread.started",
+          "threadId": "01a168c8-2d4f-7932-9759-7833ab793d8b"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "error"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "itemType": "agent_message",
+          "textOmitted": true,
+          "textSha256": "22c2b75f29186ced7a7c3104a7b1bf9e2283d890de5f5780e4f3edda6e4d0e6e",
+          "textLength": 2432
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 12036,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1049,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    }
+  ]
+}

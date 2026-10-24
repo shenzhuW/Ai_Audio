@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "backend": "sqlite",
+  "runId": "mvkyev05",
+  "at": "2026-10-23T12:36:26.361Z",
+  "checks": [
+    {
+      "name": "真实 live 搜索持久化；标题URL摘要有实际搜索轨迹，独立网页原文/原始响应可下载",
+      "status": "PASS",
+      "detail": {
+        "jobId": "f1026ba0-8c85-4fd3-bef3-a1d964514596",
+        "candidates": 3,
+        "sourceId": "7b6f3ced-d38d-41f3-92ee-7a47209e30e5",
+        "runId": "01a168c3-4d93-7be0-83d3-6434b5f30f0e"
+      }
+    },
+    {
+      "name": "真实图片理解绑定原件SHA；视觉输出不作为原文匹配",
+      "status": "PASS",
+      "detail": {
+        "jobId": "d02cc6ed-5ea6-4c14-aa6e-9f9a6c03832b",
+        "summary": "图片为白底柱状图。黑色横轴和纵轴构成左下方直角，未见刻度或网格线。三根竖直矩形柱从左到右分别为红色、绿色、蓝色，高度依次增加；柱顶分别标注“10”“20”“30”，柱下分别标注“A”“B”“C”。顶部可辨认文字为“SELF-AUTHORED VISUAL TEST ONLY”，右侧与“30”标注较接近。\n模型分析边界：仅描述图片可见内容；图中未注明数据单位、坐标轴名称或数据含义，无法确定其实际用途。",
+        "runId": "01a168c3-e200-7df3-aa83-f795dfd01fd1"
+      }
+    },
+    {
+      "name": "真实视频3帧视觉：原始时间戳与独立抽帧SHA完全相同，无音轨/运动伪称",
+      "status": "PASS",
+      "detail": {
+        "jobId": "9e175d83-b544-4cab-9a1d-0e127ddf4377",
+        "timestamps": [
+          0,
+          3333,
+          6666
+        ],
+        "runIds": [
+          "01a168c4-1964-77b0-a567-ceee6604c3a1",
+          "01a168c4-4d39-70e3-b37b-a5770f7cfc91",
+          "01a168c4-85c4-7a61-ad0b-842b600e95b0"
+        ]
+      }
+    },
+    {
+      "name": "真实 Codex 从已抓取原文生成候选；Source/Index允许集、SHA和逐字引用验证；尚无正式Claim",
+      "status": "PASS",
+      "detail": {
+        "jobId": "3cdda4cc-f0e3-488c-b32e-63e3308d4943",
+        "count": 4,
+        "runIds": [
+          "01a168c4-c0fd-7f90-bf7f-dfd5d7777c33"
+        ]
+      }
+    },
+    {
+      "name": "真实HTTP拒绝伪造原文与未知Source ID，事务没有部分写入",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实浏览器编辑候选/刷新/接受/拒绝；仅接受后写正式Claim/Evidence；409并发与重复审核保护",
+      "status": "PASS",
+      "detail": {
+        "candidateId": "93dc8cc1-e08b-4d7f-ac90-2fb389b2b6ec",
+        "acceptedClaimId": "2b5a07b5-a21a-4ad5-afde-f45a941c9e9e",
+        "evidenceIds": [
+          "34156972-5769-4e15-8a0a-d838643879b4"
+        ]
+      }
+    },
+    {
+      "name": "已批准研究拒绝候选审核写入，正式 Claim 保持未核实",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "真实AI局部文稿转换ScriptSegment，稳定ID/允许集引用/未改段落保持",
+      "status": "PASS",
+      "detail": {
+        "jobId": "04aee579-54ac-46be-aac9-22db4f43a03f",
+        "runId": "01a168c5-42d0-7211-abcc-664c084133b5",
+        "segmentId": "09bec0b6-d632-4a60-bb95-38af36a9d182",
+        "text": "观察，是直接看到或读到的内容；推断，是在这些内容上进一步作出的判断；证据，则是用来支持某个判断的材料，能支持到哪一步，需要说清楚。比如，所给的FFmpeg文档页写着：列出的文档每晚重新生成，对应最新FFmpeg修订版。这是对页面说法的描述，尚未独立核实。它可以支持“该页面这样声明”的判断，但页面没有给出具体日期或修订号，因此不能据此认定这些文档也适用于旧版本。分清读到了什么、推断了什么，以及材料能证明什么，才能守住结论的边界；这里仍需人工审核。"
+      }
+    },
+    {
+      "name": "真实整体文稿生成沿用全部稳定ID与引用",
+      "status": "PASS",
+      "detail": {
+        "jobId": "b301959c-f1fe-4a87-b7f4-64bc8035b153",
+        "runId": "01a168c5-83a2-7610-8538-5b815b4b72b3"
+      }
+    },
+    {
+      "name": "真实浏览器来源/视觉/写稿/使用量可见，刷新持久化",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "运行中真实Codex取消终止进程树、审计保留、迟到文稿不写入",
+      "status": "PASS",
+      "detail": {
+        "jobId": "e32ca9b2-7420-48b0-a43d-8a88e3d67331",
+        "aiRuns": [
+          {
+            "provider": "codex-cli",
+            "cliVersion": "codex-cli 0.163.0",
+            "model": "gpt-6.1-sol",
+            "runId": "01a168c5-eaae-7dd2-9d76-cbe926a61c7f",
+            "searchMode": "disabled",
+            "startedAt": "2026-10-23T12:39:23.050Z",
+            "durationMs": 5907,
+            "usage": null,
+            "quota": null,
+            "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+            "failureReason": "CODEX_CANCELLED",
+            "policy": "data-only-v1",
+            "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+            "jobAttempt": 1,
+            "isolation": {
+              "modelShell": "disabled",
+              "modelPatch": "disabled",
+              "enabledMcpServers": 0,
+              "codeModeHost": "v8-data-only",
+              "userConfigIgnored": true,
+              "ephemeral": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "真实生成沿用审批只读和Fork，研究引用归属不变",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "重启保持真实结果与审计；原用户数据不变",
+      "status": "PASS",
+      "detail": {
+        "originalBefore": "fafaedf6913bd7e296c986e449576be553cb920aae308cf00ff96345c895ac89",
+        "unchanged": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "cc90b9b9-66dd-4576-a9ea-99ccdfe9d7d2",
+  "finishedAt": "2026-10-23T12:39:31.206Z"
+}

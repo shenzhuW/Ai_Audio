@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "backend": "sqlite",
+  "runId": "mvkyqew7",
+  "at": "2026-10-23T12:45:25.354Z",
+  "checks": [
+    {
+      "name": "无原文真实HTTP/Worker明确insufficient，零模型调用、零Claim/Evidence",
+      "status": "PASS",
+      "detail": {
+        "jobId": "34ae6412-1148-453d-a1a6-3b8d39671120"
+      }
+    },
+    {
+      "name": "Provider关闭时任务明确失败并释放租约，没有Mock回退或部分写库",
+      "status": "PASS",
+      "detail": {
+        "jobId": "d888a24c-64bb-43ad-a768-6763e0abfb9c",
+        "errorCode": "PROVIDER_NOT_CONFIGURED"
+      }
+    },
+    {
+      "name": "真实Codex重试成功：同一候选关联双Source及冲突提示；用户接受幂等且仍为冲突未核实",
+      "status": "PASS",
+      "detail": {
+        "jobId": "d888a24c-64bb-43ad-a768-6763e0abfb9c",
+        "runIds": [
+          "01a168cb-912c-7991-b57b-39a992e137cf"
+        ],
+        "claimId": "d4dd4e13-5e0d-450c-91c9-d8e73e5e8d50",
+        "evidenceCount": 3
+      }
+    },
+    {
+      "name": "Fork拒绝旧候选，正式引用新ID保持同修订；应用重启候选审核及来源关系一致",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "pageErrors": [],
+  "projectId": "ec312115-764d-4809-a9d6-90fbdc726166",
+  "finishedAt": "2026-10-23T12:46:17.510Z"
+}

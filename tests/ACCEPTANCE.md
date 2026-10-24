@@ -1,5 +1,12 @@
 # 验收与测试记录（Codex 持续填写）
 
+## Phase04.5 候选 Claim 补充（整理2026-10-24）
+
+- PASS：真实原文→Codex候选→逐字Evidence→浏览器编辑/接受/拒绝→固定研究文稿引用，两库真实验证；候选unverified，正式冲突记录conflicting，不自动核实。
+- PASS：伪造quote/未知Source422、并发/重复审核409、批准只读、Fork旧候选拒绝、来源/文本变化与迟到保护；无原文insufficient零调用，Provider关闭失败且可真实重试。
+- PASS：45项单元、类型/构建，SQLite13组/PG14组主链路，边界4/5组，Phase03回归15/16组，Phase04回归9/11组，重启与最终Chrome截图；21次CLI事件及真实注入核对。
+- 保留失败：首轮默认Chromium缺H.264导致视频元数据失败，按原文档配Chrome后通过；旧Windows两次原生异常保持UNCONFIRMED。[完整报告](../docs/PHASE_04_5_CLAIM_SUPPLEMENT.md)。Phase05未启动。
+
 ## Phase 04.5 本地真实能力验收（2026-10-23）
 
 | ID | 验收条件 | 实际状态 | 证据 |

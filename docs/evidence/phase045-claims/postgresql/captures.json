@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "backend": "postgresql",
+  "at": "2026-10-24T00:04:00.554Z",
+  "pageErrors": [],
+  "images": [
+    {
+      "file": "03-real-search.png",
+      "sha256": "c6a74acd5a5384d301618396e1503d2f5d123806b02e7a1bef2e79bbf683ead1",
+      "bytes": 605480
+    },
+    {
+      "file": "03-real-vision.png",
+      "sha256": "7b7734f67e3b6099213a89cb82d91909f8b16b56ee438b7649e7369cbd26193a",
+      "bytes": 602934
+    },
+    {
+      "file": "03-real-video.png",
+      "sha256": "569c14634be4a39edfdc935219e819212f796962389217cc1eb252da747f0d6c",
+      "bytes": 644766
+    },
+    {
+      "file": "03-real-audit.png",
+      "sha256": "88901e48510d66528c55b5abd0b9d49e71a37b26cb85a2e6bb27ba6ffa1d51c4",
+      "bytes": 767138
+    },
+    {
+      "file": "03-candidate-approved-final.png",
+      "sha256": "d3a37dd7b819adbc188e9a93191b268ac9259709be1424cd2914e3978d9039b3",
+      "bytes": 117677
+    },
+    {
+      "file": "04-real-script.png",
+      "sha256": "c1356b41a4043062fcf911d2b637d587ce799c66645a61c7e15bc4ec78d52fcd",
+      "bytes": 432537
+    },
+    {
+      "file": "04-mobile.png",
+      "sha256": "0923f9f5d4218cba856d7bc217bed31d5dbd8a06eeece9e1d0db0b463f8b382f",
+      "bytes": 347060
+    }
+  ]
+}

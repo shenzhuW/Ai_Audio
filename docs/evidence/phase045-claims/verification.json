@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "at": "2026-10-24T00:10:24.342Z",
+  "checks": [
+    {
+      "file": "sqlite/results.json",
+      "status": "PASS",
+      "checks": 13,
+      "runId": "mvkyev05"
+    },
+    {
+      "file": "postgresql/results.json",
+      "status": "PASS",
+      "checks": 14,
+      "runId": "mvkyjvat"
+    },
+    {
+      "file": "boundaries/sqlite/results.json",
+      "status": "PASS",
+      "checks": 4,
+      "runId": "mvkyqew7"
+    },
+    {
+      "file": "boundaries/postgresql/results.json",
+      "status": "PASS",
+      "checks": 5,
+      "runId": "mvkyrjde"
+    },
+    {
+      "file": "regression-phase03/sqlite/results.json",
+      "status": "PASS",
+      "checks": 15,
+      "runId": "mvkynr6l"
+    },
+    {
+      "file": "regression-phase03/postgresql/results.json",
+      "status": "PASS",
+      "checks": 16,
+      "runId": "mvkyo916"
+    },
+    {
+      "file": "regression-phase04/sqlite/results.json",
+      "status": "PASS",
+      "checks": 9,
+      "runId": "mvkyh5un"
+    },
+    {
+      "file": "regression-phase04/postgresql/results.json",
+      "status": "PASS",
+      "checks": 11,
+      "runId": "mvkyhjzp"
+    }
+  ],
+  "realCliRuns": 21,
+  "unitTests": 45,
+  "candidateReferenceChain": "PASS",
+  "finalCaptures": "PASS",
+  "runtimeUnchanged": true,
+  "excluded": "Exact quotes checked in actual HTTP run before originals were omitted from public snapshot; historical Windows native failures remain UNCONFIRMED."
+}

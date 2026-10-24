@@ -1,0 +1,221 @@
+{
+  "revisionId": "9351d6cb-6f4b-4b18-a3ae-d50c78239d94",
+  "jobId": "3cdda4cc-f0e3-488c-b32e-63e3308d4943",
+  "aiRuns": [
+    {
+      "provider": "codex-cli",
+      "cliVersion": "codex-cli 0.163.0",
+      "model": "gpt-6.1-sol",
+      "runId": "01a168c4-c0fd-7f90-bf7f-dfd5d7777c33",
+      "searchMode": "disabled",
+      "startedAt": "2026-10-23T12:38:06.896Z",
+      "durationMs": 29459,
+      "usage": {
+        "input_tokens": 12683,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 994,
+        "reasoning_output_tokens": 0
+      },
+      "quota": null,
+      "quotaNote": "CLI exec 未公开剩余账号额度；以 /status 或用户 usage dashboard 为准。",
+      "failureReason": null,
+      "policy": "data-only-v1",
+      "catalogSha256": "959daf1fe10b4614bbc40fb6b050f011cf9d4e3720106f526830fc6dc94f015a",
+      "jobAttempt": 1,
+      "isolation": {
+        "modelShell": "disabled",
+        "modelPatch": "disabled",
+        "enabledMcpServers": 0,
+        "codeModeHost": "v8-data-only",
+        "userConfigIgnored": true,
+        "ephemeral": true
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "claim": {
+        "text": "所给FFmpeg文档页称，其列出的文档每晚重新生成，并对应最新FFmpeg修订版。",
+        "asOf": null,
+        "scope": "所给Documentation页面所指的文档",
+        "unit": "更新频率：每晚",
+        "verificationStatus": "unverified",
+        "caveats": "“最新”是页面中的相对表述，未给出具体日期或修订号；不能据此认定适用于旧版本。"
+      },
+      "conflictNote": "仅有单一来源陈述，所给片段未见相反证据。",
+      "evidence": [
+        {
+          "sourceId": "7b6f3ced-d38d-41f3-92ee-7a47209e30e5",
+          "indexId": "24bdee9b-0eab-429d-a847-c4f44691cb5e",
+          "role": "support",
+          "quote": "The following documentation is regenerated nightly, and corresponds to the newest FFmpeg revision . Consult your locally installed documentation for older versions.",
+          "match": {
+            "startChar": 273,
+            "endChar": 437,
+            "sourceSha256": "63e6c9825597c9b545aa9e637599042b965b2b5320cb4d30cc14b27e23e9de54",
+            "indexTextSha256": "63e6c9825597c9b545aa9e637599042b965b2b5320cb4d30cc14b27e23e9de54",
+            "locator": {
+              "kind": "text",
+              "label": "24bdee9b-0eab-429d-a847-c4f44691cb5e · UTF-16 273–437"
+            }
+          }
+        }
+      ],
+      "id": "93dc8cc1-e08b-4d7f-ac90-2fb389b2b6ec"
+    },
+    {
+      "claim": {
+        "text": "所给文档称，ffprobe可收集多媒体流信息，以人和机器可读的形式输出，并可用于检查容器格式及其中各媒体流的格式和类型。",
+        "asOf": null,
+        "scope": "所给ffprobe文档描述的工具能力",
+        "unit": "不适用",
+        "verificationStatus": "unverified",
+        "caveats": "属于文档中的能力描述，未提供具体文件的运行结果，也未保证识别所有输入。"
+      },
+      "conflictNote": "仅有单一来源陈述，所给片段未见相反证据。",
+      "evidence": [
+        {
+          "sourceId": "a4a6fdfb-ea86-4680-a835-cc438fac521b",
+          "indexId": "f2903abf-94f7-41d2-9521-5d07fff93c44",
+          "role": "support",
+          "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion. For example it can be used to check the format of the container used by a multimedia stream and the format and type of each media stream contained in it.",
+          "match": {
+            "startChar": 587,
+            "endChar": 846,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "locator": {
+              "kind": "text",
+              "label": "f2903abf-94f7-41d2-9521-5d07fff93c44 · UTF-16 587–846"
+            }
+          }
+        }
+      ],
+      "id": "b80e16db-6516-4cab-9267-89c92960462b"
+    },
+    {
+      "claim": {
+        "text": "所给文档称，输入指定URL时，ffprobe会尝试打开并探测其内容；若URL无法打开或无法识别为多媒体文件，则返回正退出码。",
+        "asOf": null,
+        "scope": "ffprobe对输入URL的处理及所述失败条件",
+        "unit": "退出码：正值",
+        "verificationStatus": "unverified",
+        "caveats": "未给出具体正退出码数值，也未说明其他失败情形的退出码；这是文档描述，未经运行验证。"
+      },
+      "conflictNote": "仅有单一来源陈述，所给片段未见相反证据。",
+      "evidence": [
+        {
+          "sourceId": "a4a6fdfb-ea86-4680-a835-cc438fac521b",
+          "indexId": "f2903abf-94f7-41d2-9521-5d07fff93c44",
+          "role": "support",
+          "quote": "If a url is specified in input, ffprobe will try to open and probe the url content. If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.",
+          "match": {
+            "startChar": 847,
+            "endChar": 1028,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "locator": {
+              "kind": "text",
+              "label": "f2903abf-94f7-41d2-9521-5d07fff93c44 · UTF-16 847–1028"
+            }
+          }
+        }
+      ],
+      "id": "eb21997a-d1dd-4486-913e-226040adb0a2"
+    },
+    {
+      "claim": {
+        "text": "所给文档说明，-sources选项显示输入设备自动检测到的源，但部分设备的系统相关源名称可能无法自动检测，因此返回列表不能保证始终完整。",
+        "asOf": null,
+        "scope": "所给文档通用选项中-sources的返回列表",
+        "unit": "不适用",
+        "verificationStatus": "unverified",
+        "caveats": "限制针对自动检测列表的完整性，不能据此判断某个具体设备是否存在遗漏。"
+      },
+      "conflictNote": "仅有单一来源陈述，所给片段未见相反证据。",
+      "evidence": [
+        {
+          "sourceId": "a4a6fdfb-ea86-4680-a835-cc438fac521b",
+          "indexId": "f2903abf-94f7-41d2-9521-5d07fff93c44",
+          "role": "support",
+          "quote": "-sources device [, opt1 = val1 [, opt2 = val2 ]...] Show autodetected sources of the input device. Some devices may provide system-dependent source names that cannot be autodetected. The returned list cannot be assumed to be always complete.",
+          "match": {
+            "startChar": 9065,
+            "endChar": 9306,
+            "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+            "locator": {
+              "kind": "text",
+              "label": "f2903abf-94f7-41d2-9521-5d07fff93c44 · UTF-16 9065–9306"
+            }
+          }
+        }
+      ],
+      "id": "69f53453-97a7-409c-895e-31a05c22312c"
+    }
+  ],
+  "grounding": [
+    {
+      "candidateId": "93dc8cc1-e08b-4d7f-ac90-2fb389b2b6ec",
+      "sourceId": "7b6f3ced-d38d-41f3-92ee-7a47209e30e5",
+      "sourceUrl": "https://www.ffmpeg.org/documentation.html",
+      "indexId": "24bdee9b-0eab-429d-a847-c4f44691cb5e",
+      "quote": "The following documentation is regenerated nightly, and corresponds to the newest FFmpeg revision . Consult your locally installed documentation for older versions.",
+      "startChar": 273,
+      "endChar": 437,
+      "sourceSha256": "63e6c9825597c9b545aa9e637599042b965b2b5320cb4d30cc14b27e23e9de54",
+      "indexTextSha256": "63e6c9825597c9b545aa9e637599042b965b2b5320cb4d30cc14b27e23e9de54",
+      "locator": {
+        "kind": "text",
+        "label": "24bdee9b-0eab-429d-a847-c4f44691cb5e · UTF-16 273–437"
+      }
+    },
+    {
+      "candidateId": "b80e16db-6516-4cab-9267-89c92960462b",
+      "sourceId": "a4a6fdfb-ea86-4680-a835-cc438fac521b",
+      "sourceUrl": "https://www.ffmpeg.org/ffprobe.html",
+      "indexId": "f2903abf-94f7-41d2-9521-5d07fff93c44",
+      "quote": "ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion. For example it can be used to check the format of the container used by a multimedia stream and the format and type of each media stream contained in it.",
+      "startChar": 587,
+      "endChar": 846,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "locator": {
+        "kind": "text",
+        "label": "f2903abf-94f7-41d2-9521-5d07fff93c44 · UTF-16 587–846"
+      }
+    },
+    {
+      "candidateId": "eb21997a-d1dd-4486-913e-226040adb0a2",
+      "sourceId": "a4a6fdfb-ea86-4680-a835-cc438fac521b",
+      "sourceUrl": "https://www.ffmpeg.org/ffprobe.html",
+      "indexId": "f2903abf-94f7-41d2-9521-5d07fff93c44",
+      "quote": "If a url is specified in input, ffprobe will try to open and probe the url content. If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.",
+      "startChar": 847,
+      "endChar": 1028,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "locator": {
+        "kind": "text",
+        "label": "f2903abf-94f7-41d2-9521-5d07fff93c44 · UTF-16 847–1028"
+      }
+    },
+    {
+      "candidateId": "69f53453-97a7-409c-895e-31a05c22312c",
+      "sourceId": "a4a6fdfb-ea86-4680-a835-cc438fac521b",
+      "sourceUrl": "https://www.ffmpeg.org/ffprobe.html",
+      "indexId": "f2903abf-94f7-41d2-9521-5d07fff93c44",
+      "quote": "-sources device [, opt1 = val1 [, opt2 = val2 ]...] Show autodetected sources of the input device. Some devices may provide system-dependent source names that cannot be autodetected. The returned list cannot be assumed to be always complete.",
+      "startChar": 9065,
+      "endChar": 9306,
+      "sourceSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "indexTextSha256": "9dba0c6ea0a8d7fef770f22100910607a5d599510f127fb92f491a1dce082351",
+      "locator": {
+        "kind": "text",
+        "label": "f2903abf-94f7-41d2-9521-5d07fff93c44 · UTF-16 9065–9306"
+      }
+    }
+  ],
+  "note": "Original text hashes and exact UTF-16 offsets verified against privately retained fetched bytes. Candidate claims are NOT verified facts."
+}
